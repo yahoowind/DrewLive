@@ -12,17 +12,17 @@ https://tinyurl.com/a1xmedia34
 
 Epg Links
 
-https://tinyurl.com/AU24-epg
+https://tinyurl.com/AU35epg
 
-https://tinyurl.com/CA24-epg
+https://tinyurl.com/CA35epg
 
-https://tinyurl.com/EU24-epg
+https://tinyurl.com/EUSPORT35epg
 
 https://tinyurl.com/NZ26-epg
 
-https://tinyurl.com/UK24-epg
+https://tinyurl.com/UK35epg
 
-https://tinyurl.com/US24-epg       
+https://tinyurl.com/US35epg      
 
 https://tinyurl.com/daddylive26-epg
 
