@@ -1,6 +1,6 @@
 Here's shortened links of each playlist
 https://tinyurl.com/drewlive35
-https://tinyurl.com/ddylive35
+https://tinyurl.com/ddylive37
 https://tinyurl.com/moj36
 https://tinyurl.com/mystique35
 https://tinyurl.com/a1xmedia34
@@ -16,4 +16,4 @@ https://tinyurl.com/US24-epg       https://tinyurl.com/daddylive26-epg
 
 All the playlist merged together in one link
 
-https://tinyurl.com/drewliveall35
+https://tinyurl.com/drewliveall007
