@@ -29,3 +29,5 @@ https://tinyurl.com/daddylive26-epg
 All the playlist merged together in one link
 
 https://tinyurl.com/drewliveall007
+
+https://tinyurl.com/all26-epg
