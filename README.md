@@ -18,7 +18,7 @@ https://tinyurl.com/CA35epg
 
 https://tinyurl.com/EUSPORT35epg
 
-https://tinyurl.com/NZ26-epg
+https://tinyurl.com/NZ35epg
 
 https://tinyurl.com/UK35epg
 
