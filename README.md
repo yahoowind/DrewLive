@@ -12,4 +12,4 @@ https://tinyurl.com/CA24-epg
 https://tinyurl.com/EU24-epg
 https://tinyurl.com/NZ26-epg
 https://tinyurl.com/UK24-epg
-https://tinyurl.com/         https://tinyurl.com/daddylive26-epg
+https://tinyurl.com/US24-epg       https://tinyurl.com/daddylive26-epg
