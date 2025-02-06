@@ -4,3 +4,11 @@ https://tinyurl.com/ddylive35
 https://tinyurl.com/moj36
 https://tinyurl.com/mystique35
 https://tinyurl.com/a1xmedia34
+
+Epg Links
+https://tinyurl.com/AU24-epg
+https://tinyurl.com/CA24-epg
+https://tinyurl.com/EU24-epg
+https://tinyurl.com/NZ26-epg
+https://tinyurl.com/UK24-epg
+https://tinyurl.com/         https://tinyurl.com/daddylive26-epg
