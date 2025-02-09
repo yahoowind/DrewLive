@@ -28,4 +28,4 @@ All the playlist merged together in one link
 
 https://tinyurl.com/drewliveall007
 
-https://tinyurl.com/all26-epg
+https://tinyurl.com/ALL36-epg
