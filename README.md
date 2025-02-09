@@ -12,15 +12,19 @@ https://tinyurl.com/a1xmedia34
 
 Epg Links
 
-https://tinyurl.com/AU35epg
+https://tinyurl.com/AU36-epg
 
-https://tinyurl.com/CA35epg
+https://tinyurl.com/CA38-epg
 
-https://tinyurl.com/NZ35epg
+https://tinyurl.com/FANDUEL36-epg
 
-https://tinyurl.com/UK35epg
+https://tinyurl.com/NZ37epg
 
-https://tinyurl.com/US35epg      
+https://tinyurl.com/TENNIS36-epg
+
+https://tinyurl.com/UK36-epg
+
+https://tinyurl.com/US36epg      
 
 https://tinyurl.com/daddylive26-epg
 
@@ -28,4 +32,4 @@ All the playlist merged together in one link
 
 https://tinyurl.com/drewliveall007
 
-https://tinyurl.com/ALL36-epg
+https://tinyurl.com/all26-epg
