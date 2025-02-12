@@ -16,13 +16,13 @@ https://tinyurl.com/US41-epg
 
 https://tinyurl.com/UK41-epg
 
-https://tinyurl.com/TENNIS41-epg
+https://tinyurl.com/TENNIS40-epg
 
 https://tinyurl.com/NZ43-epg
 
 https://tinyurl.com/FANDUEL40-epg
 
-https://tinyurl.com/CA41-epg  
+https://tinyurl.com/CA42-epg  
 
 https://tinyurl.com/AU41-epg
 
