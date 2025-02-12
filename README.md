@@ -10,21 +10,21 @@ https://tinyurl.com/a1xmedia34
 
 Epg Links
 
-https://tinyurl.com/USSPORTS38-epg
+https://tinyurl.com/USSPORTS41-epg
 
-https://tinyurl.com/US38-epg
+https://tinyurl.com/US41-epg
 
-https://tinyurl.com/UK38-epg
+https://tinyurl.com/UK41-epg
 
-https://tinyurl.com/TENNIS38-epg
+https://tinyurl.com/TENNIS41-epg
 
-https://tinyurl.com/NZ38-epg
+https://tinyurl.com/NZ43-epg
 
-https://tinyurl.com/FANDUEL38-epg
+https://tinyurl.com/FANDUEL40-epg
 
-https://tinyurl.com/CA39-epg  
+https://tinyurl.com/CA41-epg  
 
-https://tinyurl.com/AU38-epg
+https://tinyurl.com/AU41-epg
 
 https://tinyurl.com/toonami38-epg
 
