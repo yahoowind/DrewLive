@@ -443,81 +443,81 @@ http://108.14.66.101:5004/auto/v5.3
 http://fl2.moveonjoy.com/DIY/index.m3u8
 #EXTINF:-1 tvg-id="truTV.USA.-.Eastern.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/tru-tv-us.png?raw=true" group-title="United States",TruTV
 https://turnerlive.warnermediacdn.com/hls/live/2023176/trueast/slate/VIDEO_0_3564000.m3u8
-#EXTINF:-1 tvg-id="The.Weather.Channel.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/weather-channel-us.png?raw=true" group-title="United States",Weather Network
+#EXTINF:-1 tvg-id="NFL.Network.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/weather-channel-us.png?raw=true" group-title="United States",Weather Network
 http://fl2.moveonjoy.com/THE_WEATHER_CHANNEL/index.m3u8
-#EXTINF:-1      tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nfl-network-us.png?raw=true" group-title="United States",NFL Network
+#EXTINF:-1 tvg-id="NFL.Network.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nfl-network-us.png?raw=true" group-title="United States",NFL Network
 http://fl2.moveonjoy.com/NFL_NETWORK/index.m3u8
-#EXTINF:-1       tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nba-tv-us.png?raw=true" group-title="United States",NBA TV
+#EXTINF:-1 tvg-id="NBA.TV.USA.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nba-tv-us.png?raw=true" group-title="United States",NBA TV
 http://fl2.moveonjoy.com/NBA_TV/index.m3u8
-#EXTINF:-1       tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/yes-network-us.png?raw=true" group-title="United States",YES Network
+#EXTINF:-1 tvg-id="YES.Network.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/yes-network-us.png?raw=true" group-title="United States",YES Network
 http://fl2.moveonjoy.com/YES_NETWORK/index.m3u8
-#EXTINF:-1        tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bounce-us.png?raw=true" group-title="United States",Bounce
+#EXTINF:-1 tvg-id="Bounce.TV.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bounce-us.png?raw=true" group-title="United States",Bounce
 http://72.46.118.193/Bounce/index.m3u8
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-us.png?raw=true" group-title="United States",MTV
+#EXTINF:-1 tvg-id="MTV.USA.-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-us.png?raw=true" group-title="United States",MTV
 https://fl2.moveonjoy.com/MTV/index.m3u8
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/investigation-discovery-us.png?raw=true" group-title="United States",Investigation Discovery
+#EXTINF:-1 tvg-id="Investigation.Discovery.USA.-.Eastern.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/investigation-discovery-us.png?raw=true" group-title="United States",Investigation Discovery
 http://fl2.moveonjoy.com/INVESTIGATION_DISCOVERY/index.m3u8
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbc-us.png?raw=true" group-title="United States",NBC
+#EXTINF:-1 tvg-id="NBC.(WGRZ).Buffalo,.NY.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbc-us.png?raw=true" group-title="United States",NBC
 http://fl1.moveonjoy.com/NBC_EAST/index.m3u8
-#EXTINF:-1 tvg-logo="https://e7.pngegg.com/pngimages/466/239/png-clipart-new-york-city-wnbc-logo-of-nbc-television-4-miscellaneous-television.png" group-title="United States",NBC (WNBC 4 NY)
+#EXTINF:-1 tvg-id="NBC.(WNBC).New.York,.NY.us" tvg-logo="https://e7.pngegg.com/pngimages/466/239/png-clipart-new-york-city-wnbc-logo-of-nbc-television-4-miscellaneous-television.png" group-title="United States",NBC (WNBC 4 NY)
 http://108.14.66.101:5004/auto/v4.1
-#EXTINF:-1 tvg-logo="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/570a33fd-f9c5-42e4-86b2-2969ae935628/dbh8rjk-0509599d-661c-472a-8c57-41869870f5ad.png/v1/fill/w_400,h_300,q_80,strp/nbc_wesh_tv_channel_2_daytona_beach_orlando_by_peter3422343_dbh8rjk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzAwIiwicGF0aCI6IlwvZlwvNTcwYTMzZmQtZjljNS00MmU0LTg2YjItMjk2OWFlOTM1NjI4XC9kYmg4cmprLTA1MDk1OTlkLTY2MWMtNDcyYS04YzU3LTQxODY5ODcwZjVhZC5wbmciLCJ3aWR0aCI6Ijw9NDAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.I0YbEI_xmMEm3ZaMQeGqzNo4I782aIiEWMP-Stpj_gs" group-title="United States",NBC (WESH-DT)
+#EXTINF:-1 tvg-id="NBC.(WESH).Daytona.Beach,.FL.us" tvg-logo="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/570a33fd-f9c5-42e4-86b2-2969ae935628/dbh8rjk-0509599d-661c-472a-8c57-41869870f5ad.png/v1/fill/w_400,h_300,q_80,strp/nbc_wesh_tv_channel_2_daytona_beach_orlando_by_peter3422343_dbh8rjk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzAwIiwicGF0aCI6IlwvZlwvNTcwYTMzZmQtZjljNS00MmU0LTg2YjItMjk2OWFlOTM1NjI4XC9kYmg4cmprLTA1MDk1OTlkLTY2MWMtNDcyYS04YzU3LTQxODY5ODcwZjVhZC5wbmciLCJ3aWR0aCI6Ijw9NDAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.I0YbEI_xmMEm3ZaMQeGqzNo4I782aIiEWMP-Stpj_gs" group-title="United States",NBC (WESH-DT)
 http://208.89.99.124:5004/auto/v2.1
-#EXTINF:-1 tvg-logo="https://images.pluto.tv/channels/65492fc7056b9700088560b5/featuredImage.jpg?auto=&q=70&fit=fill&fill=blur&ixlib=react-9.1.5" group-title="United States",NBC American Crimes
+#EXTINF:-1 tvg-id="American.Crimes.us" tvg-logo="https://images.pluto.tv/channels/65492fc7056b9700088560b5/featuredImage.jpg?auto=&q=70&fit=fill&fill=blur&ixlib=react-9.1.5" group-title="United States",NBC American Crimes
 http://108.14.66.101:5004/auto/v4.3
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fxm-movie-channel-us.png?raw=true" group-title="United States",FXM
+#EXTINF:-1 tvg-id="FX.Movie.Channel.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fxm-movie-channel-us.png?raw=true" group-title="United States",FXM
 http://fl2.moveonjoy.com/FX_MOVIE/index.m3u8
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fx-us.png?raw=true" group-title="United States",FX
+#EXTINF:-1 tvg-id="FX.Networks.East.Coast.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fx-us.png?raw=true" group-title="United States",FX
 http://128.230.54.150:5004/auto/v32.3
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hgtv-us.png?raw=true" group-title="United States",HGTV
+#EXTINF:-1 tvg-id="HGTV.USA.-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hgtv-us.png?raw=true" group-title="United States",HGTV
 http://fl2.moveonjoy.com/HGTV/index.m3u8
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/discovery-family-us.png?raw=true" group-title="United States",Discovery Family
+#EXTINF:-1 tvg-id="Discovery.Family.Channel.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/discovery-family-us.png?raw=true" group-title="United States",Discovery Family
 http://fl2.moveonjoy.com/DISCOVERY_FAMILY_CHANNEL/index.m3u8
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/abc-logo-2013-default-us.png?raw=true" group-title="United States",ABC
+#EXTINF:-1 tvg-id="ABC.(WABC).New.York,.NY.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/abc-logo-2013-default-us.png?raw=true" group-title="United States",ABC
 http://fl1.moveonjoy.com/ABC_EAST/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.wftv.com/pf/resources/images/sites/cmg-tv-10070/station-logo.png?d=991" group-title="United States",ABC (WFTV-DT)
+#EXTINF:-1 tvg-id="ABC.(WFTV).Orlando,.FL.us" tvg-logo="https://www.wftv.com/pf/resources/images/sites/cmg-tv-10070/station-logo.png?d=991" group-title="United States",ABC (WFTV-DT)
 http://208.89.99.124:5004/auto/v9.1
-#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/tvstations/images/3/39/WCBS.png/revision/latest?cb=20210427111836" group-title="United States",WCBS-TV
+#EXTINF:-1 tvg-id="CBS.(WCBS).New.York,.NY.us" tvg-logo="https://static.wikia.nocookie.net/tvstations/images/3/39/WCBS.png/revision/latest?cb=20210427111836" group-title="United States",WCBS-TV
 http://108.14.66.101:5004/auto/v2.1
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/d7/WKMG-TV_Logo.jpg" group-title="United States",CBS (WKMG-TV)
+#EXTINF:-1 tvg-id="CBS.(WKMG).Orlando,.FL.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/d7/WKMG-TV_Logo.jpg" group-title="United States",CBS (WKMG-TV)
 http://208.89.99.124:5004/auto/v6.1
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/the-cw-us.png?raw=true" group-title="United States",The CW
+#EXTINF:-1 tvg-id="CW.(WDCW).District.of.Columbia.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/the-cw-us.png?raw=true" group-title="United States",The CW
 http://128.230.54.150:5004/auto/v13.1
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/start-tv-us.png?raw=true" group-title="United States",Start TV
+#EXTINF:-1 tvg-id="Start.TV.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/start-tv-us.png?raw=true" group-title="United States",Start TV
 http://108.14.66.101:5004/auto/v2.2
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fave-tv-us.png?raw=true" group-title="United States",Fave TV
+#EXTINF:-1 tvg-id="FAVE.TV.(WTOG3).Tampa.Bay,.FL.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fave-tv-us.png?raw=true" group-title="United States",Fave TV
 http://108.14.66.101:5004/auto/v2.4
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comet-us.png?raw=true" group-title="United States",Comet
+#EXTINF:-1 tvg-id="Comet.TV.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comet-us.png?raw=true" group-title="United States",Comet
 http://108.14.66.101:5004/auto/v2.5
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cozi-tv-us.png?raw=true" group-title="United States",Cozi TV
+#EXTINF:-1 tvg-id="Cozi.TV.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cozi-tv-us.png?raw=true" group-title="United States",Cozi TV
 http://108.14.66.101:5004/auto/v4.2
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/oxygen-true-crime-us.png?raw=true" group-title="United States",Oxygen True Crime
+#EXTINF:-1 tvg-id="Oxygen.True.Crime.Archives.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/oxygen-true-crime-us.png?raw=true" group-title="United States",Oxygen True Crime
 http://108.14.66.101:5004/auto/v4.4
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/tbd-us.png?raw=true" group-title="United States",TBD
+#EXTINF:-1 tvg-id="TBD.TV.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/tbd-us.png?raw=true" group-title="United States",TBD
 http://108.14.66.101:5004/auto/v5.4
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/buzzr-us.png?raw=true" group-title="United States",Buzzr
+#EXTINF:-1 tvg-id="Buzzr.TV.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/buzzr-us.png?raw=true" group-title="United States",Buzzr
 http://108.14.66.101:5004/auto/v9.3
-#EXTINF:-1 tvg-logo="https://e7.pngegg.com/pngimages/497/597/png-clipart-mynetworktv-wwor-tv-television-channel-television-network-logo-sep-television-text.png" group-title="United States",WWOR-TV (My9)
+#EXTINF:-1 tvg-id="MNT.(WWOR).New.York,.NY.us" tvg-logo="https://e7.pngegg.com/pngimages/497/597/png-clipart-mynetworktv-wwor-tv-television-channel-television-network-logo-sep-television-text.png" group-title="United States",WWOR-TV (My9)
 http://108.14.66.101:5004/auto/v9.1
-#EXTINF:-1 tvg-logo="https://diyatvusa.com/wp-content/uploads/2023/11/Diya_Logo_246.png" group-title="United States",Diya TV (WDYA-LD)
+#EXTINF:-1 tvg-id="DIYA.TV.(WSWF-LD).Orlando,.FL.us" tvg-logo="https://diyatvusa.com/wp-content/uploads/2023/11/Diya_Logo_246.png" group-title="United States",Diya TV (WDYA-LD)
 http://108.14.66.101:5004/auto/v10.1
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/game-show-network-us.png?raw=true" group-title="United States",Game Show Network
+#EXTINF:-1 tvg-id="Game.Show.Network.-.East.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/game-show-network-us.png?raw=true" group-title="United States",Game Show Network
 http://cord-cutter.net:8080/gPe4Z1/132932/57430
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/movies-us.png?raw=true" group-title="United States",Movies!
+#EXTINF:-1 tvg-id="Movies!.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/movies-us.png?raw=true" group-title="United States",Movies!
 http://108.14.66.101:5004/auto/v5.2
-#EXTINF:-1 tvg-logo="https://www.oan.plus/images/logos/OAN-Plus.png" group-title="United States",OAN Plus
+#EXTINF:-1 tvg-id="OAN.(KFLA-LD9).Los.Angeles,.CA.us" tvg-logo="https://www.oan.plus/images/logos/OAN-Plus.png" group-title="United States",OAN Plus
 http://108.14.66.101:5004/auto/v10.4
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/awe-us.png?raw=true" group-title="United States",AWE Plus
+#EXTINF:-1 tvg-id="AWE.(KAGW-CD7).Wichita,.KS.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/awe-us.png?raw=true" group-title="United States",AWE Plus
 http://108.14.66.101:5004/auto/v10.5
-#EXTINF:-1 tvg-logo="https://rewindtv.com/wp-content/uploads/2021/08/RewindTV_logo_primary_black_withtagline.png" group-title="United States",Rewind TV
+#EXTINF:-1 tvg-id="Rewind.TV.East.(WPIX-DT4).us" tvg-logo="https://rewindtv.com/wp-content/uploads/2021/08/RewindTV_logo_primary_black_withtagline.png" group-title="United States",Rewind TV
 http://108.14.66.101:5004/auto/v11.4
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ovation-us.png?raw=true" group-title="United States",Ovation
+#EXTINF:-1 tvg-id="Ovation.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ovation-us.png?raw=true" group-title="United States",Ovation
 http://128.230.54.150:5004/auto/v40.3
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/paramount-network-us.png?raw=true" group-title="United States",Paramount Network
+#EXTINF:-1 tvg-id="Paramount.Network.USA.-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/paramount-network-us.png?raw=true" group-title="United States",Paramount Network
 http://128.230.54.150:5004/auto/v34.2
-#EXTINF:-1 tvg-logo="https://e7.pngegg.com/pngimages/887/646/png-clipart-vh1-logo-tv-mtv-classic-television-viacom-media-networks-greek-dance-purple-television.png" group-title="United States",VH1
+#EXTINF:-1 tvg-id="VH1.-.Eastern.Feed.us" tvg-logo="https://e7.pngegg.com/pngimages/887/646/png-clipart-vh1-logo-tv-mtv-classic-television-viacom-media-networks-greek-dance-purple-television.png" group-title="United States",VH1
 http://128.230.54.150:5004/auto/v34.3
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/great-american-family-us.png?raw=true" group-title="United States",Great American Family
+#EXTINF:-1 tvg-id="Great.American.Family.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/great-american-family-us.png?raw=true" group-title="United States",Great American Family
 http://128.230.54.150:5004/auto/v47.1
 #EXTINF:-1 tvg-logo="https://i.postimg.cc/CxVDbJrS/nesn.png" group-title="United States",NESN UHD
 https://a1xs.vip/4000080
