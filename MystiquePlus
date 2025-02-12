@@ -141,7 +141,7 @@ http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/80904.ts
 http://206.212.244.26/live/vasconeves/1742766045/40687.ts
 #EXTINF:-1 tvg-id="Bravo.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bravo-us.png?raw=true" group-title="Canada",Bravo
 http://watch-myjokertv.xyz:8080/play/3wV_2hKH8dCc4-tosvoH17qDU1cf8SJjXNCK9d8vPvM/ts
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/travel-and-escape-ca.png" group-title="Canada",Travel Escape
+#EXTINF:-1 tvg-id="" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/travel-and-escape-ca.png" group-title="Canada",Travel Escape
 http://206.212.244.26/live/vasconeves/1742766045/40580.ts
 #EXTINF:-1 tvg-id="CBC.(CBLT).Toronto,.ON.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/cbc-ca.png?raw=true" group-title="Canada",CBC                                                                                                            group-title="Canada",CBC
 http://watch-myjokertv.xyz:8080/play/3wV_2hKH8dCc4-tosvoH1yMliZ9T-L2qfdy1l2sYu7E/ts
@@ -157,7 +157,7 @@ http://206.212.244.26/live/vasconeves/1742766045/40698.ts
 http://206.212.244.26/live/vasconeves/1742766045/40721.ts
 #EXTINF:-1 tvg-id="RDS.(RÃ©seau.des.sports).ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-ca.png?raw=true" group-title="Canada",RDS
 http://206.212.244.26/live/vasconeves/1742766045/40629.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-2-ca.png?raw=true" group-title="Canada",RDS 2
+#EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-2-ca.png?raw=true" group-title="Canada",RDS 2
 http://206.212.244.26/live/vasconeves/1742766045/40628.ts
 #EXTINF:-1 tvg-id="RDS.Info.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-info-ca.png?raw=true" group-title="Canada",RDS INFO
 http://206.212.244.26/live/vasconeves/1742766045/40627.ts
@@ -172,119 +172,119 @@ http://206.212.244.26/live/vasconeves/1742766045/40640.ts
 
 ---📺 United Kingdom
 
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-one-uk.png" group-title="United Kingdom",BBC One
+#EXTINF:-1 tvg-id="BBC.One.Lon.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-one-uk.png" group-title="United Kingdom",BBC One
 http://92.114.85.72:8000/play/a0mw
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-two-uk.png" group-title="United Kingdom",BBC Two
+#EXTINF:-1 tvg-id="BBC.Two.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-two-uk.png" group-title="United Kingdom",BBC Two
 http://92.114.85.72:8000/play/a0mr
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-1-uk.png" group-title="United Kingdom",ITV 1
+#EXTINF:-1 tvg-id="ITV1.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-1-uk.png" group-title="United Kingdom",ITV 1
 http://92.114.85.72:8000/play/a0o2
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-4-uk.png" group-title="United Kingdom",Channel 4
+#EXTINF:-1 tvg-id="Channel.4.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-4-uk.png" group-title="United Kingdom",Channel 4
 http://92.114.85.72:8000/play/a023
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-5-uk.png" group-title="United Kingdom",Channel 5
+#EXTINF:-1 tvg-id="Channel.5.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-5-uk.png" group-title="United Kingdom",Channel 5
 http://92.114.85.72:8000/play/a085
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-2-uk.png" group-title="United Kingdom",ITV 2
+#EXTINF:-1 tvg-id="ITV2.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-2-uk.png" group-title="United Kingdom",ITV 2
 http://92.114.85.72:8000/play/a0nz
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-3-uk.png" group-title="United Kingdom",ITV 3
+#EXTINF:-1 tvg-id="ITV3.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-3-uk.png" group-title="United Kingdom",ITV 3
 http://92.114.85.72:8000/play/a0lr
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-4-uk.png" group-title="United Kingdom",ITV 4
+#EXTINF:-1 tvg-id="ITV4.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-4-uk.png" group-title="United Kingdom",ITV 4
 http://92.114.85.72:8000/play/a0nu
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-be-uk.png" group-title="United Kingdom",ITV Be
+#EXTINF:-1 tvg-id="ITV3.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-be-uk.png" group-title="United Kingdom",ITV Be
 http://92.114.85.72:8000/play/a0nv
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/S4C_Logo_BUG_Medium.png/480px-S4C_Logo_BUG_Medium.png" group-title="United Kingdom",S4C
+#EXTINF:-1 tvg-id="ITVBe.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/S4C_Logo_BUG_Medium.png/480px-S4C_Logo_BUG_Medium.png" group-title="United Kingdom",S4C
 http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/62694.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-w-uk.png?raw=true" group-title="United Kingdom",U&W
+#EXTINF:-1 tvg-id="U.and.W.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-w-uk.png?raw=true" group-title="United Kingdom",U&W
 http://92.114.85.72:8000/play/a0bj
-#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/beano/images/0/01/CBBCLogo.png/revision/latest/thumbnail/width/360/height/360?cb=20221225181716" group-title="United Kingdom",CBBC
+#EXTINF:-1 tvg-id="CBBC.HD.uk" tvg-logo="https://static.wikia.nocookie.net/beano/images/0/01/CBBCLogo.png/revision/latest/thumbnail/width/360/height/360?cb=20221225181716" group-title="United Kingdom",CBBC
 http://92.114.85.72:8000/play/a0mx
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-alibi-uk.png?raw=true" group-title="United Kingdom",U&Alibi
+#EXTINF:-1 tvg-id="U.and.alibi.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-alibi-uk.png?raw=true" group-title="United Kingdom",U&Alibi
 http://92.114.85.72:8000/play/a0b6
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-dave-uk.png?raw=true" group-title="United Kingdom",U&Dave
+#EXTINF:-1 tvg-id="U.and.Dave.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-dave-uk.png?raw=true" group-title="United Kingdom",U&Dave
 http://92.114.85.72:8000/play/a0bc
-#EXTINF:-1 tvg-logo="https://e7.pngegg.com/pngimages/209/271/png-clipart-cbeebies-television-show-logo-cbbc-bbc-television-others.png" group-title="United Kingdom",Cbeebies
+#EXTINF:-1 tvg-id="CBeebies.HD.uk" tvg-logo="https://e7.pngegg.com/pngimages/209/271/png-clipart-cbeebies-television-show-logo-cbbc-bbc-television-others.png" group-title="United Kingdom",Cbeebies
 http://one.dream4ktv.biz:2082/play/live.php?mac=00:1A:79:DB:7A:A3&stream=10577&extension=ts&play_token=0
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-drama-uk.png?raw=true" group-title="United Kingdom",U&Drama
+#EXTINF:-1 tvg-id="U.and.Drama.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-drama-uk.png?raw=true" group-title="United Kingdom",U&Drama
 http://92.114.85.72:8000/play/a0b7
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-eden-uk.png?raw=true" group-title="United Kingdom",U&Eden
+#EXTINF:-1 tvg-id="U.and.Eden.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-eden-uk.png?raw=true" group-title="United Kingdom",U&Eden
 http://92.114.85.72:8000/play/a0b1
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-gold-uk.png?raw=true" group-title="United Kingdom",U&Gold
+#EXTINF:-1 tvg-id="U.and.Gold.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-gold-uk.png?raw=true" group-title="United Kingdom",U&Gold
 http://92.114.85.72:8000/play/a0bh
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-yesterday-uk.png?raw=tru" group-title="United Kingdom",U&Yesterday
+#EXTINF:-1 tvg-id="U.and.YESTERDAY.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-yesterday-uk.png?raw=tru" group-title="United Kingdom",U&Yesterday
 http://92.114.85.72:8000/play/a0b3
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/pop-uk.png?raw=true" group-title="United Kingdom",Pop
+#EXTINF:-1 tvg-id="POP.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/pop-uk.png?raw=true" group-title="United Kingdom",Pop
 http://92.114.85.72:8000/play/a08h
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/pop-max-uk.png?raw=true" group-title="United Kingdom",Pop Max
+#EXTINF:-1 tvg-id="POP.Max.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/pop-max-uk.png?raw=true" group-title="United Kingdom",Pop Max
 http://92.114.85.72:8000/play/a08i
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-kids-uk.png?raw=true" group-title="United Kingdom",Sky Kids
+#EXTINF:-1 tvg-id="Sky.Kids.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-kids-uk.png?raw=true" group-title="United Kingdom",Sky Kids
 http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/62754.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-witness-uk.png?raw=true" group-title="United Kingdom",Sky Witness
+#EXTINF:-1 tvg-id="Sky.Witness.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-witness-uk.png?raw=true" group-title="United Kingdom",Sky Witness
 http://92.114.85.72:8000/play/a0i3
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-witness-uk.png?raw=true" group-title="United Kingdom",Sky Atlantic
+#EXTINF:-1 tvg-id="Sky.Atlantic.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-witness-uk.png?raw=true" group-title="United Kingdom",Sky Atlantic
 http://92.114.85.72:8000/play/a0hg
-#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/38/Beano_Studios_RGB.png/revision/latest?cb=20170329103244" group-title="United Kingdom",Beano TV
+#EXTINF:-1 tvg-id="" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/38/Beano_Studios_RGB.png/revision/latest?cb=20170329103244" group-title="United Kingdom",Beano TV
 https://beanostudios-beanotv-1-gb.samsung.wurl.tv/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png" group-title="United Kingdom",Sky Sports Main Event UHD
+#EXTINF:-1 tvg-id="SkySpMainEvHD.uk" tvg-logo="https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png" group-title="United Kingdom",Sky Sports Main Event UHD
 https://a1xs.vip/2000015
-#EXTINF:-1 tvg-logo="https://pixvid.org/images/2025/01/16/SKyF1UHD.png" group-title="United Kingdom",Sky Sports F1 UHD
+#EXTINF:-1 tvg-id="SkySp.F1.HD.uk" tvg-logo="https://pixvid.org/images/2025/01/16/SKyF1UHD.png" group-title="United Kingdom",Sky Sports F1 UHD
 https://a1xs.vip/2000016
-#EXTINF:-1 tvg-logo="https://pixvid.org/images/2025/01/16/TNT-Sports-Ultimate.png" group-title="United Kingdom",TNT Sports Ultimate UHD
+#EXTINF:-1 tvg-id="TNT.Sports.Ultimate.uk"  tvg-logo="https://pixvid.org/images/2025/01/16/TNT-Sports-Ultimate.png" group-title="United Kingdom",TNT Sports Ultimate UHD
 https://a1xs.vip/2000031
-#EXTINF:-1 tvg-logo="https://i.ibb.co/CwMZcpP/sky-main-event.png" group-title="United Kingdom",Sky Sports Main Event
+#EXTINF:-1 tvg-id="SkySpMainEv.uk" tvg-logo="https://i.ibb.co/CwMZcpP/sky-main-event.png" group-title="United Kingdom",Sky Sports Main Event
 https://a1xs.vip/2000001
-#EXTINF:-1 tvg-logo="https://i.ibb.co/rcSRMh9/sky-sports-pl.png" group-title="United Kingdom",Sky Sports Premier League
+#EXTINF:-1 tvg-id="SkyPremiereHD.uk" tvg-logo="https://i.ibb.co/rcSRMh9/sky-sports-pl.png" group-title="United Kingdom",Sky Sports Premier League
 https://a1xs.vip/2000002
-#EXTINF:-1 tvg-logo="https://i.ibb.co/WcCrBqx/sky-football.png" group-title="United Kingdom",Sky Sports Football
+#EXTINF:-1 tvg-id="SkySp.Fball.uk" tvg-logo="https://i.ibb.co/WcCrBqx/sky-football.png" group-title="United Kingdom",Sky Sports Football
 https://a1xs.vip/2000003
-#EXTINF:-1 tvg-logo="https://i.ibb.co/7WMDvDP/sky-news.png" group-title="United Kingdom",Sky Sports News
+#EXTINF:-1 tvg-id="Sky.News.HD.uk" tvg-logo="https://i.ibb.co/7WMDvDP/sky-news.png" group-title="United Kingdom",Sky Sports News
 https://a1xs.vip/2000004
-#EXTINF:-1 tvg-logo="https://i.ibb.co/h26bK2Q/sky-f1.png" group-title="United Kingdom",Sky Sports F1
+#EXTINF:-1 tvg-id="SkySp.F1.uk" tvg-logo="https://i.ibb.co/h26bK2Q/sky-f1.png" group-title="United Kingdom",Sky Sports F1
 https://a1xs.vip/2000005
-#EXTINF:-1 tvg-logo="https://i.ibb.co/JyPnwvB/sky-cricket.png" group-title="United Kingdom",Sky Sports Cricket
+#EXTINF:-1 tvg-id="SkySp.Cricket.uk" tvg-logo="https://i.ibb.co/JyPnwvB/sky-cricket.png" group-title="United Kingdom",Sky Sports Cricket
 https://a1xs.vip/2000006
-#EXTINF:-1 tvg-logo="https://i.ibb.co/7kYj5gc/sky-mix.png" group-title="United Kingdom",Sky Sports Mix
+#EXTINF:-1 tvg-id="SkySp.Mix.HD.uk" tvg-logo="https://i.ibb.co/7kYj5gc/sky-mix.png" group-title="United Kingdom",Sky Sports Mix
 https://a1xs.vip/2000008
-#EXTINF:-1 tvg-logo="https://i.ibb.co/QvhY4tX/sky-golf.png" group-title="United Kingdom",Sky Sports Golf
+#EXTINF:-1 tvg-id="SkySp.Golf.uk" tvg-logo="https://i.ibb.co/QvhY4tX/sky-golf.png" group-title="United Kingdom",Sky Sports Golf
 https://a1xs.vip/2000009
-#EXTINF:-1 tvg-logo="https://pixvid.org/images/2025/01/15/sky-sports-racing-logo-2048.png" group-title="United Kingdom",Sky Sports Racing
+#EXTINF:-1      tvg-logo="https://pixvid.org/images/2025/01/15/sky-sports-racing-logo-2048.png" group-title="United Kingdom",Sky Sports Racing
 https://a1xs.vip/2000010
-#EXTINF:-1 tvg-logo="https://pixvid.org/images/2025/01/16/sky-action.png" group-title="United Kingdom",Sky Sports Action
+#EXTINF:-1        tvg-logo="https://pixvid.org/images/2025/01/16/sky-action.png" group-title="United Kingdom",Sky Sports Action
 https://a1xs.vip/2000011
-#EXTINF:-1 tvg-logo="https://pixvid.org/images/2025/01/21/Sky_Sportsplus.png" group-title="United Kingdom",Sky Sports+
+#EXTINF:-1         tvg-logo="https://pixvid.org/images/2025/01/21/Sky_Sportsplus.png" group-title="United Kingdom",Sky Sports+
 https://a1xs.vip/2000012
-#EXTINF:-1 tvg-logo="https://pixvid.org/images/2025/01/21/Sky_Sports_Tennis.png" group-title="United Kingdom",Sky Sports Tennis
+#EXTINF:-1       tvg-logo="https://pixvid.org/images/2025/01/21/Sky_Sports_Tennis.png" group-title="United Kingdom",Sky Sports Tennis
 https://a1xs.vip/2000013
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-max-uk.png?raw=true" group-title="United Kingdom",Sky Max
+#EXTINF:-1      tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-max-uk.png?raw=true" group-title="United Kingdom",Sky Max
 http://one.dream4ktv.biz:2082/play/live.php?mac=00:1A:79:DB:7A:A3&stream=205914&extension=ts&play_token=0
-#EXTINF:-1 tvg-logo="https://i.ibb.co/zJR49VW/TNT-Sports-1.png" group-title="United Kingdom",TNT Sports 1
+#EXTINF:-1     tvg-logo="https://i.ibb.co/zJR49VW/TNT-Sports-1.png" group-title="United Kingdom",TNT Sports 1
 https://a1xs.vip/2000021
-#EXTINF:-1 tvg-logo="https://i.ibb.co/42MrDP7/TNT-Sports-2.png" group-title="United Kingdom",TNT Sports 2
+#EXTINF:-1       tvg-logo="https://i.ibb.co/42MrDP7/TNT-Sports-2.png" group-title="United Kingdom",TNT Sports 2
 https://a1xs.vip/2000022
-#EXTINF:-1 tvg-logo="https://i.ibb.co/vvFPJw0/TNT-Sports-3.png" group-title="United Kingdom",TNT Sports 3
+#EXTINF:-1        tvg-logo="https://i.ibb.co/vvFPJw0/TNT-Sports-3.png" group-title="United Kingdom",TNT Sports 3
 https://a1xs.vip/2000023
-#EXTINF:-1 tvg-logo="https://i.ibb.co/Fnbw8VV/TNT-Sports-4.png" group-title="United Kingdom",TNT Sports 4
+#EXTINF:-1        tvg-logo="https://i.ibb.co/Fnbw8VV/TNT-Sports-4.png" group-title="United Kingdom",TNT Sports 4
 https://a1xs.vip/2000024
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nickelodeon-uk.png?raw=true" group-title="United Kingdom",Nickelodeon
+#EXTINF:-1         tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nickelodeon-uk.png?raw=true" group-title="United Kingdom",Nickelodeon
 http://one.dream4ktv.biz:8080/play/live.php?mac=00:1A:79:DB:7A:A3&stream=13610&extension=ts&play_token=0
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nick-toons-uk.png?raw=true" group-title="United Kingdom",Nicktoons
+#EXTINF:-1         tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nick-toons-uk.png?raw=true" group-title="United Kingdom",Nicktoons
 http://one.dream4ktv.biz:8080/play/live.php?mac=00:1A:79:DB:7A:A3&stream=13626&extension=ts&play_token=0
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/cartoon-network-uk.png?raw=true" group-title="United Kingdom",Cartoon Network
+#EXTINF:-1           tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/cartoon-network-uk.png?raw=true" group-title="United Kingdom",Cartoon Network
 http://code-flux.org/live/Mihai.Cristiano2/tlvb2FdpDG/68413eb4-8e97-4461-9d66-3f3b2c57da37.m3u
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nick-jr-uk.png?raw=true" group-title="United Kingdom",Nick Jr.
+#EXTINF:-1         tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nick-jr-uk.png?raw=true" group-title="United Kingdom",Nick Jr.
 http://92.114.85.72:8000/play/a09z
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nick-jr-too-uk.png?raw=true" group-title="United Kingdom",Nick Jr. Too
+#EXTINF:-1          tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nick-jr-too-uk.png?raw=true" group-title="United Kingdom",Nick Jr. Too
 http://206.212.244.26/live/vasconeves/1742766045/47797.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-action-uk.png?raw=true" group-title="United Kingdom",5ACTION
+#EXTINF:-1        tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-action-uk.png?raw=true" group-title="United Kingdom",5ACTION
 http://92.114.85.72:8000/play/a086
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-usa-uk.png?raw=true" group-title="United Kingdom",5USA
+#EXTINF:-1          tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-usa-uk.png?raw=true" group-title="United Kingdom",5USA
 http://92.114.85.72:8000/play/a07z
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/e-4-uk.png?raw=true" group-title="United Kingdom",E4
+#EXTINF:-1          tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/e-4-uk.png?raw=true" group-title="United Kingdom",E4
 http://92.114.85.72:8000/play/a07n
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-select-uk.png?raw=true" group-title="United Kingdom",5SELECT
+#EXTINF:-1         tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-select-uk.png?raw=true" group-title="United Kingdom",5SELECT
 http://92.114.85.72:8000/play/a082
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-select-uk.png?raw=true" group-title="United Kingdom",E4 Extra
+#EXTINF:-1          tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-select-uk.png?raw=true" group-title="United Kingdom",E4 Extra
 http://92.114.85.72:8000/play/a0n4
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/4-seven-uk.png?raw=true" group-title="United Kingdom",4seven
+#EXTINF:-1          tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/4-seven-uk.png?raw=true" group-title="United Kingdom",4seven
 http://92.114.85.72:8000/play/a0n5
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/film-4-uk.png?raw=true" group-title="United Kingdom",Film4
+#EXTINF:-1         tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/film-4-uk.png?raw=true" group-title="United Kingdom",Film4
 http://92.114.85.72:8000/play/a07g
 
 ---📺 United States
