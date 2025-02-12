@@ -26,6 +26,8 @@ https://tinyurl.com/CA39-epg
 
 https://tinyurl.com/AU38-epg
 
+https://tinyurl.com/toonami38-epg
+
 All the playlist merged together in one link
 
 https://tinyurl.com/drewliveall007
