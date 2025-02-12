@@ -1,8 +1,10 @@
+---📺 Australia 
+
 #EXTINF:-1 tvg-id="ABCAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/australia/abc-au.png" group-title="Australia",ABC
 https://c.mjh.nz/abc-nsw.m3u8
 #EXTINF:-1 tvg-id="ABCEntertainsAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/australia/abc-entertains-au.png" group-title="Australia",ABC Entertains
 https://c.mjh.nz/abc-me.m3u8
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/australia/abc-family-au.png" group-title="Australia",ABC Family
+#EXTINF:-1 tvg-id="ABCFamilyAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/australia/abc-family-au.png" group-title="Australia",ABC Family
 https://c.mjh.nz/abc-tv-plus.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/australia/abc-news-au.png" group-title="Australia",ABC News
 https://c.mjh.nz/abc-news.m3u8
@@ -38,6 +40,9 @@ http://tvhe.neez.id.au/stream/channelid/1013117216?profile=pass
 https://d47743dknc7xq.cloudfront.net/out/v1/889d35656a514495a9642ba6dae30962/index_4.m3u8
 #EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logosfake/images/0/0c/Te_Reo_TV_logo.png/revision/latest?cb=20200118164927" group-title="Australia",Te Reo
 https://dfecjp0pnemzw.cloudfront.net/out/v1/17ebe8fca7604907ae99719663dd2519/index_2.m3u8
+
+---📺 Canada
+
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/usa-network-ca.png" group-title="Canada",USA Network
 http://watch-myjokertv.xyz:8080/play/3wV_2hKH8dCc4-tosvoH16WEj-pNogM4n77_HFk5068/ts
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/disney-channel-ca.png" group-title="Canada",Disney Channel
@@ -138,6 +143,35 @@ http://watch-myjokertv.xyz:8080/play/3wV_2hKH8dCc4-tosvoH17qDU1cf8SJjXNCK9d8vPvM
 http://206.212.244.26/live/vasconeves/1742766045/40580.ts
 #EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/cbc-ca.png?raw=true" group-title="Canada",CBC                                                                                                            group-title="Canada",CBC
 http://watch-myjokertv.xyz:8080/play/3wV_2hKH8dCc4-tosvoH1yMliZ9T-L2qfdy1l2sYu7E/ts
+EXTINF:-1 tvg-logo="https://pixvid.org/images/2025/01/25/nhl-nw.png" group-title="Canada",Oxygen True Crimes
+http://2022.dynu.com:2022/live/aabdell/wxInwecmlr/52780.ts
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/crave-3-ca.png?raw=true" group-title="Canada",Crave 3
+http://fl3.moveonjoy.com/CRAVE_3/index.m3u8
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/cp24-ca.png?raw=true" group-title="Canada",CP24
+http://206.212.244.26/live/vasconeves/1742766045/40740.ts
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/bnn-bloomberg-ca.png?raw=true" group-title="Canada",BNN Bloomberg
+http://206.212.244.26/live/vasconeves/1742766045/40768.ts
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/history-channel-2-ca.png?raw=true" group-title="Canada",History 2
+http://206.212.244.26/live/vasconeves/1742766045/40698.ts
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/documentary-channel-ca.png?raw=true" group-title="Canada",Documentary  
+http://206.212.244.26/live/vasconeves/1742766045/40721.ts
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-ca.png?raw=true" group-title="Canada",RDS
+http://206.212.244.26/live/vasconeves/1742766045/40629.ts
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-2-ca.png?raw=true" group-title="Canada",RDS 2
+http://206.212.244.26/live/vasconeves/1742766045/40628.ts
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-info-ca.png?raw=true" group-title="Canada",RDS INFO
+http://206.212.244.26/live/vasconeves/1742766045/40627.ts
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/family-jr-ca.png?raw=true" group-title="Canada",Family Jr
+http://206.212.244.26/live/vasconeves/1742766045/40713.ts
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/game-tv-ca.png?raw=true" group-title="Canada",Game TV
+http://206.212.244.26/live/vasconeves/1742766045/40704.ts
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/omni-1-ca.png?raw=true" group-title="Canada",OMNI
+http://206.212.244.26/live/vasconeves/1742766045/40641.ts
+#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/omni-2-ca.png?raw=true" group-title="Canada",OMNI 2
+http://206.212.244.26/live/vasconeves/1742766045/40640.ts
+
+---📺 United Kingdom
+
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-one-uk.png" group-title="United Kingdom",BBC One
 http://92.114.85.72:8000/play/a0mw
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-two-uk.png" group-title="United Kingdom",BBC Two
@@ -252,6 +286,9 @@ http://92.114.85.72:8000/play/a0n4
 http://92.114.85.72:8000/play/a0n5
 #EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/film-4-uk.png?raw=true" group-title="United Kingdom",Film4
 http://92.114.85.72:8000/play/a07g
+
+---📺 United States
+
 #EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cartoon-network-us.png?raw=true" group-title="United States",Cartoon Network
 http://fl2.moveonjoy.com/CARTOON_NETWORK/index.m3u8
 #EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/boomerang-us.png?raw=true" group-title="United States",Boomerang
@@ -520,29 +557,3 @@ https://a1xs.vip/40000032
 https://a1xs.vip/40000033
 #EXTINF:-1 tvg-logo="https://pixvid.org/images/2025/01/25/nhl-nw.png" group-title="United States",NHL Network
 https://a1xs.vip/40000034
-EXTINF:-1 tvg-logo="https://pixvid.org/images/2025/01/25/nhl-nw.png" group-title="Canada",Oxygen True Crimes
-http://2022.dynu.com:2022/live/aabdell/wxInwecmlr/52780.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/crave-3-ca.png?raw=true" group-title="Canada",Crave 3
-http://fl3.moveonjoy.com/CRAVE_3/index.m3u8
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/cp24-ca.png?raw=true" group-title="Canada",CP24
-http://206.212.244.26/live/vasconeves/1742766045/40740.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/bnn-bloomberg-ca.png?raw=true" group-title="Canada",BNN Bloomberg
-http://206.212.244.26/live/vasconeves/1742766045/40768.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/history-channel-2-ca.png?raw=true" group-title="Canada",History 2
-http://206.212.244.26/live/vasconeves/1742766045/40698.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/documentary-channel-ca.png?raw=true" group-title="Canada",Documentary  
-http://206.212.244.26/live/vasconeves/1742766045/40721.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-ca.png?raw=true" group-title="Canada",RDS
-http://206.212.244.26/live/vasconeves/1742766045/40629.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-2-ca.png?raw=true" group-title="Canada",RDS 2
-http://206.212.244.26/live/vasconeves/1742766045/40628.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-info-ca.png?raw=true" group-title="Canada",RDS INFO
-http://206.212.244.26/live/vasconeves/1742766045/40627.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/family-jr-ca.png?raw=true" group-title="Canada",Family Jr
-http://206.212.244.26/live/vasconeves/1742766045/40713.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/game-tv-ca.png?raw=true" group-title="Canada",Game TV
-http://206.212.244.26/live/vasconeves/1742766045/40704.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/omni-1-ca.png?raw=true" group-title="Canada",OMNI
-http://206.212.244.26/live/vasconeves/1742766045/40641.ts
-#EXTINF:-1 tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/omni-2-ca.png?raw=true" group-title="Canada",OMNI 2
-http://206.212.244.26/live/vasconeves/1742766045/40640.ts
