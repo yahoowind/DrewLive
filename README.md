@@ -28,6 +28,8 @@ https://tinyurl.com/AU41-epg
 
 https://tinyurl.com/toonami38-epg
 
+https://tinyurl.com/USLOCAL41-epg
+
 All the playlist merged together in one link
 
 https://tinyurl.com/drewliveall007
