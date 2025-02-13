@@ -161,7 +161,7 @@ http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/80904.ts
 http://206.212.244.26/live/vasconeves/1742766045/40687.ts
 #EXTINF:-1 tvg-id="Bravo.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bravo-us.png?raw=true" group-title="Canada",Bravo
 http://watch-myjokertv.xyz:8080/play/3wV_2hKH8dCc4-tosvoH17qDU1cf8SJjXNCK9d8vPvM/ts
-#EXTINF:-1 tvg-id="" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/travel-and-escape-ca.png" group-title="Canada",Travel Escape
+#EXTINF:-1 tvg-id="T+E.Totally.Entertaining.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/travel-and-escape-ca.png" group-title="Canada",Travel & Escape
 http://206.212.244.26/live/vasconeves/1742766045/40580.ts
 #EXTINF:-1 tvg-id="CBC.(CBLT).Toronto,.ON.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/cbc-ca.png?raw=true" group-title="Canada",CBC                                                                                                            group-title="Canada",CBC
 http://watch-myjokertv.xyz:8080/play/3wV_2hKH8dCc4-tosvoH1yMliZ9T-L2qfdy1l2sYu7E/ts
@@ -177,7 +177,7 @@ http://206.212.244.26/live/vasconeves/1742766045/40698.ts
 http://206.212.244.26/live/vasconeves/1742766045/40721.ts
 #EXTINF:-1 tvg-id="RDS.(RÃ©seau.des.sports).ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-ca.png?raw=true" group-title="Canada",RDS
 http://206.212.244.26/live/vasconeves/1742766045/40629.ts
-#EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-2-ca.png?raw=true" group-title="Canada",RDS 2
+#EXTINF:-1 tvg-id="RDS.(RÃ©seau.des.sports)..HD.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-2-ca.png?raw=true" group-title="Canada",RDS 2
 http://206.212.244.26/live/vasconeves/1742766045/40628.ts
 #EXTINF:-1 tvg-id="RDS.Info.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/rds-info-ca.png?raw=true" group-title="Canada",RDS INFO
 http://206.212.244.26/live/vasconeves/1742766045/40627.ts
@@ -395,7 +395,7 @@ http://108.14.66.101:5004/auto/v2.3
 http://108.14.66.101:5004/auto/v11.2
 #EXTINF:-1 tvg-id="Grit.TV.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/grit-us.png?raw=true" group-title="United States",Grit
 http://c-73-44-50-12.hsd1.il.comcast.net:9981/tvheadend/stream/channel/568c5556894df9bd88502862a9969a68?profile=webtv-vp8-vorbis-webm
-#EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/the-nest-us.png?raw=true" group-title="United States",The Nest
+#EXTINF:-1 tvg-id="The.Nest.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/the-nest-us.png?raw=true" group-title="United States",The Nest
 http://c-73-44-50-12.hsd1.il.comcast.net:9981/tvheadend/stream/channel/316bc4f6db6555642c6c11feab3f9a60?profile=webtv-vp8-vorbis-webm
 #EXTINF:-1 tvg-id="Oprah.Winfrey.Network.USA.Eastern.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/oprah-winfrey-network-us.png?raw=true" group-title="United States",OWN
 http://fl2.moveonjoy.com/OWN/index.m3u8
@@ -409,7 +409,7 @@ http://128.230.54.150:5004/auto/v41.1
 http://128.230.54.150:5004/auto/v41.3
 #EXTINF:-1 tvg-id="CNBC.USA.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnbc-us.png?raw=true" group-title="United States",CNBC
 http://128.230.54.150:5004/auto/v42.2
-#EXTINF:-1 tvg-id="" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hallmark-family-us.png?raw=true" group-title="United States",Hallmark Family
+#EXTINF:-1 tvg-id="Hallmark.Family.Eastern.-.HD.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hallmark-family-us.png?raw=true" group-title="United States",Hallmark Family
 http://fl2.moveonjoy.com/HALLMARK_DRAMA/index.m3u8
 #EXTINF:-1 tvg-id="Hallmark.-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hallmark-channel-us.png?raw=true" group-title="United States",Hallmark Network
 http://fl2.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8
