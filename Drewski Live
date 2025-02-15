@@ -1,6 +1,4 @@
-#EXTM3U url-tvg="https://raw.githubusercontent.com/matthuisman/i.mjh.nz/refs/heads/master/SamsungTVPlus/us.xml" tvg-shift=0
-https://raw.githubusercontent.com/matthuisman/i.mjh.nz/refs/heads/master/SamsungTVPlus/us.xml
-#EXTINF:-1  tvg-name="" tvg-id="" tvg-logo="https://preview.fontget.com/tmp/67af67155a5a4.png" group-title="Fan Made Live TV" radio="",Swim Rewind
+#EXTINF:-1  tvg-name="" tvg-id="" tvg-logo="https://swimrewind.com/logo" group-title="Fan Made Live TV" radio="",Swim Rewind
 https://swimrewind.com/hls/0/stream.m3u8?cachebust=215d168f
 #EXTINF:-1  tvg-name="" tvg-id="" tvg-logo="https://static1.howtogeekimages.com/wordpress/wp-content/uploads/2025/01/shutterstock_2221828967.jpg" group-title="Fan Made Live TV" radio="",Retro Blast
 https://retroblast.tv/hls/stream.m3u8
@@ -8,9 +6,9 @@ https://retroblast.tv/hls/stream.m3u8
 https://s3.us-east-005.backblazeb2.com/tvcube/hls/0/stream.m3u8?cachebust=86c908
 #EXTINF:-1  tvg-name="" tvg-id="" tvg-logo="https://png.pngtree.com/png-vector/20220530/ourmid/pngtree-monkey-trippy-psychedelic-vector-illustrations-for-your-work-logo-png-image_4762700.png" group-title="Fan Made Live TV" radio="",The Void
 https://mthrbord.tv/hls/0/stream.m3u8
-#EXTINF:-1  tvg-name="" tvg-id="" tvg-logo="#EXTINF:-1 tvg-name="" tvg-id="" tvg-logo="https://retrostrange.com/wp-content/uploads/2021/11/cropped-Channel-Thumb.png" group-title="Fan Made Live TV" radio="",Retro Strange
+#EXTINF:-1  tvg-name="" tvg-id="" tvg-logo="#EXTINF:-1 tvg-name="" tvg-id="" tvg-logo="https://retrostrange.com/wp-content/uploads/2024/03/RetroStrange-Logo-White-1024x319.png" group-title="Fan Made Live TV" radio="",Retro Strange
 https://halloween.retrostrange.tv/hls/0/stream.m3u8?cachebust=3a294d14
-#EXTINF:-1  tvg-name="" tvg-id="" tvg-logo="https://e7.pngegg.com/pngimages/951/921/png-clipart-medical-cannabis-leaf-cannabis-grass-hemp-family-thumbnail.png" group-title="Fan Made Live TV" radio="",Cannabis Grow 
+#EXTINF:-1  tvg-name="" tvg-id="" tvg-logo="https://grow.dwot.io/logo" group-title="Fan Made Live TV" radio="",Cannabis Grow 
 https://grow.dwot.io/hls/1/stream.m3u8?cachebust=7ad5acb5
 #EXTINF:-1  tvg-name="" tvg-id="ToonamiAftermathEast.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20east.jpg" group-title="Fan Made Live TV" radio="",Toonami Aftermath East
 https://asp8.toonamiaftermath.com/livehttporigin/est/Z5PWTy-9Quc3u-chunklist.m3u8
