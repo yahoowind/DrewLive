@@ -1,4 +1,4 @@
-#EXTM3U url-tvg="https://tinyurl.com/ALL41-epg" tvg-shift=0 m3uautoload=1
+#EXTM3U url-tvg="https://tinyurl.com/ALL42-epg,https://tinyurl.com/LOCAL42-epg" tvg-shift=0 m3uautoload=1
 ---📺 Australia 
 #EXTINF:-1 tvg-id="ABCAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/australia/abc-au.png" group-title="Australia",ABC
 https://c.mjh.nz/abc-nsw.m3u8
