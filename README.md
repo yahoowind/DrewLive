@@ -8,6 +8,8 @@ https://tinyurl.com/mystique35
 
 https://tinyurl.com/a1xmedia34
 
+https://tinyurl.com/japantv24
+
 Epg Links
 
 https://tinyurl.com/USSPORTS41-epg
