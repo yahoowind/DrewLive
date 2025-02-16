@@ -261,6 +261,14 @@ http://zorrohunter.com:80/live/WeaponX/Dawkins22/40674.ts
 http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/457.ts
 #EXTINF:-1 tvg-id="Wild.TV.ca" tvg-logo="https://upload.wikimedia.org/wikipedia/en/a/a7/Wild_TV_logo_2020.png" group-title="Canada",WILD TV
 http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/9332.ts
+#EXTINF:-1 tvg-id="STARZ1.ca" group-title="Canada",STARZ 1
+https://tvnow.best/api/stream/burns/burns/livetv.epg/starz1.east.ca.m3u8
+#EXTINF:-1 tvg-id="STARZ2.ca" group-title="Canada",STARZ 2
+https://tvnow.best/api/stream/burns/burns/livetv.epg/starz2.east.ca.m3u8
+#EXTINF:-1 tvg-id="HBO.ca" group-title="Canada",HBO
+https://tvnow.best/api/stream/burns/burns/livetv.epg/hbo.ca.m3u8
+#EXTINF:-1 tvg-id="HBO2.ca" group-title="Canada",HBO 2
+https://tvnow.best/api/stream/burns/burns/livetv.epg/hbo.2.eastern
 
 ---📺 United Kingdom
 #EXTINF:-1 tvg-id="BBC.One.Lon.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-one-uk.png" group-title="United Kingdom",BBC One
