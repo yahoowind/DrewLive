@@ -10,8 +10,7 @@ https://tinyurl.com/a1xmedia34
 
 https://tinyurl.com/japantv25
 
-Epg Links
-
+https://tinyurl.com/supersonic25
 
 All the playlist merged together in one link
 
