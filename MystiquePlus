@@ -271,6 +271,8 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/starz2.east.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/hbo.ca.m3u8
 #EXTINF:-1 tvg-id="HBO.2.HD.(HBO2).ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/hbo-2-ca.png?raw=true" group-title="Canada",HBO 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/hbo.2.eastern
+#EXTINF:-1 tvg-id="W.(WTN).-.East.ca" group-title="Canada" tvg-logo="https://i.ibb.co/DfbBp6rQ/Eg8fa2a0-200x200.png",W Network
+http://206.212.244.26/live/vasconeves/1742766045/40670.ts
 
 ---📺 United Kingdom
 #EXTINF:-1 tvg-id="BBC.One.Lon.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-one-uk.png" group-title="United Kingdom",BBC One
