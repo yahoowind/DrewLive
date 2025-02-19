@@ -35,10 +35,6 @@ http://tvhe.neez.id.au/stream/channelid/750052291?profile=pass
 http://tvhe.neez.id.au/stream/channelid/630621048?profile=pass
 #EXTINF:-1 tvg-id="7Bravo.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/australia/7bravo-au.png" group-title="Australia",7Bravo
 http://tvhe.neez.id.au/stream/channelid/1013117216?profile=pass
-#EXTINF:-1 tvg-id="WhakaataMÄori.au" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/4f/Whakaata_M%C4%81ori.png" group-title="Australia",Whakaata MÄori
-https://d47743dknc7xq.cloudfront.net/out/v1/889d35656a514495a9642ba6dae30962/index_4.m3u8
-#EXTINF:-1 tvg-id="Te.Reo.au" tvg-logo="https://static.wikia.nocookie.net/logosfake/images/0/0c/Te_Reo_TV_logo.png/revision/latest?cb=20200118164927" group-title="Australia",Te Reo
-https://dfecjp0pnemzw.cloudfront.net/out/v1/17ebe8fca7604907ae99719663dd2519/index_2.m3u8
 #EXTINF:-1 tvg-id="SBSAdelaide.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/sbs-au.png?raw=true" group-title="Australia",SBS
 http://49.188.116.214:9981/stream/channelid/443330529?profile=pass
 #EXTINF:-1 tvg-id="SBSVicelandAdelaide.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/sbs-viceland-au.png?raw=true" group-title="Australia",SBS Viceland
@@ -691,6 +687,10 @@ https://a1xs.vip/700034
 https://a1xs.vip/700035
 #EXTINF:-1 tvg-id="Sky.Sport.6.nz" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/new-zealand/sky-sport-6-nz.png?raw=true" group-title="New Zealand",Sky Sport 6
 https://a1xs.vip/700036
+#EXTINF:-1 tvg-id="WhakaataMÄori.nz" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/4f/Whakaata_M%C4%81ori.png" group-title="New Zealand",Whakaata MÄori
+https://d47743dknc7xq.cloudfront.net/out/v1/889d35656a514495a9642ba6dae30962/index_4.m3u8
+#EXTINF:-1 tvg-id="Te.Reo.nz" tvg-logo="https://static.wikia.nocookie.net/logosfake/images/0/0c/Te_Reo_TV_logo.png/revision/latest?cb=20200118164927" group-title="New Zealand",Te Reo
+https://dfecjp0pnemzw.cloudfront.net/out/v1/17ebe8fca7604907ae99719663dd2519/index_2.m3u8
 
 ---📺 Mystique On Demand 
 #EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/original/xQPgyZOBhaz1GdCQIPf5A5VeFzO.jpg" group-title="Mystique On Demand",The Dark Night
