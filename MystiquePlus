@@ -271,6 +271,8 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/hbo.2.eastern
 http://206.212.244.26/live/vasconeves/1742766045/40670.ts
 
 ---📺 United Kingdom
+#EXTINF:-1 tvg-id="Cartoonito.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/cartoonito-uk.png?raw=true" group-title="United Kingdom",Cartoonito
+http://92.114.85.72:8000/play/a07l
 #EXTINF:-1 tvg-id="BBC.One.Lon.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-one-uk.png" group-title="United Kingdom",BBC One
 http://92.114.85.72:8000/play/a0mw
 #EXTINF:-1 tvg-id="BBC.Two.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-two-uk.png" group-title="United Kingdom",BBC Two
