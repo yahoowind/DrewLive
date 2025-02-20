@@ -161,8 +161,6 @@ http://watch-myjokertv.xyz:8080/play/3wV_2hKH8dCc4-tosvoH1zjfcdko3B89hUkGbAF57FE
 http://watch-myjokertv.xyz:8080/play/3wV_2hKH8dCc4-tosvoH1yoUALvo4DCqexaIHlrpSco/ts
 #EXTINF:-1 tvg-id="CHCH.Hamilton,.ON.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/chch-ca.png?raw=true" group-title="Canada",CHCH
 http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/80867.ts
-#EXTINF:-1 tvg-id="CITY.Toronto,.ON.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/city-tv-ca.png" group-title="Canada",Citytv
-http://206.212.244.26/live/vasconeves/1742766045/40598.ts
 #EXTINF:-1 tvg-id="FX.Networks.Canada.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fx-us.png?raw=true" group-title="Canada",FX
 http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/80904.ts
 #EXTINF:-1 tvg-id="Knowledge.Network.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/knowledge-network-ca.png" group-title="Canada",Knowledge Network
@@ -269,6 +267,12 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/hbo.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/hbo.2.eastern
 #EXTINF:-1 tvg-id="W.(WTN).-.East.ca" group-title="Canada" tvg-logo="https://i.ibb.co/DfbBp6rQ/Eg8fa2a0-200x200.png",W Network
 http://206.212.244.26/live/vasconeves/1742766045/40670.ts
+#EXTINF:-1 tvg-id="CITY.Toronto,.ON.ca" tvg-logo="https://media.starlite.best/city.toronto.on.ca.png" group-title="Canada",CITY Toronto
+https://tvnow.best/api/stream/burns/burns/livetv.epg/city.toronto.on.ca.m3u8
+#EXTINF:-1 tvg-id="CITY.Vancouver,.BC.ca" tvg-logo="https://media.starlite.best/city.toronto.on.ca.png" group-title="Canada",CITY Vancouver
+https://tvnow.best/api/stream/burns/burns/livetv.epg/city.vancouver.bc.ca.m3u8
+#EXTINF:-1 tvg-id="CITY.Montreal,.QC.ca" tvg-logo="https://media.starlite.best/city.toronto.on.ca.png" group-title="Canada",CITY Montreal
+http://206.212.244.26/live/vasconeves/1742766045/40598.ts
 
 ---📺 United Kingdom
 #EXTINF:-1 tvg-id="Cartoonito.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/cartoonito-uk.png?raw=true" group-title="United Kingdom",Cartoonito
