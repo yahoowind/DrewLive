@@ -18,4 +18,4 @@ https://tinyurl.com/drewliveall007
 
 https://tinyurl.com/ALL46-epg
 
-https://tinyurl.com/ALL002-epg (Does not include local channels, this link is easily compatible for iptv players)
+https://tinyurl.com/ALL002-epg (Does not include local channels, this link is easily compatible for IPTV players)
