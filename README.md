@@ -12,9 +12,11 @@ https://tinyurl.com/japantv25
 
 https://tinyurl.com/supersonic25
 
+https://tinyurl.com/drewevents25
+
 All the playlist merged together in one link
 
-https://tinyurl.com/drewliveall007
+https://tinyurl.com/drewliveall008
 
 https://tinyurl.com/ALL46-epg
 
