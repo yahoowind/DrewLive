@@ -4,7 +4,7 @@ https://tinyurl.com/drewlive35
 
 https://tinyurl.com/moj36
 
-https://tinyurl.com/tvpass24
+https://tinyurl.com/tvappandtvpass24
 
 https://tinyurl.com/drewevents25
 
@@ -16,7 +16,7 @@ https://tinyurl.com/japantv25
 
 All the playlist merged together in one link
 
-https://tinyurl.com/drewliveall009
+https://tinyurl.com/drewliveall010
 
 https://tinyurl.com/ALL46-epg
 
