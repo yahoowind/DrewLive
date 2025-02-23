@@ -309,6 +309,8 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/ctv2.vancouver.island.bc.ca
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ctv.cjch.halifax.ca.m3u8
 #EXTINF:-1 tvg-id="CTV.(CFTO).Toronto,.ON.ca" tvg-logo="https://media.starlite.best/ctv.cfto.toronto.on.ca.png" group-title="Canada",CTV Toronto (CFTO)
 http://206.212.244.26/live/vasconeves/1742766045/40733.ts
+#EXTINF:-1 tvg-id="One.Soccer.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/one-soccer-ca.png" group-title="Canada" ,One Soccer
+http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/306229.ts
 
 ---📺 United Kingdom
 #EXTINF:-1 tvg-id="Cartoonito.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/cartoonito-uk.png?raw=true" group-title="United Kingdom",Cartoonito
