@@ -21,5 +21,3 @@ All the playlist merged together in one link
 https://tinyurl.com/drewliveall10
 
 https://tinyurl.com/ALL47-epg
-
-https://tinyurl.com/ALL002-epg (Does not include local channels, this link is easily compatible for IPTV players)
