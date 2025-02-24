@@ -1,3 +1,4 @@
+#EXTM3U x-tvg-url="http://10.0.0.245:8090/tvpass/epg" tvg-shift=0 m3uautoload=1
 #EXTINF:-1 tvg-id="ae-us-eastern-feed" tvg-name="AEEast" group-title="TV" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/a-and-e-us.png?raw=true", AEEast (HD)
 https://v15.thetvapp.to/hls/AEEast/tracks-v1a1/mono.m3u8?token=bVVFd2cZN4R8MsIUyTrC_g&expires=1740428485&user_id=VzVhYjlyMUlid1V5YWpCcnJvMXNYeUtpY2pWWm83eUFXbnowa0ZoeA==
 #EXTINF:-1 tvg-id="abc-kabc-los-angeles-ca" tvg-name="abc-kabc-los-angeles-ca" group-title="TV" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/misc/24-7/circle2-247.png?raw=true", abc-kabc-los-angeles-ca (HD)
