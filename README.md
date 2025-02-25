@@ -18,6 +18,6 @@ https://tinyurl.com/japantv25
 
 All the playlist merged together in one link
 
-https://tinyurl.com/drewliveall10
+https://tinyurl.com/drewliveall11
 
 https://tinyurl.com/ALL47-epg
