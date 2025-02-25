@@ -4,9 +4,9 @@ https://tinyurl.com/drewlive35
 
 https://tinyurl.com/moj36
 
-https://tinyurl.com/tvpass25
+https://tinyurl.com/tvpass35
 
-https://tinyurl.com/thetvapp25
+https://tinyurl.com/thetvapp35
 
 https://tinyurl.com/drewevents25
 
