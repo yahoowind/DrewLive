@@ -453,6 +453,10 @@ http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/713
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/305454
 #EXTINF:-1 tvg-id="Disc.Turbo.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-turbo-uk.png?raw=true" group-title="United Kingdom",Discovery Turbo
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/1114
+#EXTINF:-1 group-title="Canada" tvg-id="ONE.TV.ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s26777_h15_ac.png",One TV
+https://tvnow.best/api/stream/burns/burns/livetv.epg/one.get.fit.ca.m3u8
+#EXTINF:-1 group-title="Canada" tvg-id="outtv.ca" tvg-logo="https://media.starlite.best/outtv.ca.png",OUTtv
+https://tvnow.best/api/stream/burns/burns/livetv.epg/outtv.ca.m3u
 ---📺 United States
 #EXTINF:-1 tvg-id="Cartoon.Network.USA.-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cartoon-network-us.png?raw=true" group-title="United States",Cartoon Network
 http://fl2.moveonjoy.com/CARTOON_NETWORK/index.m3u8
