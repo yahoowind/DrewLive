@@ -144,8 +144,14 @@ http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228772.ts
 http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228773.ts
 #EXTINF:-1 tvg-id="ABC.Spark.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/abc-spark-ca.png" group-title="Canada",ABC Spark
 http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228557.ts
-#EXTINF:-1 tvg-id="Family.Channel.Canada.-.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/family-ca.png" group-title="Canada",Family Channel
+#EXTINF:-1 tvg-id="Family.Channel.Canada.-.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/family-ca.png" group-title="Canada",Family Channel East
 http://96.45.207.18:8881/channel/110dd756/index.m3u8?q=1735600584362
+#EXTINF:-1 group-title="Canada" tvg-id="Family.Channel.Canada.-.West.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/family-ca.png",Family Channel West
+http://user.scalecdn.co:8080/live/26725074/92867131/647744.ts
+#EXTINF:-1 group-title="Canada" tvg-id="Food.Network.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/food-network-us.png",Food Network
+http://localiptv.site:85/live/Avanger2024Disc/kB88PnzcQBUf/2268.ts
+#EXTINF:-1 group-title="Canada" tvg-id="FXX.Networks.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/fxx-us.png",FXX
+http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/6148.ts
 #EXTINF:-1 tvg-id="WildBrainTV.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/wildbrain-tv-ca.png?raw=true" group-title="Canada",Wildbrain TV
 http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/80901.ts
 #EXTINF:-1 tvg-id="TFO.-.Chaine.Francaise.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tfo-ca.png" group-title="Canada",TFO
