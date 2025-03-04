@@ -220,7 +220,7 @@ http://fl2.moveonjoy.com/MOTOR_TREND/index.m3u8
 http://fl3.moveonjoy.com/MSG/index.m3u8
 #EXTINF:-1 group-title="News" tvg-id="MSNBC.USA.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s16300_dark_360w_270h.png" tvg-name="MSNBC",MSNBC
 http://cdn1host.online:2999/live/kratorius/opLcbhlXaT/143.m3u8
-#EXTINF:-1 group-title="Entertainment" tvg-id="mtvU.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s10986_dark_360w_270h.png" tvg-name="MTV",MTV
+#EXTINF:-1 group-title="Entertainment" tvg-id="MTV.USA.-.Eastern.Feed.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s10986_dark_360w_270h.png" tvg-name="MTV",MTV
 http://fl2.moveonjoy.com/MTV/index.m3u8
 #EXTINF:-1 group-title="Entertainment" tvg-id="MTV.Classic.-.East.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-classic-us.png?raw=true" tvg-name="MTV Classic",MTV Classic
 http://cdn1host.online:2999/live/kratorius/opLcbhlXaT/1194.m3u8
@@ -228,7 +228,7 @@ http://cdn1host.online:2999/live/kratorius/opLcbhlXaT/1194.m3u8
 http://fl2.moveonjoy.com/MTV_LIVE/index.m3u8
 #EXTINF:-1 group-title="Entertainment" tvg-id="MTV.2.-.East.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-2-us.png?raw=true" tvg-name="MTV2",MTV2
 http://fl2.moveonjoy.com/MTV_2/index.m3u8
-#EXTINF:-1 group-title="Entertainment" tvg-id="MTV-U.(MTV-U).us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-u-us.png?raw=true" tvg-name="mtvU",MTVU
+#EXTINF:-1 group-title="Entertainment" tvg-id="mtvU.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-u-us.png?raw=true" tvg-name="mtvU",MTVU
 http://fl2.moveonjoy.com/MTV_U/index.m3u8
 #EXTINF:-1 group-title="Entertainment" tvg-id="Much.Music.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/much-ca.png?raw=true" tvg-name="MUCH",MUCH
 http://fl1.moveonjoy.com/MUCH/index.m3u8
