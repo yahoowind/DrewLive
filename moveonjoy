@@ -207,11 +207,11 @@ http://fl2.moveonjoy.com/EPIX_DRIVE_IN/index.m3u8
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/388
 #EXTINF:-1  tvg-name="MGM+ MARQUEE" tvg-id="MGM+.Marquee.HDTV.(East).(MGM+MRQ).us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mgm-plus-marquee-us.png?raw=true" group-title="Movies",MGM+ MARQUEE
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/132
-#EXTINF:-1  tvg-name="MLB 1" tvg-id="(no tvg-id)" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mlb-network-us.png?raw=true" group-title="Events",MLB 1
+#EXTINF:-1  tvg-name="MLB 1" tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mlb-network-us.png?raw=true" group-title="Events",MLB 1
 http://fl2.moveonjoy.com/MLB_1/index.m3u8
-#EXTINF:-1  tvg-name="MLB 2" tvg-id="(no tvg-id)" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mlb-network-us.png?raw=true" group-title="Events",MLB 2
+#EXTINF:-1  tvg-name="MLB 2" tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mlb-network-us.png?raw=true" group-title="Events",MLB 2
 http://fl2.moveonjoy.com/MLB_2/index.m3u8
-#EXTINF:-1  tvg-name="MLB 3" tvg-id="(no tvg-id)" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mlb-network-us.png?raw=true" group-title="Events",MLB 3
+#EXTINF:-1  tvg-name="MLB 3" tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mlb-network-us.png?raw=true" group-title="Events",MLB 3
 http://fl2.moveonjoy.com/MLB_3/index.m3u8
 #EXTINF:-1  tvg-name="MLB Network" tvg-id="MLB.Network.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s62081_dark_360w_270h.png" group-title="Sports",MLB Network
 http://fl2.moveonjoy.com/MLB_NETWORK/index.m3u8
@@ -357,15 +357,15 @@ http://fl2.moveonjoy.com/PARAMOUNT_NETWORK/index.m3u8
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1665
 #EXTINF:-1  tvg-name="PopTV" tvg-id="POP.-.East.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/pop-us.png" group-title="Entertainment",PopTV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/226
-#EXTINF:-1  tvg-name="PPV 1" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://github.com/dtankdempse/thetvapp-m3u/blob/main/images/ppv%5B1%5D.png?raw=true" group-title="Events",PPV 1
+#EXTINF:-1  tvg-name="PPV 1" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://m.media-amazon.com/images/I/61m-kOtqMlL.png" group-title="Events",PPV 1
 http://fl2.moveonjoy.com/PPV_1/index.m3u8
-#EXTINF:-1  tvg-name="PPV 2" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://github.com/dtankdempse/thetvapp-m3u/blob/main/images/ppv%5B1%5D.png?raw=true" group-title="Events",PPV 2
+#EXTINF:-1  tvg-name="PPV 2" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://m.media-amazon.com/images/I/61m-kOtqMlL.png" group-title="Events",PPV 2
 http://fl2.moveonjoy.com/PPV_2/index.m3u8
-#EXTINF:-1  tvg-name="PPV 3" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://github.com/dtankdempse/thetvapp-m3u/blob/main/images/ppv%5B1%5D.png?raw=true" group-title="Events",PPV 3
+#EXTINF:-1  tvg-name="PPV 3" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://m.media-amazon.com/images/I/61m-kOtqMlL.png" group-title="Events",PPV 3
 http://fl2.moveonjoy.com/PPV_3/index.m3u8
-#EXTINF:-1  tvg-name="PPV 5" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://github.com/dtankdempse/thetvapp-m3u/blob/main/images/ppv%5B1%5D.png?raw=true" group-title="Events",PPV 5
+#EXTINF:-1  tvg-name="PPV 5" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://m.media-amazon.com/images/I/61m-kOtqMlL.png" group-title="Events",PPV 5
 http://fl2.moveonjoy.com/PPV_5/index.m3u8
-#EXTINF:-1  tvg-name="PPV 6" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://github.com/dtankdempse/thetvapp-m3u/blob/main/images/ppv%5B1%5D.png?raw=true" group-title="Events",PPV 6
+#EXTINF:-1  tvg-name="PPV 6" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://m.media-amazon.com/images/I/61m-kOtqMlL.png" group-title="Events",PPV 6
 http://fl2.moveonjoy.com/PPV_6/index.m3u8
 #EXTINF:-1  tvg-name="Pursuit Channel" tvg-id="Pursuit.Channel.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pursuit-us.png?raw=true" group-title="Sports",Pursuit Channel
 http://fl3.moveonjoy.com/Pursuit_Channel/index.m3u8
