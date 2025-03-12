@@ -1,4 +1,4 @@
-﻿#EXTM3U
+#EXTM3U
 #EXTINF:-1  tvg-name="" tvg-id="Crave1.-.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/crave-1-ca.png" group-title="Canada",CRAVE 1
 http://fl3.moveonjoy.com/CRAVE_1/index.m3u8
 #EXTINF:-1  tvg-name="" tvg-id="Crave2.-.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/crave-2-ca.png" group-title="Canada",CRAVE 2
@@ -805,3 +805,15 @@ http://user.scalecdn.co:8080/live/26725074/92867131/50187.ts
 http://user.scalecdn.co:8080/live/26725074/92867131/30731.ts
 #EXTINF:-1  tvg-name="" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-500x281.png" group-title="24/7 by Mystique",Amphibia 24/7
 http://user.scalecdn.co:8080/live/26725074/92867131/511232.ts
+#EXTINF:-1  group-title="United States" tvg-id="Disney.-.Eastern.Feed.us" tvg-logo="",Disney Channel East
+http://user.scalecdn.co:8080/26725074/92867131/3630
+#EXTINF:-1  group-title="United States" tvg-id="Disney.-.Pacific.Feed.us" tvg-logo="",Disney Channel West
+http://user.scalecdn.co:8080/26725074/92867131/2590
+#EXTINF:-1  group-title="United States" tvg-id="Disney.Junior.USA.-.East.us" tvg-logo="",Disney Jr. East
+http://user.scalecdn.co:8080/26725074/92867131/3632
+#EXTINF:-1  group-title="United States" tvg-id="Disney.Junior.USA.-.West.us" tvg-logo="",Disney Jr. West
+http://user.scalecdn.co:8080/26725074/92867131/2588
+#EXTINF:-1  group-title="United States" tvg-id="Disney.XD.USA.-.Eastern.Feed.us" tvg-logo="",Disney XD East
+http://user.scalecdn.co:8080/26725074/92867131/3631
+#EXTINF:-1  group-title="United States" tvg-id="Disney.XD.USA.-.Pacific.Feed.us" tvg-logo="",Disney XD East
+http://user.scalecdn.co:8080/26725074/92867131/2586
