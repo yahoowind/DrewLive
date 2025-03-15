@@ -25,3 +25,5 @@ https://tinyurl.com/drewliveall11
 https://tinyurl.com/all00-epg
 
 https://tinyurl.com/all001-epg (won't crash IPTV Players but missing local channels EPG)
+
+https://tinyurl.com/allsource-epg
