@@ -22,4 +22,4 @@ All the playlist merged together in one link
 
 https://tinyurl.com/drewliveall11
 
-https://tinyurl.cam/all00-epg
+https://tinyurl.com/all00-epg
