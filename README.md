@@ -16,7 +16,7 @@ https://tinyurl.com/japantv25
 
 https://tinyurl.com/random2423
 
-https://tinyurl.com/mystiquefast00
+https://tinyurl.com/drewsamsung00
 
 All the playlist merged together in one link
 
