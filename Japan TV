@@ -1,4 +1,4 @@
-﻿#EXTM3U x-tvg-url="http://epg.utako.moe/jcom.xml,https://animenosekai.github.io/japanterebi-xmltv/guide.xml" tvg-shift=0
+#EXTM3U x-tvg-url="http://epg.utako.moe/jcom.xml,https://animenosekai.github.io/japanterebi-xmltv/guide.xml" tvg-shift=0
 #EXTINF:-1  tvg-id="nhkg_tokyo" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6f/NHK%E7%B7%8F%E5%90%88%E3%83%AD%E3%82%B42020-.png" group-title="Tokyo",NHK G
 http://vthanh.utako.moe/NHK_G/index.m3u8
 #EXTINF:-1  tvg-id="nhke_tokyo" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/a/aa/NHKE%E3%83%86%E3%83%AC%E3%83%AD%E3%82%B42020-.png" group-title="Tokyo",NHK E
@@ -61,5 +61,5 @@ http://one.dream4ktv.biz:8080/play/live.php?mac=00:1A:79:DB:7A:A3&stream=306901&
 http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=gd01&isp=7&bind=0&uin=201829&playseek=0&timestamp=1732772156&sign=238bf35e4528ba0d32e9d139ad3c9070904ff88d5066539c084d97ae7c103914
 #EXTINF:-1  tvg-id="ＮＨＫＥテレ１・大阪.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/NHK_Educational_TV_logo.svg/1280px-NHK_Educational_TV_logo.svg.png" group-title="Japan",NHK Educational TV
 http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=gd02&isp=7&bind=0&uin=201829&playseek=0&timestamp=1732773002&sign=6fd6d49cdb2f7424d6bd3d17b2481d1593b66aaab57d8cf00edfbd491f8260ad
-#EXTINF:-1  tvg-id="" tvg-logo="https://i.ibb.co/Q7cXysHc/Nippon-TV-logo-2014-svg.png" group-title="Japan",Nippon TV
+#EXTINF:-1  tvg-id="test" tvg-logo="https://i.ibb.co/Q7cXysHc/Nippon-TV-logo-2014-svg.png" group-title="Japan",Nippon TV
 http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/300020.ts
