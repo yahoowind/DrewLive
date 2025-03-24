@@ -783,7 +783,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/bnn.bloomberg.ca.m3u8
 http://96.45.207.18:8881/channel/3255f3aa/index.m3u8?q=1735600584362
 #EXTINF:-1  tvg-id="bravo.canada.ca" tvg-logo="https://media.starlite.best/bravo.canada.ca.png" group-title="Mystique CA" radio="false",Bravo
 http://localiptv.site:85/live/Avanger2024Disc/kB88PnzcQBUf/2281.ts
-#EXTINF:-1  tvg-id="canal.d.ca" tvg-logo="https://media.starlite.best/canal.d.ca.png" group-title="Mystique CA" radio="false",Canal D
+#EXTINF:-1  tvg-id="Canal.D.HD.ca" tvg-logo="https://media.starlite.best/canal.d.ca.png" group-title="Mystique CA" radio="false",Canal D
 https://tvnow.best/api/stream/burns/burns/livetv.epg/canal.d.ca.m3u8
 #EXTINF:-1  tvg-id="savoir.mdia.ca" tvg-logo="https://media.starlite.best/savoir.mdia.ca.png" group-title="Mystique CA" radio="false",Canal Savior
 https://tvnow.best/api/stream/burns/burns/livetv.epg/savoir.mdia.ca.m3u8
@@ -935,7 +935,7 @@ http://user.scalecdn.co:8080/live/26725074/92867131/3103.ts
 http://user.scalecdn.co:8080/live/26725074/92867131/3081.ts
 #EXTINF:-1  tvg-id="Global.BC.HD.ca" tvg-logo="https://i.ibb.co/Df6301Pz/images.png" group-title="Mystique CA" radio="false",Global BC
 https://tvnow.best/api/stream/burns/burns/livetv.epg/global.bc.ca.m3u8
-#EXTINF:-1  tvg-id="Global.(CICT).Calgary.AB.ca" tvg-logo="https://i.ibb.co/0y1WZRV0/Global-Television-Network-2019-logo-svg.png" group-title="Mystique CA" radio="false",Global Calgary (CICT)
+#EXTINF:-1  tvg-id="Global.(CICT).Calgary,.AB.ca" tvg-logo="https://i.ibb.co/0y1WZRV0/Global-Television-Network-2019-logo-svg.png" group-title="Mystique CA" radio="false",Global Calgary (CICT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/global.cict.calgary.ab.ca.m3u8
 #EXTINF:-1  tvg-id="Global.Edmonton.(CITV).ca" tvg-logo="https://i.ibb.co/0y1WZRV0/Global-Television-Network-2019-logo-svg.png" group-title="Mystique CA" radio="false",Global Edmonton (CITV)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/global.citv.edmonton.ab.ca.m3u8
@@ -971,13 +971,13 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/hgtv.canada.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/artv.ca.m3u8
 #EXTINF:-1  tvg-id="ICI.Explora.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ici-rdi-ca.png" group-title="Mystique CA" radio="false",ICI RDI
 http://96.45.207.18:8881/channel/7a117d94/index.m3u8?q=1735600584362
-#EXTINF:-1  tvg-id="ICI.Tele.(CBFT-DT).MontrÃ©al,.QC.ca" tvg-logo="https://media.starlite.best/ici.tele.ca.png" group-title="Mystique CA" radio="false",ICI Tele
+#EXTINF:-1  tvg-id="ICI.Tele.(CBFT-DT).MontrÃ©al,.QC.ca" tvg-logo="https://media.starlite.best/ici.cbuft.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",ICI Tele
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.tele.ca.m3u8
 #EXTINF:-1  tvg-id="CBUFT.ICI.Radio-Canada.(Vancouver).(IRC).ca" tvg-logo="https://media.starlite.best/ici.cbuft.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CBUFT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.cbuft.vancouver.bc.ca.m3u8
-#EXTINF:-1  tvg-id="CBVT.ICI.Radio-Canada.HDTV.(QuÃ©bec).(IRCHD).ca" tvg-logo="https://media.starlite.best/ici.cbvt.quebec.qc.digital.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CBVT)
+#EXTINF:-1  tvg-id="CBVT.ICI.Radio-Canada.HDTV.(QuÃ©bec).(IRCHD).ca" tvg-logo="https://media.starlite.best/ici.cbuft.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CBVT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.cbvt.quebec.qc.digital.ca.m3u8
-#EXTINF:-1  tvg-id="ICI.Tele.(CKTV-DT).Saguenay,.QC.ca" tvg-logo="https://media.starlite.best/ici.cktv.saguenay.qc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CKTV)
+#EXTINF:-1  tvg-id="ICI.Tele.(CKTV-DT).Saguenay,.QC.ca" tvg-logo="https://media.starlite.best/ici.cbuft.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CKTV)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.cktv.saguenay.qc.ca.m3u8
 #EXTINF:-1  tvg-id="Investigation.ID.CA.ca" tvg-logo="https://media.starlite.best/investigation.ca.png" group-title="Mystique CA" radio="false",Investigation
 https://tvnow.best/api/stream/burns/burns/livetv.epg/investigation.ca.m3u8
@@ -1011,7 +1011,7 @@ http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/457.ts
 http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228720.ts
 #EXTINF:-1  tvg-id="Nickelodeon.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/nickelodeon-us.png" group-title="Mystique CA" radio="false",Nickelodeon
 https://tvnow.best/api/stream/burns/burns/livetv.epg/nickelodeon.canada.ca.m3u8
-#EXTINF:-1  tvg-id="Noovo.(CFJP).Montreal.QC.ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s15696_h15_ac.png" group-title="Mystique CA" radio="false",Noovo
+#EXTINF:-1  tvg-id="Noovo.(CFJP).Montreal,.QC.ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s15696_h15_ac.png" group-title="Mystique CA" radio="false",Noovo
 http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/132090.ts
 #EXTINF:-1  tvg-id="Noovo.(CFJP).Montreal,.QC.ca" tvg-logo="https://media.starlite.best/noovo.vtele.ca.png" group-title="Mystique CA" radio="false",Noovo Montreal (CFJP)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/v.cfjp.montrealqc.ca.m3u8
@@ -1033,7 +1033,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/outtv.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/investigation.discovery.canada.ca.m3u8
 #EXTINF:-1  tvg-id="prise.2.ca" tvg-logo="https://media.starlite.best/prise.2.ca.png" group-title="Mystique CA" radio="false",Prise 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/prise.2.ca.m3u8
-#EXTINF:-1  tvg-id="RDS.(RÃ©seau.des.sports)..HD.ca" tvg-logo="https://media.starlite.best/rds.rseau.des.sports.ca.png" group-title="Mystique CA" radio="false",RDS
+#EXTINF:-1  tvg-id="RDS.(RÃ©seau.des.sports).ca" tvg-logo="https://media.starlite.best/rds.rseau.des.sports.ca.png" group-title="Mystique CA" radio="false",RDS
 http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/280913.ts
 #EXTINF:-1  tvg-id="CTV.--.RÃ©seau.des.Sports.2.HDTV.(RDS2HD).ca" tvg-logo="https://media.starlite.best/rds.2.ca.png" group-title="Mystique CA" radio="false",RDS 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/rds.2.ca.m3u8
@@ -1109,11 +1109,11 @@ http://fl5.moveonjoy.com/TSN_5/index.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tv5.international.east.ca.m3u8
 #EXTINF:-1  tvg-id="TVA.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tva-ca.png" group-title="Mystique CA" radio="false",TVA
 http://68.233.120.207:9981/stream/channelid/1523198423?profile=pass
-#EXTINF:-1  tvg-id="TVA.(CFTM).MontrÃ©al.ca" tvg-logo="https://media.starlite.best/tva.cftm.montral.ca.png" group-title="Mystique CA" radio="false",TVA (CFTM)
+#EXTINF:-1  tvg-id="TVA.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tva-ca.png" group-title="Mystique CA" radio="false",TVA (CFTM)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.cftm.montral.ca.m3u8
-#EXTINF:-1  tvg-id="CIMT.TVA.HDTV.(RiviÃ¨re-du-Loup).(TVAHD).ca" tvg-logo="https://media.starlite.best/tva.chem.trois.rivieres.ca.png" group-title="Mystique CA" radio="false",TVA (CHEM)
+#EXTINF:-1  tvg-id="TVA.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tva-ca.png" group-title="Mystique CA" radio="false",TVA (CHEM)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.chem.trois.rivieres.ca.m3u8
-#EXTINF:-1  tvg-id="CIMT.TVA.HDTV.(RiviÃ¨re-du-Loup).(TVAHD).ca" tvg-logo="https://media.starlite.best/tva.cjpm.saguenay.qc.ca.png" group-title="Mystique CA" radio="false",TVA (CJPM)
+#EXTINF:-1  tvg-id="TVA.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tva-ca.png" group-title="Mystique CA" radio="false",TVA (CJPM)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.cjpm.saguenay.qc.ca.m3u8
 #EXTINF:-1  tvg-id="tva.sports.ca" tvg-logo="https://media.starlite.best/tva.sports.ca.png" group-title="Mystique CA" radio="false",TVA Sport
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.sports.ca.m3u8
