@@ -12,4 +12,4 @@ https://tinyurl.com/all007-epg
 
 https://tinyurl.com/all020-epg (won't crash IPTV Players but missing local channels EPG)
 
-https://tinyurl.com/drewallsrc-epg
+https://tinyurl.com/allsource001-epg
