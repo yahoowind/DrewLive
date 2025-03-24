@@ -641,7 +641,7 @@ https://stream-cdn-iad2.vaughnsoft.net/play/live_ninja_gaiden.flv
 https://bcovlive-a.akamaihd.net/r2d2c4ca5bf57456fb1d16255c1a535c8/eu-west-1/6058004203001/playlist.m3u8
 #EXTINF:-1  tvg-id="Nick.Jr..HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nick-jr-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Nick Jr.
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/304432
-#EXTINF:-1  tvg-id="NickJr+1.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/nick-jr-plus-uk.png" group-title="Mystique UK" radio="false",UK | Nick Jr. +1
+#EXTINF:-1  tvg-id="Nick.Jr+1.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/nick-jr-plus-uk.png" group-title="Mystique UK" radio="false",UK | Nick Jr. +1
 http://92.114.85.72:8000/play/a02n
 #EXTINF:-1  tvg-id="Nick.Jr..Too.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nick-jr-too-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Nick Jr. Too
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/4759
@@ -667,7 +667,7 @@ https://linear417-gb-hls1-prd-ak.cdn.skycdp.com/100e/Content/HLS_001_1080_30/Liv
 https://wowza1.leisertv.com/live/skyshowcasehd.stream/playlist.m3u8
 #EXTINF:-1  tvg-id="SkySp.ActionHD.uk" tvg-logo="https://pixvid.org/images/2025/01/16/sky-action.png" group-title="Mystique UK" radio="false",UK | Sky Sports Action
 https://a1xs.vip/2000011
-#EXTINF:-1  tvg-id="SkySp.Cricket.HD.uk" tvg-logo="https://i.ibb.co/JyPnwvB/sky-cricket.png" group-title="Mystique UK" radio="false",UK | Sky Sports Cricket
+#EXTINF:-1  tvg-id="SkySpCricket.HD.uk" tvg-logo="https://i.ibb.co/JyPnwvB/sky-cricket.png" group-title="Mystique UK" radio="false",UK | Sky Sports Cricket
 https://wowza1.leisertv.com/live/skysportscrickethd.stream/playlist.m3u8
 #EXTINF:-1  tvg-id="SkySp.F1.HD.uk" tvg-logo="https://i.ibb.co/h26bK2Q/sky-f1.png" group-title="Mystique UK" radio="false",UK | Sky Sports F1
 https://wowza1.leisertv.com/live/skysportsf1hd.stream/playlist.m3u8
@@ -727,13 +727,13 @@ http://92.114.85.72:8000/play/a0b3
 https://i.mjh.nz/.r/bravo-plus1.m3u8
 #EXTINF:-1  tvg-id="BravoPlus1.nz" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/new-zealand/bravo-plus-nz.png?raw=true" group-title="Mystique NZ" radio="false",Bravo +1
 https://i.mjh.nz/.r/bravo-plus1.m3u8
-#EXTINF:-1  tvg-id="Channel200.nz" tvg-logo="https://i.imgur.com/gAebu4q.png" group-title="Mystique NZ" radio="false",Channel 200
+#EXTINF:-1  tvg-id="CH200.nz" tvg-logo="https://i.imgur.com/gAebu4q.png" group-title="Mystique NZ" radio="false",Channel 200
 https://d1jlnqid3sfc6m.cloudfront.net/out/v1/3fc2254c865a457c8d7fbbce227a2aae/index.m3u8
 #EXTINF:-1  tvg-id="Firstlight.nz" tvg-logo="https://cdn.freebiesupply.com/logos/large/2x/firstlight-logo-png-transparent.png" group-title="Mystique NZ" radio="false",Firstlight
 https://uni01rtmp.tulix.tv/firstlight/firstlight.smil/playlist.m3u8
 #EXTINF:-1  tvg-id="JuiceTV.nz" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/new-zealand/juice-tv-nz.png?raw=true" group-title="Mystique NZ" radio="false",Juice TV
 https://juicex.nz/hls/mystream.m3u8
-#EXTINF:-1  tvg-id="KordiaTV.nz" tvg-logo="https://i.imgur.com/BQ0qWzX.png" group-title="Mystique NZ" radio="false",Kordia TV
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://i.imgur.com/BQ0qWzX.png" group-title="Mystique NZ" radio="false",Kordia TV
 https://ptvlive.kordia.net.nz/out/v1/3fc2254c865a457c8d7fbbce227a2aae/index.m3u8
 #EXTINF:-1  tvg-id="24.7.Dummy.us" tvg-logo="https://cdn.freebiesupply.com/logos/large/2x/love-stories-logo-png-transparent.png" group-title="Mystique NZ" radio="false",Love Stories TV
 https://84e619480232400a842ce499d053458a.mediatailor.us-east-1.amazonaws.com/v1/manifest/04fd913bb278d8775298c26fdca9d9841f37601f/ONO_LoveStoriesTV/18a65393-ba3b-4912-90d5-7188c128ac66/3.m3u8
@@ -769,13 +769,13 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/addik.tv.ca.m3u8
 http://supersonictv.live:8080/443870/997140/21818
 #EXTINF:-1  tvg-id="AMC.-.Canada.ca" tvg-logo="https://media.starlite.best/amc.canada.ca.png" group-title="Mystique CA" radio="false",AMC
 https://tvnow.best/api/stream/burns/burns/livetv.epg/amc.canada.ca.m3u8
-#EXTINF:-1  tvg-id="ami.tl.ca" tvg-logo="https://media.starlite.best/ami.tl.ca.png" group-title="Mystique CA" radio="false",AMI-tele
+#EXTINF:-1  tvg-id="AMI-tv.East.ca" tvg-logo="https://media.starlite.best/ami.tl.ca.png" group-title="Mystique CA" radio="false",AMI-tele
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ami.tl.ca.m3u8
 #EXTINF:-1  tvg-id="APTN.-.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/aptn-ca.png" group-title="Mystique CA" radio="false",APTN
 https://tvnow.best/api/stream/burns/burns/livetv.epg/aptn.ca.m3u8
 #EXTINF:-1  tvg-id="BBC.Earth.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/bbc-earth-ca.png" group-title="Mystique CA" radio="false",BBC Earth
 https://tvnow.best/api/stream/burns/burns/livetv.epg/bbc.earth.ca.m3u8
-#EXTINF:-1  tvg-id="BBC.First.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/bbc-first-ca.png" group-title="Mystique CA" radio="false",BBC First
+#EXTINF:-1  tvg-id="BBC.First.HD.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/bbc-canada-ca.png?raw=true" group-title="Mystique CA" radio="false",BBC First
 http://user.scalecdn.co:8080/live/26725074/92867131/698467.ts
 #EXTINF:-1  tvg-id="bnn.bloomberg.ca" tvg-logo="https://media.starlite.best/bnn.bloomberg.ca.png" group-title="Mystique CA" radio="false",BNN Bloomberg
 https://tvnow.best/api/stream/burns/burns/livetv.epg/bnn.bloomberg.ca.m3u8
@@ -791,7 +791,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/savoir.mdia.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cartoon.network.canada.ca.m3u8
 #EXTINF:-1  tvg-id="casa.ca" tvg-logo="https://media.starlite.best/casa.ca.png" group-title="Mystique CA" radio="false",CASA
 https://tvnow.best/api/stream/burns/burns/livetv.epg/casa.ca.m3u8
-#EXTINF:-1  tvg-id="CBC.(CBRT).Calgary.AB.ca" tvg-logo="https://media.starlite.best/cbc.cbrt.calgary.ab.ca.png" group-title="Mystique CA" radio="false",CBC Calgary (CBRT)
+#EXTINF:-1  tvg-id="CBC.(CBRT).Calgary,.AB.ca" tvg-logo="https://media.starlite.best/cbc.cbrt.calgary.ab.ca.png" group-title="Mystique CA" radio="false",CBC Calgary (CBRT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbrt.calgary.ab.ca.m3u8
 #EXTINF:-1  tvg-id="CBC.Charlottetown.(CBCT).ca" tvg-logo="https://media.starlite.best/cbc.cbct.charlottetown.pe.ca.png" group-title="Mystique CA" radio="false",CBC Charlottetown (CBCT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbct.charlottetown.pe.ca.m3u8
@@ -799,7 +799,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbct.charlottetown.pe.c
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbxt.edmonton.ab.ca.m3u8
 #EXTINF:-1  tvg-id="CBC.Fredericton.(CBAT).ca" tvg-logo="https://media.starlite.best/cbc.cbat.fredericton.nb.ca.png" group-title="Mystique CA" radio="false",CBC Fredericton (CBAT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbat.fredericton.nb.ca.m3u8
-#EXTINF:-1  tvg-id="CBC.(CBHT).Halifax.NS.ca" tvg-logo="https://media.starlite.best/cbc.cbht.halifax.ns.ca.png" group-title="Mystique CA" radio="false",CBC Halifax (CBHT)
+#EXTINF:-1  tvg-id="CBC.(CBHT).Halifax,.NS.ca" tvg-logo="https://media.starlite.best/cbc.cbht.halifax.ns.ca.png" group-title="Mystique CA" radio="false",CBC Halifax (CBHT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbht.halifax.ns.ca.m3u8
 #EXTINF:-1  tvg-id="CBC.Quebec.HDTV.(CBMTHD).ca" tvg-logo="https://media.starlite.best/cbc.cbmt.montreal.qc.ca.png" group-title="Mystique CA" radio="false",CBC Montreal (CBMT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbmt.montreal.qc.ca.m3u8
@@ -811,25 +811,25 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbot.ottawa.on.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbkt.regina.sk.ca.m3u8M
 #EXTINF:-1  tvg-id="CBC.(CBNT).St-Johns.NL.ca.ca" tvg-logo="https://media.starlite.best/cbc.cbnt.st.johns.nl.ca.png" group-title="Mystique CA" radio="false",CBC St.Johns (CBNT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbnt.st.johns.nl.ca.m3u8
-#EXTINF:-1  tvg-id="CBC.(CBLT).Toronto.ON.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/cbc-toronto-ca.png" group-title="Mystique CA" radio="false",CBC Toronto (CBLT)
+#EXTINF:-1  tvg-id="CBC.(CBLT).Toronto,.ON.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/cbc-toronto-ca.png" group-title="Mystique CA" radio="false",CBC Toronto (CBLT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cblt.toronto.on.ca.m3u8
-#EXTINF:-1  tvg-id="CBC.(CBUT).Vancouver.BC.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/cbc-vancouver-ca.png" group-title="Mystique CA" radio="false",CBC Vancouver (CBUT)
+#EXTINF:-1  tvg-id="CBC.(CBUT).Vancouver,.BC.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/cbc-vancouver-ca.png" group-title="Mystique CA" radio="false",CBC Vancouver (CBUT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbut.vancouver.bc.ca.m3u8
 #EXTINF:-1  tvg-id="CBET.Windsor.(CBET).ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/cbc-windsor-ca.png" group-title="Mystique CA" radio="false",CBC Windsor (CBET)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbet.windsor.on.ca.m3u8
-#EXTINF:-1  tvg-id="CBC.(CBWT).Winnipeg.MB.ca" tvg-logo="https://media.starlite.best/cbc.cbwt.winnipeg.mb.ca.png" group-title="Mystique CA" radio="false",CBC Winnipeg (CBWT)
+#EXTINF:-1  tvg-id="CBC.(CBWT).Winnipeg,.MB.ca" tvg-logo="https://media.starlite.best/cbc.cbwt.winnipeg.mb.ca.png" group-title="Mystique CA" radio="false",CBC Winnipeg (CBWT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbwt.winnipeg.mb.ca.m3u8
 #EXTINF:-1  tvg-id="CBC.Yellowknife.(CFYK).ca" tvg-logo="https://media.starlite.best/cbc.cfyk.yellowknife.nwt.ca.png" group-title="Mystique CA" radio="false",CBC Yellowknife (CFYK)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cfyk.yellowknife.nwt.ca.m3u8
-#EXTINF:-1  tvg-id="CHCH.Hamilton.ON.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/chch-ca.png" group-title="Mystique CA" radio="false",CHCH
+#EXTINF:-1  tvg-id="CHCH.Hamilton,.ON.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/chch-ca.png" group-title="Mystique CA" radio="false",CHCH
 http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228588.ts
-#EXTINF:-1  tvg-id="cinpop.ca" tvg-logo="https://media.starlite.best/cinpop.ca.png" group-title="Mystique CA" radio="false",Cinépop
+#EXTINF:-1  tvg-id="CinÃ©pop.HDTV.(C-POPHD).ca" tvg-logo="https://media.starlite.best/cinpop.ca.png" group-title="Mystique CA" radio="false",Cinépop
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cinpop.ca.m3u8
-#EXTINF:-1  tvg-id="CITY.Montreal.QC.ca" tvg-logo="https://media.starlite.best/city.montreal.qc.ca.png" group-title="Mystique CA" radio="false",CityTV Montreal
+#EXTINF:-1  tvg-id="CITY.Montreal,.QC.ca" tvg-logo="https://media.starlite.best/city.montreal.qc.ca.png" group-title="Mystique CA" radio="false",CityTV Montreal
 http://206.212.244.26/live/vasconeves/1742766045/40598.ts
-#EXTINF:-1  tvg-id="CITY.Toronto.ON.ca" tvg-logo="https://media.starlite.best/city.toronto.on.ca.png" group-title="Mystique CA" radio="false",CityTV Toronto
+#EXTINF:-1  tvg-id="CITY.Toronto,.ON.HD.ca" tvg-logo="https://media.starlite.best/city.toronto.on.ca.png" group-title="Mystique CA" radio="false",CityTV Toronto
 https://tvnow.best/api/stream/burns/burns/livetv.epg/city.toronto.on.ca.m3u8
-#EXTINF:-1  tvg-id="CITY.Vancouver.BC.ca" tvg-logo="https://media.starlite.best/city.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",CityTV Vancouver
+#EXTINF:-1  tvg-id="CITY.Vancouver,.BC.HD.ca" tvg-logo="https://media.starlite.best/city.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",CityTV Vancouver
 https://tvnow.best/api/stream/burns/burns/livetv.epg/city.vancouver.bc.ca.m3u8
 #EXTINF:-1  tvg-id="CMT.Canada.ca" tvg-logo="https://media.starlite.best/cmt.canada.ca.png" group-title="Mystique CA" radio="false",CMT
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cmt.canada.ca.m3u8
@@ -837,7 +837,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/cmt.canada.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cnn.ca.m3u8
 #EXTINF:-1  tvg-id="CP24.(CablePulse.24).ca" tvg-logo="https://media.starlite.best/cp24.cablepulse.24.ca.png" group-title="Mystique CA" radio="false",CP24
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cp24.cablepulse.24.ca.m3u8
-#EXTINF:-1  tvg-id="cpac.francais.ca" tvg-logo="https://media.starlite.best/cpac.francais.ca.png" group-title="Mystique CA" radio="false",CPAC
+#EXTINF:-1  tvg-id="CPAC.(Francais).ca" tvg-logo="https://media.starlite.best/cpac.francais.ca.png" group-title="Mystique CA" radio="false",CPAC
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cpac.francais.ca.m3u8
 #EXTINF:-1  tvg-id="Crave1.-.East.ca" tvg-logo="https://media.starlite.best/crave1.east.ca.png" group-title="Mystique CA" radio="false",Crave 1
 https://tvnow.best/api/stream/burns/burns/livetv.epg/crave1.east.ca.m3u8
@@ -845,7 +845,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/crave1.east.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/crave2.east.ca.m3u8
 #EXTINF:-1  tvg-id="Crave3.-.East.ca" tvg-logo="https://media.starlite.best/crave3.east.ca.png" group-title="Mystique CA" radio="false",Crave 3
 https://tvnow.best/api/stream/burns/burns/livetv.epg/crave3.east.ca.m3u8
-#EXTINF:-1  tvg-id="Crave4.ca" tvg-logo="https://media.starlite.best/crave4.east.ca.png" group-title="Mystique CA" radio="false",Crave 4
+#EXTINF:-1  tvg-id="Crave4.HD.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/crave-4-ca.png?raw=true" group-title="Mystique CA" radio="false",Crave 4
 https://tvnow.best/api/stream/burns/burns/livetv.epg/crave4.east.ca.m3u8
 #EXTINF:-1  tvg-id="Crime.+.Investigation.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/crime-and-investigation-ca.png" group-title="Mystique CA" radio="false",Crime and Investigation
 http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228606.ts
@@ -907,7 +907,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/e.canada.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/elle.fictions.ca.m3u8
 #EXTINF:-1  tvg-id="evasion.ca" tvg-logo="https://media.starlite.best/evasion.ca.png" group-title="Mystique CA" radio="false",Evasion
 https://tvnow.best/api/stream/burns/burns/livetv.epg/evasion.ca.m3u8
-#EXTINF:-1  tvg-id="Fairchild.TV.ca" tvg-logo="https://i.ibb.co/j1mXv3z/schedule-logo1.png" group-title="Mystique CA" radio="false",Fairchild TV 1
+#EXTINF:-1  tvg-id="Fairchild.TV.1.-.East.ca" tvg-logo="https://i.ibb.co/j1mXv3z/schedule-logo1.png" group-title="Mystique CA" radio="false",Fairchild TV 1
 https://tvnow.best/api/stream/burns/burns/livetv.epg/fairchild.tv.east.ca.m3u8
 #EXTINF:-1  tvg-id="Fairchild.TV.2.ca" tvg-logo="https://i.ibb.co/pByRhL7N/eWfNXvf.png" group-title="Mystique CA" radio="false",Fairchild TV 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/fairchild.tv.2.ca.m3u8
@@ -921,7 +921,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/family.jr.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/food.network.canada.ca.m3u8
 #EXTINF:-1  tvg-id="Food.Network.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/food-network-us.png" group-title="Mystique CA" radio="false",Food Network
 http://zorrohunter.com:80/live/WeaponX/Dawkins22/40710.ts
-#EXTINF:-1  tvg-id="frissons.tv.ca" tvg-logo="https://media.starlite.best/frissons.tv.ca.png" group-title="Mystique CA" radio="false",Frissons
+#EXTINF:-1  tvg-id="Frissons.TV.HDTV.ca" tvg-logo="https://media.starlite.best/frissons.tv.ca.png" group-title="Mystique CA" radio="false",Frissons
 https://tvnow.best/api/stream/burns/burns/livetv.epg/frissons.tv.ca.m3u8
 #EXTINF:-1  tvg-id="FX.Networks.Canada.ca" tvg-logo="https://media.starlite.best/fx.networks.ca.png" group-title="Mystique CA" radio="false",FX Canada
 https://tvnow.best/api/stream/burns/burns/livetv.epg/fx.networks.ca.m3u8
@@ -933,7 +933,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/game.show.network.east.ca.m
 http://user.scalecdn.co:8080/live/26725074/92867131/3103.ts
 #EXTINF:-1  tvg-id="Game.Plus.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/game-plus-ca.png" group-title="Mystique CA" radio="false",Game+
 http://user.scalecdn.co:8080/live/26725074/92867131/3081.ts
-#EXTINF:-1  tvg-id="global.bc.ca" tvg-logo="https://i.ibb.co/Df6301Pz/images.png" group-title="Mystique CA" radio="false",Global BC
+#EXTINF:-1  tvg-id="Global.BC.HD.ca" tvg-logo="https://i.ibb.co/Df6301Pz/images.png" group-title="Mystique CA" radio="false",Global BC
 https://tvnow.best/api/stream/burns/burns/livetv.epg/global.bc.ca.m3u8
 #EXTINF:-1  tvg-id="Global.(CICT).Calgary.AB.ca" tvg-logo="https://i.ibb.co/0y1WZRV0/Global-Television-Network-2019-logo-svg.png" group-title="Mystique CA" radio="false",Global Calgary (CICT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/global.cict.calgary.ab.ca.m3u8
@@ -951,7 +951,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/hbo.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/hbo.2.eastern.ca.m3u8
 #EXTINF:-1  tvg-id="HGTV.CA.ca" tvg-logo="https://i.ibb.co/WNVR55Q2/HGTV-2010-svg.png" group-title="Mystique CA" radio="false",HGTV
 http://206.212.244.26/live/vasconeves/1742766045/40695.ts
-#EXTINF:-1  tvg-id="historia.ca" tvg-logo="https://media.starlite.best/historia.ca.png" group-title="Mystique CA" radio="false",Historia FR
+#EXTINF:-1  tvg-id="Historia.HD.ca" tvg-logo="https://media.starlite.best/historia.ca.png" group-title="Mystique CA" radio="false",Historia FR
 https://tvnow.best/api/stream/burns/burns/livetv.epg/historia.ca.m3u8
 #EXTINF:-1  tvg-id="History.Canada.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/history-channel-ca.png" group-title="Mystique CA" radio="false",History
 https://tvnow.best/api/stream/burns/burns/livetv.epg/history.canada.east.ca.m3u8
@@ -967,25 +967,25 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/hollywood.suite.80s.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/hollywood.suite.90s.ca.m3u8
 #EXTINF:-1  tvg-id="Home.Network.ca" tvg-logo="https://i.ibb.co/fGMcLQTP/Home-Network-logo-svg.png" group-title="Mystique CA" radio="false",Home Network
 https://tvnow.best/api/stream/burns/burns/livetv.epg/hgtv.canada.ca.m3u8
-#EXTINF:-1  tvg-id="artv.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/ici-artv-ca.png?raw=true" group-title="Mystique CA" radio="false",ICI Artv
+#EXTINF:-1  tvg-id="ICI.Reseau.de.lInformation.HDTV.(ICIRDIHD).ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/ici-artv-ca.png?raw=true" group-title="Mystique CA" radio="false",ICI Artv
 https://tvnow.best/api/stream/burns/burns/livetv.epg/artv.ca.m3u8
-#EXTINF:-1  tvg-id="rdi.news.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ici-rdi-ca.png" group-title="Mystique CA" radio="false",ICI RDI
+#EXTINF:-1  tvg-id="ICI.Explora.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ici-rdi-ca.png" group-title="Mystique CA" radio="false",ICI RDI
 http://96.45.207.18:8881/channel/7a117d94/index.m3u8?q=1735600584362
-#EXTINF:-1  tvg-id="ici.tele.ca" tvg-logo="https://media.starlite.best/ici.tele.ca.png" group-title="Mystique CA" radio="false",ICI Tele
+#EXTINF:-1  tvg-id="ICI.Tele.(CBFT-DT).MontrÃ©al,.QC.ca" tvg-logo="https://media.starlite.best/ici.tele.ca.png" group-title="Mystique CA" radio="false",ICI Tele
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.tele.ca.m3u8
-#EXTINF:-1  tvg-id="ici.cbuft.vancouver.bc.ca" tvg-logo="https://media.starlite.best/ici.cbuft.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CBUFT)
+#EXTINF:-1  tvg-id="CBUFT.ICI.Radio-Canada.(Vancouver).(IRC).ca" tvg-logo="https://media.starlite.best/ici.cbuft.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CBUFT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.cbuft.vancouver.bc.ca.m3u8
-#EXTINF:-1  tvg-id="ici.cbvt.quebec.qc.digital.ca" tvg-logo="https://media.starlite.best/ici.cbvt.quebec.qc.digital.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CBVT)
+#EXTINF:-1  tvg-id="CBVT.ICI.Radio-Canada.HDTV.(QuÃ©bec).(IRCHD).ca" tvg-logo="https://media.starlite.best/ici.cbvt.quebec.qc.digital.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CBVT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.cbvt.quebec.qc.digital.ca.m3u8
-#EXTINF:-1  tvg-id="ici.cktv.saguenay.qc.ca" tvg-logo="https://media.starlite.best/ici.cktv.saguenay.qc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CKTV)
+#EXTINF:-1  tvg-id="ICI.Tele.(CKTV-DT).Saguenay,.QC.ca" tvg-logo="https://media.starlite.best/ici.cktv.saguenay.qc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CKTV)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.cktv.saguenay.qc.ca.m3u8
-#EXTINF:-1  tvg-id="investigation.ca" tvg-logo="https://media.starlite.best/investigation.ca.png" group-title="Mystique CA" radio="false",Investigation
+#EXTINF:-1  tvg-id="Investigation.ID.CA.ca" tvg-logo="https://media.starlite.best/investigation.ca.png" group-title="Mystique CA" radio="false",Investigation
 https://tvnow.best/api/stream/burns/burns/livetv.epg/investigation.ca.m3u8
 #EXTINF:-1  tvg-id="Investigation.Discovery.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/investigation-discovery-us.png" group-title="Mystique CA" radio="false",Investigation Discovery
 http://zorrohunter.com:80/live/WeaponX/Dawkins22/40689.ts
 #EXTINF:-1  tvg-id="Knowledge.Network.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/knowledge-network-ca.png" group-title="Mystique CA" radio="false",Knowledge Network
 http://206.212.244.26/live/vasconeves/1742766045/40687.ts
-#EXTINF:-1  tvg-id="la.chaine.disney.ca" tvg-logo="https://media.starlite.best/la.chaine.disney.ca.png" group-title="Mystique CA" radio="false",La chaîne Disney
+#EXTINF:-1  tvg-id="La.Chaine.Disney.ca" tvg-logo="https://media.starlite.best/la.chaine.disney.ca.png" group-title="Mystique CA" radio="false",La chaîne Disney
 https://tvnow.best/api/stream/burns/burns/livetv.epg/la.chaine.disney.ca.m3u8
 #EXTINF:-1  tvg-id="lcn.ca" tvg-logo="https://media.starlite.best/lcn.ca.png" group-title="Mystique CA" radio="false",LCN
 https://tvnow.best/api/stream/burns/burns/livetv.epg/lcn.ca.m3u8
@@ -1001,7 +1001,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/makeful.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/max.ca.m3u8
 #EXTINF:-1  tvg-id="MovieTime.ca" tvg-logo="https://media.starlite.best/movietime.ca.png" group-title="Mystique CA" radio="false",Movie Time
 https://tvnow.best/api/stream/burns/burns/livetv.epg/movietime.ca.m3u8
-#EXTINF:-1  tvg-id="much.music.ca" tvg-logo="https://media.starlite.best/much.music.ca.png" group-title="Mystique CA" radio="false",Much
+#EXTINF:-1  tvg-id="Much.Music.HD.ca" tvg-logo="https://media.starlite.best/much.music.ca.png" group-title="Mystique CA" radio="false",Much
 https://tvnow.best/api/stream/burns/burns/livetv.epg/much.music.ca.m3u8
 #EXTINF:-1  tvg-id="National.Geographic.Canada.ca" tvg-logo="https://media.starlite.best/national.geographic.canada.ca.png" group-title="Mystique CA" radio="false",National Geographic
 https://tvnow.best/api/stream/burns/burns/livetv.epg/national.geographic.canada.ca.m3u8
@@ -1013,11 +1013,11 @@ http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228720.ts
 https://tvnow.best/api/stream/burns/burns/livetv.epg/nickelodeon.canada.ca.m3u8
 #EXTINF:-1  tvg-id="Noovo.(CFJP).Montreal.QC.ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s15696_h15_ac.png" group-title="Mystique CA" radio="false",Noovo
 http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/132090.ts
-#EXTINF:-1  tvg-id="v.cfjp.montrealqc.ca" tvg-logo="https://media.starlite.best/noovo.vtele.ca.png" group-title="Mystique CA" radio="false",Noovo Montreal (CFJP)
+#EXTINF:-1  tvg-id="Noovo.(CFJP).Montreal,.QC.ca" tvg-logo="https://media.starlite.best/noovo.vtele.ca.png" group-title="Mystique CA" radio="false",Noovo Montreal (CFJP)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/v.cfjp.montrealqc.ca.m3u8
-#EXTINF:-1  tvg-id="v.cfap.quebec.qc.ca" tvg-logo="https://media.starlite.best/noovo.vtele.ca.png" group-title="Mystique CA" radio="false",Noovo Quebec (CFAP)
+#EXTINF:-1  tvg-id="Noovo.(CFJP).Montreal,.QC.ca" tvg-logo="https://media.starlite.best/noovo.vtele.ca.png" group-title="Mystique CA" radio="false",Noovo Quebec (CFAP)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/v.cfap.quebec.qc.ca.m3u8
-#EXTINF:-1  tvg-id="noovo.vtele.ca" tvg-logo="https://media.starlite.best/noovo.vtele.ca.png" group-title="Mystique CA" radio="false",Noovo V-Tele
+#EXTINF:-1  tvg-id="Noovo.(CFJP).Montreal,.QC.ca" tvg-logo="https://media.starlite.best/noovo.vtele.ca.png" group-title="Mystique CA" radio="false",Noovo V-Tele
 https://tvnow.best/api/stream/burns/burns/livetv.epg/noovo.vtele.ca.m3u8
 #EXTINF:-1  tvg-id="OMNI.1.Television.ca" tvg-logo="https://media.starlite.best/omni.1.ca.png" group-title="Mystique CA" radio="false",OMNI
 http://206.212.244.26/live/vasconeves/1742766045/40641.ts
@@ -1033,15 +1033,15 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/outtv.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/investigation.discovery.canada.ca.m3u8
 #EXTINF:-1  tvg-id="prise.2.ca" tvg-logo="https://media.starlite.best/prise.2.ca.png" group-title="Mystique CA" radio="false",Prise 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/prise.2.ca.m3u8
-#EXTINF:-1  tvg-id="rds.rseau.des.sports.ca" tvg-logo="https://media.starlite.best/rds.rseau.des.sports.ca.png" group-title="Mystique CA" radio="false",RDS
+#EXTINF:-1  tvg-id="RDS.(RÃ©seau.des.sports)..HD.ca" tvg-logo="https://media.starlite.best/rds.rseau.des.sports.ca.png" group-title="Mystique CA" radio="false",RDS
 http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/280913.ts
-#EXTINF:-1  tvg-id="rds.2.ca" tvg-logo="https://media.starlite.best/rds.2.ca.png" group-title="Mystique CA" radio="false",RDS 2
+#EXTINF:-1  tvg-id="CTV.--.RÃ©seau.des.Sports.2.HDTV.(RDS2HD).ca" tvg-logo="https://media.starlite.best/rds.2.ca.png" group-title="Mystique CA" radio="false",RDS 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/rds.2.ca.m3u8
 #EXTINF:-1  tvg-id="rds.info.ca" tvg-logo="https://media.starlite.best/rds.info.ca.png" group-title="Mystique CA" radio="false",RDS Info
 https://tvnow.best/api/stream/burns/burns/livetv.epg/rds.info.ca.m3u8
 #EXTINF:-1  tvg-id="REV.TV.HDTV.(Canada).(REVHD).ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s106713_h15_ab.png" group-title="Mystique CA" radio="false",Rev TV
 http://user.scalecdn.co:8080/live/26725074/92867131/702667.m3u8
-#EXTINF:-1  tvg-id="series.ca" tvg-logo="https://media.starlite.best/series.ca.png" group-title="Mystique CA" radio="false",Series Plus
+#EXTINF:-1  tvg-id="Series.+.HD.ca" tvg-logo="https://media.starlite.best/series.ca.png" group-title="Mystique CA" radio="false",Series Plus
 https://tvnow.best/api/stream/burns/burns/livetv.epg/series.ca.m3u8
 #EXTINF:-1  tvg-id="Showcase.Canada.ca" tvg-logo="https://media.starlite.best/showcase.canada.ca.png" group-title="Mystique CA" radio="false",Showcase
 https://tvnow.best/api/stream/burns/burns/livetv.epg/showcase.canada.ca.m3u8
@@ -1049,7 +1049,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/showcase.canada.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/silver.screen.classics.ca.m3u8
 #EXTINF:-1  tvg-id="slice.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/slice-ca.png" group-title="Mystique CA" radio="false",Slice
 https://tvnow.best/api/stream/burns/burns/livetv.epg/slice.ca.m3u8
-#EXTINF:-1  tvg-id="Smithsonian.Channel.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/smithsonian-channel-ca.png" group-title="Mystique CA" radio="false",Smithsonian Channel
+#EXTINF:-1  tvg-id="Smithsonian.Channel.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/smithsonian-channel-ca.png" group-title="Mystique CA" radio="false",Smithsonian Channel
 https://tvnow.best/api/stream/burns/burns/livetv.epg/smithsonian.channel.canada.ca.m3u8
 #EXTINF:-1  tvg-id="sportsnet.360.ca" tvg-logo="https://media.starlite.best/sportsnet.360.ca.png" group-title="Mystique CA" radio="false",Sportsnet 360
 http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228742.ts
@@ -1073,25 +1073,25 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/super.channel.fuse.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.channel.heart.home.ca.m3u8
 #EXTINF:-1  tvg-id="super.channel.vault.ca" tvg-logo="https://media.starlite.best/super.channel.vault.ca.png" group-title="Mystique CA" radio="false",Super Channel Vault
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.channel.vault.ca.m3u8
-#EXTINF:-1  tvg-id="super.ecran.1.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-1-ca.png" group-title="Mystique CA" radio="false",Super Ecran 1
+#EXTINF:-1  tvg-id="Super.Ecran.HD.1.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-1-ca.png" group-title="Mystique CA" radio="false",Super Ecran 1
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.ecran.1.ca.m3u8
-#EXTINF:-1  tvg-id="super.ecran.2.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-2-ca.png" group-title="Mystique CA" radio="false",Super Ecran 2
+#EXTINF:-1  tvg-id="Super.Ecran.2.HDTV.(SE2HD).ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-2-ca.png" group-title="Mystique CA" radio="false",Super Ecran 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.ecran.2.ca.m3u8
-#EXTINF:-1  tvg-id="super.ecran.3.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-3-ca.png" group-title="Mystique CA" radio="false",Super Ecran 3
+#EXTINF:-1  tvg-id="Super.Ã‰cran.3.HDTV.(SE3HD).ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-3-ca.png" group-title="Mystique CA" radio="false",Super Ecran 3
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.ecran.3.ca.m3u8
-#EXTINF:-1  tvg-id="super.ecran.4.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-4-ca.png" group-title="Mystique CA" radio="false",Super Ecran 4
+#EXTINF:-1  tvg-id="Super.Ã‰cran.4.HDTV.(SE4HD).ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-4-ca.png" group-title="Mystique CA" radio="false",Super Ecran 4
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.ecran.4.ca.m3u8
-#EXTINF:-1  tvg-id="tele.quebec.civq.quebec.ca" tvg-logo="https://media.starlite.best/tele.quebec.civq.quebec.ca.png" group-title="Mystique CA" radio="false",Tele Québec
+#EXTINF:-1  tvg-id="Tele-Quebec.(CIVM).Montreal.ca" tvg-logo="https://media.starlite.best/tele.quebec.civq.quebec.ca.png" group-title="Mystique CA" radio="false",Tele Québec
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tele.quebec.civq.quebec.ca.m3u8
 #EXTINF:-1  tvg-id="Télémagino.ca" tvg-logo="https://d60d34ithxz8n.cloudfront.net/ca-logos/19aae87681fb7545a7f8b12b094f5eda.png?k=YuF2DwEskK9RDtJWAxeJbpo7YUB7VdYQ4hnktyMqup9hklnV5sxy2V%2F5EGY3kuoD31WBFsj8IoPs%2BhFGP4SORJH9F4TJDNdNjQ53nuuYqHfLDOfzOOUfR1APiazFifTa" group-title="Mystique CA" radio="false",Telemag
 http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/132096.ts
-#EXTINF:-1  tvg-id="tltoon.franais.ca" tvg-logo="https://media.starlite.best/tltoon.franais.ca.png" group-title="Mystique CA" radio="false",TéléTOON
+#EXTINF:-1  tvg-id="Teletoon.On.Demand.ca" tvg-logo="https://media.starlite.best/tltoon.franais.ca.png" group-title="Mystique CA" radio="false",TéléTOON
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tltoon.franais.ca.m3u8
 #EXTINF:-1  tvg-id="TFO.-.Chaine.Francaise.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tfo-ca.png" group-title="Mystique CA" radio="false",TFO
 http://96.45.207.18:8881/channel/n5de8418/index.m3u8?q=1735600584362
 #EXTINF:-1  tvg-id="TLC.Canada.ca" tvg-logo="https://media.starlite.best/tlc.canada.ca.png" group-title="Mystique CA" radio="false",TLC
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tlc.canada.ca.m3u8
-#EXTINF:-1  tvg-id="TLN.ca" tvg-logo="https://i.ibb.co/cKnhRZX6/TLN-2015.png" group-title="Mystique CA" radio="false",TLN
+#EXTINF:-1  tvg-id="TLC.Canada.HD.ca" tvg-logo="https://i.ibb.co/cKnhRZX6/TLN-2015.png" group-title="Mystique CA" radio="false",TLN
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tln.west.ca.m3u8
 #EXTINF:-1  tvg-id="treehouse.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/treehouse-ca.png" group-title="Mystique CA" radio="false",Treehouse
 https://tvnow.best/api/stream/burns/burns/livetv.epg/treehouse.ca.m3u8
@@ -1105,19 +1105,19 @@ http://fl5.moveonjoy.com/TSN_3/index.m3u8
 http://fl5.moveonjoy.com/TSN_4/index.m3u8
 #EXTINF:-1  tvg-id="TSN5.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/tsn-5-ca.png" group-title="Mystique CA" radio="false",TSN 5
 http://fl5.moveonjoy.com/TSN_5/index.m3u8
-#EXTINF:-1  tvg-id="tv5.international.east.ca" tvg-logo="https://media.starlite.best/tv5.international.east.ca.png" group-title="Mystique CA" radio="false",TV5 Intern
+#EXTINF:-1  tvg-id="TV5.International.-.East.ca" tvg-logo="https://media.starlite.best/tv5.international.east.ca.png" group-title="Mystique CA" radio="false",TV5 Intern
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tv5.international.east.ca.m3u8
 #EXTINF:-1  tvg-id="TVA.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tva-ca.png" group-title="Mystique CA" radio="false",TVA
 http://68.233.120.207:9981/stream/channelid/1523198423?profile=pass
-#EXTINF:-1  tvg-id="tva.cftm.montral.ca" tvg-logo="https://media.starlite.best/tva.cftm.montral.ca.png" group-title="Mystique CA" radio="false",TVA (CFTM)
+#EXTINF:-1  tvg-id="TVA.(CFTM).MontrÃ©al.ca" tvg-logo="https://media.starlite.best/tva.cftm.montral.ca.png" group-title="Mystique CA" radio="false",TVA (CFTM)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.cftm.montral.ca.m3u8
-#EXTINF:-1  tvg-id="tva.chem.trois.rivieres.ca" tvg-logo="https://media.starlite.best/tva.chem.trois.rivieres.ca.png" group-title="Mystique CA" radio="false",TVA (CHEM)
+#EXTINF:-1  tvg-id="CIMT.TVA.HDTV.(RiviÃ¨re-du-Loup).(TVAHD).ca" tvg-logo="https://media.starlite.best/tva.chem.trois.rivieres.ca.png" group-title="Mystique CA" radio="false",TVA (CHEM)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.chem.trois.rivieres.ca.m3u8
-#EXTINF:-1  tvg-id="tva.cjpm.saguenay.qc.ca" tvg-logo="https://media.starlite.best/tva.cjpm.saguenay.qc.ca.png" group-title="Mystique CA" radio="false",TVA (CJPM)
+#EXTINF:-1  tvg-id="CIMT.TVA.HDTV.(RiviÃ¨re-du-Loup).(TVAHD).ca" tvg-logo="https://media.starlite.best/tva.cjpm.saguenay.qc.ca.png" group-title="Mystique CA" radio="false",TVA (CJPM)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.cjpm.saguenay.qc.ca.m3u8
 #EXTINF:-1  tvg-id="tva.sports.ca" tvg-logo="https://media.starlite.best/tva.sports.ca.png" group-title="Mystique CA" radio="false",TVA Sport
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.sports.ca.m3u8
-#EXTINF:-1  tvg-id="tva.sports.2.ca" tvg-logo="https://media.starlite.best/tva.sports.2.ca.png" group-title="Mystique CA" radio="false",TVA Sport 2
+#EXTINF:-1  tvg-id="TVA.Sports.2.ca" tvg-logo="https://media.starlite.best/tva.sports.2.ca.png" group-title="Mystique CA" radio="false",TVA Sport 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.sports.2.ca.m3u8
 #EXTINF:-1  tvg-id="TVO.Toronto.ON.ca" tvg-logo="https://i.ibb.co/cXNyTPHW/TVOntario-2022.png" group-title="Mystique CA" radio="false",TVO
 http://iptv.maxlacress.com/live/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138752.ts
@@ -1133,13 +1133,13 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/w.wtn.east.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/wild.tv.ca.m3u8
 #EXTINF:-1  tvg-id="WildBrain.TV.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/wildbrain-tv-ca.png" group-title="Mystique CA" radio="false",WildBrain TV
 http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/13225.ts
-#EXTINF:-1  tvg-id="Yes.TV.(CITS).Burlington.ON.ca" tvg-logo="https://media.starlite.best/yes.tv.ckcs.calgary.ab.ca.png" group-title="Mystique CA" radio="false",Yes TV
+#EXTINF:-1  tvg-id="Yes.TV.(CITS).Burlington,.ON.HD.ca" tvg-logo="https://media.starlite.best/yes.tv.ckcs.calgary.ab.ca.png" group-title="Mystique CA" radio="false",Yes TV
 http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228788.ts
 #EXTINF:-1  tvg-id="YTV.(Youth.Television).-.East.ca" tvg-logo="https://media.starlite.best/ytv.youth.television.east.ca.png" group-title="Mystique CA" radio="false",YTV
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ytv.youth.television.east.ca.m3u8
-#EXTINF:-1  tvg-id="YTV.(Youth.Television).-.West.ca" tvg-logo="https://media.starlite.best/ytv.youth.television.east.ca.png" group-title="Mystique CA" radio="false",YTV West
+#EXTINF:-1  tvg-id="YTV.(Youth.Television).-.Pacific.ca" tvg-logo="https://media.starlite.best/ytv.youth.television.east.ca.png" group-title="Mystique CA" radio="false",YTV West
 http://user.scalecdn.co:8080/live/26725074/92867131/647755.ts
-#EXTINF:-1  tvg-id="z.ca" tvg-logo="https://media.starlite.best/z.ca.png" group-title="Mystique CA" radio="false",Z
+#EXTINF:-1  tvg-id="Z.ca" tvg-logo="https://media.starlite.best/z.ca.png" group-title="Mystique CA" radio="false",Z
 https://tvnow.best/api/stream/burns/burns/livetv.epg/z.ca.m3u8
 #EXTINF:-1  tvg-id="zeste.ca" tvg-logo="https://media.starlite.best/zeste.ca.png" group-title="Mystique CA" radio="false",Zeste
 https://tvnow.best/api/stream/burns/burns/livetv.epg/zeste.ca.m3u8
