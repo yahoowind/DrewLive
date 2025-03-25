@@ -1,64 +1,60 @@
 #EXTM3U x-tvg-url="https://tinyurl.com/all020-epg" tvg-shift=0
-#EXTINF:-1  tvg-id="ESPN.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737479929301-734936769.webp" group-title="24/7 STREAMS",ESPN USA
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/5.m3u8
-#EXTINF:-1  tvg-id="The.Fight.Network.(United.States).(TFN).us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737480572371-2614386.avif" group-title="24/7 STREAMS",Fight Network
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/448.m3u8
-#EXTINF:-1  tvg-id="MLB.Network.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728412197574-841337312.jpg" group-title="24/7 STREAMS",MLB TV
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/364.m3u8
-#EXTINF:-1  tvg-id="Marquee.Sports.Network.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737480272313-198816265.png" group-title="24/7 STREAMS",Marquee Sports Network
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/447.m3u8
-#EXTINF:-1  tvg-id="NBA.TV.USA.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728408044408-143580793.jpg" group-title="24/7 STREAMS",NBA TV
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/1.m3u8
-#EXTINF:-1  tvg-id="NFL.Network.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728404679247-927954642.jpg" group-title="24/7 STREAMS",NFL NETWORK
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/3.m3u8
-#EXTINF:-1  tvg-id="NHL.Network.USA.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728404540419-502177724.png" group-title="24/7 STREAMS",NHL NETWORK
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/6.m3u8
-#EXTINF:-1  tvg-id="TNT.-.Eastern.Feed.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737480103497-62053063.jpg" group-title="24/7 STREAMS",TNT
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/446.m3u8
 #EXTINF:-1  tvg-id="ESPN.us" tvg-logo="https://i.imgur.com/kJ6395b.jpeg" group-title="24/7 STREAMS",ESPN
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 https://director.taihotel.asia/v3/director/VE1ZmQ0OWRiYjcxMmY4LTcwZGItMTQzNC1iOWY5LTdhY2U1YmQ2/master.m3u8?md5=ucMRWDzzwlEe3TgY4qZ2zg&expires=1705611600
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/ath.png" group-title="MLB",Athletics - Chicago White Sox (AWAY)
+#EXTINF:-1  tvg-id="ESPN.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737479929301-734936769.webp" group-title="24/7 STREAMS",ESPN USA
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/383.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/chw.png" group-title="MLB",Athletics - Chicago White Sox (HOME)
+https://locked.pixelserver.online/psportsgate/psportsgate100/3.m3u8
+#EXTINF:-1  tvg-id="The.Fight.Network.(United.States).(TFN).us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737480572371-2614386.avif" group-title="24/7 STREAMS",Fight Network
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/370.m3u8
+https://locked.pixelserver.online/psportsgate/psportsgate100/143.m3u8
+#EXTINF:-1  tvg-id="MLB.Network.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728412197574-841337312.jpg" group-title="24/7 STREAMS",MLB TV
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/105.m3u8
+#EXTINF:-1  tvg-id="Marquee.Sports.Network.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737480272313-198816265.png" group-title="24/7 STREAMS",Marquee Sports Network
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/142.m3u8
+#EXTINF:-1  tvg-id="NBA.TV.USA.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728408044408-143580793.jpg" group-title="24/7 STREAMS",NBA TV
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/1.m3u8
+#EXTINF:-1  tvg-id="NFL.Network.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728404679247-927954642.jpg" group-title="24/7 STREAMS",NFL NETWORK
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/2.m3u8
+#EXTINF:-1  tvg-id="NHL.Network.USA.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728404540419-502177724.png" group-title="24/7 STREAMS",NHL NETWORK
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/4.m3u8
+#EXTINF:-1  tvg-id="TNT.-.Eastern.Feed.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737480103497-62053063.jpg" group-title="24/7 STREAMS",TNT
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/145.m3u8
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://i.imgur.com/WkQyZw9.png" group-title="MLB",Atlanta Braves vs. Chicago Cubs
+#EXTVLCOPT:http-referrer=https://ppv.land/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://director.taihotel.asia/v3/director/VE1ZmY3MTBkYWJlMmMyLTI4NmItMzdlNC1iNjQ2LWM1Nzc3ZTRl/master.m3u8?md5=VZaDRCS--6b6Plz620v9sQ&expires=1742941560
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://i.imgur.com/NPUGpNc.png" group-title="MLB",Detroit Tigers vs. San Francisco Giants
+#EXTVLCOPT:http-referrer=https://ppv.land/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://director.taihotel.asia/v3/director/VE1M2IyYTE4OGFmNjY5LWRlMDktYTc0NC0yMjg1LWU0MjAyNDU1/master.m3u8?md5=b95cpcPWtXaZOyeUu4gtLA&expires=1742955960
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://i.imgur.com/SnC1Y5N.png" group-title="MLB",Los Angeles Dodgers vs. Los Angeles Angels
+#EXTVLCOPT:http-referrer=https://ppv.land/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://director.taihotel.asia/v3/director/VE1OWU2MzFkOTA2ZDFiLTQ4ZTktYTQyNC1lMWNiLWU5YzZhODVm/master.m3u8?md5=V3Mt9-DEz_-5q8GJJf0Vug&expires=1742959680
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/atl.png" group-title="MLB",Atlanta Braves - Chicago Cubs (AWAY)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/366.m3u8
+https://locked.pixelserver.online/psportsgate/psportsgate100/107.m3u8
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/chc.png" group-title="MLB",Atlanta Braves - Chicago Cubs (HOME)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/394.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/bal.png" group-title="MLB",Baltimore Orioles - Washington Nationals (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/375.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/wsh.png" group-title="MLB",Baltimore Orioles - Washington Nationals (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/393.m3u8
+https://locked.pixelserver.online/psportsgate/psportsgate100/109.m3u8
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="/teamlogos/1742329759716.svg" group-title="MLB",Chicago Cubs @ Los Angeles Dodgers (AWAY)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
@@ -66,23 +62,31 @@ https://nfr-2a.thecast.live/wcsportz/live100/377.m3u8
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="/teamlogos/1742329759715.svg" group-title="MLB",Chicago Cubs @ Los Angeles Dodgers (HOME)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/394.m3u8
+https://locked.pixelserver.online/psportsgate/psportsgate100/134.m3u8
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/cle.png" group-title="MLB",Cleveland Guardians - Arizona Diamondbacks (AWAY)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/372.m3u8
+https://locked.pixelserver.online/psportsgate/psportsgate100/112.m3u8
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/ari.png" group-title="MLB",Cleveland Guardians - Arizona Diamondbacks (HOME)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/365.m3u8
+https://locked.pixelserver.online/psportsgate/psportsgate100/106.m3u8
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/col.png" group-title="MLB",Colorado Rockies - Minnesota Twins (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://nfr-2a.thecast.live/wcsportz/live100/373.m3u8
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/min.png" group-title="MLB",Colorado Rockies - Minnesota Twins (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/120.m3u8
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/det.png" group-title="MLB",Detroit Tigers - San Francisco Giants (AWAY)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/374.m3u8
+https://locked.pixelserver.online/psportsgate/psportsgate100/114.m3u8
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sf.png" group-title="MLB",Detroit Tigers - San Francisco Giants (HOME)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/387.m3u8
+https://locked.pixelserver.online/psportsgate/psportsgate100/127.m3u8
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/kc.png" group-title="MLB",Kansas City Royals - Texas Rangers (AWAY)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
@@ -90,243 +94,239 @@ https://nfr-2a.thecast.live/wcsportz/live100/376.m3u8
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tex.png" group-title="MLB",Kansas City Royals - Texas Rangers (HOME)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/391.m3u8
+https://locked.pixelserver.online/psportsgate/psportsgate100/131.m3u8
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/lad.png" group-title="MLB",Los Angeles Dodgers - Los Angeles Angels (AWAY)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/394.m3u8
+https://locked.pixelserver.online/psportsgate/psportsgate100/134.m3u8
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/laa.png" group-title="MLB",Los Angeles Dodgers - Los Angeles Angels (HOME)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/377.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/mil.png" group-title="MLB",Milwaukee Brewers - Colorado Rockies (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/379.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/col.png" group-title="MLB",Milwaukee Brewers - Colorado Rockies (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/373.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/nyy.png" group-title="MLB",New York Yankees - New York Mets (AWAY)
+https://locked.pixelserver.online/psportsgate/psportsgate100/117.m3u8
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/nyy.png" group-title="MLB",New York Yankees - Miami Marlins (AWAY)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 https://nfr-2a.thecast.live/wcsportz/live100/382.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/nym.png" group-title="MLB",New York Yankees - New York Mets (HOME)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/mia.png" group-title="MLB",New York Yankees - Miami Marlins (HOME)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/381.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/pit.png" group-title="MLB",Pittsburgh Pirates - Minnesota Twins (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/385.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/min.png" group-title="MLB",Pittsburgh Pirates - Minnesota Twins (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/380.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sea.png" group-title="MLB",Seattle Mariners - San Diego Padres (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/388.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sd.png" group-title="MLB",Seattle Mariners - San Diego Padres (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/386.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tb.png" group-title="MLB",Tampa Bay Rays - Philadelphia Phillies (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/390.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/phi.png" group-title="MLB",Tampa Bay Rays - Philadelphia Phillies (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/384.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://i.imgur.com/XuRZ7Yg.png" group-title="MLB",Athletics vs. Chicago White Sox
+https://locked.pixelserver.online/psportsgate/psportsgate100/118.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/cle-por/1280x720.png" group-title="NBA",Cavaliers at Trail Blazers
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1ZjA3N2MwNjE0OWVkLTljZDgtMzAxNC05OTA4LTdhZTgzNDk5/master.m3u8?md5=C2kTwTbZ_Lno38NWVTPcdA&expires=1742851560
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://i.imgur.com/scUHnsx.png" group-title="MLB",Atlanta Braves vs. Chicago Cubs
+https://director.taihotel.asia/v3/director/VE1Y2I4M2RiNDI1OTI1LThmMmEtNzZkNC0zZDQ2LTIyNTIxYjE3/master.m3u8?md5=bEAQzzKBwHH4UHUGEaEiTg&expires=1742964300
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/mem-uta/1280x720.png" group-title="NBA",Grizzlies at Jazz
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1ZmY3MTBkYWJlMmMyLTI4NmItMzdlNC1iNjQ2LWM1Nzc3ZTRl/master.m3u8?md5=NeOI4qpbFmMWcisS7rl9Jg&expires=1742855160
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://i.imgur.com/VDbDHZo.png" group-title="MLB",Cleveland Guardians vs. Arizona Diamondbacks
+https://director.taihotel.asia/v3/director/VE1ZWM2M2M4NGQzYzk4LTExOTgtZjMzNC1iNThkLWI2ZWEzMjM2/master.m3u8?md5=lcbEV7bZwup3p9nMbM1N5A&expires=1742960700
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/atl-hou/1280x720.png" group-title="NBA",Hawks at Rockets
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1YWVhYWY3YmY4OGUzLWM0NmItZWUzNC1hZGE1LTU2NDk5ZGIy/master.m3u8?md5=ef4juB01_04cP9dRx8N2Bg&expires=1742875260
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://i.imgur.com/OZB0qdr.png" group-title="MLB",Detroit Tigers vs. San Francisco Giants
+https://director.taihotel.asia/v3/director/VE1MmRmYzE0MTdkMzJiLTdlZGItZmQxNC0yZGM4LWFiNDQ1NTU5/master.m3u8?md5=UWaADSASPcoEklw6RekE6A&expires=1742957100
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/orl-cha/1280x720.png" group-title="NBA",Magic at Hornets
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1M2IyYTE4OGFmNjY5LWRlMDktYTc0NC0yMjg1LWU0MjAyNDU1/master.m3u8?md5=oPTyj4fvnx2dQuZZYeSC7A&expires=1742875560
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://i.imgur.com/yVI4DMr.png" group-title="MLB",Kansas City Royals vs. Texas Rangers
+https://director.taihotel.asia/v3/director/VE1ZjBlNzZmNmRkMzU3LWE0M2EtNTU3NC05Y2MzLTY1Njg5Y2Rh/master.m3u8?md5=5XTpVTY-67YDC3BzwxG9UQ&expires=1742953500
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/dal-nyk/1280x720.png" group-title="NBA",Mavericks at Knicks
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1YTUxZDg4MGIwYjVhLWNjZDktY2EwNC01ODA5LTZkOTViMDE5/master.m3u8?md5=fhxOZeO2NZv7IgCj0ZppYw&expires=1742869560
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://i.imgur.com/93ntgco.png" group-title="MLB",Los Angeles Dodgers vs. Los Angeles Angels
+https://director.taihotel.asia/v3/director/VE1MmI0YTY4NDY0YTExLTY0N2ItYmVjNC04YmFlLTA2YmE0NTlk/master.m3u8?md5=1Tp9b-1OqMKeoqNFPZzgrg&expires=1742955300
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/sas-det/1280x720.png" group-title="NBA",Spurs at Pistons
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1OWU2MzFkOTA2ZDFiLTQ4ZTktYTQyNC1lMWNiLWU5YzZhODVm/master.m3u8?md5=4SlijOwERRSz-1Cv1qJGhQ&expires=1742873280
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://i.imgur.com/is9r1h4.png" group-title="MLB",Milwaukee Brewers vs. Colorado Rockies
+https://director.taihotel.asia/v3/director/VE1NTM1Yzg3NTFjMmU3LWI1OGItOWJmNC1iMzM1LWEzN2JlMjE4/master.m3u8?md5=5XTpVTY-67YDC3BzwxG9UQ&expires=1742953500
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/okc-sac/1280x720.png" group-title="NBA",Thunder at Kings
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1NjkxMmNmNWU0OGZmLTZlNDgtZTk0NC05ZjE1LTcwNTc0MTI4/master.m3u8?md5=WODuUyp3NSaxw8pYACYkOg&expires=1742851860
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bos.png" group-title="NBA",Boston Celtics - Sacramento Kings (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/138.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sac.png" group-title="NBA",Boston Celtics - Sacramento Kings (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/144.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/chi.png" group-title="NBA",Chicago Bulls - Denver Nuggets (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/166.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/den.png" group-title="NBA",Chicago Bulls - Denver Nuggets (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/157.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/dal.png" group-title="NBA",Dallas Mavericks - Brooklyn Nets (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/156.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bkn.png" group-title="NBA",Dallas Mavericks - Brooklyn Nets (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/139.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/lal.png" group-title="NBA",Los Angeles Lakers - Orlando Magic (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/163.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/orl.png" group-title="NBA",Los Angeles Lakers - Orlando Magic (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/153.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mil.png" group-title="NBA",Milwaukee Bucks - Phoenix Suns (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/148.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/phx.png" group-title="NBA",Milwaukee Bucks - Phoenix Suns (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/155.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/min.png" group-title="NBA",Minnesota Timberwolves - Indiana Pacers (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/149.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ind.png" group-title="NBA",Minnesota Timberwolves - Indiana Pacers (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/161.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/phi.png" group-title="NBA",Philadelphia 76ers - New Orleans Pelicans (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/154.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png" group-title="NBA",Philadelphia 76ers - New Orleans Pelicans (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/150.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/tor.png" group-title="NBA",Toronto Raptors - Washington Wizards (AWAY)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/142.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/wsh.png" group-title="NBA",Toronto Raptors - Washington Wizards (HOME)
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/140.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/phi-nop/1280x720.png" group-title="NBA",76ers at Pelicans
+https://director.taihotel.asia/v3/director/VE1OTMyYWI3MGI5MTI0LTk0ZWItMjg4NC0yNGUwLTExYTEyYjYx/master.m3u8?md5=bEAQzzKBwHH4UHUGEaEiTg&expires=1742964300
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/gsw-mia/1280x720.png" group-title="NBA",Warriors at Heat
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1M2VhOGNkMDVhMGQ2LWNhMGEtZmYxNC04MTIwLTg2NzQ4Nzkz/master.m3u8?md5=jVWMpdRJSb4MLaHtY-l67Q&expires=1742870700
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/mil-phx/1280x720.png" group-title="NBA",Bucks at Suns
-#EXTVLCOPT:http-referrer=https://ppv.land/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1MjRhMTYyYjRmODBjLTE0NzgtNjEyNC1iOTFhLTUzM2ZmYjNj/master.m3u8?md5=_Bxw5kxNkm5wGaPiUCYPCA&expires=1742877900
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/chi-den/1280x720.png" group-title="NBA",Bulls at Nuggets
-#EXTVLCOPT:http-referrer=https://ppv.land/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1NjVkNWYzNDFkZGVkLTg2Y2ItMWRiNC0zNjQxLTJhMGJiYmQy/master.m3u8?md5=ba6ROlB9AI4dXe8eyI0cfA&expires=1742874300
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/bos-sac/1280x720.png" group-title="NBA",Celtics at Kings
-#EXTVLCOPT:http-referrer=https://ppv.land/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1ZmE4MjUyYTYzNDI0LWY4MWEtMjRkNC02ZmY5LWJjODY1ODE3/master.m3u8?md5=_Bxw5kxNkm5wGaPiUCYPCA&expires=1742877900
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/lal-orl/1280x720.png" group-title="NBA",Lakers at Magic
-#EXTVLCOPT:http-referrer=https://ppv.land/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1MjRhMTYyYjRmODBjLTE0NzgtNjEyNC1iOTFhLTUzM2ZmYjNj/master.m3u8?md5=lWY8sy5k5_tu9Hn4TH5UkA&expires=1742867100
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/dal-bkn/1280x720.png" group-title="NBA",Mavericks at Nets
-#EXTVLCOPT:http-referrer=https://ppv.land/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1NzcyNWIyZTFmNGE3LWY3NDgtODQ5NC0xYWFiLTFhNmM4ZWY2/master.m3u8?md5=74oDYzi3fP9LaDYo7-Ef9w&expires=1742868900
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/tor-was/1280x720.png" group-title="NBA",Raptors at Wizards
-#EXTVLCOPT:http-referrer=https://ppv.land/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1YzYxODk2OTJkZWY1LTFlOTgtY2ZjNC00OTMwLWI4MGQ4YmQw/master.m3u8?md5=lWY8sy5k5_tu9Hn4TH5UkA&expires=1742867100
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://cdn.nba.com/davinci/images/team-matchups/nba/latest/ced/min-ind/1280x720.png" group-title="NBA",Timberwolves at Pacers
-#EXTVLCOPT:http-referrer=https://ppv.land/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1ZmIzODJhNTBmNGZmLWRhOWEtMzYxNC0zYjBkLWI3NDUyODkz/master.m3u8?md5=lWY8sy5k5_tu9Hn4TH5UkA&expires=1742867100
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",76ers vs Hawks
-#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://ly.prettyinpunkness.online/nba3.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Cavaliers vs Jazz
-#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://ugly.prettyinpunkness.online/nba2.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Celtics vs Trail Blazers
-#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://ugly.prettyinpunkness.online/nba5.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Hornets vs Heat
-#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://ugly.prettyinpunkness.online/nba4.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Nuggets vs Rockets
+https://director.taihotel.asia/v3/director/VE1OTMyYWI3MGI5MTI0LTk0ZWItMjg4NC0yNGUwLTExYTEyYjYx/master.m3u8?md5=1Tp9b-1OqMKeoqNFPZzgrg&expires=1742955300
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Cavaliers vs Trail Blazers
 #EXTVLCOPT:http-referrer=https://roxiestreams.pro/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 https://ugly.prettyinpunkness.online/nba7.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Pelicans vs Pistons
-#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://ly.prettyinpunkness.online/nba.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Spurs vs Raptors
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Grizzlies vs Jazz
 #EXTVLCOPT:http-referrer=https://roxiestreams.pro/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 https://ugly.prettyinpunkness.online/nba6.m3u8
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Thunder vs Clippers
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Hawks vs Rockets
 #EXTVLCOPT:http-referrer=https://roxiestreams.pro/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://ugly.prettyinpunkness.online/nba8.m3u8
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/cbj.png" group-title="NHL",Columbus Blue Jackets - New York Islanders (AWAY)
+https://ugly.prettyinpunkness.online/nba5.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Magic vs Hornets
+#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://ly.prettyinpunkness.online/nba.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Mavericks vs Knicks
+#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://ly.prettyinpunkness.online/nba3.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Spurs vs Pistons
+#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://ugly.prettyinpunkness.online/nba2.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Thunder vs Kings
+#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://ugly.prettyinpunkness.online/nba4.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Warriors vs Heat
+#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://ugly.prettyinpunkness.online/nba4.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/atl.png" group-title="NBA",Atlanta Hawks - Houston Rockets (AWAY)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/64.m3u8
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/nyi.png" group-title="NHL",Columbus Blue Jackets - New York Islanders (HOME)
+https://locked.pixelserver.online/psportsgate/psportsgate100/65.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png" group-title="NBA",Atlanta Hawks - Houston Rockets (HOME)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/74.m3u8
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/det.png" group-title="NHL",Detroit Red Wings - Utah Hockey Club (AWAY)
+https://locked.pixelserver.online/psportsgate/psportsgate100/88.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cle.png" group-title="NBA",Cleveland Cavaliers - Portland Trail Blazers (AWAY)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/66.m3u8
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/utah.png" group-title="NHL",Detroit Red Wings - Utah Hockey Club (HOME)
+https://locked.pixelserver.online/psportsgate/psportsgate100/95.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/por.png" group-title="NBA",Cleveland Cavaliers - Portland Trail Blazers (HOME)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/57.m3u8
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/min.png" group-title="NHL",Minnesota Wild - Dallas Stars (AWAY)
+https://locked.pixelserver.online/psportsgate/psportsgate100/73.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/dal.png" group-title="NBA",Dallas Mavericks - New York Knicks (AWAY)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/70.m3u8
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/dal.png" group-title="NHL",Minnesota Wild - Dallas Stars (HOME)
+https://locked.pixelserver.online/psportsgate/psportsgate100/84.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ny.png" group-title="NBA",Dallas Mavericks - New York Knicks (HOME)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/65.m3u8
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/van.png" group-title="NHL",Vancouver Canucks - New Jersey Devils (AWAY)
+https://locked.pixelserver.online/psportsgate/psportsgate100/79.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/gs.png" group-title="NBA",Golden State Warriors - Miami Heat (AWAY)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/346.m3u8
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/nj.png" group-title="NHL",Vancouver Canucks - New Jersey Devils (HOME)
+https://locked.pixelserver.online/psportsgate/psportsgate100/87.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png" group-title="NBA",Golden State Warriors - Miami Heat (HOME)
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://nfr-2a.thecast.live/wcsportz/live100/73.m3u8
+https://locked.pixelserver.online/psportsgate/psportsgate100/75.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mem.png" group-title="NBA",Memphis Grizzlies - Utah Jazz (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/74.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/utah.png" group-title="NBA",Memphis Grizzlies - Utah Jazz (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/69.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/okc.png" group-title="NBA",Oklahoma City Thunder - Sacramento Kings (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/80.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sac.png" group-title="NBA",Oklahoma City Thunder - Sacramento Kings (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/72.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/orl.png" group-title="NBA",Orlando Magic - Charlotte Hornets (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/81.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cha.png" group-title="NBA",Orlando Magic - Charlotte Hornets (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/93.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sa.png" group-title="NBA",San Antonio Spurs - Detroit Pistons (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/71.m3u8
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png" group-title="NBA",San Antonio Spurs - Detroit Pistons (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/86.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/det.png" group-title="NHL",Detroit Red Wings - Colorado Avalanche (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/15.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/col.png" group-title="NHL",Detroit Red Wings - Colorado Avalanche (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/12.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/mtl.png" group-title="NHL",Montreal Canadiens - St. Louis Blues (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/20.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/stl.png" group-title="NHL",Montreal Canadiens - St. Louis Blues (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/30.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/nsh.png" group-title="NHL",Nashville Predators - Carolina Hurricanes (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/21.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/car.png" group-title="NHL",Nashville Predators - Carolina Hurricanes (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/137.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/nyr.png" group-title="NHL",New York Rangers - Los Angeles Kings (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/24.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/la.png" group-title="NHL",New York Rangers - Los Angeles Kings (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/18.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/ott.png" group-title="NHL",Ottawa Senators - Buffalo Sabres (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/25.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/buf.png" group-title="NHL",Ottawa Senators - Buffalo Sabres (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/9.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/phi.png" group-title="NHL",Philadelphia Flyers - Toronto Maple Leafs (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/26.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/tor.png" group-title="NHL",Philadelphia Flyers - Toronto Maple Leafs (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/32.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/pit.png" group-title="NHL",Pittsburgh Penguins - Tampa Bay Lightning (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/27.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/tb.png" group-title="NHL",Pittsburgh Penguins - Tampa Bay Lightning (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/31.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/sea.png" group-title="NHL",Seattle Kraken - Calgary Flames (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/29.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/cgy.png" group-title="NHL",Seattle Kraken - Calgary Flames (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/10.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/vgk.png" group-title="NHL",Vegas Golden Knights - Minnesota Wild (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/33.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/min.png" group-title="NHL",Vegas Golden Knights - Minnesota Wild (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/19.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/wsh.png" group-title="NHL",Washington Capitals - Winnipeg Jets (AWAY)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/34.m3u8
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/wpg.png" group-title="NHL",Washington Capitals - Winnipeg Jets (HOME)
+#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://locked.pixelserver.online/psportsgate/psportsgate100/102.m3u8
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/wwe-logo.png" group-title="WRESTLING",WWE NXT
+#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://ugly.prettyinpunkness.online/prettyinpunk.m3u8
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/wwe-logo.png" group-title="WRESTLING",WWE Smackdown
+#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://ugly.prettyinpunkness.online/prettyinpunk.m3u8
 #EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://i.imgur.com/x3OPAo3.jpeg" group-title="WRESTLING",AEW Collision
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
@@ -339,27 +339,11 @@ https://director.taihotel.asia/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YT
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 https://director.taihotel.asia/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=yCfO-Y0BtDCEIrfD59Mfow&expires=1743130800
-#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://i.imgur.com/zQQieeY.png" group-title="WRESTLING",WWE RAW
-#EXTVLCOPT:http-referrer=https://ppv.land/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=JxP-WDKDYH5sRcrgq7DwGA&expires=1742855400
-#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://i.imgur.com/n7tkxQQ.png" group-title="WRESTLING",WWE RAW
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://i.imgur.com/n7tkxQQ.png" group-title="WRESTLING",WWE NXT
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 https://director.taihotel.asia/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=M-QDraf-PSS8mUn-PWte-Q&expires=1742958000
 #EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://i.imgur.com/RqupbgS.png" group-title="WRESTLING",WWE SmackDown
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://director.taihotel.asia/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.
-#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/wwe-logo.png" group-title="WRESTLING",WWE NXT
-#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://ugly.prettyinpunkness.online/prettyinpunk.m3u8
-#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/wwe-logo.png" group-title="WRESTLING",WWE RAW
-#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://ugly.prettyinpunkness.online/prettyinpunk.m3u8
-#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/wwe-logo.png" group-title="WRESTLING",WWE Smackdown
-#EXTVLCOPT:http-referrer=https://roxiestreams.pro/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
-https://ugly.prettyinpunkness.online/prettyinpunk.m3u8
+https://director.taihotel.asia/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=FHfueEklP8FG-0YVjo5ADg&expires=1743202800
