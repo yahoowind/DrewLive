@@ -8,7 +8,7 @@ https://tinyurl.com/ddylive001
 
 All the playlist merged together in one link
 
-https://tinyurl.com/drewall06
+https://tinyurl.com/drewall07
 
 EPG Links
 
