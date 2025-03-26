@@ -10,7 +10,7 @@ https://tinyurl.com/drewall06
 
 EPG Links
 
-https://tinyurl.com/all007-epg
+https://tinyurl.com/all008-epg
 
 https://tinyurl.com/all020-epg (won't crash IPTV Players but missing local channels EPG)
 
