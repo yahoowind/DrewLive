@@ -1,4 +1,4 @@
-﻿#EXTM3U url-tvg="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/epgs/tvpass-epg.xml"
+#EXTM3U x-tvg-url="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/epgs/tvpass-epg.xml" tvg-shift=0
 #EXTINF:-1  tvg-id="A.and.E.US.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/a-and-e-us.png" group-title="TheTVApp",A&E
 https://m3u-proxy-ten.vercel.app?url=https%3A%2F%2Fv12.thetvapp.to%2Fhls%2FAEEast%2Ftracks-v1a1%2Fmono.m3u8&data=T3JpZ2luPWh0dHBzOi8vdGhldHZhcHAudG98UmVmZXJlcj1odHRwczovL3RoZXR2YXBwLnRvL3xVc2VyLWFnZW50PU1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMzAuMC4wLjAgU2FmYXJpLzUzNy4zNg%3D%3D
 #EXTINF:-1  tvg-id="A.and.E.US.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/a-and-e-us.png" group-title="TheTVApp",A&E (SD)
