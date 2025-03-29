@@ -6,7 +6,7 @@ https://tinyurl.com/drewsamsung00
 
 All the playlist merged together in one link
 
-https://tinyurl.com/drewall09
+https://tinyurl.com/drewall12
 
 EPG Links
 
