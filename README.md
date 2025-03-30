@@ -1,9 +1,3 @@
-Here's shortened links of each playlist
-
-https://tinyurl.com/japantv25
-
-https://tinyurl.com/drewsamsung00
-
 All the playlist merged together in one link
 
 https://tinyurl.com/drewall12
