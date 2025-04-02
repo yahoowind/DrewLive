@@ -17,14 +17,14 @@ https://a1xs.vip/700007
 https://a1xs.vip/700010
 #EXTINF:-1  tvg-name="Optus Sports 2" tvg-id="Optus.Sport.2.au" tvg-logo="https://pixvid.org/images/2025/02/25/Optus_Sport.png" group-title="A1xmedia AU Sports" radio="false",Optus Sports 2
 https://a1xs.vip/700011
-#EXTINF:-1  tvg-name="CP24" tvg-id="CP24.(CablePulse.24).ca" tvg-logo="https://broadcasting-history.ca/wp-content/uploads/2021/03/CP24-Logo.jpg" group-title="A1xmedia CA Channels" radio="false",CP24
-https://a1xs.vip/610001
-#EXTINF:-1  tvg-name="CTV News" tvg-id="CTV.News.Channel.ca" tvg-logo="https://i.imgur.com/tAHqKVn.png" group-title="A1xmedia CA Channels" radio="false",CTV News
-https://a1xs.vip/610002
-#EXTINF:-1  tvg-name="CTV 2" tvg-id="CTV2.Toronto,.ON.ca" tvg-logo="https://i.imgur.com/T2uS3V6.png" group-title="A1xmedia CA Channels" radio="false",CTV 2
-https://a1xs.vip/610003
 #EXTINF:-1  tvg-name="CTV 2" tvg-id="CBC.News.Network.ca" tvg-logo="https://i.imgur.com/kXIXzxH.png" group-title="A1xmedia CA Channels" radio="false",CBC News Network
 https://a1xs.vip/610004
+#EXTINF:-1  tvg-name="CP24" tvg-id="CP24.(CablePulse.24).ca" tvg-logo="https://broadcasting-history.ca/wp-content/uploads/2021/03/CP24-Logo.jpg" group-title="A1xmedia CA Channels" radio="false",CP24
+https://a1xs.vip/610001
+#EXTINF:-1  tvg-name="CTV 2" tvg-id="CTV2.Toronto,.ON.ca" tvg-logo="https://i.imgur.com/T2uS3V6.png" group-title="A1xmedia CA Channels" radio="false",CTV 2
+https://a1xs.vip/610003
+#EXTINF:-1  tvg-name="CTV News" tvg-id="CTV.News.Channel.ca" tvg-logo="https://i.imgur.com/tAHqKVn.png" group-title="A1xmedia CA Channels" radio="false",CTV News
+https://a1xs.vip/610002
 #EXTINF:-1  tvg-name="Global News" tvg-id="Global.BC.ca" tvg-logo="https://i.imgur.com/8QAJH8a.png" group-title="A1xmedia CA Channels" radio="false",Global News
 https://a1xs.vip/610005
 #EXTINF:-1  tvg-name="Sportsnet 360 FHD" tvg-id="Sportsnet.360.ca" tvg-logo="https://i.imgur.com/8YNVKqC.png" group-title="A1xmedia CA Sports" radio="false",Sportsnet 360 FHD
@@ -1209,7 +1209,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/addik.tv.ca.m3u8
 http://supersonictv.live:8080/443870/997140/21818
 #EXTINF:-1  tvg-id="AMC.-.Canada.ca" tvg-logo="https://media.starlite.best/amc.canada.ca.png" group-title="Mystique CA" radio="false",AMC
 https://tvnow.best/api/stream/burns/burns/livetv.epg/amc.canada.ca.m3u8
-#EXTINF:-1  tvg-id="ami.tl.ca" tvg-logo="https://media.starlite.best/ami.tl.ca.png" group-title="Mystique CA" radio="false",AMI-tele
+#EXTINF:-1  tvg-id="AMI-tv.East.ca" tvg-logo="https://media.starlite.best/ami.tl.ca.png" group-title="Mystique CA" radio="false",AMI-tele
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ami.tl.ca.m3u8
 #EXTINF:-1  tvg-id="APTN.-.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/aptn-ca.png" group-title="Mystique CA" radio="false",APTN
 http://fortv.cc:8080/curtis@celltv24/curtis@2024/57320
@@ -1223,7 +1223,7 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/bnn.bloomberg.ca.m3u8
 http://96.45.207.18:8881/channel/3255f3aa/index.m3u8?q=1735600584362
 #EXTINF:-1  tvg-id="bravo.canada.ca" tvg-logo="https://media.starlite.best/bravo.canada.ca.png" group-title="Mystique CA" radio="false",Bravo
 http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138734
-#EXTINF:-1  tvg-id="canal.d.ca" tvg-logo="https://media.starlite.best/canal.d.ca.png" group-title="Mystique CA" radio="false",Canal D
+#EXTINF:-1  tvg-id="Canal.D.HD.ca" tvg-logo="https://media.starlite.best/canal.d.ca.png" group-title="Mystique CA" radio="false",Canal D
 https://tvnow.best/api/stream/burns/burns/livetv.epg/canal.d.ca.m3u8
 #EXTINF:-1  tvg-id="savoir.mdia.ca" tvg-logo="https://media.starlite.best/savoir.mdia.ca.png" group-title="Mystique CA" radio="false",Canal Savior
 https://tvnow.best/api/stream/burns/burns/livetv.epg/savoir.mdia.ca.m3u8
@@ -1231,16 +1231,12 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/savoir.mdia.ca.m3u8
 http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138592
 #EXTINF:-1  tvg-id="casa.ca" tvg-logo="https://media.starlite.best/casa.ca.png" group-title="Mystique CA" radio="false",CASA
 https://tvnow.best/api/stream/burns/burns/livetv.epg/casa.ca.m3u8
-#EXTINF:-1  tvg-id="CBC.(CBRT).Calgary.AB.ca" tvg-logo="https://media.starlite.best/cbc.cbrt.calgary.ab.ca.png" group-title="Mystique CA" radio="false",CBC Calgary (CBRT)
-https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbrt.calgary.ab.ca.m3u8
 #EXTINF:-1  tvg-id="CBC.Charlottetown.(CBCT).ca" tvg-logo="https://media.starlite.best/cbc.cbct.charlottetown.pe.ca.png" group-title="Mystique CA" radio="false",CBC Charlottetown (CBCT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbct.charlottetown.pe.ca.m3u8
 #EXTINF:-1  tvg-id="CBC.Edmonton.HDTV.(CBXTHD).ca" tvg-logo="https://media.starlite.best/cbc.cbxt.edmonton.ab.ca.png" group-title="Mystique CA" radio="false",CBC Edmonton (CBXT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbxt.edmonton.ab.ca.m3u8
 #EXTINF:-1  tvg-id="CBC.Fredericton.(CBAT).ca" tvg-logo="https://media.starlite.best/cbc.cbat.fredericton.nb.ca.png" group-title="Mystique CA" radio="false",CBC Fredericton (CBAT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbat.fredericton.nb.ca.m3u8
-#EXTINF:-1  tvg-id="CBC.(CBHT).Halifax.NS.ca" tvg-logo="https://media.starlite.best/cbc.cbht.halifax.ns.ca.png" group-title="Mystique CA" radio="false",CBC Halifax (CBHT)
-https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbht.halifax.ns.ca.m3u8
 #EXTINF:-1  tvg-id="CBC.Quebec.HDTV.(CBMTHD).ca" tvg-logo="https://media.starlite.best/cbc.cbmt.montreal.qc.ca.png" group-title="Mystique CA" radio="false",CBC Montreal (CBMT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbmt.montreal.qc.ca.m3u8
 #EXTINF:-1  tvg-id="CBC.News.Network.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/cbc-news-network-ca.png" group-title="Mystique CA" radio="false",CBC News
@@ -1251,35 +1247,19 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbot.ottawa.on.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbkt.regina.sk.ca.m3u8M
 #EXTINF:-1  tvg-id="CBC.(CBNT).St-Johns.NL.ca.ca" tvg-logo="https://media.starlite.best/cbc.cbnt.st.johns.nl.ca.png" group-title="Mystique CA" radio="false",CBC St.Johns (CBNT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbnt.st.johns.nl.ca.m3u8
-#EXTINF:-1  tvg-id="CBC.(CBLT).Toronto.ON.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/cbc-toronto-ca.png" group-title="Mystique CA" radio="false",CBC Toronto (CBLT)
-https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cblt.toronto.on.ca.m3u8
-#EXTINF:-1  tvg-id="CBC.(CBUT).Vancouver.BC.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/cbc-vancouver-ca.png" group-title="Mystique CA" radio="false",CBC Vancouver (CBUT)
-https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbut.vancouver.bc.ca.m3u8
 #EXTINF:-1  tvg-id="CBET.Windsor.(CBET).ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/cbc-windsor-ca.png" group-title="Mystique CA" radio="false",CBC Windsor (CBET)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbet.windsor.on.ca.m3u8
-#EXTINF:-1  tvg-id="CBC.(CBWT).Winnipeg.MB.ca" tvg-logo="https://media.starlite.best/cbc.cbwt.winnipeg.mb.ca.png" group-title="Mystique CA" radio="false",CBC Winnipeg (CBWT)
-https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cbwt.winnipeg.mb.ca.m3u8
 #EXTINF:-1  tvg-id="CBC.Yellowknife.(CFYK).ca" tvg-logo="https://media.starlite.best/cbc.cfyk.yellowknife.nwt.ca.png" group-title="Mystique CA" radio="false",CBC Yellowknife (CFYK)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cbc.cfyk.yellowknife.nwt.ca.m3u8
-#EXTINF:-1  tvg-id="CHCH.Hamilton.ON.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/chch-ca.png" group-title="Mystique CA" radio="false",CHCH
-https://flowcaster1-sh.cdn.clearcable.net/CHCH-OTT/smil:CHCH-OTT.smil/chunklist_w778337051_b3160000_sleng_tkaWltYWUwVUMyYWVuZHRpbWU9MTY2MDQ5MDYyMCZpaW1hZTBVQzJhaGFzaD1oS0lmOEQwNzlxNWhLLU43OW8wM1BNZkd0LWZBRG5reE9MVmZySTRua2w0PQ==.m3u8
-#EXTINF:-1  tvg-id="cinpop.ca" tvg-logo="https://media.starlite.best/cinpop.ca.png" group-title="Mystique CA" radio="false",Cinépop
+#EXTINF:-1  tvg-id="CinÃ©pop.HDTV.(C-POPHD).ca" tvg-logo="https://media.starlite.best/cinpop.ca.png" group-title="Mystique CA" radio="false",Cinépop
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cinpop.ca.m3u8
-#EXTINF:-1  tvg-id="CITY.Montreal.QC.ca" tvg-logo="https://media.starlite.best/city.montreal.qc.ca.png" group-title="Mystique CA" radio="false",CityTV Montreal
-http://206.212.244.26/live/vasconeves/1742766045/40598.ts
-#EXTINF:-1  tvg-id="CITY.Toronto.ON.ca" tvg-logo="https://media.starlite.best/city.toronto.on.ca.png" group-title="Mystique CA" radio="false",CityTV Toronto
-http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138701
-#EXTINF:-1  tvg-id="CITY.Vancouver.BC.ca" tvg-logo="https://media.starlite.best/city.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",CityTV Vancouver
-https://tvnow.best/api/stream/burns/burns/livetv.epg/city.vancouver.bc.ca.m3u8
-#EXTINF:-1  tvg-id="CITY.Winnipeg.MB.ca" tvg-logo="https://media.starlite.best/city.montreal.qc.ca.png" group-title="Mystique CA" radio="false",CityTV Winnipeg
-http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138789
 #EXTINF:-1  tvg-id="CMT.Canada.ca" tvg-logo="https://media.starlite.best/cmt.canada.ca.png" group-title="Mystique CA" radio="false",CMT
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cmt.canada.ca.m3u8
 #EXTINF:-1  tvg-id="cnn.ca" tvg-logo="https://media.starlite.best/cnn.ca.png" group-title="Mystique CA" radio="false",CNN
-https://tvnow.best/api/stream/burns/burns/livetv.epg/cnn.ca.m3u8
+http://cdn1host.online:2999/kratorius/opLcbhlXaT/191
 #EXTINF:-1  tvg-id="CP24.(CablePulse.24).ca" tvg-logo="https://media.starlite.best/cp24.cablepulse.24.ca.png" group-title="Mystique CA" radio="false",CP24
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cp24.cablepulse.24.ca.m3u8
-#EXTINF:-1  tvg-id="cpac.francais.ca" tvg-logo="https://media.starlite.best/cpac.francais.ca.png" group-title="Mystique CA" radio="false",CPAC
+#EXTINF:-1  tvg-id="CPAC.(Francais).ca" tvg-logo="https://media.starlite.best/cpac.francais.ca.png" group-title="Mystique CA" radio="false",CPAC
 https://tvnow.best/api/stream/burns/burns/livetv.epg/cpac.francais.ca.m3u8
 #EXTINF:-1  tvg-id="Crave1.-.East.ca" tvg-logo="https://media.starlite.best/crave1.east.ca.png" group-title="Mystique CA" radio="false",Crave 1
 http://fortv.cc:8080/Anaimaldonado24gmail.com/9hOIM0AFwi/57309
@@ -1287,12 +1267,10 @@ http://fortv.cc:8080/Anaimaldonado24gmail.com/9hOIM0AFwi/57309
 http://fortv.cc:8080/Anaimaldonado24gmail.com/9hOIM0AFwi/57310
 #EXTINF:-1  tvg-id="Crave3.-.East.ca" tvg-logo="https://media.starlite.best/crave3.east.ca.png" group-title="Mystique CA" radio="false",Crave 3
 http://fortv.cc:8080/Anaimaldonado24gmail.com/9hOIM0AFwi/57322
-#EXTINF:-1  tvg-id="Crave4.ca" tvg-logo="https://media.starlite.best/crave4.east.ca.png" group-title="Mystique CA" radio="false",Crave 4
+#EXTINF:-1  tvg-id="Crave4.HD.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/crave-4-ca.png?raw=true" group-title="Mystique CA" radio="false",Crave 4
 http://fortv.cc:8080/Anaimaldonado24gmail.com/9hOIM0AFwi/57311
 #EXTINF:-1  tvg-id="Crime.+.Investigation.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/crime-and-investigation-ca.png" group-title="Mystique CA" radio="false",Crime and Investigation
 http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138730
-#EXTINF:-1  tvg-id="CTV.(CFCN).Calgary,.AB.ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10108_h15_ab.png" group-title="Mystique CA" radio="false",CTV Calgary (CFCN)
-https://starlite.best/api/stream/smart/smart/livetv.epg/ctv.cfcn.calgary.ab.ca.m3u8
 #EXTINF:-1  tvg-id="CTV.Comedy.-.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-comedy-channel-ca.png" group-title="Mystique CA" radio="false",CTV Comedy
 https://starlite.best/api/stream/smart/smart/livetv.epg/ctv.comedy.east.ca.m3u8
 #EXTINF:-1  tvg-id="ctv.drama.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-drama-channel-ca.png" group-title="Mystique CA" radio="false",CTV Drama
@@ -1311,18 +1289,10 @@ https://starlite.best/api/stream/smart/smart/livetv.epg/ctv.ckck.regina.sk.ca.m3
 http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138717
 #EXTINF:-1  tvg-id="CTV.Speed.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-speed-channel-ca.png" group-title="Mystique CA" radio="false",CTV Speed
 https://starlite.best/api/stream/smart/smart/livetv.epg/discovery.velocity.ca.m3u8
-#EXTINF:-1  tvg-id="CTV.(CFTO).Toronto,.ON.ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10108_h15_ab.png" group-title="Mystique CA" radio="false",CTV Toronto (CFTO)
-https://starlite.best/api/stream/smart/smart/livetv.epg/ctv.cfto.toronto.on.ca.m3u8
-#EXTINF:-1  tvg-id="CTV.Vancouver,.BC.HD.ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10108_h15_ab.png" group-title="Mystique CA" radio="false",CTV Vancouver
-https://starlite.best/api/stream/smart/smart/livetv.epg/ctv.vancouver.bc.ca.m3u8
 #EXTINF:-1  tvg-id="CTV.Wild.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-wild-channel-ca.png" group-title="Mystique CA" radio="false",CTV Wild
 http://sapphireapp.xyz:8080/live/W0V9brr5JW/2656286300/40775.ts
-#EXTINF:-1  tvg-id="CTV.(CKY).Winnipeg,.MB.ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10108_h15_ab.png" group-title="Mystique CA" radio="false",CTV Winnipeg (CKY)
-https://starlite.best/api/stream/smart/smart/livetv.epg/ctv.cky.winnipeg.mb.ca.m3u8
 #EXTINF:-1  tvg-id="CTV2.Atlantic.Region.ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10135_h15_ab.png" group-title="Mystique CA" radio="false",CTV2 Atlantic
 https://starlite.best/api/stream/smart/smart/livetv.epg/ctv2.atlantic.region.ca.m3u8
-#EXTINF:-1  tvg-id="CTV2.Toronto,.ON.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-2-ca.png" group-title="Mystique CA" radio="false",CTV2 Barrie
-http://user.scalecdn.co:8080/live/26725074/92867131/93008.m3u8
 #EXTINF:-1  tvg-id="CTV.Two.London/CFPL.(CTV2L).ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-2-ca.png" group-title="Mystique CA" radio="false",CTV2 London
 https://starlite.best/api/stream/smart/smart/livetv.epg/ctv2.london.on.ca.m3u8
 #EXTINF:-1  tvg-id="CTV.Two.Ottawa/CHRO.(CTV2O).ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-2-ca.png" group-title="Mystique CA" radio="false",CTV2 Ottawa
@@ -1332,7 +1302,7 @@ https://starlite.best/api/stream/smart/smart/livetv.epg/ctv2.vancouver.island.bc
 #EXTINF:-1  tvg-id="deja.view.ca" tvg-logo="https://media.starlite.best/deja.view.ca.png" group-title="Mystique CA" radio="false",Deja View
 https://tvnow.best/api/stream/burns/burns/livetv.epg/deja.view.ca.m3u8
 #EXTINF:-1  tvg-id="Discovery.Channel.ca" tvg-logo="https://media.starlite.best/discovery.channel.ca.png" group-title="Mystique CA" radio="false",Discovery Channel
-http://zorrohunter.com:80/live/WeaponX/Dawkins22/40727.ts
+http://fl3.moveonjoy.com/Discovery_Channel/index.m3u8
 #EXTINF:-1  tvg-id="Disney.Channel.Canada.-.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/disney-channel-ca.png" group-title="Mystique CA" radio="false",Disney Channel
 http://96.45.207.18:8881/channel/n7323ea49/index.m3u8?q=1735600584362#EXTINF:-1 group-title="Canada" tvg-id="Disney.Junior.Canada.ca" tvg-logo="https://media.starlite.best/disney.junior.canada.ca.png",Disney Jr.
 #EXTINF:-1  tvg-id="Disney.XD.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/disney-xd-ca.png" group-title="Mystique CA" radio="false",Disney XD
@@ -1340,12 +1310,12 @@ http://96.45.207.18:8881/channel/na3e18fa/index.m3u8?q=1735600584362#EXTINF:-1 g
 #EXTINF:-1  tvg-id="dtour.ca" tvg-logo="https://media.starlite.best/dtour.ca.png" group-title="Mystique CA" radio="false",DTOUR
 https://tvnow.best/api/stream/burns/burns/livetv.epg/dtour.ca.m3u8
 #EXTINF:-1  tvg-id="E!.Canada.ca" tvg-logo="https://media.starlite.best/e.canada.ca.png" group-title="Mystique CA" radio="false",E!
-https://tvnow.best/api/stream/burns/burns/livetv.epg/e.canada.ca.m3u8
+http://cdn1host.online:2999/kratorius/opLcbhlXaT/176
 #EXTINF:-1  tvg-id="elle.fictions.ca" tvg-logo="https://media.starlite.best/elle.fictions.ca.png" group-title="Mystique CA" radio="false",ELLE Fictions
 https://tvnow.best/api/stream/burns/burns/livetv.epg/elle.fictions.ca.m3u8
 #EXTINF:-1  tvg-id="evasion.ca" tvg-logo="https://media.starlite.best/evasion.ca.png" group-title="Mystique CA" radio="false",Evasion
 https://tvnow.best/api/stream/burns/burns/livetv.epg/evasion.ca.m3u8
-#EXTINF:-1  tvg-id="Fairchild.TV.ca" tvg-logo="https://i.ibb.co/j1mXv3z/schedule-logo1.png" group-title="Mystique CA" radio="false",Fairchild TV 1
+#EXTINF:-1  tvg-id="Fairchild.TV.1.-.East.ca" tvg-logo="https://i.ibb.co/j1mXv3z/schedule-logo1.png" group-title="Mystique CA" radio="false",Fairchild TV 1
 https://tvnow.best/api/stream/burns/burns/livetv.epg/fairchild.tv.east.ca.m3u8
 #EXTINF:-1  tvg-id="Fairchild.TV.2.ca" tvg-logo="https://i.ibb.co/pByRhL7N/eWfNXvf.png" group-title="Mystique CA" radio="false",Fairchild TV 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/fairchild.tv.2.ca.m3u8
@@ -1359,24 +1329,22 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/family.jr.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/food.network.canada.ca.m3u8
 #EXTINF:-1  tvg-id="Food.Network.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/food-network-us.png" group-title="Mystique CA" radio="false",Food Network
 http://zorrohunter.com:80/live/WeaponX/Dawkins22/40710.ts
-#EXTINF:-1  tvg-id="frissons.tv.ca" tvg-logo="https://media.starlite.best/frissons.tv.ca.png" group-title="Mystique CA" radio="false",Frissons
+#EXTINF:-1  tvg-id="Frissons.TV.HDTV.ca" tvg-logo="https://media.starlite.best/frissons.tv.ca.png" group-title="Mystique CA" radio="false",Frissons
 https://tvnow.best/api/stream/burns/burns/livetv.epg/frissons.tv.ca.m3u8
 #EXTINF:-1  tvg-id="FX.Networks.Canada.ca" tvg-logo="https://media.starlite.best/fx.networks.ca.png" group-title="Mystique CA" radio="false",FX Canada
 http://fortv.cc:8080/Anaimaldonado24gmail.com/9hOIM0AFwi/57268
 #EXTINF:-1  tvg-id="FXX.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/fxx-us.png" group-title="Mystique CA" radio="false",FXX
-http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/6148.ts
+http://fl2.moveonjoy.com/FXX/index.m3u8
 #EXTINF:-1  tvg-id="Game.Show.Network.-.East.ca" tvg-logo="https://media.starlite.best/game.show.network.east.ca.png" group-title="Mystique CA" radio="false",Game Show Network
 https://tvnow.best/api/stream/burns/burns/livetv.epg/game.show.network.east.ca.m3u8
 #EXTINF:-1  tvg-id="Game.TV.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/game-tv-ca.png" group-title="Mystique CA" radio="false",Game TV
 http://user.scalecdn.co:8080/live/26725074/92867131/3103.ts
 #EXTINF:-1  tvg-id="Game.Plus.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/game-plus-ca.png" group-title="Mystique CA" radio="false",Game+
 http://user.scalecdn.co:8080/live/26725074/92867131/3081.ts
-#EXTINF:-1  tvg-id="global.bc.ca" tvg-logo="https://i.ibb.co/Df6301Pz/images.png" group-title="Mystique CA" radio="false",Global BC
+#EXTINF:-1  tvg-id="Global.BC.HD.ca" tvg-logo="https://i.ibb.co/Df6301Pz/images.png" group-title="Mystique CA" radio="false",Global BC
 https://tvnow.best/api/stream/burns/burns/livetv.epg/global.bc.ca.m3u8
-#EXTINF:-1  tvg-id="Global.(CICT).Calgary.AB.ca" tvg-logo="https://i.ibb.co/0y1WZRV0/Global-Television-Network-2019-logo-svg.png" group-title="Mystique CA" radio="false",Global Calgary (CICT)
-https://tvnow.best/api/stream/burns/burns/livetv.epg/global.cict.calgary.ab.ca.m3u8
 #EXTINF:-1  tvg-id="Global.Edmonton.(CITV).ca" tvg-logo="https://i.ibb.co/0y1WZRV0/Global-Television-Network-2019-logo-svg.png" group-title="Mystique CA" radio="false",Global Edmonton (CITV)
-https://tvnow.best/api/stream/burns/burns/livetv.epg/global.citv.edmonton.ab.ca.m3u8
+http://user.scalecdn.co:8080/live/26725074/92867131/88027.ts
 #EXTINF:-1  tvg-id="Global.Halifax.(CIHF).ca" tvg-logo="https://i.ibb.co/0y1WZRV0/Global-Television-Network-2019-logo-svg.png" group-title="Mystique CA" radio="false",Global Edmonton (CITV)
 http://user.scalecdn.co:8080/live/26725074/92867131/88027.ts
 #EXTINF:-1  tvg-id="Global.Montreal.(CKMI).ca" tvg-logo="https://i.ibb.co/0y1WZRV0/Global-Television-Network-2019-logo-svg.png" group-title="Mystique CA" radio="false",Global Montreal (CKMI)
@@ -1388,8 +1356,8 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/hbo.ca.m3u8
 #EXTINF:-1  tvg-id="HBO.2.HD.(HBO2).ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/hbo-2-ca.png" group-title="Mystique CA" radio="false",HBO 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/hbo.2.eastern.ca.m3u8
 #EXTINF:-1  tvg-id="HGTV.CA.ca" tvg-logo="https://i.ibb.co/WNVR55Q2/HGTV-2010-svg.png" group-title="Mystique CA" radio="false",HGTV
-http://206.212.244.26/live/vasconeves/1742766045/40695.ts
-#EXTINF:-1  tvg-id="historia.ca" tvg-logo="https://media.starlite.best/historia.ca.png" group-title="Mystique CA" radio="false",Historia FR
+http://fl2.moveonjoy.com/HGTV/index.m3u8
+#EXTINF:-1  tvg-id="Historia.HD.ca" tvg-logo="https://media.starlite.best/historia.ca.png" group-title="Mystique CA" radio="false",Historia FR
 https://tvnow.best/api/stream/burns/burns/livetv.epg/historia.ca.m3u8
 #EXTINF:-1  tvg-id="History.Canada.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/history-channel-ca.png" group-title="Mystique CA" radio="false",History
 https://tvnow.best/api/stream/burns/burns/livetv.epg/history.canada.east.ca.m3u8
@@ -1405,25 +1373,21 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/hollywood.suite.80s.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/hollywood.suite.90s.ca.m3u8
 #EXTINF:-1  tvg-id="Home.Network.ca" tvg-logo="https://i.ibb.co/fGMcLQTP/Home-Network-logo-svg.png" group-title="Mystique CA" radio="false",Home Network
 https://tvnow.best/api/stream/burns/burns/livetv.epg/hgtv.canada.ca.m3u8
-#EXTINF:-1  tvg-id="artv.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/ici-artv-ca.png?raw=true" group-title="Mystique CA" radio="false",ICI Artv
+#EXTINF:-1  tvg-id="ICI.Reseau.de.lInformation.HDTV.(ICIRDIHD).ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/ici-artv-ca.png?raw=true" group-title="Mystique CA" radio="false",ICI Artv
 https://tvnow.best/api/stream/burns/burns/livetv.epg/artv.ca.m3u8
-#EXTINF:-1  tvg-id="rdi.news.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ici-rdi-ca.png" group-title="Mystique CA" radio="false",ICI RDI
+#EXTINF:-1  tvg-id="ICI.Explora.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ici-rdi-ca.png" group-title="Mystique CA" radio="false",ICI RDI
 http://96.45.207.18:8881/channel/7a117d94/index.m3u8?q=1735600584362
-#EXTINF:-1  tvg-id="ici.tele.ca" tvg-logo="https://media.starlite.best/ici.tele.ca.png" group-title="Mystique CA" radio="false",ICI Tele
-https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.tele.ca.m3u8
-#EXTINF:-1  tvg-id="ici.cbuft.vancouver.bc.ca" tvg-logo="https://media.starlite.best/ici.cbuft.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CBUFT)
+#EXTINF:-1  tvg-id="CBUFT.ICI.Radio-Canada.(Vancouver).(IRC).ca" tvg-logo="https://media.starlite.best/ici.cbuft.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CBUFT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.cbuft.vancouver.bc.ca.m3u8
-#EXTINF:-1  tvg-id="ici.cbvt.quebec.qc.digital.ca" tvg-logo="https://media.starlite.best/ici.cbvt.quebec.qc.digital.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CBVT)
+#EXTINF:-1  tvg-id="CBVT.ICI.Radio-Canada.HDTV.(QuÃ©bec).(IRCHD).ca" tvg-logo="https://media.starlite.best/ici.cbuft.vancouver.bc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CBVT)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.cbvt.quebec.qc.digital.ca.m3u8
-#EXTINF:-1  tvg-id="ici.cktv.saguenay.qc.ca" tvg-logo="https://media.starlite.best/ici.cktv.saguenay.qc.ca.png" group-title="Mystique CA" radio="false",ICI Tele (CKTV)
-https://tvnow.best/api/stream/burns/burns/livetv.epg/ici.cktv.saguenay.qc.ca.m3u8
-#EXTINF:-1  tvg-id="investigation.ca" tvg-logo="https://media.starlite.best/investigation.ca.png" group-title="Mystique CA" radio="false",Investigation
+#EXTINF:-1  tvg-id="Investigation.ID.CA.ca" tvg-logo="https://media.starlite.best/investigation.ca.png" group-title="Mystique CA" radio="false",Investigation
 https://tvnow.best/api/stream/burns/burns/livetv.epg/investigation.ca.m3u8
 #EXTINF:-1  tvg-id="Investigation.Discovery.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/investigation-discovery-us.png" group-title="Mystique CA" radio="false",Investigation Discovery
-http://zorrohunter.com:80/live/WeaponX/Dawkins22/40689.ts
+http://fl2.moveonjoy.com/INVESTIGATION_DISCOVERY/index.m3u8
 #EXTINF:-1  tvg-id="Knowledge.Network.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/knowledge-network-ca.png" group-title="Mystique CA" radio="false",Knowledge Network
 http://206.212.244.26/live/vasconeves/1742766045/40687.ts
-#EXTINF:-1  tvg-id="la.chaine.disney.ca" tvg-logo="https://media.starlite.best/la.chaine.disney.ca.png" group-title="Mystique CA" radio="false",La chaîne Disney
+#EXTINF:-1  tvg-id="La.Chaine.Disney.ca" tvg-logo="https://media.starlite.best/la.chaine.disney.ca.png" group-title="Mystique CA" radio="false",La chaîne Disney
 https://tvnow.best/api/stream/burns/burns/livetv.epg/la.chaine.disney.ca.m3u8
 #EXTINF:-1  tvg-id="lcn.ca" tvg-logo="https://media.starlite.best/lcn.ca.png" group-title="Mystique CA" radio="false",LCN
 https://tvnow.best/api/stream/burns/burns/livetv.epg/lcn.ca.m3u8
@@ -1439,24 +1403,16 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/makeful.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/max.ca.m3u8
 #EXTINF:-1  tvg-id="MovieTime.ca" tvg-logo="https://media.starlite.best/movietime.ca.png" group-title="Mystique CA" radio="false",Movie Time
 http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138725
-#EXTINF:-1  tvg-id="much.music.ca" tvg-logo="https://media.starlite.best/much.music.ca.png" group-title="Mystique CA" radio="false",Much
+#EXTINF:-1  tvg-id="Much.Music.HD.ca" tvg-logo="https://media.starlite.best/much.music.ca.png" group-title="Mystique CA" radio="false",Much
 https://tvnow.best/api/stream/burns/burns/livetv.epg/much.music.ca.m3u8
 #EXTINF:-1  tvg-id="National.Geographic.Canada.ca" tvg-logo="https://media.starlite.best/national.geographic.canada.ca.png" group-title="Mystique CA" radio="false",National Geographic
-https://tvnow.best/api/stream/burns/burns/livetv.epg/national.geographic.canada.ca.m3u8
+http://cdn1host.online:2999/kratorius/opLcbhlXaT/141
 #EXTINF:-1  tvg-id="National.Geographic.Wild.Canada.ca" tvg-logo="https://i.ibb.co/N28fsF0z/National-Geographic-Wild-logo-svg.png" group-title="Mystique CA" radio="false",National Geographic Wild
 http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/457.ts
 #EXTINF:-1  tvg-id="NBA.TV.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/nba-tv-ca.png" group-title="Mystique CA" radio="false",NBA TV Canada
 http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228720.ts
 #EXTINF:-1  tvg-id="Nickelodeon.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/nickelodeon-us.png" group-title="Mystique CA" radio="false",Nickelodeon
 https://tvnow.best/api/stream/burns/burns/livetv.epg/nickelodeon.canada.ca.m3u8
-#EXTINF:-1  tvg-id="Noovo.(CFJP).Montreal.QC.ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s15696_h15_ac.png" group-title="Mystique CA" radio="false",Noovo
-http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/132090.ts
-#EXTINF:-1  tvg-id="v.cfjp.montrealqc.ca" tvg-logo="https://media.starlite.best/noovo.vtele.ca.png" group-title="Mystique CA" radio="false",Noovo Montreal (CFJP)
-https://tvnow.best/api/stream/burns/burns/livetv.epg/v.cfjp.montrealqc.ca.m3u8
-#EXTINF:-1  tvg-id="v.cfap.quebec.qc.ca" tvg-logo="https://media.starlite.best/noovo.vtele.ca.png" group-title="Mystique CA" radio="false",Noovo Quebec (CFAP)
-https://tvnow.best/api/stream/burns/burns/livetv.epg/v.cfap.quebec.qc.ca.m3u8
-#EXTINF:-1  tvg-id="noovo.vtele.ca" tvg-logo="https://media.starlite.best/noovo.vtele.ca.png" group-title="Mystique CA" radio="false",Noovo V-Tele
-https://tvnow.best/api/stream/burns/burns/livetv.epg/noovo.vtele.ca.m3u8
 #EXTINF:-1  tvg-id="OMNI.1.Television.ca" tvg-logo="https://media.starlite.best/omni.1.ca.png" group-title="Mystique CA" radio="false",OMNI
 http://206.212.244.26/live/vasconeves/1742766045/40641.ts
 #EXTINF:-1  tvg-id="OMNI.2.ca" tvg-logo="https://media.starlite.best/omni.2.ca.png" group-title="Mystique CA" radio="false",OMNI 2
@@ -1471,15 +1427,15 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/outtv.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/investigation.discovery.canada.ca.m3u8
 #EXTINF:-1  tvg-id="prise.2.ca" tvg-logo="https://media.starlite.best/prise.2.ca.png" group-title="Mystique CA" radio="false",Prise 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/prise.2.ca.m3u8
-#EXTINF:-1  tvg-id="rds.rseau.des.sports.ca" tvg-logo="https://media.starlite.best/rds.rseau.des.sports.ca.png" group-title="Mystique CA" radio="false",RDS
+#EXTINF:-1  tvg-id="RDS.(RÃ©seau.des.sports).ca" tvg-logo="https://media.starlite.best/rds.rseau.des.sports.ca.png" group-title="Mystique CA" radio="false",RDS
 http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/280913.ts
-#EXTINF:-1  tvg-id="rds.2.ca" tvg-logo="https://media.starlite.best/rds.2.ca.png" group-title="Mystique CA" radio="false",RDS 2
+#EXTINF:-1  tvg-id="CTV.--.RÃ©seau.des.Sports.2.HDTV.(RDS2HD).ca" tvg-logo="https://media.starlite.best/rds.2.ca.png" group-title="Mystique CA" radio="false",RDS 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/rds.2.ca.m3u8
 #EXTINF:-1  tvg-id="rds.info.ca" tvg-logo="https://media.starlite.best/rds.info.ca.png" group-title="Mystique CA" radio="false",RDS Info
 https://tvnow.best/api/stream/burns/burns/livetv.epg/rds.info.ca.m3u8
 #EXTINF:-1  tvg-id="REV.TV.HDTV.(Canada).(REVHD).ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s106713_h15_ab.png" group-title="Mystique CA" radio="false",Rev TV
 http://user.scalecdn.co:8080/live/26725074/92867131/702667.m3u8
-#EXTINF:-1  tvg-id="series.ca" tvg-logo="https://media.starlite.best/series.ca.png" group-title="Mystique CA" radio="false",Series Plus
+#EXTINF:-1  tvg-id="Series.+.HD.ca" tvg-logo="https://media.starlite.best/series.ca.png" group-title="Mystique CA" radio="false",Series Plus
 https://tvnow.best/api/stream/burns/burns/livetv.epg/series.ca.m3u8
 #EXTINF:-1  tvg-id="Showcase.Canada.ca" tvg-logo="https://media.starlite.best/showcase.canada.ca.png" group-title="Mystique CA" radio="false",Showcase
 http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138629
@@ -1487,8 +1443,8 @@ http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138629
 https://tvnow.best/api/stream/burns/burns/livetv.epg/silver.screen.classics.ca.m3u8
 #EXTINF:-1  tvg-id="slice.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/slice-ca.png" group-title="Mystique CA" radio="false",Slice
 http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138783
-#EXTINF:-1  tvg-id="Smithsonian.Channel.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/smithsonian-channel-ca.png" group-title="Mystique CA" radio="false",Smithsonian Channel
-http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138697
+#EXTINF:-1  tvg-id="Smithsonian.Channel.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/smithsonian-channel-ca.png" group-title="Mystique CA" radio="false",Smithsonian Channel
+http://cdn1host.online:2999/kratorius/opLcbhlXaT/518
 #EXTINF:-1  tvg-id="sportsnet.360.ca" tvg-logo="https://media.starlite.best/sportsnet.360.ca.png" group-title="Mystique CA" radio="false",Sportsnet 360
 http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228742.ts
 #EXTINF:-1  tvg-id="Sportsnet.(East).-.Satellite/Digital.ca" tvg-logo="https://media.starlite.best/sportsnet.east.ca.png" group-title="Mystique CA" radio="false",Sportsnet East
@@ -1511,25 +1467,25 @@ https://tvnow.best/api/stream/burns/burns/livetv.epg/super.channel.fuse.ca.m3u8
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.channel.heart.home.ca.m3u8
 #EXTINF:-1  tvg-id="super.channel.vault.ca" tvg-logo="https://media.starlite.best/super.channel.vault.ca.png" group-title="Mystique CA" radio="false",Super Channel Vault
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.channel.vault.ca.m3u8
-#EXTINF:-1  tvg-id="super.ecran.1.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-1-ca.png" group-title="Mystique CA" radio="false",Super Ecran 1
+#EXTINF:-1  tvg-id="Super.Ecran.HD.1.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-1-ca.png" group-title="Mystique CA" radio="false",Super Ecran 1
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.ecran.1.ca.m3u8
-#EXTINF:-1  tvg-id="super.ecran.2.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-2-ca.png" group-title="Mystique CA" radio="false",Super Ecran 2
+#EXTINF:-1  tvg-id="Super.Ecran.2.HDTV.(SE2HD).ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-2-ca.png" group-title="Mystique CA" radio="false",Super Ecran 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.ecran.2.ca.m3u8
-#EXTINF:-1  tvg-id="super.ecran.3.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-3-ca.png" group-title="Mystique CA" radio="false",Super Ecran 3
+#EXTINF:-1  tvg-id="Super.Ã‰cran.3.HDTV.(SE3HD).ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-3-ca.png" group-title="Mystique CA" radio="false",Super Ecran 3
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.ecran.3.ca.m3u8
-#EXTINF:-1  tvg-id="super.ecran.4.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-4-ca.png" group-title="Mystique CA" radio="false",Super Ecran 4
+#EXTINF:-1  tvg-id="Super.Ã‰cran.4.HDTV.(SE4HD).ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/super-ecran-4-ca.png" group-title="Mystique CA" radio="false",Super Ecran 4
 https://tvnow.best/api/stream/burns/burns/livetv.epg/super.ecran.4.ca.m3u8
-#EXTINF:-1  tvg-id="tele.quebec.civq.quebec.ca" tvg-logo="https://media.starlite.best/tele.quebec.civq.quebec.ca.png" group-title="Mystique CA" radio="false",Tele Québec
+#EXTINF:-1  tvg-id="Tele-Quebec.(CIVM).Montreal.ca" tvg-logo="https://media.starlite.best/tele.quebec.civq.quebec.ca.png" group-title="Mystique CA" radio="false",Tele Québec
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tele.quebec.civq.quebec.ca.m3u8
 #EXTINF:-1  tvg-id="Télémagino.ca" tvg-logo="https://d60d34ithxz8n.cloudfront.net/ca-logos/19aae87681fb7545a7f8b12b094f5eda.png?k=YuF2DwEskK9RDtJWAxeJbpo7YUB7VdYQ4hnktyMqup9hklnV5sxy2V%2F5EGY3kuoD31WBFsj8IoPs%2BhFGP4SORJH9F4TJDNdNjQ53nuuYqHfLDOfzOOUfR1APiazFifTa" group-title="Mystique CA" radio="false",Telemag
 http://orbytdrm.xyz:8080/live/chaosatt/DuQKhEhREKVH/132096.ts
-#EXTINF:-1  tvg-id="tltoon.franais.ca" tvg-logo="https://media.starlite.best/tltoon.franais.ca.png" group-title="Mystique CA" radio="false",TéléTOON
+#EXTINF:-1  tvg-id="Teletoon.On.Demand.ca" tvg-logo="https://media.starlite.best/tltoon.franais.ca.png" group-title="Mystique CA" radio="false",TéléTOON
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tltoon.franais.ca.m3u8
 #EXTINF:-1  tvg-id="TFO.-.Chaine.Francaise.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tfo-ca.png" group-title="Mystique CA" radio="false",TFO
 http://96.45.207.18:8881/channel/n5de8418/index.m3u8?q=1735600584362
 #EXTINF:-1  tvg-id="TLC.Canada.ca" tvg-logo="https://media.starlite.best/tlc.canada.ca.png" group-title="Mystique CA" radio="false",TLC
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tlc.canada.ca.m3u8
-#EXTINF:-1  tvg-id="TLN.ca" tvg-logo="https://i.ibb.co/cKnhRZX6/TLN-2015.png" group-title="Mystique CA" radio="false",TLN
+#EXTINF:-1  tvg-id="TLC.Canada.HD.ca" tvg-logo="https://i.ibb.co/cKnhRZX6/TLN-2015.png" group-title="Mystique CA" radio="false",TLN
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tln.west.ca.m3u8
 #EXTINF:-1  tvg-id="treehouse.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/treehouse-ca.png" group-title="Mystique CA" radio="false",Treehouse
 http://96.45.207.18:8881/channel/n12d872f0/index.m3u8?q=1735600584362
@@ -1543,19 +1499,17 @@ http://fl5.moveonjoy.com/TSN_3/index.m3u8
 http://fl5.moveonjoy.com/TSN_4/index.m3u8
 #EXTINF:-1  tvg-id="TSN5.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/tsn-5-ca.png" group-title="Mystique CA" radio="false",TSN 5
 http://fl5.moveonjoy.com/TSN_5/index.m3u8
-#EXTINF:-1  tvg-id="tv5.international.east.ca" tvg-logo="https://media.starlite.best/tv5.international.east.ca.png" group-title="Mystique CA" radio="false",TV5 Intern
+#EXTINF:-1  tvg-id="TV5.International.-.East.ca" tvg-logo="https://media.starlite.best/tv5.international.east.ca.png" group-title="Mystique CA" radio="false",TV5 Intern
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tv5.international.east.ca.m3u8
-#EXTINF:-1  tvg-id="tva.cftm.montral.ca" tvg-logo="https://media.starlite.best/tva.cftm.montral.ca.png" group-title="Mystique CA" radio="false",TVA (CFTM)
+#EXTINF:-1  tvg-id="TVA.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tva-ca.png" group-title="Mystique CA" radio="false",TVA (CFTM)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.cftm.montral.ca.m3u8
-#EXTINF:-1  tvg-id="tva.chem.trois.rivieres.ca" tvg-logo="https://media.starlite.best/tva.chem.trois.rivieres.ca.png" group-title="Mystique CA" radio="false",TVA (CHEM)
+#EXTINF:-1  tvg-id="TVA.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tva-ca.png" group-title="Mystique CA" radio="false",TVA (CHEM)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.chem.trois.rivieres.ca.m3u8
 #EXTINF:-1  tvg-id="TVA.HD.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tva-ca.png" group-title="Mystique CA" radio="false",TVA (CJPM)
-http://68.233.120.207:9981/stream/channelid/1523198423?profile=pass
-#EXTINF:-1  tvg-id="tva.cjpm.saguenay.qc.ca" tvg-logo="https://media.starlite.best/tva.cjpm.saguenay.qc.ca.png" group-title="Mystique CA" radio="false",TVA (CJPM)
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.cjpm.saguenay.qc.ca.m3u8
 #EXTINF:-1  tvg-id="tva.sports.ca" tvg-logo="https://media.starlite.best/tva.sports.ca.png" group-title="Mystique CA" radio="false",TVA Sport
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.sports.ca.m3u8
-#EXTINF:-1  tvg-id="tva.sports.2.ca" tvg-logo="https://media.starlite.best/tva.sports.2.ca.png" group-title="Mystique CA" radio="false",TVA Sport 2
+#EXTINF:-1  tvg-id="TVA.Sports.2.ca" tvg-logo="https://media.starlite.best/tva.sports.2.ca.png" group-title="Mystique CA" radio="false",TVA Sport 2
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tva.sports.2.ca.m3u8
 #EXTINF:-1  tvg-id="TVO.Toronto.ON.ca" tvg-logo="https://i.ibb.co/cXNyTPHW/TVOntario-2022.png" group-title="Mystique CA" radio="false",TVO
 http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138643
@@ -1571,13 +1525,11 @@ http://iptv.maxlacress.com:2082/nbx74sHVe3GUZ6/cxz83DS5mF3wDS/138785
 https://tvnow.best/api/stream/burns/burns/livetv.epg/wild.tv.ca.m3u8
 #EXTINF:-1  tvg-id="WildBrain.TV.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/wildbrain-tv-ca.png" group-title="Mystique CA" radio="false",WildBrain TV
 http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/13225.ts
-#EXTINF:-1  tvg-id="Yes.TV.(CITS).Burlington.ON.ca" tvg-logo="https://media.starlite.best/yes.tv.ckcs.calgary.ab.ca.png" group-title="Mystique CA" radio="false",Yes TV
-http://pfsv.io/live/DD55xmNdy2/blendediptv.me/228788.ts
 #EXTINF:-1  tvg-id="YTV.(Youth.Television).-.East.ca" tvg-logo="https://media.starlite.best/ytv.youth.television.east.ca.png" group-title="Mystique CA" radio="false",YTV
 http://96.45.207.18:8881/channel/40452a09/index.m3u8?q=1735600584362
-#EXTINF:-1  tvg-id="YTV.(Youth.Television).-.West.ca" tvg-logo="https://media.starlite.best/ytv.youth.television.east.ca.png" group-title="Mystique CA" radio="false",YTV West
+#EXTINF:-1  tvg-id="YTV.(Youth.Television).-.Pacific.ca" tvg-logo="https://media.starlite.best/ytv.youth.television.east.ca.png" group-title="Mystique CA" radio="false",YTV West
 http://user.scalecdn.co:8080/live/26725074/92867131/647755.ts
-#EXTINF:-1  tvg-id="z.ca" tvg-logo="https://media.starlite.best/z.ca.png" group-title="Mystique CA" radio="false",Z
+#EXTINF:-1  tvg-id="Z.ca" tvg-logo="https://media.starlite.best/z.ca.png" group-title="Mystique CA" radio="false",Z
 https://tvnow.best/api/stream/burns/burns/livetv.epg/z.ca.m3u8
 #EXTINF:-1  tvg-id="zeste.ca" tvg-logo="https://media.starlite.best/zeste.ca.png" group-title="Mystique CA" radio="false",Zeste
 https://tvnow.best/api/stream/burns/burns/livetv.epg/zeste.ca.m3u8
@@ -1768,44 +1720,26 @@ http://92.114.85.72:8000/play/a0bh
 #EXTINF:-1  tvg-id="U.and.W.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-w-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | U&W
 http://92.114.85.72:8000/play/a0bj
 #EXTINF:-1  tvg-id="U.and.YESTERDAY.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-yesterday-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | U&Yesterday
-http://92.114.85.72:8000/play/a0b3
-#EXTINF:-1  tvg-id="AEEast.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/a-and-e-us.png" group-title="Mystique USA" radio="false",A&E (East)
+﻿#EXTM3U
+#EXTINF:-1  tvg-id="A.and.E.US.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/a-and-e-us.png" group-title="Mystique USA" radio="false",A&E (East)
 http://defaultgen.com:3050/mwmonnier@gmail.com/s5ZMwveuMw/417871
-#EXTINF:-1  tvg-id="AEEast.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/a-and-e-us.png" group-title="Mystique USA" radio="false",A&E (East)
+#EXTINF:-1  tvg-id="A.and.E.US.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/a-and-e-us.png" group-title="Mystique USA" radio="false",A&E (East)
 http://defaultgen.com:3050/mwmonnier@gmail.com/s5ZMwveuMw/417871
-#EXTINF:-1  tvg-id="AEWest.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/AE-Logo-500x281.png" group-title="Mystique USA" radio="false",A&E (West)
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/AE-Logo-500x281.png" group-title="Mystique USA" radio="false",A&E (West)
 http://defaultgen.com:3050/mwmonnier@gmail.com/s5ZMwveuMw/419320
-#EXTINF:-1  tvg-id="AEWest.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/AE-Logo-500x281.png" group-title="Mystique USA" radio="false",A&E (West)
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/AE-Logo-500x281.png" group-title="Mystique USA" radio="false",A&E (West)
 http://defaultgen.com:3050/mwmonnier@gmail.com/s5ZMwveuMw/419320
-#EXTINF:-1  tvg-id="ABC.(WFAA).Dallas.TX.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10003_h15_ac.png" group-title="Mystique USA" radio="false",ABC Dallas (WFAA)
-http://user.scalecdn.co:8080/live/26725074/92867131/2692.m3u8
-#EXTINF:-1  tvg-id="ABC.(KMGH).Denver.CO.HD.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10003_h15_ac.png" group-title="Mystique USA" radio="false",ABC Denver (KMGH)
-http://user.scalecdn.co:8080/live/26725074/92867131/629110.m3u8
-#EXTINF:-1  tvg-id="ABC.(KABC).Los.Angeles.CA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28708_h15_ac.png" group-title="Mystique USA" radio="false",ABC Los Angeles (KABC)
-http://208.89.99.124:5004/auto/v9.1
-#EXTINF:-1  tvg-id="ABC.(WPLG).Miami.FL.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10003_h15_ac.png" group-title="Mystique USA" radio="false",ABC Miami (WPLG)
-http://user.scalecdn.co:8080/live/26725074/92867131/3605.m3u8
-#EXTINF:-1  tvg-id="ABC.(WGNO).New.Orleans.LA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10003_h15_ac.png" group-title="Mystique USA" radio="false",ABC New Orleans (WGNO)
-http://user.scalecdn.co:8080/live/26725074/92867131/510034.m3u8
-#EXTINF:-1  tvg-id="ABC.(WABC).New.York.NY.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10003_h15_ac.png" group-title="Mystique USA" radio="false",ABC New York (WABC)
-http://fl1.moveonjoy.com/ABC_EAST/index.m3u8
 #EXTINF:-1  tvg-id="abcnewslive.us" tvg-logo="http://lonewolftvpr.com/logos/abcnews.png" group-title="Mystique USA" radio="false",ABC News Live
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/210
-#EXTINF:-1  tvg-id="ABC.(KNXV).Phoenix.AZ.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28708_h15_ac.png" group-title="Mystique USA" radio="false",ABC Phoenix (KNXV)
-http://user.scalecdn.co:8080/live/26725074/92867131/2677.m3u8
-#EXTINF:-1  tvg-id="ABC.(KOMO).Seattle.WA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28708_h15_ac.png" group-title="Mystique USA" radio="false",ABC Seattle (KOMO)
-http://user.scalecdn.co:8080/live/26725074/92867131/2668.m3u8
 #EXTINF:-1  tvg-id="accnetwork.us" tvg-logo="https://i.ibb.co/cxjgxvR/acc.png" group-title="Mystique USA" radio="false",ACC Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/296
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://i.imgur.com/BQ0qWzX.png" group-title="Mystique USA" radio="false",AFN Family/AFN Pulse
-http://lunar.pm:8080/live/FreddieScott/Sportsfanatic/118462.ts
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/AE-Logo-500x281.png" group-title="Mystique USA" radio="false",AFN Movie
+#EXTINF:-1  tvg-id="AFN.movie.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/3a/AFN_Movie.jpg/revision/latest?cb=20230816172837" group-title="Mystique USA" radio="false",AFN Movie
 http://lunar.pm:8080/live/FreddieScott/Sportsfanatic/118463.ts
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/AE-Logo-500x281.png" group-title="Mystique USA" radio="false",AFN Prime Atlantic
+#EXTINF:-1  tvg-id="AFN.prime.Atlantic.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/79/Afnprimeatlantic.png/revision/latest?cb=20230731122851" group-title="Mystique USA" radio="false",AFN Prime Atlantic
 http://lunar.pm:8080/live/FreddieScott/Sportsfanatic/118465.ts
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://i.ibb.co/8DgwF6H/infowars.png" group-title="Mystique USA" radio="false",AFN Prime Pacific
+#EXTINF:-1  tvg-id="AFN.prime.Pacific.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e4/AFN_Prime_Pacific.jpg/revision/latest?cb=20230106115820" group-title="Mystique USA" radio="false",AFN Prime Pacific
 http://lunar.pm:8080/live/FreddieScott/Sportsfanatic/118466.ts
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://i.ibb.co/HLvnSJ8N/people.png" group-title="Mystique USA" radio="false",AFN Spectrum
+#EXTINF:-1  tvg-id="AFN.spectrum.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/46/AFN_Spectrum.jpg/revision/latest?cb=20240209173948" group-title="Mystique USA" radio="false",AFN Spectrum
 http://lunar.pm:8080/live/FreddieScott/Sportsfanatic/118467.ts
 #EXTINF:-1  tvg-id="AMC.-.Eastern.Feed.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10021_h15_ab.png" group-title="Mystique USA" radio="false",AMC (US)
 http://fl5.moveonjoy.com/AMC_NETWORK/index.m3u8
@@ -1817,13 +1751,11 @@ http://fl2.moveonjoy.com/Animal_Planet/index.m3u8
 http://108.14.66.101:5004/auto/v11.2
 #EXTINF:-1  tvg-id="aspiretv.us" tvg-logo="https://i.ibb.co/mqydFBD/aspire.png" group-title="Mystique USA" radio="false",Aspire TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/2156
-#EXTINF:-1  tvg-id="awe.us" tvg-logo="https://i.ibb.co/GWFFZQn/aew.png" group-title="Mystique USA" radio="false",AWE
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/46673
-#EXTINF:-1  tvg-id="axstv.us" tvg-logo="https://i.ibb.co/87RnZtH/axs.png" group-title="Mystique USA" radio="false",AXS TV
+#EXTINF:-1  tvg-id="AXS.TV.USA.HD.us" tvg-logo="https://i.ibb.co/87RnZtH/axs.png" group-title="Mystique USA" radio="false",AXS TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1314
 #EXTINF:-1  tvg-id="babyfirst.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/baby-first-tv-us.png?raw=true" group-title="Mystique USA" radio="false",Baby First
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1701
-#EXTINF:-1  tvg-id="bbcamerica.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bbc-america-us.png?raw=true" group-title="Mystique USA" radio="false",BBC America
+#EXTINF:-1  tvg-id="BBC.America.-.East.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bbc-america-us.png?raw=true" group-title="Mystique USA" radio="false",BBC America
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/206
 #EXTINF:-1  tvg-id="beinsports.us" tvg-logo="http://lonewolftvpr.com/logos/beinsports.png" group-title="Mystique USA" radio="false",beIN Sports
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/205
@@ -1831,7 +1763,7 @@ http://cdn1host.online:2999/kratorius/opLcbhlXaT/205
 http://fl2.moveonjoy.com/BET_EAST/index.m3u8
 #EXTINF:-1  tvg-id="BET.Her.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s14897_h15_ac.png" group-title="Mystique USA" radio="false",BET Her
 http://fl2.moveonjoy.com/BET_HER/index.m3u8
-#EXTINF:-1  tvg-id="betjams.us" tvg-logo="http://lonewolftvpr.com/logos/betjams.png" group-title="Mystique USA" radio="false",BET Jams
+#EXTINF:-1  tvg-id="BET.Jams.(BETJ).us" tvg-logo="http://lonewolftvpr.com/logos/betjams.png" group-title="Mystique USA" radio="false",BET Jams
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/950
 #EXTINF:-1  tvg-id="betsoul.us" tvg-logo="http://lonewolftvpr.com/logos/betsoul.png" group-title="Mystique USA" radio="false",BET Soul
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/951
@@ -1853,39 +1785,23 @@ http://cdn1host.online:2999/kratorius/opLcbhlXaT/1182
 http://user.scalecdn.co:8080/live/26725074/92867131/3711.ts
 #EXTINF:-1  tvg-id="Cartoon.Network.USA.-.Pacific.Feed.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s12131_h15_aa.png" group-title="Mystique USA" radio="false",Cartoon Network (West)
 http://user.scalecdn.co:8080/live/26725074/92867131/2653.m3u8
-#EXTINF:-1  tvg-id="CBS.(KCNC).Denver,.CO.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28711_h15_ab.png" group-title="Mystique USA" radio="false",CBS Denver (KCNC)
-http://user.scalecdn.co:8080/live/26725074/92867131/629109.m3u8
-#EXTINF:-1  tvg-id="FAVE.TV.(KTVT4).Fort.Work,.TX.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28711_h15_ab.png" group-title="Mystique USA" radio="false",CBS Fort Work
-http://user.scalecdn.co:8080/live/26725074/92867131/2645.m3u8
-#EXTINF:-1  tvg-id="CBS.(KCBS).Los.Angeles,.CA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28711_h15_ab.png" group-title="Mystique USA" radio="false",CBS Los Angeles (KCBS)
-http://208.89.99.124:5004/auto/v6.1
-#EXTINF:-1  tvg-id="CBS.(WFOR).Miami,.FL.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28711_h15_ab.png" group-title="Mystique USA" radio="false",CBS Miami (WFOR)
-http://user.scalecdn.co:8080/live/26725074/92867131/3619.m3u8
-#EXTINF:-1  tvg-id="CBS.(WWL).New.Orleans,.LA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28711_h15_ab.png" group-title="Mystique USA" radio="false",CBS New Orleans (WWL)
-http://user.scalecdn.co:8080/live/26725074/92867131/523304.m3u8
-#EXTINF:-1  tvg-id="CBS.(WCBS).New.York,.NY.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28711_h15_ab.png" group-title="Mystique USA" radio="false",CBS New York (WCBS)
-http://108.14.66.101:5004/auto/v2.1
-#EXTINF:-1  tvg-id="CBS.(KPHO).Phoenix,.AZ.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28711_h15_ab.png" group-title="Mystique USA" radio="false",CBS Phoenix (KPHO)
-http://user.scalecdn.co:8080/live/26725074/92867131/2628.m3u8
-#EXTINF:-1  tvg-id="CBS.(KIRO).Seattle,.WA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28711_h15_ab.png" group-title="Mystique USA" radio="false",CBS Seattle (KIRO)
-http://user.scalecdn.co:8080/live/26725074/92867131/2621.m3u8
 #EXTINF:-1  tvg-id="CBS.Sports.Network.USA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s16365_h15_ae.png" group-title="Mystique USA" radio="false",CBS Sports
 http://fl2.moveonjoy.com/CBS_SPORTS_NETWORK/index.m3u8
 #EXTINF:-1  tvg-id="Charge.TV.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s102148_h15_ab.png" group-title="Mystique USA" radio="false",Charge
 https://usgeowall.sinclairstoryline.com/channel/37eb732888614810b512fdd82604244e.m3u8
 #EXTINF:-1  tvg-id="Cinemax.-.Eastern.Feed.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10120_h15_ab.png" group-title="Mystique USA" radio="false",Cinemax
 http://fl2.moveonjoy.com/CINEMAX_EAST/index.m3u8
-#EXTINF:-1  tvg-id="5starmax.us" tvg-logo="https://i.ibb.co/4MMj6xH/5-Star-Max-Logo-svg.png" group-title="Mystique USA" radio="false",Cinemax 5 Star MAX
+#EXTINF:-1  tvg-id="5.Star.Max.-.Eastern.us" tvg-logo="https://i.ibb.co/4MMj6xH/5-Star-Max-Logo-svg.png" group-title="Mystique USA" radio="false",Cinemax 5 Star MAX
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1603
-#EXTINF:-1  tvg-id="actionmax.us" tvg-logo="https://i.ibb.co/7p0xLJk/actionmax.png" group-title="Mystique USA" radio="false",Cinemax ActionMax
+#EXTINF:-1  tvg-id="ActionMax.-.Eastern.us" tvg-logo="https://i.ibb.co/7p0xLJk/actionmax.png" group-title="Mystique USA" radio="false",Cinemax ActionMax
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1604
-#EXTINF:-1  tvg-id="moremax.us" tvg-logo="https://i.ibb.co/2yRD8Xr/moremax.png" group-title="Mystique USA" radio="false",Cinemax MoreMax
+#EXTINF:-1  tvg-id="MoreMax..Eastern.us" tvg-logo="https://i.ibb.co/2yRD8Xr/moremax.png" group-title="Mystique USA" radio="false",Cinemax MoreMax
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1204
-#EXTINF:-1  tvg-id="moviemax.us" tvg-logo="https://i.ibb.co/nmdC35C/moviemax.png" group-title="Mystique USA" radio="false",Cinemax MovieMax
+#EXTINF:-1  tvg-id="MovieMax.(Max.6).-.East.us" tvg-logo="https://i.ibb.co/nmdC35C/moviemax.png" group-title="Mystique USA" radio="false",Cinemax MovieMax
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1605
-#EXTINF:-1  tvg-id="outermax.us" tvg-logo="https://i.ibb.co/SrhyVSb/OuterMax.png" group-title="Mystique USA" radio="false",Cinemax OuterMax
+#EXTINF:-1  tvg-id="OuterMax.east.us" tvg-logo="https://i.ibb.co/SrhyVSb/OuterMax.png" group-title="Mystique USA" radio="false",Cinemax OuterMax
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1606
-#EXTINF:-1  tvg-id="thrillermax.us" tvg-logo="https://i.ibb.co/xDVhscj/thrillermax.png" group-title="Mystique USA" radio="false",Cinemax ThrillerMax
+#EXTINF:-1  tvg-id="ThrillerMax.-.East.us" tvg-logo="https://i.ibb.co/xDVhscj/thrillermax.png" group-title="Mystique USA" radio="false",Cinemax ThrillerMax
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1607
 #EXTINF:-1  tvg-id="CMT.US.-.Eastern.Feed.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10138_h15_ab.png" group-title="Mystique USA" radio="false",CMT (US)
 http://fl3.moveonjoy.com/CMT/index.m3u8
@@ -1899,11 +1815,11 @@ http://cdn1host.online:2999/kratorius/opLcbhlXaT/191
 http://fl3.moveonjoy.com/Comedy_Central/index.m3u8
 #EXTINF:-1  tvg-id="Comet.TV.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s97051_h15_ab.png" group-title="Mystique USA" radio="false",Comet
 http://108.14.66.101:5004/auto/v2.5
-#EXTINF:-1  tvg-id="cookingchannel.us" tvg-logo="http://lonewolftvpr.com/logos/coockingchannel.png" group-title="Mystique USA" radio="false",Cooking Channel
+#EXTINF:-1  tvg-id="The.Cooking.Channel.us" tvg-logo="http://lonewolftvpr.com/logos/coockingchannel.png" group-title="Mystique USA" radio="false",Cooking Channel
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/189
 #EXTINF:-1  tvg-id="court.us" tvg-logo="https://i.ibb.co/FzTztSs/court.png" group-title="Mystique USA" radio="false",Court TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1473
-#EXTINF:-1  tvg-id="thecowboychannel.us" tvg-logo="https://i.ibb.co/DVxV3vG/cowboy.png" group-title="Mystique USA" radio="false",Cowboy Channel
+#EXTINF:-1  tvg-id="The.Cowgirl.Channel.us" tvg-logo="https://i.ibb.co/DVxV3vG/cowboy.png" group-title="Mystique USA" radio="false",Cowboy Channel
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1460
 #EXTINF:-1  tvg-id="Cozi.TV.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s78851_h15_ab.png" group-title="Mystique USA" radio="false",Cozi TV
 http://108.14.66.101:5004/auto/v4.2
@@ -1913,22 +1829,8 @@ http://cdn1host.online:2999/kratorius/opLcbhlXaT/1184
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1185
 #EXTINF:-1  tvg-id="cspan3.us" tvg-logo="http://lonewolftvpr.com/logos/cspan120.png" group-title="Mystique USA" radio="false",C-SPAN 3
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1186
-#EXTINF:-1  tvg-id="CW.(KVCW).Las.Vegas,.NV.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s51306_h15_ac.png" group-title="Mystique USA" radio="false",CW (KVCW)
-http://user.scalecdn.co:8080/live/26725074/92867131/34441.m3u8
 #EXTINF:-1  tvg-id="WPIX.New.York.(SUPERSTATION).us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s53098_h15_ac.png" group-title="Mystique USA" radio="false",CW (WPIX) New York
 http://user.scalecdn.co:8080/live/26725074/92867131/93093.m3u8
-#EXTINF:-1  tvg-id="CW.(KDAF).Dallas,.TX.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s51306_h15_ac.png" group-title="Mystique USA" radio="false",CW Dallas (KDAF)
-http://user.scalecdn.co:8080/live/26725074/92867131/597161.m3u8
-#EXTINF:-1  tvg-id="CW.(KWGN).Denver,.CO.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s51306_h15_ac.png" group-title="Mystique USA" radio="false",CW Denver (KWGN)
-http://user.scalecdn.co:8080/live/26725074/92867131/630653.m3u8
-#EXTINF:-1  tvg-id="CW.(KCWE).Kansas.City,.MO.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s51306_h15_ac.png" group-title="Mystique USA" radio="false",CW Kansas City (KCWE)
-http://user.scalecdn.co:8080/live/26725074/92867131/629896.m3u8
-#EXTINF:-1  tvg-id="KTLA.Los.Angeles,.CA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s53098_h15_ac.png" group-title="Mystique USA" radio="false",CW Los Angeles (KTLA)
-http://user.scalecdn.co:8080/live/26725074/92867131/90546.m3u8
-#EXTINF:-1  tvg-id="CW.(WSFL).Miami,.FL.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s51306_h15_ac.png" group-title="Mystique USA" radio="false",CW Miami (WSFL)
-http://user.scalecdn.co:8080/live/26725074/92867131/433867.m3u8
-#EXTINF:-1  tvg-id="SEATTLE.11.(KSTW).Tacoma,.WA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s51306_h15_ac.png" group-title="Mystique USA" radio="false",CW Tacoma (KSTW)
-http://user.scalecdn.co:8080/live/26725074/92867131/34428.m3u8
 #EXTINF:-1  tvg-id="destinationamerica.us" tvg-logo="http://lonewolftvpr.com/logos/destinationamerica.png" group-title="Mystique USA" radio="false",Destination America
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/185
 #EXTINF:-1  tvg-id="Discovery.Channel.(US).-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/discovery-channel-icon-us.png" group-title="Mystique USA" radio="false",Discovery Channel
@@ -1937,7 +1839,7 @@ http://fl3.moveonjoy.com/Discovery_Channel/index.m3u8
 http://fl2.moveonjoy.com/DISCOVERY_FAMILY_CHANNEL/index.m3u8
 #EXTINF:-1  tvg-id="Discovery.Life.Channel.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s16125_h15_ac.png" group-title="Mystique USA" radio="false",Discovery Life
 http://fl2.moveonjoy.com/DISCOVERY_LIFE/index.m3u8
-#EXTINF:-1  tvg-id="discoveryscience.us" tvg-logo="http://lonewolftvpr.com/logos/science.png" group-title="Mystique USA" radio="false",Discovery Science
+#EXTINF:-1  tvg-id="Discovery+.Dummy.us" tvg-logo="http://lonewolftvpr.com/logos/science.png" group-title="Mystique USA" radio="false",Discovery Science
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/181
 #EXTINF:-1  tvg-id="Disney.-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-channel-us.png?raw=true" group-title="Mystique USA" radio="false",Disney Channel East
 http://user.scalecdn.co:8080/26725074/92867131/3630
@@ -1945,15 +1847,15 @@ http://user.scalecdn.co:8080/26725074/92867131/3630
 http://user.scalecdn.co:8080/26725074/92867131/2590
 #EXTINF:-1  tvg-id="Disney.Junior.USA.-.East.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true" group-title="Mystique USA" radio="false",Disney Jr. East
 http://user.scalecdn.co:8080/26725074/92867131/3632
-#EXTINF:-1  tvg-id="Disney.Junior.USA.-.West.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true" group-title="Mystique USA" radio="false",Disney Jr. West
+#EXTINF:-1  tvg-id="Kids.Dummy.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-jr-us.png?raw=true" group-title="Mystique USA" radio="false",Disney Jr. West
 http://user.scalecdn.co:8080/26725074/92867131/2588
 #EXTINF:-1  tvg-id="Disney.XD.USA.-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-xd-us.png?raw=true" group-title="Mystique USA" radio="false",Disney XD East
-http://user.scalecdn.co:8080/26725074/92867131/3631
-#EXTINF:-1  tvg-id="Disney.XD.USA.-.Pacific.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-xd-us.png?raw=true" group-title="Mystique USA" radio="false",Disney XD East
 http://user.scalecdn.co:8080/26725074/92867131/2586
-#EXTINF:-1  tvg-id="eentertainment.us" tvg-logo="http://lonewolftvpr.com/logos/e.png" group-title="Mystique USA" radio="false",E!
+#EXTINF:-1  tvg-id="Disney.XD.USA.-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/disney-xd-us.png?raw=true" group-title="Mystique USA" radio="false",Disney XD East
+http://user.scalecdn.co:8080/26725074/92867131/2586
+#EXTINF:-1  tvg-id="E!.Entertainment.USA.-.Eastern.Feed.us" tvg-logo="http://lonewolftvpr.com/logos/e.png" group-title="Mystique USA" radio="false",E!
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/176
-#EXTINF:-1  tvg-id="Eleven.Sports.1.4K.pl" tvg-logo="http://lonewolftvpr.com/logos/eleven.png" group-title="Mystique USA" radio="false",Eleven Sports
+#EXTINF:-1  tvg-id="andtv.us" tvg-logo="http://lonewolftvpr.com/logos/eleven.png" group-title="Mystique USA" radio="false",Eleven Sports
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/49028
 #EXTINF:-1  tvg-id="espn.us" tvg-logo="http://lonewolftvpr.com/logos/espn.png" group-title="Mystique USA" radio="false",ESPN
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/133
@@ -1963,19 +1865,19 @@ http://cdn1host.online:2999/kratorius/opLcbhlXaT/173
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/134
 #EXTINF:-1  tvg-id="espnu.us" tvg-logo="http://lonewolftvpr.com/logos/espnu.png" group-title="Mystique USA" radio="false",ESPN U
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/172
-#EXTINF:-1  tvg-id="FanDuel.TV.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-arizona-us.png?raw=tru" group-title="Mystique USA" radio="false",Fanduel Sports Arizona
+#EXTINF:-1  tvg-id="FanDuel.Sports.Network.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-arizona-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Arizona
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/186
 #EXTINF:-1  tvg-id="FanDuel.Sports.Network.Detroit.HD.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-detroit-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Detroit
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/317
 #EXTINF:-1  tvg-id="FanDuel.Sports.Network.Florida.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-florida-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Florida
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1622
-#EXTINF:-1  tvg-id="FanDuel.Sports.Network.Great.Lakes.us" tvg-logo="ttps://pixvid.org/images/2025/02/11/FanDuel_GLakes.pn" group-title="Mystique USA" radio="false",Fanduel Sports Great Lakes
+#EXTINF:-1  tvg-id="FanDuel.Sports.Network.Great.Lakes.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-great-lakes-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Great Lakes
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1253
-#EXTINF:-1  tvg-id="FanDuel.Sports.Indiana.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/fanduel-sports-network-indiana.png" group-title="Mystique USA" radio="false",Fanduel Sports Indiana
+#EXTINF:-1  tvg-id="FanDuel.Sports.Indiana.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-indiana-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Indiana
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1458
 #EXTINF:-1  tvg-id="FanDuel.Sports.Midwest.-.Kansas.City.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-kansas-city-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Kansas City
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1667
-#EXTINF:-1  tvg-id="FanDuel.Sports.Network.Midwest.St..Louis.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-kansas-city-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Midwest
+#EXTINF:-1  tvg-id="FanDuel.Sports.Network.Midwest.St..Louis.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-midwest-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Midwest
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/324
 #EXTINF:-1  tvg-id="FanDuel.Sports.New.Orleans.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-new-orleans-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports New Orleans
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1614
@@ -1991,7 +1893,7 @@ http://cdn1host.online:2999/kratorius/opLcbhlXaT/316
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/665
 #EXTINF:-1  tvg-id="FanDuel.Sports.Network.South.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-south-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports South
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/319
-#EXTINF:-1  tvg-id="ballysportssoutheast.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-southeast-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Southeast
+#EXTINF:-1  tvg-id="FanDuel.Sports.Network.Southeast.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-southeast-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Southeast
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/872
 #EXTINF:-1  tvg-id="FanDuel.Sports.Southeast.-.Georgia.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-southeast-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Southeast Georgia
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1623
@@ -1999,47 +1901,29 @@ http://cdn1host.online:2999/kratorius/opLcbhlXaT/1623
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1189
 #EXTINF:-1  tvg-id="Fanduel.Sports.Sun.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-sun-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Sun
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/322
-#EXTINF:-1  tvg-id="FanDuel.Sports.Network.West.us" tvg-logo="https://pixvid.org/images/2025/02/11/FanDuel_Midwest.png" group-title="Mystique USA" radio="false",Fanduel Sports West
+#EXTINF:-1  tvg-id="FanDuel.Sports.Network.West.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-west-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports West
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1633
-#EXTINF:-1  tvg-id="ballysportswisconsin.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-wisconsin-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Wisconsin
+#EXTINF:-1  tvg-id="FanDuel.Sports.Network.Wisconsin.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/bally-sports-wisconsin-us.png?raw=true" group-title="Mystique USA" radio="false",Fanduel Sports Wisconsin
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1621
 #EXTINF:-1  tvg-id="fandueltv.us" tvg-logo="https://i.ibb.co/J5qpjHN/fandueltv.png" group-title="Mystique USA" radio="false",Fanduel TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/332
-#EXTINF:-1  tvg-id="FAVE.TV.(KCBS-TV4).Los.Angeles,.CA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s117058_h15_aa.png" group-title="Mystique USA" radio="false",Fave TV Los Angeles
-http://108.14.66.101:5004/auto/v2.4
-#EXTINF:-1  tvg-id="fightnetwork.us" tvg-logo="http://lonewolftvpr.com/logos/fightnetwork.png" group-title="Mystique USA" radio="false",Fight Network
+#EXTINF:-1  tvg-id="The.Fight.Network.(United.States).(TFN).us" tvg-logo="http://lonewolftvpr.com/logos/fightnetwork.png" group-title="Mystique USA" radio="false",Fight Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/331
-#EXTINF:-1  tvg-id="FOX.(WFXT).Boston,.MA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10212_h15_ab.png" group-title="Mystique USA" radio="false",FOX Boston (WFXT)
-http://fl1.moveonjoy.com/FOX_EAST/index.m3u8
 #EXTINF:-1  tvg-id="foxbusiness.us" tvg-logo="http://lonewolftvpr.com/logos/foxbusiness.png" group-title="Mystique USA" radio="false",Fox Business
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/268
-#EXTINF:-1  tvg-id="FOX.(KDFW).Dallas,.TX.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10212_h15_ab.png" group-title="Mystique USA" radio="false",FOX Dallas (KDFW)
-http://user.scalecdn.co:8080/live/26725074/92867131/89824.m3u8
-#EXTINF:-1  tvg-id="FOX.(KDVR).Denver,.CO.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10212_h15_ab.png" group-title="Mystique USA" radio="false",FOX Denver (KDVR)
-http://user.scalecdn.co:8080/live/26725074/92867131/2560.m3u8
 #EXTINF:-1  tvg-id="foxdeportes.us" tvg-logo="http://lonewolftvpr.com/logos/foxdeportes.png" group-title="Mystique USA" radio="false",Fox Deportes
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/266
-#EXTINF:-1  tvg-id="FOX.(KTTV).Los.Angeles,.CA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10212_h15_ab.png" group-title="Mystique USA" radio="false",FOX Los Angeles (KTTV)
-http://user.scalecdn.co:8080/live/26725074/92867131/2550.m3u8
-#EXTINF:-1  tvg-id="FOX.(WSVN).Miami,.FL.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10212_h15_ab.png" group-title="Mystique USA" radio="false",FOX Miami (WSVN)
-http://user.scalecdn.co:8080/live/26725074/92867131/2549.m3u8
-#EXTINF:-1  tvg-id="FOX.(WVUE).New.Orleans,.LA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28719_h15_ac.png" group-title="Mystique USA" radio="false",FOX New Orleans (WVUE)
-http://user.scalecdn.co:8080/live/26725074/92867131/2545.m3u8
 #EXTINF:-1  tvg-id="foxnews.us" tvg-logo="http://lonewolftvpr.com/logos/foxnews.png" group-title="Mystique USA" radio="false",Fox News
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/267
-#EXTINF:-1  tvg-id="FOX.(KSAZ).Phoenix,.AZ.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10212_h15_ab.png" group-title="Mystique USA" radio="false",FOX Phoenix (KSAZ)
-http://user.scalecdn.co:8080/live/26725074/92867131/2539.m3u8
 #EXTINF:-1  tvg-id="foxsoccerplus.us" tvg-logo="http://lonewolftvpr.com/logos/foxsoccer.png" group-title="Mystique USA" radio="false",Fox Soccer Plus
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/265
-#EXTINF:-1  tvg-id="Racing.Dummy.us" tvg-logo="https://i.ibb.co/V0R8nbht/FOX-Racing.png" group-title="Mystique USA" radio="false",Fox Sports Racing
+#EXTINF:-1  tvg-id="andtv.us" tvg-logo="https://i.ibb.co/V0R8nbht/FOX-Racing.png" group-title="Mystique USA" radio="false",Fox Sports Racing
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/8430
-#EXTINF:-1  tvg-id="FOX.(KCPQ).Tacoma,.WA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s28719_h15_ac.png" group-title="Mystique USA" radio="false",FOX Tacoma (KCPQ)
-http://user.scalecdn.co:8080/live/26725074/92867131/89885.m3u8
 #EXTINF:-1  tvg-id="Freeform.-.East.Feed.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10093_h15_ae.png" group-title="Mystique USA" radio="false",Freeform
 http://fl2.moveonjoy.com/FREE_FORM/index.m3u8
-#EXTINF:-1  tvg-id="foxsports1.us" tvg-logo="http://lonewolftvpr.com/logos/fs1.png" group-title="Mystique USA" radio="false",FS1
+#EXTINF:-1  tvg-id="Fox.Sports.1.us" tvg-logo="http://lonewolftvpr.com/logos/fs1.png" group-title="Mystique USA" radio="false",FS1
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/263
-#EXTINF:-1  tvg-id="foxsports2.us" tvg-logo="http://lonewolftvpr.com/logos/fs2.png" group-title="Mystique USA" radio="false",FS2
+#EXTINF:-1  tvg-id="Fox.Sports.2.us" tvg-logo="http://lonewolftvpr.com/logos/fs2.png" group-title="Mystique USA" radio="false",FS2
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/264
 #EXTINF:-1  tvg-id="FUSE.TV.-.Eastern.feed.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s14929_h15_ac.png" group-title="Mystique USA" radio="false",Fuse
 http://fl2.moveonjoy.com/FUSE/index.m3u8
@@ -2051,21 +1935,21 @@ http://fl2.moveonjoy.com/FX_MOVIE/index.m3u8
 http://fl2.moveonjoy.com/FXX/index.m3u8
 #EXTINF:-1  tvg-id="FYI.USA.-.Eastern.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s58988_h15_aa.png" group-title="Mystique USA" radio="false",FYI
 http://fl2.moveonjoy.com/FYI/index.m3u8
-#EXTINF:-1  tvg-id="galavision.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/galavision-us.png?raw=true" group-title="Mystique USA" radio="false",Galavision
+#EXTINF:-1  tvg-id="Galavision.-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/galavision-us.png?raw=true" group-title="Mystique USA" radio="false",Galavision
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/360
 #EXTINF:-1  tvg-id="Game.Show.Network.-.East.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s14909_h15_ad.png" group-title="Mystique USA" radio="false",Game Show Network (US)
 http://cord-cutter.net:8080/gPe4Z1/132932/57430
 #EXTINF:-1  tvg-id="gettv.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/get-tv-us.png?raw=true" group-title="Mystique USA" radio="false",getTV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/45830
-#EXTINF:-1  tvg-id="golfchannel.us" tvg-logo="http://lonewolftvpr.com/logos/golf.png" group-title="Mystique USA" radio="false",Golf Channel
+#EXTINF:-1  tvg-id="Golf.Channel.USA.us" tvg-logo="http://lonewolftvpr.com/logos/golf.png" group-title="Mystique USA" radio="false",Golf Channel
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/138
 #EXTINF:-1  tvg-id="gacfamily.us" tvg-logo="https://i.ibb.co/nBDXGZp/gac.png" group-title="Mystique USA" radio="false",Great American Family
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1474
 #EXTINF:-1  tvg-id="grit.us" tvg-logo="http://lonewolftvpr.com/logos/grit.png" group-title="Mystique USA" radio="false",Grit TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/734
-#EXTINF:-1  tvg-id="hallmark.us" tvg-logo="http://lonewolftvpr.com/logos/hallmark.png" group-title="Mystique USA" radio="false",Hallmark
+#EXTINF:-1  tvg-id="Hallmark.-.Eastern.Feed.us" tvg-logo="http://lonewolftvpr.com/logos/hallmark.png" group-title="Mystique USA" radio="false",Hallmark
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/162
-#EXTINF:-1  tvg-id="hallmarkfamily.us" tvg-logo="http://lonewolftvpr.com/logos/hallmarkdrama.png" group-title="Mystique USA" radio="false",Hallmark Family
+#EXTINF:-1  tvg-id="Hallmark.Drama.HDTV.(HALDRHD).us" tvg-logo="http://lonewolftvpr.com/logos/hallmarkdrama.png" group-title="Mystique USA" radio="false",Hallmark Family
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/161
 #EXTINF:-1  tvg-id="HBO.-.Eastern.Feed.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10240_h15_aa.png" group-title="Mystique USA" radio="false",HBO (US)
 http://fl2.moveonjoy.com/HBO/index.m3u8
@@ -2079,7 +1963,7 @@ http://fl2.moveonjoy.com/HBO_FAMILY/index.m3u8
 http://fl2.moveonjoy.com/HBO_ZONE/index.m3u8
 #EXTINF:-1  tvg-id="HGTV.USA.-.Eastern.Feed.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s14902_h15_ab.png" group-title="Mystique USA" radio="false",HGTV
 http://fl2.moveonjoy.com/HGTV/index.m3u8
-#EXTINF:-1  tvg-id="historychannel.us" tvg-logo="http://lonewolftvpr.com/logos/history.png" group-title="Mystique USA" radio="false",History Channel
+#EXTINF:-1  tvg-id="History.Channel.US.-.Eastern.Feed.us" tvg-logo="http://lonewolftvpr.com/logos/history.png" group-title="Mystique USA" radio="false",History Channel
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/153
 #EXTINF:-1  tvg-id="hln.us" tvg-logo="http://lonewolftvpr.com/logos/hln.png" group-title="Mystique USA" radio="false",HLN
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/152
@@ -2087,7 +1971,7 @@ http://cdn1host.online:2999/kratorius/opLcbhlXaT/152
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1608
 #EXTINF:-1  tvg-id="hsn2.us" tvg-logo="https://i.ibb.co/svRyMRDQ/HSN-logo-svg.png" group-title="Mystique USA" radio="false",HSN 2
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/45833
-#EXTINF:-1  tvg-id="independentfilmchannel.us" tvg-logo="http://lonewolftvpr.com/logos/IFC.png" group-title="Mystique USA" radio="false",IFC
+#EXTINF:-1  tvg-id="IFC.HDTV.(East).us" tvg-logo="http://lonewolftvpr.com/logos/IFC.png" group-title="Mystique USA" radio="false",IFC
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/151
 #EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://i.ibb.co/8DgwF6H/infowars.png" group-title="Mystique USA" radio="false",Info Wars
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/50603
@@ -2107,37 +1991,35 @@ http://fl2.moveonjoy.com/LIFETIME_MOVIE_NETWORK/index.m3u8
 http://fl3.moveonjoy.com/Logo/index.m3u8
 #EXTINF:-1  tvg-id="marqueesportsnetwork.us" tvg-logo="http://lonewolftvpr.com/logos/marquee.png" group-title="Mystique USA" radio="false",Marquee Sports Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1045
-#EXTINF:-1  tvg-id="masn.us" tvg-logo="https://i.ibb.co/BC78tfT/masn.png" group-title="Mystique USA" radio="false",MASN
+#EXTINF:-1  tvg-id="Mid-Atlantic.Sports.Network.us" tvg-logo="https://i.ibb.co/BC78tfT/masn.png" group-title="Mystique USA" radio="false",MASN
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1615
-#EXTINF:-1  tvg-id="masn2.us" tvg-logo="https://i.ibb.co/PhD4LfY/masn2.png" group-title="Mystique USA" radio="false",MASN 2
+#EXTINF:-1  tvg-id="Mid-Atlantic.Sports.Network.2.us" tvg-logo="https://i.ibb.co/PhD4LfY/masn2.png" group-title="Mystique USA" radio="false",MASN 2
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1616
-#EXTINF:-1  tvg-id="mavtv.us" tvg-logo="http://lonewolftvpr.com/logos/mav.png" group-title="Mystique USA" radio="false",MAV TV
+#EXTINF:-1  tvg-id="MavTV.USA.us" tvg-logo="http://lonewolftvpr.com/logos/mav.png" group-title="Mystique USA" radio="false",MAV TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/965
 #EXTINF:-1  tvg-id="metv.us" tvg-logo="http://lonewolftvpr.com/logos/metv.png" group-title="Mystique USA" radio="false",Me TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/744
-#EXTINF:-1  tvg-id="MeTV.Toons.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/head/main/countries/united-states/me-tv-toons-us.png" group-title="Mystique USA" radio="false",MeTV Toons
+#EXTINF:-1  tvg-id="MeTV.Toons.(WJLP2).NJ.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/me-tv-toons-us.png?raw=true" group-title="Mystique USA" radio="false",MeTV Toons
 http://zorrohunter.com:80/live/WeaponX/Dawkins22/48753.ts
-#EXTINF:-1  tvg-id="MeTV.Toons.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/head/main/countries/united-states/me-tv-toons-us.png" group-title="Mystique USA" radio="false",MeTV Toons
+#EXTINF:-1  tvg-id="MeTV.Toons.(WJLP2).NJ.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/me-tv-toons-us.png?raw=true" group-title="Mystique USA" radio="false",MeTV Toons
 http://zorrohunter.com:80/live/WeaponX/Dawkins22/48753.ts
 #EXTINF:-1  tvg-id="MeTV.Plus.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/me-tv-plus-us.png?raw=true" group-title="Mystique USA" radio="false",MeTV+
 http://user.scalecdn.co:8080/live/26725074/92867131/607734.ts
 #EXTINF:-1  tvg-id="MeTV.Plus.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/me-tv-plus-us.png?raw=true" group-title="Mystique USA" radio="false",MeTV+
 http://user.scalecdn.co:8080/live/26725074/92867131/607734.ts
-#EXTINF:-1  tvg-id="mgm.us" tvg-logo="https://i.ibb.co/ZzC2RNd/mgmplus.png" group-title="Mystique USA" radio="false",MGM+
+#EXTINF:-1  tvg-id="MGM.Presents.us" tvg-logo="https://i.ibb.co/ZzC2RNd/mgmplus.png" group-title="Mystique USA" radio="false",MGM+
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/174
-#EXTINF:-1  tvg-id="mgmdrivein.us" tvg-logo="https://i.ibb.co/5n22NvR/mgmplusdi.png" group-title="Mystique USA" radio="false",MGM+ Drive-In
+#EXTINF:-1  tvg-id="MGM+.Drive-In.(MGM+DI).us" tvg-logo="https://i.ibb.co/5n22NvR/mgmplusdi.png" group-title="Mystique USA" radio="false",MGM+ Drive-In
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1461
-#EXTINF:-1  tvg-id="mgmhits.us" tvg-logo="https://i.ibb.co/vk23nMP/mgmhits.png" group-title="Mystique USA" radio="false",MGM+ Hits
+#EXTINF:-1  tvg-id="MGM+.Hits.HDTV.(East).(MGM+HTHD).us" tvg-logo="https://i.ibb.co/vk23nMP/mgmhits.png" group-title="Mystique USA" radio="false",MGM+ Hits
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/388
-#EXTINF:-1  tvg-id="mgmmarquee.us" tvg-logo="https://i.ibb.co/Cw6sbLz/mgmmarquee.png" group-title="Mystique USA" radio="false",MGM+ marquee
+#EXTINF:-1  tvg-id="MGM+.Marquee.HDTV.(East).(MGM+MRQ).us" tvg-logo="https://i.ibb.co/Cw6sbLz/mgmmarquee.png" group-title="Mystique USA" radio="false",MGM+ marquee
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/132
 #EXTINF:-1  tvg-id="mlbnetwork.us" tvg-logo="http://lonewolftvpr.com/logos/mlbmain.png" group-title="Mystique USA" radio="false",MLB Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/145
-#EXTINF:-1  tvg-id="monumentalsportsnetwork.us" tvg-logo="https://static.wixstatic.com/media/86849b_93b0529b81ad48cda4c870344a308a0f~mv2.png/v1/crop/x_0,y_74,w_968,h_580/fill/w_420,h_250,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/monumental2-logo.png" group-title="Mystique USA" radio="false",Monumental Sports
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/45835
 #EXTINF:-1  tvg-id="Motor.Trend.HD.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/motor-trend-us.png" group-title="Mystique USA" radio="false",MotorTrend
 http://fl2.moveonjoy.com/MOTOR_TREND/index.m3u8
-#EXTINF:-1  tvg-id="channel1" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/movies-us.png?raw=true" group-title="Mystique USA" radio="false",Movies!
+#EXTINF:-1  tvg-id="MoviePlex.East.(MPLEX).us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/movies-us.png?raw=true" group-title="Mystique USA" radio="false",Movies!
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/39990
 #EXTINF:-1  tvg-id="msnbc.us" tvg-logo="http://lonewolftvpr.com/logos/msnbc.png" group-title="Mystique USA" radio="false",MSNBC
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/143
@@ -2147,97 +2029,71 @@ https://fl2.moveonjoy.com/MTV/index.m3u8
 http://fl2.moveonjoy.com/MTV_2/index.m3u8
 #EXTINF:-1  tvg-id="MTV.Classic.-.East.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s22561_h15_ad.png" group-title="Mystique USA" radio="false",MTV Classic
 http://fl2.moveonjoy.com/MTV_CLASSIC/index.m3u8
-#EXTINF:-1  tvg-id="MNT.(WWOR).New.York.NY.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s51307_h15_aa.png" group-title="Mystique USA" radio="false",MyNetworkTV New York
-http://108.14.66.101:5004/auto/v9.1
-#EXTINF:-1  tvg-id="natgeowild.us" tvg-logo="http://lonewolftvpr.com/logos/nadgeowild.png" group-title="Mystique USA" radio="false",Nat Geo Wild
+#EXTINF:-1  tvg-id="National.Geographic.Wild.us" tvg-logo="http://lonewolftvpr.com/logos/nadgeowild.png" group-title="Mystique USA" radio="false",Nat Geo Wild
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/140
-#EXTINF:-1  tvg-id="natgeo.us" tvg-logo="http://lonewolftvpr.com/logos/natgeo.png" group-title="Mystique USA" radio="false",National Geographic
+#EXTINF:-1  tvg-id="National.Geographic.US.-.Eastern.us" tvg-logo="http://lonewolftvpr.com/logos/natgeo.png" group-title="Mystique USA" radio="false",National Geographic
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/141
-#EXTINF:-1  tvg-id="nbatv.us" tvg-logo="http://lonewolftvpr.com/logos/nba.png" group-title="Mystique USA" radio="false",NBA TV
+#EXTINF:-1  tvg-id="NBA.TV.USA.us" tvg-logo="http://lonewolftvpr.com/logos/nba.png" group-title="Mystique USA" radio="false",NBA TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/136
-#EXTINF:-1  tvg-id="NBC.(KUSA).Denver,.CO.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10991_h15_ad.png" group-title="Mystique USA" radio="false",NBC Denver (KUSA)
-http://user.scalecdn.co:8080/live/26725074/92867131/606993.m3u8
-#EXTINF:-1  tvg-id="NBC.(KXAS).Fort.Worth,.TX.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10991_h15_ad.png" group-title="Mystique USA" radio="false",NBC Fort Worth (KXAS)
-http://user.scalecdn.co:8080/live/26725074/92867131/2461.m3u8
-#EXTINF:-1  tvg-id="NBC.(KNBC).Los.Angeles,.CA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10991_h15_ad.png" group-title="Mystique USA" radio="false",NBC Los Angeles (KNBC)
-http://user.scalecdn.co:8080/live/26725074/92867131/2453.m3u8
-#EXTINF:-1  tvg-id="NBC.(WTVJ).Miami,.FL.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10991_h15_ad.png" group-title="Mystique USA" radio="false",NBC Miami (WTVJ)
-http://user.scalecdn.co:8080/live/26725074/92867131/3668.m3u8
-#EXTINF:-1  tvg-id="NBC.(WDSU).New.Orleans,.LA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10991_h15_ad.png" group-title="Mystique USA" radio="false",NBC New Orleans (WDSU)
-http://user.scalecdn.co:8080/live/26725074/92867131/2448.m3u8
-#EXTINF:-1  tvg-id="NBC.(WNBC).New.York,.NY.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10991_h15_ad.png" group-title="Mystique USA" radio="false",NBC New York (WNBC)
-http://user.scalecdn.co:8080/live/26725074/92867131/2447.m3u8
-#EXTINF:-1  tvg-id="NBC.(KPNX).Phoenix,.AZ.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10991_h15_ad.png" group-title="Mystique USA" radio="false",NBC Phoenix (KPNX)
-http://user.scalecdn.co:8080/live/26725074/92867131/2444.m3u8
-#EXTINF:-1  tvg-id="NBC.(KING).Seattle,.WA.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10991_h15_ad.png" group-title="Mystique USA" radio="false",NBC Seattle (KING)
-http://user.scalecdn.co:8080/live/26725074/92867131/2437.m3u8
-#EXTINF:-1  tvg-id="newenglandsportsnetwork.us" tvg-logo="https://i.ibb.co/HRRPMyQ/nesn-logo.png" group-title="Mystique USA" radio="false",NESN
+#EXTINF:-1  tvg-id="New.England.Sports.Network.us" tvg-logo="https://i.ibb.co/HRRPMyQ/nesn-logo.png" group-title="Mystique USA" radio="false",NESN
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/890
-#EXTINF:-1  tvg-id="newenglandsportsnetworkplus.us" tvg-logo="https://i.ibb.co/KcPJSnhm/NESN-Plus-Logo.png" group-title="Mystique USA" radio="false",NESN PLUS
+#EXTINF:-1  tvg-id="New.England.Sports.Network.Plus.us" tvg-logo="https://i.ibb.co/KcPJSnhm/NESN-Plus-Logo.png" group-title="Mystique USA" radio="false",NESN PLUS
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/45836
 #EXTINF:-1  tvg-id="newsmax.us" tvg-logo="http://lonewolftvpr.com/logos/newsmax.png" group-title="Mystique USA" radio="false",NewsMax
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/864
 #EXTINF:-1  tvg-id="newsnation.us" tvg-logo="https://i.ibb.co/cK9f0vjN/News-Nation-logo-svg.png" group-title="Mystique USA" radio="false",NewsNation
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/45839
-#EXTINF:-1  tvg-id="nflnetwork.us" tvg-logo="http://lonewolftvpr.com/logos/nfl.png" group-title="Mystique USA" radio="false",NFL Network
+#EXTINF:-1  tvg-id="NFL.Network.us" tvg-logo="http://lonewolftvpr.com/logos/nfl.png" group-title="Mystique USA" radio="false",NFL Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/234
-#EXTINF:-1  tvg-id="nhlnetwork.us" tvg-logo="http://lonewolftvpr.com/logos/nhl.png" group-title="Mystique USA" radio="false",NHL Network
+#EXTINF:-1  tvg-id="NHL.Network.USA.us" tvg-logo="http://lonewolftvpr.com/logos/nhl.png" group-title="Mystique USA" radio="false",NHL Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/299
 #EXTINF:-1  tvg-id="nickjr.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nick-jr-us.png?raw=true" group-title="Mystique USA" radio="false",Nick Jr.
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/351
-#EXTINF:-1  tvg-id="nickmusic.us" tvg-logo="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b3e63bd8-7785-430d-95ea-e431f52558f6/dgvyddt-44e7f012-153e-4fc4-9df8-176b32f0aeb3.png/v1/fill/w_1280,h_1064/nickmusic_2024_to_now_logo_outline_by_yellowdude74_dgvyddt-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA2NCIsInBhdGgiOiJcL2ZcL2IzZTYzYmQ4LTc3ODUtNDMwZC05NWVhLWU0MzFmNTI1NThmNlwvZGd2eWRkdC00NGU3ZjAxMi0xNTNlLTRmYzQtOWRmOC0xNzZiMzJmMGFlYjMucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.TnmWINvFIJAo1BweHDCD01zSVW3jfLU6lSRSJzxgblM" group-title="Mystique USA" radio="false",Nick Music
+#EXTINF:-1  tvg-id="nickmusic.us" tvg-logo="https://i.ibb.co/zrgLxfw/Nick-Music-Logo.png" group-title="Mystique USA" radio="false",Nick Music
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/50786
-#EXTINF:-1  tvg-id="nickelodeon.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true" group-title="Mystique USA" radio="false",Nickelodeon East
+#EXTINF:-1  tvg-id="Nickelodeon.USA.-.East.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true" group-title="Mystique USA" radio="false",Nickelodeon East
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/327
-#EXTINF:-1  tvg-id="nickelodeonpacific.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true" group-title="Mystique USA" radio="false",Nickelodeon West
+#EXTINF:-1  tvg-id="Nickelodeon.USA.-.Pacific.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nickelodeon-us.png?raw=true" group-title="Mystique USA" radio="false",Nickelodeon West
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/24786
-#EXTINF:-1  tvg-id="nickmusic.us" tvg-logo="https://i.ibb.co/zrgLxfw/Nick-Music-Logo.png" group-title="Mystique USA" radio="false",NickMusic
-https://playlist-central.fubo.tv/0/media.m3u8?hdnts=ip%3D85.254.180.128~st%3D1741979075~exp%3D1742065475~acl%3D%2F%2A~data%3D1742065475~hmac%3D1f4770c3ac651edda69e6f81624e736e082a2346226afac15e1ac4cad8157fa2&watchToken=eyJhbGciOiJIUzI1NiIsInRva2VuVHlwZSI6IlVzYUJhc2VXYXRjaFRva2VuIiwidHlwIjoiSldUIn0.eyJ3YXRjaFRva2VuIjp7ImNhbGxTaWduIjoiTk1aSyIsImRldmljZSI6IkFMTCIsImJhbmR3aWR0aCI6IjE3NjEyOTIiLCJjb3VudHJ5IjoiVVNBIiwidXNlcklkIjoiNWI4ODg1ODI3YTFmODYzZWU2OTBmYjRmIiwicmVxdWVzdFR5cGUiOiJsaXZlIiwicmVnaW9uIjoiY2VudHJhbCIsImV4cGlyZXNBdCI6IjIwMjUtMDMtMTVUMTk6MTQ6MzVaIn0sImhvbWVaaXAiOiIzMzQ2NyIsImdlb1ppcCI6IjEwMTE4In0.1AphXowxqDEb7pzh_HolikKB742vD8e1-TCyp4rohZI
 #EXTINF:-1  tvg-id="nicktoons.us" tvg-logo="https://i.imgur.com/AuvMpAU.png" group-title="Mystique USA" radio="false",Nicktoons
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1223
-#EXTINF:-1  tvg-id="oneamericanews.us" tvg-logo="https://i.ibb.co/DM0283y/oan.png" group-title="Mystique USA" radio="false",One America News
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/1183
 #EXTINF:-1  tvg-id="outdoorchannel.us" tvg-logo="http://lonewolftvpr.com/logos/outdoor.png" group-title="Mystique USA" radio="false",Outdoor Channel
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/292
 #EXTINF:-1  tvg-id="outsidetv.us" tvg-logo="http://lonewolftvpr.com/logos/outside.png" group-title="Mystique USA" radio="false",Outside TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/357
 #EXTINF:-1  tvg-id="ovation.us" tvg-logo="https://i.ibb.co/pv25h60g/ovation.png" group-title="Mystique USA" radio="false",Ovation
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/45840
-#EXTINF:-1  tvg-id="oprahwinfreynetwork.us" tvg-logo="http://lonewolftvpr.com/logos/own.png" group-title="Mystique USA" radio="false",OWN
+#EXTINF:-1  tvg-id="Oprah.Winfrey.Network.USA.Eastern.us" tvg-logo="http://lonewolftvpr.com/logos/own.png" group-title="Mystique USA" radio="false",OWN
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/229
 #EXTINF:-1  tvg-id="Oxygen.-.Eastern.Feed.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s21484_h15_ac.png" group-title="Mystique USA" radio="false",Oxygen True Crime
 http://108.14.66.101:5004/auto/v4.4
-#EXTINF:-1  tvg-id="paramountnetwork.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/paramount-network.png" group-title="Mystique USA" radio="false",Paramount Network
+#EXTINF:-1  tvg-id="Paramount.Network.USA.-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/paramount-network-hz-us.png?raw=true" group-title="Mystique USA" radio="false",Paramount Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/221
 #EXTINF:-1  tvg-id="Paramount+.with.Showtime.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/showtime-us.png" group-title="Mystique USA" radio="false",Paramount+ with Showtime
 http://fl2.moveonjoy.com/SHOWTIME/index.m3u8
-#EXTINF:-1  tvg-id="WKPCDT3.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-us.png?raw=true" group-title="Mystique USA" radio="false",PBS KET KY
+#EXTINF:-1  tvg-id="PBS.Eastern.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-us.png?raw=true" group-title="Mystique USA" radio="false",PBS KET KY
 https://2-fss-2.streamhoster.com/pl_132/amlst:200914-1315486/playlist.m3u8
-#EXTINF:-1  tvg-id="WKMJDT1.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-us.png?raw=true" group-title="Mystique USA" radio="false",PBS KET Louisville KY (WKMJ-TV)
+#EXTINF:-1  tvg-id="PBS.Eastern.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-us.png?raw=true" group-title="Mystique USA" radio="false",PBS KET Louisville KY (WKMJ-TV)
 https://2-fss-1.streamhoster.com/pl_134/amlst:200914-1282960/playlist.m3u8
-#EXTINF:-1  tvg-id="WKMJDT3.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/world-pbs-us.png?raw=true" group-title="Mystique USA" radio="false",PBS KET World
-https://2-fss-1.streamhoster.com/pl_122/amlst:200914-2942150/playlist.m3u8
-#EXTINF:-1  tvg-id="PBSKidsAlaska.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dot-icon-us.png?raw=true" group-title="Mystique USA" radio="false",PBS Kids Alaska
+#EXTINF:-1  tvg-id="PBS.Kids.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dot-icon-us.png?raw=true" group-title="Mystique USA" radio="false",PBS Kids Alaska
 https://livestream.pbskids.org/out/v1/2963202df0c142c69b5254a546473308/akst.m3u8
-#EXTINF:-1  tvg-id="PBSKidsEasternCentral.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dot-icon-us.png?raw=true" group-title="Mystique USA" radio="false",PBS Kids Eastern/Central
+#EXTINF:-1  tvg-id="PBS.Kids.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dot-icon-us.png?raw=true" group-title="Mystique USA" radio="false",PBS Kids Eastern/Central
 https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
-#EXTINF:-1  tvg-id="PBSKidsMountain.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dot-icon-us.png?raw=true" group-title="Mystique USA" radio="false",PBS Kids Mountain
+#EXTINF:-1  tvg-id="PBS.Kids.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dot-icon-us.png?raw=true" group-title="Mystique USA" radio="false",PBS Kids Mountain
 https://livestream.pbskids.org/out/v1/00a3b9014fa54c40bee6ca68a104a8a4/mst.m3u8
-#EXTINF:-1  tvg-id="PBSKidsPacific.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dot-icon-us.png?raw=true" group-title="Mystique USA" radio="false",PBS Kids Pacific (1080p)
+#EXTINF:-1  tvg-id="PBS.Kids.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-kids-dot-icon-us.png?raw=true" group-title="Mystique USA" radio="false",PBS Kids Pacific (1080p)
 https://livestream.pbskids.org/out/v1/c707b9310f2848de849b336f9914adbc/pst.m3u8
-#EXTINF:-1  tvg-id="WNETDT1.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pbs-us.png?raw=true" group-title="Mystique USA" radio="false",PBS New York NY (WNET)
-https://wnetdt.lls.pbs.org/out/v1/0456457548354b88b32fc437e4e7ee01/index.m3u8
-#EXTINF:-1  tvg-id="peopletv.us" tvg-logo="https://i.ibb.co/HLvnSJ8N/people.png" group-title="Mystique USA" radio="false",People TV
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://i.ibb.co/HLvnSJ8N/people.png" group-title="Mystique USA" radio="false",People TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/45843
 #EXTINF:-1  tvg-id="poptv.us" tvg-logo="http://lonewolftvpr.com/logos/pop.png" group-title="Mystique USA" radio="false",Pop
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/226
-#EXTINF:-1  tvg-id="pursuitchannel.us" tvg-logo="https://i.ibb.co/0h3dmJJ/pursuit.png" group-title="Mystique USA" radio="false",Pursuit
+#EXTINF:-1  tvg-id="Pursuit.Channel.us" tvg-logo="https://i.ibb.co/0h3dmJJ/pursuit.png" group-title="Mystique USA" radio="false",Pursuit
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/46873
-#EXTINF:-1  tvg-id="qvc.us" tvg-logo="https://i.ibb.co/FLbnmM74/qvc.png" group-title="Mystique USA" radio="false",QVC 1
+#EXTINF:-1  tvg-id="QVC.us" tvg-logo="https://i.ibb.co/FLbnmM74/qvc.png" group-title="Mystique USA" radio="false",QVC 1
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/45841
-#EXTINF:-1  tvg-id="qvc2.us" tvg-logo="https://i.ibb.co/bjxDd474/QVC2.png" group-title="Mystique USA" radio="false",QVC 2
+#EXTINF:-1  tvg-id="QVC2.us" tvg-logo="https://i.ibb.co/bjxDd474/QVC2.png" group-title="Mystique USA" radio="false",QVC 2
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/45842
-#EXTINF:-1  tvg-id="redbulltv.us" tvg-logo="https://i.ibb.co/KzvpcN0/redbulltv.png" group-title="Mystique USA" radio="false",Red Bull TV
+#EXTINF:-1  tvg-id="Redbull.Dummy.us" tvg-logo="https://i.ibb.co/KzvpcN0/redbulltv.png" group-title="Mystique USA" radio="false",Red Bull TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1585
 #EXTINF:-1  tvg-id="reelzchannel.us" tvg-logo="https://i.ibb.co/FhcKk9Q/reelz.png" group-title="Mystique USA" radio="false",Reelz Channel
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1463
@@ -2251,21 +2107,21 @@ http://cdn1host.online:2999/kratorius/opLcbhlXaT/45844
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1613
 #EXTINF:-1  tvg-id="Showtime.2.-.Eastern.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s11116_h15_aa.png" group-title="Mystique USA" radio="false",Showtime 2
 http://fl2.moveonjoy.com/SHOWTIME_2/index.m3u8
-#EXTINF:-1  tvg-id="showtimeextreme.us" tvg-logo="http://lonewolftvpr.com/logos/showtimeextreme.png" group-title="Mystique USA" radio="false",Showtime Extreme
+#EXTINF:-1  tvg-id="Showtime.Extreme.-.Eastern.us" tvg-logo="http://lonewolftvpr.com/logos/showtimeextreme.png" group-title="Mystique USA" radio="false",Showtime Extreme
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/385
-#EXTINF:-1  tvg-id="showtimefamilyzone.us" tvg-logo="https://i.ibb.co/0yDyR0S/showtimefz.png" group-title="Mystique USA" radio="false",Showtime Family Zone
+#EXTINF:-1  tvg-id="Showtime.FamilyZone.(East).(SHOFe).us" tvg-logo="https://i.ibb.co/0yDyR0S/showtimefz.png" group-title="Mystique USA" radio="false",Showtime Family Zone
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1464
-#EXTINF:-1  tvg-id="showtimenext.us" tvg-logo="https://i.ibb.co/4sT8KGF/showtime-next.png" group-title="Mystique USA" radio="false",Showtime Next
+#EXTINF:-1  tvg-id="Showtime.Next.HD.-.Eastern.us" tvg-logo="https://i.ibb.co/4sT8KGF/showtime-next.png" group-title="Mystique USA" radio="false",Showtime Next
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1187
-#EXTINF:-1  tvg-id="showtimeshowcase.us" tvg-logo="https://i.ibb.co/5kZYhCh/showcase.png" group-title="Mystique USA" radio="false",Showtime Showcase
+#EXTINF:-1  tvg-id="Showtime.Showcase.HD.-.East.us" tvg-logo="https://i.ibb.co/5kZYhCh/showcase.png" group-title="Mystique USA" radio="false",Showtime Showcase
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1465
-#EXTINF:-1  tvg-id="showtimewomen.us" tvg-logo="https://i.ibb.co/y8MtR14/showtimewoman.png" group-title="Mystique USA" radio="false",Showtime Women
+#EXTINF:-1  tvg-id="Showtime.Women.HD.-.Eastern.us" tvg-logo="https://i.ibb.co/y8MtR14/showtimewoman.png" group-title="Mystique USA" radio="false",Showtime Women
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1251
-#EXTINF:-1  tvg-id="shoxbet.us" tvg-logo="https://i.ibb.co/yQGt3gk/showtimebeyond.png" group-title="Mystique USA" radio="false",SHOxBET
+#EXTINF:-1  tvg-id="SHOXBET.-.Eastern.us" tvg-logo="https://i.ibb.co/yQGt3gk/showtimebeyond.png" group-title="Mystique USA" radio="false",SHOxBET
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1619
-#EXTINF:-1  tvg-id="smithsonianchannel.us" tvg-logo="http://lonewolftvpr.com/logos/smithonian.png" group-title="Mystique USA" radio="false",Smithsonian Channel
+#EXTINF:-1  tvg-id="Smithsonian.Channel.USA.HD.us" tvg-logo="http://lonewolftvpr.com/logos/smithonian.png" group-title="Mystique USA" radio="false",Smithsonian Channel
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/518
-#EXTINF:-1  tvg-id="sportsnetnewyork.us" tvg-logo="http://lonewolftvpr.com/logos/sny.png" group-title="Mystique USA" radio="false",SNY
+#EXTINF:-1  tvg-id="SNY:.SportsNet.New.York.(Comcast).us" tvg-logo="http://lonewolftvpr.com/logos/sny.png" group-title="Mystique USA" radio="false",SNY
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/330
 #EXTINF:-1  tvg-id="sony.us" tvg-logo="https://i.ibb.co/Wsbs8hF/sony.png" group-title="Mystique USA" radio="false",Sony Movies
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1217
@@ -2281,7 +2137,7 @@ http://fl2.moveonjoy.com/STARZ_COMEDY/index.m3u8
 http://fl2.moveonjoy.com/STARZ_EDGE/index.m3u8
 #EXTINF:-1  tvg-id="Starz.Encore.-.Eastern.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10178_h15_ac.png" group-title="Mystique USA" radio="false",Starz Encore (US)
 http://streamsy.online:2999/live/carlosbermudez/oZLRHZHL0z/1468.m3u8
-#EXTINF:-1  tvg-id="sundancetv.us" tvg-logo="http://lonewolftvpr.com/logos/sundance.png" group-title="Mystique USA" radio="false",Sundance TV
+#EXTINF:-1  tvg-id="SundanceTV.USA.-.East.us" tvg-logo="http://lonewolftvpr.com/logos/sundance.png" group-title="Mystique USA" radio="false",Sundance TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/215
 #EXTINF:-1  tvg-id="Syfy.-.Eastern.Feed.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s11097_h15_ae.png" group-title="Mystique USA" radio="false",SYFY
 http://fl2.moveonjoy.com/SYFY/index.m3u8
@@ -2289,33 +2145,15 @@ http://fl2.moveonjoy.com/SYFY/index.m3u8
 http://fl1.moveonjoy.com/TBS/index.m3u8
 #EXTINF:-1  tvg-id="TBS.-.East.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s11867_h15_ac.png" group-title="Mystique USA" radio="false",TBS (West)
 http://user.scalecdn.co:8080/live/26725074/92867131/3842.m3u8
-#EXTINF:-1  tvg-id="teennick.us" tvg-logo="https://i.ibb.co/n87j89Q/teennick.png" group-title="Mystique USA" radio="false",TeenNick
+#EXTINF:-1  tvg-id="TeenNick.-.Eastern.us" tvg-logo="https://i.ibb.co/n87j89Q/teennick.png" group-title="Mystique USA" radio="false",TeenNick
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1668
-#EXTINF:-1  tvg-id="telemundowsns.us" tvg-logo="http://lonewolftvpr.com/logos/telemundo.png" group-title="Mystique USA" radio="false",Telemundo Chicago
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/443
-#EXTINF:-1  tvg-id="telemundokxtx.us" tvg-logo="http://lonewolftvpr.com/logos/telemundo.png" group-title="Mystique USA" radio="false",Telemundo Dallas
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/1192
-#EXTINF:-1  tvg-id="telemundokmasld.us" tvg-logo="http://lonewolftvpr.com/logos/telemundo.png" group-title="Mystique USA" radio="false",Telemundo Denver
+#EXTINF:-1  tvg-id="Telemundo..-.Pacific.Feed.us" tvg-logo="http://lonewolftvpr.com/logos/telemundo.png" group-title="Mystique USA" radio="false",Telemundo Denver
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/30486
-#EXTINF:-1  tvg-id="telemundokblr.us" tvg-logo="http://lonewolftvpr.com/logos/telemundo.png" group-title="Mystique USA" radio="false",Telemundo Las Vegas
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/361
-#EXTINF:-1  tvg-id="telemundokvea.us" tvg-logo="http://lonewolftvpr.com/logos/telemundo.png" group-title="Mystique USA" radio="false",Telemundo Los Angeles
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/1656
-#EXTINF:-1  tvg-id="telemundowrdq.us" tvg-logo="http://lonewolftvpr.com/logos/telemundo.png" group-title="Mystique USA" radio="false",Telemundo Miami
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/334
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="http://lonewolftvpr.com/logos/telemundo.png" group-title="Mystique USA" radio="false",Telemundo NY
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/37940
-#EXTINF:-1  tvg-id="telemundowrdq.us" tvg-logo="http://lonewolftvpr.com/logos/telemundo.png" group-title="Mystique USA" radio="false",Telemundo Orlando
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/441
-#EXTINF:-1  tvg-id="telemundoktaz.us" tvg-logo="http://lonewolftvpr.com/logos/telemundo.png" group-title="Mystique USA" radio="false",Telemundo Phoenix
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/6899
-#EXTINF:-1  tvg-id="telemundowrmd.us" tvg-logo="http://lonewolftvpr.com/logos/telemundo.png" group-title="Mystique USA" radio="false",Telemundo Tampa
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/30478
-#EXTINF:-1  tvg-id="tennischannel.us" tvg-logo="http://lonewolftvpr.com/logos/tennis.png" group-title="Mystique USA" radio="false",Tennis Channel
+#EXTINF:-1  tvg-id="The.Tennis.Channel.us" tvg-logo="http://lonewolftvpr.com/logos/tennis.png" group-title="Mystique USA" radio="false",Tennis Channel
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/244
-#EXTINF:-1  tvg-id="t2.us" tvg-logo="https://image-resizer-cloud-cdn.api.cms.amdvids.com/image/7382296F-97F6-4450-B77B-8FE331FC04F6/3-1x1.png" group-title="Mystique USA" radio="false",Tennis Channel 2
+#EXTINF:-1  tvg-id="Tennis.Dummy.us" tvg-logo="https://image-resizer-cloud-cdn.api.cms.amdvids.com/image/7382296F-97F6-4450-B77B-8FE331FC04F6/3-1x1.png" group-title="Mystique USA" radio="false",Tennis Channel 2
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/13947
-#EXTINF:-1  tvg-id="5e20b730f2f8d5003d739db7-5fe27da18cdd46002d85efed" tvg-logo="https://provider-static.plex.tv/e/epg/channels/logos/gracenote/e2b22c28c76774811fcd7847400aeda6.png" group-title="Mystique USA" radio="false",The Grio
+#EXTINF:-1  tvg-id="a3cine.us" tvg-logo="https://th.bing.com/th/id/OIP.Pu1TqB1IEzzUnmKtdrwyuwHaDZ?rs=1&pid=ImgDetMain" group-title="Mystique USA" radio="false",The Grio
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1501
 #EXTINF:-1  tvg-id="TLC.USA.-.Eastern.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s11158_h15_ad.png" group-title="Mystique USA" radio="false",TLC (East)
 http://fl2.moveonjoy.com/TLC/index.m3u8
@@ -2329,7 +2167,7 @@ http://user.scalecdn.co:8080/live/26725074/92867131/3844.m3u8
 http://fl2.moveonjoy.com/TRU_TV/index.m3u8
 #EXTINF:-1  tvg-id="truTV.USA.-.Eastern.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s10153_h15_ad.png" group-title="Mystique USA" radio="false",truTV (West)
 http://user.scalecdn.co:8080/live/26725074/92867131/3846.m3u8
-#EXTINF:-1  tvg-id="travel.us" tvg-logo="http://lonewolftvpr.com/logos/travel.png" group-title="Mystique USA" radio="false",Trvl Channel
+#EXTINF:-1  tvg-id="Travel.US.-.East.us" tvg-logo="http://lonewolftvpr.com/logos/travel.png" group-title="Mystique USA" radio="false",Trvl Channel
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/239
 #EXTINF:-1  tvg-id="TUDN.us" tvg-logo="https://i.ibb.co/GxmGLMh/tudn.png" group-title="Mystique USA" radio="false",TUDN
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1487
@@ -2337,17 +2175,15 @@ http://cdn1host.online:2999/kratorius/opLcbhlXaT/1487
 http://fl1.moveonjoy.com/TCM/index.m3u8
 #EXTINF:-1  tvg-id="TV.Land.-.Eastern.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s16123_h15_aa.png" group-title="Mystique USA" radio="false",TV Land
 http://fl2.moveonjoy.com/TV_Land/index.m3u8
-#EXTINF:-1  tvg-id="I684.29058.schedulesdirect.org" tvg-logo="http://lonewolftvpr.com/logos/unimas.png" group-title="Mystique USA" radio="false",Unimas
+#EXTINF:-1  tvg-id="UniMÃ¡s..-.Network.Pacific.us" tvg-logo="http://lonewolftvpr.com/logos/unimas.png" group-title="Mystique USA" radio="false",Unimas
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/286
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="http://lonewolftvpr.com/logos/unimas.png" group-title="Mystique USA" radio="false",UniMas Los Angeles
-http://cdn1host.online:2999/kratorius/opLcbhlXaT/1079
-#EXTINF:-1  tvg-id="nbcuniverso.us" tvg-logo="http://lonewolftvpr.com/logos/universo.png" group-title="Mystique USA" radio="false",Universo
+#EXTINF:-1  tvg-id="NBC.Universo.-.Eastern.feed.us" tvg-logo="http://lonewolftvpr.com/logos/universo.png" group-title="Mystique USA" radio="false",Universo
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/329
 #EXTINF:-1  tvg-id="Univision.-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/univision-us.png?raw=true" group-title="Mystique USA" radio="false",Univision Chicago
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/1655
-#EXTINF:-1  tvg-id="uptv.us" tvg-logo="https://i.ibb.co/hJK29sf0/UPtv-logo.png" group-title="Mystique USA" radio="false",UP TV
+#EXTINF:-1  tvg-id="UP.us" tvg-logo="https://i.ibb.co/hJK29sf0/UPtv-logo.png" group-title="Mystique USA" radio="false",UP TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/45849
-#EXTINF:-1  tvg-id="turnerclassicmovies.us" tvg-logo="http://lonewolftvpr.com/logos/tcm.png" group-title="Mystique USA" radio="false",USA | TCM
+#EXTINF:-1  tvg-id="Turner.Classic.Movies.USA.us" tvg-logo="http://lonewolftvpr.com/logos/tcm.png" group-title="Mystique USA" radio="false",USA | TCM
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/352
 #EXTINF:-1  tvg-id="USA.Network.-.East.Feed.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s11207_h15_af.png" group-title="Mystique USA" radio="false",USA Network (US)
 http://fl2.moveonjoy.com/USA_Network/index.m3u8
@@ -2355,9 +2191,7 @@ http://fl2.moveonjoy.com/USA_Network/index.m3u8
 http://128.230.54.150:5004/auto/v34.3
 #EXTINF:-1  tvg-id="VICE.us" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s18822_h15_ac.png" group-title="Mystique USA" radio="false",Vice
 http://fl2.moveonjoy.com/VICELAND/index.m3u8
-#EXTINF:-1  tvg-id="wetv.us" tvg-logo="http://lonewolftvpr.com/logos/wetv.png" group-title="Mystique USA" radio="false",WE TV
+#EXTINF:-1  tvg-id="WE.(Women&apos;s.Entertainment).-.Eastern.us" tvg-logo="http://lonewolftvpr.com/logos/wetv.png" group-title="Mystique USA" radio="false",WE TV
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/247
-#EXTINF:-1  tvg-id="WMPTDT2.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/create-us.png?raw=true" group-title="Mystique USA" radio="false",WMPT-DT2 (PBS Create)
-https://2-fss-1.streamhoster.com/pl_122/amlst:201814-2122456/playlist.m3u8
-#EXTINF:-1  tvg-id="yesnetwork.us" tvg-logo="http://lonewolftvpr.com/logos/yes.png" group-title="Mystique USA" radio="false",Yes Network
+#EXTINF:-1  tvg-id="YES.Network.us" tvg-logo="http://lonewolftvpr.com/logos/yes.png" group-title="Mystique USA" radio="false",Yes Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/245
