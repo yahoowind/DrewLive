@@ -1,6 +1,5 @@
-#EXTM3U
-#EXTINF:-1  tvg-id="ESPN.us
-ESPN.us" tvg-logo="https://mc-sl2jmurch6.b-cdn.net/thumbnail/plain/https://i.imgur.com/kJ6395b.jpeg@jpeg" group-title="24/7 STREAMS",ESPN
+#EXTM3U url-tvg="https://tinyurl.com/all030-epg"
+#EXTINF:-1  tvg-id="ESPN.us" tvg-logo="https://mc-sl2jmurch6.b-cdn.net/thumbnail/plain/https://i.imgur.com/kJ6395b.jpeg@jpeg" group-title="24/7 STREAMS",ESPN
 #EXTVLCOPT:http-referrer=https://ppv.land/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 https://director.taihotel.asia/v3/director/VE1ZmQ0OWRiYjcxMmY4LTcwZGItMTQzNC1iOWY5LTdhY2U1YmQ2/master.m3u8?md5=ucMRWDzzwlEe3TgY4qZ2zg&expires=1705611600&net=NDQuMjAyLjEyMi4yNDg%3D
@@ -601,8 +600,7 @@ https://ly.prettyinpunkness.online/epl.m3u8
 #EXTVLCOPT:http-referrer=https://roxiestreams.pro/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 https://ly.prettyinpunkness.online/epl2.m3u8
-#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us
-PPV.EVENTS.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/wwe-logo.png" group-title="WRESTLING",WWE NXT (Stream 1)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/wwe-logo.png" group-title="WRESTLING",WWE NXT (Stream 1)
 #EXTVLCOPT:http-referrer=https://roxiestreams.pro/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 https://ugly.prettyinpunkness.online/prettyinpunk.m3u8
