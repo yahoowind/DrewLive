@@ -1,6 +1,6 @@
 All the playlist merged together in one link
 
-https://tinyurl.com/drewall15
+https://tinyurl.com/drewall16
 
 EPG Links
 
@@ -8,4 +8,4 @@ https://tinyurl.com/all008-epg
 
 https://tinyurl.com/all030-epg (won't crash IPTV Players but missing local channels EPG)
 
-https://tinyurl.com/allsource001-epg
+https://tinyurl.com/allsource16-epg
