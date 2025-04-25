@@ -1,6 +1,4 @@
-#EXTM3U url-tvg="https://tinyurl.com/drewall030-epg"
-#EXTINF:-1  tvg-name="MY: Astro Sports UHD" tvg-id="Astro.Sports.UHD.my" tvg-logo="https://i.ibb.co/3hW45Pb/Astro-Sports-UHD.png group-title="A1xmedia UHD | 4K" radio="false",MY: Astro Sports UHD
-https://a1xs.vip/9000001
+﻿#EXTM3U url-tvg="https://tinyurl.com/drewall030-epg"
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
 http://user.scalecdn.co:8080/live/26725074/92867131/511232.ts
 #EXTINF:-1  tvg-name="BBC Top Gear 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/Top-Gear-Logo-2002.png" group-title="24/7 by Mystique" radio="false",BBC Top Gear 24/7
@@ -127,6 +125,8 @@ https://a1xs.vip/700036
 https://a1xs.vip/700037
 #EXTINF:-1  tvg-name="Sky Sport PL NZ" tvg-id="SKY.Sport.8.nz" tvg-logo="https://i.imgur.com/ZlADOPM.png" group-title="A1xmedia NZ Sports" radio="false",Sky Sport 8 - Premier League NZ
 https://a1xs.vip/700008
+#EXTINF:-1  tvg-name="MY: Astro Sports UHD" tvg-id="Astro.Sports.UHD.my" tvg-logo="https://i.ibb.co/3hW45Pb/Astro-Sports-UHD.png group-title=" group-title="A1xmedia UHD | 4K" radio="false",MY: Astro Sports UHD
+https://a1xs.vip/9000001
 #EXTINF:-1  tvg-name="UK: Sky Sports Main Event UHD" tvg-id="SkySpMainEvHD.uk" tvg-logo="https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png" group-title="A1xmedia UHD | 4K" radio="false",UK: Sky Sports Main Event UHD
 https://a1xs.vip/2000015
 #EXTINF:-1  tvg-name="UK: Sky Sports F1 UHD" tvg-id="SkySp.F1.uk" tvg-logo="https://i.ibb.co/swp9ncv/Sky-f1-uhd.png" group-title="A1xmedia UHD | 4K" radio="false",UK: Sky Sports F1 UHD
@@ -297,6 +297,8 @@ https://a1xs.vip/300037
 https://a1xs.vip/300036
 #EXTINF:-1  tvg-name="TBS" tvg-id="TBS.-.East.us" tvg-logo="https://i.imgur.com/Ks8htcP.png" group-title="A1xmedia US Channels" radio="false",TBS
 https://a1xs.vip/300038
+#EXTINF:-1  tvg-name="NewsMax" tvg-id="plex.tv.NBC.News.NOW.plex" tvg-logo="https://i.imgur.com/zRGFEyD.png" group-title="A1xmedia US Channels" radio="false",NBC News NOW
+https://a1xs.vip/300013
 #EXTINF:-1  tvg-name="NESN UHD" tvg-id="New.England.Sports.Network.HDTV.(NESNHD).us" tvg-logo="https://i.postimg.cc/CxVDbJrS/nesn.png" group-title="A1xmedia US Sports" radio="false",NESN UHD
 https://a1xs.vip/4000080
 #EXTINF:-1  tvg-name="MSG" tvg-id="MSG.(Madison.Square.Gardens).us" tvg-logo="https://i.postimg.cc/W1jFdzt4/MSG-Network-logo.png" group-title="A1xmedia US Sports" radio="false",MSG FHD
