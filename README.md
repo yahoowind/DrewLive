@@ -19,16 +19,19 @@ Keep track of your channels with the following EPG options:
 Complete EPG data for all sources.
 🔗 Merged EPG (Full Source)
 URL: https://tinyurl.com/merged24-epg
+    
     •    Merged EPG (Full Source)
     
 This version won’t crash IPTV players but may be missing some local channels’ EPG info.
 🔗 Merged EPG (No IPTV Crashes)
 URL: https://tinyurl.com/merged2423-epg
+    
     •    Merged EPG (No IPTV Crashes)
     
 Comprehensive EPG including all available sources.
 🔗 All Source EPG
 URL: https://tinyurl.com/allsource24-epg
+    
     •    All Source EPG
 
 ⸻
