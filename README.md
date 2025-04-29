@@ -1,11 +1,11 @@
 All the playlist merged together in one link
 
-https://tinyurl.com/drewall20
+https://tinyurl.com/drewall2423
 
 EPG Links
 
-https://tinyurl.com/drewall24-epg
+https://tinyurl.com/merged24-epg
 
-https://tinyurl.com/drewall030-epg (won't crash IPTV Players but missing local channels EPG)
+https://tinyurl.com/merged2423-epg (won't crash IPTV Players but missing local channels EPG)
 
-https://tinyurl.com/allsource16-epg
+https://tinyurl.com/allsource24-epg
