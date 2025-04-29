@@ -15,14 +15,17 @@ URL: https://tinyurl.com/drewall25
 🗓️ EPG Links:
 
 Keep track of your channels with the following EPG options:
+    
     •    Merged EPG (Full Source)
 Complete EPG data for all sources.
 🔗 Merged EPG (Full Source)
 URL: https://tinyurl.com/merged24-epg
+    
     •    Merged EPG (No IPTV Crashes)
 This version won’t crash IPTV players but may be missing some local channels’ EPG info.
 🔗 Merged EPG (No IPTV Crashes)
 URL: https://tinyurl.com/merged2423-epg
+    
     •    All Source EPG
 Comprehensive EPG including all available sources.
 🔗 All Source EPG
