@@ -8,7 +8,9 @@ Welcome to DrewLive, your go-to source for seamless IPTV streaming and EPG manag
 
 Access all your favorite playlists in a single, convenient link:
 🔗 All Playlists - DrewLive
-URL: https://tinyurl.com/drewall25
+URL: 
+
+    •    https://tinyurl.com/drewall25
 
 ⸻
 
@@ -18,21 +20,21 @@ Keep track of your channels with the following EPG options:
     
 Complete EPG data for all sources.
 🔗 Merged EPG (Full Source)
-URL: https://tinyurl.com/merged24-epg
+URL:
     
-    •    Merged EPG (Full Source)
+    •   https://tinyurl.com/merged24-epg
     
 This version won’t crash IPTV players but may be missing some local channels’ EPG info.
 🔗 Merged EPG (No IPTV Crashes)
-URL: https://tinyurl.com/merged2423-epg
+URL:
     
-    •    Merged EPG (No IPTV Crashes)
+    •   https://tinyurl.com/merged2423-epg
     
 Comprehensive EPG including all available sources.
 🔗 All Source EPG
-URL: https://tinyurl.com/allsource24-epg
+URL:
     
-    •    All Source EPG
+    •   https://tinyurl.com/allsource24-epg
 
 ⸻
 
@@ -40,7 +42,9 @@ URL: https://tinyurl.com/allsource24-epg
 
 Never miss an exciting moment with the latest live events!
 🔗 Live Events - DrewLive
-URL: https://tinyurl.com/drewevents23
+URL: 
+
+    •   https://tinyurl.com/drewevents23
 
 ⸻
 
