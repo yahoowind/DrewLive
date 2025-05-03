@@ -42,7 +42,7 @@ This version won’t crash IPTV players but may be missing some local channels�
 🔗 All Source EPG URL:
 Comprehensive EPG including all available sources.
 
-• https://tinyurl.com/allsource24-epg
+• https://tinyurl.com/allsource2423-epg
 
 
 ⸻
