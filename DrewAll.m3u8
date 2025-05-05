@@ -1,4 +1,4 @@
-﻿#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
+#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
 http://user.scalecdn.co:8080/live/26725074/92867131/511232.ts
 #EXTINF:-1  tvg-name="BBC Top Gear 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/Top-Gear-Logo-2002.png" group-title="24/7 by Mystique" radio="false",BBC Top Gear 24/7
@@ -1709,165 +1709,163 @@ https://droxonwave.site/file2/AgtxP6PTCDvJGQ~SFFYC8HHtz7ZsBUAv~Ka2+FRCoxDfNTyVF1
 https://droxonwave.site/file2/8KaiuToWB02AQbB3VM5Xk~JV0K07a7xaGptHyz5+Dydnahl1IpGbsOmU~FQvPFrlzcM7u9bN2LWNggCy~gx~bki9mmQ17lLpkzzs0FxOuNMcXku8fdJR1lF9AqihCqJtTBjskZMwmJQAdAUeyXdBgz1zQP8zCjvkMcIvG6o8ARU=/MTA4MA==/aW5kZXgubTN1OA==.m3u8
 #EXTINF:-1  tvg-id="Movie.Dummy.us" tvg-logo="https://th.bing.com/th/id/OIP.aYEFgXkZAg2NpE8fP2-OjQHaJQ?rs=1&pid=ImgDetMain" group-title="Mystique On Demand" radio="false",You're Cordially Invited (2025)
 https://tmstr2.luminousstreamhaven.com/stream_new/H4sIAAAAAAAAAw3I0XaCIBgA4FcC0rJd2kk2lpgFP8kdCM1EOJ3VVvn023f5rRDO8TlfnFe5XyKL7XKJ8t4416_PhSf.zYkh.bF6eXrdQ.CdiqzWaWgUVNkxPFmN4acjLO5Qi.zkJqvwrZ.HpiVVKeP_BTa2YvpoCRvU9mBqCK.a6qZNLrfQLQC7ZOJUG.FuPOS_IO_IJJ75S0E0vb16DKUDXepw2MGJGz4P3M6M1Aia46Z4CFQ8pcRCRP20USdL22.Y2Kjj16wUA5u6rJ8dPU5sK0mWgXA5hO5hYPj0m7X0m3t0JyAwllTLaX.g14t6r7gTZdJRd3_Jri2fIQEAAA--/index-3.m3u8
-#EXTINF:-1  tvg-id="BBC.One.CI.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-one-uk.png" group-title="Mystique UK",UK | BBC One
+#EXTINF:-1  tvg-id="BBC.One.Lon.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-one-uk.png" group-title="Mystique UK" radio="false",UK | BBC One
 https://wowza5.leisertv.com/live/bbconehd.stream/playlist.m3u8
-#EXTINF:-1  tvg-id="BBC.Two.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-two-uk.png" group-title="Mystique UK",UK | BBC Two
+#EXTINF:-1  tvg-id="BBC.Two.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-two-uk.png" group-title="Mystique UK" radio="false",UK | BBC Two
 https://wowza5.leisertv.com/live/bbctwohd.stream/playlist.m3u8
-#EXTINF:-1  tvg-id="ITV1+1.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-1-uk.png" group-title="Mystique UK",UK | ITV 1
+#EXTINF:-1  tvg-id="ITV1.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-1-uk.png" group-title="Mystique UK" radio="false",UK | ITV 1
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303897
-#EXTINF:-1  tvg-id="Channel.4+1.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-4-uk.png" group-title="Mystique UK",UK | Channel 4
+#EXTINF:-1  tvg-id="Channel.4.hd.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-4-uk.png" group-title="Mystique UK" radio="false",UK | Channel 4
 https://wowza5.leisertv.com/live/channel4hd.stream/playlist.m3u8
-#EXTINF:-1  tvg-id="Channel.5+1.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-5-uk.png" group-title="Mystique UK",UK | 5
+#EXTINF:-1  tvg-id="5.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-5-uk.png" group-title="Mystique UK" radio="false",UK | 5
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303874
-#EXTINF:-1  tvg-id="BBC.Three.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/bbc-three-uk.png?raw=true" group-title="Mystique UK",UK | BBC Three
+#EXTINF:-1  tvg-id="BBC.Three.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-three-uk.png" group-title="Mystique UK" radio="false",UK | BBC Three
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/291212
-#EXTINF:-1  tvg-id="BBC.Four.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/bbc-four-uk.png?raw=true" group-title="Mystique UK",UK | BBC Four
+#EXTINF:-1  tvg-id="BBC.Four.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-four-uk.png" group-title="Mystique UK" radio="false",UK | BBC Four
 https://wowza5.leisertv.com/live/cbeebieshd.stream/playlist.m3u8
-#EXTINF:-1  tvg-id="Discovery.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-channel-icon-2-uk.png?raw=true" group-title="Mystique UK",UK | Discovery Channel
+#EXTINF:-1  tvg-id="Discovery.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-channel-icon-2-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Discovery Channel
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303862
-#EXTINF:-1  tvg-id="Disc.History.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-history-uk.png?raw=true" group-title="Mystique UK",UK | Discovery History
+#EXTINF:-1  tvg-id="Disc.History.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-history-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Discovery History
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/694
-#EXTINF:-1  tvg-id="Discovery+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-channel-plus-uk.png?raw=true" group-title="Mystique UK",UK | Discovery History +1
+#EXTINF:-1  tvg-id="Discovery+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-channel-plus-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Discovery History +1
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/299756
-#EXTINF:-1  tvg-id="Discovery+.Dummy.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-home-and-health-plus-icon-uk.png?raw=true" group-title="Mystique UK",UK | Discovery Home & Health
+#EXTINF:-1  tvg-id="Discovery+.Dummy.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-home-and-health-plus-icon-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Discovery Home & Health
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/282757
-#EXTINF:-1  tvg-id="Disc.Science.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-science-uk.png?raw=true" group-title="Mystique UK",UK | Discovery SCI
+#EXTINF:-1  tvg-id="Disc.Science.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-science-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Discovery SCI
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/300573
-#EXTINF:-1  tvg-id="Disc.Science.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-science-uk.png?raw=true" group-title="Mystique UK",UK | Discovery Science
+#EXTINF:-1  tvg-id="Disc.Science.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-science-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Discovery Science
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/713
-#EXTINF:-1  tvg-id="Disc.Sci+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-science-plus-uk.png?raw=true" group-title="Mystique UK",UK | Discovery Science +1
+#EXTINF:-1  tvg-id="Disc.Sci+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-science-plus-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Discovery Science +1
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/305454
-#EXTINF:-1  tvg-id="Disc.Turbo.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-turbo-uk.png?raw=true" group-title="Mystique UK",UK | Discovery Turbo
+#EXTINF:-1  tvg-id="Disc.Turbo.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/discovery-turbo-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Discovery Turbo
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/1114
-#EXTINF:-1  tvg-id="ITV2.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-2-uk.png" group-title="Mystique UK",UK | ITV 2
+#EXTINF:-1  tvg-id="ITV2.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-2-uk.png" group-title="Mystique UK" radio="false",UK | ITV 2
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303904
-#EXTINF:-1  tvg-id="ITV3.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-3-uk.png" group-title="Mystique UK",UK | ITV 3
+#EXTINF:-1  tvg-id="ITV3.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-3-uk.png" group-title="Mystique UK" radio="false",UK | ITV 3
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303905
-#EXTINF:-1  tvg-id="ITV4.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-4-uk.png" group-title="Mystique UK",UK | ITV 4
+#EXTINF:-1  tvg-id="ITV4.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-4-uk.png" group-title="Mystique UK" radio="false",UK | ITV 4
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303906
-#EXTINF:-1  tvg-id="S4C.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/s4c-uk.png?raw=true" group-title="Mystique UK",UK | S4C
+#EXTINF:-1  tvg-id="S4C.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/s4c-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | S4C
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/4775
-#EXTINF:-1  tvg-id="U.and.W.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-w-uk.png?raw=true" group-title="Mystique UK",UK | U&W
+#EXTINF:-1  tvg-id="U.and.W.hd.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/u-and-w-uk.png" group-title="Mystique UK" radio="false",UK | U&W
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/302472
-#EXTINF:-1  tvg-id="U.and.alibi.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-alibi-uk.png?raw=true" group-title="Mystique UK",UK | U&Alibi
+#EXTINF:-1  tvg-id="U.and.alibi.hd.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/u-and-alibi-uk.png" group-title="Mystique UK" radio="false",UK | U&Alibi
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/695
-#EXTINF:-1  tvg-id="U.and.Dave.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-dave-uk.png?raw=true" group-title="Mystique UK",UK | U&Dave
+#EXTINF:-1  tvg-id="U.and.Dave.hd.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/u-and-dave-uk.png" group-title="Mystique UK" radio="false",UK | U&Dave
 https://wowza5.leisertv.com/live/davehd.stream/playlist.m3u8
-#EXTINF:-1  tvg-id="U.and.Drama.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-drama-uk.png?raw=true" group-title="Mystique UK",UK | U&Drama
+#EXTINF:-1  tvg-id="U.and.Drama.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/u-and-drama-uk.png" group-title="Mystique UK" radio="false",UK | U&Drama
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/4638
-#EXTINF:-1  tvg-id="U.and.Eden.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-eden-uk.png?raw=true" group-title="Mystique UK",UK | U&Eden
+#EXTINF:-1  tvg-id="U.and.Eden.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/u-and-eden-uk.png" group-title="Mystique UK" radio="false",UK | U&Eden
 http://92.114.85.72:8000/play/a0b1
-#EXTINF:-1  tvg-id="U.and.Gold.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-gold-uk.png?raw=true" group-title="Mystique UK",UK | U&Gold
+#EXTINF:-1  tvg-id="U.and.GOLD.hd.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/u-and-gold-uk.png" group-title="Mystique UK" radio="false",UK | U&Gold
 https://wowza5.leisertv.com/live/goldhd.stream/playlist.m3u8
-#EXTINF:-1  tvg-id="U.and.YESTERDAY.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/u-and-yesterday-uk.png?raw=true" group-title="Mystique UK",UK | U&Yesterday
+#EXTINF:-1  tvg-id="U.and.YESTERDAY.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/u-and-yesterday-uk.png" group-title="Mystique UK" radio="false",UK | U&Yesterday
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/1065
-#EXTINF:-1  tvg-id="SkyShowcaseHD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/showcase-uk.png?raw=true" group-title="Mystique UK",UK | Sky Showcase
+#EXTINF:-1  tvg-id="SkyShowcaseHD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/showcase-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Sky Showcase
 https://wowza1.leisertv.com/live/skyshowcasehd.stream/playlist.m3u8
-#EXTINF:-1  tvg-id="Sky.Witness+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-witness-plus-uk.png?raw=true" group-title="Mystique UK",UK | Sky Witness
+#EXTINF:-1  tvg-id="Sky.WitnessHD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-witness-plus-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Sky Witness
 https://wowza5.leisertv.com/live/skymovieswitnesshd.stream/playlist
-#EXTINF:-1  tvg-id="Sky.Atlantic+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-atlantic-plus-uk.png?raw=true" group-title="Mystique UK",UK | Sky Atlantic
+#EXTINF:-1  tvg-id="Sky.AtlanticHD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-atlantic-plus-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Sky Atlantic
 http://92.114.85.72:8000/play/a0hg
-#EXTINF:-1  tvg-id="E4+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/e-4-plus-uk.png?raw=true" group-title="Mystique UK",UK | E4
+#EXTINF:-1  tvg-id="E4.hd.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/e-4-plus-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | E4
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303876
-#EXTINF:-1  tvg-id="E4.Extra.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/e-4-extra-uk.png?raw=true" group-title="Mystique UK",UK | E4 Extra
+#EXTINF:-1  tvg-id="E4.Extra.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/e-4-extra-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | E4 Extra
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/299185
-#EXTINF:-1  tvg-id="4seven.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/4-seven-uk.png?raw=true" group-title="Mystique UK",UK | 4seven
+#EXTINF:-1  tvg-id="4seven.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/4-seven-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | 4seven
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/4625
-#EXTINF:-1  tvg-id="5SELECT.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-select-uk.png?raw=true" group-title="Mystique UK",UK | 5SELECT
+#EXTINF:-1  tvg-id="5SELECT.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-select-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | 5SELECT
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/4631
-#EXTINF:-1  tvg-id="5ACTION.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-action-uk.png?raw=true" group-title="Mystique UK",UK | 5ACTION
+#EXTINF:-1  tvg-id="5ACTION.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-action-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | 5ACTION
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/295070
-#EXTINF:-1  tvg-id="5USA+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-usa-plus-uk.png?raw=true" group-title="Mystique UK",UK | 5USA
+#EXTINF:-1  tvg-id="5.USA.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-usa-plus-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | 5USA
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/1579
-#EXTINF:-1  tvg-id="5STAR.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-star-uk.png?raw=true" group-title="Mystique UK",UK | 5STAR
+#EXTINF:-1  tvg-id="5STAR.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-star-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | 5STAR
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/4633
-#EXTINF:-1  tvg-id="Film4+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/film-4-plus-uk.png?raw=true" group-title="Mystique UK",UK | Film4
+#EXTINF:-1  tvg-id="Film4+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/film-4-plus-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Film4
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/1541
-#EXTINF:-1  tvg-id="MTV.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/mtv-uk.png?raw=true" group-title="Mystique UK",UK | MTV
+#EXTINF:-1  tvg-id="MTV.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/mtv-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | MTV
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/300574
-#EXTINF:-1  tvg-id="MTV.MUSIC.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/mtv-music-uk.png?raw=true" group-title="Mystique UK",UK | MTV Music
+#EXTINF:-1  tvg-id="MTV.MUSIC.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/mtv-music-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | MTV Music
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/304477
-#EXTINF:-1  tvg-id="MTV.HITS.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/mtv-hits-uk.png?raw=true" group-title="Mystique UK",UK | MTV Hits
+#EXTINF:-1  tvg-id="MTV.HITS.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/mtv-hits-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | MTV Hits
 http://91.217.198.226:8000/udp/239.100.10.123:2234
-#EXTINF:-1  tvg-id="Clubland.TV.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/mtv-club-uk.png?raw=true" group-title="Mystique UK",UK | Club MTV
+#EXTINF:-1  tvg-id="Clubland.TV.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/mtv-club-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Club MTV
 http://91.217.198.226:8000/udp/239.100.10.121:2234
-#EXTINF:-1  tvg-id="MTV.Live.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-live-us.png?raw=true" group-title="Mystique UK",UK | MTV Live HD
+#EXTINF:-1  tvg-id="MTV.Live.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-live-us.png?raw=true" group-title="Mystique UK" radio="false",UK | MTV Live HD
 http://91.217.198.226:8000/udp/239.100.10.120:2234
-#EXTINF:-1  tvg-id="Sky.News.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-news-uk.png?raw=true" group-title="Mystique UK",UK | Sky News
+#EXTINF:-1  tvg-id="Sky.News.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-news-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Sky News
 https://linear417-gb-hls1-prd-ak.cdn.skycdp.com/100e/Content/HLS_001_1080_30/Live/channel(skynews)/index_1080-30.m3u8
-#EXTINF:-1  tvg-id="BBC.NEWS.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/bbc-news-uk.png?raw=true" group-title="Mystique UK",UK | BBC News
+#EXTINF:-1  tvg-id="BBC.NEWS.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-news-uk.png" group-title="Mystique UK" radio="false",UK | BBC News
 http://fortv.cc:8080/curtis@celltv24/curtis@2024/53757
-#EXTINF:-1  tvg-id="GB.News.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/gb-news-uk.png?raw=true" group-title="Mystique UK",UK | GB News
+#EXTINF:-1  tvg-id="GB.News.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/gb-news-uk.png" group-title="Mystique UK" radio="false",UK | GB News
 https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-gbnewsnz-samsungnz/playlist.m3u8
-#EXTINF:-1  tvg-id="TalkTV.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/talk-tv-uk.png?raw=true" group-title="Mystique UK",UK | Talk TV
+#EXTINF:-1  tvg-id="TalkTV.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/talk-tv-uk.png" group-title="Mystique UK" radio="false",UK | Talk TV
 https://live-talktv-ssai.simplestreamcdn.com/v1/master/774d979dd66704abea7c5b62cb34c6815fda0d35/talktv-live/index.m3u8
-#EXTINF:-1  tvg-id="talkSPORT.uk" tvg-logo="https://resources.premierleague.com/photos/premierleague/photo/2016/06/30/3b69d40d-4484-495c-b300-5989e4c02eae/talkSPORT.png?width=1350" group-title="Mystique UK",UK | TalkSport TV
+#EXTINF:-1  tvg-id="talkSPORT.uk" tvg-logo="https://resources.premierleague.com/photos/premierleague/photo/2016/06/30/3b69d40d-4484-495c-b300-5989e4c02eae/talkSPORT.png?width=1350" group-title="Mystique UK" radio="false",UK | TalkSport TV
 https://jmp2.uk/sam-GB30003577.m3u8
-#EXTINF:-1  tvg-id="MUTV.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/mutv-uk.png?raw=true" group-title="Mystique UK",UK | MUTV
+#EXTINF:-1  tvg-id="MUTV.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/mutv-uk.png" group-title="Mystique UK" radio="false",UK | MUTV
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/304421
-#EXTINF:-1  tvg-id="LFCTV.HD.uk" tvg-logo="https://images.webapi.gc.lfc-services.co.uk/fit-in/800x450/c7270930-a160-11ed-aa9d-03c6add3a597.jpg" group-title="Mystique UK",UK | LFCTV
+#EXTINF:-1  tvg-id="LFCTV.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/lfctv-uk.png" group-title="Mystique UK" radio="false",UK | LFCTV
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/304418
-#EXTINF:-1  tvg-id="SkySpMainEvHD.uk" tvg-logo="https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png" group-title="Mystique UK",UK | Sky Sports Main Event UHD
+#EXTINF:-1  tvg-id="SkySpMainEvHD.uk" tvg-logo="https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png" group-title="Mystique UK" radio="false",UK | Sky Sports Main Event UHD
 https://a1xs.vip/2000015
-#EXTINF:-1  tvg-id="SkySp.F1.HD.uk" tvg-logo="https://pixvid.org/images/2025/01/16/SKyF1UHD.png" group-title="Mystique UK",UK | Sky Sports F1 UHD
+#EXTINF:-1  tvg-id="SkySp.F1.HD.uk" tvg-logo="https://pixvid.org/images/2025/01/16/SKyF1UHD.png" group-title="Mystique UK" radio="false",UK | Sky Sports F1 UHD
+https://a1xs.vip/2000016
+#EXTINF:-1  tvg-id="SkySpMainEvHD.uk" tvg-logo="https://i.ibb.co/CwMZcpP/sky-main-event.png" group-title="Mystique UK" radio="false",UK | Sky Sports Main Event
+https://digitalgirl.timstreams.xyz/skysportsmainevent//index.m3u8
+#EXTINF:-1  tvg-id="SkySp.PL.HD.uk" tvg-logo="https://i.ibb.co/rcSRMh9/sky-sports-pl.png" group-title="Mystique UK" radio="false",UK | Sky Sports Premier League
+https://digitalgirl.timstreams.xyz/skysportsepl//index.m3u8
+#EXTINF:-1  tvg-id="SkySp.Fball.HD.uk" tvg-logo="https://i.ibb.co/WcCrBqx/sky-football.png" group-title="Mystique UK" radio="false",UK | Sky Sports Football
+https://digitalgirl.timstreams.xyz/skysportsfootball//index.m3u8
+#EXTINF:-1  tvg-id="SkySp.News.HD.uk" tvg-logo="https://i.ibb.co/7WMDvDP/sky-news.png" group-title="Mystique UK" radio="false",UK | Sky Sports News
+https://digitalgirl.timstreams.xyz/skysportsnews//index.m3u8
+#EXTINF:-1  tvg-id="SkySp.F1.HD.uk" tvg-logo="https://i.ibb.co/h26bK2Q/sky-f1.png" group-title="Mystique UK" radio="false",UK | Sky Sports F1
 http://supersonictv.live:8080/live/Wellshouse/@A1B2C3D4/78149.ts
-#EXTINF:-1  tvg-id="SkySpMainEvHD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-sports-main-event-icon-uk.png?raw=true" group-title="Mystique UK",UK | Sky Sports Main Event
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303927
-#EXTINF:-1  tvg-id="SkySp.PL.HD.uk" tvg-logo="https://i.ibb.co/rcSRMh9/sky-sports-pl.png" group-title="Mystique UK",UK | Sky Sports Premier League
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303924
-#EXTINF:-1  tvg-id="Sky.Sports.Football.HD.uk" tvg-logo="https://i.ibb.co/WcCrBqx/sky-football.png" group-title="Mystique UK",UK | Sky Sports Football
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303929
-#EXTINF:-1  tvg-id="SkySp.News.HD.uk" tvg-logo="https://i.ibb.co/7WMDvDP/sky-news.png" group-title="Mystique UK",UK | Sky Sports News
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303925
-#EXTINF:-1  tvg-id="SkySp.F1.HD.uk" tvg-logo="https://i.ibb.co/h26bK2Q/sky-f1.png" group-title="Mystique UK",UK | Sky Sports F1
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303931
-#EXTINF:-1  tvg-id="SkySpCricket.HD.uk" tvg-logo="https://i.ibb.co/JyPnwvB/sky-cricket.png" group-title="Mystique UK",UK | Sky Sports Cricket
-http://kstv.us:8080/live/Purn3542/38791114838/47864.ts
-#EXTINF:-1  tvg-id="SkySp.Mix.HD.uk" tvg-logo="https://i.ibb.co/7kYj5gc/sky-mix.png" group-title="Mystique UK",UK | Sky Sports Mix
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303926
-#EXTINF:-1  tvg-id="SkySp.Golf.HD.uk" tvg-logo="https://i.ibb.co/QvhY4tX/sky-golf.png" group-title="Mystique UK",UK | Sky Sports Golf
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303928
-#EXTINF:-1  tvg-id="SkySp.Racing.HD.uk" tvg-logo="https://pixvid.org/images/2025/01/15/sky-sports-racing-logo-2048.png" group-title="Mystique UK",UK | Sky Sports Racing
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303923
-#EXTINF:-1  tvg-id="SkySp.ActionHD.uk" tvg-logo="https://pixvid.org/images/2025/01/16/sky-action.png" group-title="Mystique UK",UK | Sky Sports Action
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303933
-#EXTINF:-1  tvg-id="SkySp+HD.uk" tvg-logo="https://pixvid.org/images/2025/01/21/Sky_Sportsplus.png" group-title="Mystique UK",UK | Sky Sports+
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/267
-#EXTINF:-1  tvg-id="SkySp.Tennis.HD.uk" tvg-logo="https://pixvid.org/images/2025/01/21/Sky_Sports_Tennis.png" group-title="Mystique UK",UK | Sky Sports Tennis
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/304728
-#EXTINF:-1  tvg-id="TNT.Sports.1.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/tnt-sports-1-uk.png" group-title="Mystique UK",UK | TNT Sports 1
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303934
-#EXTINF:-1  tvg-id="TNT.Sports.2.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/tnt-sports-2-uk.png" group-title="Mystique UK",UK | TNT Sports 2
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303935
-#EXTINF:-1  tvg-id="TNT.Sports.3.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/tnt-sports-3-uk.png" group-title="Mystique UK",UK | TNT Sports 3
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303936
-#EXTINF:-1  tvg-id="TNT.Sports.4.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/tnt-sports-4-uk.png" group-title="Mystique UK",UK | TNT Sports 4
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303937
-#EXTINF:-1  tvg-id="TNT.Sports.Ultimate.uk" tvg-logo="https://pixvid.org/images/2025/01/16/TNT-Sports-Ultimate.png" group-title="Mystique UK",UK | TNT Sports Ultimate
+#EXTINF:-1  tvg-id="SkySpCricket.HD.uk" tvg-logo="https://i.ibb.co/JyPnwvB/sky-cricket.png" group-title="Mystique UK" radio="false",UK | Sky Sports Cricket
+http://digitalgirl.timstreams.xyz/skysportscricket/index.m3u8
+#EXTINF:-1  tvg-id="SkySp.Mix.HD.uk" tvg-logo="https://i.ibb.co/7kYj5gc/sky-mix.png" group-title="Mystique UK" radio="false",UK | Sky Sports Mix
+https://digitalgirl.timstreams.xyz/skysportsmix//index.m3u8
+#EXTINF:-1  tvg-id="SkySp.Golf.HD.uk" tvg-logo="https://i.ibb.co/QvhY4tX/sky-golf.png" group-title="Mystique UK" radio="false",UK | Sky Sports Golf
+https://digitalgirl.timstreams.xyz/skysportsgolf//index.m3u8
+#EXTINF:-1  tvg-id="SkySp.Racing.HD.uk" tvg-logo="https://pixvid.org/images/2025/01/15/sky-sports-racing-logo-2048.png" group-title="Mystique UK" radio="false",UK | Sky Sports Racing
+https://digitalgirl.timstreams.xyz/skysportsracing//index.m3u8
+#EXTINF:-1  tvg-id="SkySp.ActionHD.uk" tvg-logo="https://pixvid.org/images/2025/01/16/sky-action.png" group-title="Mystique UK" radio="false",UK | Sky Sports Action
+https://digitalgirl.timstreams.xyz/skysportsaction//index.m3u8
+#EXTINF:-1  tvg-id="SkySp+HD.uk" tvg-logo="https://pixvid.org/images/2025/01/21/Sky_Sportsplus.png" group-title="Mystique UK" radio="false",UK | Sky Sports+
+https://digitalgirl.timstreams.xyz/skysportsplus//index.m3u8
+#EXTINF:-1  tvg-id="SkySp.Tennis.HD.uk" tvg-logo="https://pixvid.org/images/2025/01/21/Sky_Sports_Tennis.png" group-title="Mystique UK" radio="false",UK | Sky Sports Tennis
+https://digitalgirl.timstreams.xyz/skysportstennis//index.m3u8
+#EXTINF:-1  tvg-id="TNT.Sports.1.HD.uk" tvg-logo="https://i.ibb.co/zJR49VW/TNT-Sports-1.png" group-title="Mystique UK" radio="false",UK | TNT Sports 1
+https://digitalgirl.timstreams.xyz/tnt1gb//index.m3u8
+#EXTINF:-1  tvg-id="TNT.Sports.2.HD.uk" tvg-logo="https://i.ibb.co/42MrDP7/TNT-Sports-2.png" group-title="Mystique UK" radio="false",UK | TNT Sports 2
+https://digitalgirl.timstreams.xyz/tnt2gb//index.m3u8
+#EXTINF:-1  tvg-id="TNT.Sports.3.HD.uk" tvg-logo="https://i.ibb.co/vvFPJw0/TNT-Sports-3.png" group-title="Mystique UK" radio="false",UK | TNT Sports 3
+https://digitalgirl.timstreams.xyz/tnt3gb//index.m3u8
+#EXTINF:-1  tvg-id="TNT.Sports.4.HD.uk" tvg-logo="https://i.ibb.co/Fnbw8VV/TNT-Sports-4.png" group-title="Mystique UK" radio="false",UK | TNT Sports 4
+https://digitalgirl.timstreams.xyz/tnt4gb//index.m3u8
+#EXTINF:-1  tvg-id="TNT.Sports.Ultimate.uk" tvg-logo="https://pixvid.org/images/2025/01/16/TNT-Sports-Ultimate.png" group-title="Mystique UK" radio="false",UK | TNT Sports Ultimate
 https://a1xs.vip/2000031
-#EXTINF:-1  tvg-id="CBBC.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/bbc-cbbc-uk.png?raw=true" group-title="Mystique UK",UK | CBBC
+#EXTINF:-1  tvg-id="CBBC.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/bbc-cbbc-uk.png" group-title="Mystique UK" radio="false",UK | CBBC
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/695
-#EXTINF:-1  tvg-id="CBeebies.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/bbc-cbeebies-uk.png?raw=true" group-title="Mystique UK",UK | CBeebies
+#EXTINF:-1  tvg-id="CBeebies.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/bbc-cbeebies-uk.png" group-title="Mystique UK" radio="false",UK | CBeebies
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/4753
-#EXTINF:-1  tvg-id="POP+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/pop-plus-uk.png?raw=true" group-title="Mystique UK",UK | Pop
+#EXTINF:-1  tvg-id="POP.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/pop-max-plus-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Pop
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/1599
-#EXTINF:-1  tvg-id="POP.Max+1.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/pop-max-plus-uk.png?raw=true" group-title="Mystique UK",UK | Pop Max
-http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/1598
-#EXTINF:-1  tvg-id="Tiny.Pop.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tiny-pop-uk.png?raw=true" group-title="Mystique UK",UK | Tiny Pop
+#EXTINF:-1  tvg-id="Tiny.Pop.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tiny-pop-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Tiny Pop
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/264542
-#EXTINF:-1  tvg-id="Sky.Kids.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-kids-uk.png?raw=true" group-title="Mystique UK",UK | Sky Kids
+#EXTINF:-1  tvg-id="Sky.Kids.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-kids-uk.png?raw=true" group-title="Mystique UK" radio="false",UK | Sky Kids
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/304727
-#EXTINF:-1  tvg-id="Cartoon.Net.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/cartoon-network-uk.png?raw=true" group-title="Mystique UK",UK | Cartoon Network
+#EXTINF:-1  tvg-id="Cartoon.Net.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/cartoon-network-uk.png" group-title="Mystique UK" radio="false",UK | Cartoon Network
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/720
-#EXTINF:-1  tvg-id="Boomerang.HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/boomerang-uk.png?raw=true" group-title="Mystique UK",UK | Boomerang
+#EXTINF:-1  tvg-id="Boomerang.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/boomerang-uk.png" group-title="Mystique UK" radio="false",UK | Boomerang
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/303873
-#EXTINF:-1  tvg-id="NickelodeonHD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/nickelodeon-uk.png" group-title="Mystique UK",UK | Nickelodeon
+#EXTINF:-1  tvg-id="NickelodeonHD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/nickelodeon-uk.png" group-title="Mystique UK" radio="false",UK | Nickelodeon
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/304424
-#EXTINF:-1  tvg-id="Nicktoons.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/nick-toons-uk.png" group-title="Mystique UK",UK | Nicktoons
+#EXTINF:-1  tvg-id="Nicktoons.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/nick-toons-uk.png" group-title="Mystique UK" radio="false",UK | Nicktoons
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/740pn
-#EXTINF:-1  tvg-id="Nick.Jr..HD.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nick-jr-uk.png?raw=true" group-title="Mystique UK",UK | Nick Jr.
+#EXTINF:-1  tvg-id="Nick.Jr.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/nick-jr-uk.png" group-title="Mystique UK" radio="false",UK | Nick Jr.
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/304432
-#EXTINF:-1  tvg-id="Nick.Jr..Too.uk" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/nick-jr-too-uk.png?raw=true" group-title="Mystique UK",UK | Nick Jr. Too
+#EXTINF:-1  tvg-id="Nick.Jr.Too.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/nick-jr-too-uk.png" group-title="Mystique UK" radio="false",UK | Nick Jr. Too
 http://iptvtree.net:8080/test_acct/ohbo1veifa4AhD/4759
 #EXTINF:-1  tvg-id="A.and.E.US.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/a-and-e-us.png" group-title="Mystique USA" radio="false",A&E (East)
 http://defaultgen.com:3050/mwmonnier@gmail.com/s5ZMwveuMw/417871
