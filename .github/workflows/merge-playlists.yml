@@ -2,8 +2,8 @@ name: Auto-Update Merged IPTV Playlist
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Run every hour
-  workflow_dispatch:      # Allow manual runs
+    - cron: '0 * * * *'  # Every hour
+  workflow_dispatch:
 
 jobs:
   update-playlist:
@@ -26,13 +26,18 @@ jobs:
           pip install --upgrade pip
           pip install requests
 
-      - name: Run playlist script
+      - name: Run IPTV script
         run: python iptv.py
 
       - name: Configure Git
         run: |
           git config user.name "Drewski2423"
           git config user.email "andrew.rocha06@gmail.com"
+
+      - name: Fetch latest and reset
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
 
       - name: Commit and force push updated playlist
         env:
