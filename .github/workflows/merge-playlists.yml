@@ -2,7 +2,7 @@ name: Update Playlist
 
 on:
   schedule:
-    - cron: '*/10 * * * *'   # runs every 10 minutes, adjust as needed
+    - cron: '*/10 * * * *' # every 10 minutes
   workflow_dispatch:
 
 jobs:
@@ -10,13 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
         with:
-          ref: main
-          persist-credentials: false  # important to use your token for pushing
+          fetch-depth: 0  # This is important!
 
-      - name: Set up Git user
+      - name: Set Git identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -26,14 +25,12 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git
-          git fetch origin main
-          git reset --hard origin/main
+          git pull origin main --rebase
 
-      - name: Generate or update playlist file
+      - name: Update the playlist
         run: |
-          # Your script or commands to update MergedPlaylist.m3u8 here
           echo "#EXTM3U" > MergedPlaylist.m3u8
-          # (replace this with actual playlist generation logic)
+          # Your merging logic here
 
       - name: Commit changes
         run: |
@@ -44,5 +41,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git
-          git push origin main --force
+          git push origin HEAD:main
