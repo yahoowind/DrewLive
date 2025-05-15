@@ -2,15 +2,15 @@ name: Auto-Update Merged IPTV Playlist
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Every hour
-  workflow_dispatch:    # Manual trigger
+    - cron: '0 * * * *'  # every hour
+  workflow_dispatch:    # manual trigger from GitHub UI
 
 jobs:
   update-playlist:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout with PAT
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
@@ -22,26 +22,17 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install requests
-
-      # Optional: if you want to install all from requirements.txt uncomment next step
-      # - name: Install dependencies from requirements.txt
-      #   run: pip install -r requirements.txt
+        run: pip install requests
 
       - name: Run IPTV Script
         run: python iptv.py
 
-      - name: Configure Git
+      - name: Commit and Push
+        env:
+          TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.name "Drewski2423"
-          git config --global user.email "andrew.rocha06@gmail.com"  # Replace with your email
-
-      - name: Commit and Push Changes
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
+          git config --global user.email "andrew.rocha06@gmail.com"
           git add MergedPlaylist.m3u8
           git diff --cached --quiet || git commit -m "Auto-update merged playlist"
-          git push https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git HEAD:main
+          git push https://x-access-token:${TOKEN}@github.com/Drewski2423/DrewLive.git HEAD:main
