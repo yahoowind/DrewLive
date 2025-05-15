@@ -38,7 +38,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git
           git add MergedPlaylist.m3u8
           git diff --cached --quiet || git commit -m "Auto-update merged playlist"
-          git push origin main
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
+          git push origin HEAD:main
