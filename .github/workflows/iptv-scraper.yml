@@ -13,22 +13,31 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Pull Docker image
+      - name: Pull latest Docker image
         run: docker pull mitrakalloo/thetvapp:latest
 
-      - name: Run scraper container
+      - name: Run scraper container with logging and timeout
         run: |
-          docker run --rm \
+          echo "Running scraper inside container..."
+          timeout 180s docker run --rm \
             -v ${{ github.workspace }}:/app \
-            mitrakalloo/thetvapp:latest
+            mitrakalloo/thetvapp:latest \
+            node dist/index.js > thetvapp.log 2>&1 || echo "Scraper timed out or exited with error"
 
-      - name: List output files
-        run: ls -lh ./  # Change this if the file is output elsewhere
+          echo "--- Scraper Logs ---"
+          cat thetvapp.log || echo "No log output available"
+
+      - name: List generated files
+        run: ls -lh
 
       - name: Commit and push updated playlist
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add thetvapp.m3u8
-          git diff --staged --quiet || git commit -m "Update IPTV playlist"
-          git push
+
+          if [ -f thetvapp.m3u8 ]; then
+            git add thetvapp.m3u8
+            git diff --staged --quiet || git commit -m "Update IPTV playlist"
+            git push
+          else
+            echo "No playlist file found. Skipping commit."
