@@ -16,19 +16,30 @@ jobs:
       - name: Pull latest Docker image
         run: docker pull mitrakalloo/thetvapp:latest
 
-      - name: Run scraper container with logging and timeout
+      - name: Run scraper container and copy output
         run: |
           echo "Running scraper inside container..."
+          mkdir -p ${{ github.workspace }}/output
+
           timeout 180s docker run --rm \
-            -v ${{ github.workspace }}:/app \
+            -v ${{ github.workspace }}/output:/usr/src/app/output \
             mitrakalloo/thetvapp:latest \
-            node dist/index.js > thetvapp.log 2>&1 || echo "Scraper timed out or exited with error"
+            /bin/sh -c "node dist/index.js && cp thetvapp.m3u8 output/thetvapp.m3u8" \
+            > thetvapp.log 2>&1 || echo "Scraper timed out or exited with error"
 
           echo "--- Scraper Logs ---"
           cat thetvapp.log || echo "No log output available"
 
-      - name: List generated files
-        run: ls -lh
+      - name: List all output files
+        run: ls -R ./output || echo "Output folder empty"
+
+      - name: Move playlist to repo root (optional)
+        run: |
+          if [ -f ./output/thetvapp.m3u8 ]; then
+            mv ./output/thetvapp.m3u8 .
+          else
+            echo "Playlist not found in output!"
+          fi
 
       - name: Commit and push updated playlist
         run: |
