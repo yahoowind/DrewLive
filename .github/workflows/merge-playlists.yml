@@ -5,7 +5,9 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 * * * *'  # every hour at minute 0 UTC
+    - cron: '0 * * * *'      # every hour at minute 0 UTC
+    - cron: '*/10 * * * *'   # every 10 minutes
+  workflow_dispatch:
 
 jobs:
   update-playlist:
@@ -14,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Needed for pushing changes
 
       - name: Set up Python 3
         uses: actions/setup-python@v4
@@ -23,15 +27,28 @@ jobs:
       - name: Install Python dependencies
         run: pip install requests
 
-      - name: Run IPTV merging script
-        run: python iptv.py
-
-      - name: Commit and push merged playlist
+      - name: Set Git identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest changes
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git
+          git pull origin main --rebase
+
+      - name: Run IPTV merging script
+        run: python iptv.py
+
+      - name: Commit changes if needed
+        run: |
           git add MergedPlaylist.m3u8
           git diff --cached --quiet || git commit -m "Auto-update merged IPTV playlist"
+
+      - name: Push changes
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
           git push origin main
-        shell: bash
-        continue-on-error: true
