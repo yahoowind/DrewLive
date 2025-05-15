@@ -1,52 +1,46 @@
-name: thetvapp
+name: Update TVPlaylists
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # Runs every 30 minutes
-  workflow_dispatch:         # Manual trigger
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
 
 env:
-  m_filename: thetvapp.m3u8
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  url1: http://192.168.0.28:8090/thetvapp/playlist?quality=hd
+  file1: thetvapp.m3u8
+  url2: http://192.168.0.28:8090/tvpass/playlist?quality=hd
+  file2: tvpass.m3u8
 
 jobs:
-  fetch_m3u8_job:
+  update_playlists:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # <-- Needed to allow push to work properly
+          fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: pip install aiohttp beautifulsoup4
-
-      - name: Run Python script from remote
+      - name: Download thetvapp playlist
         run: |
-          curl -sSL -o thetvapp-scraper.py "${{ secrets.THETVAPP_URL }}"
-          python thetvapp-scraper.py
+          curl -sSL "$url1" -o "$file1"
+          echo "--- $file1 preview ---"
+          head -n 10 "$file1"
 
-      - name: Verify M3U8 output
+      - name: Download tvpass playlist
         run: |
-          if [ -f "${{ env.m_filename }}" ]; then
-            echo "::notice file=${{ env.m_filename }}::Download succeeded"
-            cat "${{ env.m_filename }}" | head -n 20
-          else
-            echo "::error ::${{ env.m_filename }} not found"
-            exit 1
-          fi
+          curl -sSL "$url2" -o "$file2"
+          echo "--- $file2 preview ---"
+          head -n 10 "$file2"
 
-      - name: Commit and push if file changed
+      - name: Show git status before commit
+        run: git status
+
+      - name: Commit & push changes
         run: |
-          git config --global user.name "actions-user"
+          git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
 
-          git add "${{ env.m_filename }}"
-          git diff --cached --quiet || git commit -m "Update M3U8 playlist"
+          git add "$file1" "$file2"
+          git diff --cached --quiet || git commit -m "Update IPTV playlists"
           git push
