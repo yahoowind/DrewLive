@@ -1,31 +1,27 @@
-jobs:
-  update-playlist:
-    runs-on: ubuntu-latest
+steps:
+  - name: Checkout with PAT
+    uses: actions/checkout@v4
+    with:
+      token: ${{ secrets.GH_TOKEN }}
+      fetch-depth: 0
 
-    steps:
-      - name: Checkout with PAT
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_TOKEN }}
-          fetch-depth: 0
+  - name: Set up Python
+    uses: actions/setup-python@v4
+    with:
+      python-version: '3.x'
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
+  - name: Install dependencies
+    run: pip install requests
 
-      - name: Install dependencies
-        run: pip install requests
+  - name: Run IPTV Script
+    run: python iptv.py
 
-      - name: Run IPTV Script
-        run: python iptv.py
-
-      - name: Commit and Push
-        env:
-          TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          git config --global user.name "Drewski2423"
-          git config --global user.email "andrew.rocha06@gmail.com"  # Replace this with your GitHub email
-          git add MergedPlaylist.m3u8
-          git diff --cached --quiet || git commit -m "Auto-update merged playlist"
-          git push https://x-access-token:${TOKEN}@github.com/Drewski2423/DrewLive.git HEAD:main
+  - name: Commit and Push
+    env:
+      TOKEN: ${{ secrets.GH_TOKEN }}
+    run: |
+      git config --global user.name "Drewski2423"
+      git config --global user.email "andrew.rocha06@gmail.com"
+      git add MergedPlaylist.m3u8
+      git diff --cached --quiet || git commit -m "Auto-update merged playlist"
+      git push https://x-access-token:${TOKEN}@github.com/Drewski2423/DrewLive.git HEAD:main
