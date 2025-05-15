@@ -2,40 +2,34 @@ name: Auto-Update Merged IPTV Playlist
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour
-  workflow_dispatch:      # Manual trigger option
+    - cron: '0 * * * *'  # Every hour
+  workflow_dispatch:
 
 jobs:
   update-playlist:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - name: Checkout with PAT
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-    - name: Run merge script
-      run: python iptv.py
+      - name: Run IPTV Script
+        run: python iptv.py
 
-    - name: Configure Git
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-
-    - name: Commit changes
-      run: |
-        git add MergedPlaylist.m3u8
-        git diff --cached --quiet || git commit -m "Auto-update merged playlist"
-
-    - name: Push to repo
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: |
-        git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git
-        git push origin HEAD:main
+      - name: Commit and Push
+        env:
+          TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git config --global user.name "Drewski2423"
+          git config --global user.email "andrew.rocha06@gmail.com"  # Replace with your GitHub email
+          git add MergedPlaylist.m3u8
+          git diff --cached --quiet || git commit -m "Auto-update merged playlist"
+          git push https://x-access-token:${TOKEN}@github.com/Drewski2423/DrewLive.git HEAD:main
