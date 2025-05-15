@@ -1,8 +1,8 @@
-name: Auto-Update Merged IPTV Playlist
+name: Update Playlist
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Every hour
+    - cron: '*/10 * * * *'   # runs every 10 minutes, adjust as needed
   workflow_dispatch:
 
 jobs:
@@ -10,39 +10,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo with full history
-        uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GH_TOKEN }}
-          fetch-depth: 0
+          ref: main
+          persist-credentials: false  # important to use your token for pushing
 
-      - name: Set up Python 3.x
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
+      - name: Set up Git user
         run: |
-          pip install --upgrade pip
-          pip install requests
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Run IPTV script
-        run: python iptv.py
-
-      - name: Configure Git user
+      - name: Pull latest changes
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config --global user.name "Drewski2423"
-          git config --global user.email "andrew.rocha06@gmail.com"
-
-      - name: Pull latest and commit changes
-        run: |
-          git fetch origin
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git
+          git fetch origin main
           git reset --hard origin/main
+
+      - name: Generate or update playlist file
+        run: |
+          # Your script or commands to update MergedPlaylist.m3u8 here
+          echo "#EXTM3U" > MergedPlaylist.m3u8
+          # (replace this with actual playlist generation logic)
+
+      - name: Commit changes
+        run: |
           git add MergedPlaylist.m3u8
-          git diff --cached --quiet || git commit -m "Auto-update merged playlist"
+          git commit -m "Auto-update merged playlist" || echo "No changes to commit"
 
       - name: Push changes
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git push https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git HEAD:main
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git
+          git push origin main --force
