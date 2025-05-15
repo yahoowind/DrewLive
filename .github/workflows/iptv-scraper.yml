@@ -10,16 +10,17 @@ env:
   file1: thetvapp.m3u8
   url2: http://192.168.0.28:8090/tvpass/playlist?quality=hd
   file2: tvpass.m3u8
+  merged: merged.m3u8
 
 jobs:
   update_playlists:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Needed for git diff to work properly
 
       - name: Download thetvapp playlist
         run: |
@@ -33,14 +34,19 @@ jobs:
           echo "--- $file2 preview ---"
           head -n 10 "$file2"
 
-      - name: Show git status before commit
-        run: git status
+      - name: Merge playlists
+        run: |
+          echo "#EXTM3U" > "$merged"
+          tail -n +2 "$file1" >> "$merged"
+          tail -n +2 "$file2" >> "$merged"
+          echo "--- $merged preview ---"
+          head -n 10 "$merged"
 
-      - name: Commit & push changes
+      - name: Commit and push if any playlist changed
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
 
-          git add "$file1" "$file2"
-          git diff --cached --quiet || git commit -m "Update IPTV playlists"
+          git add "$file1" "$file2" "$merged"
+          git diff --cached --quiet || git commit -m "Update TVPlaylists"
           git push
