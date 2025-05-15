@@ -1,54 +1,52 @@
-name: IPTV Scraper Automation
+name: thetvapp
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # Every 30 minutes
-  workflow_dispatch:
+    - cron: '*/30 * * * *'  # Runs every 30 minutes
+  workflow_dispatch:         # Manual trigger
+
+env:
+  m_filename: thetvapp.m3u8
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  run-scraper:
+  fetch_m3u8_job:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # <-- Needed to allow push to work properly
 
-      - name: Pull latest Docker image
-        run: docker pull mitrakalloo/thetvapp:latest
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-      - name: Run scraper container and copy output
+      - name: Install dependencies
+        run: pip install aiohttp beautifulsoup4
+
+      - name: Run Python script from remote
         run: |
-          echo "Running scraper inside container..."
-          mkdir -p ${{ github.workspace }}/output
+          curl -sSL -o thetvapp-scraper.py "${{ secrets.THETVAPP_URL }}"
+          python thetvapp-scraper.py
 
-          timeout 180s docker run --rm \
-            -v ${{ github.workspace }}/output:/usr/src/app/output \
-            mitrakalloo/thetvapp:latest \
-            /bin/sh -c "node dist/index.js && cp thetvapp.m3u8 output/thetvapp.m3u8" \
-            > thetvapp.log 2>&1 || echo "Scraper timed out or exited with error"
-
-          echo "--- Scraper Logs ---"
-          cat thetvapp.log || echo "No log output available"
-
-      - name: List all output files
-        run: ls -R ./output || echo "Output folder empty"
-
-      - name: Move playlist to repo root (optional)
+      - name: Verify M3U8 output
         run: |
-          if [ -f ./output/thetvapp.m3u8 ]; then
-            mv ./output/thetvapp.m3u8 .
+          if [ -f "${{ env.m_filename }}" ]; then
+            echo "::notice file=${{ env.m_filename }}::Download succeeded"
+            cat "${{ env.m_filename }}" | head -n 20
           else
-            echo "Playlist not found in output!"
+            echo "::error ::${{ env.m_filename }} not found"
+            exit 1
           fi
 
-      - name: Commit and push updated playlist
+      - name: Commit and push if file changed
         run: |
-          git config --global user.name "github-actions"
+          git config --global user.name "actions-user"
           git config --global user.email "actions@github.com"
 
-          if [ -f thetvapp.m3u8 ]; then
-            git add thetvapp.m3u8
-            git diff --staged --quiet || git commit -m "Update IPTV playlist"
-            git push
-          else
-            echo "No playlist file found. Skipping commit."
+          git add "${{ env.m_filename }}"
+          git diff --cached --quiet || git commit -m "Update M3U8 playlist"
+          git push
