@@ -1,27 +1,47 @@
-steps:
-  - name: Checkout with PAT
-    uses: actions/checkout@v4
-    with:
-      token: ${{ secrets.GH_TOKEN }}
-      fetch-depth: 0
+name: Auto-Update Merged IPTV Playlist
 
-  - name: Set up Python
-    uses: actions/setup-python@v4
-    with:
-      python-version: '3.x'
+on:
+  schedule:
+    - cron: '0 * * * *'  # Every hour
+  workflow_dispatch:    # Manual trigger
 
-  - name: Install dependencies
-    run: pip install requests
+jobs:
+  update-playlist:
+    runs-on: ubuntu-latest
 
-  - name: Run IPTV Script
-    run: python iptv.py
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
 
-  - name: Commit and Push
-    env:
-      TOKEN: ${{ secrets.GH_TOKEN }}
-    run: |
-      git config --global user.name "Drewski2423"
-      git config --global user.email "andrew.rocha06@gmail.com"
-      git add MergedPlaylist.m3u8
-      git diff --cached --quiet || git commit -m "Auto-update merged playlist"
-      git push https://x-access-token:${TOKEN}@github.com/Drewski2423/DrewLive.git HEAD:main
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install requests
+
+      # Optional: if you want to install all from requirements.txt uncomment next step
+      # - name: Install dependencies from requirements.txt
+      #   run: pip install -r requirements.txt
+
+      - name: Run IPTV Script
+        run: python iptv.py
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Drewski2423"
+          git config --global user.email "your-email@example.com"  # Replace with your email
+
+      - name: Commit and Push Changes
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git add MergedPlaylist.m3u8
+          git diff --cached --quiet || git commit -m "Auto-update merged playlist"
+          git push https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git HEAD:main
