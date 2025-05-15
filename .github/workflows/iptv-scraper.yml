@@ -1,0 +1,35 @@
+name: IPTV Scraper Automation
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # Runs every 30 minutes
+  workflow_dispatch:        # Manual trigger support
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Pull Docker image
+        run: docker pull mitrakalloo/thetvapp:latest
+
+      - name: Run scraper container
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/app \
+            mitrakalloo/thetvapp:latest \
+            /bin/sh -c "python scraper.py"  # <-- Customize this command as needed
+
+      - name: List output files
+        run: ls -lh ./  # Adjust if output folder differs
+
+      - name: Commit and push updated playlist
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add thetvapp.m3u8
+          git diff --staged --quiet || git commit -m "Update IPTV playlist"
+          git push
