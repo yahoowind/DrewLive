@@ -2,43 +2,45 @@ name: Auto-Update Merged IPTV Playlist
 
 on:
   schedule:
-    - cron: '0 * * * *'   # Runs every hour, adjust as needed
-  workflow_dispatch:     # Allows manual trigger
+    - cron: '0 * * * *'   # runs every hour, adjust if needed
+  workflow_dispatch:       # manual trigger option
 
 jobs:
   update-playlist:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0  # Full history, needed for pushing commits
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history for pushing
 
-    - name: Set up Python 3.x
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-    - name: Install requirements
-      run: |
-        python -m pip install --upgrade pip
-        # Add any needed Python package installs here if your script uses any
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # add your pip installs here if any
 
-    - name: Run IPTV merge script
-      run: python iptv.py
+      - name: Run IPTV merge script
+        run: python iptv.py
 
-    - name: Configure Git
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-    - name: Commit updated playlist
-      run: |
-        git add MergedPlaylist.m3u8
-        git diff --cached --quiet || git commit -m "Auto-update merged playlist"
+      - name: Commit updated playlist
+        run: |
+          git add MergedPlaylist.m3u8
+          git diff --cached --quiet || git commit -m "Auto-update merged playlist"
 
-    - name: Push changes
-      run: |
-        git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Drewski2423/DrewLive.git
-        git push origin HEAD:main
+      - name: Push changes
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git
+          git push origin HEAD:main
