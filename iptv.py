@@ -1,5 +1,6 @@
 import requests
 import re
+from collections import defaultdict
 
 
 # List of your playlist URLs
@@ -30,6 +31,16 @@ def fetch_playlist(url):
     except Exception as e:
         print(f"Failed to fetch {url}: {e}")
         return ""
+
+
+def extract_group_title(extinf_line):
+    match = re.search(r'group-title="(.*?)"', extinf_line)
+    return match.group(1).strip() if match else "Unknown"
+
+
+def extract_channel_name(extinf_line):
+    match = re.search(r',(.+)$', extinf_line)
+    return match.group(1).strip() if match else ""
 
 
 def parse_entries(content):
@@ -63,30 +74,33 @@ def parse_entries(content):
     return entries
 
 
-def extract_channel_name(extinf_line):
-    match = re.search(r',(.+)$', extinf_line)
-    return match.group(1).strip() if match else ""
-
-
 def merge_playlists(urls, epg_url):
-    all_entries = []
+    grouped_entries = defaultdict(list)
+
+
     for url in urls:
         content = fetch_playlist(url)
         if content:
-            all_entries.extend(parse_entries(content))
-
-
-    # Sort entries by channel name (from EXTINF line)
-    all_entries.sort(key=lambda entry: extract_channel_name(entry[0]).lower())
+            entries = parse_entries(content)
+            for entry in entries:
+                group = extract_group_title(entry[0])
+                grouped_entries[group].append(entry)
 
 
     with open("MergedPlaylist.m3u8", "w", encoding="utf-8") as f:
         f.write(f'#EXTM3U url-tvg="{epg_url}"\n')
-        for entry in all_entries:
-            for line in entry:
-                f.write(f"{line.strip()}\n")
+        
+        for group in sorted(grouped_entries.keys(), key=str.lower):
+            group_entries = grouped_entries[group]
+            # Sort each group’s entries by channel name
+            group_entries.sort(key=lambda e: extract_channel_name(e[0]).lower())
+            for entry in group_entries:
+                for line in entry:
+                    f.write(f"{line.strip()}\n")
+
+
     print("Merged and sorted playlist saved as MergedPlaylist.m3u8")
 
 
 if __name__ == "__main__":
-    merge_playlists(playlist_urls, EPG_URL)
+    merge_playlists(playlist_urls, EPG_URL
