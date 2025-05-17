@@ -31,20 +31,20 @@ def fetch_playlist(url):
         return ""
 
 
-def extract_group_title(extinf):
-    match = re.search(r'group-title="(.*?)"', extinf)
+def extract_group_title(extinf_line):
+    match = re.search(r'group-title="(.*?)"', extinf_line)
     return match.group(1).strip() if match else "Unknown"
 
 
-def extract_channel_name(extinf):
-    match = re.search(r',(.+)$', extinf)
+def extract_channel_name(extinf_line):
+    match = re.search(r',(.+)$', extinf_line)
     return match.group(1).strip() if match else ""
 
 
 def parse_entries(content):
     lines = content.strip().splitlines()
-    grouped = defaultdict(list)
-    seen = set()
+    grouped_entries = defaultdict(list)
+    seen_urls = set()
     i = 0
 
 
@@ -54,47 +54,51 @@ def parse_entries(content):
             entry = [line]
             j = i + 1
             while j < len(lines) and lines[j].startswith("#EXTVLCOPT"):
-                entry.append(lines[j])
+                entry.append(lines[j].strip())
                 j += 1
             if j < len(lines):
                 url = lines[j].strip()
-                if url not in seen:
+                if url not in seen_urls:
                     entry.append(url)
                     group = extract_group_title(line)
-                    grouped[group].append(entry)
-                    seen.add(url)
+                    grouped_entries[group].append(entry)
+                    seen_urls.add(url)
                 i = j + 1
             else:
                 i = j
         else:
             i += 1
-    return grouped
+    return grouped_entries
 
 
 def merge_playlists(urls, epg_url):
-    merged = defaultdict(list)
+    merged_groups = defaultdict(list)
 
 
     for url in urls:
         content = fetch_playlist(url)
         if content:
-            entries = parse_entries(content)
-            for group, group_entries in entries.items():
-                merged[group].extend(group_entries)
+            groups = parse_entries(content)
+            for group_name, entries in groups.items():
+                merged_groups[group_name].extend(entries)
 
 
-    # Sort each group by channel name
-    for group in merged:
-        merged[group].sort(key=lambda entry: extract_channel_name(entry[0]).lower())
+    sorted_group_names = sorted(merged_groups.keys(), key=lambda g: g.lower())
 
 
     with open("MergedPlaylist.m3u8", "w", encoding="utf-8") as f:
-        f.write(f'#EXTM3U url-tvg="{epg_url}"\n')
-        for group in sorted(merged.keys()):
-            for entry in merged[group]:
+        f.write(f'#EXTM3U url-tvg="{epg_url}"\n\n')
+
+
+        for group_name in sorted_group_names:
+            f.write(f'#--- Group: {group_name} ---\n')
+            for entry in merged_groups[group_name]:
                 for line in entry:
                     f.write(f"{line}\n")
-    print("Final playlist saved as MergedPlaylist.m3u8 with proper grouping and sorting.")
+            f.write("\n")
+
+
+    print("Merged playlist saved as MergedPlaylist.m3u8 with groups sorted and channel order preserved.")
 
 
 if __name__ == "__main__":
