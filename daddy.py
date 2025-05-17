@@ -1,5 +1,5 @@
-input_file = "daddylive_fixed.m3u8"
-output_file = "DaddyLive.m3u"
+input_file = "DaddyLive.m3u"
+output_file = "DaddyLive.m3u8"
 
 new_headers = [
     '#EXTVLCOPT:http-origin=https://alldownplay.xyz',
