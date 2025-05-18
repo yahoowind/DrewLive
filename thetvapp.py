@@ -1,30 +1,25 @@
 import requests
-import os
+import re
 
-URL = "http://75.163.131.149:8090/tvpass/playlist?quality=all"
-FILENAME = "TheTVApp.m3u8"
+# Fetch the playlist
+url = "http://75.163.131.149:8090/tvpass/playlist?quality=all"
+response = requests.get(url)
+playlist = response.text
 
-def fetch_playlist(url):
-    print("Fetching playlist...")
-    response = requests.get(url)
-    response.raise_for_status()
-    return response.text
+# Force every EXTINF to use group-title="TheTVApp"
+updated_lines = []
+for line in playlist.splitlines():
+    if line.startswith("#EXTINF"):
+        # Replace existing group-title or add it if missing
+        if 'group-title="' in line:
+            line = re.sub(r'group-title=".*?"', 'group-title="TheTVApp"', line)
+        else:
+            parts = line.split(",", 1)
+            if len(parts) == 2:
+                prefix, title = parts
+                line = f'{prefix} group-title="TheTVApp",{title}'
+    updated_lines.append(line)
 
-def save_if_changed(new_data, filename):
-    if os.path.exists(filename):
-        with open(filename, "r", encoding="utf-8") as f:
-            current_data = f.read()
-        if current_data == new_data:
-            print("No changes detected.")
-            return False
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(new_data)
-    print(f"Saved updated playlist to {filename}")
-    return True
-
-if __name__ == "__main__":
-    try:
-        data = fetch_playlist(URL)
-        save_if_changed(data, FILENAME)
-    except Exception as e:
-        print(f"Error: {e}")
+# Write to file
+with open("TheTVApp.m3u8", "w", encoding="utf-8") as f:
+    f.write("\n".join(updated_lines))
