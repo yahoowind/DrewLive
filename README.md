@@ -1,4 +1,4 @@
-[![DrewLive Badge](https://www.dropbox.com/scl/fi/rqdv6eu0cf7bvsx665633/trunks.png?rlkey=5uq5weyf1j1l37lac53qrkzat&st=swy2uie3&dl=1)](https://discord.gg/GScZh8D3rB)
+[![DrewLive Badge](https://dl.dropboxusercontent.com/s/rqdv6eu0cf7bvsx665633/trunks.png)](https://discord.gg/GScZh8D3rB)
 
 🌟 DREWLIVE PLAYLIST & EPG LINKS 🌟  
 Welcome to DrewLive, your go-to source for seamless IPTV streaming and EPG management. Below, you’ll find all the essential links you need to access your playlists, EPG data, and live events.  
