@@ -3,7 +3,7 @@ name: Update TheTVApp Playlist
 on:
   schedule:
     - cron: '*/30 * * * *'  # Every 30 minutes
-  workflow_dispatch:        # Allows manual run from GitHub UI
+  workflow_dispatch:        # Manual run from GitHub UI
 
 jobs:
   update-playlist:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Full git history for proper pull/rebase
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -26,17 +26,26 @@ jobs:
       - name: Run update script
         run: python thetvapp.py
 
+      - name: Show diff after update script
+        run: git diff TheTVApp.m3u8 || echo "No changes in TheTVApp.m3u8"
+
+      - name: List files and show TheTVApp.m3u8 content
+        run: |
+          ls -l
+          cat TheTVApp.m3u8
+
       - name: Commit and push changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
+          
           git add TheTVApp.m3u8
-          git diff --cached --quiet || git commit -m "Auto-update TheTVApp.m3u8"
-
-          # Pull remote changes and rebase local commits on top
-          git pull --rebase origin main
-
-          # Push your changes
+          git commit -m "Auto-update TheTVApp.m3u8" || echo "No changes to commit"
+          
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/Drewski2423/DrewLive.git
+          
+          git pull --rebase --no-edit origin main
+          
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
