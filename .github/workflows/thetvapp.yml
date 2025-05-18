@@ -3,7 +3,7 @@ name: Update TheTVApp Playlist
 on:
   schedule:
     - cron: '*/30 * * * *'  # Every 30 minutes
-  workflow_dispatch:        # Manual trigger
+  workflow_dispatch:        # Allows manual run from GitHub UI
 
 jobs:
   update-playlist:
@@ -18,9 +18,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install requirements
-        run: |
-          pip install -r requirements.txt || true  # optional
+      - name: Install requests
+        run: pip install requests
 
       - name: Run update script
         run: python thetvapp.py
@@ -30,7 +29,7 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add TheTVApp.m3u8
-          git commit -m "Auto-update TheTVApp.m3u8"
+          git diff --cached --quiet || git commit -m "Auto-update TheTVApp.m3u8"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
