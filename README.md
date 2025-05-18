@@ -29,5 +29,10 @@ Never miss an exciting moment with the latest live events!
 🔗 Live Events - DrewLive URL:  
 • https://tinyurl.com/drewevents23  
 ⸻  
-[![DrewLive Badge](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)  
+[![Join DrewLive Discord](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)
+
+**👥 Join the DrewLive Discord!**  
+Hang out, get updates, drop questions, or just vibe with the community.  
+Click the badge above or use the invite link: [discord.gg/GScZh8D3rB](https://discord.gg/GScZh8D3rB)  
+
 Feel free to explore the links and enjoy your streaming experience! 🎬📡
