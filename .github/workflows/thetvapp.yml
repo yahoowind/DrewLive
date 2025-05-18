@@ -23,7 +23,7 @@ jobs:
           pip install -r requirements.txt || true  # optional
 
       - name: Run update script
-        run: python update_playlist.py
+        run: python thetvapp.py
 
       - name: Commit and push changes
         run: |
