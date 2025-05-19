@@ -54,6 +54,6 @@ Feel free to explore the links and enjoy your streaming experience! 🎬📡
 
 🎮 RECOMMENDED IPTV PLAYERS  
 For the best streaming experience with DrewLive playlists, use one of these apps:  
-• Televizo – Lightweight, fast, and supports advanced playlist headers.  
-• Kodi – Fully customizable media center with PVR IPTV Simple Client support.  
-• TiviMate – User-friendly IPTV player with great EPG integration and multi-playlist support.
+• [Televizo](https://televizo.com/) – Lightweight, fast, and supports advanced playlist headers.  
+• [Kodi](https://kodi.tv/) – Fully customizable media center with PVR IPTV Simple Client support.  
+• [TiviMate](https://tivimate.com/) – User-friendly IPTV player with great EPG integration and multi-playlist support.
