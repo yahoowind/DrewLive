@@ -45,15 +45,15 @@ Never miss an exciting moment with the latest live events!
 
 [![Join DrewLive Discord](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)  
 
-**👥 Join the DrewLive Discord!**  
+👥 Join the DrewLive Discord!  
 Hang out, get updates, drop questions, or just vibe with the community.  
-Click the badge above or use the invite link: discord.gg/GScZh8D3rB  
+Click the badge above or use the invite link: https://discord.gg/GScZh8D3rB  
 
 Feel free to explore the links and enjoy your streaming experience! 🎬📡  
 ⸻  
 
 🎮 RECOMMENDED IPTV PLAYERS  
 For the best streaming experience with DrewLive playlists, use one of these apps:  
-• [Televizo](https://televizo.net/) – Lightweight, fast, and supports advanced playlist headers.  
-• [Kodi](https://kodi.tv/) – Fully customizable media center with PVR IPTV Simple Client support.  
-• [TiviMate](https://tivimate.com/) – User-friendly IPTV player with great EPG integration and multi-playlist support.
+• Televizo – https://televizo.net/ (Lightweight, fast, supports advanced playlist headers)  
+• Kodi – https://kodi.tv/ (Fully customizable media center with PVR IPTV Simple Client support)  
+• TiviMate – https://tivimate.com/ (User-friendly IPTV player with great EPG integration and multi-playlist support)
