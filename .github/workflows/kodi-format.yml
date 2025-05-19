@@ -1,0 +1,30 @@
+name: Convert to Kodi Format
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # Runs every 30 minutes
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run Kodi Conversion Script
+        run: |
+          python kodi.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add MergedPlaylist_Kodi.m3u8
+          git commit -m "Auto-update Kodi formatted playlist"
+          git push
