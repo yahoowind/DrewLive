@@ -1590,6 +1590,10 @@ https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26
 #EXTINF:-1  tvg-id="aaj-ki-khabar" tvg-logo="https://a.jsrdn.com/hls/23215/aaj-ki-khabar/logo_20250401_175431_70.png" group-title="DistroTV",Aaj Ki Khabar
 https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/aaj-ki-khabar/index.m3u8
 
+#--- Group: DrewLive VOD ---
+#EXTINF:-1  tvg-id="Movie.Dummy.us" tvg-logo="https://m.media-amazon.com/images/M/MV5BNDA4Nzg1NjQ2NV5BMl5BanBnXkFtZTcwMDYwNTgyMQ@@._V1_FMjpg_UX1000_.jpg" group-title="DrewLive VOD" radio="false",House of Wax - 2005
+https://den4-4.download.real-debrid.com/d/KSGNKTNXDLAA220/Wax%20On%20-%20The%20Design%20Of%20House%20Of%20Wax.mkv
+
 #--- Group: Fan Made Live TV ---
 #EXTINF:-1  tvg-name="Cannabis Grow" tvg-id="24.7.Dummy.us" tvg-logo="https://grow.dwot.io/logo" group-title="Fan Made Live TV" radio="false",Cannabis Grow
 https://grow.dwot.io/hls/1/stream.m3u8?cachebust=7ad5acb5
