@@ -1,27 +1,27 @@
 🌟 DREWLIVE PLAYLIST & EPG LINKS 🌟  
 Welcome to DrewLive, your go-to source for seamless IPTV streaming and EPG management. Below, you’ll find all the essential links you need to access your playlists, EPG data, and live events.  
 
-⸻  
+⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻  
 
 📺 DREWLIVE LIVE STREAM (OWNCAST)  
 Watch DrewLive 24/7 with live-streamed cartoons, anime, action, and more — straight from the source.  
 • [http://drewlive24.duckdns.org:8080/](http://drewlive24.duckdns.org:8080/)  
 
-⸻  
+⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻  
 
 📂 ALL PLAYLISTS IN ONE LINK  
 Access all your favorite playlists in a single, convenient link:  
 🔗 All Playlists - DrewLive URL:  
 • [https://tinyurl.com/drewall8](https://tinyurl.com/drewall8)  
 
-⸻  
+⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻  
 
 🎮 KODI FORMAT PLAYLIST  
 Optimized for Kodi’s PVR IPTV Simple Client with built-in headers support.  
 🔗 Kodi Playlist - DrewLive URL:  
 • [https://tinyurl.com/drewallkodi8](https://tinyurl.com/drewallkodi8)  
 
-⸻  
+⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻  
 
 🗓️ EPG LINKS  
 Keep track of your channels with the following EPG options:  
@@ -40,7 +40,7 @@ Won’t crash IPTV players but may lack some local USA EPG.
 Comprehensive EPG including all available sources.  
 • [https://tinyurl.com/allsource2423-epg](https://tinyurl.com/allsource2423-epg)  
 
-⸻  
+⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻  
 
 📡 HOW TO USE EPG LINKS  
 1. Open your IPTV player’s EPG or guide settings.  
@@ -50,14 +50,14 @@ Comprehensive EPG including all available sources.
 
 ⚠️ Note: Some players may require a restart for EPG data to fully load.  
 
-⸻  
+⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻  
 
 🎥 LIVE EVENTS  
 Never miss an exciting moment with the latest live events!  
 🔗 Live Events - DrewLive URL:  
 • [https://tinyurl.com/drewevents23](https://tinyurl.com/drewevents23)  
 
-⸻  
+⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻  
 
 [![Join DrewLive Discord](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)  
 
@@ -67,7 +67,7 @@ Click the badge above or use the invite link: [https://discord.gg/GScZh8D3rB](ht
 
 Feel free to explore the links and enjoy your streaming experience! 🎬📡  
 
-⸻  
+⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻  
 
 🎮 RECOMMENDED IPTV PLAYERS  
 For the best streaming experience with DrewLive playlists, use one of these apps:  
