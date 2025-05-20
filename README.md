@@ -1,76 +1,83 @@
 🌟 DREWLIVE PLAYLIST & EPG LINKS 🌟  
-Welcome to DrewLive — your go-to hub for seamless IPTV streaming and EPG management. Below you’ll find everything you need to access playlists, program guides, and live events.
+Welcome to DrewLive, your go-to source for seamless IPTV streaming and EPG management. Below, you’ll find all the essential links you need to access your playlists, EPG data, and live events.  
 
----
+⸻  
 
 📺 DREWLIVE LIVE STREAM (OWNCAST)  
-Stream cartoons, anime, action shows, and more — 24/7!  
-🔗 Watch Now: http://drewlive24.duckdns.org:8080/
+Watch DrewLive 24/7 with live-streamed cartoons, anime, action, and more — straight from the source.  
+• [http://drewlive24.duckdns.org:8080/](http://drewlive24.duckdns.org:8080/)  
 
----
+⸻  
 
-📂 ALL PLAYLISTS - ONE LINK  
-Access every playlist in one place.  
-🔗 All Playlists: https://tinyurl.com/drewall8
+📂 ALL PLAYLISTS IN ONE LINK  
+Access all your favorite playlists in a single, convenient link:  
+🔗 All Playlists - DrewLive URL:  
+• [https://tinyurl.com/drewall8](https://tinyurl.com/drewall8)  
 
----
+⸻  
 
-🎮 KODI-FORMATTED PLAYLIST  
-Optimized for Kodi's PVR IPTV Simple Client with built-in header support.  
-🔗 Kodi Playlist: https://tinyurl.com/drewallkodi8
+🎮 KODI FORMAT PLAYLIST  
+Optimized for Kodi’s PVR IPTV Simple Client with built-in headers support.  
+🔗 Kodi Playlist - DrewLive URL:  
+• [https://tinyurl.com/drewallkodi8](https://tinyurl.com/drewallkodi8)  
 
----
+⸻  
 
-🗓️ EPG LINKS (PROGRAM GUIDE)  
-Choose the EPG that best fits your needs:
+🗓️ EPG LINKS  
+Keep track of your channels with the following EPG options:  
 
-- 🔗 Merged EPG (Full Source)  
-  Complete data.  
-  ⚠️ Note: Missing some international and regional data.  
-  https://tinyurl.com/merged24-epg
+🔗 Merged EPG (Full Source) URL  
+Complete EPG data for all sources.  
+⚠️ Note: Missing world and regional EPG data.  
+• [https://tinyurl.com/merged24-epg](https://tinyurl.com/merged24-epg)  
 
-- 🔗 Merged EPG (No IPTV Crashes)  
-  Stable and lightweight.  
-  ⚠️ Note: May lack local USA EPG data.  
-  https://tinyurl.com/merged2423-epg
+🔗 Merged EPG (No IPTV Crashes) URL  
+Won’t crash IPTV players but may lack some local USA EPG.  
+⚠️ Note: Missing local USA EPG data.  
+• [https://tinyurl.com/merged2423-epg](https://tinyurl.com/merged2423-epg)  
 
-- 🔗 All Source EPG  
-  Most comprehensive across all sources.  
-  https://tinyurl.com/allsource2423-epg
+🔗 All Source EPG URL  
+Comprehensive EPG including all available sources.  
+• [https://tinyurl.com/allsource2423-epg](https://tinyurl.com/allsource2423-epg)  
 
----
+⸻  
 
-📡 HOW TO USE THE EPG  
-1. Open your IPTV app’s EPG or guide settings.  
-2. Paste one of the EPG URLs above.  
-3. Save and refresh.  
-4. Restart app if needed.  
-✅ You’re now synced with DrewLive’s programming!
+📡 HOW TO USE EPG LINKS  
+1. Open your IPTV player’s EPG or guide settings.  
+2. Paste one of the above EPG URLs into the EPG URL field.  
+3. Save and refresh the EPG data.  
+4. Enjoy your up-to-date channel program guide.  
 
----
+⚠️ Note: Some players may require a restart for EPG data to fully load.  
+
+⸻  
 
 🎥 LIVE EVENTS  
-Stay current with the latest live streams and broadcasts.  
-🔗 Live Events: https://tinyurl.com/drewevents23
+Never miss an exciting moment with the latest live events!  
+🔗 Live Events - DrewLive URL:  
+• [https://tinyurl.com/drewevents23](https://tinyurl.com/drewevents23)  
 
----
+⸻  
 
-👥 JOIN THE COMMUNITY - DREWLIVE DISCORD  
-Get updates, ask questions, or just vibe with fellow viewers.  
-[Join DrewLive Discord](https://discord.gg/GScZh8D3rB)
+[![Join DrewLive Discord](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)  
 
----
+👥 Join the DrewLive Discord!  
+Hang out, get updates, drop questions, or just vibe with the community.  
+Click the badge above or use the invite link: [https://discord.gg/GScZh8D3rB](https://discord.gg/GScZh8D3rB)  
+
+Feel free to explore the links and enjoy your streaming experience! 🎬📡  
+
+⸻  
 
 🎮 RECOMMENDED IPTV PLAYERS  
-Use these apps for the best DrewLive experience:
+For the best streaming experience with DrewLive playlists, use one of these apps:  
 
-- Televizo – Lightweight, fast, and supports advanced headers. https://televizo.net/  
-- Kodi – Fully customizable with PVR IPTV Simple Client support. https://kodi.tv/  
-- TiviMate – User-friendly with EPG and multi-playlist support. https://tivimate.com/  
-- IPTVnator – Clean, open-source player. https://github.com/4gray/iptvnator/releases/tag/v0.16.0  
-- UHF – Sleek mobile IPTV player with easy EPG integration. https://www.uhfapp.com/
+• [Televizo](https://televizo.net/) – Lightweight, fast, and supports advanced playlist headers.  
 
----
+• [Kodi](https://kodi.tv/) – Fully customizable media center with PVR IPTV Simple Client support.  
 
-Enjoy your viewing! 🎬📡  
-Questions? Join the Discord or check the live stream anytime.
+• [TiviMate](https://tivimate.com/) – User-friendly IPTV player with great EPG integration and multi-playlist support.  
+
+• [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Modern, open-source IPTV player with simple interface and solid playlist support.
+
+• [UHF](https://www.uhfapp.com/) – Modern mobile, open-source IPTV player with pretty UI and EPG integration with ease.
