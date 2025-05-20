@@ -1,7 +1,5 @@
 🌟 DREWLIVE PLAYLIST & EPG LINKS 🌟  
 Welcome to DrewLive, your go-to source for seamless IPTV streaming and EPG management. Below, you’ll find all the essential links you need to access your playlists, EPG data, and live events.  
-
-GitHub Repo: [https://github.com/Drewski2423/DrewLive](https://github.com/Drewski2423/DrewLive)  
 ⸻  
 
 📺 DREWLIVE LIVE STREAM (OWNCAST)  
@@ -53,7 +51,6 @@ Click the badge above or use the invite link: [https://discord.gg/GScZh8D3rB](ht
 
 Feel free to explore the links and enjoy your streaming experience! 🎬📡  
 ⸻  
-
 🎮 RECOMMENDED IPTV PLAYERS  
 For the best streaming experience with DrewLive playlists, use one of these apps:  
 • [Televizo](https://televizo.net/) – Lightweight, fast, and supports advanced playlist headers.  
