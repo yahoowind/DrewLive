@@ -21,19 +21,20 @@ jobs:
       - name: Run Kodi Conversion Script
         run: python kodi.py
 
+      - name: Disable rebase on pull
+        run: git config --global pull.rebase false
+
       - name: Commit and Push Changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-          # Make sure local branch matches remote, discard local unstaged changes
+          git clean -fd
           git fetch origin
           git reset --hard origin/main
 
-          # Stage changes
           git add MergedPlaylist_Kodi.m3u8
 
-          # Commit and push only if changes exist
           if ! git diff --cached --quiet; then
             git commit -m "Auto-update Kodi formatted playlist"
             git push origin main
