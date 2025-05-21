@@ -2,7 +2,7 @@ name: Convert to Kodi Format
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/30 * * * *"  # every 30 mins
   workflow_dispatch:
 
 jobs:
@@ -10,39 +10,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout Repo
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: Run Kodi script
+      - name: Run Kodi Conversion Script
         run: python kodi.py
 
-      - name: Git operations (stash, pull, commit, push)
+      - name: Commit and Push Changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-          echo "Stashing changes (if any)..."
-          git stash push -u -m "auto-stash" || echo "No local changes to stash"
-
-          echo "Pulling remote changes with rebase..."
+          git stash push -u -m "auto-stash" || echo "No changes to stash"
           git pull --rebase origin main
-
-          echo "Popping stash (if any)..."
           git stash pop || echo "No stash to pop"
 
-          echo "Adding updated playlist..."
           git add MergedPlaylist_Kodi.m3u8
 
-          if git diff --cached --quiet; then
-            echo "No changes detected, nothing to commit."
-          else
+          if ! git diff --cached --quiet; then
             git commit -m "Auto-update Kodi formatted playlist"
             git push origin main
+          else
+            echo "No changes to commit"
           fi
