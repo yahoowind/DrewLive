@@ -8,11 +8,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Needed to pull/rebase
+          fetch-depth: 0  # Required to pull full git history
 
       - name: Set Up Python
         uses: actions/setup-python@v4
@@ -27,15 +28,15 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-      - name: Stash, Pull with Rebase, and Apply Changes
+      - name: Stash, Rebase, and Restore
         run: |
-          git stash push -u -m "temp-stash"  # Stash both tracked & untracked files
+          git stash push -u -m "auto-stash"  # Stash all changes
           git checkout main
-          git branch --set-upstream-to=origin/main main
+          git branch --set-upstream-to=origin/main main || true
           git pull --rebase origin main
-          git stash pop || true  # Continue even if there's nothing to pop
+          git stash pop || true  # Restore changes if any
 
-      - name: Commit and Push
+      - name: Commit and Push If Needed
         run: |
           git add MergedPlaylist_Kodi.m3u8
           if git diff --cached --quiet; then
