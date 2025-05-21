@@ -10,40 +10,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repo
+      - name: Checkout repo
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Set Up Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: Run Kodi Conversion Script
+      - name: Run Kodi script
         run: python kodi.py
 
-      - name: Git Pull, Commit and Push Changes
+      - name: Git operations (stash, pull, commit, push)
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-          echo "Checking for unstaged changes..."
-          git status
-          git stash push -u -m "temp-stash" || echo "Nothing to stash"
+          echo "Stashing changes (if any)..."
+          git stash push -u -m "auto-stash" || echo "No local changes to stash"
 
-          echo "Pulling latest from origin/main with rebase..."
+          echo "Pulling remote changes with rebase..."
           git pull --rebase origin main
 
-          echo "Restoring stashed changes if any..."
+          echo "Popping stash (if any)..."
           git stash pop || echo "No stash to pop"
 
-          echo "Checking if MergedPlaylist_Kodi.m3u8 was updated..."
+          echo "Adding updated playlist..."
           git add MergedPlaylist_Kodi.m3u8
+
           if git diff --cached --quiet; then
-            echo "No changes to commit."
+            echo "No changes detected, nothing to commit."
           else
-            echo "Committing and pushing changes..."
             git commit -m "Auto-update Kodi formatted playlist"
             git push origin main
           fi
