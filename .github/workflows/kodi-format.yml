@@ -2,7 +2,7 @@ name: Convert to Kodi Format
 
 on:
   schedule:
-    - cron: "*/30 * * * *"  # every 30 mins
+    - cron: "*/30 * * * *"  # every 30 minutes
   workflow_dispatch:
 
 jobs:
@@ -26,12 +26,14 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-          git stash push -u -m "auto-stash" || echo "No changes to stash"
-          git pull --rebase origin main
-          git stash pop || echo "No stash to pop"
+          # Make sure local branch matches remote, discard local unstaged changes
+          git fetch origin
+          git reset --hard origin/main
 
+          # Stage changes
           git add MergedPlaylist_Kodi.m3u8
 
+          # Commit and push only if changes exist
           if ! git diff --cached --quiet; then
             git commit -m "Auto-update Kodi formatted playlist"
             git push origin main
