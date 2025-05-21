@@ -1,8 +1,11 @@
 name: Update Kodi Playlist
 
 on:
+  push:
+    paths:
+      - kodi.py
   schedule:
-    - cron: '0 * * * *'  # Runs every hour
+    - cron: '0 */6 * * *'  # Every 6 hours
   workflow_dispatch:
 
 jobs:
@@ -10,42 +13,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+          fetch-depth: 0  # Required for force push
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.11
+          python-version: '3.x'
 
-      - name: Install dependencies
+      - name: Install requirements (if any)
         run: |
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
-          else
-            echo "No requirements.txt found, skipping install."
-          fi
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Run kodi.py
-        run: |
-          if [ -f kodi.py ]; then
-            python kodi.py
-          else
-            echo "kodi.py not found!" && exit 1
-          fi
+      - name: Run Kodi playlist generator
+        run: python3 kodi.py
 
-      - name: Commit and Push Changes
+      - name: Configure Git
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-          git pull origin main --rebase || true
-
+      - name: Commit and force push changes
+        run: |
           git add MergedPlaylist_Kodi.m3u8
-
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "Auto-update Kodi formatted playlist"
-            git push origin main
-          fi
+          git commit -m "Auto-update Kodi formatted playlist" || echo "No changes to commit"
+          git push origin main --force
