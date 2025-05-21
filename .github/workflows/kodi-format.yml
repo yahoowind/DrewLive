@@ -2,7 +2,7 @@ name: Update Kodi Playlist
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Every hour
+    - cron: '0 * * * *'  # Runs every hour
   workflow_dispatch:
 
 jobs:
@@ -18,23 +18,31 @@ jobs:
         with:
           python-version: 3.11
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
-          pip install -r requirements.txt || true
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            echo "No requirements.txt found, skipping install."
+          fi
 
-      - name: Run Kodi Playlist Generator
-        run: python kodi.py
+      - name: Run kodi.py
+        run: |
+          if [ -f kodi.py ]; then
+            python kodi.py
+          else
+            echo "kodi.py not found!" && exit 1
+          fi
 
       - name: Commit and Push Changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          
-          # Pull latest changes first to avoid non-fast-forward errors
+
           git pull origin main --rebase || true
 
-          # Stage and commit if there are changes
           git add MergedPlaylist_Kodi.m3u8
+
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
