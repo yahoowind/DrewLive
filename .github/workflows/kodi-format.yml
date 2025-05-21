@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Needed to allow pulling remote changes
 
       - name: Set Up Python
         uses: actions/setup-python@v4
@@ -28,7 +30,7 @@ jobs:
           git add MergedPlaylist_Kodi.m3u8
           if ! git diff --cached --quiet; then
             git commit -m "Auto-update Kodi formatted playlist"
-            git push
+            git pull --rebase origin main
+            git push origin main
           else
             echo "No changes to commit"
-          fi
