@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Needed to allow pulling remote changes
+          fetch-depth: 0  # Required for git pull
 
       - name: Set Up Python
         uses: actions/setup-python@v4
@@ -23,14 +23,21 @@ jobs:
         run: |
           python kodi.py
 
-      - name: Commit and Push Changes
+      - name: Configure Git
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
+
+      - name: Commit Changes
+        run: |
           git add MergedPlaylist_Kodi.m3u8
-          if ! git diff --cached --quiet; then
-            git commit -m "Auto-update Kodi formatted playlist"
-            git pull --rebase origin main
-            git push origin main
-          else
+          if git diff --cached --quiet; then
             echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Auto-update Kodi formatted playlist"
+
+      - name: Pull and Push Changes
+        run: |
+          git pull --rebase origin main || git rebase --skip
+          git push origin main
