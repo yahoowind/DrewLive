@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Required for git pull
+          fetch-depth: 0  # Required for full git history
 
       - name: Set Up Python
         uses: actions/setup-python@v4
@@ -20,15 +20,14 @@ jobs:
           python-version: '3.x'
 
       - name: Run Kodi Conversion Script
-        run: |
-          python kodi.py
+        run: python kodi.py
 
       - name: Configure Git
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-      - name: Commit Changes
+      - name: Commit if Needed
         run: |
           git add MergedPlaylist_Kodi.m3u8
           if git diff --cached --quiet; then
@@ -37,7 +36,7 @@ jobs:
           fi
           git commit -m "Auto-update Kodi formatted playlist"
 
-      - name: Pull and Push Changes
+      - name: Rebase and Push
         run: |
-          git pull --rebase origin main || git rebase --skip
+          git pull --rebase --autostash origin main
           git push origin main
