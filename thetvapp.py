@@ -2,7 +2,7 @@ import requests
 import re
 
 # Fetch the playlist
-url = "http://75.163.131.149:8880/tvpass/playlist?quality=all"
+url = "http://75.163.131.149:8090/tvpass/playlist?quality=all"
 response = requests.get(url)
 playlist = response.text
 
