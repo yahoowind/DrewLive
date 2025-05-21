@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Required to fetch full git history
+          fetch-depth: 0  # Needed to pull/rebase
 
       - name: Set Up Python
         uses: actions/setup-python@v4
@@ -22,18 +22,20 @@ jobs:
       - name: Run Kodi Conversion Script
         run: python kodi.py
 
-      - name: Configure Git Identity
+      - name: Configure Git
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-      - name: Prepare Main Branch
+      - name: Stash, Pull with Rebase, and Apply Changes
         run: |
+          git stash push -u -m "temp-stash"  # Stash both tracked & untracked files
           git checkout main
           git branch --set-upstream-to=origin/main main
           git pull --rebase origin main
+          git stash pop || true  # Continue even if there's nothing to pop
 
-      - name: Commit and Push Changes
+      - name: Commit and Push
         run: |
           git add MergedPlaylist_Kodi.m3u8
           if git diff --cached --quiet; then
