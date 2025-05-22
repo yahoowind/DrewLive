@@ -1,4 +1,4 @@
-#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
+﻿#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
 #EXTINF:-1  tvg-id="beINSports1.au" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/bein-sports-1.png" group-title="DaddyLive AU",beIN SPORTS Australia 1
 #EXTVLCOPT:http-origin=https://alldownplay.xyz
 #EXTVLCOPT:http-referrer=https://alldownplay.xyz/
@@ -594,6 +594,11 @@ https://windnew.newkso.ru/wind/premium750/mono.m3u8
 #EXTVLCOPT:http-referrer=https://alldownplay.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 17_7 like Mac OS X) Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0
 https://nfsnew.newkso.ru/nfs/premium339/mono.m3u8
+#EXTINF:-1  tvg-name="CBS (KKTV)" tvg-id="CBS.(KKTV).Colorado.Springs,.CO.HD.us" tvg-logo="https://gray-kktv-prod.gtv-cdn.com/resizer/v2/https%3A%2F%2Fwebpubcontent.gray.tv%2Fgray%2Farc-fusion-assets%2Fimages%2Ffallback-graphics%2Fkktv.jpg%3Fd%3D473?auth=eb49e26e5d520add5a3193d14a9fbd1b4e3f19b0f9a85f4364e082851908e136&width=1200&height=600&smart=true" group-title="DaddyLive USA" radio="false",CBS (KKTV)
+#EXTVLCOPT:http-origin=https://alldownplay.xyz
+#EXTVLCOPT:http-referrer=https://alldownplay.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 17_7 like Mac OS X) Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0
+https://tinyurl.com/cbskktv24
 #EXTINF:-1  tvg-id="CBS.(WWJ).Detroit,.MI.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/cbs-usa.png" group-title="DaddyLive USA",CBS (WWJ-TV) USA
 #EXTVLCOPT:http-origin=https://alldownplay.xyz
 #EXTVLCOPT:http-referrer=https://alldownplay.xyz/
