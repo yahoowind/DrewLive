@@ -1,9 +1,9 @@
 #EXTM3U
-#EXTINF:-1 tvg-name="Toonami Aftermath East" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20east.jpg" group-title="Fan Made Live TV",Toonami Aftermath East
-http://drewlive24.duckdns.org/toonami-east
-#EXTINF:-1 tvg-name="Toonami Aftermath Movies" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20movies.jpg" group-title="Fan Made Live TV",Toonami Aftermath Movies
-http://drewlive24.duckdns.org/toonami-movies
-#EXTINF:-1 tvg-name="Toonami Aftermath Radio" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20radio.jpg" group-title="Fan Made Live TV",Toonami Aftermath Radio
-http://drewlive24.duckdns.org/toonami-radio
-#EXTINF:-1 tvg-name="Toonami Aftermath West" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20west.jpg" group-title="Fan Made Live TV",Toonami Aftermath West
-http://drewlive24.duckdns.org/toonami-west
+#EXTINF:-1  tvg-name="Toonami Aftermath East" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20east.jpg" group-title="Fan Made Live TV" radio="false",Toonami Aftermath East
+https://asp6.toonamiaftermath.com/livehttporigin/est/51gbuF-TDOXGM-chunklist.m3u8
+#EXTINF:-1  tvg-name="Toonami Aftermath Movies" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20movies.jpg" group-title="Fan Made Live TV" radio="false",Toonami Aftermath Movies
+https://asp6.toonamiaftermath.com/livehttporigin/movies/51gbuF-Ym0gEG-playlist.m3u8
+#EXTINF:-1  tvg-name="Toonami Aftermath Radio" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20radio.jpg" group-title="Fan Made Live TV" radio="false",Toonami Aftermath Radio
+https://asp6.toonamiaftermath.com/livehttporigin/radio/51gbuF-aSATkW-playlist.m3u8
+#EXTINF:-1  tvg-name="Toonami Aftermath West" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20west.jpg" group-title="Fan Made Live TV" radio="false",Toonami Aftermath West
+https://asp6.toonamiaftermath.com/livehttporigin/est/51gbuF-R5mmOT-playlist.m3u8?streamDelay=180
