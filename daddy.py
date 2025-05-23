@@ -1,6 +1,7 @@
 input_file = "DaddyLive.m3u"
 output_file = "DaddyLive.m3u8"
 
+# Your OG headers (replace these with the exact headers needed)
 new_headers = [
     '#EXTVLCOPT:http-origin=http://drewlive24.duckdns.org',
     '#EXTVLCOPT:http-referrer=http://drewlive24.duckdns.org/',
@@ -10,18 +11,18 @@ new_headers = [
 with open(input_file, "r", encoding="utf-8") as infile, open(output_file, "w", encoding="utf-8") as outfile:
     lines = infile.readlines()
 
-    for i, line in enumerate(lines):
-        line_strip = line.strip()
-
-        # Remove any existing origin or referrer EXT lines (case-insensitive)
-        if line_strip.lower().startswith("#extvlcopt:http-origin=") or line_strip.lower().startswith("#extvlcopt:http-referrer="):
+    for line in lines:
+        stripped = line.strip()
+        
+        # Skip all existing #EXTVLCOPT lines to avoid duplicates
+        if stripped.startswith("#EXTVLCOPT:"):
             continue
-
-        # When hitting a stream URL line, insert new headers before the URL line
-        if line_strip.startswith("http"):
-            for h in new_headers:
-                outfile.write(h + "\n")
+        
+        # When you hit a stream URL line (starts with http), inject your clean headers right before it
+        if stripped.startswith("http"):
+            for header in new_headers:
+                outfile.write(header + "\n")
             outfile.write(line)
         else:
-            # Write all other lines as-is (including other #EXTVLCOPT lines like user-agent)
+            # Write all other lines as is (including original #EXTINF and group titles)
             outfile.write(line)
