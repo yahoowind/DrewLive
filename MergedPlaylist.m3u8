@@ -1784,13 +1784,13 @@ https://mthrbord.tv/hls/0/stream.m3u8
 #EXTINF:-1  tvg-name="TheUpperLeft" tvg-id="24.7.Dummy.us" tvg-logo="https://theupperleft.thesprawl.online/logo" group-title="Fan Made Live TV" radio="false",TheUpperLeft
 https://theupperleft.thesprawl.online/hls/0/stream.m3u8?cachebust=2f690bd7
 #EXTINF:-1  tvg-name="Toonami Aftermath East" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20east.jpg" group-title="Fan Made Live TV" radio="false",Toonami Aftermath East
-https://asp6.toonamiaftermath.com/livehttporigin/est/51gbuF-TDOXGM-chunklist.m3u8
+http://api.toonamiaftermath.com:3000/est/playlist.m3u8
 #EXTINF:-1  tvg-name="Toonami Aftermath Movies" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20movies.jpg" group-title="Fan Made Live TV" radio="false",Toonami Aftermath Movies
-https://asp6.toonamiaftermath.com/livehttporigin/movies/51gbuF-Ym0gEG-playlist.m3u8
+http://api.toonamiaftermath.com:3000/movies/playlist.m3u8
 #EXTINF:-1  tvg-name="Toonami Aftermath Radio" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20radio.jpg" group-title="Fan Made Live TV" radio="false",Toonami Aftermath Radio
-https://asp6.toonamiaftermath.com/livehttporigin/radio/51gbuF-aSATkW-playlist.m3u8
+http://api.toonamiaftermath.com:3000/radio/playlist.m3u8
 #EXTINF:-1  tvg-name="Toonami Aftermath West" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20west.jpg" group-title="Fan Made Live TV" radio="false",Toonami Aftermath West
-https://asp6.toonamiaftermath.com/livehttporigin/est/51gbuF-R5mmOT-playlist.m3u8?streamDelay=180
+http://api.toonamiaftermath.com:3000/pst/playlist.m3u8
 
 #--- Group: Hip-Hop & R&B ---
 #EXTINF:-1  tvg-name="100 Hip Hop and RNB FM" tvg-id="Radio.105.Dummy.us" tvg-logo="https://images.radio.com/independent/logos/100hiphopandrnbfm.jpg" group-title="Hip-Hop & R&B" radio="true",100 Hip Hop and RNB FM
