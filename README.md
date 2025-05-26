@@ -84,4 +84,5 @@ For the best streaming experience with DrewLive playlists, use one of these apps
 • [Kodi](https://kodi.tv/) – Fully customizable media center with PVR IPTV Simple Client support.  
 • [TiviMate](https://tivimate.com/) – User-friendly IPTV player with great EPG integration and multi-playlist support.  
 • [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Modern, open-source IPTV player with simple interface and solid playlist support.  
-• [UHF](https://www.uhfapp.com/) – Modern mobile, open-source IPTV player with pretty UI and EPG integration with ease.
+• [UHF](https://www.uhfapp.com/) – Modern mobile, open-source IPTV player with pretty UI and EPG integration with ease.  
+• [Jellyfin](https://jellyfin.org/) – Open-source media server with powerful streaming, library management, and native support for playing STRM files and playlists. Great for custom IPTV setups and VOD collections.  
