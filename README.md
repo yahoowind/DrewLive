@@ -23,6 +23,15 @@ Optimized for Kodi’s PVR IPTV Simple Client with built-in headers support.
 
 ━━━━━━━━━━━━━━━━━━━━
 
+📂 DREWLIVE VOD STRM BUNDLE  
+Download a full set of `.strm` files ready for Kodi, Jellyfin, or your media app of choice.  
+Extract the folder, add it as a video source in Kodi, and you’re good to go.  
+
+📥 DrewLive VOD Folder:  
+• [https://tinyurl.com/drewlive-vod24](https://tinyurl.com/drewlive-vod24)  
+
+━━━━━━━━━━━━━━━━━━━━
+
 🗓️ EPG LINKS  
 Keep track of your channels with the following EPG options:  
 
@@ -63,9 +72,8 @@ Never miss an exciting moment with the latest live events!
 
 👥 Join the DrewLive Discord!  
 Hang out, get updates, drop questions, or just vibe with the community.  
-Click the badge above or use the invite link: [https://discord.gg/GScZh8D3rB](https://discord.gg/GScZh8D3rB)  
-
-Feel free to explore the links and enjoy your streaming experience! 🎬📡  
+Click the badge above or use the invite link:  
+• [https://discord.gg/GScZh8D3rB](https://discord.gg/GScZh8D3rB)  
 
 ━━━━━━━━━━━━━━━━━━━━
 
@@ -73,11 +81,7 @@ Feel free to explore the links and enjoy your streaming experience! 🎬📡
 For the best streaming experience with DrewLive playlists, use one of these apps:  
 
 • [Televizo](https://televizo.net/) – Lightweight, fast, and supports advanced playlist headers.  
-
 • [Kodi](https://kodi.tv/) – Fully customizable media center with PVR IPTV Simple Client support.  
-
 • [TiviMate](https://tivimate.com/) – User-friendly IPTV player with great EPG integration and multi-playlist support.  
-
-• [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Modern, open-source IPTV player with simple interface and solid playlist support.
-
+• [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Modern, open-source IPTV player with simple interface and solid playlist support.  
 • [UHF](https://www.uhfapp.com/) – Modern mobile, open-source IPTV player with pretty UI and EPG integration with ease.
