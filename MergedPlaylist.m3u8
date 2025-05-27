@@ -1727,10 +1727,6 @@ https://cdn.baddiehub.com/ZFxx.mp4
 https://cdn.baddiehub.com/hepfy.mp4
 
 #--- Group: DrewLive VOD ---
-#EXTINF:-1  tvg-name="17 Again (2009)" tvg-id="Movie.Dummy.us" tvg-logo="https://m.media-amazon.com/images/M/MV5BMjA2NTI1Mzg3N15BMl5BanBnXkFtZTcwMjYwNjAzMg@@._V1_FMjpg_UX1000_.jpg" group-title="DrewLive VOD" radio="false",17 Again (2009)
-https://den3-4.download.real-debrid.com/d/HHNHAQZOOCU5C22/17%20Again.2009.BD.Remux.1080p.VC-1.Rus.Eng.mkv
-#EXTINF:-1  tvg-name="A Minecraft Movie (2025)" tvg-id="Movie.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/en/6/66/A_Minecraft_Movie_poster.jpg" group-title="DrewLive VOD" radio="false",A Minecraft Movie (2025)
-https://den3-4.download.real-debrid.com/d/M7WS2543I2VKM90/A.Minecraft.Movie.2025.2160p.AMZN.WEB-DL.HDR10%2B%5BBen%20The%20Men%5D.mkv
 #EXTINF:-1  tvg-name="Above The Rim (1994)" tvg-id="Movie.Dummy.us" tvg-logo="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15525_p_v10_aa.jpg" group-title="DrewLive VOD" radio="false",Above The Rim (1994)
 https://den3-4.download.real-debrid.com/d/BT343L6XJC4JS79/above.the.rim.1994.4k-kc.mkv
 #EXTINF:-1  tvg-name="Are We There Yet? (2005)" tvg-id="Movie.Dummy.us" tvg-logo="https://m.media-amazon.com/images/M/MV5BNDllNWNiZDYtMGUzNC00ZGFiLTgzNWQtNjk4YTFkNmM5OWFmXkEyXkFqcGc@._V1_.jpg" group-title="DrewLive VOD" radio="false",Are We There Yet? (2005)
@@ -2819,6 +2815,12 @@ http://fl2.moveonjoy.com/WGN/index.m3u8
 http://fl2.moveonjoy.com/WORLD_FISHING_NETWORK/index.m3u8
 #EXTINF:-1  tvg-name="YES Network" tvg-id="YES.Network.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/yes-network-us.png?raw=true" group-title="MoveOnJoy" radio="false",YES Network
 http://fl2.moveonjoy.com/YES_NETWORK/index.m3u8
+
+#--- Group: Movies ---
+#EXTINF:-1  tvg-name="17 Again (2009)" tvg-id="Movie.Dummy.us" tvg-logo="https://m.media-amazon.com/images/M/MV5BMjA2NTI1Mzg3N15BMl5BanBnXkFtZTcwMjYwNjAzMg@@._V1_FMjpg_UX1000_.jpg" group-title="Movies" radio="false",17 Again (2009)
+https://den3-4.download.real-debrid.com/d/HHNHAQZOOCU5C22/17%20Again.2009.BD.Remux.1080p.VC-1.Rus.Eng.mkv
+#EXTINF:-1  tvg-name="A Minecraft Movie (2025)" tvg-id="Movie.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/en/6/66/A_Minecraft_Movie_poster.jpg" group-title="Movies" radio="false",A Minecraft Movie (2025)
+https://den3-4.download.real-debrid.com/d/M7WS2543I2VKM90/A.Minecraft.Movie.2025.2160p.AMZN.WEB-DL.HDR10%2B%5BBen%20The%20Men%5D.mkv
 
 #--- Group: Music Videos Live ---
 #EXTINF:-1  tvg-name="iHeartRadio Hip Hop Beats" tvg-id="24.7.Dummy.us" tvg-logo="https://image.xumo.com/v1/channels/channel/9995103/600x337.webp?type=channelTile" group-title="Music Videos Live" radio="false",iHeartRadio Hip Hop Beats
