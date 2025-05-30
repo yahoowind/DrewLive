@@ -86,3 +86,25 @@ For the best streaming experience with DrewLive playlists, use one of these apps
 • [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Modern, open-source IPTV player with simple interface and solid playlist support.  
 • [UHF](https://www.uhfapp.com/) – Modern mobile, open-source IPTV player with pretty UI and EPG integration with ease.  
 • [Jellyfin](https://jellyfin.org/) – Open-source media server with powerful streaming, library management, and native support for playing STRM files and playlists. Great for custom IPTV setups and VOD collections.  
+
+🌐 UNLICENSED LICENSE
+
+This project is released into the public domain under The Unlicense.
+You are free to copy, modify, publish, use, compile, sell, or distribute this software — for any purpose, commercial or non-commercial — without restriction.
+
+📌 Legal Summary:
+• No copyright
+• No permission required
+• No conditions
+• No warranties
+
+📜 Disclaimer:
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+🔗 Learn more at: https://unlicense.org
