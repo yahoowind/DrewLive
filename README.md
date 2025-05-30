@@ -1,31 +1,31 @@
 🌟 DREWLIVE PLAYLIST & EPG LINKS 🌟  
-Welcome to DrewLive, your go-to source for seamless IPTV streaming and EPG management. Below, you’ll find all the essential links you need to access your playlists, EPG data, and live events.  
+Welcome to DrewLive — your 24/7 hub for cartoons, anime, action, and nostalgic vibes. Below is everything you need to plug in, stay up to date, and never miss a beat.
 
 ━━━━━━━━━━━━━━━━━━━━
 
 📺 DREWLIVE LIVE STREAM (OWNCAST)  
-Watch DrewLive 24/7 with live-streamed cartoons, anime, action, and more — straight from the source.  
-• [http://drewlive24.duckdns.org:8080/](http://drewlive24.duckdns.org:8080/)  
+Your main portal for nonstop streaming — DrewLive runs day and night with curated shows and blocks.  
+• [http://drewlive24.duckdns.org:8080/](http://drewlive24.duckdns.org:8080/)
 
 ━━━━━━━━━━━━━━━━━━━━
 
 📂 ALL PLAYLISTS IN ONE LINK  
-Access all your favorite playlists in a single, convenient link:  
+Simplify your setup with every playlist in one place.  
 🔗 All Playlists - DrewLive URL:  
 • [https://tinyurl.com/drewall8](https://tinyurl.com/drewall8)  
 
 ━━━━━━━━━━━━━━━━━━━━
 
 🎮 KODI FORMAT PLAYLIST  
-Optimized for Kodi’s PVR IPTV Simple Client with built-in headers support.  
+Built for Kodi's PVR IPTV Simple Client with full header support — plug and play.  
 🔗 Kodi Playlist - DrewLive URL:  
 • [https://tinyurl.com/drewallkodi8](https://tinyurl.com/drewallkodi8)  
 
 ━━━━━━━━━━━━━━━━━━━━
 
 📂 DREWLIVE VOD STRM BUNDLE  
-Download a full set of `.strm` files ready for Kodi, Jellyfin, or your media app of choice.  
-Extract the folder, add it as a video source in Kodi, and you’re good to go.  
+Take DrewLive with you — download `.strm` files that work on Kodi, Jellyfin, and more.  
+Just extract and point your media app to the folder.  
 
 📥 DrewLive VOD Folder:  
 • [https://tinyurl.com/drewlive-vod24](https://tinyurl.com/drewlive-vod24)  
@@ -33,36 +33,36 @@ Extract the folder, add it as a video source in Kodi, and you’re good to go.
 ━━━━━━━━━━━━━━━━━━━━
 
 🗓️ EPG LINKS  
-Keep track of your channels with the following EPG options:  
+Stay synced with live guide data for your players. Pick the one that fits your needs:  
 
-🔗 Merged EPG (Full Source) URL  
-Complete EPG data for all sources.  
-⚠️ Note: Missing world and regional EPG data.  
+🔗 Merged EPG (Full Source)  
+✔️ Full EPG data from all sources  
+⚠️ Missing some world/regional info  
 • [https://tinyurl.com/merged24-epg](https://tinyurl.com/merged24-epg)  
 
-🔗 Merged EPG (No IPTV Crashes) URL  
-Won’t crash IPTV players but may lack some local USA EPG.  
-⚠️ Note: Missing local USA EPG data.  
+🔗 Merged EPG (No IPTV Crashes)  
+✔️ Smooth on most players  
+⚠️ May lack some local USA EPG  
 • [https://tinyurl.com/merged2423-epg](https://tinyurl.com/merged2423-epg)  
 
-🔗 All Source EPG URL  
-Comprehensive EPG including all available sources.  
+🔗 All Source EPG  
+✔️ Most comprehensive option available  
 • [https://tinyurl.com/allsource2423-epg](https://tinyurl.com/allsource2423-epg)  
 
 ━━━━━━━━━━━━━━━━━━━━
 
 📡 HOW TO USE EPG LINKS  
-1. Open your IPTV player’s EPG or guide settings.  
-2. Paste one of the above EPG URLs into the EPG URL field.  
-3. Save and refresh the EPG data.  
-4. Enjoy your up-to-date channel program guide.  
+1. Go into your IPTV player's guide settings  
+2. Paste in one of the EPG URLs above  
+3. Save and refresh guide data  
+4. Done — full channel listings ready to go  
 
-⚠️ Note: Some players may require a restart for EPG data to fully load.  
+⚠️ Pro tip: Some apps need a restart for EPG to fully load  
 
 ━━━━━━━━━━━━━━━━━━━━
 
 🎥 LIVE EVENTS  
-Never miss an exciting moment with the latest live events!  
+Catch special streams and one-time broadcasts here:  
 🔗 Live Events - DrewLive URL:  
 • [https://tinyurl.com/drewevents23](https://tinyurl.com/drewevents23)  
 
@@ -71,40 +71,42 @@ Never miss an exciting moment with the latest live events!
 [![Join DrewLive Discord](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)  
 
 👥 Join the DrewLive Discord!  
-Hang out, get updates, drop questions, or just vibe with the community.  
-Click the badge above or use the invite link:  
+Get updates, ask questions, share setups, or just chill.  
+Click the badge above or use this invite:  
 • [https://discord.gg/GScZh8D3rB](https://discord.gg/GScZh8D3rB)  
 
 ━━━━━━━━━━━━━━━━━━━━
 
 🎮 RECOMMENDED IPTV PLAYERS  
-For the best streaming experience with DrewLive playlists, use one of these apps:  
+Use one of these for the cleanest DrewLive experience:  
 
-• [Televizo](https://televizo.net/) – Lightweight, fast, and supports advanced playlist headers.  
-• [Kodi](https://kodi.tv/) – Fully customizable media center with PVR IPTV Simple Client support.  
-• [TiviMate](https://tivimate.com/) – User-friendly IPTV player with great EPG integration and multi-playlist support.  
-• [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Modern, open-source IPTV player with simple interface and solid playlist support.  
-• [UHF](https://www.uhfapp.com/) – Modern mobile, open-source IPTV player with pretty UI and EPG integration with ease.  
-• [Jellyfin](https://jellyfin.org/) – Open-source media server with powerful streaming, library management, and native support for playing STRM files and playlists. Great for custom IPTV setups and VOD collections.  
+• [Televizo](https://televizo.net/) – Lightweight and fast with advanced support  
+• [Kodi](https://kodi.tv/) – Full-featured with deep customization and STRM support  
+• [TiviMate](https://tivimate.com/) – Easy UI, strong playlist & EPG support  
+• [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Open-source and modern  
+• [UHF](https://www.uhfapp.com/) – Clean mobile player with native EPG  
+• [Jellyfin](https://jellyfin.org/) – Great for library setups with built-in IPTV and VOD handling  
 
-🌐 UNLICENSED LICENSE
+━━━━━━━━━━━━━━━━━━━━
 
-This project is released into the public domain under The Unlicense.
-You are free to copy, modify, publish, use, compile, sell, or distribute this software — for any purpose, commercial or non-commercial — without restriction.
+🌐 UNLICENSED LICENSE  
 
-📌 Legal Summary:
-• No copyright
-• No permission required
-• No conditions
-• No warranties
+This project is released under The Unlicense.  
+Copy it, modify it, remix it, share it, sell it, whatever. No strings attached.
 
-📜 Disclaimer:
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
+Legal TL;DR:  
+• No copyright  
+• No restrictions  
+• No conditions  
+• No warranties  
 
-🔗 Learn more at: https://unlicense.org
+Disclaimer:  
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,  
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF  
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR  
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,  
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR  
+OTHER DEALINGS IN THE SOFTWARE.  
+
+Learn more at: [https://unlicense.org](https://unlicense.org)  
