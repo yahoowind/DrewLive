@@ -24,8 +24,11 @@ Built for Kodi's PVR IPTV Simple Client with full header support — plug and pl
 ━━━━━━━━━━━━━━━━━━━━
 
 📂 DREWLIVE VOD STRM BUNDLE  
-Take DrewLive with you — download `.strm` files that work on Kodi, Jellyfin, and more.  
-Just extract and point your media app to the folder.  
+Want to take DrewLive with you — no internet needed? Grab our `.strm` files!  
+
+These are simple text files with streaming URLs, named clearly like `Movie Title (Year).strm`. Just download the whole folder, then point your media app (Kodi, Jellyfin, or others) to it. Your player will list all your movies and shows by name, ready to stream instantly — no complicated setup needed.  
+
+It’s perfect for people who want neat, offline-ready playlists with clickable streams and nice titles, without messing with complicated playlists or apps.  
 
 📥 DrewLive VOD Folder:  
 • [https://tinyurl.com/drewlive-vod24](https://tinyurl.com/drewlive-vod24)  
