@@ -9,7 +9,7 @@ ALLOWED_COUNTRIES = {
     'NEW ZEALAND': 'DaddyLive NZ'
 }
 
-SOURCE_URL = 'http://drewlive24.duckdns.org:8989/playlist/channels'
+SOURCE_URL = 'http://drewlive24.duckdns.org:7860/playlist/channels'
 OUTPUT_FILE = 'DaddyLive.m3u8'
 
 def get_group_title(extinf_line):
