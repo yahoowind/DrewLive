@@ -2,8 +2,8 @@ name: Update DaddyLive Playlist
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # every 15 minutes
-  workflow_dispatch:
+    - cron: '*/15 * * * *'  # Every 15 minutes
+  workflow_dispatch:       # Allow manual trigger
 
 jobs:
   update-playlist:
@@ -13,36 +13,31 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Sync with remote master (reset hard)
-        run: |
-          git fetch origin
-          git reset --hard origin/master
-
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: Install dependencies (if any)
+      - name: Install dependencies
         run: |
-          # If your script needs dependencies, install here
-          # e.g. pip install -r requirements.txt
-          echo "No dependencies to install"
+          python -m pip install --upgrade pip
+          pip install requests
 
       - name: Run update script
         run: python daddy.py
 
-      - name: Configure Git user
+      - name: Commit updated playlist
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Commit changes if any
-        run: |
           git add DaddyLive.m3u8
-          git diff --cached --quiet || git commit -m "Update DaddyLive.m3u8 playlist"
+          git commit -m "Auto update DaddyLive playlist" || echo "No changes to commit"
 
-      - name: Push changes to master
+      - name: Pull remote changes and rebase
+        run: |
+          git pull --rebase origin master || echo "No remote changes"
+
+      - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
