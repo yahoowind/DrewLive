@@ -22,7 +22,7 @@ jobs:
         run: pip install requests
 
       - name: Run update script
-        run: python your_script_name.py
+        run: python daddy.py
 
       - name: Configure git
         run: |
