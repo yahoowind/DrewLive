@@ -1,19 +1,31 @@
 import requests
+import re
 
-# Allowed full country names in ALL CAPS
-ALLOWED_COUNTRIES = [
-    'UNITED STATES',
-    'UNITED KINGDOM',
-    'CANADA',
-    'AUSTRALIA',
-    'NEW ZEALAND'
-]
+ALLOWED_COUNTRIES = {
+    'UNITED STATES': 'DaddyLive USA',
+    'UNITED KINGDOM': 'DaddyLive UK',
+    'CANADA': 'DaddyLive CA',
+    'AUSTRALIA': 'DaddyLive AU',
+    'NEW ZEALAND': 'DaddyLive NZ'
+}
 
 SOURCE_URL = 'http://drewlive24.duckdns.org:8989/playlist/channels'
 OUTPUT_FILE = 'DaddyLive.m3u8'
 
-def country_allowed(extinf_line):
-    return any(country in extinf_line for country in ALLOWED_COUNTRIES)
+def get_group_title(extinf_line):
+    for country, group_name in ALLOWED_COUNTRIES.items():
+        if country in extinf_line:
+            # Replace or add group-title to the extinf line
+            # If group-title exists, replace it; else add it
+            if 'group-title="' in extinf_line:
+                # Replace existing group-title value
+                extinf_line = re.sub(r'group-title="[^"]*"', f'group-title="{group_name}"', extinf_line)
+            else:
+                # Insert group-title before the last comma
+                parts = extinf_line.split(',', 1)
+                extinf_line = parts[0] + f' group-title="{group_name}",' + parts[1]
+            return extinf_line
+    return None
 
 def main():
     response = requests.get(SOURCE_URL)
@@ -26,10 +38,10 @@ def main():
         while i < len(lines):
             line = lines[i]
             if line.startswith('#EXTINF'):
-                extinf_line = line
+                new_extinf_line = get_group_title(line)
                 url_line = lines[i + 1] if i + 1 < len(lines) else ''
-                if country_allowed(extinf_line):
-                    f.write(extinf_line + '\n')
+                if new_extinf_line:
+                    f.write(new_extinf_line + '\n')
                     f.write(url_line + '\n')
                 i += 2
             else:
