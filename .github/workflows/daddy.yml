@@ -23,3 +23,18 @@ jobs:
 
       - name: Run update script
         run: python daddy.py
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes if any
+        run: |
+          git add daddylive.m3u8
+          git diff --cached --quiet || git commit -m "Update daddylive.m3u8 playlist"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
