@@ -2,7 +2,7 @@ name: Update DaddyLive Playlist
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # every 15 minutes
+    - cron: '*/15 * * * *'  # Every 15 minutes
   workflow_dispatch:
 
 jobs:
@@ -10,31 +10,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+    - name: Checkout repo
+      uses: actions/checkout@v3
 
-      - name: Set up Python 3.x
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
+    - name: Pull latest changes
+      run: git pull origin main
 
-      - name: Install dependencies
-        run: pip install requests
+    - name: Run update script
+      run: python daddy.py
 
-      - name: Run update script
-        run: python daddy.py
+    - name: Show playlist contents
+      run: cat DaddyLive.m3u8
 
-      - name: Configure git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+    - name: Check git status
+      run: git status
 
-      - name: Commit changes if any
-        run: |
-          git add DaddyLive.m3u8
-          git diff --cached --quiet || git commit -m "Update DaddyLive.m3u8 playlist"
+    - name: Show git diff
+      run: git diff
 
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Configure git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Commit changes if any
+      run: |
+        git add DaddyLive.m3u8
+        git diff --cached --quiet || git commit -m "Update DaddyLive.m3u8 playlist"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
