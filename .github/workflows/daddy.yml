@@ -13,8 +13,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Pull latest changes from master
-      run: git pull origin master
+    - name: Pull latest changes from master (rebase)
+      run: git pull --rebase origin master
 
     - name: Run update script
       run: python daddy.py
