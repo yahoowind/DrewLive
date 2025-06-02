@@ -22,7 +22,7 @@ jobs:
         run: pip install requests
 
       - name: Run update script
-        run: python daddy.py
+        run: python your_script_name.py
 
       - name: Configure git
         run: |
@@ -31,7 +31,7 @@ jobs:
 
       - name: Commit changes if any
         run: |
-          git add daddylive.m3u8
+          git add DaddyLive.m3u8
           git diff --cached --quiet || git commit -m "Update DaddyLive.m3u8 playlist"
 
       - name: Push changes
