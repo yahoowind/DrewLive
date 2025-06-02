@@ -15,13 +15,9 @@ OUTPUT_FILE = 'DaddyLive.m3u8'
 def get_group_title(extinf_line):
     for country, group_name in ALLOWED_COUNTRIES.items():
         if country in extinf_line:
-            # Replace or add group-title to the extinf line
-            # If group-title exists, replace it; else add it
             if 'group-title="' in extinf_line:
-                # Replace existing group-title value
                 extinf_line = re.sub(r'group-title="[^"]*"', f'group-title="{group_name}"', extinf_line)
             else:
-                # Insert group-title before the last comma
                 parts = extinf_line.split(',', 1)
                 extinf_line = parts[0] + f' group-title="{group_name}",' + parts[1]
             return extinf_line
@@ -33,7 +29,8 @@ def main():
     lines = response.text.splitlines()
 
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        f.write('#EXTM3U\n')
+        # Embed the EPG URL here
+        f.write('#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"\n')
         i = 0
         while i < len(lines):
             line = lines[i]
