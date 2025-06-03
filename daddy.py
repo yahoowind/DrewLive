@@ -37,32 +37,13 @@ def unwrap_url(url):
     query_params = urllib.parse.parse_qs(parsed.query)
     return query_params.get('url', [url])[0]
 
-
 def get_group_title(display_name, tv_ids):
-    upper_name = display_name.upper()
-
-    # Match full country names in display_name
+    # Check if any allowed country name is inside display name
     for country_name, group_title in ALLOWED_COUNTRIES.items():
-        if country_name in upper_name:
+        if country_name.lower() in display_name.lower():
             return group_title
-
-    # Fallback: use tv_ids to decide group based on known patterns
-    key = display_name.lower()
-    if key in tv_ids:
-        tvid = tv_ids[key].lower()
-        # Smart match using ID patterns (like tsn.ca, bbc.co.uk, etc.)
-        if '.ca' in tvid or 'canada' in tvid:
-            return ALLOWED_COUNTRIES['CANADA']
-        elif '.uk' in tvid or 'uk' in tvid or 'bbc' in tvid:
-            return ALLOWED_COUNTRIES['UNITED KINGDOM']
-        elif '.au' in tvid or 'australia' in tvid:
-            return ALLOWED_COUNTRIES['AUSTRALIA']
-        elif '.nz' in tvid or 'newzealand' in tvid:
-            return ALLOWED_COUNTRIES['NEW ZEALAND']
-        else:
-            return ALLOWED_COUNTRIES['UNITED STATES']
-
-    return None
+    # If it's in tvids but not assigned a country, skip it (don't assign USA by default)
+    return None  # Skip unknown or unmapped channels
 
 def update_extinf(line, display_name, tv_ids, logos):
     if ',' not in line:
