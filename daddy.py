@@ -38,13 +38,14 @@ def unwrap_url(url):
     return query_params.get('url', [url])[0]
 
 
-def replace_group_title(line):
+def extract_group_title(line):
     match = re.search(r'group-title="([^"]+)"', line)
-    if match:
-        current = match.group(1).strip().upper()
-        if current in ALLOWED_COUNTRIES:
-            new_group = ALLOWED_COUNTRIES[current]
-            line = re.sub(r'group-title="[^"]+"', f'group-title="{new_group}"', line)
+    return match.group(1).strip().upper() if match else None
+
+
+def replace_group_title(line, group_key):
+    if group_key in ALLOWED_COUNTRIES:
+        return re.sub(r'group-title="[^"]+"', f'group-title="{ALLOWED_COUNTRIES[group_key]}"', line)
     return line
 
 
@@ -79,28 +80,21 @@ def main():
 
     result = ['#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"']
     i = 0
-    count = 0
+    updated = 0
 
     while i < len(lines):
         line = lines[i]
         if line.startswith('#EXTINF') and (i + 1) < len(lines):
-            if ',' not in line:
-                result.append(line)
-                result.append(lines[i + 1])
-                i += 2
-                continue
-
             display_name = line.split(',', 1)[1].strip()
+            group_title = extract_group_title(line)
 
-            # Replace group-title only if it's an allowed country
-            line = replace_group_title(line)
-
-            # Update tvg-id and tvg-logo
-            line = update_extinf(line, display_name, tv_ids, logos)
+            if group_title in ALLOWED_COUNTRIES:
+                line = replace_group_title(line, group_title)
+                line = update_extinf(line, display_name, tv_ids, logos)
+                updated += 1
 
             result.append(line)
             result.append(unwrap_url(lines[i + 1].strip()))
-            count += 1
             i += 2
         else:
             result.append(line)
@@ -109,7 +103,7 @@ def main():
     with open(os.path.join(BASE_DIR, OUTPUT_FILE), 'w', encoding='utf-8') as f:
         f.write('\n'.join(result))
 
-    print(f"[+] Updated {count} channels with group, tvg-id, and logo. No deletions.")
+    print(f"[+] Updated {updated} channels from allowed groups. No channels deleted.")
 
 
 if __name__ == '__main__':
