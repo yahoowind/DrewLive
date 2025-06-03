@@ -39,18 +39,30 @@ def unwrap_url(url):
 
 
 def get_group_title(display_name, tv_ids):
-    # Use uppercase version to match exactly
-    upper_display = display_name.upper()
+    upper_name = display_name.upper()
 
-    for country, group in ALLOWED_COUNTRIES.items():
-        if country in upper_display:
-            return group
+    # Match full country names in display_name
+    for country_name, group_title in ALLOWED_COUNTRIES.items():
+        if country_name in upper_name:
+            return group_title
 
-    if display_name.lower() in tv_ids:
-        return ALLOWED_COUNTRIES['UNITED STATES']
+    # Fallback: use tv_ids to decide group based on known patterns
+    key = display_name.lower()
+    if key in tv_ids:
+        tvid = tv_ids[key].lower()
+        # Smart match using ID patterns (like tsn.ca, bbc.co.uk, etc.)
+        if '.ca' in tvid or 'canada' in tvid:
+            return ALLOWED_COUNTRIES['CANADA']
+        elif '.uk' in tvid or 'uk' in tvid or 'bbc' in tvid:
+            return ALLOWED_COUNTRIES['UNITED KINGDOM']
+        elif '.au' in tvid or 'australia' in tvid:
+            return ALLOWED_COUNTRIES['AUSTRALIA']
+        elif '.nz' in tvid or 'newzealand' in tvid:
+            return ALLOWED_COUNTRIES['NEW ZEALAND']
+        else:
+            return ALLOWED_COUNTRIES['UNITED STATES']
 
     return None
-
 
 def update_extinf(line, display_name, tv_ids, logos):
     if ',' not in line:
