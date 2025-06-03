@@ -39,16 +39,17 @@ def unwrap_url(url):
 
 
 def get_group_title(display_name, tv_ids):
-    # Priority 1: Check for exact uppercase country names
+    # Use uppercase version to match exactly
+    upper_display = display_name.upper()
+
     for country, group in ALLOWED_COUNTRIES.items():
-        if country in display_name:
+        if country in upper_display:
             return group
 
-    # Priority 2: If it's in tvids.txt but no country in name, assign USA
     if display_name.lower() in tv_ids:
         return ALLOWED_COUNTRIES['UNITED STATES']
 
-    return None  # Otherwise skip it
+    return None
 
 
 def update_extinf(line, display_name, tv_ids, logos):
