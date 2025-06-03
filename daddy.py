@@ -95,8 +95,13 @@ def main():
                 continue  # Skip this channel
 
             # Replace or add group-title
-            if 'group-title="' in line:
-                line = re.sub(r'group-title="[^"]*"', f'group-title="{group}"', line)
+            match = re.search(r'group-title="([^"]+)"', line, re.IGNORECASE)
+            if match:
+                current_group = match.group(1).strip().upper()
+                if current_group in ALLOWED_COUNTRIES:
+                    line = re.sub(r'group-title="[^"]+"', f'group-title="{ALLOWED_COUNTRIES[current_group]}"', line)
+                else:
+                    line = re.sub(r'group-title="[^"]+"', f'group-title="{group}"', line)
             else:
                 parts = line.split(',', 1)
                 line = parts[0] + f' group-title="{group}",' + parts[1]
