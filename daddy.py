@@ -13,7 +13,7 @@ ALLOWED_COUNTRIES = {
 
 SOURCE_URL = 'https://drewski2423-dproxy.hf.space/playlist/channels'
 OUTPUT_FILE = 'DaddyLive.m3u8'
-BASE_DIR = os.path.expanduser('~/Desktop/IPTV/Scripts')
+BASE_DIR = 'C:/Users/andre/Desktop/IPTV/Scripts'
 TVIDS_FILE = os.path.join(BASE_DIR, 'tvids.txt')
 LOGOS_FILE = os.path.join(BASE_DIR, 'logos.txt')
 
