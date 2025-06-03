@@ -41,10 +41,17 @@ def unwrap_url(url):
     return query_params.get('url', [url])[0]
 
 
-def get_group_title(line):
+def get_group_title(line, tv_ids):
     for country, group in ALLOWED_COUNTRIES.items():
         if country.lower() in line.lower():
             return group
+
+    # Check if display name is in TVIDs and assume USA if found
+    if ',' in line:
+        display_name = line.split(',', 1)[1].strip().lower()
+        if display_name in tv_ids:
+            return ALLOWED_COUNTRIES['UNITED STATES']
+
     return None
 
 
