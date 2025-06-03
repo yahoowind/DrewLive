@@ -15,7 +15,7 @@ SOURCE_URL = 'https://drewski2423-dproxy.hf.space/playlist/channels'
 OUTPUT_FILE = 'DaddyLive.m3u8'
 
 LOGOS_FILE = r'C:\Users\andre\Desktop\IPTV\Scripts\logos.txt'
-TVIDS_FILE = r'C:\Users\andre\Desktop\IPTV\Scripts\tvids.txt'
+TVIDS_FILE = r'C:\Users\andre\Desktop\IPTV\Scripts\tv-id.txt'
 
 
 def load_mapping(file_path):
