@@ -1,7 +1,7 @@
 import requests
 import re
 
-SOURCE_URL = 'http://drewlive24.duckdns.org:7860/playlist/events'
+SOURCE_URL = 'http://drewski2423-dproxy.hf.space/playlist/events'
 OUTPUT_FILE = 'DaddyLiveEvents.m3u8'
 EPG_URL = 'https://raw.githubusercontent.com/pigzillaaaaa/daddylive/refs/heads/main/epgs/daddylive-events-epg.xml'
 
