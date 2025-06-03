@@ -37,13 +37,14 @@ def unwrap_url(url):
     query_params = urllib.parse.parse_qs(parsed.query)
     return query_params.get('url', [url])[0]
 
-def get_group_title(display_name, tv_ids):
-    # Check if any allowed country name is inside display name
+
+def get_group_title(line, display_name):
+    search_space = f"{line} {display_name}".lower()
     for country_name, group_title in ALLOWED_COUNTRIES.items():
-        if country_name.lower() in display_name.lower():
+        if country_name.lower() in search_space:
             return group_title
-    # If it's in tvids but not assigned a country, skip it (don't assign USA by default)
-    return None  # Skip unknown or unmapped channels
+    return None
+
 
 def update_extinf(line, display_name, tv_ids, logos):
     if ',' not in line:
@@ -88,12 +89,12 @@ def main():
                 continue
 
             display_name = line.split(',', 1)[1].strip()
-            group = get_group_title(display_name, tv_ids)
+            group = get_group_title(line, display_name)
             if not group:
                 i += 2
                 continue  # Skip this channel
 
-            # Update group-title
+            # Replace or add group-title
             if 'group-title="' in line:
                 line = re.sub(r'group-title="[^"]*"', f'group-title="{group}"', line)
             else:
