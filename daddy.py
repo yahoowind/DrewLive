@@ -38,28 +38,28 @@ def unwrap_url(url):
     return query_params.get('url', [url])[0]
 
 
-def detect_country_group(text):
-    text_upper = text.upper()
-    for country_name, group_title in ALLOWED_COUNTRIES.items():
-        if country_name in text_upper:
-            return group_title
-    return None
+def replace_group_title(line):
+    match = re.search(r'group-title="([^"]+)"', line)
+    if match:
+        current = match.group(1).strip().upper()
+        if current in ALLOWED_COUNTRIES:
+            new_group = ALLOWED_COUNTRIES[current]
+            line = re.sub(r'group-title="[^"]+"', f'group-title="{new_group}"', line)
+    return line
 
 
 def update_extinf(line, display_name, tv_ids, logos):
-    if ',' not in line:
-        return line
     prefix = line.split(',', 1)[0]
     key = display_name.strip().lower()
 
-    # Update tvg-id
+    # tvg-id
     if key in tv_ids:
         if 'tvg-id="' in prefix:
             prefix = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{tv_ids[key]}"', prefix)
         else:
             prefix += f' tvg-id="{tv_ids[key]}"'
 
-    # Update tvg-logo
+    # tvg-logo
     if key in logos:
         if 'tvg-logo="' in prefix:
             prefix = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logos[key]}"', prefix)
@@ -85,51 +85,31 @@ def main():
         line = lines[i]
         if line.startswith('#EXTINF') and (i + 1) < len(lines):
             if ',' not in line:
+                result.append(line)
+                result.append(lines[i + 1])
                 i += 2
                 continue
 
             display_name = line.split(',', 1)[1].strip()
-            combined_text = line + ' ' + display_name
 
-            group = detect_country_group(combined_text)
-            if not group:
-                i += 2
-                continue  # skip channel if no country match
-
-            # Check if line already has group-title
-            if 'group-title="' in line:
-                current_group_match = re.search(r'group-title="([^"]+)"', line)
-                if current_group_match:
-                    current_group_val = current_group_match.group(1).strip()
-                    # Replace group-title only if it's a country or different from desired group
-                    if current_group_val.upper() in ALLOWED_COUNTRIES or current_group_val != group:
-                        line = re.sub(r'group-title="[^"]*"', f'group-title="{group}"', line)
-                else:
-                    # Weird case: group-title= exists but no value found, add it
-                    parts = line.split(',', 1)
-                    line = parts[0] + f' group-title="{group}",' + parts[1]
-            else:
-                # Add group-title if missing
-                parts = line.split(',', 1)
-                line = parts[0] + f' group-title="{group}",' + parts[1]
+            # Replace group-title only if it's an allowed country
+            line = replace_group_title(line)
 
             # Update tvg-id and tvg-logo
             line = update_extinf(line, display_name, tv_ids, logos)
 
-            stream_url = unwrap_url(lines[i + 1].strip())
             result.append(line)
-            result.append(stream_url)
-
+            result.append(unwrap_url(lines[i + 1].strip()))
             count += 1
             i += 2
         else:
+            result.append(line)
             i += 1
 
-    output_path = os.path.join(BASE_DIR, OUTPUT_FILE)
-    with open(output_path, 'w', encoding='utf-8') as f:
+    with open(os.path.join(BASE_DIR, OUTPUT_FILE), 'w', encoding='utf-8') as f:
         f.write('\n'.join(result))
 
-    print(f"[+] Processed and wrote {count} channels to {OUTPUT_FILE}")
+    print(f"[+] Updated {count} channels with group, tvg-id, and logo. No deletions.")
 
 
 if __name__ == '__main__':
