@@ -38,10 +38,10 @@ def unwrap_url(url):
     return query_params.get('url', [url])[0]
 
 
-def get_group_title(line, display_name):
-    search_space = f"{line} {display_name}".lower()
+def get_group_title(text):
+    text_lower = text.lower()
     for country_name, group_title in ALLOWED_COUNTRIES.items():
-        if country_name.lower() in search_space:
+        if country_name.lower() in text_lower:
             return group_title
     return None
 
@@ -89,20 +89,33 @@ def main():
                 continue
 
             display_name = line.split(',', 1)[1].strip()
-            group = get_group_title(line, display_name)
-            if not group:
-                i += 2
-                continue  # Skip this channel
 
-            # Replace or add group-title
-            match = re.search(r'group-title="([^"]+)"', line, re.IGNORECASE)
-            if match:
-                current_group = match.group(1).strip().upper()
-                if current_group in ALLOWED_COUNTRIES:
-                    line = re.sub(r'group-title="[^"]+"', f'group-title="{ALLOWED_COUNTRIES[current_group]}"', line)
+            # Detect desired group title based on line + display_name
+            group = get_group_title(line + ' ' + display_name)
+            if not group:
+                # No allowed country found, skip channel
+                i += 2
+                continue
+
+            # Check if group-title exists
+            if 'group-title="' in line:
+                # Extract current group-title value
+                current_group = re.search(r'group-title="([^"]+)"', line)
+                if current_group:
+                    current_group_val = current_group.group(1).strip().upper()
+                    # If the current group-title is a country name (matches any key), replace with DaddyLive group
+                    if current_group_val in ALLOWED_COUNTRIES:
+                        # Replace group-title with mapped DaddyLive group
+                        line = re.sub(r'group-title="[^"]+"', f'group-title="{group}"', line)
+                    else:
+                        # Current group-title exists but isn't a country name, replace anyway to follow protocol
+                        line = re.sub(r'group-title="[^"]+"', f'group-title="{group}"', line)
                 else:
-                    line = re.sub(r'group-title="[^"]+"', f'group-title="{group}"', line)
+                    # group-title= exists but not matched? Just add it properly
+                    parts = line.split(',', 1)
+                    line = parts[0] + f' group-title="{group}",' + parts[1]
             else:
+                # No group-title, so add it
                 parts = line.split(',', 1)
                 line = parts[0] + f' group-title="{group}",' + parts[1]
 
