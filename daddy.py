@@ -41,17 +41,19 @@ def unwrap_url(url):
     return query_params.get('url', [url])[0]
 
 
-group = get_group_title(line, tv_ids)
-for country, group in ALLOWED_COUNTRIES.items():
+def get_group_title(line, tv_ids):
+    # Check if the line contains a country in allowed list
+    for country, group in ALLOWED_COUNTRIES.items():
         if country.lower() in line.lower():
             return group
 
-    # Check if display name is in TVIDs and assume USA if found
+    # If no country found, check if display name matches a TV ID, assign USA if yes
     if ',' in line:
         display_name = line.split(',', 1)[1].strip().lower()
         if display_name in tv_ids:
             return ALLOWED_COUNTRIES['UNITED STATES']
 
+    # Otherwise, no group
     return None
 
 
@@ -92,9 +94,9 @@ def main():
     while i < len(lines):
         line = lines[i]
         if line.startswith('#EXTINF'):
-            group = get_group_title(line)
+            group = get_group_title(line, tv_ids)
             if not group:
-                i += 2  # Skip the channel and its stream
+                i += 2  # Skip the channel and its stream URL
                 continue
 
             # Apply or update group-title
@@ -118,6 +120,7 @@ def main():
         f.write('\n'.join(result))
 
     print(f"[+] {len(result)//2} channels written to {OUTPUT_FILE}")
+
 
 if __name__ == '__main__':
     main()
