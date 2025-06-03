@@ -38,23 +38,18 @@ def unwrap_url(url):
     return query_params.get('url', [url])[0]
 
 
-def get_group_title(display_name, tv_ids):
-    # Check if any allowed country name is inside display name
+def get_group_title(display_name):
     for country_name, group_title in ALLOWED_COUNTRIES.items():
         if country_name.lower() in display_name.lower():
             return group_title
-    # If display name is in tv_ids, assign USA group by default
-    if display_name.lower() in tv_ids:
-        return ALLOWED_COUNTRIES['UNITED STATES']
-    # Otherwise None - skip channel
-    return None
+    return "DaddyLive General"  # fallback group
 
 
-def update_extinf(line, tv_ids, logos):
+def update_extinf(line, display_name, tv_ids, logos):
     if ',' not in line:
         return line
-    prefix, display_name = line.split(',', 1)
-    key = display_name.strip().lower()
+    prefix = line.split(',', 1)[0]
+    key = display_name.lower()
 
     # Update tvg-id
     if key in tv_ids:
@@ -88,28 +83,23 @@ def main():
     while i < len(lines):
         line = lines[i]
         if line.startswith('#EXTINF'):
-            # Get display name part after comma
-            if ',' not in line:
+            if ',' not in line or (i + 1) >= len(lines):
                 i += 2
                 continue
+
             display_name = line.split(',', 1)[1].strip()
+            group = get_group_title(display_name)
 
-            group = get_group_title(display_name, tv_ids)
-            if not group:
-                i += 2  # skip this channel + URL
-                continue
-
-            # Update or add group-title
+            # Add or update group-title
             if 'group-title="' in line:
                 line = re.sub(r'group-title="[^"]*"', f'group-title="{group}"', line)
             else:
                 parts = line.split(',', 1)
                 line = parts[0] + f' group-title="{group}",' + parts[1]
 
-            # Update tvg-id and tvg-logo
-            line = update_extinf(line, tv_ids, logos)
+            # Update tvg-id and logo if available
+            line = update_extinf(line, display_name, tv_ids, logos)
 
-            # Unwrap URL
             stream_url = unwrap_url(lines[i + 1].strip())
             result.append(line)
             result.append(stream_url)
