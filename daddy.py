@@ -43,10 +43,8 @@ def extract_group_title(line):
     return match.group(1).strip().upper() if match else None
 
 
-def replace_group_title(line, group_key):
-    if group_key in ALLOWED_COUNTRIES:
-        return re.sub(r'group-title="[^"]+"', f'group-title="{ALLOWED_COUNTRIES[group_key]}"', line)
-    return line
+def replace_group_title(line, old_group):
+    return re.sub(r'group-title="[^"]+"', f'group-title="{ALLOWED_COUNTRIES[old_group]}"', line)
 
 
 def update_extinf(line, display_name, tv_ids, logos):
@@ -80,7 +78,7 @@ def main():
 
     result = ['#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"']
     i = 0
-    updated = 0
+    kept = 0
 
     while i < len(lines):
         line = lines[i]
@@ -88,22 +86,26 @@ def main():
             display_name = line.split(',', 1)[1].strip()
             group_title = extract_group_title(line)
 
-            if group_title in ALLOWED_COUNTRIES:
-                line = replace_group_title(line, group_title)
-                line = update_extinf(line, display_name, tv_ids, logos)
-                updated += 1
+            if group_title and group_title.upper() in ALLOWED_COUNTRIES:
+                # Rename group-title
+                line = replace_group_title(line, group_title.upper())
 
-            result.append(line)
-            result.append(unwrap_url(lines[i + 1].strip()))
+                # Update tvg-id and logo
+                line = update_extinf(line, display_name, tv_ids, logos)
+
+                # Append only matching entries
+                result.append(line)
+                result.append(unwrap_url(lines[i + 1].strip()))
+                kept += 1
+
             i += 2
         else:
-            result.append(line)
-            i += 1
+            i += 1  # Skip non-EXTINF lines
 
     with open(os.path.join(BASE_DIR, OUTPUT_FILE), 'w', encoding='utf-8') as f:
         f.write('\n'.join(result))
 
-    print(f"[+] Updated {updated} channels from allowed groups. No channels deleted.")
+    print(f"[+] Wrote {kept} channels (only from allowed groups) to {OUTPUT_FILE}")
 
 
 if __name__ == '__main__':
