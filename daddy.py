@@ -38,10 +38,10 @@ def unwrap_url(url):
     return query_params.get('url', [url])[0]
 
 
-def get_group_title(text):
-    text_lower = text.lower()
+def detect_country_group(text):
+    text_upper = text.upper()
     for country_name, group_title in ALLOWED_COUNTRIES.items():
-        if country_name.lower() in text_lower:
+        if country_name in text_upper:
             return group_title
     return None
 
@@ -89,37 +89,31 @@ def main():
                 continue
 
             display_name = line.split(',', 1)[1].strip()
+            combined_text = line + ' ' + display_name
 
-            # Detect desired group title based on line + display_name
-            group = get_group_title(line + ' ' + display_name)
+            group = detect_country_group(combined_text)
             if not group:
-                # No allowed country found, skip channel
                 i += 2
-                continue
+                continue  # skip channel if no country match
 
-            # Check if group-title exists
+            # Check if line already has group-title
             if 'group-title="' in line:
-                # Extract current group-title value
-                current_group = re.search(r'group-title="([^"]+)"', line)
-                if current_group:
-                    current_group_val = current_group.group(1).strip().upper()
-                    # If the current group-title is a country name (matches any key), replace with DaddyLive group
-                    if current_group_val in ALLOWED_COUNTRIES:
-                        # Replace group-title with mapped DaddyLive group
-                        line = re.sub(r'group-title="[^"]+"', f'group-title="{group}"', line)
-                    else:
-                        # Current group-title exists but isn't a country name, replace anyway to follow protocol
-                        line = re.sub(r'group-title="[^"]+"', f'group-title="{group}"', line)
+                current_group_match = re.search(r'group-title="([^"]+)"', line)
+                if current_group_match:
+                    current_group_val = current_group_match.group(1).strip()
+                    # Replace group-title only if it's a country or different from desired group
+                    if current_group_val.upper() in ALLOWED_COUNTRIES or current_group_val != group:
+                        line = re.sub(r'group-title="[^"]*"', f'group-title="{group}"', line)
                 else:
-                    # group-title= exists but not matched? Just add it properly
+                    # Weird case: group-title= exists but no value found, add it
                     parts = line.split(',', 1)
                     line = parts[0] + f' group-title="{group}",' + parts[1]
             else:
-                # No group-title, so add it
+                # Add group-title if missing
                 parts = line.split(',', 1)
                 line = parts[0] + f' group-title="{group}",' + parts[1]
 
-            # Apply tvg-id and logo
+            # Update tvg-id and tvg-logo
             line = update_extinf(line, display_name, tv_ids, logos)
 
             stream_url = unwrap_url(lines[i + 1].strip())
@@ -131,7 +125,8 @@ def main():
         else:
             i += 1
 
-    with open(os.path.join(BASE_DIR, OUTPUT_FILE), 'w', encoding='utf-8') as f:
+    output_path = os.path.join(BASE_DIR, OUTPUT_FILE)
+    with open(output_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(result))
 
     print(f"[+] Processed and wrote {count} channels to {OUTPUT_FILE}")
