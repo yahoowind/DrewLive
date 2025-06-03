@@ -2,8 +2,8 @@ name: Update DaddyLive Playlist
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Every 15 minutes
-  workflow_dispatch:       # Allow manual trigger
+    - cron: '*/15 * * * *'  # every 15 minutes
+  workflow_dispatch:
 
 jobs:
   update-playlist:
@@ -12,9 +12,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          ref: main
-          fetch-depth: 0  # Full history for pull/rebase
+
+      - name: Pull latest changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main || echo "No remote changes"
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -29,24 +32,18 @@ jobs:
       - name: Run update script
         run: python daddy.py
 
-      - name: Configure Git user
+      - name: Show updated playlist file
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          echo "===== DaddyLive.m3u8 content ====="
+          cat DaddyLive.m3u8
+          echo "================================="
 
-      - name: Pull remote changes and rebase
+      - name: Commit and push if changes
         run: |
-          git pull --rebase origin main || echo "No remote changes"
-
-      - name: Add changes
-        run: git add DaddyLive.m3u8
-
-      - name: Commit changes if any
-        run: |
-          git diff --cached --quiet || git commit -m "Auto update DaddyLive playlist"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          git add DaddyLive.m3u8
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto update DaddyLive playlist"
+            git push origin main
+          fi
