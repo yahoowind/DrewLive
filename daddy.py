@@ -10,7 +10,7 @@ ALLOWED_COUNTRIES = {
     'NEW ZEALAND': 'DaddyLive NZ'
 }
 
-SOURCE_URL = 'http://drewlive24.duckdns.org:7860/playlist/channels'
+SOURCE_URL = 'https://drewski2423-dproxy.hf.space/playlist/channels'
 OUTPUT_FILE = 'DaddyLive.m3u8'
 
 
