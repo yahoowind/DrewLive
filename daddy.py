@@ -41,8 +41,8 @@ def unwrap_url(url):
     return query_params.get('url', [url])[0]
 
 
-def get_group_title(line, tv_ids):
-    for country, group in ALLOWED_COUNTRIES.items():
+group = get_group_title(line, tv_ids)
+for country, group in ALLOWED_COUNTRIES.items():
         if country.lower() in line.lower():
             return group
 
@@ -118,7 +118,6 @@ def main():
         f.write('\n'.join(result))
 
     print(f"[+] {len(result)//2} channels written to {OUTPUT_FILE}")
-
 
 if __name__ == '__main__':
     main()
