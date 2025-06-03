@@ -14,6 +14,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: main
+          fetch-depth: 0  # Full history for pull/rebase
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -28,16 +29,21 @@ jobs:
       - name: Run update script
         run: python daddy.py
 
-      - name: Commit updated playlist
+      - name: Configure Git user
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add DaddyLive.m3u8
-          git commit -m "Auto update DaddyLive playlist" || echo "No changes to commit"
 
       - name: Pull remote changes and rebase
         run: |
           git pull --rebase origin main || echo "No remote changes"
+
+      - name: Add changes
+        run: git add DaddyLive.m3u8
+
+      - name: Commit changes if any
+        run: |
+          git diff --cached --quiet || git commit -m "Auto update DaddyLive playlist"
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
