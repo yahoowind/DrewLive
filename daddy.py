@@ -3,6 +3,7 @@ import re
 import urllib.parse
 import os
 
+# Only keep channels from these countries
 ALLOWED_COUNTRIES = {
     'UNITED STATES': 'DaddyLive USA',
     'UNITED KINGDOM': 'DaddyLive UK',
@@ -13,13 +14,19 @@ ALLOWED_COUNTRIES = {
 
 SOURCE_URL = 'https://drewski2423-dproxy.hf.space/playlist/channels'
 OUTPUT_FILE = 'DaddyLive.m3u8'
-BASE_DIR = 'C:/Users/andre/Desktop/IPTV/Scripts'
+
+# Automatically find paths no matter where it's run from
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TVIDS_FILE = os.path.join(BASE_DIR, 'tvids.txt')
 LOGOS_FILE = os.path.join(BASE_DIR, 'logos.txt')
 
 
 def load_mapping(file_path):
     mapping = {}
+    if not os.path.exists(file_path):
+        print(f"Warning: {file_path} not found.")
+        return mapping
+
     with open(file_path, 'r', encoding='utf-8') as f:
         for line in f:
             if '|' in line:
@@ -47,13 +54,15 @@ def update_extinf(line, tv_ids, logos):
     prefix, display_name = line.split(',', 1)
     key = display_name.strip().lower()
 
-    if tv_ids.get(key):
+    # Apply tvg-id
+    if key in tv_ids:
         if 'tvg-id="' in prefix:
             prefix = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{tv_ids[key]}"', prefix)
         else:
             prefix += f' tvg-id="{tv_ids[key]}"'
 
-    if logos.get(key):
+    # Apply tvg-logo
+    if key in logos:
         if 'tvg-logo="' in prefix:
             prefix = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logos[key]}"', prefix)
         else:
@@ -72,22 +81,23 @@ def main():
 
     result = ['#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"']
     i = 0
+
     while i < len(lines):
         line = lines[i]
         if line.startswith('#EXTINF'):
             group = get_group_title(line)
             if not group:
-                i += 2  # skip line and URL
+                i += 2  # Skip the channel and its stream
                 continue
 
-            # Apply group-title
+            # Apply or update group-title
             if 'group-title="' in line:
                 line = re.sub(r'group-title="[^"]*"', f'group-title="{group}"', line)
             else:
                 parts = line.split(',', 1)
                 line = parts[0] + f' group-title="{group}",' + parts[1]
 
-            # Update tvg-id and tvg-logo
+            # Apply TV metadata
             line = update_extinf(line, tv_ids, logos)
 
             stream_url = unwrap_url(lines[i + 1].strip())
@@ -97,8 +107,10 @@ def main():
         else:
             i += 1
 
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+    with open(os.path.join(BASE_DIR, OUTPUT_FILE), 'w', encoding='utf-8') as f:
         f.write('\n'.join(result))
+
+    print(f"[+] {len(result)//2} channels written to {OUTPUT_FILE}")
 
 
 if __name__ == '__main__':
