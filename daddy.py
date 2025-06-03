@@ -1,10 +1,86 @@
+import requests
+import re
+import urllib.parse
+import os
+
+ALLOWED_COUNTRIES = {
+    'UNITED STATES': 'DaddyLive USA',
+    'UNITED KINGDOM': 'DaddyLive UK',
+    'CANADA': 'DaddyLive CA',
+    'AUSTRALIA': 'DaddyLive AU',
+    'NEW ZEALAND': 'DaddyLive NZ'
+}
+
+SOURCE_URL = 'https://drewski2423-dproxy.hf.space/playlist/channels'
+OUTPUT_FILE = 'DaddyLive.m3u8'
+
+# Use relative paths inside GitHub (adjust if running locally)
+TVIDS_FILE = 'Scripts/tvids.txt'
+LOGOS_FILE = 'Scripts/logos.txt'
+
+
+def load_mapping(file_path):
+    mapping = {}
+    if not os.path.exists(file_path):
+        print(f"[Warning] {file_path} not found.")
+        return mapping
+    with open(file_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            if '|' in line:
+                name, val = line.strip().split('|', 1)
+                mapping[name.strip().lower()] = val.strip()
+    print(f"[Info] Loaded {len(mapping)} entries from {file_path}")
+    return mapping
+
+
+def unwrap_url(url):
+    parsed = urllib.parse.urlparse(url)
+    query_params = urllib.parse.parse_qs(parsed.query)
+    return query_params.get('url', [url])[0]
+
+
+def get_group_title(display_name, tv_ids):
+    for country_name, group_title in ALLOWED_COUNTRIES.items():
+        if country_name.lower() in display_name.lower():
+            return group_title
+    if display_name.lower() in tv_ids:
+        return ALLOWED_COUNTRIES['UNITED STATES']
+    return None
+
+
+def update_extinf(line, tv_ids, logos):
+    if ',' not in line:
+        return line
+    prefix, display_name = line.split(',', 1)
+    key = display_name.strip().lower()
+
+    if key in tv_ids:
+        if 'tvg-id="' in prefix:
+            prefix = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{tv_ids[key]}"', prefix)
+        else:
+            prefix += f' tvg-id="{tv_ids[key]}"'
+
+    if key in logos:
+        if 'tvg-logo="' in prefix:
+            prefix = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logos[key]}"', prefix)
+        else:
+            prefix += f' tvg-logo="{logos[key]}"'
+
+    return f'{prefix},{display_name}'
+
+
 def main():
+    print("[Start] DaddyLive processing started.")
     tv_ids = load_mapping(TVIDS_FILE)
     logos = load_mapping(LOGOS_FILE)
-    print(f"[DEBUG] Loaded {len(tv_ids)} tv_ids and {len(logos)} logos")
 
-    response = requests.get(SOURCE_URL)
-    response.raise_for_status()
+    try:
+        response = requests.get(SOURCE_URL)
+        response.raise_for_status()
+    except Exception as e:
+        print(f"[Error] Failed to download source playlist: {e}")
+        return
+
     lines = response.text.splitlines()
 
     result = ['#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"']
@@ -32,6 +108,7 @@ def main():
 
             line = update_extinf(line, tv_ids, logos)
             stream_url = unwrap_url(lines[i + 1].strip())
+
             result.append(line)
             result.append(stream_url)
 
@@ -40,11 +117,11 @@ def main():
         else:
             i += 1
 
-    print("[DEBUG] First 5 lines of updated playlist:")
-    for l in result[:5]:
-        print(l)
-
-    with open(os.path.join(BASE_DIR, OUTPUT_FILE), 'w', encoding='utf-8') as f:
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write('\n'.join(result))
 
-    print(f"[+] Processed and wrote {count} channels to {OUTPUT_FILE}")
+    print(f"[Done] Processed and wrote {count} channels to {OUTPUT_FILE}")
+
+
+if __name__ == '__main__':
+    main()
