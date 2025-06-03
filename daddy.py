@@ -38,18 +38,22 @@ def unwrap_url(url):
     return query_params.get('url', [url])[0]
 
 
-def get_group_title(display_name):
-    for country_name, group_title in ALLOWED_COUNTRIES.items():
-        if country_name.lower() in display_name.lower():
-            return group_title
-    return "DaddyLive General"  # fallback group
+def get_group_title(display_name, tv_ids):
+    lower_name = display_name.lower()
+
+    for country, group in ALLOWED_COUNTRIES.items():
+        if country.lower() in lower_name:
+            return group
+    if lower_name in tv_ids:
+        return ALLOWED_COUNTRIES['UNITED STATES']
+    return None  # Skip
 
 
 def update_extinf(line, display_name, tv_ids, logos):
     if ',' not in line:
         return line
     prefix = line.split(',', 1)[0]
-    key = display_name.lower()
+    key = display_name.strip().lower()
 
     # Update tvg-id
     if key in tv_ids:
@@ -82,22 +86,25 @@ def main():
 
     while i < len(lines):
         line = lines[i]
-        if line.startswith('#EXTINF'):
-            if ',' not in line or (i + 1) >= len(lines):
+        if line.startswith('#EXTINF') and (i + 1) < len(lines):
+            if ',' not in line:
                 i += 2
                 continue
 
             display_name = line.split(',', 1)[1].strip()
-            group = get_group_title(display_name)
+            group = get_group_title(display_name, tv_ids)
+            if not group:
+                i += 2
+                continue  # Skip this channel
 
-            # Add or update group-title
+            # Update group-title
             if 'group-title="' in line:
                 line = re.sub(r'group-title="[^"]*"', f'group-title="{group}"', line)
             else:
                 parts = line.split(',', 1)
                 line = parts[0] + f' group-title="{group}",' + parts[1]
 
-            # Update tvg-id and logo if available
+            # Apply tvg-id and logo
             line = update_extinf(line, display_name, tv_ids, logos)
 
             stream_url = unwrap_url(lines[i + 1].strip())
