@@ -16,7 +16,7 @@ OUTPUT_FILE = 'DaddyLive.m3u8'
 
 # Load metadata maps
 SCRIPT_DIR = r'C:\Users\andre\Desktop\IPTV\Scripts'
-TV_ID_FILE = os.path.join(SCRIPT_DIR, 'tv-ids.txt')
+TV_ID_FILE = os.path.join(SCRIPT_DIR, 'tvids.txt')
 LOGO_FILE = os.path.join(SCRIPT_DIR, 'logos.txt')
 
 def load_metadata(filepath):
