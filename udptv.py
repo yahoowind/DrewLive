@@ -15,6 +15,9 @@ REMOVE_PHRASE = (
 
 FORCED_GROUP_TITLE = "UDPTV Live Streams"  # your permanent group name here
 
+DUCKDNS_HOST = "yourname.duckdns.org"  # <-- Replace this with your actual DuckDNS domain
+CUSTOM_LOGO_DOMAIN = "logo.udptv.live"  # example domain to protect your logos from being changed
+
 def fetch_m3u(url):
     r = requests.get(url)
     r.raise_for_status()
@@ -24,7 +27,13 @@ def clean_lines(lines):
     cleaned = []
     for line in lines:
         line = line.strip()
-        if not line or line.startswith("#EXTM3U") or 'url-tvg=' in line or line == REMOVE_PHRASE:
+        if (
+            not line
+            or line.startswith("#EXTM3U")
+            or 'url-tvg=' in line
+            or REMOVE_PHRASE in line
+            or DUCKDNS_HOST in line   # Remove lines containing your DuckDNS domain
+        ):
             continue
         cleaned.append(line)
     return cleaned
@@ -34,6 +43,9 @@ def parse_m3u(lines):
     last_extinf = None
     for line in lines:
         if line.startswith("#EXTINF"):
+            if DUCKDNS_HOST in line:  # Skip any #EXTINF with your DuckDNS domain
+                last_extinf = None
+                continue
             last_extinf = line
         elif line.startswith("#"):
             continue
@@ -51,11 +63,11 @@ def parse_m3u(lines):
     return result
 
 def force_group_title(meta, forced_group=FORCED_GROUP_TITLE):
-    # Replace existing group-title or add it before channel name
+    if CUSTOM_LOGO_DOMAIN in meta:
+        return meta  # preserve custom logos, don’t overwrite group title there
     if 'group-title="' in meta:
         meta = re.sub(r'group-title="[^"]*"', f'group-title="{forced_group}"', meta)
     else:
-        # Insert group-title before the last comma (before channel name)
         meta = re.sub(r'(,)', f' group-title="{forced_group}",', meta, count=1)
     return meta
 
