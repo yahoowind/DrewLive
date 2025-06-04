@@ -13,6 +13,8 @@ REMOVE_PHRASE = (
     "AN UPDATED PLAYLIST: https://discord.gg/civ3"
 )
 
+FORCED_GROUP_TITLE = "UDPTV Live Streams"  # your permanent group name here
+
 def fetch_m3u(url):
     r = requests.get(url)
     r.raise_for_status()
@@ -22,65 +24,62 @@ def clean_lines(lines):
     cleaned = []
     for line in lines:
         line = line.strip()
-        # Remove empty lines, #EXTM3U header, url-tvg lines, and the remove phrase line
         if not line or line.startswith("#EXTM3U") or 'url-tvg=' in line or line == REMOVE_PHRASE:
             continue
         cleaned.append(line)
     return cleaned
 
 def parse_m3u(lines):
-    """
-    Parse the M3U lines into OrderedDict keyed by tvg-id if exists,
-    else by full #EXTINF line. Each value is (metadata line, url line).
-    """
     result = OrderedDict()
     last_extinf = None
     for line in lines:
         if line.startswith("#EXTINF"):
             last_extinf = line
         elif line.startswith("#"):
-            # skip any other tags between extinf/url pairs
             continue
         else:
             if last_extinf:
                 key = None
-                # Use tvg-id as unique key if present, else whole EXTINF line as key
+                # Use tvg-id as key if present, else fallback to channel name in EXTINF
                 if 'tvg-id="' in last_extinf:
                     key = last_extinf.split('tvg-id="')[1].split('"')[0].strip()
-                key = key or last_extinf
+                else:
+                    # fallback: extract channel name after comma
+                    key = last_extinf.split(",")[-1].strip()
                 result[key] = (last_extinf, line)
                 last_extinf = None
     return result
 
-def channel_name_from_extinf(extinf_line):
-    """
-    Extract channel display name from the #EXTINF line:
-    It's the part after the last comma.
-    """
-    return extinf_line.split(",")[-1].strip().lower()
+def force_group_title(meta, forced_group=FORCED_GROUP_TITLE):
+    # Replace existing group-title or add it before channel name
+    if 'group-title="' in meta:
+        meta = re.sub(r'group-title="[^"]*"', f'group-title="{forced_group}"', meta)
+    else:
+        # Insert group-title before the last comma (before channel name)
+        meta = re.sub(r'(,)', f' group-title="{forced_group}",', meta, count=1)
+    return meta
 
 def merge_playlists(template_dict, upstream_dict):
     merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
     processed_keys = set()
-    combined_items = []
 
-    # First add/merge template entries, prefer upstream URL if different
+    # First output all channels from template in their order
     for key, (meta, url) in template_dict.items():
         upstream_url = upstream_dict.get(key, (None, None))[1]
         final_url = upstream_url if upstream_url and upstream_url != url else url
-        combined_items.append((meta, final_url))
+        final_meta = force_group_title(meta)
+        merged.append(final_meta)
+        merged.append(final_url)
         processed_keys.add(key)
 
-    # Add upstream entries not in template
-    for key, (meta, url) in upstream_dict.items():
-        if key not in processed_keys:
-            combined_items.append((meta, url))
+    # Add any new upstream channels not in template, sorted alphabetically by channel name (key)
+    new_channels = [
+        (key, force_group_title(meta), url)
+        for key, (meta, url) in upstream_dict.items() if key not in processed_keys
+    ]
+    new_channels.sort(key=lambda x: x[0].lower())  # sort by key (channel name)
 
-    # Sort by channel name (from #EXTINF line)
-    combined_items.sort(key=lambda x: channel_name_from_extinf(x[0]))
-
-    # Add to merged list
-    for meta, url in combined_items:
+    for key, meta, url in new_channels:
         merged.append(meta)
         merged.append(url)
 
