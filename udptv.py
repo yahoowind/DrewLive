@@ -13,24 +13,15 @@ REMOVE_PHRASE = (
 )
 
 def fetch_m3u(url):
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.text.splitlines()
-    except requests.RequestException as e:
-        print(f"Failed to fetch M3U from {url}: {e}")
-        return []
+    r = requests.get(url)
+    r.raise_for_status()
+    return r.text.splitlines()
 
 def clean_lines(lines):
     cleaned = []
     for line in lines:
         line = line.strip()
-        if (
-            not line
-            or line.startswith("#EXTM3U")
-            or "url-tvg=" in line
-            or line == REMOVE_PHRASE
-        ):
+        if not line or line == REMOVE_PHRASE:
             continue
         cleaned.append(line)
     return cleaned
@@ -45,35 +36,30 @@ def parse_m3u(lines):
             continue
         else:
             if last_extinf:
-                key = None
-                if 'tvg-id="' in last_extinf:
-                    key = last_extinf.split('tvg-id="')[1].split('"')[0].strip()
-                if not key:
-                    key = last_extinf.strip()
-                result[key] = (last_extinf, line.strip())
+                # Preserve full EXTINF line to keep group-title, etc.
+                result[last_extinf] = (last_extinf, line)
                 last_extinf = None
     return result
 
 def replace_url_base(url):
-    """If any URL base transformation is needed, handle it here."""
-    return url  # Modify this if you want to reroute or rewrite base URLs
+    # Customize this if you want to rewrite URLs (optional)
+    return url
 
 def merge_playlists(template_dict, upstream_dict):
     merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
-    processed_keys = set()
+    seen = set()
 
-    for key, (meta, url) in template_dict.items():
-        upstream_url = upstream_dict.get(key, (None, None))[1]
-        final_url = upstream_url if upstream_url and upstream_url != url else url
+    for meta, (extinf, url) in template_dict.items():
+        final_url = upstream_dict.get(meta, (None, None))[1] or url
         final_url = replace_url_base(final_url)
-        merged.append(meta)
+        merged.append(extinf)
         merged.append(final_url)
-        processed_keys.add(key)
+        seen.add(meta)
 
-    for key, (meta, url) in upstream_dict.items():
-        if key not in processed_keys:
+    for meta, (extinf, url) in upstream_dict.items():
+        if meta not in seen:
             final_url = replace_url_base(url)
-            merged.append(meta)
+            merged.append(extinf)
             merged.append(final_url)
 
     return merged
@@ -89,7 +75,6 @@ def main():
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(merged_playlist))
-    print(f"Merged playlist written to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
