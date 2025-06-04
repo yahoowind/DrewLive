@@ -1,9 +1,9 @@
 import requests
 from collections import OrderedDict
+from urllib.parse import urlparse
 
-# --- Configuration ---
 TEMPLATE_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
-UPSTREAM_URL = "https://cdn.djdoolky76.net/udptv.m3u"
+UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
 EPG_URL = "https://tinyurl.com/merged2423-epg"
 OUTPUT_FILE = "UDPTV.m3u"
 
@@ -12,6 +12,8 @@ REMOVE_PHRASE = (
     "BY DONATING TO KEEP IT RUNNING 😭 AND I WILL FORGIVE YOU. JOIN OUR DISCORD SERVER FOR "
     "AN UPDATED PLAYLIST: https://discord.gg/civ3"
 )
+
+DUCKDNS_DOMAIN = "http://drewlive24.duckdns.org"
 
 def fetch_m3u(url):
     r = requests.get(url)
@@ -22,11 +24,7 @@ def clean_lines(lines):
     cleaned = []
     for line in lines:
         line = line.strip()
-        if not line:
-            continue
-        if line.startswith("#EXTM3U") or 'url-tvg=' in line:
-            continue  # Remove any existing header line
-        if line == REMOVE_PHRASE:
+        if not line or line.startswith("#EXTM3U") or 'url-tvg=' in line or line == REMOVE_PHRASE:
             continue
         cleaned.append(line)
     return cleaned
@@ -49,6 +47,13 @@ def parse_m3u(lines):
                 last_extinf = None
     return result
 
+def replace_url_base(original_url):
+    parsed = urlparse(original_url)
+    new_url = DUCKDNS_DOMAIN + parsed.path
+    if parsed.query:
+        new_url += "?" + parsed.query
+    return new_url
+
 def merge_playlists(template_dict, upstream_dict):
     merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
     processed_keys = set()
@@ -56,14 +61,16 @@ def merge_playlists(template_dict, upstream_dict):
     for key, (meta, url) in template_dict.items():
         upstream_url = upstream_dict.get(key, (None, None))[1]
         final_url = upstream_url if upstream_url and upstream_url != url else url
+        final_url = replace_url_base(final_url)
         merged.append(meta)
         merged.append(final_url)
         processed_keys.add(key)
 
     for key, (meta, url) in upstream_dict.items():
         if key not in processed_keys:
+            final_url = replace_url_base(url)
             merged.append(meta)
-            merged.append(url)
+            merged.append(final_url)
 
     return merged
 
