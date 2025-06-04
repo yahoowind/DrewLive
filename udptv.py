@@ -15,11 +15,15 @@ REMOVE_PHRASE = (
     "AN UPDATED PLAYLIST: https://discord.gg/civ3"
 )
 STANDARD_GROUP = 'group-title="UDPTV Live Streams"'
+EXTM3U_HEADER_PATTERN = re.compile(r'^#EXTM3U.*$', re.IGNORECASE)
 
 def fetch_m3u(url):
     r = requests.get(url)
     r.raise_for_status()
-    return r.text.splitlines()
+    lines = r.text.splitlines()
+    # Remove any existing #EXTM3U lines or empty lines at top
+    cleaned_lines = [line for line in lines if not EXTM3U_HEADER_PATTERN.match(line)]
+    return cleaned_lines
 
 def clean_extinf(line):
     if line.strip() == REMOVE_PHRASE:
@@ -34,6 +38,8 @@ def parse_m3u(lines):
     for line in lines:
         line = line.strip()
         if not line or line == REMOVE_PHRASE:
+            continue
+        if EXTM3U_HEADER_PATTERN.match(line):
             continue
         if line.startswith("#EXTINF"):
             cleaned = clean_extinf(line)
@@ -52,11 +58,13 @@ def parse_m3u(lines):
 def merge_playlists(template_dict, upstream_dict):
     merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
 
+    # Keep template channels with updated URLs if upstream has them
     for key, (meta, url) in template_dict.items():
         updated_url = upstream_dict.get(key, (None, None))[1] or url
         merged.append(meta)
         merged.append(updated_url)
 
+    # Append any new channels from upstream that are not in template
     for key, (meta, url) in upstream_dict.items():
         if key not in template_dict:
             merged.append(meta)
@@ -74,7 +82,7 @@ def main():
     merged_playlist = merge_playlists(template_dict, upstream_dict)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(merged_playlist))
+        f.write("\n".join(merged_playlist) + "\n")
 
 if __name__ == "__main__":
     main()
