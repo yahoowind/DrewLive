@@ -1,0 +1,80 @@
+import requests
+from collections import OrderedDict
+import re
+
+# --- Configuration ---
+TEMPLATE_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
+UPSTREAM_URL = "https://cdn.djdoolky76.net/udptv.m3u"
+EPG_URL = "https://tinyurl.com/merged2423-epg"
+OUTPUT_FILE = "UDPTV.m3u"
+
+# --- Constants ---
+REMOVE_PHRASE = (
+    "### IF YOU ARE A RESELLER OR LEECHER, PLEASE CONSIDER SUPPORTING OUR UDPTV SERVER "
+    "BY DONATING TO KEEP IT RUNNING 😭 AND I WILL FORGIVE YOU. JOIN OUR DISCORD SERVER FOR "
+    "AN UPDATED PLAYLIST: https://discord.gg/civ3"
+)
+STANDARD_GROUP = 'group-title="UDPTV Live Streams"'
+
+def fetch_m3u(url):
+    r = requests.get(url)
+    r.raise_for_status()
+    return r.text.splitlines()
+
+def clean_extinf(line):
+    if line.strip() == REMOVE_PHRASE:
+        return None
+    if 'group-title=' in line:
+        line = re.sub(r'group-title="[^"]+"', STANDARD_GROUP, line)
+    return line
+
+def parse_m3u(lines):
+    result = OrderedDict()
+    last_extinf = ""
+    for line in lines:
+        line = line.strip()
+        if not line or line == REMOVE_PHRASE:
+            continue
+        if line.startswith("#EXTINF"):
+            cleaned = clean_extinf(line)
+            if cleaned:
+                last_extinf = cleaned
+        elif not line.startswith("#"):
+            key = ""
+            if 'tvg-id="' in last_extinf:
+                key = last_extinf.split('tvg-id="')[1].split('"')[0].strip()
+            if not key:
+                key = last_extinf
+            result[key] = (last_extinf, line.strip())
+            last_extinf = ""
+    return result
+
+def merge_playlists(template_dict, upstream_dict):
+    merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
+
+    for key, (meta, url) in template_dict.items():
+        updated_url = upstream_dict.get(key, (None, None))[1] or url
+        merged.append(meta)
+        merged.append(updated_url)
+
+    for key, (meta, url) in upstream_dict.items():
+        if key not in template_dict:
+            merged.append(meta)
+            merged.append(url)
+
+    return merged
+
+def main():
+    template_lines = fetch_m3u(TEMPLATE_URL)
+    upstream_lines = fetch_m3u(UPSTREAM_URL)
+
+    template_dict = parse_m3u(template_lines)
+    upstream_dict = parse_m3u(upstream_lines)
+
+    merged_playlist = merge_playlists(template_dict, upstream_dict)
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write("\n".join(merged_playlist))
+
+if __name__ == "__main__":
+    main()
