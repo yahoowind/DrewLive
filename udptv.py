@@ -1,6 +1,5 @@
 import requests
 from collections import OrderedDict
-from urllib.parse import urlparse
 
 TEMPLATE_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
 UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
@@ -14,15 +13,24 @@ REMOVE_PHRASE = (
 )
 
 def fetch_m3u(url):
-    r = requests.get(url)
-    r.raise_for_status()
-    return r.text.splitlines()
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.text.splitlines()
+    except requests.RequestException as e:
+        print(f"Failed to fetch M3U from {url}: {e}")
+        return []
 
 def clean_lines(lines):
     cleaned = []
     for line in lines:
         line = line.strip()
-        if not line or line.startswith("#EXTM3U") or 'url-tvg=' in line or line == REMOVE_PHRASE:
+        if (
+            not line
+            or line.startswith("#EXTM3U")
+            or "url-tvg=" in line
+            or line == REMOVE_PHRASE
+        ):
             continue
         cleaned.append(line)
     return cleaned
@@ -40,10 +48,15 @@ def parse_m3u(lines):
                 key = None
                 if 'tvg-id="' in last_extinf:
                     key = last_extinf.split('tvg-id="')[1].split('"')[0].strip()
-                key = key or last_extinf
-                result[key] = (last_extinf, line)
+                if not key:
+                    key = last_extinf.strip()
+                result[key] = (last_extinf, line.strip())
                 last_extinf = None
     return result
+
+def replace_url_base(url):
+    """If any URL base transformation is needed, handle it here."""
+    return url  # Modify this if you want to reroute or rewrite base URLs
 
 def merge_playlists(template_dict, upstream_dict):
     merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
@@ -76,6 +89,7 @@ def main():
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(merged_playlist))
+    print(f"Merged playlist written to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
