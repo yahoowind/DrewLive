@@ -45,13 +45,6 @@ def parse_m3u(lines):
                 last_extinf = None
     return result
 
-def replace_url_base(original_url):
-    parsed = urlparse(original_url)
-    new_url = DUCKDNS_DOMAIN + parsed.path
-    if parsed.query:
-        new_url += "?" + parsed.query
-    return new_url
-
 def merge_playlists(template_dict, upstream_dict):
     merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
     processed_keys = set()
