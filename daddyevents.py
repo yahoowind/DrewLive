@@ -9,7 +9,8 @@ BLOCKED_GROUPS = {
     group.lower() for group in [
         "ATHLETICS", "CRICKET", "DARTS", "FENCING", "FUTSAL",
         "HANDBALL", "HORSE RACING", "SNOOKER", "TENNIS",
-        "TV SHOWS", "WATER SPORTS"
+        "TV SHOWS", "WATER SPORTS","VOLLYBALL","RUGBY UNION",
+        "GYMNASTICS","CYCLING","BADMINTON"
     ]
 }
 
