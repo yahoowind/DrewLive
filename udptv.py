@@ -13,8 +13,6 @@ REMOVE_PHRASE = (
     "AN UPDATED PLAYLIST: https://discord.gg/civ3"
 )
 
-DUCKDNS_DOMAIN = "http://drewlive24.duckdns.org"
-
 def fetch_m3u(url):
     r = requests.get(url)
     r.raise_for_status()
