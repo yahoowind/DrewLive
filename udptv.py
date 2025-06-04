@@ -1,5 +1,6 @@
 import requests
 from collections import OrderedDict
+import re
 
 TEMPLATE_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
 UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
@@ -21,7 +22,7 @@ def clean_lines(lines):
     cleaned = []
     for line in lines:
         line = line.strip()
-        if not line or line == REMOVE_PHRASE:
+        if not line or line.startswith("#EXTM3U") or 'url-tvg=' in line or line == REMOVE_PHRASE:
             continue
         cleaned.append(line)
     return cleaned
@@ -36,31 +37,42 @@ def parse_m3u(lines):
             continue
         else:
             if last_extinf:
-                # Preserve full EXTINF line to keep group-title, etc.
-                result[last_extinf] = (last_extinf, line)
+                key = None
+                if 'tvg-id="' in last_extinf:
+                    key = last_extinf.split('tvg-id="')[1].split('"')[0].strip()
+                key = key or last_extinf
+                result[key] = (last_extinf, line)
                 last_extinf = None
     return result
 
-def replace_url_base(url):
-    # Customize this if you want to rewrite URLs (optional)
-    return url
+def force_group_title(meta, forced_group="UDPTV Live Streams"):
+    # Replace or add only group-title="UDPTV Live Streams" without altering other tags
+    if 'group-title="' in meta:
+        # Replace existing group-title value
+        meta = re.sub(r'group-title="[^"]*"', f'group-title="{forced_group}"', meta)
+    else:
+        # Insert group-title before the last comma (which precedes the channel name)
+        # Example: #EXTINF:-1 tvg-id="xyz" tvg-logo="logo.png", Channel Name
+        meta = re.sub(r'(,)', f' group-title="{forced_group}",', meta, count=1)
+    return meta
 
 def merge_playlists(template_dict, upstream_dict):
     merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
-    seen = set()
+    processed_keys = set()
 
-    for meta, (extinf, url) in template_dict.items():
-        final_url = upstream_dict.get(meta, (None, None))[1] or url
-        final_url = replace_url_base(final_url)
-        merged.append(extinf)
+    for key, (meta, url) in template_dict.items():
+        upstream_url = upstream_dict.get(key, (None, None))[1]
+        final_url = upstream_url if upstream_url and upstream_url != url else url
+        final_meta = force_group_title(meta)
+        merged.append(final_meta)
         merged.append(final_url)
-        seen.add(meta)
+        processed_keys.add(key)
 
-    for meta, (extinf, url) in upstream_dict.items():
-        if meta not in seen:
-            final_url = replace_url_base(url)
-            merged.append(extinf)
-            merged.append(final_url)
+    for key, (meta, url) in upstream_dict.items():
+        if key not in processed_keys:
+            final_meta = force_group_title(meta)
+            merged.append(final_meta)
+            merged.append(url)
 
     return merged
 
@@ -74,7 +86,7 @@ def main():
     merged_playlist = merge_playlists(template_dict, upstream_dict)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(merged_playlist))
+        f.write("\n".join(merged_playlist) + "\n")
 
 if __name__ == "__main__":
     main()
