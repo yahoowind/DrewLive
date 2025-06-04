@@ -1820,6 +1820,10 @@ https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26
 #EXTINF:-1  tvg-id="aaj-ki-khabar" tvg-logo="https://a.jsrdn.com/hls/23215/aaj-ki-khabar/logo_20250401_175431_70.png" group-title="DistroTV",Aaj Ki Khabar
 https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/aaj-ki-khabar/index.m3u8
 
+#--- Group: DOCUMENTARY ---
+#EXTINF:-1  tvg-name="Nat Geo Wild" tvg-id="National.Geographic.Wild.lt" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/poland/nat-geo-wild-pl.png" group-title="DOCUMENTARY",Nat Geo Wild
+https://ott.udptv.com/stream/udptv/natgeowild/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+
 #--- Group: DrewLive NSFW ---
 #EXTINF:-1  tvg-name="Aaliyah Hadid" tvg-id="Adult.Section.Dummy.us" tvg-logo="https://goodbadpeople.s3.amazonaws.com/upload/photos/2023/06/VABGVNKCE45Q5Tlf62VB_24_86080d5ffb4b008236c164120b930eae_avatar_full.png" group-title="DrewLive NSFW" radio="false",Aaliyah Hadid
 https://cdn.baddiehub.com/AaliyPV.mp4
@@ -2452,6 +2456,16 @@ http://drewlive24.duckdns.org:9000/DrewLiveVODMovie/Zack.and.Miri.Make.a.Porno.2
 #EXTINF:-1  tvg-name="Zombieland (2009)" tvg-id="Movie.Dummy.us" tvg-logo="https://m.media-amazon.com/images/M/MV5BMTU5MDg0NTQ1N15BMl5BanBnXkFtZTcwMjA4Mjg3Mg@@._V1_.jpg" group-title="DrewLive VOD" radio="false",Zombieland (2009)
 http://drewlive24.duckdns.org:9000/DrewLiveVODMovie/Zombieland.2009.1080p.BluRay.DDP.7.1.x265-edge2020.mkv
 
+#--- Group: ENTERTAINMENT ---
+#EXTINF:-1  tvg-name="E! West" tvg-id="nbc/ewest" tvg-logo="https://img.nbc.com/files/images/2019/3/20/E-Logo-White-95x300.png" group-title="ENTERTAINMENT",E! West
+https://ott.udptv.com/stream/nbc/ewest/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="sky SHOWTIME 1" tvg-id="iptv/skyshowtime1" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/nordic/norway/sky-showtime-1-no.png" group-title="ENTERTAINMENT",sky SHOWTIME 1
+https://ott.udptv.net/stream/iptv/skyshowtime1/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="sky SHOWTIME 2" tvg-id="iptv/skyshowtime2" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/nordic/norway/sky-showtime-2-no.png" group-title="ENTERTAINMENT",sky SHOWTIME 2
+https://ott.udptv.net/stream/iptv/skyshowtime2/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Syfy East" tvg-id="Syfy.-.Western.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/syfy-hz-us.png" group-title="ENTERTAINMENT",Syfy East
+https://ott.udptv.com/stream/nbc/syfyeast/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+
 #--- Group: Fan Made Live TV ---
 #EXTINF:-1  tvg-name="Cannabis Grow" tvg-id="24.7.Dummy.us" tvg-logo="https://grow.dwot.io/logo" group-title="Fan Made Live TV" radio="false",Cannabis Grow
 https://grow.dwot.io/hls/1/stream.m3u8?cachebust=7ad5acb5
@@ -2717,6 +2731,20 @@ https://listen.shoutcast.com/smoothjazzcd1019newyork
 http://server.webnetradio.net:5366/;
 #EXTINF:-1  tvg-name="Smooth Jazz Network" tvg-id="Radio.105.Dummy.us" tvg-logo="https://static.wixstatic.com/media/6c0566_901c482990f74f9aa9695c3295ac1cef~mv2.png/v1/crop/x_0,y_1060,w_5001,h_2827/fill/w_368,h_208,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Smooth%20Jazz_Light%20Blue_Registered-01.png" group-title="Jazz" radio="true",Smooth Jazz Network
 https://stream.revma.ihrhls.com/zc8170/hls.m3u8
+
+#--- Group: LOCAL ---
+#EXTINF:-1  tvg-name="ALL TV" tvg-id="iptv/alltv" tvg-logo="https://brandlogo.org/wp-content/uploads/2024/05/All-TV-Logo-300x300.png.webp" group-title="LOCAL",ALL TV
+http://ott.udptv.net/stream/iptv/alltv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Heart of Asia" tvg-id="iptv/heartofasia" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Heart_of_Asia_logo.svg/400px-Heart_of_Asia_logo.svg.png" group-title="LOCAL",Heart of Asia
+https://ott.udptv.net/stream/iptv/heartofasia/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="iHeart Movies" tvg-id="iptv/iheartmovies" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/6f/Iheartmovies1.png" group-title="LOCAL",iHeart Movies
+https://ott.udptv.net/stream/iptv/iheartmovies/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Jugo Pinoy TV" tvg-id="iptv/jugopinoytv" tvg-logo="https://dito.ph/hubfs/Dito_July2021/Ott%20Pages/Jungo-img/Jungo-logo.png" group-title="LOCAL",Jugo Pinoy TV
+http://ott.udptv.net/stream/iptv/jugopinoytv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="PBB All-Access Livestream" tvg-id="iptv/pbballaccesslivestream" tvg-logo="https://i.imgur.com/aEnPH2R.png" group-title="LOCAL",PBB All-Access Livestream
+https://ott.udptv.net/stream/iptv/pbballaccesslivestream/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="SMNI" tvg-id="iptv/smni" tvg-logo="https://i.imgur.com/WL2ugeZ.png" group-title="LOCAL",SMNI
+http://ott.udptv.net/stream/iptv/smni/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 
 #--- Group: MLB ---
 #EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mlb-logo.png" group-title="MLB",2025 (AWAY)
@@ -3287,6 +3315,18 @@ http://fl2.moveonjoy.com/WGN/index.m3u8
 http://fl2.moveonjoy.com/WORLD_FISHING_NETWORK/index.m3u8
 #EXTINF:-1  tvg-name="YES Network" tvg-id="YES.Network.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/yes-network-us.png?raw=true" group-title="MoveOnJoy" radio="false",YES Network
 http://fl2.moveonjoy.com/YES_NETWORK/index.m3u8
+
+#--- Group: MOVIES ---
+#EXTINF:-1  tvg-name="Korean Blockbusters" tvg-id="iptv/koreanblockbusters" tvg-logo="https://m.media-amazon.com/images/G/01/LCXO_Station_Logos/korean_blockbusters._SL170_FMpng_.png" group-title="MOVIES",Korean Blockbusters
+http://ott.udptv.net/stream/iptv/koreanblockbusters/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="OCN Movies 2" tvg-id="iptv/ocnmovies2" tvg-logo="https://i.imgur.com/Aja53VI.png" group-title="MOVIES",OCN Movies 2
+https://ott.udptv.net/stream/iptv/ocnmovies2/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sky Cinema Book to Screen UK" tvg-id="skyuk/skycinemabooktoscreen" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-cinema-kids-books-uk.png" group-title="MOVIES",Sky Cinema Book to Screen UK
+https://ott.udptv.com/stream/skyuk/skycinemabooktoscreen/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sky Cinema Scares UK" tvg-id="skyuk/skycinemascares" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-cinema-spooky-uk.png" group-title="MOVIES",Sky Cinema Scares UK
+https://ott.udptv.com/stream/skyuk/skycinemascares/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Syfy" tvg-id="sling/syfy" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/syfy-us.png?raw=true" group-title="MOVIES",Syfy
+https://ott.udptv.org/stream/udptvus/syfy/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 
 #--- Group: Music Videos Live ---
 #EXTINF:-1  tvg-name="iHeartRadio Hip Hop Beats" tvg-id="24.7.Dummy.us" tvg-logo="https://image.xumo.com/v1/channels/channel/9995103/600x337.webp?type=channelTile" group-title="Music Videos Live" radio="false",iHeartRadio Hip Hop Beats
@@ -4289,6 +4329,10 @@ https://live.webcastserver.online/hdstream/embed/520.m3u8|Referer=https%3A%2F%2F
 https://roxie.se-main.com.mx/nba.m3u8|Referer=https%3A%2F%2Froxiestreams.cc%2F&User-Agent=Mozilla%2F5.0%20%28Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F134.0.0.0%20Safari%2F537.36
 #EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Knicks vs Pacers (Stream 2)
 https://roxie.se-main.com.mx/nbaalt.m3u8|Referer=https%3A%2F%2Froxiestreams.cc%2F&User-Agent=Mozilla%2F5.0%20%28Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F134.0.0.0%20Safari%2F537.36
+
+#--- Group: NEWS ---
+#EXTINF:-1  tvg-name="DZRH TV" tvg-id="iptv/dzrhtv" tvg-logo="https://i.imgur.com/2nvjsfy.png" group-title="NEWS",DZRH TV
+http://ott.udptv.net/stream/iptv/dzrhtv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 
 #--- Group: PlexTV ---
 #EXTINF:-1  tvg-name="365BLKF" tvg-id="5e20b730f2f8d5003d739db7-6745dca72832b870acf53220" tvg-logo="https://provider-static.plex.tv/1/epg/channels/logos/gracenote/15a11cfd0f014785527aa0c87cbf6752.png" group-title="PlexTV",365BLK
@@ -9112,6 +9156,32 @@ https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZH
 #EXTINF:-1 tvg-id="e5ffd2fff5a1d931fb63dda06195f46a" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/soccer-logo.png" group-title="SOCCER",World Cup Qualifying : Barbados vs Aruba (ESPN 1 NL)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly96ZWtvbmV3Lm5ld2tzby5ydS96ZWtvL3ByZW1pdW0zNzkvbW9uby5tM3U4.m3u8
 
+#--- Group: SPORTS ---
+#EXTINF:-1  tvg-name="MPTV" tvg-id="Cg.Mptv.ph" tvg-logo="https://i.imgur.com/TM1LvZZ.png" group-title="SPORTS",MPTV
+http://ott.udptv.net/stream/iptv/mptv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sky Calcio 1" tvg-id="sky/skycalcio1" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="SPORTS",Sky Calcio 1
+https://ott.udptv.org/stream/Sky/skycalcio1/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sky Calcio 2" tvg-id="sky/skycalcio2" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="SPORTS",Sky Calcio 2
+https://ott.udptv.org/stream/Sky/skycalcio2/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sky Calcio 3" tvg-id="sky/skycalcio3" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="SPORTS",Sky Calcio 3
+https://ott.udptv.org/stream/Sky/skycalcio3/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sky Calcio 4" tvg-id="sky/skycalcio4" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="SPORTS",Sky Calcio 4
+https://ott.udptv.org/stream/Sky/skycalcio4/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sky Calcio 5" tvg-id="sky/skycalcio5" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="SPORTS",Sky Calcio 5
+https://ott.udptv.org/stream/Sky/skycalcio5/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sky Calcio 6" tvg-id="sky/skycalcio6" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="SPORTS",Sky Calcio 6
+https://ott.udptv.org/stream/Sky/skycalcio6/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sky Calcio 7" tvg-id="sky/skycalcio7" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="SPORTS",Sky Calcio 7
+https://ott.udptv.org/stream/Sky/skycalcio7/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sky Calcio 8" tvg-id="sky/skycalcio8" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="SPORTS",Sky Calcio 8
+https://ott.udptv.org/stream/Sky/skycalcio8/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sky Calcio 9" tvg-id="sky/skycalcio9" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="SPORTS",Sky Calcio 9
+https://ott.udptv.org/stream/Sky/skycalcio9/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sport 1 Baltic" tvg-id="iptv/sport1baltic" tvg-logo="https://tr.images.cdn.cgates.lt/static/channels/561204.png" group-title="SPORTS",Sport 1 Baltic
+https://ott.udptv.com/stream/udptv/sport1baltic/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="Sport 2 Baltic" tvg-id="iptv/sport2baltic" tvg-logo="https://v4-vno-u120-cdn-02.images.cdn.cgates.lt/static/channels/561209.png" group-title="SPORTS",Sport 2 Baltic
+https://ott.udptv.com/stream/udptv/sport2baltic/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+
 #--- Group: StirrTV ---
 #EXTINF:-1  tvg-name="10 NBC WJAR - (Providence, RI*)" tvg-id="6513" tvg-logo="https://vcz-ktest2-cloud-vodlix-com.b-cdn.net/u/ktest2/files/thumbs/2024/12/28/1735351091BkRmYuNTOi-632x395-Xc06SyPK.png" tvg-chno="924" group-title="StirrTV ",10 NBC WJAR - (Providence, RI*)
 https://jmp2.uk/str-6513.m3u8
@@ -11015,64 +11085,6 @@ http://ott.udptv.net/stream/iptv/vivacinema/master.m3u8?u=discord.gg/civ3&p=eeaf
 http://ott.udptv.net/stream/iptv/warnertv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 #EXTINF:-1  tvg-name="W-Sport" tvg-id="W-Sport.my" tvg-logo="https://raw.githubusercontent.com/djdoolky76/tv-channel-logos/60962050390d4bcbfd85ab4f303594934b1ae89d/misc/custom/W-%20Sport.png" group-title="UDPTV Live Streams",W-Sport
 https://ott.udptv.org/stream/astro/wsport/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="ALL TV" tvg-id="iptv/alltv" tvg-logo="https://brandlogo.org/wp-content/uploads/2024/05/All-TV-Logo-300x300.png.webp" group-title="UDPTV Live Streams",ALL TV
-http://ott.udptv.net/stream/iptv/alltv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="DZRH TV" tvg-id="iptv/dzrhtv" tvg-logo="https://i.imgur.com/2nvjsfy.png" group-title="UDPTV Live Streams",DZRH TV
-http://ott.udptv.net/stream/iptv/dzrhtv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="E! West" tvg-id="nbc/ewest" tvg-logo="https://img.nbc.com/files/images/2019/3/20/E-Logo-White-95x300.png" group-title="UDPTV Live Streams",E! West
-https://ott.udptv.com/stream/nbc/ewest/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Heart of Asia" tvg-id="iptv/heartofasia" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Heart_of_Asia_logo.svg/400px-Heart_of_Asia_logo.svg.png" group-title="UDPTV Live Streams",Heart of Asia
-https://ott.udptv.net/stream/iptv/heartofasia/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="iHeart Movies" tvg-id="iptv/iheartmovies" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/6f/Iheartmovies1.png" group-title="UDPTV Live Streams",iHeart Movies
-https://ott.udptv.net/stream/iptv/iheartmovies/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Jugo Pinoy TV" tvg-id="iptv/jugopinoytv" tvg-logo="https://dito.ph/hubfs/Dito_July2021/Ott%20Pages/Jungo-img/Jungo-logo.png" group-title="UDPTV Live Streams",Jugo Pinoy TV
-http://ott.udptv.net/stream/iptv/jugopinoytv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Korean Blockbusters" tvg-id="iptv/koreanblockbusters" tvg-logo="https://m.media-amazon.com/images/G/01/LCXO_Station_Logos/korean_blockbusters._SL170_FMpng_.png" group-title="UDPTV Live Streams",Korean Blockbusters
-http://ott.udptv.net/stream/iptv/koreanblockbusters/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="MPTV" tvg-id="Cg.Mptv.ph" tvg-logo="https://i.imgur.com/TM1LvZZ.png" group-title="UDPTV Live Streams",MPTV
-http://ott.udptv.net/stream/iptv/mptv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Nat Geo Wild" tvg-id="National.Geographic.Wild.lt" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/poland/nat-geo-wild-pl.png" group-title="UDPTV Live Streams",Nat Geo Wild
-https://ott.udptv.com/stream/udptv/natgeowild/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="OCN Movies 2" tvg-id="iptv/ocnmovies2" tvg-logo="https://i.imgur.com/Aja53VI.png" group-title="UDPTV Live Streams",OCN Movies 2
-https://ott.udptv.net/stream/iptv/ocnmovies2/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="PBB All-Access Livestream" tvg-id="iptv/pbballaccesslivestream" tvg-logo="https://i.imgur.com/aEnPH2R.png" group-title="UDPTV Live Streams",PBB All-Access Livestream
-https://ott.udptv.net/stream/iptv/pbballaccesslivestream/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sky Calcio 1" tvg-id="sky/skycalcio1" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="UDPTV Live Streams",Sky Calcio 1
-https://ott.udptv.org/stream/Sky/skycalcio1/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sky Calcio 2" tvg-id="sky/skycalcio2" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="UDPTV Live Streams",Sky Calcio 2
-https://ott.udptv.org/stream/Sky/skycalcio2/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sky Calcio 3" tvg-id="sky/skycalcio3" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="UDPTV Live Streams",Sky Calcio 3
-https://ott.udptv.org/stream/Sky/skycalcio3/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sky Calcio 4" tvg-id="sky/skycalcio4" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="UDPTV Live Streams",Sky Calcio 4
-https://ott.udptv.org/stream/Sky/skycalcio4/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sky Calcio 5" tvg-id="sky/skycalcio5" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="UDPTV Live Streams",Sky Calcio 5
-https://ott.udptv.org/stream/Sky/skycalcio5/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sky Calcio 6" tvg-id="sky/skycalcio6" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="UDPTV Live Streams",Sky Calcio 6
-https://ott.udptv.org/stream/Sky/skycalcio6/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sky Calcio 7" tvg-id="sky/skycalcio7" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="UDPTV Live Streams",Sky Calcio 7
-https://ott.udptv.org/stream/Sky/skycalcio7/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sky Calcio 8" tvg-id="sky/skycalcio8" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="UDPTV Live Streams",Sky Calcio 8
-https://ott.udptv.org/stream/Sky/skycalcio8/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sky Calcio 9" tvg-id="sky/skycalcio9" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/italy/sky-sport-calcio-it.png" group-title="UDPTV Live Streams",Sky Calcio 9
-https://ott.udptv.org/stream/Sky/skycalcio9/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sky Cinema Book to Screen UK" tvg-id="skyuk/skycinemabooktoscreen" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-cinema-kids-books-uk.png" group-title="UDPTV Live Streams",Sky Cinema Book to Screen UK
-https://ott.udptv.com/stream/skyuk/skycinemabooktoscreen/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sky Cinema Scares UK" tvg-id="skyuk/skycinemascares" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-cinema-spooky-uk.png" group-title="UDPTV Live Streams",Sky Cinema Scares UK
-https://ott.udptv.com/stream/skyuk/skycinemascares/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="sky SHOWTIME 1" tvg-id="iptv/skyshowtime1" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/nordic/norway/sky-showtime-1-no.png" group-title="UDPTV Live Streams",sky SHOWTIME 1
-https://ott.udptv.net/stream/iptv/skyshowtime1/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="sky SHOWTIME 2" tvg-id="iptv/skyshowtime2" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/nordic/norway/sky-showtime-2-no.png" group-title="UDPTV Live Streams",sky SHOWTIME 2
-https://ott.udptv.net/stream/iptv/skyshowtime2/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="SMNI" tvg-id="iptv/smni" tvg-logo="https://i.imgur.com/WL2ugeZ.png" group-title="UDPTV Live Streams",SMNI
-http://ott.udptv.net/stream/iptv/smni/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sport 1 Baltic" tvg-id="iptv/sport1baltic" tvg-logo="https://tr.images.cdn.cgates.lt/static/channels/561204.png" group-title="UDPTV Live Streams",Sport 1 Baltic
-https://ott.udptv.com/stream/udptv/sport1baltic/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Sport 2 Baltic" tvg-id="iptv/sport2baltic" tvg-logo="https://v4-vno-u120-cdn-02.images.cdn.cgates.lt/static/channels/561209.png" group-title="UDPTV Live Streams",Sport 2 Baltic
-https://ott.udptv.com/stream/udptv/sport2baltic/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Syfy" tvg-id="sling/syfy" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/syfy-us.png?raw=true" group-title="UDPTV Live Streams",Syfy
-https://ott.udptv.org/stream/udptvus/syfy/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="Syfy East" tvg-id="Syfy.-.Western.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/syfy-hz-us.png" group-title="UDPTV Live Streams",Syfy East
-https://ott.udptv.com/stream/nbc/syfyeast/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 
 #--- Group: WWE ---
 #EXTINF:-1 tvg-id="c5859f7bcc12f51550055536aca6d80f" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/wwe-logo.png" group-title="WWE",All Elite Wrestling: Dynamite (FOX SPORTS PREMIUM MX)
