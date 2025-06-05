@@ -14,8 +14,6 @@ REMOVE_PHRASE = (
 )
 
 FORCED_GROUP_TITLE = "UDPTV Live Streams"
-DUCKDNS_HOST = "yourname.duckdns.org"
-CUSTOM_LOGO_DOMAIN = "logo.udptv.live"
 
 def fetch_m3u(url):
     r = requests.get(url)
@@ -31,14 +29,12 @@ def clean_lines(lines):
             or line.startswith("#EXTM3U")
             or 'url-tvg=' in line
             or REMOVE_PHRASE in line
-            or DUCKDNS_HOST in line
         ):
             continue
         cleaned.append(line)
     return cleaned
 
 def get_channel_key(extinf):
-    """Normalize name for deduplication & sorting."""
     name = extinf.split(",")[-1].strip().lower()
     name = re.sub(r'\s*\(.*?\)|\s*HD|\s*\[.*?\]', '', name).strip()
     return name
@@ -48,9 +44,6 @@ def parse_m3u(lines):
     last_extinf = None
     for line in lines:
         if line.startswith("#EXTINF"):
-            if DUCKDNS_HOST in line:
-                last_extinf = None
-                continue
             last_extinf = line
         elif line.startswith("#"):
             continue
@@ -62,8 +55,6 @@ def parse_m3u(lines):
     return result
 
 def force_group_title(meta, forced_group=FORCED_GROUP_TITLE):
-    if CUSTOM_LOGO_DOMAIN in meta:
-        return meta
     if 'group-title="' in meta:
         meta = re.sub(r'group-title="[^"]*"', f'group-title="{forced_group}"', meta)
     else:
@@ -73,18 +64,28 @@ def force_group_title(meta, forced_group=FORCED_GROUP_TITLE):
 def merge_playlists(template_dict, upstream_dict):
     merged_dict = {}
 
-    # Merge template first, then allow upstream to override
+    # For keys in template
     for key, (meta, url) in template_dict.items():
-        merged_dict[key] = (meta, url)
-    for key, (meta, url) in upstream_dict.items():
-        merged_dict[key] = (meta, url)
+        upstream = upstream_dict.get(key)
+        if upstream:
+            upstream_url = upstream[1]
+            # Update URL only if different
+            final_url = upstream_url if upstream_url != url else url
+        else:
+            final_url = url
+        final_meta = force_group_title(meta)
+        merged_dict[key] = (final_meta, final_url)
 
-    # Build final list, all sorted alphabetically
+    # Add new channels only in upstream
+    for key, (meta, url) in upstream_dict.items():
+        if key not in merged_dict:
+            final_meta = force_group_title(meta)
+            merged_dict[key] = (final_meta, url)
+
     merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
     for key in sorted(merged_dict.keys()):
         meta, url = merged_dict[key]
-        final_meta = force_group_title(meta)
-        merged.append(final_meta)
+        merged.append(meta)
         merged.append(url)
 
     return merged
