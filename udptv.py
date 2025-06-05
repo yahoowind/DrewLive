@@ -13,10 +13,9 @@ REMOVE_PHRASE = (
     "AN UPDATED PLAYLIST: https://discord.gg/civ3"
 )
 
-FORCED_GROUP_TITLE = "UDPTV Live Streams"  # your permanent group name here
-
-DUCKDNS_HOST = "yourname.duckdns.org"  # <-- Replace this with your actual DuckDNS domain
-CUSTOM_LOGO_DOMAIN = "logo.udptv.live"  # example domain to protect your logos from being changed
+FORCED_GROUP_TITLE = "UDPTV Live Streams"
+DUCKDNS_HOST = "yourname.duckdns.org"
+CUSTOM_LOGO_DOMAIN = "logo.udptv.live"
 
 def fetch_m3u(url):
     r = requests.get(url)
@@ -32,18 +31,24 @@ def clean_lines(lines):
             or line.startswith("#EXTM3U")
             or 'url-tvg=' in line
             or REMOVE_PHRASE in line
-            or DUCKDNS_HOST in line   # Remove lines containing your DuckDNS domain
+            or DUCKDNS_HOST in line
         ):
             continue
         cleaned.append(line)
     return cleaned
+
+def get_channel_key(extinf):
+    """Extract a normalized channel name key for deduplication."""
+    name = extinf.split(",")[-1].strip().lower()
+    name = re.sub(r'\s*\(.*?\)|\s*HD|\s*\[.*?\]', '', name).strip()  # Remove (extra), HD, [info]
+    return name
 
 def parse_m3u(lines):
     result = OrderedDict()
     last_extinf = None
     for line in lines:
         if line.startswith("#EXTINF"):
-            if DUCKDNS_HOST in line:  # Skip any #EXTINF with your DuckDNS domain
+            if DUCKDNS_HOST in line:
                 last_extinf = None
                 continue
             last_extinf = line
@@ -51,20 +56,14 @@ def parse_m3u(lines):
             continue
         else:
             if last_extinf:
-                key = None
-                # Use tvg-id as key if present, else fallback to channel name in EXTINF
-                if 'tvg-id="' in last_extinf:
-                    key = last_extinf.split('tvg-id="')[1].split('"')[0].strip()
-                else:
-                    # fallback: extract channel name after comma
-                    key = last_extinf.split(",")[-1].strip()
+                key = get_channel_key(last_extinf)
                 result[key] = (last_extinf, line)
                 last_extinf = None
     return result
 
 def force_group_title(meta, forced_group=FORCED_GROUP_TITLE):
     if CUSTOM_LOGO_DOMAIN in meta:
-        return meta  # preserve custom logos, don’t overwrite group title there
+        return meta
     if 'group-title="' in meta:
         meta = re.sub(r'group-title="[^"]*"', f'group-title="{forced_group}"', meta)
     else:
@@ -75,7 +74,6 @@ def merge_playlists(template_dict, upstream_dict):
     merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
     processed_keys = set()
 
-    # First output all channels from template in their order
     for key, (meta, url) in template_dict.items():
         upstream_url = upstream_dict.get(key, (None, None))[1]
         final_url = upstream_url if upstream_url and upstream_url != url else url
@@ -84,12 +82,11 @@ def merge_playlists(template_dict, upstream_dict):
         merged.append(final_url)
         processed_keys.add(key)
 
-    # Add any new upstream channels not in template, sorted alphabetically by channel name (key)
     new_channels = [
         (key, force_group_title(meta), url)
         for key, (meta, url) in upstream_dict.items() if key not in processed_keys
     ]
-    new_channels.sort(key=lambda x: x[0].lower())  # sort by key (channel name)
+    new_channels.sort(key=lambda x: x[0])
 
     for key, meta, url in new_channels:
         merged.append(meta)
