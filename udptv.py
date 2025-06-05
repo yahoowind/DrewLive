@@ -38,9 +38,9 @@ def clean_lines(lines):
     return cleaned
 
 def get_channel_key(extinf):
-    """Extract a normalized channel name key for deduplication."""
+    """Normalize name for deduplication & sorting."""
     name = extinf.split(",")[-1].strip().lower()
-    name = re.sub(r'\s*\(.*?\)|\s*HD|\s*\[.*?\]', '', name).strip()  # Remove (extra), HD, [info]
+    name = re.sub(r'\s*\(.*?\)|\s*HD|\s*\[.*?\]', '', name).strip()
     return name
 
 def parse_m3u(lines):
@@ -71,25 +71,20 @@ def force_group_title(meta, forced_group=FORCED_GROUP_TITLE):
     return meta
 
 def merge_playlists(template_dict, upstream_dict):
-    merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
-    processed_keys = set()
+    merged_dict = {}
 
+    # Merge template first, then allow upstream to override
     for key, (meta, url) in template_dict.items():
-        upstream_url = upstream_dict.get(key, (None, None))[1]
-        final_url = upstream_url if upstream_url and upstream_url != url else url
+        merged_dict[key] = (meta, url)
+    for key, (meta, url) in upstream_dict.items():
+        merged_dict[key] = (meta, url)
+
+    # Build final list, all sorted alphabetically
+    merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
+    for key in sorted(merged_dict.keys()):
+        meta, url = merged_dict[key]
         final_meta = force_group_title(meta)
         merged.append(final_meta)
-        merged.append(final_url)
-        processed_keys.add(key)
-
-    new_channels = [
-        (key, force_group_title(meta), url)
-        for key, (meta, url) in upstream_dict.items() if key not in processed_keys
-    ]
-    new_channels.sort(key=lambda x: x[0])
-
-    for key, meta, url in new_channels:
-        merged.append(meta)
         merged.append(url)
 
     return merged
