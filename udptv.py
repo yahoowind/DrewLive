@@ -5,7 +5,7 @@ import re
 # 🔥 Your actual GitHub raw playlist (trusted source with logos, tvg-id, etc.)
 GIT_RAW_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
 # 🆕 Your upstream URL with possibly updated stream links
-UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
+UPSTREAM_URL = "http://drewlive24.duckdns.org:3000/"
 # 📺 EPG guide URL
 EPG_URL = "https://tinyurl.com/merged2423-epg"
 # 📁 Output filename
