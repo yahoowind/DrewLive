@@ -2,17 +2,16 @@ import requests
 from collections import OrderedDict
 import re
 
-TEMPLATE_FILE = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
+# 🔥 Your actual GitHub raw playlist (trusted source with logos, tvg-id, etc.)
+GIT_RAW_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/FullTemplate.m3u"
+# 🆕 Your upstream URL with possibly updated stream links
 UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
+# 📺 EPG guide URL
 EPG_URL = "https://tinyurl.com/merged2423-epg"
+# 📁 Output filename
 OUTPUT_FILE = "UDPTV.m3u"
 
-REMOVE_PHRASE = (
-    "### IF YOU ARE A RESELLER OR LEECHER, PLEASE CONSIDER SUPPORTING OUR UDPTV SERVER "
-    "BY DONATING TO KEEP IT RUNNING 😭 AND I WILL FORGIVE YOU. JOIN OUR DISCORD SERVER FOR "
-    "AN UPDATED PLAYLIST: https://discord.gg/civ3"
-)
-
+# 🏷️ Force this group title for everything
 FORCED_GROUP_TITLE = "UDPTV Live Streams"
 
 def fetch_m3u(url):
@@ -30,7 +29,7 @@ def clean_lines(lines):
     return cleaned
 
 def get_channel_key(extinf):
-    return extinf.split(",")[-1].strip().lower()  # Match by name only, case-insensitive
+    return extinf.split(",")[-1].strip().lower()
 
 def parse_m3u(lines):
     result = OrderedDict()
@@ -51,17 +50,15 @@ def force_group_title(meta, forced_group=FORCED_GROUP_TITLE):
         meta = re.sub(r'(,)', f' group-title="{forced_group}",', meta, count=1)
     return meta
 
-def merge_playlists(template_dict, upstream_dict):
+def merge_playlists(git_dict, upstream_dict):
     merged_dict = {}
 
-    for key, (meta, url) in template_dict.items():
-        if key in upstream_dict:
-            new_url = upstream_dict[key][1]
-            final_url = new_url if new_url != url else url
-        else:
-            final_url = url
-        merged_dict[key] = (force_group_title(meta), final_url)
+    # Keep git version metadata, only update URLs if upstream has new one
+    for key, (meta, url) in git_dict.items():
+        new_url = upstream_dict.get(key, (None, url))[1]
+        merged_dict[key] = (force_group_title(meta), new_url)
 
+    # Add brand new channels from upstream if not in Git
     for key, (meta, url) in upstream_dict.items():
         if key not in merged_dict:
             merged_dict[key] = (force_group_title(meta), url)
@@ -75,15 +72,13 @@ def merge_playlists(template_dict, upstream_dict):
     return merged
 
 def main():
-    with open(TEMPLATE_FILE, "r", encoding="utf-8") as f:
-        template_lines = clean_lines(f.readlines())
-    
+    git_lines = clean_lines(fetch_m3u(GIT_RAW_URL))
     upstream_lines = clean_lines(fetch_m3u(UPSTREAM_URL))
 
-    template_dict = parse_m3u(template_lines)
+    git_dict = parse_m3u(git_lines)
     upstream_dict = parse_m3u(upstream_lines)
 
-    merged_playlist = merge_playlists(template_dict, upstream_dict)
+    merged_playlist = merge_playlists(git_dict, upstream_dict)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(merged_playlist) + "\n")
