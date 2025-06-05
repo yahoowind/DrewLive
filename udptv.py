@@ -1,11 +1,12 @@
 import requests
 from collections import OrderedDict
 import re
+from urllib.parse import urlparse
 
 # 🔥 Your actual GitHub raw playlist (trusted source with logos, tvg-id, etc.)
 GIT_RAW_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
 # 🆕 Your upstream URL with possibly updated stream links
-UPSTREAM_URL = "http://drewlive24.duckdns.org:3000/"
+UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
 # 📺 EPG guide URL
 EPG_URL = "https://tinyurl.com/merged2423-epg"
 # 📁 Output filename
@@ -13,6 +14,8 @@ OUTPUT_FILE = "UDPTV.m3u"
 
 # 🏷️ Force this group title for everything
 FORCED_GROUP_TITLE = "UDPTV Live Streams"
+# Your DuckDNS domain + port for streams
+MY_DOMAIN = "http://drewlive24.duckdns.org:3000"
 
 def fetch_m3u(url):
     r = requests.get(url)
@@ -50,18 +53,30 @@ def force_group_title(meta, forced_group=FORCED_GROUP_TITLE):
         meta = re.sub(r'(,)', f' group-title="{forced_group}",', meta, count=1)
     return meta
 
+def replace_domain(url):
+    try:
+        parsed = urlparse(url)
+        new_url = MY_DOMAIN + parsed.path
+        if parsed.query:
+            new_url += "?" + parsed.query
+        if parsed.fragment:
+            new_url += "#" + parsed.fragment
+        return new_url
+    except Exception:
+        return url
+
 def merge_playlists(git_dict, upstream_dict):
     merged_dict = {}
 
-    # Keep git version metadata, only update URLs if upstream has new one
     for key, (meta, url) in git_dict.items():
-        new_url = upstream_dict.get(key, (None, url))[1]
+        original_url = upstream_dict.get(key, (None, url))[1]
+        new_url = replace_domain(original_url)
         merged_dict[key] = (force_group_title(meta), new_url)
 
-    # Add brand new channels from upstream if not in Git
     for key, (meta, url) in upstream_dict.items():
         if key not in merged_dict:
-            merged_dict[key] = (force_group_title(meta), url)
+            new_url = replace_domain(url)
+            merged_dict[key] = (force_group_title(meta), new_url)
 
     merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
     for key in sorted(merged_dict.keys()):
