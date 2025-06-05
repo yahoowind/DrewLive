@@ -1,20 +1,20 @@
 import requests
 from collections import OrderedDict
 import re
-from urllib.parse import urlparse
+from urllib.parse import urlparse, quote
 
-# 🔥 Your actual GitHub raw playlist (trusted source with logos, tvg-id, etc.)
+# Your base playlist (GitHub raw)
 GIT_RAW_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
-# 🆕 Your upstream URL with possibly updated stream links
+# Upstream playlist with possibly updated streams
 UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
-# 📺 EPG guide URL
+# EPG guide URL
 EPG_URL = "https://tinyurl.com/merged2423-epg"
-# 📁 Output filename
+# Output filename
 OUTPUT_FILE = "UDPTV.m3u"
 
-# 🏷️ Force this group title for everything
+# Force this group title on all channels
 FORCED_GROUP_TITLE = "UDPTV Live Streams"
-# Your DuckDNS domain + port for streams
+# Your proxy domain
 MY_DOMAIN = "http://drewlive24.duckdns.org:3000"
 
 def fetch_m3u(url):
@@ -32,6 +32,7 @@ def clean_lines(lines):
     return cleaned
 
 def get_channel_key(extinf):
+    # Use channel name (after comma) as key for deduplication
     return extinf.split(",")[-1].strip().lower()
 
 def parse_m3u(lines):
@@ -50,18 +51,14 @@ def force_group_title(meta, forced_group=FORCED_GROUP_TITLE):
     if 'group-title="' in meta:
         meta = re.sub(r'group-title="[^"]*"', f'group-title="{forced_group}"', meta)
     else:
-        meta = re.sub(r'(,)', f' group-title="{forced_group}",', meta, count=1)
+        # Insert group-title after #EXTINF:xx:
+        meta = re.sub(r'(#EXTINF:[^,]+,)', r'\1 group-title="' + forced_group + '",', meta, count=1)
     return meta
 
 def replace_domain(url):
     try:
-        parsed = urlparse(url)
-        new_url = MY_DOMAIN + parsed.path
-        if parsed.query:
-            new_url += "?" + parsed.query
-        if parsed.fragment:
-            new_url += "#" + parsed.fragment
-        return new_url
+        encoded_url = quote(url, safe='')
+        return f"{MY_DOMAIN}/stream?url={encoded_url}"
     except Exception:
         return url
 
@@ -69,6 +66,7 @@ def merge_playlists(git_dict, upstream_dict):
     merged_dict = {}
 
     for key, (meta, url) in git_dict.items():
+        # Take upstream URL if exists, else use git one
         original_url = upstream_dict.get(key, (None, url))[1]
         new_url = replace_domain(original_url)
         merged_dict[key] = (force_group_title(meta), new_url)
