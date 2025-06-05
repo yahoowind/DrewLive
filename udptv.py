@@ -3,18 +3,13 @@ from collections import OrderedDict
 import re
 from urllib.parse import urlparse, quote
 
-# Your base playlist (GitHub raw)
+# Playlist sources
 GIT_RAW_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
-# Upstream playlist with possibly updated streams
 UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
-# EPG guide URL
 EPG_URL = "https://tinyurl.com/merged2423-epg"
-# Output filename
 OUTPUT_FILE = "UDPTV.m3u"
 
-# Force this group title on all channels
 FORCED_GROUP_TITLE = "UDPTV Live Streams"
-# Your proxy domain
 MY_DOMAIN = "http://drewlive24.duckdns.org:3000"
 
 def fetch_m3u(url):
@@ -23,16 +18,9 @@ def fetch_m3u(url):
     return r.text.splitlines()
 
 def clean_lines(lines):
-    cleaned = []
-    for line in lines:
-        line = line.strip()
-        if not line or line.startswith("#EXTM3U") or "url-tvg=" in line:
-            continue
-        cleaned.append(line)
-    return cleaned
+    return [line.strip() for line in lines if line.strip() and not line.startswith("#EXTM3U") and "url-tvg=" not in line]
 
 def get_channel_key(extinf):
-    # Use channel name (after comma) as key for deduplication
     return extinf.split(",")[-1].strip().lower()
 
 def parse_m3u(lines):
@@ -51,9 +39,15 @@ def force_group_title(meta, forced_group=FORCED_GROUP_TITLE):
     if 'group-title="' in meta:
         meta = re.sub(r'group-title="[^"]*"', f'group-title="{forced_group}"', meta)
     else:
-        # Insert group-title after #EXTINF:xx:
         meta = re.sub(r'(#EXTINF:[^,]+,)', r'\1 group-title="' + forced_group + '",', meta, count=1)
     return meta
+
+def is_url_alive(url):
+    try:
+        r = requests.head(url, timeout=3, allow_redirects=True)
+        return r.status_code == 200
+    except Exception:
+        return False
 
 def replace_domain(url):
     try:
@@ -65,16 +59,16 @@ def replace_domain(url):
 def merge_playlists(git_dict, upstream_dict):
     merged_dict = {}
 
-    for key, (meta, url) in git_dict.items():
-        # Take upstream URL if exists, else use git one
-        original_url = upstream_dict.get(key, (None, url))[1]
-        new_url = replace_domain(original_url)
-        merged_dict[key] = (force_group_title(meta), new_url)
+    for key, (meta, _) in git_dict.items():
+        original_url = upstream_dict.get(key, (None, None))[1]
+        if original_url and is_url_alive(original_url):
+            proxy_url = replace_domain(original_url)
+            merged_dict[key] = (force_group_title(meta), proxy_url)
 
     for key, (meta, url) in upstream_dict.items():
-        if key not in merged_dict:
-            new_url = replace_domain(url)
-            merged_dict[key] = (force_group_title(meta), new_url)
+        if key not in merged_dict and is_url_alive(url):
+            proxy_url = replace_domain(url)
+            merged_dict[key] = (force_group_title(meta), proxy_url)
 
     merged = [f'#EXTM3U url-tvg="{EPG_URL}"']
     for key in sorted(merged_dict.keys()):
