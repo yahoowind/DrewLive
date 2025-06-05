@@ -3,7 +3,7 @@ from collections import OrderedDict
 import re
 
 # 🔥 Your actual GitHub raw playlist (trusted source with logos, tvg-id, etc.)
-GIT_RAW_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/FullTemplate.m3u"
+GIT_RAW_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
 # 🆕 Your upstream URL with possibly updated stream links
 UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
 # 📺 EPG guide URL
