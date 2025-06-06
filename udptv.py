@@ -9,7 +9,7 @@ EPG_URL = "https://tinyurl.com/merged2423-epg"
 # 🏷️ Fixed group title for all entries
 FORCED_GROUP_TITLE = "UDPTV Live Streams"
 # 📤 Output file (do NOT rename)
-OUTPUT_FILE = "UDPTV.m3u8"
+OUTPUT_FILE = "UDPTV.m3u"
 
 def fetch_playlist(url):
     timestamp = int(time.time())  # Force update
