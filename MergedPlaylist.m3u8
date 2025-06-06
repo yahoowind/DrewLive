@@ -1,6 +1,6 @@
 #EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
 
-#--- START OF DaddyLive.m3u8 ---
+# --- START: DaddyLive.m3u8 ---
 #EXTINF:-1 tvg-id="5.USA.uk" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/5-usa.png" group-title="DaddyLive UK",5 USA
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly93aW5kbmV3Lm5ld2tzby5ydS93aW5kL3ByZW1pdW0zNjAvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="A.and.E.US.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/aande.png" group-title="DaddyLive USA",A&E USA
@@ -567,10 +567,10 @@ https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZH
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW00OTIvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="beINSports3.au" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/bein-sports-3.png" group-title="DaddyLive AU",beIN SPORTS Australia 3
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW00OTMvbW9uby5tM3U4.m3u8
-#--- END OF DaddyLive.m3u8 ---
+# --- END: DaddyLive.m3u8 ---
 
 
-#--- START OF DrewAll.m3u8 ---
+# --- START: DrewAll.m3u8 ---
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
 http://user.scalecdn.co:8080/live/26725074/92867131/511232.ts
 #EXTINF:-1  tvg-name="BBC Top Gear 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/Top-Gear-Logo-2002.png" group-title="24/7 by Mystique" radio="false",BBC Top Gear 24/7
@@ -2751,10 +2751,10 @@ http://fl2.moveonjoy.com/VICELAND/index.m3u8
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/247
 #EXTINF:-1  tvg-id="YES.Network.us" tvg-logo="http://lonewolftvpr.com/logos/yes.png" group-title="Mystique USA" radio="false",Yes Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/245
-#--- END OF DrewAll.m3u8 ---
+# --- END: DrewAll.m3u8 ---
 
 
-#--- START OF TheTVApp.m3u8 ---
+# --- START: TheTVApp.m3u8 ---
 #EXTM3U  url-tvg=""
 #EXTM3U Disclaimer: Links were collected by the bot on the internet by search engine like Google. For legal issues, please contact appropriate media file owners/hosters.
 #EXTINF:-1 tvg-id="ae-us-eastern-feed" tvg-name="AEEast" group-title="TheTVApp" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/a-and-e-us.png?raw=true", AEEast (SD)
@@ -3459,10 +3459,10 @@ https://v16.thetvapp.to/hls/WPIX/tracks-v1a1/mono.m3u8?token=t6-2-ZRaOHwHEata9AO
 https://v17.thetvapp.to/hls/yes-network/tracks-v2a1/mono.m3u8?token=WXo56pp6FlRk23p4SrnUXA&expires=1749269192&user_id=VEkxQ1o4MHcwV29qSDZKUmdueHh2cHYwRlVINXJ4SnRXVXQxdXBHYg==
 #EXTINF:-1 tvg-id="yes-network" tvg-name="yes-network" group-title="TheTVApp" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/misc/24-7/circle2-247.png?raw=true", yes-network (HD)
 https://v17.thetvapp.to/hls/yes-network/tracks-v1a1/mono.m3u8?token=5uBPKHXvYeCWExXfNOySWw&expires=1749269196&user_id=VEkxQ1o4MHcwV29qSDZKUmdueHh2cHYwRlVINXJ4SnRXVXQxdXBHYg==
-#--- END OF TheTVApp.m3u8 ---
+# --- END: TheTVApp.m3u8 ---
 
 
-#--- START OF JapanTV.m3u8 ---
+# --- START: JapanTV.m3u8 ---
 ﻿#EXTM3U url-tvg="http://epg.utako.moe/jcom.xml,https://animenosekai.github.io/japanterebi-xmltv/guide.xml" tvg-shift=0 m3uautoload=1
 #EXTINF:-1  tvg-id="abc" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Asahi_Broadcasting_Corporation_Logo.svg/261px-Asahi_Broadcasting_Corporation_Logo.svg.png" group-title="JapanTV",ABC
 http://luong.utako.moe/abc/index.m3u8
@@ -3562,10 +3562,10 @@ http://luong.utako.moe/ytv/index.m3u8
 http://luong.utako.moe/mx2test/index.m3u8
 #EXTINF:-1 group-title="JapanTV" tvg-id="yormuri_tv" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Yomiuri_Telecasting_Corporation_Logo.svg/150px-Yomiuri_Telecasting_Corporation_Logo.svg.png",ytv
 http://luong.utako.moe/ytv/index.m3u8
-#--- END OF JapanTV.m3u8 ---
+# --- END: JapanTV.m3u8 ---
 
 
-#--- START OF DistroTV.m3u8 ---
+# --- START: DistroTV.m3u8 ---
 #EXTINF:-1  tvg-id="ftf-sports" tvg-logo="https://a.jsrdn.com/hls/22729/ftf-sports/logo_20231219_202018_46.png" group-title="DistroTV",FTF Sports
 https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/ftf/FTF_SCTE_B.m3u8 
 #EXTINF:-1  tvg-id="fighting-spirit-tv" tvg-logo="https://a.jsrdn.com/hls/22696/fighting-spirit-tv/logo_20231219_201616_54.png" group-title="DistroTV",Fighting Spirit TV
@@ -3954,10 +3954,10 @@ https://amg01439-amg01439c1-amgplt0081.playout.now3.amagi.tv/playlist/amg01439-a
 https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/flou-detonacion/playlist.m3u8 
 #EXTINF:-1  tvg-id="aaj-ki-khabar" tvg-logo="https://a.jsrdn.com/hls/23215/aaj-ki-khabar/logo_20250401_175431_70.png" group-title="DistroTV",Aaj Ki Khabar
 https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/aaj-ki-khabar/index.m3u8
-#--- END OF DistroTV.m3u8 ---
+# --- END: DistroTV.m3u8 ---
 
 
-#--- START OF PlexTV.m3u8 ---
+# --- START: PlexTV.m3u8 ---
 #EXTINF:-1  tvg-name="365BLKF" tvg-id="5e20b730f2f8d5003d739db7-6745dca72832b870acf53220" tvg-logo="https://provider-static.plex.tv/1/epg/channels/logos/gracenote/15a11cfd0f014785527aa0c87cbf6752.png" group-title="PlexTV",365BLK
 https://epg.provider.plex.tv/library/parts/5e20b730f2f8d5003d739db7-6745dca72832b870acf53220.m3u8?X-Plex-Token=RzgvtzLKLMWEJWtrNSfc
 #EXTINF:-1  tvg-name="ACRM" tvg-id="5e20b730f2f8d5003d739db7-6467891c73e5e029428f0e16" tvg-logo="https://provider-static.plex.tv/2/epg/channels/logos/gracenote/283cd8df7cd9aced05f980443e201452.png" group-title="PlexTV",American Crimes
@@ -5208,10 +5208,10 @@ https://epg.provider.plex.tv/library/parts/5e20b730f2f8d5003d739db7-621670feab20
 https://epg.provider.plex.tv/library/parts/5e20b730f2f8d5003d739db7-60d4ede2b2fdec002c14113b.m3u8?X-Plex-Token=RzgvtzLKLMWEJWtrNSfc
 #EXTINF:-1  tvg-id="5e20b730f2f8d5003d739db7-678287e75fe5e4eb1e030c65" tvg-logo="https://provider-static.plex.tv/epg/cms/production/fbe45dbe-fbb4-4055-85cd-2f029df61dbb/1500X1000-PNG-_Logo-suitable-for-dark-backgrounds__-_Jordan_Warkol.png" group-title="PlexTV",Zee BollyWorld
 https://epg.provider.plex.tv/library/parts/5e20b730f2f8d5003d739db7-678287e75fe5e4eb1e030c65.m3u8?X-Plex-Token=RzgvtzLKLMWEJWtrNSfc
-#--- END OF PlexTV.m3u8 ---
+# --- END: PlexTV.m3u8 ---
 
 
-#--- START OF PlutoTV.m3u8 ---
+# --- START: PlutoTV.m3u8 ---
 ﻿#EXTM3U url-tvg="https://raw.githubusercontent.com/matthuisman/i.mjh.nz/refs/heads/master/PlutoTV/all.xml"
 #EXTINF:-1  tvg-name="48 Hours" tvg-id="62e925bc68d18a00077bb990" tvg-logo="https://images.pluto.tv/channels/62e925bc68d18a00077bb990/colorLogoPNG.png" tvg-chno="254" group-title="PlutoTV CA",48 Hours
 https://jmp2.uk/plu-62e925bc68d18a00077bb990.m3u8
@@ -6939,10 +6939,10 @@ https://jmp2.uk/plu-6000a6f4c3f8550008fc9b91.m3u8
 https://jmp2.uk/plu-5d14fc31252d35decbc4080b.m3u8
 #EXTINF:-1  tvg-name="Yu-Gi-Oh!" tvg-id="5f4ec10ed9636f00089b8c89" tvg-logo="https://images.pluto.tv/channels/5f4ec10ed9636f00089b8c89/colorLogoPNG.png" tvg-chno="4030" group-title="PlutoTV USA",Yu-Gi-Oh!
 https://jmp2.uk/plu-5f4ec10ed9636f00089b8c89.m3u8
-#--- END OF PlutoTV.m3u8 ---
+# --- END: PlutoTV.m3u8 ---
 
 
-#--- START OF SamsungTVPlus.m3u8 ---
+# --- START: SamsungTVPlus.m3u8 ---
 ﻿#EXTM3U url-tvg="https://raw.githubusercontent.com/matthuisman/i.mjh.nz/refs/heads/master/SamsungTVPlus/all.xml"
 #EXTINF:-1  tvg-name="21 Jump Street" tvg-id="CABB26000082J" tvg-logo="https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABB26000082J_20250121T094036SQUARE.png" tvg-chno="1600" group-title="SamsungTVPlus Canada",21 Jump Street
 https://jmp2.uk/sam-CABB26000082J.m3u8
@@ -8682,10 +8682,10 @@ https://jmp2.uk/sam-USBD3500027DS.m3u8
 https://jmp2.uk/sam-USBD1700016X9.m3u8
 #EXTINF:-1  tvg-name="ZooMoo" tvg-id="USBC2400019EF" tvg-logo="https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBC2400019EF_20240520T214904SQUARE.png" tvg-chno="3660" group-title="SamsungTVPlus USA",ZooMoo
 https://jmp2.uk/sam-USBC2400019EF.m3u8
-#--- END OF SamsungTVPlus.m3u8 ---
+# --- END: SamsungTVPlus.m3u8 ---
 
 
-#--- START OF StirrTV.m3u8 ---
+# --- START: StirrTV.m3u8 ---
 #EXTINF:-1  tvg-name="10 NBC WJAR - (Providence, RI*)" tvg-id="6513" tvg-logo="https://vcz-ktest2-cloud-vodlix-com.b-cdn.net/u/ktest2/files/thumbs/2024/12/28/1735351091BkRmYuNTOi-632x395-Xc06SyPK.png" tvg-chno="924" group-title="StirrTV ",10 NBC WJAR - (Providence, RI*)
 https://jmp2.uk/str-6513.m3u8
 #EXTINF:-1  tvg-name="4K Travel TV" tvg-id="5734" tvg-logo="https://vcz-ktest2-cloud-vodlix-com.b-cdn.net/u/ktest2/files/thumbs/2024/04/08/1712612339bhKq2lZNGi-632x395-I5f7f5UE.png" tvg-chno="760" group-title="StirrTV",4K Travel TV
@@ -8910,10 +8910,10 @@ https://jmp2.uk/str-6527.m3u8
 https://jmp2.uk/str-6525.m3u8
 #EXTINF:-1  tvg-name="Zoomer TV" tvg-id="5308" tvg-logo="https://vcz-ktest2-cloud-vodlix-com.b-cdn.net/u/ktest2/files/thumbs/2024/02/09/1707447606lfFjnn5nEx-632x395-8PyL28NK.jpeg" tvg-chno="650" group-title="StirrTV",Zoomer TV
 https://jmp2.uk/str-5308.m3u8
-#--- END OF StirrTV.m3u8 ---
+# --- END: StirrTV.m3u8 ---
 
 
-#--- START OF TubiTV.m3u8 ---
+# --- START: TubiTV.m3u8 ---
 ﻿#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
 #EXTINF:-1  tvg-id="400000096" tvg-logo="https://canvas-lb.tubitv.com/opts/EwZ67HuPQsqw_g==/f96dfd36-d049-4c63-ae07-410f192f18b6/CHgQeDoFMS4xLjZAAQ==" group-title="TubiTV",A&E Crime 360
 http://drewlive24.duckdns.org:4042/tubi/watch/400000096
@@ -9263,10 +9263,10 @@ http://drewlive24.duckdns.org:4042/tubi/watch/613759
 http://drewlive24.duckdns.org:4042/tubi/watch/557344
 #EXTINF:-1  tvg-id="555129" tvg-logo="https://canvas-lb.tubitv.com/opts/1KRhYeQcwtuYkA==/a9b7d587-ab4a-4d4d-bc0d-6f14da292f9f/CHgQeDoFMS4xLjZAAQ==" group-title="TubiTV",theGrio
 http://drewlive24.duckdns.org:4042/tubi/watch/555129
-#--- END OF TubiTV.m3u8 ---
+# --- END: TubiTV.m3u8 ---
 
 
-#--- START OF DrewLiveEvents.m3u8 ---
+# --- START: DrewLiveEvents.m3u8 ---
 ﻿#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
 #EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737479929301-734936769.webp" group-title="24/7 STREAMS",ESPN USA
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
@@ -10368,10 +10368,10 @@ https://x3.xplorebrav.space/playlist/34413/load-playlist
 #EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34414?newa=111
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36
 https://x3.xplorebrav.space/playlist/34414/load-playlist
-#--- END OF DrewLiveEvents.m3u8 ---
+# --- END: DrewLiveEvents.m3u8 ---
 
 
-#--- START OF DrewLiveVOD.m3u8 ---
+# --- START: DrewLiveVOD.m3u8 ---
 ﻿#EXTM3U url-tvg="https://tinyurl.com/dummy2423-epg"
 #EXTINF:-1  tvg-name="17 Again (2009)" tvg-id="Movie.Dummy.us" tvg-logo="https://m.media-amazon.com/images/M/MV5BMjA2NTI1Mzg3N15BMl5BanBnXkFtZTcwMjYwNjAzMg@@._V1_FMjpg_UX1000_.jpg" group-title="DrewLive VOD" radio="false",17 Again (2009)
 http://drewlive24.duckdns.org:9000/DrewLiveVODMovie/17.Again.2009.1080p.BrRip.x264.YIFY.mp4
@@ -11083,10 +11083,10 @@ https://ddy6new.newkso.ru/ddy6/premium519/mono.m3u8
 #EXTVLCOPT:http-referrer=https://allupplay.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 https://ddy6new.newkso.ru/ddy6/premium520/mono.m3u8
-#--- END OF DrewLiveVOD.m3u8 ---
+# --- END: DrewLiveVOD.m3u8 ---
 
 
-#--- START OF DaddyLiveEvents.m3u8 ---
+# --- START: DaddyLiveEvents.m3u8 ---
 #EXTINF:-1 tvg-id="5f9ed9d9f5b7d92ebcb3933da84bc9e6" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",2025 Brownell/Tarter Memorial at Silver Dollar Speedway (FLORACING)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kb2trbzFuZXcubmV3a3NvLnJ1L2Rva2tvMS9wcmVtaXVtMTU3L21vbm8ubTN1OA==.m3u8
 #EXTINF:-1 tvg-id="57d9c69b6aa970d643fdb09d465ccbea" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",2025 Canadian Big Block Series at Autodrome Granby (FLORACING)
@@ -13279,10 +13279,10 @@ https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly96ZWtvbmV3Lm5ld2tzby5ydS96ZW
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9uZnNuZXcubmV3a3NvLnJ1L25mcy9wcmVtaXVtMjEvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="24dde087aca702c22c4603951faec885" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/wwe-logo.png" group-title="WWE",WWE Friday Night SmackDown (USA NETWORK)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9uZnNuZXcubmV3a3NvLnJ1L25mcy9wcmVtaXVtMzQzL21vbm8ubTN1OA==.m3u8
-#--- END OF DaddyLiveEvents.m3u8 ---
+# --- END: DaddyLiveEvents.m3u8 ---
 
 
-#--- START OF UDPTV.m3u ---
+# --- START: UDPTV.m3u ---
 #EXTINF:-1  tvg-name="A2Z" tvg-id="A2z.ph" tvg-logo="https://i.imgur.com/3myn4zH.png" group-title="UDPTV Live Streams",A2Z
 http://ott.udptv.net/stream/iptv/a2z/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 #EXTINF:-1  tvg-name="ABC (KABC)" tvg-id="udptvus/kabc" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/us-local/abc-7-kabc-us.png?raw=true" group-title="UDPTV Live Streams",ABC (KABC)
@@ -14001,10 +14001,10 @@ http://ott.udptv.net/stream/iptv/vivacinema/master.m3u8?u=discord.gg/civ3&p=eeaf
 http://ott.udptv.net/stream/iptv/warnertv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 #EXTINF:-1  tvg-name="W-Sport" tvg-id="W-Sport.my" tvg-logo="https://raw.githubusercontent.com/djdoolky76/tv-channel-logos/60962050390d4bcbfd85ab4f303594934b1ae89d/misc/custom/W-%20Sport.png" group-title="UDPTV Live Streams",W-Sport
 https://ott.udptv.org/stream/astro/wsport/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#--- END OF UDPTV.m3u ---
+# --- END: UDPTV.m3u ---
 
 
-#--- START OF Drew247TV.m3u8 ---
+# --- START: Drew247TV.m3u8 ---
 #EXTINF:-1  tvg-id="ABC.(WABC).New.York,.NY.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/abc.png" group-title="Drew247TV",ABC
 https://ft.fbcdntv247.cfd/memfs/196a3d53-fe48-484c-b267-f3f326f8c9e7_output_0.m3u8
 #EXTINF:-1  tvg-id="AMC.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/amc.png" group-title="Drew247TV",AMC
@@ -14101,4 +14101,4 @@ https://ft.fbcdntv247.cfd/memfs/f18e6b4a-a385-4704-bd35-bc09358d1f44_output_0.m3
 https://ft.fbcdntv247.cfd/memfs/594edb0c-896e-4853-b97b-26c3a4f05156_output_0.m3u8
 #EXTINF:-1  tvg-id="VH1.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/vh1-usa.png" group-title="Drew247TV",VH1
 https://ft.fbcdntv247.cfd/memfs/c1cbc55e-0eb4-4b83-8b92-3e36b6706d94.m3u8
-#--- END OF Drew247TV.m3u8 ---
+# --- END: Drew247TV.m3u8 ---
