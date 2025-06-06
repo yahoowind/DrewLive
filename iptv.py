@@ -3,7 +3,6 @@ import re
 import urllib.parse
 from collections import defaultdict
 
-# All playlists URLs
 playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLive.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DrewAll.m3u8",
@@ -21,7 +20,6 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u",
 ]
 
-# URLs that are proxied (on 3000 and 3001)
 PROXY_DOMAINS = [
     "drewlive24.duckdns.org:3000",
     "drewlive24.duckdns.org:3001"
@@ -29,18 +27,20 @@ PROXY_DOMAINS = [
 
 EPG_URL = "https://tinyurl.com/merged2423-epg"
 
-def is_proxied_url(url):
-    return any(proxy_domain in url for proxy_domain in PROXY_DOMAINS)
+def is_url_proxied(url):
+    return any(domain in url for domain in PROXY_DOMAINS)
 
 def unwrap_url(url):
     """
-    If the url is a proxy URL with ?url=actualURL, extract and return actualURL.
-    Otherwise, return original url.
+    Unwrap URL only if it's proxied by your 3000/3001 and has a '?url=' param.
+    Otherwise return as is.
     """
     parsed = urllib.parse.urlparse(url)
-    query_params = urllib.parse.parse_qs(parsed.query)
-    if 'url' in query_params:
-        return query_params['url'][0]
+    if is_url_proxied(url):
+        query = urllib.parse.parse_qs(parsed.query)
+        if 'url' in query:
+            # Return the actual unwrapped url, which is the first url param value
+            return query['url'][0]
     return url
 
 def fetch_playlist(url):
@@ -57,9 +57,6 @@ def extract_group_title(extinf_line):
     return match.group(1).strip() if match else "Unknown"
 
 def parse_entries(content, unwrap_proxy):
-    """
-    Parse the playlist content and unwrap urls only if unwrap_proxy is True
-    """
     lines = content.strip().splitlines()
     grouped_entries = defaultdict(list)
     seen_urls = set()
@@ -70,16 +67,13 @@ def parse_entries(content, unwrap_proxy):
         if line.startswith("#EXTINF"):
             entry = [line]
             j = i + 1
-            # Collect any #EXTVLCOPT lines following EXTINF
             while j < len(lines) and lines[j].startswith("#EXTVLCOPT"):
                 entry.append(lines[j].strip())
                 j += 1
             if j < len(lines):
                 raw_url = lines[j].strip()
-                if unwrap_proxy and is_proxied_url(raw_url):
-                    url = unwrap_url(raw_url)
-                else:
-                    url = raw_url
+                # unwrap ONLY if unwrap_proxy is True AND url is proxied
+                url = unwrap_url(raw_url) if unwrap_proxy else raw_url
                 if url not in seen_urls:
                     entry.append(url)
                     group = extract_group_title(line)
@@ -98,7 +92,7 @@ def merge_playlists(urls, epg_url):
     for url in urls:
         content = fetch_playlist(url)
         if content:
-            # unwrap_proxy only if playlist URL contains 3000 or 3001 proxy domain
+            # unwrap proxy only if playlist URL is served via your 3000 or 3001 proxy
             unwrap_proxy = any(proxy in url for proxy in PROXY_DOMAINS)
             groups = parse_entries(content, unwrap_proxy)
             for group_name, entries in groups.items():
