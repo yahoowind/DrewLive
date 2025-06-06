@@ -1,13 +1,11 @@
 import requests
 import re
-import time
 
 UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
 EPG_URL = "https://tinyurl.com/merged2423-epg"
 OUTPUT_FILE = "UDPTV.m3u"
 FORCED_GROUP = 'UDPTV Live Streams'
 
-# Patterns for lines to remove (like "leeched" messages)
 REMOVE_PATTERNS = [
     re.compile(r'^# (Last updated|Updated):', re.IGNORECASE),
     re.compile(r'^### IF YOU ARE A RESELLER OR LEECHER', re.IGNORECASE),
@@ -21,48 +19,44 @@ def fetch_playlist():
 def should_remove_line(line):
     return any(pattern.match(line) for pattern in REMOVE_PATTERNS)
 
-def process_lines(lines):
-    ts = int(time.time())
-    output = []
-
-    for line in lines:
-        line = line.strip()
-        if should_remove_line(line):
-            # Skip any line that matches the remove patterns
-            continue
-
-        if line.startswith("#EXTM3U"):
-            # Inject EPG url without touching other attributes
-            if 'url-tvg="' not in line:
-                output.append(f'#EXTM3U url-tvg="{EPG_URL}"')
-            else:
-                output.append(line)
-        elif line.startswith("#EXTINF"):
-            # Force group-title, but do NOT remove other tags like tvg-id or tvg-logo
-            if 'group-title="' in line:
-                line = re.sub(r'group-title="[^"]*"', f'group-title="{FORCED_GROUP}"', line)
-            else:
-                line = re.sub(r'(,)', f' group-title="{FORCED_GROUP}",', line, count=1)
-            output.append(line)
-        elif line.startswith("http://") or line.startswith("https://"):
-            # Always update or add force param to force fresh tokens
-            if "force=" in line:
-                line = re.sub(r'force=\d+', f'force={ts}', line)
-            else:
-                sep = "&" if "?" in line else "?"
-                line += f"{sep}force={ts}"
-            output.append(line)
+def patch_line(extinf):
+    # Patch logos, group-title, etc here
+    if 'ESPN' in extinf:
+        extinf = re.sub(r'group-title="[^"]+"', f'group-title="{FORCED_GROUP} - Sports"', extinf)
+        extinf = re.sub(r'tvg-logo="[^"]+"', 'tvg-logo="https://example.com/espn.png"', extinf)
+    elif 'HBO' in extinf:
+        extinf = re.sub(r'group-title="[^"]+"', f'group-title="{FORCED_GROUP} - Movies"', extinf)
+    else:
+        # Apply forced group name generally
+        if 'group-title="' in extinf:
+            extinf = re.sub(r'group-title="[^"]+"', f'group-title="{FORCED_GROUP}"', extinf)
         else:
-            # Keep any other lines untouched
-            output.append(line)
+            extinf = extinf.replace('#EXTINF:', f'#EXTINF:-1 group-title="{FORCED_GROUP}"')
+    return extinf
 
-    return output
+def process_and_write(lines):
+    output = ['#EXTM3U url-tvg="' + EPG_URL + '"\n']
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
+        if should_remove_line(line):
+            i += 1
+            continue
+        if line.startswith('#EXTINF'):
+            patched = patch_line(line)
+            output.append(patched + '\n')
+            if i + 1 < len(lines):
+                stream_url = lines[i + 1].strip()
+                output.append(stream_url + '\n')
+                i += 2
+            else:
+                i += 1
+        else:
+            i += 1
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        f.writelines(output)
+    print(f"{OUTPUT_FILE} has been written with patches.")
 
-def write_output(lines):
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
-    print(f"✅ All done. Saved: {OUTPUT_FILE}")
 if __name__ == "__main__":
     lines = fetch_playlist()
-    updated = process_lines(lines)
-    write_output(updated)
+    process_and_write(lines)
