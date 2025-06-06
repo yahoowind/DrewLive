@@ -1,6 +1,5 @@
 import requests
 import re
-import urllib.parse
 from collections import defaultdict
 
 playlist_urls = [
@@ -20,28 +19,7 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u",
 ]
 
-PROXY_DOMAINS = [
-    "drewlive24.duckdns.org:3000",
-    "drewlive24.duckdns.org:3001"
-]
-
 EPG_URL = "https://tinyurl.com/merged2423-epg"
-
-def is_url_proxied(url):
-    return any(domain in url for domain in PROXY_DOMAINS)
-
-def unwrap_url(url):
-    """
-    Unwrap URL only if it's proxied by your 3000/3001 and has a '?url=' param.
-    Otherwise return as is.
-    """
-    parsed = urllib.parse.urlparse(url)
-    if is_url_proxied(url):
-        query = urllib.parse.parse_qs(parsed.query)
-        if 'url' in query:
-            # Return the actual unwrapped url, which is the first url param value
-            return query['url'][0]
-    return url
 
 def fetch_playlist(url):
     try:
@@ -56,7 +34,7 @@ def extract_group_title(extinf_line):
     match = re.search(r'group-title="(.*?)"', extinf_line)
     return match.group(1).strip() if match else "Unknown"
 
-def parse_entries(content, unwrap_proxy):
+def parse_entries(content):
     lines = content.strip().splitlines()
     grouped_entries = defaultdict(list)
     seen_urls = set()
@@ -71,9 +49,7 @@ def parse_entries(content, unwrap_proxy):
                 entry.append(lines[j].strip())
                 j += 1
             if j < len(lines):
-                raw_url = lines[j].strip()
-                # unwrap ONLY if unwrap_proxy is True AND url is proxied
-                url = unwrap_url(raw_url) if unwrap_proxy else raw_url
+                url = lines[j].strip()
                 if url not in seen_urls:
                     entry.append(url)
                     group = extract_group_title(line)
@@ -92,9 +68,7 @@ def merge_playlists(urls, epg_url):
     for url in urls:
         content = fetch_playlist(url)
         if content:
-            # unwrap proxy only if playlist URL is served via your 3000 or 3001 proxy
-            unwrap_proxy = any(proxy in url for proxy in PROXY_DOMAINS)
-            groups = parse_entries(content, unwrap_proxy)
+            groups = parse_entries(content)
             for group_name, entries in groups.items():
                 merged_groups[group_name].extend(entries)
 
