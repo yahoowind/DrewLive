@@ -1,8 +1,6 @@
 #EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
 #EXTINF:-1  tvg-id="ABC.(WABC).New.York,.NY.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/abc.png" group-title="Drew247TV",ABC
 https://ft.fbcdntv247.cfd/memfs/196a3d53-fe48-484c-b267-f3f326f8c9e7_output_0.m3u8
-#EXTINF:-1  tvg-id="ACC.Network.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/acc-network.png" group-title="Drew247TV",ACC Network
-https://fbcdntv247.cfd/memfs/acc_output_0.m3u8
 #EXTINF:-1  tvg-id="AMC.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/amc.png" group-title="Drew247TV",AMC
 https://ft.fbcdntv247.cfd/memfs/c21d4225-12e5-4178-af0e-33711499d86e_output_0.m3u8
 #EXTINF:-1  tvg-id="Animal.Planet.US.-.East.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/animal-planet.png" group-title="Drew247TV",Animal Planet
@@ -15,7 +13,7 @@ https://ft.fbcdntv247.cfd/memfs/3427392c-1304-44d6-a80a-680111fff048_output_0.m3
 https://ft.fbcdntv247.cfd/memfs/30919575-c426-404b-a063-395b706fa39c_output_0.m3u8
 #EXTINF:-1  tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/cbs-usa.png" group-title="Drew247TV",CBS
 https://ft.fbcdntv247.cfd/memfs/f52160c3-ffe2-4eea-9315-b47c57c06dad_output_0.m3u8
-#EXTINF:-1  tvg-id="CBS.(KKTV).Colorado.Springs,.CO.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/cbs-usa.png" group-title="Drew247TV",CBS (KKTV)
+#EXTINF:-1  tvg-id="CBS.(KKTV).Colorado.Springs,.CO.HD.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/cbs-usa.png" group-title="Drew247TV",CBS (KKTV)
 https://tinyurl.com/cbskktv24
 #EXTINF:-1  tvg-id="CBS.Sports.Network.USA.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/cbs-sports-network.png" group-title="Drew247TV",CBS Sports Network
 https://ft.fbcdntv247.cfd/memfs/9a60f692-4ae9-483b-9791-411f7530754d_output_0.m3u8
