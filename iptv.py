@@ -1,5 +1,4 @@
 import requests
-import re
 from collections import defaultdict
 
 playlist_urls = [
@@ -24,78 +23,27 @@ EPG_URL = "https://tinyurl.com/merged2423-epg"
 
 def fetch_playlist(url):
     try:
-        r = requests.get(url, timeout=10)
-        r.raise_for_status()
-        return r.text
+        res = requests.get(url, timeout=10)
+        res.raise_for_status()
+        return res.text.strip().splitlines()
     except Exception as e:
         print(f"Failed to fetch {url}: {e}")
-        return ""
-
-def extract_group_title(extinf_line):
-    match = re.search(r'group-title="(.*?)"', extinf_line)
-    return match.group(1).strip() if match else "Unknown"
-
-def apply_patch(extinf):
-    # Patch logic — feel free to customize per channel
-    if 'ESPN' in extinf:
-        extinf = re.sub(r'group-title="[^"]+"', 'group-title="Sports - ESPN"', extinf)
-        extinf = re.sub(r'tvg-logo="[^"]+"', 'tvg-logo="https://example.com/espn.png"', extinf)
-    elif 'HBO' in extinf:
-        extinf = re.sub(r'group-title="[^"]+"', 'group-title="Movies - HBO"', extinf)
-    elif 'Cartoon Network' in extinf:
-        extinf = re.sub(r'group-title="[^"]+"', 'group-title="Toons - CN"', extinf)
-    return extinf
-
-def parse_entries(content):
-    lines = content.strip().splitlines()
-    grouped_entries = defaultdict(list)
-    seen_urls = set()
-    i = 0
-
-    while i < len(lines):
-        line = lines[i].strip()
-        if line.startswith("#EXTINF"):
-            entry = [apply_patch(line)]  # <-- apply patch here
-            j = i + 1
-            while j < len(lines) and lines[j].startswith("#EXTVLCOPT"):
-                entry.append(lines[j].strip())
-                j += 1
-            if j < len(lines):
-                url = lines[j].strip()
-                if url not in seen_urls:
-                    entry.append(url)
-                    group = extract_group_title(entry[0])
-                    grouped_entries[group].append(entry)
-                    seen_urls.add(url)
-                i = j + 1
-            else:
-                i = j
-        else:
-            i += 1
-    return grouped_entries
+        return []
 
 def merge_playlists(urls, epg_url):
-    merged_groups = defaultdict(list)
-
+    all_lines = ['#EXTM3U url-tvg="{}"'.format(epg_url)]
     for url in urls:
-        content = fetch_playlist(url)
-        if content:
-            groups = parse_entries(content)
-            for group_name, entries in groups.items():
-                merged_groups[group_name].extend(entries)
-
-    sorted_group_names = sorted(merged_groups.keys(), key=lambda g: g.lower())
-
+        lines = fetch_playlist(url)
+        if lines and lines[0].startswith("#EXTM3U"):
+            lines = lines[1:]  # Skip the header to avoid duplication
+        all_lines.append(f"\n#--- START OF {url.split('/')[-1]} ---")
+        all_lines.extend(lines)
+        all_lines.append(f"#--- END OF {url.split('/')[-1]} ---\n")
+    
     with open("MergedPlaylist.m3u8", "w", encoding="utf-8") as f:
-        f.write(f'#EXTM3U url-tvg="{epg_url}"\n\n')
-        for group_name in sorted_group_names:
-            f.write(f'#--- Group: {group_name} ---\n')
-            for entry in merged_groups[group_name]:
-                for line in entry:
-                    f.write(f"{line}\n")
-            f.write("\n")
+        f.write("\n".join(all_lines))
 
-    print("MergedPlaylist.m3u8 has been written successfully.")
+    print("MergedPlaylist.m3u8 written with all source content untouched.")
 
 if __name__ == "__main__":
     merge_playlists(playlist_urls, EPG_URL)
