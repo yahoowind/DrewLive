@@ -12,7 +12,7 @@ FORCED_GROUP_TITLE = "UDPTV Live Streams"
 OUTPUT_FILE = "UDPTV.m3u"
 
 def fetch_playlist(url):
-    timestamp = int(time.time())  # Force update
+    timestamp = int(time.time())  # Force update param in URL
     final_url = f"{url}?_={timestamp}"
     r = requests.get(final_url, timeout=10)
     r.raise_for_status()
@@ -35,11 +35,19 @@ def convert_lines(lines):
     return result
 
 def write_output(lines):
+    # Make sure header exists & has correct EPG
     if lines and lines[0].startswith("#EXTM3U"):
         lines[0] = f'#EXTM3U url-tvg="{EPG_URL}"'
     else:
         lines.insert(0, f'#EXTM3U url-tvg="{EPG_URL}"')
     
+    # Insert timestamp comment after header to force file change every run
+    timestamp_comment = f"# Last updated: {time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime())} UTC"
+    if len(lines) > 1 and not lines[1].startswith("# Last updated:"):
+        lines.insert(1, timestamp_comment)
+    else:
+        lines[1] = timestamp_comment
+
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
