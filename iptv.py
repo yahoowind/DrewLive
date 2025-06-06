@@ -22,6 +22,9 @@ playlist_urls = [
 
 EPG_URL = "https://tinyurl.com/merged2423-epg"
 
+# Allow both proxy ports to pass through untouched
+PROXY_PORTS = ["http://drewlive24.duckdns.org:3000/", "http://drewlive24.duckdns.org:3001/"]
+
 def unwrap_url(url):
     parsed = urllib.parse.urlparse(url)
     query_params = urllib.parse.parse_qs(parsed.query)
@@ -57,7 +60,14 @@ def parse_entries(content):
                 entry.append(lines[j].strip())
                 j += 1
             if j < len(lines):
-                url = unwrap_url(lines[j].strip())
+                raw_url = lines[j].strip()
+
+                # Skip unwrapping if it's already proxied through 3000 or 3001
+                if any(raw_url.startswith(proxy) for proxy in PROXY_PORTS):
+                    url = raw_url
+                else:
+                    url = unwrap_url(raw_url)
+
                 if url not in seen_urls:
                     entry.append(url)
                     group = extract_group_title(line)
@@ -86,12 +96,12 @@ def merge_playlists(urls, epg_url):
         f.write(f'#EXTM3U url-tvg="{epg_url}"\n\n')
         for group_name in sorted_group_names:
             f.write(f'#--- Group: {group_name} ---\n')
-            for entry in merged_groups[group_name]:
+            for entry in grouped_entries[group_name]:
                 for line in entry:
                     f.write(f"{line}\n")
             f.write("\n")
 
-    print("MergedPlaylist.m3u8 has been written with proxy URLs unwrapped.")
+    print("✅ MergedPlaylist.m3u8 written with 3000 + 3001 proxies protected.")
 
 if __name__ == "__main__":
     merge_playlists(playlist_urls, EPG_URL)
