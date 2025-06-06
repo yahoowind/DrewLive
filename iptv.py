@@ -1,5 +1,4 @@
 import requests
-from collections import defaultdict
 
 playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLive.m3u8",
@@ -21,29 +20,34 @@ playlist_urls = [
 
 EPG_URL = "https://tinyurl.com/merged2423-epg"
 
-def fetch_playlist(url):
+def fetch_raw_lines(url):
     try:
-        res = requests.get(url, timeout=10)
-        res.raise_for_status()
-        return res.text.strip().splitlines()
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        return response.text.splitlines()
     except Exception as e:
-        print(f"Failed to fetch {url}: {e}")
+        print(f"Error fetching {url}: {e}")
         return []
 
-def merge_playlists(urls, epg_url):
-    all_lines = ['#EXTM3U url-tvg="{}"'.format(epg_url)]
+def merge_without_touching(urls, epg_url):
+    merged_lines = [f'#EXTM3U url-tvg="{epg_url}"']
     for url in urls:
-        lines = fetch_playlist(url)
-        if lines and lines[0].startswith("#EXTM3U"):
-            lines = lines[1:]  # Skip the header to avoid duplication
-        all_lines.append(f"\n#--- START OF {url.split('/')[-1]} ---")
-        all_lines.extend(lines)
-        all_lines.append(f"#--- END OF {url.split('/')[-1]} ---\n")
-    
-    with open("MergedPlaylist.m3u8", "w", encoding="utf-8") as f:
-        f.write("\n".join(all_lines))
+        lines = fetch_raw_lines(url)
+        if not lines:
+            continue
 
-    print("MergedPlaylist.m3u8 written with all source content untouched.")
+        # Strip duplicate headers if present
+        if lines[0].strip().startswith("#EXTM3U"):
+            lines = lines[1:]
+
+        merged_lines.append(f"\n# --- START: {url.split('/')[-1]} ---")
+        merged_lines.extend(lines)
+        merged_lines.append(f"# --- END: {url.split('/')[-1]} ---\n")
+
+    with open("MergedPlaylist.m3u8", "w", encoding="utf-8") as out:
+        out.write("\n".join(merged_lines))
+
+    print("MergedPlaylist.m3u8 written with no changes to source content.")
 
 if __name__ == "__main__":
-    merge_playlists(playlist_urls, EPG_URL)
+    merge_without_touching(playlist_urls, EPG_URL)
