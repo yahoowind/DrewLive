@@ -35,6 +35,17 @@ def extract_group_title(extinf_line):
     match = re.search(r'group-title="(.*?)"', extinf_line)
     return match.group(1).strip() if match else "Unknown"
 
+def apply_patch(extinf):
+    # Patch logic — feel free to customize per channel
+    if 'ESPN' in extinf:
+        extinf = re.sub(r'group-title="[^"]+"', 'group-title="Sports - ESPN"', extinf)
+        extinf = re.sub(r'tvg-logo="[^"]+"', 'tvg-logo="https://example.com/espn.png"', extinf)
+    elif 'HBO' in extinf:
+        extinf = re.sub(r'group-title="[^"]+"', 'group-title="Movies - HBO"', extinf)
+    elif 'Cartoon Network' in extinf:
+        extinf = re.sub(r'group-title="[^"]+"', 'group-title="Toons - CN"', extinf)
+    return extinf
+
 def parse_entries(content):
     lines = content.strip().splitlines()
     grouped_entries = defaultdict(list)
@@ -44,7 +55,7 @@ def parse_entries(content):
     while i < len(lines):
         line = lines[i].strip()
         if line.startswith("#EXTINF"):
-            entry = [line]
+            entry = [apply_patch(line)]  # <-- apply patch here
             j = i + 1
             while j < len(lines) and lines[j].startswith("#EXTVLCOPT"):
                 entry.append(lines[j].strip())
@@ -53,7 +64,7 @@ def parse_entries(content):
                 url = lines[j].strip()
                 if url not in seen_urls:
                     entry.append(url)
-                    group = extract_group_title(line)
+                    group = extract_group_title(entry[0])
                     grouped_entries[group].append(entry)
                     seen_urls.add(url)
                 i = j + 1
