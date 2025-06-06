@@ -1,129 +1,115 @@
 import requests
-from collections import OrderedDict
 import re
-from urllib.parse import urlparse, quote
-from datetime import datetime
-import subprocess
-import sys
+import urllib.parse
+from collections import defaultdict
 
-# Config
-GIT_RAW_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
-UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
+playlist_urls = [
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLive.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DrewAll.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TheTVApp.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/JapanTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DistroTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PlexTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PlutoTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/SamsungTVPlus.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/StirrTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TubiTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DrewLiveEvents.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DrewLiveVOD.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLiveEvents.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u",
+]
+
+PROXY_DOMAINS = [
+    "drewlive24.duckdns.org:3000",
+    "drewlive24.duckdns.org:3001"
+]
+
 EPG_URL = "https://tinyurl.com/merged2423-epg"
-OUTPUT_FILE = "UDPTV.m3u"
-FORCED_GROUP_TITLE = "UDPTV Live Streams"
-MY_DOMAIN = "http://drewlive24.duckdns.org:3000"
-GIT_COMMIT_MSG_PREFIX = "Auto update playlist"
 
-def fetch_m3u(url):
-    r = requests.get(url)
-    r.raise_for_status()
-    return r.text.splitlines()
+def is_url_proxied(url):
+    return any(domain in url for domain in PROXY_DOMAINS)
 
-def clean_lines(lines):
-    cleaned = []
-    for line in lines:
-        line = line.strip()
-        if not line or line.startswith("#EXTM3U") or "url-tvg=" in line:
-            continue
-        cleaned.append(line)
-    return cleaned
+def unwrap_url(url):
+    """
+    Unwrap URL only if it's proxied by your 3000/3001 and has a '?url=' param.
+    Otherwise return as is.
+    """
+    parsed = urllib.parse.urlparse(url)
+    if is_url_proxied(url):
+        query = urllib.parse.parse_qs(parsed.query)
+        if 'url' in query:
+            # Return the actual unwrapped url, which is the first url param value
+            return query['url'][0]
+    return url
 
-def get_channel_key(extinf):
-    return extinf.split(",")[-1].strip().lower()
+def fetch_playlist(url):
+    try:
+        r = requests.get(url, timeout=10)
+        r.raise_for_status()
+        return r.text
+    except Exception as e:
+        print(f"Failed to fetch {url}: {e}")
+        return ""
 
-def parse_m3u(lines):
-    result = OrderedDict()
-    last_extinf = None
-    for line in lines:
+def extract_group_title(extinf_line):
+    match = re.search(r'group-title="(.*?)"', extinf_line)
+    return match.group(1).strip() if match else "Unknown"
+
+def parse_entries(content, unwrap_proxy):
+    lines = content.strip().splitlines()
+    grouped_entries = defaultdict(list)
+    seen_urls = set()
+    i = 0
+
+    while i < len(lines):
+        line = lines[i].strip()
         if line.startswith("#EXTINF"):
-            last_extinf = line
-        elif last_extinf:
-            key = get_channel_key(last_extinf)
-            result[key] = (last_extinf, line)
-            last_extinf = None
-    return result
+            entry = [line]
+            j = i + 1
+            while j < len(lines) and lines[j].startswith("#EXTVLCOPT"):
+                entry.append(lines[j].strip())
+                j += 1
+            if j < len(lines):
+                raw_url = lines[j].strip()
+                # unwrap ONLY if unwrap_proxy is True AND url is proxied
+                url = unwrap_url(raw_url) if unwrap_proxy else raw_url
+                if url not in seen_urls:
+                    entry.append(url)
+                    group = extract_group_title(line)
+                    grouped_entries[group].append(entry)
+                    seen_urls.add(url)
+                i = j + 1
+            else:
+                i = j
+        else:
+            i += 1
+    return grouped_entries
 
-def force_group_title(meta, forced_group=FORCED_GROUP_TITLE):
-    if 'group-title="' in meta:
-        meta = re.sub(r'group-title="[^"]*"', f'group-title="{forced_group}"', meta)
-    else:
-        meta = re.sub(r'(#EXTINF:[^,]+,)', r'\1 group-title="' + forced_group + '",', meta, count=1)
-    return meta
+def merge_playlists(urls, epg_url):
+    merged_groups = defaultdict(list)
 
-def replace_domain(url):
-    try:
-        encoded_url = quote(url, safe='')
-        return f"{MY_DOMAIN}/stream?url={encoded_url}"
-    except Exception:
-        return url
+    for url in urls:
+        content = fetch_playlist(url)
+        if content:
+            # unwrap proxy only if playlist URL is served via your 3000 or 3001 proxy
+            unwrap_proxy = any(proxy in url for proxy in PROXY_DOMAINS)
+            groups = parse_entries(content, unwrap_proxy)
+            for group_name, entries in groups.items():
+                merged_groups[group_name].extend(entries)
 
-def merge_playlists(git_dict, upstream_dict):
-    merged_dict = {}
+    sorted_group_names = sorted(merged_groups.keys(), key=lambda g: g.lower())
 
-    for key, (meta, _) in git_dict.items():
-        upstream_url = upstream_dict.get(key, (None, None))[1]
-        url_to_use = upstream_url if upstream_url else git_dict[key][1]
-        proxied_url = replace_domain(url_to_use)
-        merged_dict[key] = (force_group_title(meta), proxied_url)
+    with open("MergedPlaylist.m3u8", "w", encoding="utf-8") as f:
+        f.write(f'#EXTM3U url-tvg="{epg_url}"\n\n')
+        for group_name in sorted_group_names:
+            f.write(f'#--- Group: {group_name} ---\n')
+            for entry in merged_groups[group_name]:
+                for line in entry:
+                    f.write(f"{line}\n")
+            f.write("\n")
 
-    for key, (meta, url) in upstream_dict.items():
-        if key not in merged_dict:
-            proxied_url = replace_domain(url)
-            merged_dict[key] = (force_group_title(meta), proxied_url)
-
-    timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
-    merged = [f'#EXTM3U url-tvg="{EPG_URL}"', f'# Updated: {timestamp}']
-
-    for key in sorted(merged_dict.keys()):
-        meta, url = merged_dict[key]
-        merged.append(meta)
-        merged.append(url)
-
-    return merged
-
-def git_commit_push(filename, commit_msg):
-    try:
-        subprocess.run(["git", "add", filename], check=True)
-        # Check if there is anything to commit
-        diff_check = subprocess.run(["git", "diff", "--cached", "--quiet"])
-        if diff_check.returncode == 0:
-            print("No changes to commit.")
-            return False
-
-        subprocess.run(["git", "commit", "-m", commit_msg], check=True)
-        subprocess.run(["git", "push"], check=True)
-        print("Changes committed and pushed successfully.")
-        return True
-    except subprocess.CalledProcessError as e:
-        print(f"Git command failed: {e}")
-        return False
-
-def main():
-    print("Fetching playlists...")
-    git_lines = clean_lines(fetch_m3u(GIT_RAW_URL))
-    upstream_lines = clean_lines(fetch_m3u(UPSTREAM_URL))
-
-    print("Parsing playlists...")
-    git_dict = parse_m3u(git_lines)
-    upstream_dict = parse_m3u(upstream_lines)
-
-    print("Merging playlists...")
-    merged_playlist = merge_playlists(git_dict, upstream_dict)
-
-    print(f"Writing to {OUTPUT_FILE}...")
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(merged_playlist) + "\n")
-
-    commit_msg = f"{GIT_COMMIT_MSG_PREFIX} - {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}"
-    print("Running git add, commit, and push...")
-    committed = git_commit_push(OUTPUT_FILE, commit_msg)
-    if not committed:
-        print("No changes detected or git push failed.")
+    print("MergedPlaylist.m3u8 has been written successfully.")
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print(f"Error: {e}")
-        sys.exit(1)
+    merge_playlists(playlist_urls, EPG_URL)
