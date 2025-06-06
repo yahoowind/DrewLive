@@ -2,63 +2,73 @@ import requests
 import re
 import time
 
-TEMPLATE_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/UDPTV.m3u"
 UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
 EPG_URL = "https://tinyurl.com/merged2423-epg"
+FORCED_GROUP_TITLE = "UDPTV Live Streams"
 OUTPUT_FILE = "UDPTV.m3u"
 
-def fetch_lines(url):
-    r = requests.get(f"{url}?_={int(time.time())}", timeout=10)
+# Patterns to filter out unwanted lines
+UNWANTED_PATTERNS = [
+    re.compile(r"^# Last updated:"),
+    re.compile(r"^# Updated:"),
+    re.compile(r"^### IF YOU ARE A RESELLER OR LEECHER,"),
+]
+
+def fetch_playlist(url):
+    r = requests.get(url, timeout=10)
     r.raise_for_status()
     return r.text.splitlines()
 
-def clean_upstream(lines):
-    urls = []
-    for line in lines:
-        line = line.strip()
-        if line.startswith("#EXTINF") or line.startswith("http"):
-            urls.append(line)
-    # Remove Discord/donate/messages
-    return [line for line in urls if not any(x in line.lower() for x in [
-        "donate", "discord", "join our", "last updated", "support", "#extm3u"
-    ])]
-
-def force_url(url):
+def clean_lines(lines):
+    cleaned = []
     timestamp = int(time.time())
-    if "?" in url:
-        return re.sub(r'(force=)\d+', f'\\1{timestamp}', url) if "force=" in url else url + f"&force={timestamp}"
-    return url + f"?force={timestamp}"
-
-def merge_metadata_with_streams(template_lines, new_stream_urls):
-    final = []
-    url_iter = iter([force_url(u) for u in new_stream_urls if u.startswith("http")])
-    for line in template_lines:
+    for line in lines:
         line = line.strip()
         if not line:
             continue
-        if line.startswith("http://") or line.startswith("https://"):
-            try:
-                final.append(next(url_iter))  # Inject fresh URL
-            except StopIteration:
-                final.append(line)  # Keep old if we run out
+        # Skip unwanted lines
+        if any(p.match(line) for p in UNWANTED_PATTERNS):
+            continue
+        # Skip any extra #EXTM3U headers from upstream except first
+        if line.startswith("#EXTM3U"):
+            continue
+
+        if line.startswith("#EXTINF"):
+            # Force group-title only on EXTINF lines, keep other metadata intact
+            if 'group-title="' in line:
+                line = re.sub(r'group-title="[^"]*"', f'group-title="{FORCED_GROUP_TITLE}"', line)
+            else:
+                line = re.sub(r'(,)', f' group-title="{FORCED_GROUP_TITLE}",', line, count=1)
+            cleaned.append(line)
+        elif line.startswith("http://") or line.startswith("https://"):
+            # Force update URLs with timestamp param "force"
+            if "?" in line:
+                if re.search(r'force=\d+', line):
+                    line = re.sub(r'force=\d+', f'force={timestamp}', line)
+                else:
+                    line += f"&force={timestamp}"
+            else:
+                line += f"?force={timestamp}"
+            cleaned.append(line)
         else:
-            final.append(line)  # Keep metadata untouched
-    return final
+            # All other lines (metadata like tvg-name, tvg-id, logos, comments)
+            cleaned.append(line)
+    return cleaned
 
 def write_output(lines):
+    # Insert your clean #EXTM3U header with EPG url at the top
+    header = f'#EXTM3U url-tvg="{EPG_URL}"'
     if lines and lines[0].startswith("#EXTM3U"):
-        lines[0] = f'#EXTM3U url-tvg="{EPG_URL}"'
+        lines[0] = header
     else:
-        lines.insert(0, f'#EXTM3U url-tvg="{EPG_URL}"')
+        lines.insert(0, header)
+
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
-    print(f"✅ Playlist updated: {OUTPUT_FILE}")
+
+    print(f"✅ Cleaned, forced, and wrote: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    print("📡 Pulling upstream URLs only...")
-    upstream_clean = clean_upstream(fetch_lines(UPSTREAM_URL))
-    print("📦 Fetching your metadata template...")
-    template = fetch_lines(TEMPLATE_URL)
-    print("🔗 Merging fresh URLs into metadata...")
-    merged = merge_metadata_with_streams(template, upstream_clean)
-    write_output(merged)
+    raw_lines = fetch_playlist(UPSTREAM_URL)
+    cleaned = clean_lines(raw_lines)
+    write_output(cleaned)
