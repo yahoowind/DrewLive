@@ -1,6 +1,6 @@
 import requests
-import re
 from collections import defaultdict
+import re
 
 playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLive.m3u8",
@@ -21,61 +21,58 @@ playlist_urls = [
 ]
 
 EPG_URL = "https://tinyurl.com/merged2423-epg"
+OUTPUT_FILE = "MergedPlaylist.m3u8"
 
 def fetch_playlist(url):
     try:
         res = requests.get(url, timeout=10)
         res.raise_for_status()
-        return res.text.splitlines()
+        return res.text.strip().splitlines()
     except Exception as e:
-        print(f"Error fetching {url}: {e}")
+        print(f"Failed to fetch {url}: {e}")
         return []
 
-def extract_group_title(line):
-    match = re.search(r'group-title="([^"]+)"', line)
-    return match.group(1).strip() if match else "ZZZ_Unsorted"
-
-def parse_and_group(lines):
-    groups = defaultdict(list)
+def parse_playlist(lines):
+    channels_by_group = defaultdict(list)
     i = 0
     while i < len(lines):
-        if lines[i].startswith("#EXTINF"):
-            entry = [lines[i]]
-            j = i + 1
-            # Handle any #EXTVLCOPT lines
-            while j < len(lines) and lines[j].startswith("#EXTVLCOPT"):
-                entry.append(lines[j])
-                j += 1
-            if j < len(lines):
-                entry.append(lines[j])  # the stream URL
-                group = extract_group_title(lines[i])
-                groups[group].append(entry)
-            i = j + 1
-        else:
-            i += 1
-    return groups
+        line = lines[i].strip()
+        if line.startswith("#EXTINF"):
+            match = re.search(r'group-title="([^"]+)"', line)
+            group = match.group(1).strip() if match else "ZZZ_Unsorted"
+            extinf = line
+            if i + 1 < len(lines):
+                stream = lines[i + 1].strip()
+                if stream and not stream.startswith("#"):
+                    channels_by_group[group].append((extinf, stream))
+                    i += 2
+                    continue
+        i += 1
+    return channels_by_group
 
-def merge_playlists():
-    final_groups = defaultdict(list)
+def merge_playlists(urls, epg_url):
+    all_channels = defaultdict(list)
 
-    for url in playlist_urls:
+    for url in urls:
         lines = fetch_playlist(url)
-        # Skip global header
-        if lines and lines[0].strip().startswith("#EXTM3U"):
-            lines = lines[1:]
-        groups = parse_and_group(lines)
-        for group, entries in groups.items():
-            final_groups[group].extend(entries)
+        if lines and lines[0].startswith("#EXTM3U"):
+            lines = lines[1:]  # Remove header
+        parsed = parse_playlist(lines)
+        for group, entries in parsed.items():
+            all_channels[group].extend(entries)
 
-    with open("MergedPlaylist.m3u8", "w", encoding="utf-8") as f:
-        f.write(f'#EXTM3U url-tvg="{EPG_URL}"\n\n')
-        for group in sorted(final_groups.keys(), key=lambda x: x.lower()):
-            for entry in final_groups[group]:
-                for line in entry:
-                    f.write(f"{line}\n")
-            f.write("\n")
+    sorted_groups = sorted(all_channels.keys(), key=lambda x: x.lower())
 
-    print("✅ MergedPlaylist.m3u8 written successfully with no changes to group names or channels.")
+    output = [f'#EXTM3U url-tvg="{epg_url}"\n']
+    for group in sorted_groups:
+        for extinf, stream in all_channels[group]:
+            output.append(extinf.strip())
+            output.append(stream.strip())
+
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        f.write("\n".join(output) + "\n")
+
+    print(f"{OUTPUT_FILE} has been rebuilt — metadata untouched, groups in order.")
 
 if __name__ == "__main__":
-    merge_playlists()
+    merge_playlists(playlist_urls, EPG_URL)
