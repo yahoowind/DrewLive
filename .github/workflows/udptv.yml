@@ -34,7 +34,9 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git pull origin main --rebase  # Pull and rebase to integrate remote changes
+          git reset --hard
+          git clean -fd
+          git pull origin main
           git add UDPTV.m3u
           git commit -m "Force update UDPTV.m3u with timestamp" || echo "No changes to commit"
           git push origin main
