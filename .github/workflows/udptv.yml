@@ -30,12 +30,13 @@ jobs:
         run: |
           echo "# Updated at $(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> UDPTV.m3u
 
-      - name: Commit and push updated playlist every time
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
-          git add UDPTV.m3u
-          git commit -m "Force update UDPTV.m3u with timestamp" || echo "No changes to commit"
-          git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+- name: Commit and push updated playlist every time
+  run: |
+    git config user.name "github-actions"
+    git config user.email "github-actions@users.noreply.github.com"
+    git pull origin main --rebase  # Pull and rebase to integrate remote changes
+    git add UDPTV.m3u
+    git commit -m "Force update UDPTV.m3u with timestamp" || echo "No changes to commit"
+    git push origin main
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
