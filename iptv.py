@@ -1,6 +1,7 @@
 import requests
 from collections import defaultdict
 import re
+from datetime import datetime
 
 playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLive.m3u8",
@@ -38,41 +39,40 @@ def parse_playlist(lines):
     while i < len(lines):
         line = lines[i].strip()
         if line.startswith("#EXTINF"):
-            match = re.search(r'group-title="([^"]+)"', line)
-            group = match.group(1).strip() if match else "ZZZ_Unsorted"
             extinf = line
             if i + 1 < len(lines):
-                stream = lines[i + 1].strip()
-                if stream and not stream.startswith("#"):
-                    channels_by_group[group].append((extinf, stream))
-                    i += 2
-                    continue
-        i += 1
+                url = lines[i + 1].strip()
+                group_match = re.search(r'group-title="([^"]+)"', extinf)
+                group = group_match.group(1) if group_match else "Other"
+                channels_by_group[group].append((extinf, url))
+                i += 2
+            else:
+                i += 1
+        else:
+            i += 1
     return channels_by_group
 
-def merge_playlists(urls, epg_url):
-    all_channels = defaultdict(list)
+def write_merged_playlist(channels_by_group):
+    lines = [
+        f'#EXTM3U url-tvg="{EPG_URL}"',
+        f'# Last forced update: {datetime.utcnow().isoformat()}Z'
+    ]
 
-    for url in urls:
+    for group in sorted(channels_by_group.keys()):
+        for extinf, url in channels_by_group[group]:
+            lines.append(extinf)
+            lines.append(url)
+
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines) + '\n')
+
+    print(f"Merged playlist written to {OUTPUT_FILE}")
+
+if __name__ == "__main__":
+    all_channels = defaultdict(list)
+    for url in playlist_urls:
         lines = fetch_playlist(url)
-        if lines and lines[0].startswith("#EXTM3U"):
-            lines = lines[1:]  # Remove header
         parsed = parse_playlist(lines)
         for group, entries in parsed.items():
             all_channels[group].extend(entries)
-
-    sorted_groups = sorted(all_channels.keys(), key=lambda x: x.lower())
-
-    output = [f'#EXTM3U url-tvg="{epg_url}"\n']
-    for group in sorted_groups:
-        for extinf, stream in all_channels[group]:
-            output.append(extinf.strip())
-            output.append(stream.strip())
-
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        f.write("\n".join(output) + "\n")
-
-    print(f"{OUTPUT_FILE} has been rebuilt — metadata untouched, groups in order.")
-
-if __name__ == "__main__":
-    merge_playlists(playlist_urls, EPG_URL)
+    write_merged_playlist(all_channels)
