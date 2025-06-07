@@ -24,16 +24,16 @@ jobs:
       - name: Run UDPTV playlist update script
         run: python udptv.py
 
-      - name: Commit and push updated playlist if changed
+      - name: Force-inject timestamp to guarantee diff
+        run: |
+          echo "# Updated at $(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> UDPTV.m3u
+
+      - name: Commit and push updated playlist every time
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          if [[ $(git status --porcelain) ]]; then
-            git add UDPTV.m3u
-            git commit -m "Automated playlist update"
-            git push
-          else
-            echo "No changes to commit"
-          fi
+          git add UDPTV.m3u
+          git commit -m "Force update UDPTV.m3u with timestamp"
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
