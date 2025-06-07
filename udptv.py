@@ -1,5 +1,6 @@
 import requests
 import re
+from datetime import datetime
 
 UPSTREAM_URL = "https://tinyurl.com/drewliveudptv"
 EPG_URL = "https://tinyurl.com/merged2423-epg"
@@ -12,19 +13,15 @@ REMOVE_PATTERNS = [
 ]
 
 def fetch_playlist():
-    try:
-        res = requests.get(UPSTREAM_URL, timeout=10)
-        res.raise_for_status()
-        return res.text.splitlines()
-    except Exception as e:
-        print(f"Error fetching playlist: {e}")
-        return []
+    res = requests.get(UPSTREAM_URL, timeout=10)
+    res.raise_for_status()
+    return res.text.splitlines()
 
 def should_remove_line(line):
     return any(pattern.match(line) for pattern in REMOVE_PATTERNS)
 
 def patch_line(extinf):
-    # Force the group-title to YOUR group, no exceptions
+    # Only force group-title, nothing else changed
     if 'group-title="' in extinf:
         extinf = re.sub(r'group-title="[^"]+"', f'group-title="{FORCED_GROUP}"', extinf)
     else:
@@ -32,7 +29,10 @@ def patch_line(extinf):
     return extinf
 
 def process_and_write(lines):
-    output = [f'#EXTM3U url-tvg="{EPG_URL}"\n']  # Only your EPG line, no duplicates
+    output = [
+        f'#EXTM3U url-tvg="{EPG_URL}"',
+        f'# Last forced update: {datetime.utcnow().isoformat()}Z'
+    ]
 
     i = 0
     while i < len(lines):
@@ -42,21 +42,20 @@ def process_and_write(lines):
             continue
         if line.startswith('#EXTINF'):
             patched = patch_line(line)
-            output.append(patched + '\n')
-            # Next line must be stream URL, just add it
+            output.append(patched)
             if i + 1 < len(lines):
-                output.append(lines[i + 1].strip() + '\n')
+                output.append(lines[i + 1].strip())
                 i += 2
             else:
                 i += 1
         else:
             i += 1
 
-    # Force overwrite the file every time you run this
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        f.writelines(output)
+        f.write('\n'.join(output))
+        f.write('\n')
 
-    print(f"{OUTPUT_FILE} updated and overwritten — forced update complete.")
+    print(f"{OUTPUT_FILE} updated with forced group and timestamp.")
 
 if __name__ == "__main__":
     lines = fetch_playlist()
