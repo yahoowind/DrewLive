@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
-#EXTINF:-1  tvg-id="ABC.(WABC).New.York,.NY.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/abc.png" group-title="Drew247TV",ABC
+#EXTINF:-1  tvg-id="ABC.(WABC).New.York,.NY.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/abc.png" group-title="Drew247TV",ABC (WABC)
 https://ft.fbcdntv247.cfd/memfs/196a3d53-fe48-484c-b267-f3f326f8c9e7_output_0.m3u8
 #EXTINF:-1  tvg-id="AMC.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/amc.png" group-title="Drew247TV",AMC
 https://ft.fbcdntv247.cfd/memfs/c21d4225-12e5-4178-af0e-33711499d86e_output_0.m3u8
@@ -27,8 +27,6 @@ https://fbcdntv247.cfd/memfs/24e6e9dd-7a3b-46e5-bddd-e21ae6152898.m3u8
 https://fbcdntv247.cfd/memfs/56af1099-35de-4c64-ace2-99eb216793b4.m3u8
 #EXTINF:-1  tvg-id="Discovery.Channel.(US).-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/discovery-channel.png" group-title="Drew247TV",Discovery
 https://ft.fbcdntv247.cfd/memfs/17dec456-cbcb-4836-b268-dd2a40cb4b87_output_0.m3u8
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/et-live-us.png?raw=true" group-title="Drew247TV",Entertainment Live (COS)
-https://tinyurl.com/etlive24
 #EXTINF:-1  tvg-id="ESPN.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/espn-usa.png" group-title="Drew247TV",ESPN
 https://ft.fbcdntv247.cfd/memfs/4e731d12-852c-4daa-b950-aa97b5357aba_output_0.m3u8
 #EXTINF:-1  tvg-id="ESPN2.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/espn-2-usa.png" group-title="Drew247TV",ESPN 2
@@ -37,7 +35,7 @@ https://ft.fbcdntv247.cfd/memfs/c8d2e86a-43fc-4b22-b084-3008e8d1063c_output_0.m3
 https://ft.fbcdntv247.cfd/memfs/56cc18c4-1e9d-4af0-b1a2-76fc8fc86333_output_0.m3u8
 #EXTINF:-1  tvg-id="ESPN.U.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/espn-u-usa.png" group-title="Drew247TV",ESPN U
 https://ft.fbcdntv247.cfd/memfs/be6d8aa9-b18f-4004-9f5a-e587a49c3bc4_output_0.m3u8
-#EXTINF:-1  tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/fox-usa.png" group-title="Drew247TV",FOX
+#EXTINF:-1  tvg-id="FOX.(WNYW).New.York,.NY.us" tvg-logo="https://static.foxtv.com/static/orion/img/core/s/logos/fts-new-york-a.svg" group-title="Drew247TV",FOX (WNYW)
 https://ft.fbcdntv247.cfd/memfs/868cfc8b-f31c-40b5-bc19-bb2f8434c869_output_0.m3u8
 #EXTINF:-1  tvg-id="Fox.News.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/fox-news.png" group-title="Drew247TV",FOX News
 https://ft.fbcdntv247.cfd/memfs/f03819b3-64bd-4730-ab94-2469c3d30d81_output_0.m3u8
@@ -55,8 +53,6 @@ https://ft.fbcdntv247.cfd/memfs/2560c665-052e-4646-aaab-3ad367a7bc8e_output_0.m3
 https://ft.fbcdntv247.cfd/memfs/3ac0c981-95f6-4fce-a66d-9b55773370f2_output_0.m3u8
 #EXTINF:-1  tvg-id="History.Channel.US.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/history-usa.png" group-title="Drew247TV",History Channel
 https://ft.fbcdntv247.cfd/memfs/7ba806d9-3ae3-4425-a46d-90db0b27988a_output_0.m3u8
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://www.postcarbon.org/wp-content/uploads/2021/07/inside_edition.png" group-title="Drew247TV",Inside Edition (COS)
-https://tinyurl.com/insideedition24
 #EXTINF:-1  tvg-id="MLB Network USA|MLB.Network.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/mlb-network-usa.png" group-title="Drew247TV",MLB Network
 https://ft.fbcdntv247.cfd/memfs/38a596d0-649a-459b-af25-4dd8629f6f0d_output_0.m3u8
 #EXTINF:-1  tvg-id="MSNBC.USA.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/msnbc.png" group-title="Drew247TV",MSNBC
