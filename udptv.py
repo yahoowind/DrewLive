@@ -9,27 +9,36 @@ FORCED_GROUP = 'UDPTV Live Streams'
 REMOVE_PATTERNS = [
     re.compile(r'^# (Last updated|Updated):', re.IGNORECASE),
     re.compile(r'^### IF YOU ARE A RESELLER OR LEECHER', re.IGNORECASE),
+    re.compile(r'^#EXTM3U', re.IGNORECASE),
 ]
 
 def fetch_playlist():
-    headers = {'Cache-Control': 'no-cache'}
-    res = requests.get(UPSTREAM_URL, headers=headers, timeout=10)
+    # Always pull fresh, no cache, no retries except fatal error
+    res = requests.get(UPSTREAM_URL, timeout=10)
     res.raise_for_status()
     return res.text.splitlines()
 
 def should_remove_line(line):
-    return any(pattern.match(line) for pattern in REMOVE_PATTERNS)
+    for pattern in REMOVE_PATTERNS:
+        if pattern.match(line):
+            return True
+    return False
 
-def patch_line(extinf):
-    # Always force group title to YOUR forced group exactly
-    if 'group-title="' in extinf:
-        extinf = re.sub(r'group-title="[^"]+"', f'group-title="{FORCED_GROUP}"', extinf)
+def patch_extinf_line(line):
+    # Clean out any group-title, force your group
+    line = re.sub(r'group-title="[^"]*"', '', line)
+    line = re.sub(r'\s{2,}', ' ', line)
+    parts = line.split(',', 1)
+    if len(parts) == 2:
+        before_comma, after_comma = parts
+        before_comma = before_comma.strip()
+        before_comma += f' group-title="{FORCED_GROUP}"'
+        return f"{before_comma},{after_comma}"
     else:
-        extinf = extinf.replace('#EXTINF:', f'#EXTINF:-1 group-title="{FORCED_GROUP}"')
-    # You can add more patch logic here if needed
-    return extinf
+        return f'#EXTINF:-1 group-title="{FORCED_GROUP}" {line[8:]}'
 
 def process_and_write(lines):
+    # Always overwrite, no matter what
     output = [f'#EXTM3U url-tvg="{EPG_URL}"\n']
     i = 0
     while i < len(lines):
@@ -38,19 +47,18 @@ def process_and_write(lines):
             i += 1
             continue
         if line.startswith('#EXTINF'):
-            patched = patch_line(line)
-            output.append(patched + '\n')
+            output.append(patch_extinf_line(line) + '\n')
             if i + 1 < len(lines):
-                stream_url = lines[i + 1].strip()
-                output.append(stream_url + '\n')
+                output.append(lines[i + 1].strip() + '\n')
                 i += 2
             else:
                 i += 1
         else:
+            output.append(line + '\n')
             i += 1
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.writelines(output)
-    print(f"{OUTPUT_FILE} forcibly updated and written.")
+    print(f"🔥 {OUTPUT_FILE} double triple force updated.")
 
 if __name__ == "__main__":
     lines = fetch_playlist()
