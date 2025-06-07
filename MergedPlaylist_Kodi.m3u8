@@ -1,17 +1,5 @@
 #EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
-# Last forced update: 2025-06-07T20:32:12.736973Z
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737479929301-734936769.webp" group-title="24/7 STREAMS",ESPN USA
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737480572371-2614386.avif" group-title="24/7 STREAMS",Fight Network|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728412197574-841337312.jpg" group-title="24/7 STREAMS",MLB TV
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737480272313-198816265.png" group-title="24/7 STREAMS",Marquee Sports Network|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728408044408-143580793.jpg" group-title="24/7 STREAMS",NBA TV
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728404679247-927954642.jpg" group-title="24/7 STREAMS",NFL NETWORK|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1728404540419-502177724.png" group-title="24/7 STREAMS",NHL NETWORK
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737480103497-62053063.jpg" group-title="24/7 STREAMS",TNT|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
+# Last forced update: 2025-06-07T20:45:22.399343Z
 #EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737479929301-734936769.webp" group-title="24/7 STREAMS",ESPN USA
 #EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pixelsport.tv/backend/slider/image-1737480572371-2614386.avif" group-title="24/7 STREAMS",Fight Network|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
@@ -138,61 +126,62 @@
 #EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/b2/Sky_Sport_News_Logo_2020.png" group-title="24/7 STREAMS",Sky Sports News
 #EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://live-tv.b-cdn.net/icons/sports/image_(5).png" group-title="24/7 STREAMS",Sky Sports Plus|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNXw53gnUV1zL1tDoAFLmfHNOtpMBx7goFFg&s" group-title="24/7 STREAMS",Sky Sports Premier League
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/04/Sky_sports_racing.png" group-title="24/7 STREAMS",Sky Sports Racing|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/04/Sky_sports_racing.png" group-title="24/7 STREAMS",Sky Sports Racing
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sky_Sport_Tennis_HD.svg/2560px-Sky_Sport_Tennis_HD.svg.png" group-title="24/7 STREAMS",Sky Sports Tennis|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sky_Sport_Tennis_HD.svg/2560px-Sky_Sport_Tennis_HD.svg.png" group-title="24/7 STREAMS",Sky Sports Tennis
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/2e/Sport_TV1_%282023%29.svg" group-title="24/7 STREAMS",Sport TV 1|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/2e/Sport_TV1_%282023%29.svg" group-title="24/7 STREAMS",Sport TV 1
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Sport-Digital.svg/2560px-Sport-Digital.svg.png" group-title="24/7 STREAMS",Sportdigital|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Sport-Digital.svg/2560px-Sport-Digital.svg.png" group-title="24/7 STREAMS",Sportdigital
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/TBS_2020.svg/1200px-TBS_2020.svg.png" group-title="24/7 STREAMS",TBS|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/TBS_2020.svg/1200px-TBS_2020.svg.png" group-title="24/7 STREAMS",TBS
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/TNT_%28TV_Channel%29.svg/1200px-TNT_%28TV_Channel%29.svg.png" group-title="24/7 STREAMS",TNT|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/TNT_%28TV_Channel%29.svg/1200px-TNT_%28TV_Channel%29.svg.png" group-title="24/7 STREAMS",TNT
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://media.info/l/o/1/1539.1690027797.png" group-title="24/7 STREAMS",TNT 1|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://media.info/l/o/1/1539.1690027797.png" group-title="24/7 STREAMS",TNT 1
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://media.info/l/o/1/1540.1690027877.png" group-title="24/7 STREAMS",TNT 2|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://media.info/l/o/1/1540.1690027877.png" group-title="24/7 STREAMS",TNT 2
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://media.info/l/o/5/5712.1690027954.png" group-title="24/7 STREAMS",TNT 3|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://media.info/l/o/5/5712.1690027954.png" group-title="24/7 STREAMS",TNT 3
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://media.info/l/o/1/1491.1690027975.png" group-title="24/7 STREAMS",TNT 4|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://media.info/l/o/1/1491.1690027975.png" group-title="24/7 STREAMS",TNT 4
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://assets.tv24.co/channels/bt-sport-extra-1-l.webp" group-title="24/7 STREAMS",TNT Sports 5|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://assets.tv24.co/channels/bt-sport-extra-1-l.webp" group-title="24/7 STREAMS",TNT Sports 5
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/TSN1.svg/2560px-TSN1.svg.png" group-title="24/7 STREAMS",TSN 1|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/TSN1.svg/2560px-TSN1.svg.png" group-title="24/7 STREAMS",TSN 1
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/sutruq1433379787.png" group-title="24/7 STREAMS",TSN 2|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/sutruq1433379787.png" group-title="24/7 STREAMS",TSN 2
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://apsiscom.com/images/channels/935.webp" group-title="24/7 STREAMS",TSN 3|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://apsiscom.com/images/channels/935.webp" group-title="24/7 STREAMS",TSN 3
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/yrrvpq1433380019.png" group-title="24/7 STREAMS",TSN 4|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/yrrvpq1433380019.png" group-title="24/7 STREAMS",TSN 4
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://product-catalog-storage.s3.ca-central-1.amazonaws.com/channels/logo/TSN_5_HD.png" group-title="24/7 STREAMS",TSN 5|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://product-catalog-storage.s3.ca-central-1.amazonaws.com/channels/logo/TSN_5_HD.png" group-title="24/7 STREAMS",TSN 5
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/TUDN_Logo.svg/2560px-TUDN_Logo.svg.png" group-title="24/7 STREAMS",TUDN|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/TUDN_Logo.svg/2560px-TUDN_Logo.svg.png" group-title="24/7 STREAMS",TUDN
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/84/Telemundo-nuevo-logo.png" group-title="24/7 STREAMS",Telemundo|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/84/Telemundo-nuevo-logo.png" group-title="24/7 STREAMS",Telemundo
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/1200px-Tennis_Channel_logo.svg.png" group-title="24/7 STREAMS",Tennis TV|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/1200px-Tennis_Channel_logo.svg.png" group-title="24/7 STREAMS",Tennis TV
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://image-resizer-cloud-cdn.api.cms.amdvids.com/image/7382296F-97F6-4450-B77B-8FE331FC04F6/3-1x1.png" group-title="24/7 STREAMS",Tennis TV 2|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://image-resizer-cloud-cdn.api.cms.amdvids.com/image/7382296F-97F6-4450-B77B-8FE331FC04F6/3-1x1.png" group-title="24/7 STREAMS",Tennis TV 2
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/5/54/TyC_Sports_logo.svg" group-title="24/7 STREAMS",TyC Sports|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/5/54/TyC_Sports_logo.svg" group-title="24/7 STREAMS",TyC Sports
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://live-tv.b-cdn.net/logos/channels/0cdnusausanetwork-sv3.png" group-title="24/7 STREAMS",USA Network|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://live-tv.b-cdn.net/logos/channels/0cdnusausanetwork-sv3.png" group-title="24/7 STREAMS",USA Network
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_UniM%C3%A1s.svg" group-title="24/7 STREAMS",UniMás|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_UniM%C3%A1s.svg" group-title="24/7 STREAMS",UniMás
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/UNIVERSO_LOGO_color_black.png/1024px-UNIVERSO_LOGO_color_black.png" group-title="24/7 STREAMS",Universo|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/UNIVERSO_LOGO_color_black.png/1024px-UNIVERSO_LOGO_color_black.png" group-title="24/7 STREAMS",Universo
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/75/Univision_34_2019.png" group-title="24/7 STREAMS",Univision 34|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/75/Univision_34_2019.png" group-title="24/7 STREAMS",Univision 34
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNXw53gnUV1zL1tDoAFLmfHNOtpMBx7goFFg&s" group-title="24/7 STREAMS",VE- uk - sky sport premier league|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://cdn.worldvectorlogo.com/logos/hbo-2.svg" group-title="24/7 STREAMS",VE-usa-hbo2
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/7e/W_Network_2002_3D.svg" group-title="24/7 STREAMS",W Network|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://pbs.twimg.com/profile_images/1605131756310614017/05qwHae-_400x400.jpg" group-title="24/7 STREAMS",VE-de-sky premier league
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://cdn.worldvectorlogo.com/logos/hbo-2.svg" group-title="24/7 STREAMS",VE-usa-hbo2|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyoBxNmfDbilv_ElFg5-noVIBgH7Y1OLTFQQ&s" group-title="24/7 STREAMS",Willow HD
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b6/Willow_Xtra_2023_stacked.svg" group-title="24/7 STREAMS",Willow Xtra|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/7e/W_Network_2002_3D.svg" group-title="24/7 STREAMS",W Network
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyoBxNmfDbilv_ElFg5-noVIBgH7Y1OLTFQQ&s" group-title="24/7 STREAMS",Willow HD|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/cb/World_Fishing_Network_OD.svg" group-title="24/7 STREAMS",World Fishing Network
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzVKhyyLjhKAjizJqs8N8jg7mH7bHWVXwUUg&s" group-title="24/7 STREAMS",YES Network|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b6/Willow_Xtra_2023_stacked.svg" group-title="24/7 STREAMS",Willow Xtra
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/cb/World_Fishing_Network_OD.svg" group-title="24/7 STREAMS",World Fishing Network|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://media.info/l/o/6/6595.1491352332.png" group-title="24/7 STREAMS",beIN SPORTS Español
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://cdn.freelogovectors.net/wp-content/uploads/2023/05/bein-sports_logo-freelogovectors.net_.png" group-title="24/7 STREAMS",beIN SPORTS USA|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzVKhyyLjhKAjizJqs8N8jg7mH7bHWVXwUUg&s" group-title="24/7 STREAMS",YES Network
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://media.info/l/o/6/6595.1491352332.png" group-title="24/7 STREAMS",beIN SPORTS Español|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b5/XTRA_2.png" group-title="24/7 STREAMS",beIN SPORTS Xtra
-#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/8e/Logo-bein-sport-xtra-espanol-plain.png" group-title="24/7 STREAMS",beIN SPORTS Xtra en Español|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://cdn.freelogovectors.net/wp-content/uploads/2023/05/bein-sports_logo-freelogovectors.net_.png" group-title="24/7 STREAMS",beIN SPORTS USA
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b5/XTRA_2.png" group-title="24/7 STREAMS",beIN SPORTS Xtra|Referer=https%3A%2F%2Ffstv.us%2F
 #EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
+#EXTINF:-1  tvg-id="Local.Programming.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/8e/Logo-bein-sport-xtra-espanol-plain.png" group-title="24/7 STREAMS",beIN SPORTS Xtra en Español
+#EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7|Referer=https%3A%2F%2Ffstv.us%2F
 http://user.scalecdn.co:8080/live/26725074/92867131/511232.ts
 #EXTINF:-1  tvg-name="BBC Top Gear 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/Top-Gear-Logo-2002.png" group-title="24/7 by Mystique" radio="false",BBC Top Gear 24/7
 https://apollo.production-public.tubi.io/live/ac-bbc-top-gear2.m3u8
@@ -654,15 +643,6 @@ https://adultswim-vodlive.cdn.turner.com/live/robot-chicken/stream_de.m3u8
 https://adultswim-vodlive.cdn.turner.com/live/samurai-jack/stream_de.m3u8
 #EXTINF:-1  tvg-name="Adult Swim The Eric Andre Show" tvg-id="24.7.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/en/2/26/Eric_andre_show_title_screen.jpg" group-title="Adult Swim VOD" radio="false",Adult Swim The Eric Andre Show
 https://adultswim-vodlive.cdn.turner.com/live/eric-andre/stream_de.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mlb-logo.png" group-title="BASEBALL",MLB| Athletics - Minnesota Twins (01:35 PM MT 06/05/25)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mlb-logo.png" group-title="BASEBALL",MLB| Los Angeles Dodgers - New York Mets (02:10 PM MT 06/05/25)|Referer=https%3A%2F%2Ffstv.us%2F
-#EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mlb-logo.png" group-title="BASEBALL",MLB| Newcastle Knights - Manly Sea Eagles (03:50 AM MT 06/05/25)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mlb-logo.png" group-title="BASEBALL",MLB| None - None (01:00 PM MT 06/05/25)|Referer=https%3A%2F%2Ffstv.us%2F
-#EXTVLCOPT:http-referrer=https://fstv.us/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mlb-logo.png" group-title="BASEBALL",MLB| San Francisco Giants - San Diego Padres (01:45 PM MT 06/05/25)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mlb-logo.png" group-title="BASEBALL",MLB| Seattle Mariners - Baltimore Orioles (01:40 PM MT 06/05/25)|Referer=https%3A%2F%2Ffstv.us%2F
-#EXTVLCOPT:http-referrer=https://fstv.us/
 #EXTINF:-1 tvg-id="4b81d4288f603716ec5616c0bcac4c59" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/baseball-logo.png" group-title="BASEBALL",Athletes Unlimited Softball League : Talons vs Bandits (FANDUEL SPORTS NETWORK SUN)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly96ZWtvbmV3Lm5ld2tzby5ydS96ZWtvL3ByZW1pdW05MDUvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="4b81d4288f603716ec5616c0bcac4c59" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/baseball-logo.png" group-title="BASEBALL",Athletes Unlimited Softball League : Talons vs Bandits (NESN USA)
@@ -855,8 +835,16 @@ https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9uZnNuZXcubmV3a3NvLnJ1L25mcy
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly96ZWtvbmV3Lm5ld2tzby5ydS96ZWtvL3ByZW1pdW03NjcvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="11d7aba98ef8b1945ae56fc9941a774e" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="BASKETBALL",WNBA : Seattle Storm vs Phoenix Mercury (WNBA LEAGUE PASS)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW0xMDkvbW9uby5tM3U4.m3u8
-#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://teamlogostyle.com/wp-content/uploads/2016/03/3128-boxer-clip-art-preview.jpg" group-title="BOXING",Albert Ramirez vs Michael Alan Flannery
-#EXTINF:-1 tvg-id="cd2e318ed80ad703685c358d314e49d8" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/boxing-logo.png" group-title="BOXING",Boxing : Beatriz Ferreira vs Maria Ines Ferreyra (DAZN PPV)|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34418%3Fnewa%3D111
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://teamlogostyle.com/wp-content/uploads/2016/03/3128-boxer-clip-art-preview.jpg" group-title="BOXING",Beatriz Iasmim Soares Ferreira vs Maria Ines Ferreyra
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://teamlogostyle.com/wp-content/uploads/2016/03/3128-boxer-clip-art-preview.jpg" group-title="BOXING",Callum Simpson vs Ivan Zucco|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34462%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34459?newa=111
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://teamlogostyle.com/wp-content/uploads/2016/03/3128-boxer-clip-art-preview.jpg" group-title="BOXING",Fabio Wardley vs Justis Huni
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://teamlogostyle.com/wp-content/uploads/2016/03/3128-boxer-clip-art-preview.jpg" group-title="BOXING",Justin Pauldo vs Juan Carlos Burgos|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34463%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34461?newa=111
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://teamlogostyle.com/wp-content/uploads/2016/03/3128-boxer-clip-art-preview.jpg" group-title="BOXING",Keyshawn Davis vs Edwin De Los Santos
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://teamlogostyle.com/wp-content/uploads/2016/03/3128-boxer-clip-art-preview.jpg" group-title="BOXING",Xhoxhaj vs Aliev|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34464%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34466?newa=111
+#EXTINF:-1 tvg-id="cd2e318ed80ad703685c358d314e49d8" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/boxing-logo.png" group-title="BOXING",Boxing : Beatriz Ferreira vs Maria Ines Ferreyra (DAZN PPV)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW02OS9tb25vLm0zdTg=.m3u8
 #EXTINF:-1 tvg-id="a21bcab1229f0ca9acf65f5d8c673b30" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/boxing-logo.png" group-title="BOXING",Boxing : Fabio Wardley vs Justis Huni (DAZN PPV)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly93aW5kbmV3Lm5ld2tzby5ydS93aW5kL3ByZW1pdW01OS9tb25vLm0zdTg=.m3u8
@@ -894,8 +882,10 @@ https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly93aW5kbmV3Lm5ld2tzby5ydS93aW
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW0xMjAvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="9bdc54d1c20fcadb433a960ce4d33639" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/boxing-logo.png" group-title="BOXING",Top Rank Boxing : Keyshawn Davis vs Edwin De Los Santos (SPORT 5 PLUS ISRAEL)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly96ZWtvbmV3Lm5ld2tzby5ydS96ZWtvL3ByZW1pdW0xNDUvbW9uby5tM3U4.m3u8
-#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://content.sportslogos.net/logos/8/2573/full/5014__canadian_football_league-alternate-2016.png" group-title="CFL",Saskatchewan Roughriders vs Ottawa Redblacks
-#EXTINF:-1  tvg-name="Classic Rock 102.9 MGK" tvg-id="Radio.105.Dummy.us" tvg-logo="https://wmgk.com/uploads/2021/06/WMGK-LOGO-HERO.jpg" group-title="Classic Rock" radio="true",Classic Rock 102.9 MGK|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34411%3Fnewa%3D111
+#EXTINF:-1  tvg-id="Sports.Dummy.us" tvg-logo="https://cdn.freebiesupply.com/logos/large/2x/cfl-logo-svg-vector.svg" group-title="CFL",BC Lions vs Edmonton Elks
+#EXTINF:-1  tvg-id="Sports.Dummy.us" tvg-logo="https://cdn.freebiesupply.com/logos/large/2x/cfl-logo-svg-vector.svg" group-title="CFL",Calgary Stampeders vs Hamilton Tiger-Cats|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34457%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34456?newa=111
+#EXTINF:-1  tvg-name="Classic Rock 102.9 MGK" tvg-id="Radio.105.Dummy.us" tvg-logo="https://wmgk.com/uploads/2021/06/WMGK-LOGO-HERO.jpg" group-title="Classic Rock" radio="true",Classic Rock 102.9 MGK
 https://playerservices.streamtheworld.com/api/livestream-redirect/WMGKFMAACIHR.aac
 #EXTINF:-1  tvg-name="Classic Rock 103.3" tvg-id="Radio.105.Dummy.us" tvg-logo="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/2733/files/2021/04/wglx-logo-glow-1024x683.png" group-title="Classic Rock" radio="true",Classic Rock 103.3
 https://playerservices.streamtheworld.com/api/livestream-redirect/WGLXFMAAC.aac
@@ -2923,103 +2913,76 @@ https://listen.shoutcast.com/smoothjazzcd1019newyork
 http://server.webnetradio.net:5366/;
 #EXTINF:-1  tvg-name="Smooth Jazz Network" tvg-id="Radio.105.Dummy.us" tvg-logo="https://static.wixstatic.com/media/6c0566_901c482990f74f9aa9695c3295ac1cef~mv2.png/v1/crop/x_0,y_1060,w_5001,h_2827/fill/w_368,h_208,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Smooth%20Jazz_Light%20Blue_Registered-01.png" group-title="Jazz" radio="true",Smooth Jazz Network
 https://stream.revma.ihrhls.com/zc8170/hls.m3u8
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Athletics vs Minnesota Twins
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Chicago White Sox vs Detroit Tigers|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34403%3Fnewa%3D111
-#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34401?newa=111
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Los Angeles Dodgers vs New York Mets
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",New York Yankees vs Cleveland Guardians|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34406%3Fnewa%3D111
-#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34408?newa=111
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Pittsburgh Pirates vs Houston Astros
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",San Francisco Giants vs San Diego Padres|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34415%3Fnewa%3D111
-#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34405?newa=111
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Seattle Mariners vs Baltimore Orioles
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",St. Louis Cardinals vs Kansas City Royals|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34404%3Fnewa%3D111
-#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34410?newa=111
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",St. Louis Cardinals vs Kansas City Royals
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",St. Louis Cardinals vs Kansas City Royals|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34398%3Fnewa%3D111
-#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34417?newa=111
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Tampa Bay Rays vs Texas Rangers
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Toronto Blue Jays vs Philadelphia Phillies|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34416%3Fnewa%3D111
-#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34402?newa=111
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Washington Nationals vs Chicago Cubs
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/ari.png" group-title="MLB",Arizona Diamondbacks - Atlanta Braves (AWAY)|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34407%3Fnewa%3D111
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Athletics vs Baltimore Orioles
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Chicago White Sox vs Kansas City Royals|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34451%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34470?newa=111
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Cincinnati Reds vs Arizona Diamondbacks
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Cleveland Guardians vs Houston Astros|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34468%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34469?newa=111
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Colorado Rockies vs New York Mets
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Detroit Tigers vs Chicago Cubs|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34450%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34446?newa=111
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Los Angeles Angels vs Seattle Mariners
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Minnesota Twins vs Toronto Blue Jays|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34467%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34455?newa=111
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",New York Yankees vs Boston Red Sox
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Pittsburgh Pirates vs Philadelphia Phillies|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34472%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34449?newa=111
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",San Francisco Giants vs Atlanta Braves
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",St. Louis Cardinals vs Los Angeles Dodgers|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34447%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34445?newa=111
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Tampa Bay Rays vs Miami Marlins
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="MLB",Washington Nationals vs Texas Rangers|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34471%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34448?newa=111
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/ari.png" group-title="MLB",Arizona Diamondbacks - Cincinnati Reds (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/cin.png" group-title="MLB",Arizona Diamondbacks - Cincinnati Reds (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/atl.png" group-title="MLB",Arizona Diamondbacks - Atlanta Braves (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/bal.png" group-title="MLB",Baltimore Orioles - Seattle Mariners (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/atl.png" group-title="MLB",Atlanta Braves - San Francisco Giants (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sf.png" group-title="MLB",Atlanta Braves - San Francisco Giants (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sea.png" group-title="MLB",Baltimore Orioles - Seattle Mariners (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/chc.png" group-title="MLB",Chicago Cubs - Washington Nationals (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/bal.png" group-title="MLB",Baltimore Orioles - Athletics (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/ath.png" group-title="MLB",Baltimore Orioles - Athletics (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/wsh.png" group-title="MLB",Chicago Cubs - Washington Nationals (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/cle.png" group-title="MLB",Cleveland Guardians - New York Yankees (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/bos.png" group-title="MLB",Boston Red Sox - New York Yankees (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/nyy.png" group-title="MLB",Boston Red Sox - New York Yankees (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/nyy.png" group-title="MLB",Cleveland Guardians - New York Yankees (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/det.png" group-title="MLB",Detroit Tigers - Chicago White Sox (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/chc.png" group-title="MLB",Chicago Cubs - Detroit Tigers (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/det.png" group-title="MLB",Chicago Cubs - Detroit Tigers (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/chw.png" group-title="MLB",Detroit Tigers - Chicago White Sox (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/hou.png" group-title="MLB",Houston Astros - Pittsburgh Pirates (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/hou.png" group-title="MLB",Houston Astros - Cleveland Guardians (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/cle.png" group-title="MLB",Houston Astros - Cleveland Guardians (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/pit.png" group-title="MLB",Houston Astros - Pittsburgh Pirates (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/kc.png" group-title="MLB",Kansas City Royals - St. Louis Cardinals (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/kc.png" group-title="MLB",Kansas City Royals - Chicago White Sox (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/chw.png" group-title="MLB",Kansas City Royals - Chicago White Sox (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/stl.png" group-title="MLB",Kansas City Royals - St. Louis Cardinals (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/min.png" group-title="MLB",Minnesota Twins - Athletics (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/lad.png" group-title="MLB",Los Angeles Dodgers - St. Louis Cardinals (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/stl.png" group-title="MLB",Los Angeles Dodgers - St. Louis Cardinals (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/ath.png" group-title="MLB",Minnesota Twins - Athletics (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/nym.png" group-title="MLB",New York Mets - Los Angeles Dodgers (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/mia.png" group-title="MLB",Miami Marlins - Tampa Bay Rays (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tb.png" group-title="MLB",Miami Marlins - Tampa Bay Rays (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/lad.png" group-title="MLB",New York Mets - Los Angeles Dodgers (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/phi.png" group-title="MLB",Philadelphia Phillies - Toronto Blue Jays (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/nym.png" group-title="MLB",New York Mets - Colorado Rockies (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/col.png" group-title="MLB",New York Mets - Colorado Rockies (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tor.png" group-title="MLB",Philadelphia Phillies - Toronto Blue Jays (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sd.png" group-title="MLB",San Diego Padres - San Francisco Giants (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/phi.png" group-title="MLB",Philadelphia Phillies - Pittsburgh Pirates (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/pit.png" group-title="MLB",Philadelphia Phillies - Pittsburgh Pirates (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sf.png" group-title="MLB",San Diego Padres - San Francisco Giants (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tex.png" group-title="MLB",Texas Rangers - Tampa Bay Rays (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sd.png" group-title="MLB",San Diego Padres - Milwaukee Brewers (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/mil.png" group-title="MLB",San Diego Padres - Milwaukee Brewers (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tb.png" group-title="MLB",Texas Rangers - Tampa Bay Rays (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/ari.png" group-title="MLB",Arizona Diamondbacks - Atlanta Braves (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sea.png" group-title="MLB",Seattle Mariners - Los Angeles Angels (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/laa.png" group-title="MLB",Seattle Mariners - Los Angeles Angels (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/atl.png" group-title="MLB",Arizona Diamondbacks - Atlanta Braves (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/bal.png" group-title="MLB",Baltimore Orioles - Seattle Mariners (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tex.png" group-title="MLB",Texas Rangers - Washington Nationals (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/wsh.png" group-title="MLB",Texas Rangers - Washington Nationals (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sea.png" group-title="MLB",Baltimore Orioles - Seattle Mariners (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/chc.png" group-title="MLB",Chicago Cubs - Washington Nationals (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tor.png" group-title="MLB",Toronto Blue Jays - Minnesota Twins (AWAY)
+#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/min.png" group-title="MLB",Toronto Blue Jays - Minnesota Twins (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/wsh.png" group-title="MLB",Chicago Cubs - Washington Nationals (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/cle.png" group-title="MLB",Cleveland Guardians - New York Yankees (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/nyy.png" group-title="MLB",Cleveland Guardians - New York Yankees (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/det.png" group-title="MLB",Detroit Tigers - Chicago White Sox (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/chw.png" group-title="MLB",Detroit Tigers - Chicago White Sox (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/hou.png" group-title="MLB",Houston Astros - Pittsburgh Pirates (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/pit.png" group-title="MLB",Houston Astros - Pittsburgh Pirates (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/kc.png" group-title="MLB",Kansas City Royals - St. Louis Cardinals (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/stl.png" group-title="MLB",Kansas City Royals - St. Louis Cardinals (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/min.png" group-title="MLB",Minnesota Twins - Athletics (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/ath.png" group-title="MLB",Minnesota Twins - Athletics (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/nym.png" group-title="MLB",New York Mets - Los Angeles Dodgers (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/lad.png" group-title="MLB",New York Mets - Los Angeles Dodgers (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/phi.png" group-title="MLB",Philadelphia Phillies - Toronto Blue Jays (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tor.png" group-title="MLB",Philadelphia Phillies - Toronto Blue Jays (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sd.png" group-title="MLB",San Diego Padres - San Francisco Giants (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sf.png" group-title="MLB",San Diego Padres - San Francisco Giants (HOME)
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tex.png" group-title="MLB",Texas Rangers - Tampa Bay Rays (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="MLB.Baseball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tb.png" group-title="MLB",Texas Rangers - Tampa Bay Rays (HOME)
-#EXTINF:-1 tvg-id="378e55d923921a8383d96be8cf3e6934" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mma-logo.png" group-title="MMA",Brave Combat Federation : Erko Jun vs Mohammad Fakhreddine (DAZN PPV)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1 tvg-id="378e55d923921a8383d96be8cf3e6934" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mma-logo.png" group-title="MMA",Brave Combat Federation : Erko Jun vs Mohammad Fakhreddine (DAZN PPV)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9uZnNuZXcubmV3a3NvLnJ1L25mcy9wcmVtaXVtNzcvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="6db4a30dc365f5a4f2762f81c7218cf2" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mma-logo.png" group-title="MMA",Hexagone : Anthony Dizy vs Banjougou Sidibe (DAZN PPV)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kb2trbzFuZXcubmV3a3NvLnJ1L2Rva2tvMS9wcmVtaXVtODYvbW9uby5tM3U4.m3u8
-#EXTINF:-1 tvg-id="6db4a30dc365f5a4f2762f81c7218cf2" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mma-logo.png" group-title="MMA",Hexagone : Anthony Dizy vs Banjougou Sidibe (MATCH BOX RUSSIA)
-https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9uZnNuZXcubmV3a3NvLnJ1L25mcy9wcmVtaXVtMzk1L21vbm8ubTN1OA==.m3u8
 #EXTINF:-1 tvg-id="6db4a30dc365f5a4f2762f81c7218cf2" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mma-logo.png" group-title="MMA",Hexagone : Anthony Dizy vs Banjougou Sidibe (RMC SPORT 1 FRANCE)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly96ZWtvbmV3Lm5ld2tzby5ydS96ZWtvL3ByZW1pdW0xMTkvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="74e943353a0498fdc63eeebd8dcfb8db" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mma-logo.png" group-title="MMA",RWS Muay Thai : Muay Thai (DAZN PPV)
@@ -3030,8 +2993,6 @@ https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZH
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kb2trbzFuZXcubmV3a3NvLnJ1L2Rva2tvMS9wcmVtaXVtNjI3L21vbm8ubTN1OA==.m3u8
 #EXTINF:-1 tvg-id="e6d473e7eacd600d25e755f2dd71cace" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/ufc-logo.png" group-title="MMA",UFC 316 Main Card : Merab Dvalishvili vs Sean O'Malley (ESPN DEPORTES)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly96ZWtvbmV3Lm5ld2tzby5ydS96ZWtvL3ByZW1pdW0zNzUvbW9uby5tM3U4.m3u8
-#EXTINF:-1 tvg-id="e6d473e7eacd600d25e755f2dd71cace" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/ufc-logo.png" group-title="MMA",UFC 316 Main Card : Merab Dvalishvili vs Sean O'Malley (MATCH BOX RUSSIA)
-https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9uZnNuZXcubmV3a3NvLnJ1L25mcy9wcmVtaXVtMzk1L21vbm8ubTN1OA==.m3u8
 #EXTINF:-1 tvg-id="e6d473e7eacd600d25e755f2dd71cace" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/ufc-logo.png" group-title="MMA",UFC 316 Main Card : Merab Dvalishvili vs Sean O'Malley (MATCH TV RUSSIA)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW0xMjcvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="e6d473e7eacd600d25e755f2dd71cace" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/ufc-logo.png" group-title="MMA",UFC 316 Main Card : Merab Dvalishvili vs Sean O'Malley (MAX SPORT 2 BULGARIA)
@@ -3052,8 +3013,6 @@ https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZH
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly96ZWtvbmV3Lm5ld2tzby5ydS96ZWtvL3ByZW1pdW0zNzUvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="7559522bae7e29b94f980ab24d4a8e74" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/ufc-logo.png" group-title="MMA",UFC 316 Prelims : Bruno Silva vs Joshua Van (ESPN USA)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly96ZWtvbmV3Lm5ld2tzby5ydS96ZWtvL3ByZW1pdW00NC9tb25vLm0zdTg=.m3u8
-#EXTINF:-1 tvg-id="7559522bae7e29b94f980ab24d4a8e74" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/ufc-logo.png" group-title="MMA",UFC 316 Prelims : Bruno Silva vs Joshua Van (MATCH BOX RUSSIA)
-https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9uZnNuZXcubmV3a3NvLnJ1L25mcy9wcmVtaXVtMzk1L21vbm8ubTN1OA==.m3u8
 #EXTINF:-1 tvg-id="7559522bae7e29b94f980ab24d4a8e74" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/ufc-logo.png" group-title="MMA",UFC 316 Prelims : Bruno Silva vs Joshua Van (MATCH TV RUSSIA)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW0xMjcvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="7559522bae7e29b94f980ab24d4a8e74" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/ufc-logo.png" group-title="MMA",UFC 316 Prelims : Bruno Silva vs Joshua Van (RMC SPORT 1 FRANCE)
@@ -5059,122 +5018,102 @@ http://fl2.moveonjoy.com/VICELAND/index.m3u8
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/247
 #EXTINF:-1  tvg-id="YES.Network.us" tvg-logo="http://lonewolftvpr.com/logos/yes.png" group-title="Mystique USA" radio="false",Yes Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/245
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://www.logodesignlove.com/images/classic/nba-logo.jpg" group-title="NBA",Oklahoma City Thunder vs Indiana Pacers
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ind.png" group-title="NBA",Indiana Pacers - Oklahoma City Thunder (AWAY)|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34400%3Fnewa%3D111
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ind.png" group-title="NBA",Indiana Pacers - Oklahoma City Thunder (AWAY)
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/okc.png" group-title="NBA",Indiana Pacers - Oklahoma City Thunder (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/okc.png" group-title="NBA",Indiana Pacers - Oklahoma City Thunder (HOME)
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ind.png" group-title="NBA",Indiana Pacers - Oklahoma City Thunder (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/okc.png" group-title="NBA",Indiana Pacers - Oklahoma City Thunder (HOME)
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Indiana Pacers - Oklahoma City Thunder (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Indiana Pacers - Oklahoma City Thunder (AWAY)
+#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Indiana Pacers - Oklahoma City Thunder (HOME)|Referer=https%3A%2F%2Fnbawebcast.app%2F%2F
 #EXTVLCOPT:http-referrer=https://nbawebcast.app//
-#EXTINF:-1  tvg-id="NBA.Basketball.Dummy.us" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nba-logo.png" group-title="NBA",Indiana Pacers - Oklahoma City Thunder (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png" group-title="NFL",Arizona Cardinals - New Orleans Saints (AWAY)|Referer=https%3A%2F%2Fnbawebcast.app%2F%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png" group-title="NFL",Arizona Cardinals - New Orleans Saints (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png" group-title="NFL",Arizona Cardinals - New Orleans Saints (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png" group-title="NFL",Arizona Cardinals - New Orleans Saints (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png" group-title="NFL",Baltimore Ravens - Buffalo Bills (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png" group-title="NFL",Baltimore Ravens - Buffalo Bills (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png" group-title="NFL",Baltimore Ravens - Buffalo Bills (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png" group-title="NFL",Baltimore Ravens - Buffalo Bills (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png" group-title="NFL",Carolina Panthers - Jacksonville Jaguars (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png" group-title="NFL",Carolina Panthers - Jacksonville Jaguars (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png" group-title="NFL",Carolina Panthers - Jacksonville Jaguars (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png" group-title="NFL",Carolina Panthers - Jacksonville Jaguars (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png" group-title="NFL",Cincinnati Bengals - Cleveland Browns (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png" group-title="NFL",Cincinnati Bengals - Cleveland Browns (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png" group-title="NFL",Cincinnati Bengals - Cleveland Browns (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png" group-title="NFL",Cincinnati Bengals - Cleveland Browns (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png" group-title="NFL",Dallas Cowboys - Philadelphia Eagles (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png" group-title="NFL",Dallas Cowboys - Philadelphia Eagles (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png" group-title="NFL",Dallas Cowboys - Philadelphia Eagles (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png" group-title="NFL",Dallas Cowboys - Philadelphia Eagles (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png" group-title="NFL",Detroit Lions - Green Bay Packers (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png" group-title="NFL",Detroit Lions - Green Bay Packers (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png" group-title="NFL",Detroit Lions - Green Bay Packers (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png" group-title="NFL",Detroit Lions - Green Bay Packers (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png" group-title="NFL",Houston Texans - Los Angeles Rams (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png" group-title="NFL",Houston Texans - Los Angeles Rams (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png" group-title="NFL",Houston Texans - Los Angeles Rams (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png" group-title="NFL",Houston Texans - Los Angeles Rams (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png" group-title="NFL",Kansas City Chiefs - Los Angeles Chargers (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png" group-title="NFL",Kansas City Chiefs - Los Angeles Chargers (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png" group-title="NFL",Kansas City Chiefs - Los Angeles Chargers (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png" group-title="NFL",Kansas City Chiefs - Los Angeles Chargers (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png" group-title="NFL",Las Vegas Raiders - New England Patriots (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png" group-title="NFL",Las Vegas Raiders - New England Patriots (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ne.png" group-title="NFL",Las Vegas Raiders - New England Patriots (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ne.png" group-title="NFL",Las Vegas Raiders - New England Patriots (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png" group-title="NFL",Miami Dolphins - Indianapolis Colts (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png" group-title="NFL",Miami Dolphins - Indianapolis Colts (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png" group-title="NFL",Miami Dolphins - Indianapolis Colts (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png" group-title="NFL",Miami Dolphins - Indianapolis Colts (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png" group-title="NFL",Minnesota Vikings - Chicago Bears (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png" group-title="NFL",Minnesota Vikings - Chicago Bears (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png" group-title="NFL",Minnesota Vikings - Chicago Bears (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png" group-title="NFL",Minnesota Vikings - Chicago Bears (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png" group-title="NFL",New York Giants - Washington Commanders (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png" group-title="NFL",New York Giants - Washington Commanders (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png" group-title="NFL",New York Giants - Washington Commanders (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png" group-title="NFL",New York Giants - Washington Commanders (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png" group-title="NFL",Pittsburgh Steelers - New York Jets (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png" group-title="NFL",Pittsburgh Steelers - New York Jets (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png" group-title="NFL",Pittsburgh Steelers - New York Jets (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png" group-title="NFL",Pittsburgh Steelers - New York Jets (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png" group-title="NFL",San Francisco 49ers - Seattle Seahawks (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png" group-title="NFL",San Francisco 49ers - Seattle Seahawks (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png" group-title="NFL",San Francisco 49ers - Seattle Seahawks (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png" group-title="NFL",San Francisco 49ers - Seattle Seahawks (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/tb.png" group-title="NFL",Tampa Bay Buccaneers - Atlanta Falcons (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/tb.png" group-title="NFL",Tampa Bay Buccaneers - Atlanta Falcons (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png" group-title="NFL",Tampa Bay Buccaneers - Atlanta Falcons (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png" group-title="NFL",Tampa Bay Buccaneers - Atlanta Falcons (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png" group-title="NFL",Tennessee Titans - Denver Broncos (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png" group-title="NFL",Tennessee Titans - Denver Broncos (AWAY)
+#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png" group-title="NFL",Tennessee Titans - Denver Broncos (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png" group-title="NFL",Tennessee Titans - Denver Broncos (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png" group-title="NFL",Arizona Cardinals - New Orleans Saints (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/edm.png" group-title="NHL",Edmonton Oilers - Florida Panthers (AWAY)
+#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/fla.png" group-title="NHL",Edmonton Oilers - Florida Panthers (HOME)|Referer=https%3A%2F%2Fpixelsport.tv%2F
 #EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png" group-title="NFL",Arizona Cardinals - New Orleans Saints (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png" group-title="NFL",Baltimore Ravens - Buffalo Bills (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png" group-title="NFL",Baltimore Ravens - Buffalo Bills (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png" group-title="NFL",Carolina Panthers - Jacksonville Jaguars (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png" group-title="NFL",Carolina Panthers - Jacksonville Jaguars (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png" group-title="NFL",Cincinnati Bengals - Cleveland Browns (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png" group-title="NFL",Cincinnati Bengals - Cleveland Browns (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png" group-title="NFL",Dallas Cowboys - Philadelphia Eagles (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png" group-title="NFL",Dallas Cowboys - Philadelphia Eagles (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png" group-title="NFL",Detroit Lions - Green Bay Packers (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png" group-title="NFL",Detroit Lions - Green Bay Packers (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png" group-title="NFL",Houston Texans - Los Angeles Rams (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png" group-title="NFL",Houston Texans - Los Angeles Rams (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png" group-title="NFL",Kansas City Chiefs - Los Angeles Chargers (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png" group-title="NFL",Kansas City Chiefs - Los Angeles Chargers (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png" group-title="NFL",Las Vegas Raiders - New England Patriots (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ne.png" group-title="NFL",Las Vegas Raiders - New England Patriots (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png" group-title="NFL",Miami Dolphins - Indianapolis Colts (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png" group-title="NFL",Miami Dolphins - Indianapolis Colts (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png" group-title="NFL",Minnesota Vikings - Chicago Bears (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png" group-title="NFL",Minnesota Vikings - Chicago Bears (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png" group-title="NFL",New York Giants - Washington Commanders (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png" group-title="NFL",New York Giants - Washington Commanders (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png" group-title="NFL",Pittsburgh Steelers - New York Jets (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png" group-title="NFL",Pittsburgh Steelers - New York Jets (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png" group-title="NFL",San Francisco 49ers - Seattle Seahawks (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png" group-title="NFL",San Francisco 49ers - Seattle Seahawks (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/tb.png" group-title="NFL",Tampa Bay Buccaneers - Atlanta Falcons (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png" group-title="NFL",Tampa Bay Buccaneers - Atlanta Falcons (HOME)
-#EXTINF:-1  tvg-id="NFL.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png" group-title="NFL",Tennessee Titans - Denver Broncos (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png" group-title="NFL",Tennessee Titans - Denver Broncos (HOME)
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/fla.png" group-title="NHL",Florida Panthers - Edmonton Oilers (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/edm.png" group-title="NHL",Florida Panthers - Edmonton Oilers (HOME)
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/fla.png" group-title="NHL",Florida Panthers - Edmonton Oilers (AWAY)|Referer=https%3A%2F%2Fpixelsport.tv%2F
-#EXTVLCOPT:http-referrer=https://pixelsport.tv/
-#EXTINF:-1  tvg-id="NHL.Hockey.Dummy.us" tvg-logo="https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/edm.png" group-title="NHL",Florida Panthers - Edmonton Oilers (HOME)
-#EXTINF:-1 tvg-id="86119c782b47340bc870850ba5350665" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",2024 ARCA East at Five Flags Speedway (FLORACING)|Referer=https%3A%2F%2Fpixelsport.tv%2F
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| Albania - Serbia (12:45 PM MT 06/07/25)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| Almeria - Oviedo (01:00 PM MT 06/07/25)|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| Austria - Romania (12:45 PM MT 06/07/25)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| Canada - Ukraine (01:30 PM MT 06/07/25)|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| Finland - Netherlands (12:45 PM MT 06/07/25)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| Golden State Valkyries W - Las Vegas Aces W (01:00 PM MT 06/07/25)|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| Greece - Slovakia (12:45 PM MT 06/07/25)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| Mexico - Switzerland (02:00 PM MT 06/07/25)|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| Minnesota Twins - Toronto Blue Jays (12:10 PM MT 06/07/25)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| None - None (09:00 AM MT 06/07/25)|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| None - None (11:00 AM MT 06/07/25)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| None - None (02:00 PM MT 06/07/25)|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| None - None (11:00 AM MT 06/07/25)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| None - None (12:00 PM MT 06/07/25)|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| None - None (02:05 PM MT 06/07/25)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| None - None (02:10 PM MT 06/07/25)|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| None - None (12:00 PM MT 06/07/25)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| None - None (11:00 AM MT 06/07/25)|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| None - None (02:00 PM MT 06/07/25)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| None - None (06:00 AM MT 06/07/25)|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| St.Louis Cardinals - Los Angeles Dodgers (12:15 PM MT 06/07/25)
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Pay-Per-View| USA - Türkiye (01:30 PM MT 06/07/25)|Referer=https%3A%2F%2Ffstv.us%2F
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTINF:-1 tvg-id="86119c782b47340bc870850ba5350665" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",2024 ARCA East at Five Flags Speedway (FLORACING)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kb2trbzFuZXcubmV3a3NvLnJ1L2Rva2tvMS9wcmVtaXVtMTUzL21vbm8ubTN1OA==.m3u8
 #EXTINF:-1 tvg-id="d4c47192be790875964f9f5b23149899" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",2025 Main Character Jiu-Jitsu 7 (FLOTV)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW0xNjYvbW9uby5tM3U4.m3u8
+#EXTINF:-1 tvg-id="534f5c3d594d2ab0657198e7bf23c5e2" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",AMA Supercross Championship Lakewood (PEACOCK)
+https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly93aW5kbmV3Lm5ld2tzby5ydS93aW5kL3ByZW1pdW0xNjMvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="6ab2b531d49341c319d92ce34b79cfa2" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mma-logo.png" group-title="PPV EVENTS",Armored MMA 2025: Medieval Cage Fighting Championship Hall of Fame Village (TRILLER TV)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kb2trbzFuZXcubmV3a3NvLnJ1L2Rva2tvMS9wcmVtaXVtMTU2L21vbm8ubTN1OA==.m3u8
 #EXTINF:-1 tvg-id="b85eccbb0302def7168b13aa342f17f6" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mma-logo.png" group-title="PPV EVENTS",Armored MMA: Medieval Cage Fighting Championship (EVENT PPV)
@@ -5201,8 +5140,6 @@ https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kb2trbzFuZXcubmV3a3NvLnJ1L2
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW0xNjAvbW9uby5tM3U4.m3u8
 #EXTINF:-1 tvg-id="e377758dfc5f81e05fa865a447885ac0" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/wwe-logo.png" group-title="PPV EVENTS",WWE Money In The Bank PPV (PEACOCK PPV III)
 https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly93aW5kbmV3Lm5ld2tzby5ydS93aW5kL3ByZW1pdW0xNjEvbW9uby5tM3U4.m3u8
-#EXTINF:-1 tvg-id="48a4259199346811d64ed98715366ecd" tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/wwe-logo.png" group-title="PPV EVENTS",WWE Worlds Collide PPV (PEACOCK)
-https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW0xNjcvbW9uby5tM3U4.m3u8
 #EXTINF:-1  tvg-name="365BLKF" tvg-id="5e20b730f2f8d5003d739db7-6745dca72832b870acf53220" tvg-logo="https://provider-static.plex.tv/1/epg/channels/logos/gracenote/15a11cfd0f014785527aa0c87cbf6752.png" group-title="PlexTV",365BLK
 https://epg.provider.plex.tv/library/parts/5e20b730f2f8d5003d739db7-6745dca72832b870acf53220.m3u8?X-Plex-Token=RzgvtzLKLMWEJWtrNSfc
 #EXTINF:-1  tvg-name="ACRM" tvg-id="5e20b730f2f8d5003d739db7-6467891c73e5e029428f0e16" tvg-logo="https://provider-static.plex.tv/2/epg/channels/logos/gracenote/283cd8df7cd9aced05f980443e201452.png" group-title="PlexTV",American Crimes
@@ -12301,6 +12238,10 @@ http://ott.udptv.net/stream/iptv/vivacinema/master.m3u8?u=discord.gg/civ3&p=eeaf
 http://ott.udptv.net/stream/iptv/warnertv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 #EXTINF:-1  tvg-name="W-Sport" tvg-id="W-Sport.my" tvg-logo="https://raw.githubusercontent.com/djdoolky76/tv-channel-logos/60962050390d4bcbfd85ab4f303594934b1ae89d/misc/custom/W-%20Sport.png" group-title="UDPTV Live Streams",W-Sport
 https://ott.udptv.org/stream/astro/wsport/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-id="WNBA.dummy.us" tvg-logo="https://cdn.wnba.com/static/next/images/logos/wnba-secondary-logo.svg" group-title="WNBA",Phoenix Mercury vs Golden State Valkyries
-#EXTINF:-1  tvg-id="WNBA.dummy.us" tvg-logo="https://cdn.wnba.com/static/next/images/logos/wnba-secondary-logo.svg" group-title="WNBA",Washington Mystics vs New York Liberty|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34413%3Fnewa%3D111
-#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34414?newa=111
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://cdn.bleacherreport.net/images/team_logos/328x328/ufc.png" group-title="UFC",UFC 316: Dvalishvili vs. O'Malley 2
+#EXTINF:-1  tvg-id="WNBA.dummy.us" tvg-logo="https://cdn.wnba.com/static/next/images/logos/wnba-secondary-logo.svg" group-title="WNBA",Chicago Sky vs Indiana Fever|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34458%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34453?newa=111
+#EXTINF:-1  tvg-id="WNBA.dummy.us" tvg-logo="https://cdn.wnba.com/static/next/images/logos/wnba-secondary-logo.svg" group-title="WNBA",Golden State Valkyries vs Las Vegas Aces
+#EXTINF:-1  tvg-id="WNBA.dummy.us" tvg-logo="https://cdn.wnba.com/static/next/images/logos/wnba-secondary-logo.svg" group-title="WNBA",Phoenix Mercury vs Seattle Storm|Referer=https%3A%2F%2Fgooglapisapi.com%2Fnew-stream-embed%2F34452%3Fnewa%3D111
+#EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34454?newa=111
+#EXTINF:-1  tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://cdn.wallpapersafari.com/80/2/pEOBu1.png" group-title="WWE",Money in the Bank
