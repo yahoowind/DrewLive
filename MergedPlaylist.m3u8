@@ -13557,6 +13557,14 @@ http://ott.udptv.net/stream/iptv/dzrhtv/master.m3u8?u=discord.gg/civ3&p=eeaf011a
 https://ott.udptv.com/stream/nbc/eeast/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 #EXTINF:-1  tvg-name="E! West" tvg-id="nbc/ewest" tvg-logo="https://img.nbc.com/files/images/2019/3/20/E-Logo-White-95x300.png" group-title="UDPTV Live Streams",E! West
 https://ott.udptv.com/stream/nbc/ewest/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="ESPN" tvg-id="sling/espn" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/espn-us.png" group-title="UDPTV Live Streams",ESPN
+https://ott.udptv.org/stream/udptvus/espn/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="ESPN 2" tvg-id="sling/espn2" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/espn-2-us.png" group-title="UDPTV Live Streams",ESPN 2
+https://ott.udptv.org/stream/udptvus/espn2/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="ESPN News" tvg-id="sling/espnnews" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/ESPNews.svg/500px-ESPNews.svg.png" group-title="UDPTV Live Streams",ESPN News
+https://ott.udptv.org/stream/udptvus/espnnews/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="ESPN U" tvg-id="sling/espnu" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/espn-u-us.png" group-title="UDPTV Live Streams",ESPN U
+https://ott.udptv.org/stream/udptvus/espnu/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 #EXTINF:-1  tvg-name="Eurosport 1" tvg-id="Eurosport.1.lt" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/eurosport-1-fr.png" group-title="UDPTV Live Streams",Eurosport 1
 https://ott.udptv.com/stream/udptv/eurosport1/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 #EXTINF:-1  tvg-name="Eurosport 2" tvg-id="Eurosport.2.lt" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/eurosport-2-fr.png" group-title="UDPTV Live Streams",Eurosport 2
@@ -13611,6 +13619,30 @@ https://ott.udptv.com/stream/skyuk/gold/master.m3u8?u=discord.gg/civ3&p=eeaf011a
 https://ott.udptv.org/stream/astro/golfchannel/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 #EXTINF:-1  tvg-name="GTV" tvg-id="GTV.ph" tvg-logo="https://i.imgur.com/geuq18u.png" group-title="UDPTV Live Streams",GTV
 http://ott.udptv.net/stream/iptv/gtv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO Boxing" tvg-id="Amazon.US.HBOBoxing" tvg-logo="https://m.media-amazon.com/images/G/01/LCXO_Station_Logos/Freevee_HBOBoxing_1920x1080_new._SL170_FMpng_.png" group-title="UDPTV Live Streams",HBO Boxing
+https://ott.udptv.net/stream/iptv/hboboxing/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO Comedy" tvg-id="HBO.Comedy.HD.-.East.us" tvg-logo="https://m.media-amazon.com/images/G/01/digital/video/Linear_Clean_Slate/HBO_Comedy._SL170_FMpng_.png" group-title="UDPTV Live Streams",HBO Comedy
+https://ott.udptv.net/stream/iptv/hbocomedy/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO Comedy Max" tvg-id="HBO.Comedy.HD.-.East.us" tvg-logo="https://i.imgur.com/MmT4Rcy.png" group-title="UDPTV Live Streams",HBO Comedy Max
+https://ott.udptv.net/stream/iptv/hbocomedymax/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO Family" tvg-id="Cg.Hbofam.ph" tvg-logo="https://i.imgur.com/sDFfNjo.png" group-title="UDPTV Live Streams",HBO Family
+https://ott.udptv.net/stream/iptv/hbofamily/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO HD" tvg-id="Cg.Hbohd.ph" tvg-logo="https://i.imgur.com/EnA2RcD.png" group-title="UDPTV Live Streams",HBO HD
+https://ott.udptv.net/stream/iptv/hbohd/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO Hits" tvg-id="Cg.Hbohits.ph" tvg-logo="https://i.imgur.com/K52zUFR.png" group-title="UDPTV Live Streams",HBO Hits
+http://ott.udptv.net/stream/iptv/hbohits/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO Max" tvg-id="HBO.-.Eastern.Feed.us" tvg-logo="https://i.imgur.com/esz4fys.png" group-title="UDPTV Live Streams",HBO Max
+https://ott.udptv.net/stream/iptv/hbomax/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO Signature" tvg-id="Cg.Hbosign.ph" tvg-logo="https://i.imgur.com/t4HF5va.png" group-title="UDPTV Live Streams",HBO Signature
+http://ott.udptv.net/stream/iptv/hbosignature/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO West" tvg-id="HBO.-.Eastern.Feed.us" tvg-logo="https://i.imgur.com/EnA2RcD.png" group-title="UDPTV Live Streams",HBO West
+https://ott.udptv.net/stream/iptv/hbowest/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO Zone" tvg-id="HBO.Zone.HD.-.East.us" tvg-logo="https://m.media-amazon.com/images/G/01/digital/video/Linear_Clean_Slate/HBO_Zone_East._SL170_FMpng_.png" group-title="UDPTV Live Streams",HBO Zone
+https://ott.udptv.net/stream/iptv/hbozone/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO2" tvg-id="HBO.2.-.Eastern.Feed.us" tvg-logo="https://m.media-amazon.com/images/G/01/digital/video/Linear_Clean_Slate/HBO2._SL170_FMpng_.png" group-title="UDPTV Live Streams",HBO2
+https://ott.udptv.net/stream/iptv/hbo2/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
+#EXTINF:-1  tvg-name="HBO2 Max" tvg-id="HBO.2.-.Eastern.Feed.us" tvg-logo="https://i.imgur.com/xvYG2bn.png" group-title="UDPTV Live Streams",HBO2 Max
+https://ott.udptv.net/stream/iptv/hbo2max/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 #EXTINF:-1  tvg-name="Heart of Asia" tvg-id="iptv/heartofasia" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Heart_of_Asia_logo.svg/400px-Heart_of_Asia_logo.svg.png" group-title="UDPTV Live Streams",Heart of Asia
 https://ott.udptv.net/stream/iptv/heartofasia/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 #EXTINF:-1  tvg-name="HGTV" tvg-id="HGTV.HD.my" tvg-logo="https://i.imgur.com/CgKCuW1.png" group-title="UDPTV Live Streams",HGTV
@@ -14067,40 +14099,6 @@ http://ott.udptv.net/stream/iptv/vivacinema/master.m3u8?u=discord.gg/civ3&p=eeaf
 http://ott.udptv.net/stream/iptv/warnertv/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 #EXTINF:-1  tvg-name="W-Sport" tvg-id="W-Sport.my" tvg-logo="https://raw.githubusercontent.com/djdoolky76/tv-channel-logos/60962050390d4bcbfd85ab4f303594934b1ae89d/misc/custom/W-%20Sport.png" group-title="UDPTV Live Streams",W-Sport
 https://ott.udptv.org/stream/astro/wsport/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-
-#EXTINF:-1  tvg-name="HBO Boxing" tvg-id="Amazon.US.HBOBoxing" tvg-logo="https://m.media-amazon.com/images/G/01/LCXO_Station_Logos/Freevee_HBOBoxing_1920x1080_new._SL170_FMpng_.png" group-title="UDPTV Live Streams - Movies",HBO Boxing
-https://ott.udptv.net/stream/iptv/hboboxing/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="HBO Comedy" tvg-id="HBO.Comedy.HD.-.East.us" tvg-logo="https://m.media-amazon.com/images/G/01/digital/video/Linear_Clean_Slate/HBO_Comedy._SL170_FMpng_.png" group-title="UDPTV Live Streams - Movies",HBO Comedy
-https://ott.udptv.net/stream/iptv/hbocomedy/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="HBO Comedy Max" tvg-id="HBO.Comedy.HD.-.East.us" tvg-logo="https://i.imgur.com/MmT4Rcy.png" group-title="UDPTV Live Streams - Movies",HBO Comedy Max
-https://ott.udptv.net/stream/iptv/hbocomedymax/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="HBO Family" tvg-id="Cg.Hbofam.ph" tvg-logo="https://i.imgur.com/sDFfNjo.png" group-title="UDPTV Live Streams - Movies",HBO Family
-https://ott.udptv.net/stream/iptv/hbofamily/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="HBO HD" tvg-id="Cg.Hbohd.ph" tvg-logo="https://i.imgur.com/EnA2RcD.png" group-title="UDPTV Live Streams - Movies",HBO HD
-https://ott.udptv.net/stream/iptv/hbohd/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="HBO Hits" tvg-id="Cg.Hbohits.ph" tvg-logo="https://i.imgur.com/K52zUFR.png" group-title="UDPTV Live Streams - Movies",HBO Hits
-http://ott.udptv.net/stream/iptv/hbohits/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="HBO Max" tvg-id="HBO.-.Eastern.Feed.us" tvg-logo="https://i.imgur.com/esz4fys.png" group-title="UDPTV Live Streams - Movies",HBO Max
-https://ott.udptv.net/stream/iptv/hbomax/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="HBO Signature" tvg-id="Cg.Hbosign.ph" tvg-logo="https://i.imgur.com/t4HF5va.png" group-title="UDPTV Live Streams - Movies",HBO Signature
-http://ott.udptv.net/stream/iptv/hbosignature/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="HBO West" tvg-id="HBO.-.Eastern.Feed.us" tvg-logo="https://i.imgur.com/EnA2RcD.png" group-title="UDPTV Live Streams - Movies",HBO West
-https://ott.udptv.net/stream/iptv/hbowest/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="HBO Zone" tvg-id="HBO.Zone.HD.-.East.us" tvg-logo="https://m.media-amazon.com/images/G/01/digital/video/Linear_Clean_Slate/HBO_Zone_East._SL170_FMpng_.png" group-title="UDPTV Live Streams - Movies",HBO Zone
-https://ott.udptv.net/stream/iptv/hbozone/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="HBO2" tvg-id="HBO.2.-.Eastern.Feed.us" tvg-logo="https://m.media-amazon.com/images/G/01/digital/video/Linear_Clean_Slate/HBO2._SL170_FMpng_.png" group-title="UDPTV Live Streams - Movies",HBO2
-https://ott.udptv.net/stream/iptv/hbo2/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="HBO2 Max" tvg-id="HBO.2.-.Eastern.Feed.us" tvg-logo="https://i.imgur.com/xvYG2bn.png" group-title="UDPTV Live Streams - Movies",HBO2 Max
-https://ott.udptv.net/stream/iptv/hbo2max/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-
-#EXTINF:-1  tvg-name="ESPN" tvg-id="sling/espn" tvg-logo="https://example.com/espn.png" group-title="UDPTV Live Streams - Sports",ESPN
-https://ott.udptv.org/stream/udptvus/espn/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="ESPN 2" tvg-id="sling/espn2" tvg-logo="https://example.com/espn.png" group-title="UDPTV Live Streams - Sports",ESPN 2
-https://ott.udptv.org/stream/udptvus/espn2/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="ESPN News" tvg-id="sling/espnnews" tvg-logo="https://example.com/espn.png" group-title="UDPTV Live Streams - Sports",ESPN News
-https://ott.udptv.org/stream/udptvus/espnnews/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
-#EXTINF:-1  tvg-name="ESPN U" tvg-id="sling/espnu" tvg-logo="https://example.com/espn.png" group-title="UDPTV Live Streams - Sports",ESPN U
-https://ott.udptv.org/stream/udptvus/espnu/master.m3u8?u=discord.gg/civ3&p=eeaf011ae6d8cdbf0200cc0234f54fdc95d7b5b158d22258efd49d7e36275c7a
 
 #EXTINF:-1  tvg-id="WNBA.dummy.us" tvg-logo="https://cdn.wnba.com/static/next/images/logos/wnba-secondary-logo.svg" group-title="WNBA",Phoenix Mercury vs Golden State Valkyries
 #EXTVLCOPT:http-referrer=https://googlapisapi.com/new-stream-embed/34413?newa=111
