@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
-# Last forced update: 2025-06-08T22:40:31.005661Z
+# Last forced update: 2025-06-08T22:51:41.002943Z
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
 http://user.scalecdn.co:8080/live/26725074/92867131/511232.ts
 #EXTINF:-1  tvg-name="BBC Top Gear 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/Top-Gear-Logo-2002.png" group-title="24/7 by Mystique" radio="false",BBC Top Gear 24/7
@@ -4840,6 +4840,18 @@ http://fl2.moveonjoy.com/VICELAND/index.m3u8
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/247
 #EXTINF:-1  tvg-id="YES.Network.us" tvg-logo="http://lonewolftvpr.com/logos/yes.png" group-title="Mystique USA" radio="false",Yes Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/245
+#EXTINF:-1 tvg-id="c02d642f6175c2292db21725e5ae145a" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",2025 Late Models at Slinger Speedway (FLORACING)
+https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW0xMDcvbW9uby5tM3U4.m3u8
+#EXTINF:-1 tvg-id="19d49570311a5baf508328cedd90ede3" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Appalachian LM Speedweek Hagerstown (EVENT PPV)
+https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW0xMDYvbW9uby5tM3U4.m3u8
+#EXTINF:-1 tvg-id="e3f544c0a616aedeafae3924bc1b0f15" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",GCW: Cage of Survival 4 (TRILLER TV)
+https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9uZnNuZXcubmV3a3NvLnJ1L25mcy9wcmVtaXVtNzcvbW9uby5tM3U4.m3u8
+#EXTINF:-1 tvg-id="f4e5282f97e0db8125d0579e9944ec00" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",Husets Speedway Sprint Cars (EVENT PPV)
+https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW0xMDgvbW9uby5tM3U4.m3u8
+#EXTINF:-1 tvg-id="b544f46687990ea4fc1c566dc0ebae72" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",USAC Indiana Midget Week Kokomo (FLORACING)
+https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kb2trbzFuZXcubmV3a3NvLnJ1L2Rva2tvMS9wcmVtaXVtODYvbW9uby5tM3U4.m3u8
+#EXTINF:-1 tvg-id="430838c3f015e7f29960b07147fee1f8" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",World of Outlaws Sprint Cars Angell Park (EVENT PPV)
+https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW0xMDUvbW9uby5tM3U4.m3u8
 #EXTINF:-1  tvg-name="365BLKF" tvg-id="5e20b730f2f8d5003d739db7-6745dca72832b870acf53220" tvg-logo="https://provider-static.plex.tv/1/epg/channels/logos/gracenote/15a11cfd0f014785527aa0c87cbf6752.png" group-title="PlexTV",365BLK
 https://epg.provider.plex.tv/library/parts/5e20b730f2f8d5003d739db7-6745dca72832b870acf53220.m3u8?X-Plex-Token=RzgvtzLKLMWEJWtrNSfc
 #EXTINF:-1  tvg-name="ACRM" tvg-id="5e20b730f2f8d5003d739db7-6467891c73e5e029428f0e16" tvg-logo="https://provider-static.plex.tv/2/epg/channels/logos/gracenote/283cd8df7cd9aced05f980443e201452.png" group-title="PlexTV",American Crimes
