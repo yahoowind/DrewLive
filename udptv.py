@@ -15,25 +15,28 @@ REMOVE_PATTERNS = [
 ]
 
 def fetch_playlist():
-    """Fetch the playlist from the upstream URL."""
     response = requests.get(UPSTREAM_URL, timeout=10)
     response.raise_for_status()
     return response.text.splitlines()
 
 def should_remove_line(line):
-    """Check if a line should be removed based on predefined patterns."""
     return any(pattern.match(line) for pattern in REMOVE_PATTERNS)
 
-def patch_extinf_line(extinf_line):
-    """Patch an EXTINF line to enforce a consistent group-title."""
-    if 'group-title="' in extinf_line:
-        extinf_line = re.sub(r'group-title="[^"]+"', f'group-title="{FORCED_GROUP}"', extinf_line)
+def patch_extinf_line(line):
+    # Force group-title but preserve all other attributes like tvg-id, tvg-logo, etc.
+    if 'group-title="' in line:
+        line = re.sub(r'group-title="[^"]+"', f'group-title="{FORCED_GROUP}"', line)
     else:
-        extinf_line = extinf_line.replace('#EXTINF:', f'#EXTINF:-1 group-title="{FORCED_GROUP}"')
-    return extinf_line
+        # If group-title doesn't exist, add it before the comma
+        parts = line.split(",", 1)
+        if len(parts) == 2:
+            head, name = parts
+            if not 'group-title=' in head:
+                head += f' group-title="{FORCED_GROUP}"'
+            line = f'{head},{name}'
+    return line
 
 def process_and_write_playlist(lines):
-    """Process the playlist lines and write the modified version to a file."""
     output_lines = [
         f'#EXTM3U url-tvg="{EPG_URL}"',
         f'# Last forced update: {datetime.utcnow().isoformat()}Z'
@@ -48,9 +51,10 @@ def process_and_write_playlist(lines):
             continue
 
         if line.startswith('#EXTINF'):
-            patched_line = patch_extinf_line(line)
-            output_lines.append(patched_line)
+            line = patch_extinf_line(line)
+            output_lines.append(line)
 
+            # Add the next line (stream URL)
             if i + 1 < len(lines):
                 stream_url = lines[i + 1].strip()
                 output_lines.append(stream_url)
@@ -63,7 +67,7 @@ def process_and_write_playlist(lines):
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write('\n'.join(output_lines) + '\n')
 
-    print(f"{OUTPUT_FILE} updated with forced group-title and timestamp.")
+    print(f"[✅] '{OUTPUT_FILE}' updated with preserved metadata and forced group title.")
 
 if __name__ == "__main__":
     playlist_lines = fetch_playlist()
