@@ -1,49 +1,76 @@
 import requests
-import re
 
 UPSTREAM_URL = "http://tvpass.org/playlist/m3u"
 OUTPUT_FILE = "TVPass.m3u"
 FORCED_GROUP = "TVPass"
 
-def fetch_playlist():
+def fetch_upstream_urls():
     res = requests.get(UPSTREAM_URL, timeout=15)
     res.raise_for_status()
-    return res.text.splitlines()
+    lines = res.text.splitlines()
+    # Extract stream URLs only (lines not starting with #)
+    return [line.strip() for line in lines if not line.startswith("#")]
 
 def force_group_title(line):
-    if 'group-title="' in line:
-        # Replace existing group-title only
-        return re.sub(r'group-title="[^"]*"', f'group-title="{FORCED_GROUP}"', line)
+    if not line.startswith("#EXTINF"):
+        return line
+
+    comma_index = line.find(",")
+    if comma_index == -1:
+        return line  # Malformed? Leave untouched
+
+    meta = line[:comma_index]
+    title = line[comma_index:]
+
+    if 'group-title="' in meta:
+        # Replace existing group-title
+        before = meta.split('group-title="')[0]
+        after = meta.split('group-title="')[1].split('"', 1)[1]
+        rest = after  # Keep anything after group-title=""
+        # Rebuild line with forced group-title
+        new_meta = before + f'group-title="{FORCED_GROUP}"' + rest
     else:
-        # Insert group-title before the first comma (metadata block)
-        match = re.match(r'(#EXTINF:-?\d+)(.*?)(,.*)', line)
-        if match:
-            prefix, attrs, title = match.groups()
-            # Insert group-title while preserving all other attributes
-            new_attrs = f'{attrs} group-title="{FORCED_GROUP}"'
-            return f'{prefix}{new_attrs}{title}'
-        else:
-            return line  # Fail-safe: return unchanged
+        # Add group-title at end of metadata
+        new_meta = meta + f' group-title="{FORCED_GROUP}"'
 
-def process_and_write_playlist(lines):
+    return new_meta + title
+
+def process_playlist(local_lines, upstream_urls):
     output_lines = []
+    url_index = 0
+    i = 0
 
-    for i, line in enumerate(lines):
+    while i < len(local_lines):
+        line = local_lines[i].strip()
+
         if line.startswith("#EXTINF"):
+            # Force group-title
             output_lines.append(force_group_title(line))
-            # Append the stream URL right after
-            if i + 1 < len(lines):
-                output_lines.append(lines[i + 1].strip())
-        elif line.startswith("#EXTM3U"):
+            i += 1
+            if i < len(local_lines):
+                if url_index < len(upstream_urls):
+                    output_lines.append(upstream_urls[url_index])  # Replace URL
+                    url_index += 1
+                else:
+                    output_lines.append(local_lines[i])  # Fallback: keep original
+            i += 1
+        else:
             output_lines.append(line)
-        elif not lines[i-1].startswith("#EXTINF"):
-            output_lines.append(line)
+            i += 1
+
+    return output_lines
+
+def main():
+    with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+        local_lines = f.read().splitlines()
+
+    upstream_urls = fetch_upstream_urls()
+    updated_lines = process_playlist(local_lines, upstream_urls)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(output_lines) + "\n")
+        f.write("\n".join(updated_lines) + "\n")
 
-    print(f"[✅] {OUTPUT_FILE} saved with brute-forced group-title='{FORCED_GROUP}' and 0 logo/tvg-id loss.")
+    print(f"[✅] TVPass.m3u updated: URLs refreshed + group-title='{FORCED_GROUP}' enforced. Nothing else touched.")
 
 if __name__ == "__main__":
-    playlist_lines = fetch_playlist()
-    process_and_write_playlist(playlist_lines)
+    main()
