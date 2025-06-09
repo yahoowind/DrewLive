@@ -1,5 +1,6 @@
 import requests
 import time
+import os
 
 PLAYLIST_URL = "http://drewlive24.duckdns.org:8090/playlist"
 FORCED_GROUP = "BinaryNinjaTV"
@@ -17,7 +18,7 @@ def fetch_playlist(retries=3, delay=3):
             if response.status_code == 200 and "#EXTM3U" in response.text:
                 return response.text
             else:
-                print(f"[WARN] Attempt {attempt+1}: Received status {response.status_code}")
+                print(f"[WARN] Attempt {attempt+1}: Status {response.status_code}")
         except Exception as e:
             print(f"[ERROR] Attempt {attempt+1}: {e}")
         time.sleep(delay)
@@ -27,8 +28,8 @@ def process_playlist(text):
     lines = text.splitlines()
     output_lines = []
 
-    for line in lines:
-        if line.startswith("#EXTM3U"):
+    for i, line in enumerate(lines):
+        if i == 0 and line.startswith("#EXTM3U"):
             output_lines.append(f'#EXTM3U tvg-url="{FORCED_EPG_URL}"')
         elif line.startswith("#EXTINF"):
             if 'group-title="' in line:
@@ -43,23 +44,31 @@ def process_playlist(text):
 
     return "\n".join(output_lines)
 
-def save_playlist(text):
+def save_if_changed(new_content):
+    if os.path.exists(OUTPUT_FILE):
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+            old_content = f.read()
+        if new_content.strip() == old_content.strip():
+            print("[INFO] No changes detected. Skipping file save.")
+            return False
+
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(text)
+        f.write(new_content)
     print(f"[DONE] Playlist saved to '{OUTPUT_FILE}'")
+    return True
 
 def main():
     print("[INFO] Fetching playlist...")
     raw = fetch_playlist()
     if not raw:
-        print("[FATAL] Could not retrieve playlist after multiple attempts.")
+        print("[FATAL] Could not retrieve playlist.")
         return
 
     print("[INFO] Processing playlist...")
     updated = process_playlist(raw)
 
-    print("[INFO] Saving output...")
-    save_playlist(updated)
+    print("[INFO] Saving output if changed...")
+    save_if_changed(updated)
 
 if __name__ == "__main__":
     main()
