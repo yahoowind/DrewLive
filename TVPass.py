@@ -11,35 +11,38 @@ def fetch_playlist():
     return res.text.splitlines()
 
 def force_group_title(line):
-    # If group-title present, replace it; else add it after #EXTINF: part
     if 'group-title="' in line:
+        # Replace existing group-title only
         return re.sub(r'group-title="[^"]*"', f'group-title="{FORCED_GROUP}"', line)
     else:
-        return line.replace('#EXTINF:', f'#EXTINF:-1 group-title="{FORCED_GROUP}" ', 1)
+        # Insert group-title before the first comma (metadata block)
+        match = re.match(r'(#EXTINF:-?\d+)(.*?)(,.*)', line)
+        if match:
+            prefix, attrs, title = match.groups()
+            # Insert group-title while preserving all other attributes
+            new_attrs = f'{attrs} group-title="{FORCED_GROUP}"'
+            return f'{prefix}{new_attrs}{title}'
+        else:
+            return line  # Fail-safe: return unchanged
 
 def process_and_write_playlist(lines):
     output_lines = []
 
     for i, line in enumerate(lines):
         if line.startswith("#EXTINF"):
-            # Force group-title but keep rest metadata intact
-            new_line = force_group_title(line)
-            output_lines.append(new_line)
-            # Append next line (URL) if exists
+            output_lines.append(force_group_title(line))
+            # Append the stream URL right after
             if i + 1 < len(lines):
                 output_lines.append(lines[i + 1].strip())
         elif line.startswith("#EXTM3U"):
-            # Keep #EXTM3U header as is, no forced tvg-url
             output_lines.append(line)
-        else:
-            # Other lines (comments, logos, tv ids, etc.) stay untouched
-            if not line.startswith("#EXTINF") and (i == 0 or not lines[i-1].startswith("#EXTINF")):
-                output_lines.append(line)
+        elif not lines[i-1].startswith("#EXTINF"):
+            output_lines.append(line)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(output_lines) + "\n")
 
-    print(f"[✅] {OUTPUT_FILE} updated with forced group-title='{FORCED_GROUP}' and untouched metadata.")
+    print(f"[✅] {OUTPUT_FILE} saved with brute-forced group-title='{FORCED_GROUP}' and 0 logo/tvg-id loss.")
 
 if __name__ == "__main__":
     playlist_lines = fetch_playlist()
