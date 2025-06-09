@@ -26,7 +26,7 @@ jobs:
         pip install requests
 
     - name: 🔄 Run playlist generator
-      run: python generate_binaryninja_playlist.py
+      run: python ninja.py
 
     - name: 💾 Commit updated playlist
       run: |
