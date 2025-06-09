@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "*/30 * * * *" # Every 30 minutes
+    - cron: "*/30 * * * *"  # Every 30 minutes
 
 jobs:
   build:
@@ -28,10 +28,16 @@ jobs:
     - name: 🔄 Run playlist generator
       run: python ninja.py
 
-    - name: 💾 Commit updated playlist
+    - name: 🧠 Only commit if file actually changed
       run: |
         git config --global user.name 'DrewLive Bot'
         git config --global user.email 'actions@github.com'
         git add BinaryNinjaTV.m3u
-        git commit -m "Update BinaryNinjaTV.m3u [auto]" || echo "No changes"
-        git push
+
+        # Check if there's a diff before committing
+        if git diff --cached --quiet; then
+          echo "No changes detected. Skipping commit."
+        else
+          git commit -m "Update BinaryNinjaTV.m3u [auto]"
+          git push
+        fi
