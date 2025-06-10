@@ -1,0 +1,56 @@
+name: Auto Update Merged IPTV Playlist
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'MergedPlaylist.m3u8'
+      - 'iptv.py'
+  schedule:
+    - cron: '0 * * * *'      # every hour at minute 0 UTC
+    - cron: '*/10 * * * *'   # every 10 minutes
+  workflow_dispatch:
+
+jobs:
+  update-playlist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # full history for rebasing
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: pip install requests
+
+      - name: Set Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest changes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git
+          git pull origin main --rebase
+
+      - name: Run IPTV merging script
+        run: python iptv.py
+
+      - name: Commit changes if needed
+        run: |
+          git add MergedPlaylist.m3u8
+          git diff --cached --quiet || git commit -m "Auto-update merged IPTV playlist"
+
+      - name: Push changes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}Add commentMore actions
+        run: git push origin main

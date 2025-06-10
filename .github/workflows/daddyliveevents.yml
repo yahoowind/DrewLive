@@ -1,0 +1,42 @@
+name: Generate DaddyLive Events Playlist
+
+on:
+  push:
+    paths:
+      - 'daddyevents.py'
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'  # every 15 minutes
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run DaddyEvents generator
+        run: python daddyevents.py
+
+      - name: Commit and push changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add DaddyLiveEvents.m3u8
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update DaddyLiveEvents playlist"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
