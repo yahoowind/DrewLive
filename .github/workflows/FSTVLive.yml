@@ -3,7 +3,7 @@ name: Update FSTVLive Playlist
 on:
   schedule:
     - cron: '0 * * * *'  # every hour on the hour
-  workflow_dispatch:      # manual trigger too
+  workflow_dispatch:
 
 jobs:
   update-playlist:
@@ -24,14 +24,14 @@ jobs:
         run: pip install requests
 
       - name: Run Tims playlist update script
-        run: python fstv.py
+        run: python fstv.py  # Make sure this matches the actual script filename
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add PixelSports.m3u
-          git diff --cached --quiet || git commit -m "Auto update FSTVLive.m3u [ci skip]"Add commentMore actions
+          git add FSTVLive.m3u
+          git diff --cached --quiet || git commit -m "Auto update FSTVLive.m3u [ci skip]"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
