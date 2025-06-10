@@ -33,5 +33,5 @@ jobs:
           git add TVPass.m3u
           git commit -m "Auto update TVPass.m3u [ci skip]" || echo "No changes to commit"
           git push origin main
-        env:Add commentMore actions
+        env: # Corrected: Removed the extra text
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
