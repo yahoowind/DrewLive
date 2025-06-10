@@ -1,4 +1,4 @@
-name: Build SportsWebcast M3U
+name: Update SportsWebcast Playlist
 
 on:
   workflow_dispatch:  # Manual run from GitHub UI
