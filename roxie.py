@@ -3,7 +3,7 @@ import re
 
 URL = "https://iptv-scraper-re.vercel.app/roxiestreams"
 OUTPUT_FILE = "RoxieStreams.m3u"
-FORCED_GROUP = "Roxiestreams"
+FORCED_GROUP = "RoxieStreams"
 FORCED_TVG_ID = "Sports.Dummy.us"
 CUSTOM_EPG = "https://tinyurl.com/dummy2423-epg"
 
