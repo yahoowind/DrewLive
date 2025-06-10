@@ -4,7 +4,7 @@ import re
 URL = "https://iptv-scraper-re.vercel.app/streameast"
 OUTPUT_FILE = "StreamEast.m3u"
 FORCED_GROUP = "StreamEast"
-FORCED_TVG_ID = "Sports.Dummy.us"
+FORCED_TVG_ID = "24.7.Dummy.us"
 CUSTOM_EPG = "https://tinyurl.com/dummy2423-epg"
 
 def fetch_playlist(url):
