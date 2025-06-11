@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
-# Last forced update: 2025-06-11T17:48:31.737396Z
+# Last forced update: 2025-06-11T17:59:41.830143Z
 
 #EXTGRP:24/7 by Mystique
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
@@ -2865,6 +2865,11 @@ https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NGIxMDU4YWFkNjNkLTcxMWI
 #EXTVLCOPT:http-referrer=https://fstv.us/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
 https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZmYzY2E0MjU3Yzc0LTg5ZGItMDdmNC00NWI5LTM1MmRmN2Fl/master.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mlb-logo.png" group-title="FSTVLive" tvg-id="24.7.Dummy.us",MLB| Milwaukee Brewers - Atlanta Braves
+#EXTVLCOPT:http-origin=https://fstv.us
+#EXTVLCOPT:http-referrer=https://fstv.us/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZmZhNzFiOGY0MjhmLWZkM2ItNjdhNC05Zjc2LTQ0ZDQ1YmUy/master.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mlb-logo.png" group-title="FSTVLive" tvg-id="24.7.Dummy.us",MLB| None - None
 #EXTVLCOPT:http-origin=https://fstv.us
 #EXTVLCOPT:http-referrer=https://fstv.us/
@@ -2885,11 +2890,11 @@ https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZjQ1NWMxNzY0YjViLWE2OWI
 #EXTVLCOPT:http-referrer=https://fstv.us/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
 https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MTgxZTQxNjM4N2RmLWUxZDgtNDgwNC1mZDEyLTljZTIwZjY2/master.m3u8
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mlb-logo.png" group-title="FSTVLive" tvg-id="24.7.Dummy.us",MLB| Slovakia U21 - Spain U21
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/mlb-logo.png" group-title="FSTVLive" tvg-id="24.7.Dummy.us",MLB| St.Louis Cardinals - Toronto Blue Jays
 #EXTVLCOPT:http-origin=https://fstv.us
 #EXTVLCOPT:http-referrer=https://fstv.us/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
-https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ODAwYTRhNzEzNjZjLWRmNWEtMWFmNC1iN2JkLTljMWFhYjY2/master.m3u8
+https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1Yjc5YjdkNGRkMDNlLTY4ZTktZDdiNC1jOWIxLWZlMWUxZWVm/master.m3u8
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/MSNBC_2015-2021_logo.svg/2560px-MSNBC_2015-2021_logo.svg.png" group-title="FSTVLive" tvg-id="24.7.Dummy.us",MSNBC
 #EXTVLCOPT:http-origin=https://fstv.us
 #EXTVLCOPT:http-referrer=https://fstv.us/
@@ -5112,6 +5117,11 @@ https://live.webcastserver.online/hdstream/embed/520.m3u8
 #EXTVLCOPT:http-referrer=https://nflwebcast.com/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 https://live.fhdsports.live/hdstream/embed/96.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nfl-logo.png" group-title="NFL",Chargers - Lions  July 31, 2025 (HOME)
+#EXTVLCOPT:http-origin=https://nflwebcast.com
+#EXTVLCOPT:http-referrer=https://nflwebcast.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://live.fhdsports.live/hdstream/embed/106.m3u8
 
 #EXTGRP:NHL
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/main/imgs/nhl-logo.png" group-title="NHL",Oilers - Panthers  May 30, 2025 (AWAY)
