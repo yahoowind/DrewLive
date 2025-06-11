@@ -1,4 +1,4 @@
-﻿#EXTM3U url-tvg="https://tinyurl.com/dummy2423-epg"
+#EXTM3U url-tvg="https://tinyurl.com/dummy2423-epg"
 #EXTINF:-1  tvg-name="Classic Rock 103.3" tvg-id="Radio.105.Dummy.us" tvg-logo="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/2733/files/2021/04/wglx-logo-glow-1024x683.png" group-title="DrewFX - Classic Rock" radio="true",Classic Rock 103.3
 https://playerservices.streamtheworld.com/api/livestream-redirect/WGLXFMAAC.aac
 #EXTINF:-1  tvg-name="Classic Rock 94.9" tvg-id="Radio.105.Dummy.us" tvg-logo="https://townsquare.media/site/693/files/2017/10/wmmqfm-logo.png?w=300&q=75&format=natural" group-title="DrewFX - Classic Rock" radio="true",Classic Rock 94.9
@@ -79,6 +79,26 @@ https://stream.revma.ihrhls.com/zc2121/hls.m3u8
 https://stream.revma.ihrhls.com/zc1141
 #EXTINF:-1  tvg-name="X102.3" tvg-id="Radio.105.Dummy.us" tvg-logo="https://cdn-radiotime-logos.tunein.com/s30919g.png" group-title="DrewFX - Hip Hop & R&B" radio="true",X102.3
 https://playerservices.streamtheworld.com/api/livestream-redirect/WMBXFM.mp3
+#EXTINF:-1  tvg-name="WGCI-FM 107.5" tvg-id="Radio.105.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/37/107.5_WGCI.jpg/revision/latest?cb=20150322170739" group-title="DrewFX - Hip Hop & R&B" radio="true",WGCI-FM 107.5
+https://tinyurl.com/wgcifm24
+#EXTINF:-1  tvg-name="KZBT-FM" tvg-id="Radio.105.Dummy.us" tvg-logo="https://townsquare.media/site/523/files/2022/07/attachment-256.png" group-title="DrewFX - Hip Hop & R&B" radio="true",KZBT-FM
+https://live.amperwave.net/manifest/townsquare-kzbtfmaac-hlsc3.m3u8
+#EXTINF:-1  tvg-name="Power 106.3" tvg-id="Radio.105.Dummy.us" tvg-logo="https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/1418/2020/05/11170817/wyrb_logo_big.png" group-title="DrewFX - Hip Hop & R&B" radio="true",Power 106.3
+https://ais-sa8.cdnstream1.com/p0zbr98vu6z/ct0ziwywwym
+#EXTINF:-1  tvg-name="Loud 98.5" tvg-id="Radio.105.Dummy.us" tvg-logo="https://loudradiopa.com/wp-content/uploads/2022/02/loug-header-1.png" group-title="DrewFX - Hip Hop & R&B" radio="true",Loud 98.5
+https://ice66.securenetsystems.net/WLEVHD4
+#EXTINF:-1  tvg-name="WE 102.9" tvg-id="Radio.105.Dummy.us" tvg-logo="https://www.alphamediausa.com/wp-content/uploads/brand/logo/WE_1029_Primary_LightBG.png" group-title="DrewFX - Hip Hop & R&B" radio="true",WE 102.9
+https://live.amperwave.net/direct/alphacorporate-kinkhd2aac-ibc4 
+#EXTINF:-1  tvg-name="Loud 103.3" tvg-id="Radio.105.Dummy.us" tvg-logo="https://cdn-profiles.tunein.com/s225776/images/logog.png?t=154117" group-title="DrewFX - Hip Hop & R&B" radio="true",Loud 103.3
+https://live.amperwave.net/direct/adamsradio-wjfxhd2aac-ibc1 
+#EXTINF:-1  tvg-name="Loud 101.5" tvg-id="Radio.105.Dummy.us" tvg-logo="https://loudradiopa.com/wp-content/uploads/2022/02/loudradiosquare-600x430.png" group-title="DrewFX - Hip Hop & R&B" radio="true",Loud 101.5
+https://ice23.securenetsystems.net/WZWWHD2
+#EXTINF:-1  tvg-name="92.9 WDUP" tvg-id="Radio.105.Dummy.us" tvg-logo="https://images.radio.com/independent/logos/WDUPFM.jpg" group-title="DrewFX - Hip Hop & R&B" radio="true",92.9 WDUP
+https://s2.voscast.com:9761/stream
+#EXTINF:-1  tvg-name="011.FM - Hip Hop Hits" tvg-id="Radio.105.Dummy.us" tvg-logo="https://011fm.com/wp-content/uploads/2021/04/011trimmed-white.png" group-title="DrewFX - Hip Hop & R&B" radio="true",011.FM - Hip Hop Hits
+https://streaming.live365.com/a37306
+#EXTINF:-1  tvg-name="All Underground Hip Hop Radio" tvg-id="Radio.105.Dummy.us" tvg-logo="https://www.radio.net/300/undergroundmafiaradio.png?version=cd7a195aa7d1d1646739743d7edb4bee" group-title="DrewFX - Hip Hop & R&B" radio="true",All Underground Hip Hop Radio
+https://stream.radiojar.com/c1912tk5rtzuv 
 #EXTINF:-1  tvg-name="All Groove House" tvg-id="Radio.105.Dummy.us" tvg-logo="https://www.radio.net/300/allgroovehouse.jpeg?version=" group-title="DrewFX - House" radio="true",All Groove House
 http://cassini.shoutca.st:8179/live
 #EXTINF:-1  tvg-name="Chicago House" tvg-id="Radio.105.Dummy.us" tvg-logo="https://images.radio.co/station_logos/sae989fe39.20201223062053.png" group-title="DrewFX - House" radio="true",Chicago House
