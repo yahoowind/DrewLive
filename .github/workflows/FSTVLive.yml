@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run Tims playlist update script
+      - name: Run FSTV playlist update script
         run: python fstv.py  # Make sure this matches the actual script filename
 
       - name: Commit and push if changed
