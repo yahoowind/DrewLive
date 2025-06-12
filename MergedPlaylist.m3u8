@@ -10814,6 +10814,33 @@ https://jmp2.uk/str-5308.m3u8
 #EXTINF:-1  tvg-name="10 NBC WJAR - (Providence, RI*)" tvg-id="6513" tvg-logo="https://vcz-ktest2-cloud-vodlix-com.b-cdn.net/u/ktest2/files/thumbs/2024/12/28/1735351091BkRmYuNTOi-632x395-Xc06SyPK.png" tvg-chno="924" group-title="StirrTV ",10 NBC WJAR - (Providence, RI*)
 https://jmp2.uk/str-6513.m3u8
 
+#EXTGRP:StreamBTW
+#EXTINF:-1 tvg-id="Sports.Dummy.us" tvg-logo="https://artwork.espncdn.com/categories/23bf83ee-6d7a-3957-8b67-8014ddb9ca47/logo/original_201809071300.svg" group-title="StreamBTW",Formula 1 Racing
+#EXTVLCOPT:http-origin=https://streambtw.com
+#EXTVLCOPT:http-referrer=https://streambtw.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://veetiz.com/playlist/stream_f1.m3u8
+#EXTINF:-1 tvg-id="Sports.Dummy.us" tvg-logo="https://artwork.espncdn.com/categories/7b3729c9-7f69-308a-bf8a-ee15a6aba154/logo/original_20191002200202.svg" group-title="StreamBTW",NBA Live
+#EXTVLCOPT:http-origin=https://streambtw.com
+#EXTVLCOPT:http-referrer=https://streambtw.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://veetiz.com/playlist/stream_nba1.m3u8
+#EXTINF:-1 tvg-id="Sports.Dummy.us" tvg-logo="https://artwork.espncdn.com/categories/1a5f0227-a13e-396c-8cea-8961bc288666/logo/original_201807261445.svg" group-title="StreamBTW",Oilers vs Panthers
+#EXTVLCOPT:http-origin=https://streambtw.com
+#EXTVLCOPT:http-referrer=https://streambtw.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://veetiz.com/playlist/stream_nhl1.m3u8
+#EXTINF:-1 tvg-id="Sports.Dummy.us" tvg-logo="https://artwork.espncdn.com/categories/7b3729c9-7f69-308a-bf8a-ee15a6aba154/logo/original_20191002200202.svg" group-title="StreamBTW",Pacers vs Thunder
+#EXTVLCOPT:http-origin=https://streambtw.com
+#EXTVLCOPT:http-referrer=https://streambtw.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://veetiz.com/playlist/stream_nba1.m3u8
+#EXTINF:-1 group-title="StreamBTW" tvg-id="Sports.Dummy.us" tvg-logo="https://images.prismic.io/fft-rg-site%2F95765448-c7fa-428b-b565-8368dba90b17_logo.svg?auto=compress,format" group-title="TENNIS",Roland Garros Live
+#EXTVLCOPT:http-origin=https://streambtw.com
+#EXTVLCOPT:http-referrer=https://streambtw.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+https://veetiz.com/playlist/stream_t1.m3u8
+
 #EXTGRP:StreamEast
 #EXTINF:-1 tvg-logo="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1" group-title="StreamEast" tvg-id="24.7.Dummy.us",Baltimore Orioles vs Detroit Tigers
 #EXTVLCOPT:http-origin=https://googlapisapi.com
