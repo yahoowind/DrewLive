@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
-# Last forced update: 2025-06-13T15:11:53.667926Z
+# Last forced update: 2025-06-13T15:35:01.496262Z
 
 #EXTGRP:24/7 by Mystique
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
@@ -8463,6 +8463,12 @@ https://jmp2.uk/plu-6000a6f4c3f8550008fc9b91.m3u8
 https://jmp2.uk/plu-5d14fc31252d35decbc4080b.m3u8
 #EXTINF:-1  tvg-name="Yu-Gi-Oh!" tvg-id="5f4ec10ed9636f00089b8c89" tvg-logo="https://images.pluto.tv/channels/5f4ec10ed9636f00089b8c89/colorLogoPNG.png" tvg-chno="4030" group-title="PlutoTV USA",Yu-Gi-Oh!
 https://jmp2.uk/plu-5f4ec10ed9636f00089b8c89.m3u8
+
+#EXTGRP:PPV EVENTS
+#EXTINF:-1 tvg-id="7ed143c69d2ce1687734b787fca05e41" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",2025 PDRA North vs South Shootout (FLORACING)
+https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly9kZHk2bmV3Lm5ld2tzby5ydS9kZHk2L3ByZW1pdW02OS9tb25vLm0zdTg=.m3u8
+#EXTINF:-1 tvg-id="8692f03d0cbb9678c3646610e558ef68" tvg-logo="https://placehold.co/320x320/2d2d2d/ffffff.png?text=?&font=roboto" group-title="PPV EVENTS",UAE Warriors 60 (UFC FIGHT PASS)
+https://drewski2423-dproxy.hf.space/watch/aHR0cHM6Ly93aW5kbmV3Lm5ld2tzby5ydS93aW5kL3ByZW1pdW02OC9tb25vLm0zdTg=.m3u8
 
 #EXTGRP:PPVLand
 #EXTINF:-1 tvg-id="Sports.Dummy.us" tvg-logo="https://i.imgur.com/CnphStu.png" group-title="PPVLand",(North) Korean Central Television
