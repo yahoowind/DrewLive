@@ -7,10 +7,12 @@ EPG_URL = "https://tinyurl.com/merged2423-epg"
 OUTPUT_FILE = "UDPTV.m3u"
 FORCED_GROUP = "UDPTV Live Streams"
 
+# Remove ANY timestamps, update comments, and noisy headers
 REMOVE_PATTERNS = [
     re.compile(r'^#EXTM3U', re.IGNORECASE),
     re.compile(r'^# Last forced update:', re.IGNORECASE),
     re.compile(r'^# Updated at', re.IGNORECASE),
+    re.compile(r'^# Updated:', re.IGNORECASE),
     re.compile(r'^### IF YOU ARE A RESELLER OR LEECHER', re.IGNORECASE),
 ]
 
@@ -43,10 +45,10 @@ def process_and_write_playlist(upstream_lines):
     except FileNotFoundError:
         original = []
 
-    # Remove ALL timestamp lines and header lines anywhere in file
+    # Brute delete ALL timestamp/update/comment lines globally
     filtered_original = [line for line in original if not should_remove_line(line)]
 
-    # Prepare output: add header + new timestamp first
+    # Start fresh with top-of-file header
     output_lines = [
         f'#EXTM3U url-tvg="{EPG_URL}"',
         f'# Last forced update: {datetime.utcnow().isoformat()}Z'
@@ -71,10 +73,17 @@ def process_and_write_playlist(upstream_lines):
             output_lines.append(line)
             i += 1
 
+    # 🔥 Final sanity pass: remove any accidental timestamps still sneaking in
+    output_lines = [line for line in output_lines if not should_remove_line(line)]
+
+    # Add header again just in case final cleanup removed it
+    output_lines.insert(0, f'# Last forced update: {datetime.utcnow().isoformat()}Z')
+    output_lines.insert(0, f'#EXTM3U url-tvg="{EPG_URL}"')
+
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(output_lines) + "\n")
 
-    print(f"[✅] {OUTPUT_FILE} updated — all old timestamps removed, single fresh timestamp added.")
+    print(f"[✅] Playlist cleaned. No duplicate timestamps. Top header updated only.")
 
 if __name__ == "__main__":
     upstream_playlist = fetch_playlist()
