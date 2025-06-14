@@ -24,31 +24,27 @@ def should_remove_timestamp(line):
     return line.strip().lower().startswith("# last forced update:")
 
 def force_group_title(extinf_line):
-    # If group-title exists, replace it
     if 'group-title="' in extinf_line:
         return re.sub(r'group-title="[^"]*"', f'group-title="{FORCED_GROUP}"', extinf_line)
     else:
-        # Insert group-title before the last closing bracket or at the end of the line
-        # We add it right after the duration value (-1 or whatever)
         return extinf_line.replace('#EXTINF:', f'#EXTINF:-1 group-title="{FORCED_GROUP}" ', 1)
 
 def process_and_write_playlist(upstream_lines):
-    # Remove unwanted lines from upstream
+    # Clean upstream lines
     upstream_filtered = [line.strip() for line in upstream_lines if line.strip() and not should_remove_line(line)]
 
-    # Extract all URLs from upstream (lines immediately after #EXTINF)
+    # Extract URLs after #EXTINF
     upstream_urls = []
     for i in range(len(upstream_filtered)):
         if upstream_filtered[i].startswith("#EXTINF"):
             if i + 1 < len(upstream_filtered):
                 upstream_urls.append(upstream_filtered[i + 1].strip())
 
-    # Load existing playlist to keep metadata (names, logos, tvg-id, etc)
+    # Read existing playlist or create new if missing
     try:
         with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
             original = f.read().splitlines()
     except FileNotFoundError:
-        # If file doesn't exist, build new header and URLs with forced groups
         print("[WARN] Existing playlist not found, creating new one from upstream.")
         output_lines = [
             f'#EXTM3U url-tvg="{EPG_URL}"',
@@ -64,50 +60,48 @@ def process_and_write_playlist(upstream_lines):
         print(f"[✅] {OUTPUT_FILE} created with forced groups.")
         return
 
-    # Remove existing timestamp lines from original
-    original_filtered = [line for line in original if not should_remove_timestamp(line)]
+    # Remove all old timestamp lines anywhere
+    filtered_original = [line for line in original if not should_remove_timestamp(line)]
 
-    # Find #EXTM3U line index in filtered original
+    # Find #EXTM3U line index
     extm3u_index = None
-    for i, line in enumerate(original_filtered):
+    for i, line in enumerate(filtered_original):
         if line.strip().lower().startswith("#extm3u"):
             extm3u_index = i
             break
 
-    # Start output with original filtered lines (no old timestamps)
-    output_lines = original_filtered.copy()
-
-    # Insert new timestamp line right after #EXTM3U line or at start if missing
+    # Insert new timestamp right after #EXTM3U line or at top if missing
     timestamp_line = f'# Last forced update: {datetime.utcnow().isoformat()}Z'
     if extm3u_index is not None:
-        output_lines.insert(extm3u_index + 1, timestamp_line)
+        filtered_original.insert(extm3u_index + 1, timestamp_line)
     else:
-        output_lines.insert(0, timestamp_line)
+        filtered_original.insert(0, timestamp_line)
 
+    # Replace URLs with upstream URLs, force group-title in #EXTINF lines
     url_index = 0
     i = 0
-    while i < len(output_lines):
-        line = output_lines[i].strip()
+    while i < len(filtered_original):
+        line = filtered_original[i].strip()
         if should_remove_line(line):
             i += 1
             continue
         if line.startswith("#EXTINF"):
-            # Keep original metadata line but force group-title
+            # Force group-title
             forced_line = force_group_title(line)
-            output_lines[i] = forced_line  # replace in place
+            filtered_original[i] = forced_line
 
-            # Replace the URL line with upstream URL if available
-            if url_index < len(upstream_urls) and i + 1 < len(output_lines):
-                output_lines[i + 1] = upstream_urls[url_index]
+            # Replace next line URL if available
+            if url_index < len(upstream_urls) and i + 1 < len(filtered_original):
+                filtered_original[i + 1] = upstream_urls[url_index]
                 url_index += 1
-            i += 2  # skip URL line next iteration
+            i += 2
         else:
             i += 1
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(output_lines) + "\n")
+        f.write("\n".join(filtered_original) + "\n")
 
-    print(f"[✅] {OUTPUT_FILE} updated successfully with forced groups, URLs, and timestamp.")
+    print(f"[✅] {OUTPUT_FILE} updated successfully with one timestamp line and forced groups.")
 
 if __name__ == "__main__":
     upstream_playlist = fetch_playlist()
