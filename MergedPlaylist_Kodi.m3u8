@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
-# Last forced update: 2025-06-14T22:30:14.424091Z
+# Last forced update: 2025-06-14T22:39:48.075225Z
 
 #EXTGRP:24/7 by Mystique
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
@@ -116,12 +116,6 @@ https://a1xs.vip/140003
 https://a1xs.vip/140004
 #EXTINF:-1  tvg-name="NL: Ziggo Sport FHD" tvg-id="Ziggo.Sport.nl" tvg-logo="https://i.imgur.com/8mnQvB5.png" group-title="A1xmedia EU Sports" radio="false",NL: Ziggo Sport FHD
 https://a1xs.vip/140001
-
-#EXTGRP:A1xmedia FIFA Club World Cup
-#EXTINF:-1 tvg-id="Channel.5.HD.uk" tvg-name="Channel 5 FHD" tvg-logo="https://i.ibb.co/16SnsKq/skychb1800.png" group-title="A1xmedia FIFA Club World Cup",Channel 5
-https://a1xs.vip/1000030
-#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="RUSH Sports" tvg-logo="https://i.imgur.com/BAzTqQp.png" group-title="A1xmedia FIFA Club World Cup",RUSH Sports
-https://a1xs.vip/2501
 
 #EXTGRP:A1xmedia Live Event | PPV
 #EXTINF:-1  tvg-name="Live Event" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://i.imgur.com/LoQdSia.png" group-title="A1xmedia Live Event | PPV" radio="false",Live Event 1
@@ -2454,6 +2448,18 @@ http://drewlive24.duckdns.org:9000/Adult%20Swim.Toonami%2C%20%26%20Cartoon%20Net
 http://drewlive24.duckdns.org:9000/DrewLiveVODMovie/Zack.and.Miri.Make.a.Porno.2008.1080p.BluRay.x264.YIFY.mp4
 #EXTINF:-1  tvg-name="Zombieland (2009)" tvg-id="Movie.Dummy.us" tvg-logo="https://m.media-amazon.com/images/M/MV5BMTU5MDg0NTQ1N15BMl5BanBnXkFtZTcwMjA4Mjg3Mg@@._V1_.jpg" group-title="DrewLive VOD" radio="false",Zombieland (2009)
 http://drewlive24.duckdns.org:9000/DrewLiveVODMovie/Zombieland.2009.1080p.BluRay.DDP.7.1.x265-edge2020.mkv
+
+#EXTGRP:FIFA Club World Cup
+#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="RUSH Sports" tvg-logo="https://i.imgur.com/BAzTqQp.png" group-title="FIFA Club World Cup",CAR: RUSH Sports
+https://a1xs.vip/2501
+#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="Channel 5 FHD" tvg-logo="https://i.ibb.co/16SnsKq/skychb1800.png" group-title="FIFA Club World Cup",UK: Channel 5
+https://a1xs.vip/1000030
+#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="TBS" tvg-logo="https://i.imgur.com/Ks8htcP.png" group-title="FIFA Club World Cup",US: TBS
+https://a1xs.vip/300038
+#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="TNT FHD" tvg-logo="https://i.imgur.com/Oa7yt2Z.png" group-title="FIFA Club World Cup",US: TNT
+https://a1xs.vip/300001
+#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="truTV FH" tvg-logo="https://i.imgur.com/D9Ofkf5.png" group-title="FIFA Club World Cup",US: truTV
+https://a1xs.vip/300002
 
 #EXTGRP:FSTVLive
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/WABC_TV_New_2021.svg/1200px-WABC_TV_New_2021.svg.png" group-title="FSTVLive" tvg-id="24.7.Dummy.us",ABC
