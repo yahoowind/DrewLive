@@ -19,15 +19,9 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Drew247TV.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TVPass.m3u",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/RoxieStreams.m3u",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Tims247Live.m3u",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PixelSports.m3u",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/FSTVLive.m3u",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Radio.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/StreamEast.m3u",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/SportsWebcast.m3u",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PPVLand.m3u",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/StreamBTW.m3u",
 ]
 
 UDPTV_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
