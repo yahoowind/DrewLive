@@ -10,6 +10,7 @@ FORCED_GROUP = "UDPTV Live Streams"
 REMOVE_PATTERNS = [
     re.compile(r'^#EXTM3U', re.IGNORECASE),
     re.compile(r'^# ?Last forced update:', re.IGNORECASE),
+    re.compile(r'^# ?Updated at:', re.IGNORECASE),
     re.compile(r'^### IF YOU ARE A RESELLER OR LEECHER', re.IGNORECASE),
 ]
 
@@ -29,24 +30,21 @@ def force_group_title(extinf_line):
 def process_and_write_playlist(upstream_lines):
     upstream_filtered = [line.strip() for line in upstream_lines if line.strip() and not should_remove_line(line)]
 
-    # Grab URLs from upstream (assumes every URL follows #EXTINF)
     upstream_urls = []
     for i in range(len(upstream_filtered)):
-        if upstream_filtered[i].startswith("#EXTINF"):
-            if i + 1 < len(upstream_filtered):
-                upstream_urls.append(upstream_filtered[i + 1].strip())
+        if upstream_filtered[i].startswith("#EXTINF") and i + 1 < len(upstream_filtered):
+            upstream_urls.append(upstream_filtered[i + 1].strip())
 
     try:
         with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
             original = f.read().splitlines()
     except FileNotFoundError:
-        print("[WARN] No existing playlist found, creating a new one.")
         original = []
 
-    # Strip old timestamp and #EXTM3U, if any
+    # Fully remove old headers & timestamps
     cleaned = [line for line in original if not should_remove_line(line)]
 
-    # Start with clean header
+    # Build header
     output_lines = [
         f'#EXTM3U url-tvg="{EPG_URL}"',
         f'# Last forced update: {datetime.utcnow().isoformat()}Z'
@@ -73,7 +71,7 @@ def process_and_write_playlist(upstream_lines):
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(output_lines) + "\n")
 
-    print(f"[✅] {OUTPUT_FILE} updated. Timestamp fresh, URLs refreshed, no duplication.")
+    print(f"[✅] {OUTPUT_FILE} cleaned. Single timestamp added, old junk removed, URLs refreshed.")
 
 if __name__ == "__main__":
     upstream_playlist = fetch_playlist()
