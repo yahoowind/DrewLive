@@ -1,47 +1,55 @@
 import requests
-import re
 
 UPSTREAM_URL = "http://tvpass.org/playlist/m3u"
-OUTPUT_FILE = "TVPass.m3u"
-FORCED_GROUP = "TVPass"
+LOCAL_FILE = "TVPass.m3u"
 
-def fetch_upstream_playlist():
-    res = requests.get(UPSTREAM_URL, timeout=10)
+def fetch_upstream_urls():
+    """Get all URLs from upstream (lines not starting with #)"""
+    res = requests.get(UPSTREAM_URL, timeout=15)
     res.raise_for_status()
-    return res.text.splitlines()
+    lines = res.text.splitlines()
+    return [line.strip() for line in lines if line and not line.startswith("#")]
 
-def force_group_title(extinf_line):
-    if not extinf_line.startswith("#EXTINF"):
-        return extinf_line
+def read_local_playlist():
+    with open(LOCAL_FILE, "r", encoding="utf-8") as f:
+        return f.read().splitlines()
 
-    if 'group-title="' in extinf_line:
-        return re.sub(r'group-title=".*?"', f'group-title="{FORCED_GROUP}"', extinf_line)
-    else:
-        return extinf_line.replace("#EXTINF:", f'#EXTINF: group-title="{FORCED_GROUP}",')
-
-def process_upstream(lines):
-    updated = []
+def update_playlist(local_lines, upstream_urls):
+    output = []
+    url_idx = 0
     i = 0
-    while i < len(lines):
-        if lines[i].startswith("#EXTINF"):
-            updated.append(force_group_title(lines[i]))
-            if i + 1 < len(lines):
-                updated.append(lines[i + 1].strip())
-            i += 2
-        else:
-            if lines[i].startswith("#") or lines[i].strip() == "":
-                updated.append(lines[i])
+
+    while i < len(local_lines):
+        line = local_lines[i].strip()
+        if line.startswith("#EXTINF"):
+            # Metadata line - keep as-is
+            output.append(local_lines[i])
             i += 1
-    return updated
+            # Next line should be URL - replace with upstream URL if available
+            if url_idx < len(upstream_urls):
+                output.append(upstream_urls[url_idx])
+                url_idx += 1
+            else:
+                # No more upstream URLs, keep old URL
+                output.append(local_lines[i] if i < len(local_lines) else "")
+            i += 1
+        else:
+            # Lines that aren't #EXTINF (headers, comments, blank) keep as-is
+            output.append(local_lines[i])
+            i += 1
+
+    return output
 
 def main():
-    upstream_lines = fetch_upstream_playlist()
-    updated_lines = process_upstream(upstream_lines)
+    local_lines = read_local_playlist()
+    upstream_urls = fetch_upstream_urls()
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    updated_lines = update_playlist(local_lines, upstream_urls)
+
+    with open(LOCAL_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines) + "\n")
 
-    print(f"✅ TVPass.m3u fully updated from upstream. {len(updated_lines)//2} streams refreshed.")
+    print(f"✅ Updated {LOCAL_FILE} with {len(upstream_urls)} new URLs, metadata preserved.")
 
 if __name__ == "__main__":
     main()
