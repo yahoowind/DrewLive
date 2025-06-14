@@ -17,7 +17,6 @@ playlist_urls = [
     # UDPTV_URL is handled separately for timestamp extraction, but also included
     # here so its channels are parsed and added to the merged playlist.
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLiveEvents.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Drew247TV.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TVPass.m3u",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/RoxieStreams.m3u",
