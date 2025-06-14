@@ -3,7 +3,7 @@ import re
 
 SOURCE_URL = 'http://drewski2423-dproxy.hf.space/playlist/events'
 OUTPUT_FILE = 'DaddyLiveEvents.m3u8'
-EPG_URL = 'https://raw.githubusercontent.com/pigzillaaaaa/daddylive/refs/heads/main/epgs/daddylive-events-epg.xml'
+EPG_URL = 'https://tinyurl.com/dummy2423-epg'  # forced new EPG URL
 
 BLOCKED_GROUPS = {
     group.lower() for group in [
@@ -26,12 +26,22 @@ def extract_group_title(extinf_line):
     return ""
 
 def extract_channel_name(extinf_line):
-    # Extract the channel display name after the comma in #EXTINF line
-    # Example: #EXTINF:-1 group-title="News",CNN HD  -> returns "CNN HD"
     parts = extinf_line.split(',', 1)
     if len(parts) > 1:
         return parts[1].strip().lower()
     return ""
+
+def force_tvg_id(extinf_line):
+    # Remove any existing tvg-id attribute
+    extinf_line = re.sub(r'tvg-id="[^"]*"', '', extinf_line)
+    # Insert forced tvg-id after #EXTINF:-1 (or after group-title if present)
+    if 'group-title=' in extinf_line:
+        extinf_line = re.sub(r'(#EXTINF:-1\s*)(group-title="[^"]+")',
+                            r'\1\2 tvg-id="Sports.Dummy.us"', extinf_line)
+    else:
+        extinf_line = re.sub(r'(#EXTINF:-1)',
+                            r'\1 tvg-id="Sports.Dummy.us"', extinf_line)
+    return extinf_line
 
 def main():
     print("[*] Fetching event playlist...")
@@ -44,9 +54,7 @@ def main():
 
     lines = response.text.splitlines()
 
-    # Collect filtered channels as (extinf_line, url_line) tuples
     channels = []
-
     i = 0
     while i < len(lines):
         line = lines[i]
@@ -55,15 +63,14 @@ def main():
             if group not in BLOCKED_GROUPS:
                 if i + 1 < len(lines):
                     url_line = lines[i + 1]
-                    channels.append((line, url_line))
+                    forced_extinf = force_tvg_id(line)
+                    channels.append((forced_extinf, url_line))
             i += 2
         else:
             i += 1
 
-    # Sort channels alphabetically by channel display name
     channels.sort(key=lambda ch: extract_channel_name(ch[0]))
 
-    # Prepare output lines with EPG header
     filtered = [f'#EXTM3U url-tvg="{EPG_URL}"']
     for extinf_line, url_line in channels:
         filtered.append(extinf_line)
