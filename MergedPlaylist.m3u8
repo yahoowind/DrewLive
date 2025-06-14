@@ -117,6 +117,12 @@ https://a1xs.vip/140004
 #EXTINF:-1  tvg-name="NL: Ziggo Sport FHD" tvg-id="Ziggo.Sport.nl" tvg-logo="https://i.imgur.com/8mnQvB5.png" group-title="A1xmedia EU Sports" radio="false",NL: Ziggo Sport FHD
 https://a1xs.vip/140001
 
+#EXTGRP:A1xmedia FIFA Club World Cup
+#EXTINF:-1 tvg-id="Channel.5.HD.uk" tvg-name="Channel 5 FHD" tvg-logo="https://i.ibb.co/16SnsKq/skychb1800.png" group-title="A1xmedia FIFA Club World Cup",Channel 5
+https://a1xs.vip/1000030
+#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="RUSH Sports" tvg-logo="https://i.imgur.com/BAzTqQp.png" group-title="A1xmedia FIFA Club World Cup",RUSH Sports
+https://a1xs.vip/2501
+
 #EXTGRP:A1xmedia Live Event | PPV
 #EXTINF:-1  tvg-name="Live Event" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="https://i.imgur.com/LoQdSia.png" group-title="A1xmedia Live Event | PPV" radio="false",Live Event 1
 https://a1xs.vip/ppv1
