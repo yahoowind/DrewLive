@@ -18,13 +18,11 @@ def force_metadata(extinf_line):
     metadata = parts[0]
     title = parts[1] if len(parts) > 1 else ""
 
-    # Force or inject tvg-id
     if 'tvg-id="' in metadata:
         metadata = re.sub(r'tvg-id=".*?"', f'tvg-id="{FORCED_TVG_ID}"', metadata)
     else:
         metadata += f' tvg-id="{FORCED_TVG_ID}"'
 
-    # Force or inject group-title
     if 'group-title="' in metadata:
         metadata = re.sub(r'group-title=".*?"', f'group-title="{FORCED_GROUP}"', metadata)
     else:
@@ -36,13 +34,12 @@ def build_playlist(raw):
     lines = raw.splitlines()
     output = []
 
-    # Preserve original #EXTM3U or add it if missing
-    if lines and lines[0].startswith("#EXTM3U"):
+    # Use your original first line without injecting a second one
+    if lines:
         output.append(lines[0])
         i = 1
     else:
-        output.append("#EXTM3U")
-        i = 0
+        return ""
 
     while i < len(lines):
         line = lines[i].strip()
@@ -51,12 +48,10 @@ def build_playlist(raw):
             output.append(force_metadata(line))
             i += 1
 
-            # Keep optional headers like #EXTVLCOPT
             while i < len(lines) and lines[i].startswith("#") and not lines[i].startswith("#EXTINF"):
                 output.append(lines[i].strip())
                 i += 1
 
-            # Stream URL with timestamp
             if i < len(lines) and not lines[i].startswith("#"):
                 stream_url = lines[i].strip()
                 if stream_url.endswith(".m3u8"):
@@ -65,7 +60,6 @@ def build_playlist(raw):
                 i += 1
 
         else:
-            # Keep untouched non-EXTINF lines
             output.append(line)
             i += 1
 
