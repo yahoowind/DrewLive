@@ -7,13 +7,12 @@ EPG_URL = "https://tinyurl.com/merged2423-epg"
 OUTPUT_FILE = "UDPTV.m3u"
 FORCED_GROUP = "UDPTV Live Streams"
 
-# Remove ANY timestamps, update comments, and noisy headers
-REMOVE_PATTERNS = [
+# Match all junk timestamp/update lines
+TIMESTAMP_PATTERNS = [
     re.compile(r'^#EXTM3U', re.IGNORECASE),
     re.compile(r'^# Last forced update:', re.IGNORECASE),
     re.compile(r'^# Updated at', re.IGNORECASE),
     re.compile(r'^# Updated:', re.IGNORECASE),
-    re.compile(r'^### IF YOU ARE A RESELLER OR LEECHER', re.IGNORECASE),
 ]
 
 def fetch_playlist():
@@ -22,7 +21,7 @@ def fetch_playlist():
     return res.text.strip().splitlines()
 
 def should_remove_line(line):
-    return any(pat.match(line) for pat in REMOVE_PATTERNS)
+    return any(pat.match(line) for pat in TIMESTAMP_PATTERNS)
 
 def force_group_title(extinf_line):
     if 'group-title="' in extinf_line:
@@ -45,10 +44,9 @@ def process_and_write_playlist(upstream_lines):
     except FileNotFoundError:
         original = []
 
-    # Brute delete ALL timestamp/update/comment lines globally
     filtered_original = [line for line in original if not should_remove_line(line)]
 
-    # Start fresh with top-of-file header
+    # Build output from scratch
     output_lines = [
         f'#EXTM3U url-tvg="{EPG_URL}"',
         f'# Last forced update: {datetime.utcnow().isoformat()}Z'
@@ -73,17 +71,23 @@ def process_and_write_playlist(upstream_lines):
             output_lines.append(line)
             i += 1
 
-    # 🔥 Final sanity pass: remove any accidental timestamps still sneaking in
-    output_lines = [line for line in output_lines if not should_remove_line(line)]
-
-    # Add header again just in case final cleanup removed it
-    output_lines.insert(0, f'# Last forced update: {datetime.utcnow().isoformat()}Z')
-    output_lines.insert(0, f'#EXTM3U url-tvg="{EPG_URL}"')
+    # 🔥 KILL ALL DUPLICATE TIMESTAMP LINES EXCEPT THE FIRST TWO
+    cleaned_output = []
+    seen_update = 0
+    for line in output_lines:
+        if any(p.match(line) for p in TIMESTAMP_PATTERNS):
+            if seen_update < 2:
+                cleaned_output.append(line)
+                seen_update += 1
+            else:
+                continue  # skip duplicate timestamp
+        else:
+            cleaned_output.append(line)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(output_lines) + "\n")
+        f.write("\n".join(cleaned_output) + "\n")
 
-    print(f"[✅] Playlist cleaned. No duplicate timestamps. Top header updated only.")
+    print("[✅] All timestamp trash wiped. Playlist clean, single update header only.")
 
 if __name__ == "__main__":
     upstream_playlist = fetch_playlist()
