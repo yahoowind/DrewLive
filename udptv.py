@@ -70,6 +70,13 @@ def process_and_write_playlist(upstream_lines):
             extm3u_index = i
             break
 
+    # Remove any existing timestamp line right after #EXTM3U (just in case)
+    if extm3u_index is not None:
+        if extm3u_index + 1 < len(filtered_original):
+            next_line = filtered_original[extm3u_index + 1].strip().lower()
+            if next_line.startswith("# last forced update:"):
+                filtered_original.pop(extm3u_index + 1)
+
     # Insert new timestamp right after #EXTM3U line or at top if missing
     timestamp_line = f'# Last forced update: {datetime.utcnow().isoformat()}Z'
     if extm3u_index is not None:
@@ -101,7 +108,7 @@ def process_and_write_playlist(upstream_lines):
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(filtered_original) + "\n")
 
-    print(f"[✅] {OUTPUT_FILE} updated successfully with one timestamp line and forced groups.")
+    print(f"[✅] {OUTPUT_FILE} updated successfully with a single timestamp and forced groups.")
 
 if __name__ == "__main__":
     upstream_playlist = fetch_playlist()
