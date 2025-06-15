@@ -1,4 +1,4 @@
-﻿#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
+#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
 http://user.scalecdn.co:8080/live/26725074/92867131/511232.ts
 #EXTINF:-1  tvg-name="BBC Top Gear 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/Top-Gear-Logo-2002.png" group-title="24/7 by Mystique" radio="false",BBC Top Gear 24/7
@@ -2043,15 +2043,15 @@ http://fl2.moveonjoy.com/VICELAND/index.m3u8
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/247
 #EXTINF:-1  tvg-id="YES.Network.us" tvg-logo="http://lonewolftvpr.com/logos/yes.png" group-title="Mystique USA" radio="false",Yes Network
 http://cdn1host.online:2999/kratorius/opLcbhlXaT/245
-#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="RUSH Sports" tvg-logo="https://i.imgur.com/BAzTqQp.png" group-title="FIFA Club World Cup",CAR: RUSH Sports
+#EXTINF:-1  tvg-id="Live.Football.us" tvg-name="RUSH Sports" tvg-logo="https://i.imgur.com/BAzTqQp.png" group-title="FIFA Club World Cup",CAR: RUSH Sports
 https://a1xs.vip/2501
-#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="Channel 5 FHD" tvg-logo="https://i.ibb.co/16SnsKq/skychb1800.png" group-title="FIFA Club World Cup",UK: Channel 5
+#EXTINF:-1  tvg-id="Live.Football.us" tvg-name="Channel 5 FHD" tvg-logo="https://i.ibb.co/16SnsKq/skychb1800.png" group-title="FIFA Club World Cup",UK: Channel 5
 https://a1xs.vip/1000030
-#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="TNT FHD" tvg-logo="https://i.imgur.com/Oa7yt2Z.png" group-title="FIFA Club World Cup",US: TNT 
+#EXTINF:-1  tvg-id="Live.Football.us" tvg-name="TNT FHD" tvg-logo="https://i.imgur.com/Oa7yt2Z.png" group-title="FIFA Club World Cup",US: TNT 
 https://a1xs.vip/300001
-#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="truTV FH" tvg-logo="https://i.imgur.com/D9Ofkf5.png" group-title="FIFA Club World Cup",US: truTV 
+#EXTINF:-1  tvg-id="Live.Football.us" tvg-name="truTV FH" tvg-logo="https://i.imgur.com/D9Ofkf5.png" group-title="FIFA Club World Cup",US: truTV 
 https://a1xs.vip/300002
-#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="TBS" tvg-logo="https://i.imgur.com/Ks8htcP.png" group-title="FIFA Club World Cup",US: TBS
+#EXTINF:-1  tvg-id="Live.Football.us" tvg-name="TBS" tvg-logo="https://i.imgur.com/Ks8htcP.png" group-title="FIFA Club World Cup",US: TBS
 https://a1xs.vip/300038
-#EXTINF:-1 group-title="Mystique Presents: Web Channels" tvg-logo="",Disney Channel DB (DoneBetter)
+#EXTINF:-1  tvg-id="" group-title="Mystique Presents: Web Channels" tvg-logo="https://www.citypng.com/public/uploads/preview/walt-disney-company-black-logo-png-7017516947749550qmvjmawwx.png",Disney Channel DB (DoneBetter)
 https://de.bnkd.xyz/memfs/0b2776c9-95ef-4e43-ab2c-aadb73ee2f32_output_0.m3u8?session=WDmrTFsHf2q53pE7x7WzWq
