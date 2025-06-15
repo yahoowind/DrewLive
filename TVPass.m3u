@@ -1,4 +1,4 @@
-﻿#EXTM3U x-tvg-url="https://tvpass.org/epg.xml"
+#EXTM3U
 #EXTINF:-1  tvg-name="A&E US Eastern Feed SD" tvg-id="ae-us-eastern-feed" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/a-and-e-us.png?raw=true" group-title="TVPass",A&E US Eastern Feed SD
 https://tvpass.org/live/AEEast/sd
 #EXTINF:-1  tvg-name="A&E US Eastern Feed HD" tvg-id="ae-us-eastern-feed" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/a-and-e-us.png?raw=true" group-title="TVPass",A&E US Eastern Feed HD
@@ -8,9 +8,9 @@ https://tvpass.org/live/abc-kabc-los-angeles-ca/sd
 #EXTINF:-1  tvg-name="ABC (KABC) Los Angeles HD" tvg-id="abc-kabc-los-angeles-ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/abc-logo-2013-garnet-us.png?raw=true" group-title="TVPass",ABC (KABC) Los Angeles HD
 https://tvpass.org/live/abc-kabc-los-angeles-ca/hd
 #EXTINF:-1  tvg-name="ABC (WABC) New York " tvg-id="abc-wabc-new-york-ny" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/abc-logo-2013-garnet-us.png?raw=true" group-title="TVPass",NY SD
-https://tvpass.org/live/WABCDT1/sd
+https://tvpass.org/live/WNET/sd
 #EXTINF:-1  tvg-name="ABC (WABC) New York" tvg-id="abc-wabc-new-york-ny" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/abc-logo-2013-garnet-us.png?raw=true" group-title="TVPass",NY HD
-https://tvpass.org/live/WABCDT1/hd
+https://tvpass.org/live/WNET/hd
 #EXTINF:-1  tvg-name="ACC Network SD" tvg-id="acc-network" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/acc-network-us.png?raw=true" group-title="TVPass",ACC Network SD
 https://tvpass.org/live/ACCNetwork/sd
 #EXTINF:-1  tvg-name="ACC Network HD" tvg-id="acc-network" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/acc-network-us.png?raw=true" group-title="TVPass",ACC Network HD
@@ -80,9 +80,9 @@ https://tvpass.org/live/cbs-kcbs-los-angeles-ca/sd
 #EXTINF:-1  tvg-name="CBS (KCBS) Los Angeles HD" tvg-id="cbs-kcbs-los-angeles-ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cbs-logo-white-us.png?raw=true" group-title="TVPass",CBS (KCBS) Los Angeles HD
 https://tvpass.org/live/cbs-kcbs-los-angeles-ca/hd
 #EXTINF:-1  tvg-name="CBS (WCBS) New York " tvg-id="cbs-wcbs-new-york-ny" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cbs-logo-white-us.png?raw=true" group-title="TVPass",NY SD
-https://tvpass.org/live/WCBSDT1/sd
+https://tvpass.org/live/WNET/sd
 #EXTINF:-1  tvg-name="CBS (WCBS) New York " tvg-id="cbs-wcbs-new-york-ny" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cbs-logo-white-us.png?raw=true" group-title="TVPass",NY HD
-https://tvpass.org/live/WCBSDT1/hd
+https://tvpass.org/live/WNET/hd
 #EXTINF:-1  tvg-name="CBS Sports Network USA SD" tvg-id="cbs-sports-network-usa" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cbs-sports-network-us.png?raw=true" group-title="TVPass",CBS Sports Network USA SD
 https://tvpass.org/live/CBSSportsNetworkUSA/sd
 #EXTINF:-1  tvg-name="CBS Sports Network USA HD" tvg-id="cbs-sports-network-usa" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cbs-sports-network-us.png?raw=true" group-title="TVPass",CBS Sports Network USA HD
@@ -260,9 +260,9 @@ https://tvpass.org/live/fox-kttv-los-angeles-ca/sd
 #EXTINF:-1  tvg-name="FOX (KTTV) Los Angeles HD" tvg-id="fox-kttv-los-angeles-ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-us.png?raw=true" group-title="TVPass",FOX (KTTV) Los Angeles HD
 https://tvpass.org/live/fox-kttv-los-angeles-ca/hd
 #EXTINF:-1  tvg-name="FOX (WNYW) New York " tvg-id="fox-wnyw-new-york-ny" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-us.png?raw=true" group-title="TVPass",NY SD
-https://tvpass.org/live/WNYWDT1/sd
+https://tvpass.org/live/WNET/sd
 #EXTINF:-1  tvg-name="FOX (WNYW) New York" tvg-id="fox-wnyw-new-york-ny" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-us.png?raw=true" group-title="TVPass",NY HD
-https://tvpass.org/live/WNYWDT1/hd
+https://tvpass.org/live/WNET/hd
 #EXTINF:-1  tvg-name="Fox Business SD" tvg-id="fox-business" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-business-us.png?raw=true" group-title="TVPass",Fox Business SD
 https://tvpass.org/live/FoxBusiness/sd
 #EXTINF:-1  tvg-name="Fox Business HD" tvg-id="fox-business" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-business-us.png?raw=true" group-title="TVPass",Fox Business HD
@@ -456,9 +456,9 @@ https://tvpass.org/live/nbc-knbc-los-angeles-ca/sd
 #EXTINF:-1  tvg-name="NBC (KNBC) Los Angeles HD" tvg-id="nbc-knbc-los-angeles-ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbc-logo-alt-us.png?raw=true" group-title="TVPass",NBC (KNBC) Los Angeles HD
 https://tvpass.org/live/nbc-knbc-los-angeles-ca/hd
 #EXTINF:-1  tvg-name="NBC (WNBC) New York" tvg-id="nbc-wnbc-new-york-ny" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbc-logo-alt-us.png?raw=true" group-title="TVPass",NY SD
-https://tvpass.org/live/WNBCDT1/sd
+https://tvpass.org/live/WNET/sd
 #EXTINF:-1  tvg-name="NBC (WNBC) New York" tvg-id="nbc-wnbc-new-york-ny" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbc-logo-alt-us.png?raw=true" group-title="TVPass",NY HD
-https://tvpass.org/live/WNBCDT1/hd
+https://tvpass.org/live/WNET/hd
 #EXTINF:-1  tvg-name="NBC Sports Bay Area SD" tvg-id="nbc-sports-bay-area" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbcsn-bay-area-us.png?raw=true" group-title="TVPass",NBC Sports Bay Area SD
 https://tvpass.org/live/nbc-sports-bay-area/sd
 #EXTINF:-1  tvg-name="NBC Sports Bay Area HD" tvg-id="nbc-sports-bay-area" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbcsn-bay-area-us.png?raw=true" group-title="TVPass",NBC Sports Bay Area HD
