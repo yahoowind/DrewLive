@@ -2450,15 +2450,15 @@ http://drewlive24.duckdns.org:9000/DrewLiveVODMovie/Zack.and.Miri.Make.a.Porno.2
 http://drewlive24.duckdns.org:9000/DrewLiveVODMovie/Zombieland.2009.1080p.BluRay.DDP.7.1.x265-edge2020.mkv
 
 #EXTGRP:FIFA Club World Cup
-#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="RUSH Sports" tvg-logo="https://i.imgur.com/BAzTqQp.png" group-title="FIFA Club World Cup",CAR: RUSH Sports
+#EXTINF:-1  tvg-id="Live.Football.us" tvg-name="RUSH Sports" tvg-logo="https://i.imgur.com/BAzTqQp.png" group-title="FIFA Club World Cup",CAR: RUSH Sports
 https://a1xs.vip/2501
-#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="Channel 5 FHD" tvg-logo="https://i.ibb.co/16SnsKq/skychb1800.png" group-title="FIFA Club World Cup",UK: Channel 5
+#EXTINF:-1  tvg-id="Live.Football.us" tvg-name="Channel 5 FHD" tvg-logo="https://i.ibb.co/16SnsKq/skychb1800.png" group-title="FIFA Club World Cup",UK: Channel 5
 https://a1xs.vip/1000030
-#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="TBS" tvg-logo="https://i.imgur.com/Ks8htcP.png" group-title="FIFA Club World Cup",US: TBS
+#EXTINF:-1  tvg-id="Live.Football.us" tvg-name="TBS" tvg-logo="https://i.imgur.com/Ks8htcP.png" group-title="FIFA Club World Cup",US: TBS
 https://a1xs.vip/300038
-#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="TNT FHD" tvg-logo="https://i.imgur.com/Oa7yt2Z.png" group-title="FIFA Club World Cup",US: TNT
+#EXTINF:-1  tvg-id="Live.Football.us" tvg-name="TNT FHD" tvg-logo="https://i.imgur.com/Oa7yt2Z.png" group-title="FIFA Club World Cup",US: TNT
 https://a1xs.vip/300001
-#EXTINF:-1 tvg-id="Live.Football.us" tvg-name="truTV FH" tvg-logo="https://i.imgur.com/D9Ofkf5.png" group-title="FIFA Club World Cup",US: truTV
+#EXTINF:-1  tvg-id="Live.Football.us" tvg-name="truTV FH" tvg-logo="https://i.imgur.com/D9Ofkf5.png" group-title="FIFA Club World Cup",US: truTV
 https://a1xs.vip/300002
 
 #EXTGRP:FSTVLive
@@ -4042,7 +4042,7 @@ https://d47743dknc7xq.cloudfront.net/out/v1/889d35656a514495a9642ba6dae30962/ind
 https://ptvlive.kordia.net.nz/out/v1/daf20b9a9ec5449dadd734e50ce52b74/index.m3u8
 
 #EXTGRP:Mystique Presents: Web Channels
-#EXTINF:-1 group-title="Mystique Presents: Web Channels" tvg-logo="",Disney Channel DB (DoneBetter)
+#EXTINF:-1  tvg-id="" group-title="Mystique Presents: Web Channels" tvg-logo="https://www.citypng.com/public/uploads/preview/walt-disney-company-black-logo-png-7017516947749550qmvjmawwx.png",Disney Channel DB (DoneBetter)
 https://de.bnkd.xyz/memfs/0b2776c9-95ef-4e43-ab2c-aadb73ee2f32_output_0.m3u8?session=WDmrTFsHf2q53pE7x7WzWq
 
 #EXTGRP:Mystique UK
