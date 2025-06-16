@@ -50,7 +50,7 @@ Stay synced with live guide data for your players. Pick the one that fits your n
 
 🔗 All Source EPG  
 ✔️ Most comprehensive option available  
-• [https://tinyurl.com/allsource2423-epg](https://tinyurl.com/allsource2423-epg)  
+• [https://tinyurl.com/vizo24](https://tinyurl.com/vizo24)  
 
 ━━━━━━━━━━━━━━━━━━━━
 
@@ -112,4 +112,4 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR  
 OTHER DEALINGS IN THE SOFTWARE.  
 
-Learn more at: [https://unlicense.org](https://unlicense.org)  
+Learn more at: [https://unlicense.org](https://unlicense.org)
