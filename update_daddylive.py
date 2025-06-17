@@ -13,28 +13,24 @@ def update_playlist():
         lines = response.text.splitlines()
         output = []
         i = 0
-
         while i < len(lines):
             line = lines[i]
-
             if line.startswith("#EXTINF") and LOCKED_CHANNEL_NAME in line:
-                # Write EXTINF line (channel info)
+                print(f"🔒 Found locked channel at line {i}: {line}")
                 output.append(line)
                 i += 1
-
-                # Write all header lines (#EXTVLCOPT:...) that follow
+                # Copy all #EXTVLCOPT lines
                 while i < len(lines) and lines[i].startswith("#EXTVLCOPT:"):
                     output.append(lines[i])
                     i += 1
-
-                # Replace next line (the URL) with locked URL
+                # Now replace URL line with locked URL
                 if i < len(lines):
+                    print(f"Replacing URL line {i}: {lines[i]} with locked URL")
                     output.append(LOCKED_URL)
-                    i += 1  # skip old URL line
+                    i += 1
                 else:
-                    # no URL line? just add locked URL anyway
+                    print("No URL line found after headers, adding locked URL")
                     output.append(LOCKED_URL)
-
             else:
                 output.append(line)
                 i += 1
@@ -42,7 +38,7 @@ def update_playlist():
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write("\n".join(output) + "\n")
 
-        print(f"✅ Playlist updated. '{LOCKED_CHANNEL_NAME}' URL replaced but headers preserved.")
+        print(f"✅ Playlist updated. '{LOCKED_CHANNEL_NAME}' replaced correctly.")
 
     except Exception as e:
         print(f"❌ Error updating playlist: {e}")
