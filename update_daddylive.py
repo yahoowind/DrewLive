@@ -23,6 +23,20 @@ LOCKED_CHANNELS = {
     "ESPN2 USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NDJlMzQ4NzNiMGYzLTA2OTgtYWQ1NC1lN2VmLTlkZWQ3YTQy/master.m3u8?md5=FAr8MitrGdCukq9CJcurUg&expires=1750251703&t=1750208503",
     "ESPNews": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1N2U1ODA1MmJmNDA5LTVhZjktNDI1NC0xNmJmLTA0ZTVkZGE5/master.m3u8?md5=jKgUIMiX8G-4MTA1YaxdgQ&expires=1750251749&t=1750208549",
     "ESPNU USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NDJlY2IxMDVhM2ZmLWUzMDgtMWI4NC00OTVmLTQzM2YyZjY0/master.m3u8?md5=jZ38qAx5e3b4CGIh6L70wg&expires=1750253927&t=1750210727",
+    "Fox Business": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ODNkYmE0NjVlNGJmLTAxZDktOTkyNC1iMjJhLTkxYWY4ZmQ4/master.m3u8?md5=xodEYia7GO0QHWOU04ynug&expires=1750255897&t=1750212697",
+    "Fox News": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZmYyZDIyYzcxMGQyLWM5OGItOTgyNC1hNzhlLTU0NmEzZjdl/master.m3u8?md5=YT262RT2QKxmhyV5EQyJcQ&expires=1750255986&t=1750212786",
+    "Fox Sports 1": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1N2EwODYxNTMyNTBmLTU1MmItMGE1NC0xODQzLWM0OWIzMWFm/master.m3u8?md5=pjkxHKX2KJLBMp9TtBk1Uw&expires=1750256102&t=1750212902",
+    "FOX USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MjczMGJkYzRlNTA1LTBhMzgtOTAzNC1jMDQ5LTBhOTYxNjI0/master.m3u8?md5=mYDk3aCJhsL1iwrOsDdWLA&expires=1750256197&t=1750212997",
+    "Freeform": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YjA1OTQxYzQ4NmQ5LTllMGEtOWQ3NC1mZGUyLTVmNjM5Zjkx/master.m3u8?md5=qxoVJuYUYn7n4vnIMngfkA&expires=1750256528&t=1750213328",
+    "Fuse": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MjczMGJkYzRlNTA1LTBhMzgtOTAzNC1jMDQ5LTBhOTYxNjI0/master.m3u8?md5=mYDk3aCJhsL1iwrOsDdWLA&expires=1750256197&t=1750212997",
+    "FOX USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MjczMGJkYzRlNTA1LTBhMzgtOTAzNC1jMDQ5LTBhOTYxNjI0/master.m3u8?md5=mYDk3aCJhsL1iwrOsDdWLA&expires=1750256197&t=1750212997",
+    "FUSE TV USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MTM4YjJmNjg3NWE0LTJkZmEtNWIwNC1lZTQ1LWExYTAyNmJh/master.m3u8?md5=ilc2QBMVBFsUhK_zhp1o5g&expires=1750256573&t=1750213373",
+    "FX Movie Channel": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NzlkZTFlNzliOTM1LWMzOTgtY2Q3NC0yYWFkLTQ5ZWJlNDUz/master.m3u8?md5=_lKYGa196CYjscVE1b368A&expires=1750256673&t=1750213473",
+    "FX USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YjY5YzA0MWE0Y2VjLTY2ZWEtMzQxNC0xZDMyLTFiODM4M2Q3/master.m3u8?md5=pYohYRs5UBNjakCjnMB2Rw&expires=1750256629&t=1750213429",
+    "FXX USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MDk2MTUzM2NjYzFiLWE0YTktYjYxNC1hNDUzLTkwNThmNzgy/master.m3u8?md5=JjuFPb5zDIywLGfWj6SZJA&expires=1750256711&t=1750213511",
+    "Game Show Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YzNhYjE3ODdmZTQ1LTJkY2EtZjk3NC00MjMwLTA5YTA3Y2Uw/master.m3u8?md5=DzTEjF7WR6pt-az2P0hqrA&expires=1750256927&t=1750213727",
+    "GOLF Channel USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YmRlMmJjMjQ1OWIzLWE0ODgtZjUxNC1hY2JiLTJjZGI0N2I5/master.m3u8?md5=7ZeoAI34QtGFoUZaXuOzVQ&expires=1750256964&t=1750213764",
+    "Hallmark Movies & Mysteries": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MWUwNDJiZDI4OWRhLTJmOWItZDg1NC0xNDBhLWQ3ODhmZTMz/master.m3u8?md5=Kxxg34iXygt99sOhyfpwbA&expires=1750257174&t=1750213974",
 }
 
 def update_playlist():
