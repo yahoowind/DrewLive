@@ -1,6 +1,6 @@
 import requests
 import asyncio
-from playwright.async_api import async_playwright, Page, Request
+from playwright.async_api import async_playwright, Page, Request, Response, ConsoleMessage
 import os
 
 UPSTREAM_URL = "https://tinyurl.com/DaddyLive824"
@@ -22,7 +22,7 @@ CHANNELS_TO_PROCESS = {
     "FXX USA": "298", "Game Show Network": "319", "GOLF Channel USA": "318",
     "Hallmark Movies & Mysteries": "296", "HBO USA": "321", "Headline News": "323",
     "HGTV": "382", "History USA": "322", "Investigation Discovery (ID USA)": "324",
-    "ION USA": "325", "Law & Crime Network": "278", "HFTN": "531", # Added HFTN as an example for another channel
+    "ION USA": "325", "Law & Crime Network": "278", "HFTN": "531",
     "Lifetime Movies Network": "389", "Lifetime Network": "326", "Magnolia Network": "299",
     "MSNBC": "327", "MTV USA": "371", "National Geographic (NGC)": "328",
     "NBC Sports Philadelphia": "777", "NBC USA": "53", "NewsNation USA": "292",
@@ -38,95 +38,125 @@ async def get_fresh_locked_channel_urls_async():
 
     if not os.path.exists("screenshots"):
         os.makedirs("screenshots")
+    if not os.path.exists("console_logs"):
+        os.makedirs("console_logs")
+    if not os.path.exists("network_logs"):
+        os.makedirs("network_logs")
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=False, args=['--disable-features=HardwareMediaKeyHandling'])
         context = await browser.new_context()
 
         # Listen for new pages (e.g., pop-up ads) and close them
         context.on('page', lambda page: asyncio.create_task(close_new_page(page)))
         
         page = await context.new_page()
+
+        # --- Enhanced Console & Network Logging ---
+        channel_console_messages = []
+        network_requests_log = []
+
+        def on_console_message(msg: ConsoleMessage):
+            channel_console_messages.append(f"CONSOLE {msg.type.upper()}: {msg.text}")
+
+        def on_request(request: Request):
+            url = request.url
+            if any(ext in url for ext in ['.m3u8', '.ts', '.mp4', '.mpd', 'nice-flower.store']):
+                network_requests_log.append(f"REQ: {request.method} {url} (Type: {request.resource_type})")
+
+        def on_response(response: Response):
+            url = response.url
+            if any(ext in url for ext in ['.m3u8', '.ts', '.mp4', '.mpd', 'nice-flower.store']):
+                status = response.status
+                network_requests_log.append(f"RES: {status} {url}")
+                # Log response body for M3U8 if it's not too big
+                if ".m3u8" in url and status == 200:
+                    asyncio.create_task(log_response_body(response, url, network_requests_log))
+
+        async def log_response_body(response: Response, url: str, log_list: list):
+            try:
+                body = await response.text()
+                if len(body) < 1000: # Only log smaller bodies to avoid spam
+                    log_list.append(f"    BODY for {url}:\n{body[:500]}...")
+                else:
+                    log_list.append(f"    BODY for {url}: (too large to log)")
+            except Exception as e:
+                log_list.append(f"    Failed to get body for {url}: {e}")
+
+        page.on('console', on_console_message)
+        page.on('request', on_request)
+        page.on('response', on_response)
+        
         page.set_default_timeout(90000)
 
         try:
             for channel_name, channel_id in CHANNELS_TO_PROCESS.items():
+                channel_console_messages.clear()
+                network_requests_log.clear()
+
                 stream_page_url = f"https://thedaddy.click/stream/stream-{channel_id}.php"
                 print(f"\n⚡️ Attempting to navigate to: {channel_name} ({stream_page_url})")
 
                 try:
-                    # Navigate and wait for the network to be idle
-                    await page.goto(stream_page_url, wait_until="networkidle", timeout=60000)
-                    print(f"  Successfully navigated to {page.url} (Network Idle achieved)")
+                    await page.goto(stream_page_url, wait_until="domcontentloaded", timeout=60000)
+                    print(f"  Successfully navigated to {page.url}")
                     
-                    screenshot_path_idle = f"screenshots/{channel_name.replace(' ', '_')}_network_idle.png"
-                    await page.screenshot(path=screenshot_path_idle)
-                    print(f"  Network idle screenshot taken: {screenshot_path_idle}")
+                    screenshot_path_initial = f"screenshots/{channel_name.replace(' ', '_')}_initial_load.png"
+                    await page.screenshot(path=screenshot_path_initial)
+                    print(f"  Initial load screenshot taken: {screenshot_path_initial}")
 
-                    # Check for redirects or explicit error pages
+                    await page.wait_for_timeout(3000)
+
                     if "404" in page.url or "error" in page.url.lower() or "blocked" in page.url.lower():
                         print(f"  ⚠️ Warning: Page navigated to an error/blocked URL: {page.url}")
                         continue
 
-                    await page.wait_for_timeout(3000) # Give extra time for JS to run
-
-                    # --- CRITICAL: Handle "Play" buttons / Overlays / Ads ---
-                    # You MUST observe what element needs clicking and get its CSS selector.
-                    # Add multiple selectors if different types of pop-ups appear.
                     possible_click_selectors = [
-                        "button.play-button",      # Generic play button
-                        "div.video-overlay button",# Play button within an overlay
-                        "a.play-btn",              # Anchor tag acting as play button
-                        "div#player-overlay button", # Specific player overlay button
-                        "button[aria-label='Play']", # ARIA labeled play button
-                        "div[onclick*='playVideo']", # Div with inline click handler
-                        "div.ad-close-button",     # Common ad close button
-                        "button.skip-ad",          # Skip ad button
-                        "button#player-play-btn",  # Another common id
-                        "div.vjs-big-play-button"  # Video.js default play button
+                        "button.vjs-big-play-button", "button[title='Play']", "a.play-btn",
+                        "div.play-button", "div.video-player-overlay button",
+                        ".ad-close-button", ".ad-skip-button", "button.skip-ad",
+                        "div[id*='ad'] button[id*='close']", "div[id*='popup'] button[id*='close']",
+                        "#qc-cmp2-ui button", "#onetrust-accept-btn-handler", "button.cookie-consent-button",
+                        # Add any specific selectors you find manually:
+                        # Example: "div#myCustomAdOverlay button.close"
                     ]
 
                     clicked_something = False
                     for selector in possible_click_selectors:
                         try:
-                            # Use locator to check visibility and click if present
                             locator = page.locator(selector)
-                            if await locator.is_visible(timeout=2000): # Check if element is visible
-                                print(f"  Attempting to click: {selector}")
-                                await locator.click(timeout=5000) # Click with a timeout
-                                await page.wait_for_timeout(2000) # Wait for effect of click
+                            if await locator.is_visible(timeout=1000):
+                                print(f"  Attempting to click: '{selector}'")
+                                await locator.click(timeout=5000, force=True)
+                                await page.wait_for_timeout(2000)
                                 clicked_something = True
-                                print(f"  Successfully clicked: {selector}")
-                                break # Stop after first successful click
-                            # else:
-                            #     print(f"  {selector} not visible.")
-                        except Exception as e:
-                            # print(f"  Error trying to click {selector}: {e}")
-                            pass # Element not found or clickable, try next selector
+                                print(f"  Successfully clicked: '{selector}'")
+                                screenshot_path_after_click = f"screenshots/{channel_name.replace(' ', '_')}_after_click_{selector.replace('.', '_').replace('#', '_').replace('[', '_').replace(']', '_')}.png"
+                                await page.screenshot(path=screenshot_path_after_click)
+                                break
+                        except Exception:
+                            pass
 
                     if not clicked_something:
-                        print("  No common play button/overlay clicked. Proceeding assuming none needed or missed.")
-                    else:
-                         # Take another screenshot after attempted clicks
-                        screenshot_path_after_click = f"screenshots/{channel_name.replace(' ', '_')}_after_click.png"
-                        await page.screenshot(path=screenshot_path_after_click)
-                        print(f"  Screenshot after potential click: {screenshot_path_after_click}")
+                        print("  No common play button/overlay clicked. Assuming none needed or missed.")
+                    
+                    await page.wait_for_load_state('networkidle', timeout=30000)
+                    print(f"  Page loaded (networkidle) after interactions.")
+                    screenshot_path_after_interaction = f"screenshots/{channel_name.replace(' ', '_')}_after_interaction.png"
+                    await page.screenshot(path=screenshot_path_after_interaction)
+                    print(f"  Screenshot after interaction/idle: {screenshot_path_after_interaction}")
 
-
-                    # The core of your manual process: "pressed refresh, typed .m3u8"
                     target_m3u8_url = None
                     
                     def is_specific_stream_m3u8(request_obj: Request):
-                        # Ensure this filter is precise based on your F12 observations
                         return (
                             "nice-flower.store" in request_obj.url and
                             "master.m3u8" in request_obj.url and
                             (request_obj.url.endswith(".m3u8") or ".m3u8?" in request_obj.url)
-                            # Consider adding: and request_obj.resource_type == "media" for more specificity
                         )
 
                     try:
-                        request_promise = page.wait_for_request(is_specific_stream_m3u8, timeout=40000) # 40s to find the M3U8
+                        request_promise = page.wait_for_request(is_specific_stream_m3u8, timeout=40000)
 
                         print("  Reloading page to trigger M3U8 request...")
                         await page.reload(wait_until="networkidle", timeout=60000)
@@ -134,18 +164,27 @@ async def get_fresh_locked_channel_urls_async():
 
                         m3u8_request = await request_promise
                         target_m3u8_url = m3u8_request.url
-                        fresh_urls[channel_name] = target_m3u8_url
-                        print(f"  ✅ Captured M3U8 URL for {channel_name}: {target_m3u8_url}")
+                        fresh_urls[channel_name] = target_m3u3_url
+                        print(f"  ✅ Captured M3U8 URL for {channel_name}: {target_m3u3_url}")
 
                     except Exception as e:
                         print(f"  ❌ Failed to capture M3U8 URL for {channel_name} after reload: {e}")
                     
                 except Exception as e:
-                    print(f"  ❌ Navigation to {stream_page_url} completely failed or timed out: {e}")
-                    screenshot_path_fail = f"screenshots/{channel_name.replace(' ', '_')}_navigation_fatal_fail.png"
-                    await page.screenshot(path=screenshot_path_fail)
-                    print(f"  FATAL navigation failure screenshot: {screenshot_path_fail}")
-                    continue
+                    print(f"  ❌ Navigation or initial page processing for {stream_page_url} failed: {e}")
+                    screenshot_path_fatal = f"screenshots/{channel_name.replace(' ', '_')}_fatal_failure.png"
+                    await page.screenshot(path=screenshot_path_fatal)
+                    print(f"  FATAL navigation/processing failure screenshot: {screenshot_path_fatal}")
+                finally:
+                    console_log_path = f"console_logs/{channel_name.replace(' ', '_')}_console.txt"
+                    with open(console_log_path, "w", encoding="utf-8") as f:
+                        f.write("\n".join(channel_console_messages))
+                    print(f"  Console logs saved to: {console_log_path}")
+
+                    network_log_path = f"network_logs/{channel_name.replace(' ', '_')}_network.txt"
+                    with open(network_log_path, "w", encoding="utf-8") as f:
+                        f.write("\n".join(network_requests_log))
+                    print(f"  Network logs saved to: {network_log_path}")
 
         except Exception as e:
             print(f"❌ An unexpected error occurred during browser automation loop: {e}")
@@ -154,11 +193,10 @@ async def get_fresh_locked_channel_urls_async():
             print("Browser closed.")
 
     if not fresh_urls:
-        print("🛑 No fresh URLs were obtained. This indicates navigation, interaction, or M3U8 filtering issues.")
+        print("🛑 No fresh URLs were obtained. This indicates persistent issues.")
     return fresh_urls
 
 async def close_new_page(page: Page):
-    """Closes any newly opened pages (often pop-up ads) automatically."""
     print(f"  [AUTO-CLOSE] New page opened: {page.url}. Closing it.")
     try:
         await page.close()
