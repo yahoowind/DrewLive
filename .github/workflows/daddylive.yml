@@ -2,7 +2,7 @@ name: Update DaddyLive Playlist
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours (adjust as needed)
+    - cron: '0 */6 * * *'  # Every 6 hours (adjust if needed)
   workflow_dispatch:
 
 jobs:
@@ -13,18 +13,17 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: Install Playwright dependencies
+      - name: Install system dependencies for Playwright
         run: |
           sudo apt-get update
           sudo apt-get install -y \
             libgtk-4-1 \
             libgraphene-1.0-0 \
-            libwoff2-1 \
+            libwoff2dec-dev \
             libvpx9 \
             libevent-2.1-7 \
             libopus0 \
             libgstreamer-plugins-base1.0-0 \
-            libgstreamer-plugins-base1.0-dev \
             libgstreamer1.0-0 \
             libflite1 \
             libavif16 \
@@ -32,8 +31,8 @@ jobs:
             libsecret-1-0 \
             libhyphen0 \
             libmanette-0.2-0 \
-            libgles2-mesa \
-            libx264-160
+            libgles2-mesa-dev \
+            libx264-dev
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -42,6 +41,7 @@ jobs:
 
       - name: Install Python dependencies
         run: |
+          pip install --upgrade pip
           pip install requests playwright
           playwright install
 
