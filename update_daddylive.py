@@ -44,6 +44,9 @@ LOCKED_CHANNELS = {
     "Investigation Discovery (ID USA)": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MGMxNDk1Nzg2MWJjLTc1ZmEtZTMyNC05NzE1LWMxMjZkZmMy/master.m3u8?md5=ugjGows6WVXJqblNFBc7Xg&expires=1750260326&t=1750217126",
     "ION USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MjViOWU1N2E3MDQwLTMwZjktMjhlNC1lYjQ1LTMwODdmMjZh/master.m3u8?md5=rPbHS3QFNyD4qhCFLIQTZw&expires=1750260385&t=1750217185",
     "Law & Crime Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NzAyMWIwZWZhNGRkLTczZmItNjYwNC0zNjMzLWU0NGVjOGNi/master.m3u8?md5=Mb0hlvyWXXoWnhqFLnt_lw&expires=1750260432&t=1750217232",
+    "Lifetime Movies Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NTA3ZGIyZjlkNDEzLTgzNWItYTc0NC1kZWFhLWQ2ZDY5MGM2/master.m3u8?md5=6eHzr1is2Kj70T5cQFtayA&expires=1750262083&t=1750218883",
+    "Lifetime Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MmY5ZjdlOWYzNTcyLTJlMzktM2E0NC1hN2IwLTQxZWIyNTM4/master.m3u8?md5=wBKzqm-TQPurE5mjszCTZw&expires=1750262141&t=1750218941",
+    "Magnolia Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZmU1NjNiMGM0NTdhLWRjNmEtNTc5NC1lYmZmLTUxNTlmNjEz/master.m3u8?md5=oXISZdBdP_g3zU8iErH1Gw&expires=1750262174&t=1750218974",
 }
 
 def update_playlist():
