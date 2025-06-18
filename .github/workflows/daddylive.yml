@@ -2,7 +2,7 @@ name: Update DaddyLive Playlist
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours (adjust if needed)
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
@@ -26,15 +26,10 @@ jobs:
       - name: Run Update Script
         run: python update_daddylive.py
 
-      - name: Commit and Push Changes if Any
+      - name: Commit and Force Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull origin main --rebase
-          if git diff --quiet; then
-            echo "No changes detected, skipping commit."
-          else
-            git add DaddyLive.m3u8
-            git commit -m "⏱️ Auto-update DaddyLive.m3u8"
-            git push origin main
-          fi
+          git add DaddyLive.m3u8
+          git commit -m "🔁 Auto-update DaddyLive.m3u8" || echo "Nothing to commit"
+          git push origin main --force
