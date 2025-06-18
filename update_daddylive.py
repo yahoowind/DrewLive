@@ -47,6 +47,9 @@ LOCKED_CHANNELS = {
     "Lifetime Movies Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NTA3ZGIyZjlkNDEzLTgzNWItYTc0NC1kZWFhLWQ2ZDY5MGM2/master.m3u8?md5=6eHzr1is2Kj70T5cQFtayA&expires=1750262083&t=1750218883",
     "Lifetime Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MmY5ZjdlOWYzNTcyLTJlMzktM2E0NC1hN2IwLTQxZWIyNTM4/master.m3u8?md5=wBKzqm-TQPurE5mjszCTZw&expires=1750262141&t=1750218941",
     "Magnolia Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZmU1NjNiMGM0NTdhLWRjNmEtNTc5NC1lYmZmLTUxNTlmNjEz/master.m3u8?md5=oXISZdBdP_g3zU8iErH1Gw&expires=1750262174&t=1750218974",
+    "MSNBC": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NmIyMzc5ZTZhZTgxLTg5ZWEtZWYwNC0wMmU4LTM2YTNkZWU5/master.m3u8?md5=wE4tk9ltqFf7TlixY1VClw&expires=1750266601&t=1750223401",
+    "MTV USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZWZkMzFkZDkzYzJiLTRkMjgtMzExNC1kMjc4LWJlMzkxYzdj/master.m3u8?md5=1u5wnvmD4b7LqF7AhDYvTQ&expires=1750266646&t=1750223446",
+    "National Geographic (NGC)": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZWNkODlhMTNmYTM5LWQzNWItMTUyNC00ODVjLWM3MjY1Yzlk/master.m3u8?md5=mpHv1Jy_er5S5RBFTz3TpA&expires=1750266833&t=1750223633",
 }
 
 def update_playlist():
