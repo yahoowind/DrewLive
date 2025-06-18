@@ -1,10 +1,7 @@
 import asyncio
 from playwright.async_api import async_playwright, Request
 import os
-import subprocess
 import random
-import re
-import requests
 
 CHANNELS_TO_PROCESS = {
     "NBC10 Philadelphia": "277", "TNT Sports 1 UK": "31", "Discovery Channel": "313",
@@ -23,39 +20,13 @@ CHANNELS_TO_PROCESS = {
     "NICK": "330", "NICK JR": "329", "Oprah Winfrey Network (OWN)": "331",
     "Oxygen True Crime": "332", "Pac-12 Network USA": "287",
     "Paramount Network": "334", "Reelz Channel": "293", "Science Channel": "294",
-    "SEC Network USA": "385",
+    "SEC Network USA": "385", "Comedy Central": "310", "Cleo TV": "715",
 }
 
-UPSTREAM_PLAYLIST_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLiveRAW.m3u8"
 OUTPUT_FILE = "DaddyLive.m3u8"
 
-def parse_m3u_playlist(content):
-    """Parse m3u playlist content into list of entries with metadata and url."""
-    lines = content.strip().splitlines()
-    entries = []
-    current_meta = None
-
-    for line in lines:
-        line = line.strip()
-        if line.startswith("#EXTINF:"):
-            current_meta = line
-        elif line and not line.startswith("#"):
-            if current_meta:
-                entries.append({"meta": current_meta, "url": line})
-                current_meta = None
-            else:
-                # In case there's URL without preceding meta (rare)
-                entries.append({"meta": None, "url": line})
-    return entries
-
-def serialize_m3u_playlist(entries):
-    """Convert list of entries back into m3u playlist text."""
-    lines = ["#EXTM3U"]
-    for e in entries:
-        if e["meta"]:
-            lines.append(e["meta"])
-        lines.append(e["url"])
-    return "\n".join(lines) + "\n"
+def build_header(channel_name):
+    return f'#EXTINF:-1 tvg-id="{channel_name}" tvg-name="{channel_name}" tvg-logo="https://logo.clearbit.com/{channel_name.replace(" ", "").lower()}.com" group-title="USA",{channel_name}'
 
 async def fetch_m3u8_links():
     urls_all = {}
@@ -69,110 +40,45 @@ async def fetch_m3u8_links():
         page = await context.new_page()
 
         for name, cid in CHANNELS_TO_PROCESS.items():
-            channel_urls = []
+            stream_urls = []
 
             def capture_m3u8(request: Request):
-                url_lower = request.url.lower()
-                if ".m3u8" in url_lower:
-                    print(f"🔍 Detected m3u8 request on {name}: {request.url}")
-                    channel_urls.append(request.url)
+                if ".m3u8" in request.url.lower():
+                    stream_urls.append(request.url)
 
             page.on("request", capture_m3u8)
 
             try:
-                print(f"🔄 Loading {name}...")
+                print(f"🔄 Scraping {name}...")
                 await page.goto(f"https://thedaddy.click/stream/stream-{cid}.php", timeout=60000)
-                await asyncio.sleep(10)  # wait to capture m3u8 requests
-
-                screenshot_path = f"screenshots/{name.replace(' ', '_')}.png"
-                await page.screenshot(path=screenshot_path)
-
+                await asyncio.sleep(10)
+                await page.screenshot(path=f"screenshots/{name.replace(' ', '_')}.png")
             except Exception as e:
-                print(f"❌ Failed for {name}: {e}")
+                print(f"❌ Error with {name}: {e}")
 
             page.remove_listener("request", capture_m3u8)
 
-            if channel_urls:
-                chosen_url = random.choice(channel_urls)
-                urls_all[name] = chosen_url
-                print(f"🎯 Picked URL for {name}: {chosen_url}")
+            if stream_urls:
+                urls_all[name] = random.choice(stream_urls)
+                print(f"✅ Got URL for {name}")
             else:
-                print(f"⚠️ No URLs found for {name}")
+                print(f"⚠️ No stream found for {name}")
 
         await browser.close()
 
-    print("\n🔔 Final summary of picked streams:")
-    for name, url in urls_all.items():
-        print(f"{name}: {url}")
-
     return urls_all
 
-def merge_playlists(upstream_entries, fresh_urls):
-    """
-    Replace URLs in upstream playlist entries matching fresh_urls by channel name.
-    Add new entries if fresh_urls have channels not in upstream.
-    """
-
-    # Helper to extract channel name from #EXTINF meta line
-    def extract_name(meta_line):
-        # #EXTINF:-1 tvg-id="XXX" tvg-logo="YYY" group-title="ZZZ",Channel Name
-        match = re.search(r",(.+)$", meta_line)
-        if match:
-            return match.group(1).strip()
-        return None
-
-    updated_names = set()
-    new_entries = []
-
-    # Replace URLs for channels found fresh
-    for entry in upstream_entries:
-        name = extract_name(entry["meta"])
-        if name and name in fresh_urls:
-            old_url = entry["url"]
-            new_url = fresh_urls[name]
-            if old_url != new_url:
-                print(f"🔄 Updating URL for {name}")
-                entry["url"] = new_url
-            updated_names.add(name)
-
-    # Add any fresh channels not in upstream
-    for name, url in fresh_urls.items():
-        if name not in updated_names:
-            # Create minimal meta line - you can customize if you want
-            meta = f'#EXTINF:-1,{name}'
-            new_entries.append({"meta": meta, "url": url})
-            print(f"➕ Adding new channel {name}")
-
-    return upstream_entries + new_entries
-
-def git_push():
-    try:
-        subprocess.run(["git", "add", OUTPUT_FILE], check=True)
-        subprocess.run(["git", "commit", "-m", "Auto update DaddyLive playlist"], check=True)
-        subprocess.run(["git", "push"], check=True)
-        print("✅ Playlist updated and pushed to GitHub")
-    except subprocess.CalledProcessError as e:
-        print(f"❌ Git error: {e}")
+def write_playlist(urls):
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write("#EXTM3U\n")
+        for name, url in urls.items():
+            f.write(build_header(name) + "\n")
+            f.write(url + "\n")
+    print(f"✅ Final playlist written to {OUTPUT_FILE}")
 
 async def main():
-    print("⬇️ Downloading upstream playlist...")
-    resp = requests.get(UPSTREAM_PLAYLIST_URL)
-    resp.raise_for_status()
-    upstream_content = resp.text
-
-    upstream_entries = parse_m3u_playlist(upstream_content)
-    print(f"ℹ️ Parsed {len(upstream_entries)} entries from upstream playlist")
-
     fresh_urls = await fetch_m3u8_links()
-
-    merged_entries = merge_playlists(upstream_entries, fresh_urls)
-
-    final_content = serialize_m3u_playlist(merged_entries)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(final_content)
-    print(f"✅ Saved merged playlist to {OUTPUT_FILE}")
-
-    git_push()
+    write_playlist(fresh_urls)
 
 if __name__ == "__main__":
     asyncio.run(main())
