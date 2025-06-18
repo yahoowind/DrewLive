@@ -44,6 +44,7 @@ async def get_fresh_locked_channel_urls_async():
         os.makedirs("network_logs")
 
     async with async_playwright() as p:
+        # Try a different browser if Chromium keeps crashing: p.firefox or p.webkit
         browser = await p.chromium.launch(headless=False, args=['--disable-features=HardwareMediaKeyHandling'])
         context = await browser.new_context()
 
@@ -51,6 +52,9 @@ async def get_fresh_locked_channel_urls_async():
         context.on('page', lambda page: asyncio.create_task(close_new_page(page)))
         
         page = await context.new_page()
+
+        # Event listener for page crashes
+        page.on('crash', lambda: print(f"⚠️ PAGE CRASHED for {page.url}"))
 
         # --- Enhanced Console & Network Logging ---
         channel_console_messages = []
@@ -61,22 +65,21 @@ async def get_fresh_locked_channel_urls_async():
 
         def on_request(request: Request):
             url = request.url
-            if any(ext in url for ext in ['.m3u8', '.ts', '.mp4', '.mpd', 'nice-flower.store']):
-                network_requests_log.append(f"REQ: {request.method} {url} (Type: {request.resource_type})")
+            # Log all requests, not just specific ones, to see everything
+            network_requests_log.append(f"REQ: {request.method} {url} (Type: {request.resource_type})")
 
         def on_response(response: Response):
             url = response.url
-            if any(ext in url for ext in ['.m3u8', '.ts', '.mp4', '.mpd', 'nice-flower.store']):
-                status = response.status
-                network_requests_log.append(f"RES: {status} {url}")
-                # Log response body for M3U8 if it's not too big
-                if ".m3u8" in url and status == 200:
-                    asyncio.create_task(log_response_body(response, url, network_requests_log))
+            status = response.status
+            network_requests_log.append(f"RES: {status} {url}")
+            # Log response body for M3U8 if it's not too big
+            if ".m3u8" in url and status == 200:
+                asyncio.create_task(log_response_body(response, url, network_requests_log))
 
         async def log_response_body(response: Response, url: str, log_list: list):
             try:
                 body = await response.text()
-                if len(body) < 1000: # Only log smaller bodies to avoid spam
+                if len(body) < 1000:
                     log_list.append(f"    BODY for {url}:\n{body[:500]}...")
                 else:
                     log_list.append(f"    BODY for {url}: (too large to log)")
@@ -105,6 +108,10 @@ async def get_fresh_locked_channel_urls_async():
                     await page.screenshot(path=screenshot_path_initial)
                     print(f"  Initial load screenshot taken: {screenshot_path_initial}")
 
+                    # --- PAUSE HERE FOR MANUAL INSPECTION AFTER INITIAL LOAD ---
+                    print(f"  Script paused after initial load. Inspect browser (F12). Type 'resume' in terminal to continue.")
+                    await page.pause() 
+                    
                     await page.wait_for_timeout(3000)
 
                     if "404" in page.url or "error" in page.url.lower() or "blocked" in page.url.lower():
@@ -117,8 +124,6 @@ async def get_fresh_locked_channel_urls_async():
                         ".ad-close-button", ".ad-skip-button", "button.skip-ad",
                         "div[id*='ad'] button[id*='close']", "div[id*='popup'] button[id*='close']",
                         "#qc-cmp2-ui button", "#onetrust-accept-btn-handler", "button.cookie-consent-button",
-                        # Add any specific selectors you find manually:
-                        # Example: "div#myCustomAdOverlay button.close"
                     ]
 
                     clicked_something = False
@@ -140,6 +145,10 @@ async def get_fresh_locked_channel_urls_async():
                     if not clicked_something:
                         print("  No common play button/overlay clicked. Assuming none needed or missed.")
                     
+                    # --- PAUSE HERE FOR MANUAL INSPECTION AFTER CLICKS ---
+                    print(f"  Script paused after click attempts. Inspect browser (F12). Type 'resume' in terminal to continue.")
+                    await page.pause() 
+
                     await page.wait_for_load_state('networkidle', timeout=30000)
                     print(f"  Page loaded (networkidle) after interactions.")
                     screenshot_path_after_interaction = f"screenshots/{channel_name.replace(' ', '_')}_after_interaction.png"
@@ -149,6 +158,7 @@ async def get_fresh_locked_channel_urls_async():
                     target_m3u8_url = None
                     
                     def is_specific_stream_m3u8(request_obj: Request):
+                        # Filter for the specific M3U8 you need
                         return (
                             "nice-flower.store" in request_obj.url and
                             "master.m3u8" in request_obj.url and
@@ -156,6 +166,8 @@ async def get_fresh_locked_channel_urls_async():
                         )
 
                     try:
+                        # Consider if you need a reload here, or if the M3U8 is already in the network log
+                        # If the browser is crashing on reload, remove this block and check the earlier logs.
                         request_promise = page.wait_for_request(is_specific_stream_m3u8, timeout=40000)
 
                         print("  Reloading page to trigger M3U8 request...")
@@ -164,18 +176,23 @@ async def get_fresh_locked_channel_urls_async():
 
                         m3u8_request = await request_promise
                         target_m3u8_url = m3u8_request.url
-                        fresh_urls[channel_name] = target_m3u3_url
-                        print(f"  ✅ Captured M3U8 URL for {channel_name}: {target_m3u3_url}")
+                        fresh_urls[channel_name] = target_m3u8_url
+                        print(f"  ✅ Captured M3U8 URL for {channel_name}: {target_m3u8_url}")
 
                     except Exception as e:
                         print(f"  ❌ Failed to capture M3U8 URL for {channel_name} after reload: {e}")
                     
                 except Exception as e:
                     print(f"  ❌ Navigation or initial page processing for {stream_page_url} failed: {e}")
+                    print(f"     Error details: {e}") # Print the full exception for better understanding
                     screenshot_path_fatal = f"screenshots/{channel_name.replace(' ', '_')}_fatal_failure.png"
-                    await page.screenshot(path=screenshot_path_fatal)
-                    print(f"  FATAL navigation/processing failure screenshot: {screenshot_path_fatal}")
+                    try:
+                        await page.screenshot(path=screenshot_path_fatal)
+                        print(f"  FATAL navigation/processing failure screenshot: {screenshot_path_fatal}")
+                    except Exception as ss_e:
+                        print(f"  Could not take screenshot on fatal failure: {ss_e}")
                 finally:
+                    # Make sure logs are saved even if an error occurs
                     console_log_path = f"console_logs/{channel_name.replace(' ', '_')}_console.txt"
                     with open(console_log_path, "w", encoding="utf-8") as f:
                         f.write("\n".join(channel_console_messages))
