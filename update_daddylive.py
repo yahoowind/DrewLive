@@ -52,7 +52,14 @@ LOCKED_CHANNELS = {
     "MTV USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZWZkMzFkZDkzYzJiLTRkMjgtMzExNC1kMjc4LWJlMzkxYzdj/master.m3u8?md5=1u5wnvmD4b7LqF7AhDYvTQ&expires=1750266646&t=1750223446",
     "National Geographic (NGC)": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZWNkODlhMTNmYTM5LWQzNWItMTUyNC00ODVjLWM3MjY1Yzlk/master.m3u8?md5=mpHv1Jy_er5S5RBFTz3TpA&expires=1750266833&t=1750223633",
     "NBC Sports Philadelphia": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZjBjNDBhYmIzY2M2LWJmMTktZTBjNC03MmYyLWYyMGQ5YjMy/master.m3u8?md5=tqdvjxdGLAWMj8n-UwsZ0Q&expires=1750267729&t=1750224529",
-    "NBC USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NThlZWIyNzVhNTg1LTZkMjgtODczNC00NmE0LWNkOWY1YTEy/master.m3u8?md5=ttglz7Vx7rm8MkSo0f4mBQ&expires=1750267909&t=1750224709"
+    "NBC USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NThlZWIyNzVhNTg1LTZkMjgtODczNC00NmE0LWNkOWY1YTEy/master.m3u8?md5=ttglz7Vx7rm8MkSo0f4mBQ&expires=1750267909&t=1750224709",
+    "NewsNation USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YzZiOTVlNmNjMDA1LTEwNGItZWY3NC1iZmIwLWY3NzJiYTY4/master.m3u8?md5=g95ymmY3pZ4BuBEh8R94LQ&expires=1750269230&t=1750226030",
+    "NICK": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MjU2YmY2ZDE4MTQxLTE5NzktZDQxNC05ZWE1LTFjMzlhOWU1/master.m3u8?md5=JG5hh8XBXNiYcs9DpXMw_A&expires=1750269379&t=1750226179",
+    "NICK JR": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MTE3NDAzN2QxMzVkLWQzZWEtNTUwNC01YjYyLWVhZjRjNDJi/master.m3u8?md5=olZ3u1agNvQqBaqN0hbS2g&expires=1750269404&t=1750226204",
+    "Oprah Winfrey Network (OWN)": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YTI0Y2JmMDBjYjhjLWJhYjktMTcxNC1kMTc5LTYxNWQ4OWI0/master.m3u8?md5=nrTehy-jIwGu-i45K9XkqA&expires=1750269488&t=1750226288",
+    "Oxygen True Crime": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MGM5Nzk2OTE1ZDJjLTA5MWItNzE5NC1hYThlLTFjNmI5ODI4/master.m3u8?md5=cr2wkuPi3Spks1oGdYjrPQ&expires=1750269517&t=1750226317",        
+    "Pac-12 Network USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MWUzM2M5ODc0NmIzLWQ4NDgtOGI5NC0yMGVlLWVmMzljODg1/master.m3u8?md5=AI-BUo1mPixj6SvCQOQAzA&expires=1750269560&t=1750226360",        
+    "Paramount Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1OGZhMjkxYWIwYzE3LTYzM2EtNWVmNC1lY2ZjLTkyN2RkZjUy/master.m3u8?md5=TVT58EPc-9hrngdioRAb4Q&expires=1750269592&t=1750226392",        
 }
 
 def update_playlist():
