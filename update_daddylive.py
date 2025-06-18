@@ -2,6 +2,10 @@ import asyncio
 from playwright.async_api import async_playwright, Request
 import os
 import random
+import re
+
+INPUT_FILE = "DaddyLive.m3u8"
+OUTPUT_FILE = "DaddyLive.m3u8"
 
 CHANNELS_TO_PROCESS = {
     "NBC10 Philadelphia": "277", "TNT Sports 1 UK": "31", "Discovery Channel": "313",
@@ -23,17 +27,26 @@ CHANNELS_TO_PROCESS = {
     "SEC Network USA": "385", "Comedy Central": "310", "Cleo TV": "715",
 }
 
-OUTPUT_FILE = "DaddyLive.m3u8"
+def parse_m3u_playlist(filepath):
+    with open(filepath, "r", encoding="utf-8") as f:
+        lines = [line.strip() for line in f.readlines()]
 
-def build_header(channel_name):
-    return f'#EXTINF:-1 tvg-id="{channel_name}" tvg-name="{channel_name}" tvg-logo="https://logo.clearbit.com/{channel_name.replace(" ", "").lower()}.com" group-title="USA",{channel_name}'
+    entries = []
+    meta = None
+    for line in lines:
+        if line.startswith("#EXTINF:"):
+            meta = line
+        elif meta and line and not line.startswith("#"):
+            entries.append({"meta": meta, "url": line})
+            meta = None
+    return entries
 
-async def fetch_m3u8_links():
-    urls_all = {}
+def extract_channel_name(meta_line):
+    match = re.search(r",(.+)$", meta_line)
+    return match.group(1).strip() if match else None
 
-    if not os.path.exists("screenshots"):
-        os.makedirs("screenshots")
-
+async def fetch_updated_urls():
+    urls = {}
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
@@ -52,33 +65,41 @@ async def fetch_m3u8_links():
                 print(f"🔄 Scraping {name}...")
                 await page.goto(f"https://thedaddy.click/stream/stream-{cid}.php", timeout=60000)
                 await asyncio.sleep(10)
-                await page.screenshot(path=f"screenshots/{name.replace(' ', '_')}.png")
             except Exception as e:
-                print(f"❌ Error with {name}: {e}")
+                print(f"❌ Failed for {name}: {e}")
 
             page.remove_listener("request", capture_m3u8)
 
             if stream_urls:
-                urls_all[name] = random.choice(stream_urls)
-                print(f"✅ Got URL for {name}")
+                urls[name] = random.choice(stream_urls)
+                print(f"✅ Got stream for {name}")
             else:
-                print(f"⚠️ No stream found for {name}")
+                print(f"⚠️ No streams found for {name}")
 
         await browser.close()
+    return urls
 
-    return urls_all
+def update_playlist(entries, new_urls):
+    for entry in entries:
+        name = extract_channel_name(entry["meta"])
+        if name in new_urls:
+            print(f"🔁 Replacing URL for {name}")
+            entry["url"] = new_urls[name]
+    return entries
 
-def write_playlist(urls):
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+def save_playlist(entries, filepath):
+    with open(filepath, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
-        for name, url in urls.items():
-            f.write(build_header(name) + "\n")
-            f.write(url + "\n")
-    print(f"✅ Final playlist written to {OUTPUT_FILE}")
+        for entry in entries:
+            f.write(entry["meta"] + "\n")
+            f.write(entry["url"] + "\n")
+    print(f"✅ Updated playlist saved to {filepath}")
 
 async def main():
-    fresh_urls = await fetch_m3u8_links()
-    write_playlist(fresh_urls)
+    entries = parse_m3u_playlist(INPUT_FILE)
+    new_urls = await fetch_updated_urls()
+    updated_entries = update_playlist(entries, new_urls)
+    save_playlist(updated_entries, OUTPUT_FILE)
 
 if __name__ == "__main__":
     asyncio.run(main())
