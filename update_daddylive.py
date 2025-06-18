@@ -30,7 +30,7 @@ LOCKED_CHANNELS = {
     "Freeform": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YjA1OTQxYzQ4NmQ5LTllMGEtOWQ3NC1mZGUyLTVmNjM5Zjkx/master.m3u8?md5=qxoVJuYUYn7n4vnIMngfkA&expires=1750256528&t=1750213328",
     "Fuse": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MjczMGJkYzRlNTA1LTBhMzgtOTAzNC1jMDQ5LTBhOTYxNjI0/master.m3u8?md5=mYDk3aCJhsL1iwrOsDdWLA&expires=1750256197&t=1750212997",
     "FOX USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MjczMGJkYzRlNTA1LTBhMzgtOTAzNC1jMDQ5LTBhOTYxNjI0/master.m3u8?md5=mYDk3aCJhsL1iwrOsDdWLA&expires=1750256197&t=1750212997",
-    "FUSE TV USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MTM4YjJmNjg3NWE0LTJkZmEtNWIwNC1lZTQ1LWExYTAyNmJh/master.m3u8?md5=ilc2QBMVBFsUhK_zhp1o5g&expires=1750256573&t=1750213373",
+    "FUSE TV USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MTM4YjJmNjg3NWE0LTJkZmEtNWIwNC1lZTQ1LWExYTAyNmJh/master.m3u8?md5=jWKvHLHYPzV0lWDzV7bFcg&expires=1750258460&t=1750215260",
     "FX Movie Channel": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NzlkZTFlNzliOTM1LWMzOTgtY2Q3NC0yYWFkLTQ5ZWJlNDUz/master.m3u8?md5=_lKYGa196CYjscVE1b368A&expires=1750256673&t=1750213473",
     "FX USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YjY5YzA0MWE0Y2VjLTY2ZWEtMzQxNC0xZDMyLTFiODM4M2Q3/master.m3u8?md5=pYohYRs5UBNjakCjnMB2Rw&expires=1750256629&t=1750213429",
     "FXX USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MDk2MTUzM2NjYzFiLWE0YTktYjYxNC1hNDUzLTkwNThmNzgy/master.m3u8?md5=JjuFPb5zDIywLGfWj6SZJA&expires=1750256711&t=1750213511",
