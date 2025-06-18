@@ -14,7 +14,7 @@ FORCED_HEADERS = [
 LOCKED_CHANNELS = {
     "TNT Sports 1 UK": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MWU2NjUwNmQwZTE3LWNhYWEtMWRlNC1kYTdiLTlhNWEyY2M0/master.m3u8?md5=4soseisT-1VJHwpL0Q-NZw&expires=1750240697&t=1750197497",
     "Discovery Channel": "https://hipaf6u2j3pwygg.nice-flower.store/v4/variant/VE1gTdz0mLzRnLv52bt9SMhFjdtM3ajFmc09SMkVDZldTMjRmM1UWL4gzY40yYyYDNtM2YhFTL4QTYxcDMwM2L.m3u8?md5=P_ZRKSUAQTEs1klzlorEJQ&expires=1750248906&t=1750205706",
-    "Discovery Life Channel": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ODhlZDkzOTA2MzJhLTQ5YmEtZjg1NC04NTU3LTk2NzEwMTI1/master.m3u8?md5=XktZkv3c_ytZI_JZBEzzkg&expires=1750250162&t=1750206962"
+    "Discovery Life Channel": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ODhlZDkzOTA2MzJhLTQ5YmEtZjg1NC04NTU3LTk2NzEwMTI1/master.m3u8?md5=XktZkv3c_ytZI_JZBEzzkg&expires=1750250162&t=1750206962",
 }
 
 def update_playlist():
