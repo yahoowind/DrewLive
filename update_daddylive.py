@@ -90,7 +90,7 @@ async def fetch_m3u8_links():
             except Exception as e:
                 print(f"❌ Failed for {name}: {e}")
 
-            page.off("request", capture_m3u8)
+            page.remove_listener("request", capture_m3u8)
 
             if channel_urls:
                 chosen_url = random.choice(channel_urls)
