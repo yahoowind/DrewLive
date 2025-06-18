@@ -26,7 +26,7 @@ CHANNELS_TO_PROCESS = {
     "SEC Network USA": "385",
 }
 
-UPSTREAM_PLAYLIST_URL = "https://tinyurl.com/DaddyLive824"
+UPSTREAM_PLAYLIST_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLiveRAW.m3u8"
 OUTPUT_FILE = "DaddyLive.m3u8"
 
 def parse_m3u_playlist(content):
