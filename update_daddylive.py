@@ -64,7 +64,7 @@ async def fetch_m3u8_links():
         os.makedirs("screenshots")
 
     async with async_playwright() as p:
-        browser = await p.firefox.launch(headless=False)
+        browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
 
