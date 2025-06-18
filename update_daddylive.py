@@ -1,6 +1,8 @@
 import asyncio
 from playwright.async_api import async_playwright, Request
 import os
+import subprocess
+import random
 
 CHANNELS_TO_PROCESS = {
     "NBC10 Philadelphia": "277", "TNT Sports 1 UK": "31", "Discovery Channel": "313",
@@ -22,24 +24,28 @@ CHANNELS_TO_PROCESS = {
     "SEC Network USA": "385",
 }
 
+OUTPUT_FILE = "DaddyLive.m3u8"
+
 async def fetch_m3u8_links():
-    urls = {}
+    urls_all = {name: [] for name in CHANNELS_TO_PROCESS.keys()}
 
     if not os.path.exists("screenshots"):
         os.makedirs("screenshots")
 
     async with async_playwright() as p:
-        browser = await p.firefox.launch(headless=True)
+        browser = await p.firefox.launch(headless=False)
         context = await browser.new_context()
         page = await context.new_page()
 
         async def capture_m3u8(request: Request):
-            if ".m3u8" in request.url and "master" in request.url:
+            url_lower = request.url.lower()
+            if ".m3u8" in url_lower:
                 ref = request.headers.get("referer", "")
+                print(f"🔍 Detected m3u8 request: {request.url} with referer: {ref}")
                 for name, cid in CHANNELS_TO_PROCESS.items():
-                    if f"stream-{cid}.php" in ref:
-                        urls[name] = request.url
-                        print(f"✅ {name}: {request.url}")
+                    if f"stream-{cid}.php" in ref.lower():
+                        urls_all[name].append(request.url)
+                        print(f"➕ Collected {name} URL: {request.url}")
 
         page.on("request", capture_m3u8)
 
@@ -47,7 +53,10 @@ async def fetch_m3u8_links():
             try:
                 print(f"🔄 Loading {name}...")
                 await page.goto(f"https://thedaddy.click/stream/stream-{cid}.php", timeout=60000)
-                await page.wait_for_timeout(7000)
+                await asyncio.sleep(5)  # wait for stream requests to start
+
+                # wait a bit more to gather multiple URLs
+                await asyncio.sleep(10)
 
                 screenshot_path = f"screenshots/{name.replace(' ', '_')}.png"
                 await page.screenshot(path=screenshot_path)
@@ -56,8 +65,38 @@ async def fetch_m3u8_links():
 
         await browser.close()
 
+    # pick one random url per channel if any found
+    urls = {}
+    for name, url_list in urls_all.items():
+        if url_list:
+            chosen_url = random.choice(url_list)
+            urls[name] = chosen_url
+            print(f"🎯 Picked random URL for {name}: {chosen_url}")
+        else:
+            print(f"⚠️ No URLs found for {name}")
+
     return urls
 
-# To test
+def save_playlist(urls):
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        for name, url in urls.items():
+            f.write(f"#EXTINF:-1,{name}\n")
+            f.write(f"{url}\n")
+    print(f"✅ Saved playlist to {OUTPUT_FILE}")
+
+def git_push():
+    try:
+        subprocess.run(["git", "add", OUTPUT_FILE], check=True)
+        subprocess.run(["git", "commit", "-m", "Auto update DaddyLive playlist"], check=True)
+        subprocess.run(["git", "push"], check=True)
+        print("✅ Playlist updated and pushed to GitHub")
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Git error: {e}")
+
 if __name__ == "__main__":
-    asyncio.run(fetch_m3u8_links())
+    urls = asyncio.run(fetch_m3u8_links())
+    if urls:
+        save_playlist(urls)
+        git_push()
+    else:
+        print("⚠️ No streams found, skipping git push")
