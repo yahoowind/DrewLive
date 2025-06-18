@@ -12,6 +12,7 @@ FORCED_HEADERS = [
 
 # Locked channels and their direct stream URLs
 LOCKED_CHANNELS = {
+    "NBC10 Philadelphia": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1OTM5ODRjNDBkMjhlLTVmYTktNGUyNC01ZjM4LWUyMzdmMzhm/master.m3u8?md5=8ByuJ9RMr3SDZpqsqAYHbQ&expires=1750267964&t=1750224764",
     "TNT Sports 1 UK": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MWU2NjUwNmQwZTE3LWNhYWEtMWRlNC1kYTdiLTlhNWEyY2M0/master.m3u8?md5=4soseisT-1VJHwpL0Q-NZw&expires=1750240697&t=1750197497",
     "Discovery Channel": "https://hipaf6u2j3pwygg.nice-flower.store/v4/variant/VE1gTdz0mLzRnLv52bt9SMhFjdtM3ajFmc09SMkVDZldTMjRmM1UWL4gzY40yYyYDNtM2YhFTL4QTYxcDMwM2L.m3u8?md5=P_ZRKSUAQTEs1klzlorEJQ&expires=1750248906&t=1750205706",
     "Discovery Life Channel": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ODhlZDkzOTA2MzJhLTQ5YmEtZjg1NC04NTU3LTk2NzEwMTI1/master.m3u8?md5=XktZkv3c_ytZI_JZBEzzkg&expires=1750250162&t=1750206962",
@@ -52,7 +53,6 @@ LOCKED_CHANNELS = {
     "National Geographic (NGC)": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZWNkODlhMTNmYTM5LWQzNWItMTUyNC00ODVjLWM3MjY1Yzlk/master.m3u8?md5=mpHv1Jy_er5S5RBFTz3TpA&expires=1750266833&t=1750223633",
     "NBC Sports Philadelphia": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZjBjNDBhYmIzY2M2LWJmMTktZTBjNC03MmYyLWYyMGQ5YjMy/master.m3u8?md5=tqdvjxdGLAWMj8n-UwsZ0Q&expires=1750267729&t=1750224529",
     "NBC USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NThlZWIyNzVhNTg1LTZkMjgtODczNC00NmE0LWNkOWY1YTEy/master.m3u8?md5=ttglz7Vx7rm8MkSo0f4mBQ&expires=1750267909&t=1750224709"
-    "NBC10 Philadelphia": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1OTM5ODRjNDBkMjhlLTVmYTktNGUyNC01ZjM4LWUyMzdmMzhm/master.m3u8?md5=8ByuJ9RMr3SDZpqsqAYHbQ&expires=1750267964&t=1750224764"
 }
 
 def update_playlist():
