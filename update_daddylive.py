@@ -59,7 +59,11 @@ LOCKED_CHANNELS = {
     "Oprah Winfrey Network (OWN)": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YTI0Y2JmMDBjYjhjLWJhYjktMTcxNC1kMTc5LTYxNWQ4OWI0/master.m3u8?md5=nrTehy-jIwGu-i45K9XkqA&expires=1750269488&t=1750226288",
     "Oxygen True Crime": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MGM5Nzk2OTE1ZDJjLTA5MWItNzE5NC1hYThlLTFjNmI5ODI4/master.m3u8?md5=cr2wkuPi3Spks1oGdYjrPQ&expires=1750269517&t=1750226317",        
     "Pac-12 Network USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MWUzM2M5ODc0NmIzLWQ4NDgtOGI5NC0yMGVlLWVmMzljODg1/master.m3u8?md5=AI-BUo1mPixj6SvCQOQAzA&expires=1750269560&t=1750226360",        
-    "Paramount Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1OGZhMjkxYWIwYzE3LTYzM2EtNWVmNC1lY2ZjLTkyN2RkZjUy/master.m3u8?md5=TVT58EPc-9hrngdioRAb4Q&expires=1750269592&t=1750226392",        
+    "Paramount Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1OGZhMjkxYWIwYzE3LTYzM2EtNWVmNC1lY2ZjLTkyN2RkZjUy/master.m3u8?md5=TVT58EPc-9hrngdioRAb4Q&expires=1750269592&t=1750226392",
+    "Reelz Channel": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ODNmMjBmODk3ODlkLTdlNWItODMyNC1lOTE1LTUwN2YyMDMw/master.m3u8?md5=9Va_KguIVLiM8_lJnGy1XA&expires=1750270938&t=1750227738",
+    "Science Channel": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1M2UwODQ1YTJjMDJiLWE4YWEtNTdmNC0xYjhjLTQ5MjRhYzg3/master.m3u8?md5=14HDDLwk5KqFFdoWKRQRhQ&expires=1750272030&t=1750228830",
+    "SEC Network USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZmNmYTlkZWY0Mzc1LWJlMmEtMGM2NC03NzNlLTllY2Q1ZDNl/master.m3u8?md5=1S7hQ9-515hO_PhKSG35cA&expires=1750272104&t=1750228904",
+    
 }
 
 def update_playlist():
