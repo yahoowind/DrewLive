@@ -22,7 +22,7 @@ LOCKED_CHANNELS = {
     "ESPN USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1Yzc1NzQ2MmVkOGViLTUyYTgtNTc2NC0xNzVjLWE2MmQyOGE4/master.m3u8?md5=hDThTRzjr2pxCz77uL3lAA&expires=1750251420&t=1750208220",
     "ESPN2 USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NDJlMzQ4NzNiMGYzLTA2OTgtYWQ1NC1lN2VmLTlkZWQ3YTQy/master.m3u8?md5=FAr8MitrGdCukq9CJcurUg&expires=1750251703&t=1750208503",
     "ESPNews": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1N2U1ODA1MmJmNDA5LTVhZjktNDI1NC0xNmJmLTA0ZTVkZGE5/master.m3u8?md5=jKgUIMiX8G-4MTA1YaxdgQ&expires=1750251749&t=1750208549",
-    "ESPNU USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NDJlY2IxMDVhM2ZmLWUzMDgtMWI4NC00OTVmLTQzM2YyZjY0/master.m3u8?md5=N3WhiOsCfrX",
+    "ESPNU USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NDJlY2IxMDVhM2ZmLWUzMDgtMWI4NC00OTVmLTQzM2YyZjY0/master.m3u8?md5=jZ38qAx5e3b4CGIh6L70wg&expires=1750253927&t=1750210727",
 }
 
 def update_playlist():
