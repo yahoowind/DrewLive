@@ -2,7 +2,7 @@ name: Update DaddyLive Playlist
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Every 15 minutes
+    - cron: '0 */6 * * *'  # Every 6 hours (adjust as needed)
   workflow_dispatch:
 
 jobs:
@@ -18,8 +18,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install requests
-        run: pip install requests
+      - name: Install dependencies
+        run: |
+          pip install requests playwright
+          playwright install
 
       - name: Run Update Script
         run: python update_daddylive.py
