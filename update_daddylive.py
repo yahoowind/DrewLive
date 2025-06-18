@@ -37,6 +37,13 @@ LOCKED_CHANNELS = {
     "Game Show Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YzNhYjE3ODdmZTQ1LTJkY2EtZjk3NC00MjMwLTA5YTA3Y2Uw/master.m3u8?md5=DzTEjF7WR6pt-az2P0hqrA&expires=1750256927&t=1750213727",
     "GOLF Channel USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YmRlMmJjMjQ1OWIzLWE0ODgtZjUxNC1hY2JiLTJjZGI0N2I5/master.m3u8?md5=7ZeoAI34QtGFoUZaXuOzVQ&expires=1750256964&t=1750213764",
     "Hallmark Movies & Mysteries": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MWUwNDJiZDI4OWRhLTJmOWItZDg1NC0xNDBhLWQ3ODhmZTMz/master.m3u8?md5=Kxxg34iXygt99sOhyfpwbA&expires=1750257174&t=1750213974",
+    "HBO USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YmU1YjI5NjI3OTVjLWYwY2EtNTIzNC0yM2ZkLTU2Y2QyNDc1/master.m3u8?md5=RFN5KK9J7FaYydDvbrWHHw&expires=1750259043&t=1750215843",
+    "Headline News": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZWU1NDA1ZTlhZTYzLTc4NzgtMWQxNC0yZDQyLTMzYjcyYjk3/master.m3u8?md5=jVwuTyfZjQw-uFRKl_SJFw&expires=1750259167&t=1750215967",
+    "HGTV": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1YjM3N2ZiODlmYzI2LTFhNjktNDRkNC02NjMzLTMyZDU5MjA1/master.m3u8?md5=D9LFA5miuXNlWNUUlPCjww&expires=1750259277&t=1750216077",
+    "History USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MmU4M2UyYjIzOGYzLWNmZWEtNDc2NC0zMWM2LWM4NGQ3Yjlh/master.m3u8?md5=NtIcO2ueoGVnBNJUa6rcxQ&expires=1750259483&t=1750216283",
+    "Investigation Discovery (ID USA)": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MGMxNDk1Nzg2MWJjLTc1ZmEtZTMyNC05NzE1LWMxMjZkZmMy/master.m3u8?md5=ugjGows6WVXJqblNFBc7Xg&expires=1750260326&t=1750217126",
+    "ION USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MjViOWU1N2E3MDQwLTMwZjktMjhlNC1lYjQ1LTMwODdmMjZh/master.m3u8?md5=rPbHS3QFNyD4qhCFLIQTZw&expires=1750260385&t=1750217185",
+    "Law & Crime Network": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NzAyMWIwZWZhNGRkLTczZmItNjYwNC0zNjMzLWU0NGVjOGNi/master.m3u8?md5=Mb0hlvyWXXoWnhqFLnt_lw&expires=1750260432&t=1750217232",
 }
 
 def update_playlist():
