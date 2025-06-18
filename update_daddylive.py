@@ -50,6 +50,9 @@ LOCKED_CHANNELS = {
     "MSNBC": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NmIyMzc5ZTZhZTgxLTg5ZWEtZWYwNC0wMmU4LTM2YTNkZWU5/master.m3u8?md5=wE4tk9ltqFf7TlixY1VClw&expires=1750266601&t=1750223401",
     "MTV USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZWZkMzFkZDkzYzJiLTRkMjgtMzExNC1kMjc4LWJlMzkxYzdj/master.m3u8?md5=1u5wnvmD4b7LqF7AhDYvTQ&expires=1750266646&t=1750223446",
     "National Geographic (NGC)": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZWNkODlhMTNmYTM5LWQzNWItMTUyNC00ODVjLWM3MjY1Yzlk/master.m3u8?md5=mpHv1Jy_er5S5RBFTz3TpA&expires=1750266833&t=1750223633",
+    "NBC Sports Philadelphia": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1ZjBjNDBhYmIzY2M2LWJmMTktZTBjNC03MmYyLWYyMGQ5YjMy/master.m3u8?md5=tqdvjxdGLAWMj8n-UwsZ0Q&expires=1750267729&t=1750224529",
+    "NBC USA": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1NThlZWIyNzVhNTg1LTZkMjgtODczNC00NmE0LWNkOWY1YTEy/master.m3u8?md5=ttglz7Vx7rm8MkSo0f4mBQ&expires=1750267909&t=1750224709"
+    "NBC10 Philadelphia": "https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1OTM5ODRjNDBkMjhlLTVmYTktNGUyNC01ZjM4LWUyMzdmMzhm/master.m3u8?md5=8ByuJ9RMr3SDZpqsqAYHbQ&expires=1750267964&t=1750224764"
 }
 
 def update_playlist():
