@@ -79,8 +79,8 @@ async def get_fresh_locked_channel_urls_async():
 
         try:
             for channel_name, channel_id in CHANNELS_TO_PROCESS.items():
-                # *** UPDATED STREAM PAGE URL CONSTRUCTION ***
-                stream_page_url = f"https://thedaddy.click/stream/{channel_id}" # <--- HERE'S THE CHANGE!
+                # *** CORRECTED STREAM PAGE URL CONSTRUCTION BASED ON YOUR LATEST FEEDBACK ***
+                stream_page_url = f"https://thedaddy.click/stream/stream-{channel_id}.php" # <--- THIS IS THE EXACT FORMAT!
                 print(f"\n⚡️ Processing {channel_name} (ID: {channel_id}) from {stream_page_url}")
 
                 # 1. Navigate to the specific stream page
