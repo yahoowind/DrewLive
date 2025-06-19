@@ -56,9 +56,10 @@ async def fetch_updated_urls():
             stream_urls = []
 
             def capture_m3u8(request: Request):
-                if ".m3u8" in request.url.lower():
-                    stream_urls.append(request.url)
-
+if ".m3u8" in request.url.lower():
+            print(f"🔍 Detected m3u8 stream: {request.url}")
+            stream_urls.append(request.url)
+        
             page.on("request", capture_m3u8)
 
             try:
