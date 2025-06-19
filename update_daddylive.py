@@ -96,13 +96,20 @@ def update_playlist(entries, new_urls):
 
         name = extract_channel_name(entry["meta"])
 
-        # Always apply or append the VLC headers
+        # Clean up and apply VLC headers safely
         existing_headers = entry.get("headers", [])
+
+        # Remove any existing http-user-agent line(s)
+        existing_headers = [
+            h for h in existing_headers
+            if not h.lower().startswith("#extvlcopt:http-user-agent")
+        ]
+
         combined_headers = existing_headers[:]
+
         for vlc_line in VLC_OPT_LINES:
             if vlc_line not in combined_headers:
                 combined_headers.append(vlc_line)
-
         updated_entries.append({
             "meta": entry["meta"],
             "headers": combined_headers,
