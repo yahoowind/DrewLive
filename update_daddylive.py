@@ -30,8 +30,8 @@ CHANNELS_TO_PROCESS = {
 }
 
 VLC_OPT_LINES = [
-    '#EXTVLCOPT:http-origin=https://veplay.top',
-    '#EXTVLCOPT:http-referrer=https://veplay.top/',
+    '#EXTVLCOPT:http-origin=https://forcedtoplay.xyz',
+    '#EXTVLCOPT:http-referrer=https://forcedtoplay.xyz/',
     '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0'
 ]
 
