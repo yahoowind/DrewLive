@@ -110,23 +110,19 @@ def update_playlist(entries, new_urls):
             continue
 
         name = extract_channel_name(entry["meta"])
-        if name in new_urls:
-            print(f"🔁 Updating: {name}")
-            # Preserve original headers and append VLC_OPT_LINES if they aren't already there
-            existing_headers = entry.get("headers", [])
-            # Optionally avoid duplicates:
-            combined_headers = existing_headers[:]
-            for vlc_line in VLC_OPT_LINES:
-                if vlc_line not in combined_headers:
-                    combined_headers.append(vlc_line)
 
-            updated_entries.append({
-                "meta": entry["meta"],
-                "headers": combined_headers,
-                "url": new_urls[name]
-            })
-        else:
-            updated_entries.append(entry)
+        # Always apply or append the VLC headers
+        existing_headers = entry.get("headers", [])
+        combined_headers = existing_headers[:]
+        for vlc_line in VLC_OPT_LINES:
+            if vlc_line not in combined_headers:
+                combined_headers.append(vlc_line)
+
+        updated_entries.append({
+            "meta": entry["meta"],
+            "headers": combined_headers,
+            "url": new_urls.get(name, entry["url"])  # Use updated URL if available
+        })
 
     return updated_entries
 
