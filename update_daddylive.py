@@ -82,7 +82,7 @@ async def scrape_channel(context, name, cid):
     page.on("request", capture_m3u8)
 
     try:
-        await page.goto(f"https://thedaddy.click/stream/stream-{cid}.php", timeout=60000)
+        await page.goto(f"https://thedaddy.click/cast/stream-{cid}.php", timeout=60000)
         for _ in range(3):
             if stream_urls:
                 break
