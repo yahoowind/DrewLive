@@ -27,9 +27,15 @@ CHANNELS_TO_PROCESS = {
     "SEC Network USA": "385", "Comedy Central": "310", "Cleo TV": "715",
 }
 
+VLC_OPT_LINES = [
+    '#EXTVLCOPT:http-origin=https://veplay.top',
+    '#EXTVLCOPT:http-referrer=https://veplay.top/',
+    '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0'
+]
+
 def parse_m3u_playlist(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
-        lines = [line.strip() for line in f.readlines()]
+        lines = [line.rstrip('\n') for line in f.readlines()]
 
     entries = []
     meta = None
@@ -39,6 +45,9 @@ def parse_m3u_playlist(filepath):
         elif meta and line and not line.startswith("#"):
             entries.append({"meta": meta, "url": line})
             meta = None
+        elif not meta and line.startswith("#EXTM3U"):
+            # Keep track of header line if you want
+            entries.append({"meta": line, "url": None})
     return entries
 
 def extract_channel_name(meta_line):
@@ -81,19 +90,32 @@ async def fetch_updated_urls():
     return urls
 
 def update_playlist(entries, new_urls):
+    updated_entries = []
     for entry in entries:
+        # If this entry is the header line #EXTM3U, replace it with your forced header
+        if entry["meta"].startswith("#EXTM3U"):
+            updated_entries.append({"meta": '#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"', "url": None})
+            continue
+
         name = extract_channel_name(entry["meta"])
         if name in new_urls:
             print(f"🔁 Updating stream URL for {name}")
-            entry["url"] = new_urls[name]
-    return entries
+            # Add the original meta line
+            updated_entries.append({"meta": entry["meta"], "url": new_urls[name]})
+            # Add forced VLC opts immediately after meta
+            for vlc_line in VLC_OPT_LINES:
+                updated_entries.append({"meta": vlc_line, "url": None})
+        else:
+            # Leave entry as is if no update needed
+            updated_entries.append(entry)
+    return updated_entries
 
 def save_playlist(entries, filepath):
     with open(filepath, "w", encoding="utf-8") as f:
-        f.write("#EXTM3U\n")
         for entry in entries:
             f.write(entry["meta"] + "\n")
-            f.write(entry["url"] + "\n")
+            if entry["url"]:
+                f.write(entry["url"] + "\n")
     print(f"\n✅ Updated playlist saved to {filepath}")
 
 async def main():
@@ -103,7 +125,7 @@ async def main():
     print("\n🔎 Starting stream scraping for locked channels...")
     new_urls = await fetch_updated_urls()
 
-    print("\n🛠️ Updating playlist with fresh stream URLs...")
+    print("\n🛠️ Updating playlist with fresh stream URLs and forcing VLC opts...")
     updated_entries = update_playlist(entries, new_urls)
 
     save_playlist(updated_entries, OUTPUT_FILE)
