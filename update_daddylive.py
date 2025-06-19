@@ -132,7 +132,7 @@ async def fetch_updated_urls():
 
             try:
                 print(f"\n🔄 Scraping {name}...")
-                await page.goto(f"https://thedaddy.cast/stream/stream-{cid}.php", timeout=60000)
+                await page.goto(f"https://thedaddy.click/cast/stream-{cid}.php", timeout=60000)
                 tries = 0
                 while not stream_urls and tries < 3:
                     await asyncio.sleep(5)
