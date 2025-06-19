@@ -1,24 +1,22 @@
-RAW_FILE = "DaddyLiveRAW.m3u8"
+import requests
+
+PROXY_URL = "https://tinyurl.com/DrewProxy2423"  # Your proxy URL
 OUTPUT_FILE = "DaddyLive.m3u8"
-PROXY_URL = "https://tinyurl.com/DrewProxy2423"
 
-def process_m3u():
-    with open(RAW_FILE, "r", encoding="utf-8") as infile:
-        lines = [line.strip() for line in infile if line.strip()]
+def fetch_and_save_playlist():
+    print(f"Fetching playlist from proxy: {PROXY_URL}")
+    resp = requests.get(PROXY_URL)
+    resp.raise_for_status()
 
-    output_lines = []
-    for i in range(len(lines)):
-        line = lines[i]
-        if line.startswith("#"):
-            output_lines.append(line)
-        elif line.startswith("http://") or line.startswith("https://"):
-            # Replace actual stream with proxy only
-            output_lines.append(PROXY_URL)
+    playlist_content = resp.text
+    if not playlist_content.strip():
+        print("⚠️ Warning: The fetched playlist is empty!")
+        return
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as outfile:
-        outfile.write("\n".join(output_lines) + "\n")
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(playlist_content)
 
-    print(f"✅ Proxy playlist saved to {OUTPUT_FILE}")
+    print(f"✅ Playlist saved to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    process_m3u()
+    fetch_and_save_playlist()
