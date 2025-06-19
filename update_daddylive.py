@@ -92,7 +92,7 @@ async def fetch_updated_urls():
 def update_playlist(entries, new_urls):
     updated_entries = []
     for entry in entries:
-        # If this entry is the header line #EXTM3U, replace it with your forced header
+        # Handle the #EXTM3U header
         if entry["meta"].startswith("#EXTM3U"):
             updated_entries.append({"meta": '#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"', "url": None})
             continue
@@ -100,14 +100,12 @@ def update_playlist(entries, new_urls):
         name = extract_channel_name(entry["meta"])
         if name in new_urls:
             print(f"🔁 Updating stream URL for {name}")
-            # Add the original meta line
-            updated_entries.append({"meta": entry["meta"], "url": new_urls[name]})
-            # Add forced VLC opts immediately after meta
+            updated_entries.append({"meta": entry["meta"], "url": None})  # EXTINF
             for vlc_line in VLC_OPT_LINES:
-                updated_entries.append({"meta": vlc_line, "url": None})
+                updated_entries.append({"meta": vlc_line, "url": None})   # VLC headers
+            updated_entries.append({"meta": None, "url": new_urls[name]})  # URL LAST
         else:
-            # Leave entry as is if no update needed
-            updated_entries.append(entry)
+            updated_entries.append(entry)  # untouched
     return updated_entries
 
 def save_playlist(entries, filepath):
