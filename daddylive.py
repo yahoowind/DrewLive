@@ -1,6 +1,6 @@
 import requests
 
-PROXY_URL = "https://tinyurl.com/DrewProxy2423"  # Your proxy URL
+PROXY_URL = "https://tinyurl.com/DrewProxy224"  # Your proxy URL
 OUTPUT_FILE = "DaddyLive.m3u8"
 
 def fetch_and_save_playlist():
