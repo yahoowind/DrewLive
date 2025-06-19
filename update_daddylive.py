@@ -2,11 +2,9 @@ import asyncio
 from playwright.async_api import async_playwright, Request
 import random
 import re
-import sys
 
 INPUT_FILE = "DaddyLive.m3u8"
 OUTPUT_FILE = "DaddyLive.m3u8"
-DRY_RUN = "--dry-run" in sys.argv
 
 CHANNELS_TO_PROCESS = {
     "ABC USA": "51", "A&E USA": "302", "AMC USA": "303", "Animal Planet": "304", "ACC Network USA": "664",
@@ -88,13 +86,13 @@ VLC_OPT_LINES = [
 def parse_m3u_playlist(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         lines = [line.strip() for line in f if line.strip()]
-
+    
     entries = []
     i = 0
+
     while i < len(lines):
         line = lines[i]
         if line.startswith("#EXTM3U"):
-            # Preserve original EXTM3U line but add your custom URL for tvg
             entries.append({"meta": '#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"', "headers": [], "url": None})
             i += 1
         elif line.startswith("#EXTINF:"):
@@ -112,71 +110,57 @@ def parse_m3u_playlist(filepath):
     return entries
 
 def extract_channel_name(meta_line):
-    # Try to extract tvg-name attribute first
-    match = re.search(r'tvg-name="([^"]+)"', meta_line)
-    if match:
-        return match.group(1).strip()
-    # Otherwise fallback to the part after the last comma in EXTINF line
-    comma = meta_line.rfind(",")
-    return meta_line[comma + 1:].strip() if comma != -1 else None
-
-async def scrape_channel(context, name, cid):
-    page = await context.new_page()
-    stream_urls = []
-
-    def capture_m3u8(request: Request):
-        if ".m3u8" in request.url.lower():
-            stream_urls.append(request.url)
-
-    page.on("request", capture_m3u8)
-
-    try:
-        await page.goto(f"https://thedaddy.click/cast/stream-{cid}.php", timeout=60000)
-        for _ in range(3):  # Wait up to ~15 seconds total for streams to show up
-            if stream_urls:
-                break
-            await asyncio.sleep(5)
-    except Exception as e:
-        print(f"❌ {name}: {e}")
-    finally:
-        page.off("request", capture_m3u8)
-        await page.close()
-
-    return (name, random.choice(stream_urls)) if stream_urls else (name, None)
+    match = re.search(r",(.+)$", meta_line)
+    return match.group(1).strip() if match else None
 
 async def fetch_updated_urls():
     urls = {}
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
+        page = await context.new_page()
 
-        print("\n🌐 Scraping stream URLs...")
-        tasks = [scrape_channel(context, name, cid) for name, cid in CHANNELS_TO_PROCESS.items()]
-        results = await asyncio.gather(*tasks)
+        for name, cid in CHANNELS_TO_PROCESS.items():
+            stream_urls = []
 
-        for name, url in results:
-            if url:
-                urls[name] = url
-                print(f"✅ {name}")
+            def capture_m3u8(request: Request):
+                if ".m3u8" in request.url.lower():
+                    print(f"🔍 Found stream for {name}: {request.url}")
+                    stream_urls.append(request.url)
+
+            page.on("request", capture_m3u8)
+
+            try:
+                print(f"\n🔄 Scraping {name}...")
+                await page.goto(f"https://thedaddy.cast/stream/stream-{cid}.php", timeout=60000)
+                tries = 0
+                while not stream_urls and tries < 3:
+                    await asyncio.sleep(5)
+                    tries += 1
+                    print(f"⏳ Waiting for {name}... ({tries})")
+            except Exception as e:
+                print(f"❌ Failed for {name}: {e}")
+
+            page.remove_listener("request", capture_m3u8)
+
+            if stream_urls:
+                urls[name] = random.choice(stream_urls)
+                print(f"✅ Final stream for {name}")
             else:
-                print(f"⚠️ No stream found for {name}")
+                print(f"⚠️ No streams found for {name}")
 
         await browser.close()
     return urls
 
 def update_playlist(entries, new_urls):
     updated_entries = []
-    existing_names = set()
 
-    # Update existing playlist entries
     for entry in entries:
         if entry["meta"].startswith("#EXTM3U"):
             updated_entries.append(entry)
             continue
 
         name = extract_channel_name(entry["meta"])
-        existing_names.add(name)
-
         if name in new_urls:
             print(f"🔁 Updating: {name}")
             updated_entries.append({
@@ -187,24 +171,9 @@ def update_playlist(entries, new_urls):
         else:
             updated_entries.append(entry)
 
-    # Add any new channels discovered in scraping but not in playlist
-    for name, url in new_urls.items():
-        if name not in existing_names:
-            print(f"➕ Adding new channel: {name}")
-            meta_line = f'#EXTINF:-1 tvg-name="{name}",{name}'
-            updated_entries.append({
-                "meta": meta_line,
-                "headers": VLC_OPT_LINES,
-                "url": url
-            })
-
     return updated_entries
 
 def save_playlist(entries, filepath):
-    if DRY_RUN:
-        print("\n🚫 Dry run mode enabled. No file saved.")
-        return
-
     with open(filepath, "w", encoding="utf-8") as f:
         for entry in entries:
             if entry["meta"]:
@@ -214,21 +183,19 @@ def save_playlist(entries, filepath):
                     f.write(h + "\n")
             if entry["url"]:
                 f.write(entry["url"] + "\n")
-    print(f"\n✅ Playlist saved to {filepath}")
+    print(f"\n✅ Saved updated playlist to {filepath}")
 
 async def main():
-    print("📥 Loading existing playlist...")
+    print("📥 Loading playlist...")
     entries = parse_m3u_playlist(INPUT_FILE)
 
+    print("\n🌐 Scraping updated stream URLs...")
     new_urls = await fetch_updated_urls()
 
-    print("\n🛠️ Rebuilding playlist...")
+    print("\n🛠️ Rebuilding playlist with fresh streams and headers...")
     updated_entries = update_playlist(entries, new_urls)
 
     save_playlist(updated_entries, OUTPUT_FILE)
 
 if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        print("\n⛔ Aborted by user.")
+    asyncio.run(main())
