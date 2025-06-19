@@ -1,6 +1,5 @@
 import asyncio
 from playwright.async_api import async_playwright, Request
-import os
 import random
 import re
 
@@ -35,19 +34,28 @@ VLC_OPT_LINES = [
 
 def parse_m3u_playlist(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
-        lines = [line.rstrip('\n') for line in f.readlines()]
-
+        lines = [line.strip() for line in f if line.strip()]
+    
     entries = []
-    meta = None
-    for line in lines:
-        if line.startswith("#EXTINF:"):
+    i = 0
+
+    while i < len(lines):
+        line = lines[i]
+        if line.startswith("#EXTM3U"):
+            entries.append({"meta": '#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"', "headers": [], "url": None})
+            i += 1
+        elif line.startswith("#EXTINF:"):
             meta = line
-        elif meta and line and not line.startswith("#"):
-            entries.append({"meta": meta, "url": line})
-            meta = None
-        elif not meta and line.startswith("#EXTM3U"):
-            # Keep track of header line if you want
-            entries.append({"meta": line, "url": None})
+            headers = []
+            i += 1
+            while i < len(lines) and lines[i].startswith("#EXTVLCOPT"):
+                headers.append(lines[i])
+                i += 1
+            url = lines[i] if i < len(lines) else ""
+            entries.append({"meta": meta, "headers": headers, "url": url})
+            i += 1
+        else:
+            i += 1
     return entries
 
 def extract_channel_name(meta_line):
@@ -66,29 +74,27 @@ async def fetch_updated_urls():
 
             def capture_m3u8(request: Request):
                 if ".m3u8" in request.url.lower():
-                    print(f"🔍 Detected m3u8 stream for {name}: {request.url}")
+                    print(f"🔍 Found stream for {name}: {request.url}")
                     stream_urls.append(request.url)
 
             page.on("request", capture_m3u8)
 
-print(f"\n🔄 Scraping {name}...")
-try:
-    await page.goto(f"https://thedaddy.click/stream/stream-{cid}.php", timeout=60000)
-
-    tries = 0
-    while not stream_urls and tries < 3:
-        await asyncio.sleep(5)
-        tries += 1
-        print(f"⏳ Waiting for {name}... ({tries})")
-
-except Exception as e:
-    print(f"❌ Failed for {name}: {e}")
+            try:
+                print(f"\n🔄 Scraping {name}...")
+                await page.goto(f"https://thedaddy.click/stream/stream-{cid}.php", timeout=60000)
+                tries = 0
+                while not stream_urls and tries < 3:
+                    await asyncio.sleep(5)
+                    tries += 1
+                    print(f"⏳ Waiting for {name}... ({tries})")
+            except Exception as e:
+                print(f"❌ Failed for {name}: {e}")
 
             page.remove_listener("request", capture_m3u8)
 
             if stream_urls:
                 urls[name] = random.choice(stream_urls)
-                print(f"✅ Got stream for {name}")
+                print(f"✅ Final stream for {name}")
             else:
                 print(f"⚠️ No streams found for {name}")
 
@@ -97,39 +103,45 @@ except Exception as e:
 
 def update_playlist(entries, new_urls):
     updated_entries = []
+
     for entry in entries:
-        # Handle the #EXTM3U header
         if entry["meta"].startswith("#EXTM3U"):
-            updated_entries.append({"meta": '#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"', "url": None})
+            updated_entries.append(entry)
             continue
 
         name = extract_channel_name(entry["meta"])
         if name in new_urls:
-            print(f"🔁 Updating stream URL for {name}")
-            updated_entries.append({"meta": entry["meta"], "url": None})  # EXTINF
-            for vlc_line in VLC_OPT_LINES:
-                updated_entries.append({"meta": vlc_line, "url": None})   # VLC headers
-            updated_entries.append({"meta": None, "url": new_urls[name]})  # URL LAST
+            print(f"🔁 Updating: {name}")
+            updated_entries.append({
+                "meta": entry["meta"],
+                "headers": VLC_OPT_LINES,
+                "url": new_urls[name]
+            })
         else:
-            updated_entries.append(entry)  # untouched
+            updated_entries.append(entry)
+
     return updated_entries
 
 def save_playlist(entries, filepath):
     with open(filepath, "w", encoding="utf-8") as f:
         for entry in entries:
-            f.write(entry["meta"] + "\n")
+            if entry["meta"]:
+                f.write(entry["meta"] + "\n")
+            if "headers" in entry:
+                for h in entry["headers"]:
+                    f.write(h + "\n")
             if entry["url"]:
                 f.write(entry["url"] + "\n")
-    print(f"\n✅ Updated playlist saved to {filepath}")
+    print(f"\n✅ Saved updated playlist to {filepath}")
 
 async def main():
-    print("📥 Loading current playlist...")
+    print("📥 Loading playlist...")
     entries = parse_m3u_playlist(INPUT_FILE)
 
-    print("\n🔎 Starting stream scraping for locked channels...")
+    print("\n🌐 Scraping updated stream URLs...")
     new_urls = await fetch_updated_urls()
 
-    print("\n🛠️ Updating playlist with fresh stream URLs and forcing VLC opts...")
+    print("\n🛠️ Rebuilding playlist with fresh streams and headers...")
     updated_entries = update_playlist(entries, new_urls)
 
     save_playlist(updated_entries, OUTPUT_FILE)
