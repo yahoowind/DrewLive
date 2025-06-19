@@ -71,12 +71,18 @@ async def fetch_updated_urls():
 
             page.on("request", capture_m3u8)
 
-            try:
-                print(f"\n🔄 Scraping {name}...")
-                await page.goto(f"https://thedaddy.click/stream/stream-{cid}.php", timeout=60000)
-                await asyncio.sleep(10)
-            except Exception as e:
-                print(f"❌ Failed for {name}: {e}")
+print(f"\n🔄 Scraping {name}...")
+try:
+    await page.goto(f"https://thedaddy.click/stream/stream-{cid}.php", timeout=60000)
+
+    tries = 0
+    while not stream_urls and tries < 3:
+        await asyncio.sleep(5)
+        tries += 1
+        print(f"⏳ Waiting for {name}... ({tries})")
+
+except Exception as e:
+    print(f"❌ Failed for {name}: {e}")
 
             page.remove_listener("request", capture_m3u8)
 
