@@ -56,14 +56,14 @@ async def fetch_updated_urls():
             stream_urls = []
 
             def capture_m3u8(request: Request):
-if ".m3u8" in request.url.lower():
-            print(f"🔍 Detected m3u8 stream: {request.url}")
-            stream_urls.append(request.url)
-        
+                if ".m3u8" in request.url.lower():
+                    print(f"🔍 Detected m3u8 stream for {name}: {request.url}")
+                    stream_urls.append(request.url)
+
             page.on("request", capture_m3u8)
 
             try:
-                print(f"🔄 Scraping {name}...")
+                print(f"\n🔄 Scraping {name}...")
                 await page.goto(f"https://thedaddy.click/stream/stream-{cid}.php", timeout=60000)
                 await asyncio.sleep(10)
             except Exception as e:
@@ -84,7 +84,7 @@ def update_playlist(entries, new_urls):
     for entry in entries:
         name = extract_channel_name(entry["meta"])
         if name in new_urls:
-            print(f"🔁 Replacing URL for {name}")
+            print(f"🔁 Updating stream URL for {name}")
             entry["url"] = new_urls[name]
     return entries
 
@@ -94,12 +94,18 @@ def save_playlist(entries, filepath):
         for entry in entries:
             f.write(entry["meta"] + "\n")
             f.write(entry["url"] + "\n")
-    print(f"✅ Updated playlist saved to {filepath}")
+    print(f"\n✅ Updated playlist saved to {filepath}")
 
 async def main():
+    print("📥 Loading current playlist...")
     entries = parse_m3u_playlist(INPUT_FILE)
+
+    print("\n🔎 Starting stream scraping for locked channels...")
     new_urls = await fetch_updated_urls()
+
+    print("\n🛠️ Updating playlist with fresh stream URLs...")
     updated_entries = update_playlist(entries, new_urls)
+
     save_playlist(updated_entries, OUTPUT_FILE)
 
 if __name__ == "__main__":
