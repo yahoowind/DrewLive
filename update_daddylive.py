@@ -10,7 +10,7 @@ CHANNELS_TO_PROCESS = {
     "ABC USA": "51", "A&E USA": "302", "AMC USA": "303", "Animal Planet": "304", "ACC Network USA": "664",
     "Adult Swim": "295", "AXS TV USA": "742", "ABCNY USA": "766", "beIN SPORTS Australia 1": "491", "beIN SPORTS Australia 2": "492",
     "beIN SPORTS Australia 3": "493", "beIN Sports MENA English 1": "61", "beIN Sports MENA English 2": "90", "Sky Sports Tennis": "46", "BeIN SPORTS USA": "425",
-    "beIN SPORTS en Espa単ol": "372", "Boomerang": "648", "BBC America (BBCA)": "305", "BET USA": "306", "Bravo USA": "307",
+    "beIN SPORTS en Español": "372", "Boomerang": "648", "BBC America (BBCA)": "305", "BET USA": "306", "Bravo USA": "307",
     "BBC News Channel HD": "349", "BBC One UK": "356", "BBC Two UK": "357", "BBC Three UK": "358", "BBC Four UK": "359",
     "BIG TEN Network (BTN USA)": "397", "Channel 4 UK": "354", "Channel 5 UK": "355", "CBS Sports Network (CBSSN)": "308", "COZI TV USA": "748",
     "CMT USA": "647", "CBS USA": "52", "CW USA": "300", "CNBC USA": "309", "Comedy Central": "310",
@@ -25,7 +25,7 @@ CHANNELS_TO_PROCESS = {
     "Fox Business": "297", "FOX USA": "54", "FX USA": "317", "FXX USA": "298", "Freeform": "301",
     "Fox News": "347", "FX Movie Channel": "381", "FYI": "665", "Film4 UK": "688", "Fashion TV": "744",
     "FETV - Family Entertainment Television": "751", "FOXNY USA": "768", "Fox Weather Channel": "775", "GOLF Channel USA": "318", "Game Show Network": "319",
-    "Gold UK": "687", "Galavisi贸n USA": "743", "Grit Channel": "752", "Global CA": "836", "The Hallmark Channel": "320",
+    "Gold UK": "687", "Galavisión USA": "743", "Grit Channel": "752", "Global CA": "836", "The Hallmark Channel": "320",
     "Hallmark Movies & Mysterie": "296", "HBO USA": "321", "HBO2 USA": "689", "HBO Comedy USA": "690", "HBO Family USA": "691",
     "HBO Latino USA": "692", "HBO Signature USA": "693", "HBO Zone USA": "694", "History USA": "322", "Headline News": "323",
     "HGTV": "382", "ITV 1 UK": "350", "ITV 2 UK": "351", "ITV 3 UK": "352", "ITV 4 UK": "353",
@@ -41,40 +41,12 @@ CHANNELS_TO_PROCESS = {
     "RTE 2": "365", "RDS CA": "839", "RDS 2 CA": "840", "RDS Info CA": "841", "Racing Tv UK": "555",
     "Reelz Channel": "293", "Sky Sports Football UK": "35", "Sky Sports Arena UK": "36", "Sky Sports Action UK": "37", "Sky Sports Main Event": "38",
     "Sky sports Premier League": "130", "Sky Sports F1 UK": "60", "Sky Sports Cricket": "65", "Sky Sports Golf UK": "70", "Sky Sports News UK": "366",
-    "Sky Sports MIX UK": "449", "SportsNet New York (SNY)": "759", "Sky Sports Racing UK": "554", "Sky Sport 1 NZ": "588", "Sky Sport 2 NZ": "589",
-    "Sky Sport 3 NZ": "590", "Sky Sport 4 NZ": "591", "Sky Sport 5 NZ": "592", "Sky Sport 6 NZ": "593", "Sky Sport 7 NZ": "594",
-    "Sky Sport 8 NZ": "595", "Sky Sport 9 NZ": "596", "Sky Sport Select NZ": "587", "SEC Network USA": "385", "Sportsnet Ontario": "406",
-    "Sportsnet One": "411", "Sportsnet West": "407", "Sportsnet East": "408", "Sportsnet 360": "409", "Sportsnet World": "410",
-    "SuperSport Grandstand": "412", "SuperSport PSL": "413", "SuperSport Premier league": "414", "SuperSport LaLiga": "415", "SuperSport Variety 1": "416",
-    "SuperSport Variety 2": "417", "SuperSport Variety 3": "418", "SuperSport Variety 4": "419", "SuperSport Action": "420", "SuperSport Rugby": "421",
-    "SuperSport Golf": "422", "SuperSport Tennis": "423", "SuperSport Motorsport": "424", "Supersport Football": "56", "SuperSport Cricket": "368",
-    "SuperSport MaXimo 1": "572", "S4C UK": "670", "Sky Cinema Premiere UK": "671", "Sky Cinema Select UK": "672", "Sky Cinema Hits UK": "673",
-    "Sky Cinema Greats UK": "674", "Sky Cinema Animation UK": "675", "Sky Cinema Family UK": "676", "Sky Cinema Action UK": "677", "The Hallmark": "680",
-    "Sky Cinema Thriller UK": "679", "Sky Cinema Sci-Fi Horror UK": "681", "Sky Showcase UK": "682", "Sky Arts UK": "683", "Sky Comedy UK": "684",
-    "Sky Crime": "685", "Sky History": "686", "Science Channel": "294", "Showtime USA": "333", "Showtime SHOxBET USA": "685",
-    "Starz": "335", "Sky Witness HD": "361", "SYFY USA": "373", "Sundance TV": "658", "Smithsonian Channel": "603",
-    "TNT Sports 1 UK": "31", "TNT Sports 2 UK": "32", "TNT Sports 3 UK": "33", "TNT Sports 4 UK": "34", "TSN1": "111",
-    "TSN2": "112", "TSN3": "113", "TSN4": "114", "TSN5": "115", "Tennis Channel": "40",
-    "TUDN USA": "66", "Telemundo": "131", "TBS USA": "336", "TLC": "337", "TNT USA": "338",
-    "TVA Sports": "833", "TVA Sports 2": "834", "Travel Channel": "340", "TruTV USA": "341", "TVLAND": "342",
-    "TCM USA": "644", "TMC Channel USA": "698", "The Food Network": "384", "The Weather Channel": "394", "TeenNick": "650",
-    "TV ONE USA": "660", "TVO CA": "842", "Tennis+ 1": "700", "Tennis+ 2": "701", "Tennis+ 3": "702",
-    "Tennis+ 4": "703", "Tennis+ 5": "704", "Tennis+ 6": "705", "Tennis+ 7": "706", "Tennis+ 8": "707",
-    "Tennis+ 9": "708", "Tennis+ 10": "709", "Tennis+ 11": "710", "Tennis+ 12": "711", "Tennis+ 13": "712",
-    "Tennis+ 14": "713", "Tennis+ 15": "714", "USA Network": "343", "Universal Kids USA": "668", "Univision": "132",
-    "Unimas": "133", "Viaplay Sports 1 UK": "451", "Viaplay Sports 2 UK": "550", "Viaplay Xtra UK": "597", "VH1 USA": "344",
-    "VICE TV": "659", "Willow Cricket": "346", "Willow XTRA": "598", "WWE Network": "376", "WETV USA": "655",
-    "YES Network USA": "763", "Yes TV CA": "837", "5 USA": "360", "Altitude Sports": "923", "beIN SPORTS en Español": "372",
-    "Bally Sports Arizona": "890", "Bally Sports Detroit": "891", "Bally Sports Florida": "892", "Bally Sports Great Lakes": "893", "Bally Sports Indiana": "894",
-    "Bally Sports Kansas City": "895", "Bally Sports Midwest": "896", "Bally Sports New Orleans": "897", "Bally Sports North": "898", "Bally Sports Ohio": "899",
-    "Bally Sports Oklahoma": "900", "Bally Sports San Diego": "901", "Bally Sports SoCal": "902", "Bally Sports South": "903", "Bally Sports Southeast": "904",
-    "Bally Sports Sun": "905", "Bally Sports West": "906", "Bally Sports Wisconsin": "907", "CW PIX 11 USA": "280", "CBS Sports Golazo": "910",
-    "Court TV USA": "281", "DAZN 1 UK": "230", "Discovery Velocity CA": "285", "FUSE TV USA": "279", "Galavisión USA": "743",
-    "LaLigaTV UK": "276", "Law & Crime Network": "278", "Las Estrellas": "924", "MGM+ USA / Epix": "79", "Pac-12 Network USA": "287",
-    "PBS USA USA": "210", "PDC TV": "43", "Rally Tv": "607", "Root Sports Northwest": "920", "Sky Sports Tennis UK": "46",
-    "Sky Cinema Comedy UK": "678", "Sky Cinema Drama UK": "680", "Showtime 2 USA (SHO2) USA": "792", "Showtime Showcase USA": "793", "Showtime Extreme USA": "794",
-    "Showtime Family Zone (SHO Family Zone) USA": "795", "Showtime Next (SHO Next) USA": "796", "Showtime Women USA": "797", "Space City Home Network": "921", "SportsNet Pittsburgh": "922",
-    "YTV CA": "296",
+    "Sky Sports MIX UK": "449", "Sky Sports Racing UK": "554", "SEC Network USA": "385", "SuperSport Grandstand": "412", "SuperSport PSL": "413",
+    "SuperSport Premier league": "414", "SuperSport LaLiga": "415", "SuperSport Variety 1": "416", "SuperSport Variety 2": "417", "SuperSport Variety 3": "418",
+    "SuperSport Variety 4": "419", "SuperSport Action": "420", "SuperSport Rugby": "421", "SuperSport Golf": "422", "SuperSport Tennis": "423",
+    "SuperSport Motorsport": "424", "Supersport Football": "56", "SuperSport Cricket": "368", "USA Network": "343", "Universal Kids USA": "668",
+    "Univision": "132", "Unimas": "133", "Viaplay Sports 1 UK": "451", "Viaplay Sports 2 UK": "550", "Viaplay Xtra UK": "597", "VH1 USA": "344",
+    "VICE TV": "659", "Willow Cricket": "346", "Willow XTRA": "598", "WWE Network": "376", "WETV USA": "655"
 }
 
 VLC_OPT_LINES = [
@@ -86,7 +58,7 @@ VLC_OPT_LINES = [
 def parse_m3u_playlist(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         lines = [line.strip() for line in f if line.strip()]
-    
+
     entries = []
     i = 0
 
@@ -131,13 +103,13 @@ async def fetch_updated_urls():
             page.on("request", capture_m3u8)
 
             try:
-                print(f"\n🔄 Scraping {name}...")
+                print(f"\n🔄 Scraping {name} (CID: {cid})...")
                 await page.goto(f"https://thedaddy.click/cast/stream-{cid}.php", timeout=60000)
                 tries = 0
                 while not stream_urls and tries < 3:
                     await asyncio.sleep(5)
                     tries += 1
-                    print(f"⏳ Waiting for {name}... ({tries})")
+                    print(f"⏳ Waiting for {name}... ({tries}/3)")
             except Exception as e:
                 print(f"❌ Failed for {name}: {e}")
 
@@ -154,6 +126,7 @@ async def fetch_updated_urls():
 
 def update_playlist(entries, new_urls):
     updated_entries = []
+    matched_names = set()
 
     for entry in entries:
         if entry["meta"].startswith("#EXTM3U"):
@@ -168,10 +141,24 @@ def update_playlist(entries, new_urls):
                 "headers": VLC_OPT_LINES,
                 "url": new_urls[name]
             })
+            matched_names.add(name)
         else:
             updated_entries.append(entry)
 
-    return updated_entries
+    return updated_entries, matched_names
+
+def add_missing_entries(existing_entries, new_urls, already_present):
+    for name, url in new_urls.items():
+        if name not in already_present:
+            print(f"➕ Adding missing stream: {name}")
+            meta = f'#EXTINF:-1 tvg-id="" tvg-name="{name}" tvg-logo="" group-title="",{name}'
+            entry = {
+                "meta": meta,
+                "headers": VLC_OPT_LINES,
+                "url": url
+            }
+            existing_entries.append(entry)
+    return existing_entries
 
 def save_playlist(entries, filepath):
     with open(filepath, "w", encoding="utf-8") as f:
@@ -193,9 +180,12 @@ async def main():
     new_urls = await fetch_updated_urls()
 
     print("\n🛠️ Rebuilding playlist with fresh streams and headers...")
-    updated_entries = update_playlist(entries, new_urls)
+    updated_entries, matched_names = update_playlist(entries, new_urls)
 
-    save_playlist(updated_entries, OUTPUT_FILE)
+    print("\n➕ Adding any missing channels that were found during scraping...")
+    final_entries = add_missing_entries(updated_entries, new_urls, matched_names)
+
+    save_playlist(final_entries, OUTPUT_FILE)
 
 if __name__ == "__main__":
     asyncio.run(main())
