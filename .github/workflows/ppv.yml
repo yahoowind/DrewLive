@@ -2,7 +2,7 @@ name: Update PPV Playlist
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Every hour UTC
+    - cron: '0 */3 * * *'  # Every 3 hours UTC
   workflow_dispatch:
 
 jobs:
