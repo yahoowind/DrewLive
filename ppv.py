@@ -89,7 +89,8 @@ async def scrape_streams(entries):
             m3u8_links = []
 
             def capture(request: Request):
-                if ".m3u8" in request.url.lower():
+                url = request.url.lower()
+                if url.endswith(".m3u8") or ".m3u8?" in url:
                     print(f"🎯 Found .m3u8 URL: {request.url}")
                     m3u8_links.append(request.url)
 
