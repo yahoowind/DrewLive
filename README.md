@@ -64,13 +64,6 @@ Stay synced with live guide data for your players. Pick the one that fits your n
 
 ━━━━━━━━━━━━━━━━━━━━
 
-🎥 LIVE EVENTS  
-Catch special streams and one-time broadcasts here:  
-🔗 Live Events - DrewLive URL:  
-• [https://tinyurl.com/drewevents23](https://tinyurl.com/drewevents23)  
-
-━━━━━━━━━━━━━━━━━━━━
-
 [![Join DrewLive Discord](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)  
 
 👥 Join the DrewLive Discord!  
