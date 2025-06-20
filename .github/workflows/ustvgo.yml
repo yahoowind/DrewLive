@@ -27,7 +27,7 @@ jobs:
         run: python ustvgo.py
 
       - name: Upload USTVGO playlist artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ustvgo-playlist
           path: USTVGO.m3u8
