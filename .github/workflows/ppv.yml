@@ -25,7 +25,7 @@ jobs:
           playwright install firefox
 
       - name: ▶️ Run scraper script
-        run: python ppvland_scraper.py  # Change if your script filename differs
+        run: python ppv.py  # Change if your script filename differs
 
       - name: 📤 Force commit changes
         run: |
