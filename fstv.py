@@ -5,6 +5,10 @@ import re
 
 TARGET_URL = "https://fstv.us/live-tv.html?timezone=America%2FDenver"
 
+def normalize_channel_name(name: str) -> str:
+    # lowercase, strip, collapse spaces for normalization
+    return re.sub(r"\s+", " ", name.strip().lower())
+
 async def main():
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
@@ -12,6 +16,7 @@ async def main():
         page = await context.new_page()
 
         stream_links = set()
+        # stream_map: normalized_name -> {"display_name": original, "urls": set()}
         stream_map = {}
 
         current_channel_name = None
@@ -35,10 +40,11 @@ async def main():
                 if url not in stream_links:
                     stream_links.add(url)
                     name = current_channel_name or "Unknown"
-                    if name in stream_map:
-                        stream_map[name].append(url)
-                    else:
-                        stream_map[name] = [url]
+                    norm_name = normalize_channel_name(name)
+
+                    if norm_name not in stream_map:
+                        stream_map[norm_name] = {"display_name": name, "urls": set()}
+                    stream_map[norm_name]["urls"].add(url)
                     print(f"🎯 {name} -> {url}")
 
         page.on("response", handle_response)
@@ -92,11 +98,11 @@ async def main():
             except Exception as e:
                 print(f"⚠️ Failed click on {current_channel_name}: {e}")
 
-        with open("FSTV.m3u8", "w", encoding="utf-8") as f:
+        with open("FSTV_CLEANED.m3u8", "w", encoding="utf-8") as f:
             f.write("#EXTM3U\n")
-            for name, urls in stream_map.items():
-                for url in urls:
-                    clean_name = name.replace('\n', '').replace('\r', '').strip()
+            for data in stream_map.values():
+                clean_name = data["display_name"].replace('\n', '').replace('\r', '').strip()
+                for url in data["urls"]:
                     f.write(f"#EXTINF:-1,{clean_name}\n{url}\n")
 
         print(f"\n✅ Done. Collected {len(stream_links)} unique stream links.")
