@@ -1,7 +1,16 @@
+
 import asyncio
 from playwright.async_api import async_playwright, Request
+import random
 
+API_URL = "https://ppv.to/api/streams"
 OUTPUT_FILE = "PPVLand.m3u8"
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0",
+    "Accept": "application/json",
+    "Referer": "https://ppv.to/",
+}
 
 CUSTOM_LOGO = "https://tinyurl.com/drewsportslogo"
 CUSTOM_ID = "Sports.Dummy.us"
@@ -11,6 +20,7 @@ CUSTOM_HEADERS = [
     '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0'
 ]
 
+ALLOWED_CATEGORIES = {"24/7 Streams", "Wrestling", "Football", "Basketball"}
 
 def build_m3u(entries, url_map):
     lines = ['#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"']
@@ -20,36 +30,45 @@ def build_m3u(entries, url_map):
         cid = entry["channel_id"]
         url = url_map.get(cid, "#")
 
+        tvg_id = CUSTOM_ID
+        logo_url = CUSTOM_LOGO
         group_title = entry.get("category", "Live Events")
 
-        lines.append(f'#EXTINF:-1 tvg-id="{CUSTOM_ID}" tvg-logo="{CUSTOM_LOGO}" group-title="{group_title}",{title}')
+        lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo_url}" group-title="{group_title}",{title}')
         lines.extend(CUSTOM_HEADERS)
         lines.append(url)
 
     return "\n".join(lines)
 
 
-async def fetch_live_streams_from_page(page):
-    await page.goto("https://ppv.to/live/", timeout=60000)
-    await page.wait_for_selector("a[data-id]")  # Wait until stream links appear
-    await asyncio.sleep(5)  # Extra wait for lazy loading if any
+async def fetch_schedule(page):
+    try:
+        res = await page.request.get(API_URL, headers=HEADERS)
+        if not res.ok:
+            print(f"❌ Failed to fetch API JSON: HTTP {res.status}")
+            return []
 
-    stream_links = await page.query_selector_all("a[data-id]")
-    print(f"Found {len(stream_links)} stream links")
+        data = await res.json()
+    except Exception as e:
+        print(f"❌ Exception while fetching schedule: {e}")
+        return []
 
     entries = []
-    for link in stream_links:
-        cid = await link.get_attribute("data-id")
-        uri_name = await link.get_attribute("data-uri")
-        raw_title = await link.inner_text()
-        title = " ".join(raw_title.splitlines()).strip()
-
-        if cid and title and uri_name:
+    for category_data in data.get("streams", []):
+        category_name = category_data.get("category", "")
+        if category_name not in ALLOWED_CATEGORIES:
+            continue
+        for stream in category_data.get("streams", []):
+            title = stream.get("name", "").strip()
+            cid = str(stream.get("id", "")).strip()
+            uri_name = stream.get("uri_name", "").strip()
+            if not (title and cid and uri_name):
+                continue  # skip incomplete entries
             entries.append({
                 "title": title,
                 "channel_id": cid,
                 "uri_name": uri_name,
-                "category": "Live"
+                "category": category_name
             })
 
     return entries
@@ -95,11 +114,8 @@ async def scrape_streams(entries):
             page.remove_listener("request", capture)
 
             if m3u8_links:
-                # Prefer links containing 'master' or 'index' if available
-                m3u8_links.sort(key=lambda u: ('master' in u or 'index' in u), reverse=True)
-                selected = m3u8_links[0]
-                url_map[cid] = selected
-                print(f"✅ Selected stream URL: {selected}")
+                url_map[cid] = random.choice(m3u8_links)
+                print(f"✅ Selected stream URL: {url_map[cid]}")
             else:
                 url_map[cid] = "#"
                 print(f"⚠️ No stream found for CID {cid}")
@@ -113,14 +129,14 @@ async def main():
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         page = await browser.new_page()
-        entries = await fetch_live_streams_from_page(page)
+        entries = await fetch_schedule(page)
         await browser.close()
 
     if not entries:
-        print("⚠️ No live streams found.")
+        print("⚠️ No streams found to scrape.")
         return
 
-    print(f"\n📺 Found {len(entries)} live streams to scrape")
+    print(f"\n📺 Found {len(entries)} streams to scrape")
     url_map = await scrape_streams(entries)
 
     print("💾 Writing M3U playlist...")
