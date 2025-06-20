@@ -1,6 +1,7 @@
 import asyncio
 from playwright.async_api import async_playwright, Request
 import random
+import re
 
 API_URL = "https://ppv.to/api/streams"
 OUTPUT_FILE = "PPVLand.m3u8"
@@ -19,14 +20,7 @@ CUSTOM_HEADERS = [
     '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0'
 ]
 
-# Add all groups you want scraped
-ALLOWED_CATEGORIES = {
-    "24/7 Streams",
-    "Wrestling",
-    "Football",
-    "Basketball",
-    "Baseball"  # added based on your notes
-}
+ALLOWED_CATEGORIES = {"24/7 Streams", "Wrestling", "Football", "Basketball", "Baseball"}
 
 def build_m3u(entries, url_map):
     lines = ['#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"']
@@ -47,22 +41,17 @@ def build_m3u(entries, url_map):
     return "\n".join(lines)
 
 
-async def fetch_schedule():
-    print("📡 Fetching schedule from API...")
-    async with async_playwright() as p:
-        browser = await p.firefox.launch(headless=True)
-        page = await browser.new_page()
-        try:
-            res = await page.request.get(API_URL, headers=HEADERS)
-            if not res.ok:
-                print(f"❌ Failed to fetch API JSON: HTTP {res.status}")
-                return []
-            data = await res.json()
-        except Exception as e:
-            print(f"❌ Exception while fetching schedule: {e}")
+async def fetch_schedule(page):
+    try:
+        res = await page.request.get(API_URL, headers=HEADERS)
+        if not res.ok:
+            print(f"❌ Failed to fetch API JSON: HTTP {res.status}")
             return []
-        finally:
-            await browser.close()
+
+        data = await res.json()
+    except Exception as e:
+        print(f"❌ Exception while fetching schedule: {e}")
+        return []
 
     entries = []
     for category_data in data.get("streams", []):
@@ -74,7 +63,7 @@ async def fetch_schedule():
             cid = str(stream.get("id", "")).strip()
             uri_name = stream.get("uri_name", "").strip()
             if not (title and cid and uri_name):
-                continue
+                continue  # skip incomplete entries
             entries.append({
                 "title": title,
                 "channel_id": cid,
@@ -87,6 +76,7 @@ async def fetch_schedule():
 
 async def scrape_streams(entries):
     url_map = {}
+
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
@@ -112,11 +102,29 @@ async def scrape_streams(entries):
                 stream_url = f"https://ppv.to/live/{entry['uri_name']}"
                 await page.goto(stream_url, timeout=60000)
 
-                tries = 0
-                while not m3u8_links and tries < 3:
+                await page.wait_for_load_state("networkidle")
+
+                # Try clicking play buttons if any to trigger stream load
+                try:
+                    await page.click("button.play, div.play-button, .btn-play", timeout=3000)
+                    print("👆 Clicked play button to trigger stream load")
                     await asyncio.sleep(5)
+                except Exception:
+                    pass
+
+                tries = 0
+                while not m3u8_links and tries < 5:
+                    await asyncio.sleep(3)
                     tries += 1
-                    print(f"⏳ Waiting for .m3u8... ({tries}/3)")
+                    print(f"⏳ Waiting for .m3u8... ({tries}/5)")
+
+                # Fallback: scrape page content for .m3u8 URLs
+                if not m3u8_links:
+                    content = await page.content()
+                    found = re.findall(r'https?://[^\s"\']+\.m3u8[^\s"\']*', content)
+                    if found:
+                        print(f"🔍 Found .m3u8 URLs in page source")
+                        m3u8_links.extend(found)
 
             except Exception as e:
                 print(f"❌ Error scraping CID {cid}: {e}")
@@ -136,12 +144,17 @@ async def scrape_streams(entries):
 
 
 async def main():
-    entries = await fetch_schedule()
+    async with async_playwright() as p:
+        browser = await p.firefox.launch(headless=True)
+        page = await browser.new_page()
+        entries = await fetch_schedule(page)
+        await browser.close()
+
     if not entries:
         print("⚠️ No streams found to scrape.")
         return
 
-    print(f"\n📺 Found {len(entries)} events")
+    print(f"\n📺 Found {len(entries)} streams to scrape")
     url_map = await scrape_streams(entries)
 
     print("💾 Writing M3U playlist...")
