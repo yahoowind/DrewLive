@@ -3,7 +3,7 @@ from playwright.async_api import async_playwright, Request
 import random
 
 API_URL = "https://ppv.to/api/streams"
-OUTPUT_FILE = "PPVLand.m3u8"
+OUTPUT_FILE = "ppv_live_streams.m3u8"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0",
