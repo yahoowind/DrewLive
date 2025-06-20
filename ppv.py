@@ -30,10 +30,12 @@ def build_m3u(entries, url_map):
 
 
 async def fetch_live_streams_from_page(page):
-    await page.goto("https://ppv.to/live", timeout=60000)
+    await page.goto("https://ppv.to/live/", timeout=60000)
+    await page.wait_for_selector("a[data-id]")  # Wait until stream links appear
+    await asyncio.sleep(5)  # Extra wait for lazy loading if any
 
-    # Select all <a> tags with data-id attribute (stream entries)
     stream_links = await page.query_selector_all("a[data-id]")
+    print(f"Found {len(stream_links)} stream links")
 
     entries = []
     for link in stream_links:
