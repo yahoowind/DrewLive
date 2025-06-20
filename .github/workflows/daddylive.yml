@@ -1,10 +1,10 @@
-name: DaddyLive Playlist Update
+name: Update DaddyLive Playlist
 
 on:
-  workflow_dispatch:
+  push:   # Runs on every push
 
 jobs:
-  update-playlist:
+  fetch-playlist:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,21 +14,10 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11'
+        python-version: '3.x'
 
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install playwright requests
-        playwright install
+      run: pip install requests
 
-    - name: Run daddylive.py script
+    - name: Force fetch and save playlist
       run: python daddylive.py
-
-    - name: Commit updated playlists (forced)
-      run: |
-        git config --global user.name "daddybot"
-        git config --global user.email "daddybot@users.noreply.github.com"
-        git add DaddyLiveRAW.m3u8 DaddyLive.m3u8
-        git commit --allow-empty -m "🤝 Handshake + Proxy update"
-        git push
