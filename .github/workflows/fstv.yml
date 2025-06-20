@@ -1,4 +1,4 @@
-name: 🔁 FSTV Stream Scraper
+name: 🔁 FSTV Stream Scraper (Forced Commit)
 
 on:
   workflow_dispatch:
@@ -27,10 +27,10 @@ jobs:
       - name: ▶️ Run FSTV scraper
         run: python fstv.py
 
-      - name: 📤 Commit and push updated FSTV.m3u8
+      - name: 🧰 Force commit and push updated FSTV.m3u8
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add FSTV.m3u8
-          git commit -m "🔄 Update FSTV.m3u8 [auto]" || echo "No changes to commit"
-          git push
+          git add -f FSTV.m3u8
+          git commit -m "🔄 Force update of FSTV.m3u8 [auto]" || echo "Nothing to commit"
+          git push --force
