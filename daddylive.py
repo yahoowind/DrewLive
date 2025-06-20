@@ -2,7 +2,7 @@ import asyncio
 import requests
 from playwright.async_api import async_playwright, Request
 
-SCHEDULE_JSON_URL = "https://thedaddy.click/24.7channels.php"
+SCHEDULE_JSON_URL = "https://thedaddy.click/24-7-channels.php"
 RAW_PLAYLIST = "DaddyLiveRAW.m3u8"
 FINAL_PLAYLIST = "DaddyLive.m3u8"
 PROXY_BASE_URL = "https://tinyurl.com/DrewProxy224"
@@ -64,14 +64,6 @@ async def scrape_and_handshake(entries):
                 stream_url = sorted(m3u8_links)[0]
                 print(f"✅ Found stream: {stream_url}")
 
-                # Handshake via proxy
-                proxy_url = f"{PROXY_BASE_URL}?stream={stream_url}"
-                try:
-                    await page.goto(proxy_url, timeout=15000)
-                    await asyncio.sleep(2)
-                except:
-                    print(f"⚠️ Handshake fail: {proxy_url}")
-
                 playlist_lines.append(f"#EXTINF:-1,{title}")
                 playlist_lines.append(stream_url)
             else:
@@ -86,6 +78,23 @@ def write_playlist(filename, lines):
         f.write("\n".join(lines))
     print(f"💾 Saved to {filename}")
 
+def inject_proxy(raw_file, final_file, proxy_base_url):
+    with open(raw_file, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    with open(final_file, "w", encoding="utf-8") as f:
+        for line in lines:
+            if line.startswith("#"):
+                f.write(line)
+            else:
+                url = line.strip()
+                if url and url != "#":
+                    proxied_url = f"{proxy_base_url}?stream={url}"
+                    f.write(proxied_url + "\n")
+                else:
+                    f.write(line)
+    print(f"💾 Proxy injected playlist saved to {final_file}")
+
 def main():
     entries = fetch_schedule()
     if not entries:
@@ -94,7 +103,7 @@ def main():
 
     lines = asyncio.run(scrape_and_handshake(entries))
     write_playlist(RAW_PLAYLIST, lines)
-    write_playlist(FINAL_PLAYLIST, lines)
+    inject_proxy(RAW_PLAYLIST, FINAL_PLAYLIST, PROXY_BASE_URL)
 
 if __name__ == "__main__":
     main()
