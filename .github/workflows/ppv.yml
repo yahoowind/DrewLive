@@ -2,8 +2,8 @@ name: Update PPV Playlist
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 🔁 Every hour (UTC)
-  workflow_dispatch:       # ▶️ Manual trigger allowed
+    - cron: '0 * * * *'  # Every hour UTC
+  workflow_dispatch:
 
 jobs:
   update-ppv:
@@ -29,10 +29,18 @@ jobs:
       - name: ▶️ Run PPV scraper
         run: python ppv.py
 
+      - name: 🕵️‍♂️ Debug - list files after script
+        run: ls -lah
+
       - name: 📤 Commit updated playlist
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add ppv_live_streams.m3u8
-          git commit -m "🔁 Auto-update ppv_live_streams.m3u8" || echo "No changes to commit"
-          git push origin HEAD --force
+          if [ -f "PPVLand.m3u8" ]; then
+            git add PPVLand.m3u8
+            git commit -m "🔁 Auto-update PPVLand.m3u8" || echo "No changes to commit"
+            git push origin HEAD --force
+          else
+            echo "❌ PPVLand.m3u8 not found, skipping commit."
+            exit 1
+          fi
