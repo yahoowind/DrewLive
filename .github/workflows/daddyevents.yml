@@ -21,4 +21,4 @@ jobs:
       run: pip install requests
 
     - name: 📡 Run playlist fetcher
-      run: python daddyliveevents.py
+      run: python daddyevents.py
