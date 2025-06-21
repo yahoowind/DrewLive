@@ -1,44 +1,39 @@
-name: 🚀 PPV Scraper & Playlist Update
+name: 🕵️‍♂️ PPV Update Playlist
 
 on:
+  workflow_dispatch:       # Manual trigger
   schedule:
-    - cron: '*/30 * * * *'  # ⏰ Every 30 minutes
-  workflow_dispatch:       # 🔥 Manual trigger
+    - cron: '*/30 * * * *' # Every 30 minutes
 
 jobs:
   scrape-and-commit:
     runs-on: ubuntu-latest
-    env:
-      DEBUG: "pw:api"       # 🕵️‍♂️ Playwright debug logs
+
     steps:
-    - name: 📥 Checkout repo
-      uses: actions/checkout@v3
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
 
-    - name: 🐍 Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.11"
+      - name: 🐍 Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
 
-    - name: 📦 Install Python dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install playwright aiohttp
+      - name: ⚙️ Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright aiohttp
+          npx playwright install --with-deps
 
-    - name: 🎭 Install Playwright browsers & dependencies
-      uses: microsoft/playwright-github-action@v1
+      - name: 🚀 Run scraper script
+        run: python ppv.py
 
-    - name: 🏃 Run PPV scraper script
-      run: |
-        python ppv.py
-
-    - name: 🧹 Configure git user for commit
-      run: |
-        git config user.name "daddybot 🤖"
-        git config user.email "daddybot@example.com"
-
-    - name: 📝 Commit and push changes
-      run: |
-        git add PPVLand.m3u8
-        git commit -m "🤖 Auto update PPVLand.m3u8 [forced]"
-        git push
-      continue-on-error: true   # 🚨 Prevent fail if nothing to commit or push issues
+      - name: 📝 Commit and push updated playlist
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action 🤖"
+          git add PPVLand.m3u8
+          git diff --cached --quiet || (
+            git commit -m "🤖 Auto update PPVLand.m3u8 [forced]"
+            git push
+          )
+        shell: bash
