@@ -1,22 +1,24 @@
-name: ♻️ Generate PPVLand Playlist
+name: 🤖 PPVLand Auto Update 🚀
 
 on:
+  workflow_dispatch:        # 👐 Manual trigger
   schedule:
-    - cron: "*/30 * * * *"  # every 30 minutes
-  workflow_dispatch:        # manual trigger
+    - cron: '*/30 * * * *'  # ⏰ Every 30 minutes
 
 jobs:
-  build:
+  update-ppvland:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ⬇️ Checkout repository
-        uses: actions/checkout@v3
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 🧹 Full history for push
 
-      - name: 🐍 Set up Python
+      - name: 🐍 Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: 3.11
 
       - name: 📦 Install dependencies
         run: |
@@ -24,13 +26,57 @@ jobs:
           pip install playwright aiohttp
           playwright install firefox
 
-      - name: 🚀 Run script
+      - name: ▶️ Run PPVLand script
         run: python ppv.py
 
-      - name: 💾 Commit and push updated playlist
+      - name: ⚙️ Configure Git user
         run: |
-          git config --global user.name "daddybot"
-          git config --global user.email "bot@daddy.live"
+          git config user.name "daddybot 🤖"
+          git config user.email "daddybot@example.com"
+
+      - name: 💾 Commit & push changes
+        run: |
           git add PPVLand.m3u8
-          git commit -m "🤖 Auto update PPVLand.m3u8 [forced]" || echo "No changes to commit"
-          git push
+          git commit -m "🤖 Auto update PPVLand.m3u8 [forced]" || echo "✨ No changes to commit"
+          git push origin HEAD:main
+name: 🤖 PPVLand Auto Update 🚀
+
+on:
+  workflow_dispatch:        # 👐 Manual trigger
+  schedule:
+    - cron: '*/30 * * * *'  # ⏰ Every 30 minutes
+
+jobs:
+  update-ppvland:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 🧹 Full history for push
+
+      - name: 🐍 Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright aiohttp
+          playwright install firefox
+
+      - name: ▶️ Run PPVLand script
+        run: python ppv.py
+
+      - name: ⚙️ Configure Git user
+        run: |
+          git config user.name "daddybot 🤖"
+          git config user.email "daddybot@example.com"
+
+      - name: 💾 Commit & push changes
+        run: |
+          git add PPVLand.m3u8
+          git commit -m "🤖 Auto update PPVLand.m3u8 [forced]" || echo "✨ No changes to commit"
+          git push origin HEAD:main
