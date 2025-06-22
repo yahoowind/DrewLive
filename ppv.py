@@ -45,32 +45,18 @@ async def get_streams():
             return await resp.json()
 
 async def grab_m3u8_from_iframe(page, iframe_url):
-    found_stream = None
+    found_streams = set()
 
     def handle_response(response):
-        nonlocal found_stream
-        url = response.url
-
-        if found_stream:
-            return  # Already found
-
-        if ".m3u8" not in url.lower():
-            return  # Not a playlist URL
-
-        if response.status != 200:
-            return  # Bad response status
-
-        # Ignore URLs with ad/tracking keywords
-        blacklist = ["ads", "preview", "test", "promo", "tracker", "doubleclick"]
-        if any(word in url.lower() for word in blacklist):
-            return
-
-        # Ensure URL ends with .m3u8 (ignore query params)
-        if not url.lower().split("?")[0].endswith(".m3u8"):
-            return
-
-        found_stream = url
-        print(f"🎥 Found candidate stream URL: {url}")
+        url = response.url.lower()
+        # Filter: only .m3u8, status 200, no ads/tracking
+        if response.status == 200 and ".m3u8" in url:
+            blacklist = ["ads", "preview", "test", "promo", "tracker", "doubleclick"]
+            if any(word in url for word in blacklist):
+                return
+            # Must end with .m3u8 ignoring query params
+            if url.split("?")[0].endswith(".m3u8"):
+                found_streams.add(response.url)
 
     page.on("response", handle_response)
     print(f"🌐 Navigating to iframe: {iframe_url}")
@@ -83,17 +69,21 @@ async def grab_m3u8_from_iframe(page, iframe_url):
 
     print("🖱️ Aggressively clicking center to trigger play...")
     for i in range(10):
-        if found_stream:
-            break
         print(f"Click #{i+1}")
         await page.mouse.click(center_x, center_y)
         await asyncio.sleep(0.3)
 
-    print("⏳ Waiting 10 seconds for stream to load...")
-    await asyncio.sleep(10)
+    print("⏳ Waiting for network idle (up to 15 seconds)...")
+    try:
+        await page.wait_for_load_state("networkidle", timeout=15000)
+    except Exception:
+        # Timeout is okay, continue anyway
+        pass
 
     page.remove_listener("response", handle_response)
-    return {found_stream} if found_stream else set()
+
+    print(f"🎥 Found {len(found_streams)} .m3u8 URLs")
+    return found_streams
 
 def build_m3u(streams, url_map):
     lines = ['#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"']
