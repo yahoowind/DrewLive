@@ -1,4 +1,3 @@
-
 name: Auto Update Merged Clean IPTV Playlist
 
 on:
@@ -6,11 +5,11 @@ on:
     branches:
       - main
     paths:
-      - 'MergedCleanPlaylist.m3u8'
       - 'mergeclean.py'
+      - '.github/workflows/mergeclean.yml'
   schedule:
-    - cron: '0 * * * *'      # every hour at minute 0 UTC
-    - cron: '*/10 * * * *'   # every 10 minutes
+    - cron: '0 * * * *'      # Every hour at 0
+    - cron: '*/10 * * * *'   # Every 10 minutes
   workflow_dispatch:
 
 jobs:
@@ -18,40 +17,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # full history for rebasing
+          fetch-depth: 0
 
-      - name: Set up Python 3
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: Install Python dependencies
+      - name: 📦 Install dependencies
         run: pip install requests
 
-      - name: Set Git identity
+      - name: 🧠 Set Git identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Pull latest changes
+      - name: 🔃 Pull latest from main
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
           git pull origin main --rebase
 
-      - name: Run IPTV merging script
-        run: python iptv.py
+      - name: ▶️ Run merging script
+        run: python mergeclean.py
 
-      - name: Commit changes if needed
+      - name: 📂 Stage and commit changes if updated
         run: |
           git add MergedCleanPlaylist.m3u8
           git diff --cached --quiet || git commit -m "Auto-update merged clean IPTV playlist"
 
-      - name: Push changes
+      - name: 🚀 Push to main
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}Add commentMore actions
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: git push origin main
