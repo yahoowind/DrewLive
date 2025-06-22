@@ -1,5 +1,4 @@
 import asyncio
-import os
 from playwright.async_api import async_playwright
 import aiohttp
 
@@ -51,36 +50,48 @@ async def grab_m3u8_from_iframe(page, iframe_url):
     def handle_response(response):
         nonlocal found_stream
         url = response.url
-        # Debug log to track URLs seen in CI
-        if os.getenv("GITHUB_ACTIONS") == "true":
-            print(f"🛰️ Saw URL: {url} - Status: {response.status}")
-        if not found_stream and ".m3u8" in url and response.status == 200:
-            found_stream = url
-            print(f"🎥 First valid stream URL: {url}")
+        if found_stream:
+            return  # Already found one
+
+        if ".m3u8" not in url:
+            return  # Not interested
+
+        if response.status != 200:
+            return  # Bad response
+
+        content_type = response.headers.get("content-type", "").lower()
+        if "application/vnd.apple.mpegurl" not in content_type and "application/x-mpegurl" not in content_type:
+            return  # Not a playlist content type
+
+        # Accept URLs only from these domains — update if needed
+        allowed_domains = ["veplay.top", "cdn.veplay.top"]
+        if not any(domain in url for domain in allowed_domains):
+            return
+
+        # Skip URLs with blacklisted substrings
+        blacklist_substrings = ["ads", "preview", "test", "promo"]
+        if any(bad in url.lower() for bad in blacklist_substrings):
+            return
+
+        found_stream = url
+        print(f"🎥 First valid stream URL: {url}")
 
     page.on("response", handle_response)
-
     print(f"🌐 Navigating to iframe: {iframe_url}")
     await page.goto(iframe_url)
-    await page.wait_for_load_state('networkidle')  # Wait for full network idle
+    await asyncio.sleep(2)
 
-    # Try clicking inside iframe if possible
-    try:
-        frame = page.frame(url=iframe_url)
-        if frame:
-            await frame.click("body", position={"x": 50, "y": 50})
-    except Exception:
-        # Fallback to clicking center of page
-        viewport = page.viewport_size or {"width": 1280, "height": 720}
-        center_x = viewport["width"] / 2
-        center_y = viewport["height"] / 2
-        print("🖱️ Aggressive clicking center to trigger play...")
-        for i in range(10):
-            if found_stream:
-                break
-            print(f"Click #{i+1}")
-            await page.mouse.click(center_x, center_y)
-            await asyncio.sleep(0.2)
+    viewport = page.viewport_size or {"width": 1280, "height": 720}
+    center_x = viewport["width"] / 2
+    center_y = viewport["height"] / 2
+
+    print("🖱️ Aggressive clicking center to trigger play...")
+    for i in range(10):
+        if found_stream:
+            break
+        print(f"Click #{i+1}")
+        await page.mouse.click(center_x, center_y)
+        await asyncio.sleep(0.2)
 
     print("⏳ Waiting 10 seconds for stream to load...")
     await asyncio.sleep(10)
@@ -128,22 +139,15 @@ async def main():
         return
 
     async with async_playwright() as p:
-        # Use chromium in GitHub Actions for better compatibility
-        browser_type = p.chromium if os.getenv("GITHUB_ACTIONS") == "true" else p.firefox
-        browser = await browser_type.launch(headless=True)
+        browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
 
         url_map = {}
-        MAX_RETRIES = 3 if os.getenv("GITHUB_ACTIONS") == "true" else 1
-
         for s in streams:
-            for attempt in range(MAX_RETRIES):
-                print(f"\n🌐 Loading stream: {s['name']} (Attempt {attempt + 1})")
-                found_urls = await grab_m3u8_from_iframe(page, s["iframe"])
-                if found_urls:
-                    url_map[s["name"]] = found_urls
-                    break
+            print(f"\n🌐 Loading stream: {s['name']} ({s['category']})")
+            found_urls = await grab_m3u8_from_iframe(page, s["iframe"])
+            url_map[s["name"]] = found_urls
 
         await browser.close()
 
