@@ -5,21 +5,21 @@ Welcome to DrewLive — your 24/7 hub for cartoons, anime, action, and nostalgic
 
 📺 DREWLIVE LIVE STREAM (OWNCAST)  
 Your main portal for nonstop streaming — DrewLive runs day and night with curated shows and blocks.  
-• http://drewlive24.duckdns.org:8080/
+• [http://drewlive24.duckdns.org:8080/](http://drewlive24.duckdns.org:8080/)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📂 ALL PLAYLISTS IN ONE LINK  
 Simplify your setup with every playlist in one place.  
 🔗 All Playlists - DrewLive URL:  
-• https://tinyurl.com/drewall8  
+• [https://tinyurl.com/drewall8](https://tinyurl.com/drewall8)  
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🎮 KODI FORMAT PLAYLIST  
 Built for Kodi's PVR IPTV Simple Client with full header support — plug and play.  
 🔗 Kodi Playlist - DrewLive URL:  
-• https://tinyurl.com/drewallkodi8  
+• [https://tinyurl.com/drewallkodi8](https://tinyurl.com/drewallkodi8)  
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -31,7 +31,7 @@ These are simple text files with streaming URLs, named clearly like `Movie Title
 It’s perfect for people who want neat, playlists with clickable streams and nice titles, without messing with complicated playlists or apps.  
 
 📥 DrewLive VOD Folder:  
-• https://tinyurl.com/drewlive-vod24  
+• [https://tinyurl.com/drewlive-vod24](https://tinyurl.com/drewlive-vod24)  
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -46,7 +46,7 @@ Organized by channel groups for easy navigation.
 
 Updated automatically to keep your playlist fresh and safe.
 
-• https://tinyurl.com/MergedClean24  
+• [https://tinyurl.com/MergedClean24](https://tinyurl.com/MergedClean24)  
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -56,16 +56,16 @@ Stay synced with live guide data for your players. Pick the one that fits your n
 🔗 Merged EPG (Full Source)  
 ✔️ Full EPG data from all sources  
 ⚠️ Missing some world/regional info  
-• https://tinyurl.com/merged24-epg  
+• [https://tinyurl.com/merged24-epg](https://tinyurl.com/merged24-epg)  
 
 🔗 Merged EPG (No IPTV Crashes)  
 ✔️ Smooth on most players  
 ⚠️ May lack some local USA EPG  
-• https://tinyurl.com/merged2423-epg  
+• [https://tinyurl.com/merged2423-epg](https://tinyurl.com/merged2423-epg)  
 
 🔗 All Source EPG  
 ✔️ Most comprehensive option available  
-• https://tinyurl.com/vizo24  
+• [https://tinyurl.com/vizo24](https://tinyurl.com/vizo24)  
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -84,19 +84,19 @@ Stay synced with live guide data for your players. Pick the one that fits your n
 👥 Join the DrewLive Discord!  
 Get updates, ask questions, share setups, or just chill.  
 Click the badge above or use this invite:  
-• https://discord.gg/GScZh8D3rB  
+• [https://discord.gg/GScZh8D3rB](https://discord.gg/GScZh8D3rB)  
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🎮 RECOMMENDED IPTV PLAYERS  
 Use one of these for the cleanest DrewLive experience:  
 
-• Televizo – Lightweight and fast with advanced support  
-• Kodi – Full-featured with deep customization and STRM support  
-• TiviMate – Easy UI, strong playlist & EPG support  
-• IPTVNator – Open-source and modern  
-• UHF – Clean mobile player with native EPG  
-• Jellyfin – Great for library setups with built-in IPTV and VOD handling  
+• [Televizo](https://televizo.net/) – Lightweight and fast with advanced support  
+• [Kodi](https://kodi.tv/) – Full-featured with deep customization and STRM support  
+• [TiviMate](https://tivimate.com/) – Easy UI, strong playlist & EPG support  
+• [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Open-source and modern  
+• [UHF](https://www.uhfapp.com/) – Clean mobile player with native EPG  
+• [Jellyfin](https://jellyfin.org/) – Great for library setups with built-in IPTV and VOD handling  
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -120,4 +120,4 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR  
 OTHER DEALINGS IN THE SOFTWARE.  
 
-Learn more at: https://unlicense.org
+Learn more at: [https://unlicense.org](https://unlicense.org)
