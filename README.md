@@ -35,7 +35,7 @@ It’s perfect for people who want neat, playlists with clickable streams and ni
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✨ Clean IPTV Playlist  
+✨ CLEAN IPTV PLAYLIST  
 This is the clean version of the merged IPTV playlist created by the merge script.
 
 All channels tagged or containing keywords like NSFW, XXX, or Porn have been filtered out.
