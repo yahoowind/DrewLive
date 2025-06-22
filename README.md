@@ -35,6 +35,21 @@ It’s perfect for people who want neat, playlists with clickable streams and ni
 
 ━━━━━━━━━━━━━━━━━━━━
 
+Clean IPTV Playlist
+This is the clean version of the merged IPTV playlist created by the merge script.
+
+All channels tagged or containing keywords like NSFW, XXX, or Porn have been filtered out.
+
+Suitable for kids and family-friendly viewing.
+
+Organized by channel groups for easy navigation.
+
+Updated automatically to keep your playlist fresh and safe.
+
+• [https://tinyurl.com/MergedClean24](https://tinyurl.com/MergedClean24)  
+
+━━━━━━━━━━━━━━━━━━━━
+
 🗓️ EPG LINKS  
 Stay synced with live guide data for your players. Pick the one that fits your needs:  
 
