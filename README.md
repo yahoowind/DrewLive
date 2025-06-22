@@ -1,27 +1,27 @@
 🌟 DREWLIVE PLAYLIST & EPG LINKS 🌟  
 Welcome to DrewLive — your 24/7 hub for cartoons, anime, action, and nostalgic vibes. Below is everything you need to plug in, stay up to date, and never miss a beat.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━
 
 📺 DREWLIVE LIVE STREAM (OWNCAST)  
 Your main portal for nonstop streaming — DrewLive runs day and night with curated shows and blocks.  
 • [http://drewlive24.duckdns.org:8080/](http://drewlive24.duckdns.org:8080/)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━
 
 📂 ALL PLAYLISTS IN ONE LINK  
 Simplify your setup with every playlist in one place.  
 🔗 All Playlists - DrewLive URL:  
 • [https://tinyurl.com/drewall8](https://tinyurl.com/drewall8)  
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━
 
 🎮 KODI FORMAT PLAYLIST  
 Built for Kodi's PVR IPTV Simple Client with full header support — plug and play.  
 🔗 Kodi Playlist - DrewLive URL:  
 • [https://tinyurl.com/drewallkodi8](https://tinyurl.com/drewallkodi8)  
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━
 
 📂 DREWLIVE VOD STRM BUNDLE  
 Want to take DrewLive with you? Grab our `.strm` files!  
@@ -33,7 +33,7 @@ It’s perfect for people who want neat, playlists with clickable streams and ni
 📥 DrewLive VOD Folder:  
 • [https://tinyurl.com/drewlive-vod24](https://tinyurl.com/drewlive-vod24)  
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━
 
 ✨ CLEAN IPTV PLAYLIST  
 This is the clean version of the merged IPTV playlist created by the merge script.
@@ -48,7 +48,7 @@ Updated automatically to keep your playlist fresh and safe.
 
 • [https://tinyurl.com/MergedClean24](https://tinyurl.com/MergedClean24)  
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━
 
 🗓️ EPG LINKS  
 Stay synced with live guide data for your players. Pick the one that fits your needs:  
@@ -67,7 +67,7 @@ Stay synced with live guide data for your players. Pick the one that fits your n
 ✔️ Most comprehensive option available  
 • [https://tinyurl.com/vizo24](https://tinyurl.com/vizo24)  
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━
 
 📡 HOW TO USE EPG LINKS  
 1. Go into your IPTV player's guide settings  
@@ -77,7 +77,7 @@ Stay synced with live guide data for your players. Pick the one that fits your n
 
 ⚠️ Pro tip: Some apps need a restart for EPG to fully load  
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━
 
 [![Join DrewLive Discord](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)  
 
@@ -86,7 +86,7 @@ Get updates, ask questions, share setups, or just chill.
 Click the badge above or use this invite:  
 • [https://discord.gg/GScZh8D3rB](https://discord.gg/GScZh8D3rB)  
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━
 
 🎮 RECOMMENDED IPTV PLAYERS  
 Use one of these for the cleanest DrewLive experience:  
@@ -98,7 +98,7 @@ Use one of these for the cleanest DrewLive experience:
 • [UHF](https://www.uhfapp.com/) – Clean mobile player with native EPG  
 • [Jellyfin](https://jellyfin.org/) – Great for library setups with built-in IPTV and VOD handling  
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━
 
 🌐 UNLICENSED LICENSE  
 
