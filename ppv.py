@@ -50,48 +50,44 @@ async def grab_m3u8_from_iframe(page, iframe_url):
     def handle_response(response):
         nonlocal found_stream
         url = response.url
-        if found_stream:
-            return  # Already found one
 
-        if ".m3u8" not in url:
-            return  # Not interested
+        if found_stream:
+            return  # Already found
+
+        if ".m3u8" not in url.lower():
+            return  # Not a playlist URL
 
         if response.status != 200:
-            return  # Bad response
+            return  # Bad response status
 
-        content_type = response.headers.get("content-type", "").lower()
-        if "application/vnd.apple.mpegurl" not in content_type and "application/x-mpegurl" not in content_type:
-            return  # Not a playlist content type
-
-        # Accept URLs only from these domains — update if needed
-        allowed_domains = ["veplay.top", "cdn.veplay.top"]
-        if not any(domain in url for domain in allowed_domains):
+        # Ignore URLs with ad/tracking keywords
+        blacklist = ["ads", "preview", "test", "promo", "tracker", "doubleclick"]
+        if any(word in url.lower() for word in blacklist):
             return
 
-        # Skip URLs with blacklisted substrings
-        blacklist_substrings = ["ads", "preview", "test", "promo"]
-        if any(bad in url.lower() for bad in blacklist_substrings):
+        # Ensure URL ends with .m3u8 (ignore query params)
+        if not url.lower().split("?")[0].endswith(".m3u8"):
             return
 
         found_stream = url
-        print(f"🎥 First valid stream URL: {url}")
+        print(f"🎥 Found candidate stream URL: {url}")
 
     page.on("response", handle_response)
     print(f"🌐 Navigating to iframe: {iframe_url}")
     await page.goto(iframe_url)
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
 
     viewport = page.viewport_size or {"width": 1280, "height": 720}
     center_x = viewport["width"] / 2
     center_y = viewport["height"] / 2
 
-    print("🖱️ Aggressive clicking center to trigger play...")
+    print("🖱️ Aggressively clicking center to trigger play...")
     for i in range(10):
         if found_stream:
             break
         print(f"Click #{i+1}")
         await page.mouse.click(center_x, center_y)
-        await asyncio.sleep(0.2)
+        await asyncio.sleep(0.3)
 
     print("⏳ Waiting 10 seconds for stream to load...")
     await asyncio.sleep(10)
