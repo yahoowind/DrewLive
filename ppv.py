@@ -1,6 +1,7 @@
 import asyncio
 from playwright.async_api import async_playwright
 import aiohttp
+import os
 
 API_URL = "https://ppv.to/api/streams"
 
@@ -39,6 +40,9 @@ CATEGORY_TVG_IDS = {
     "Basketball": "Basketball.Dummy.us"
 }
 
+# Adjust wait time for GitHub Actions vs. local
+WAIT_TIME = 10 if os.getenv("GITHUB_ACTIONS") == "true" else 5
+
 async def get_streams():
     async with aiohttp.ClientSession() as session:
         async with session.get(API_URL) as resp:
@@ -71,8 +75,8 @@ async def grab_m3u8_from_iframe(page, iframe_url):
         await page.mouse.click(center_x, center_y)
         await asyncio.sleep(0.2)
 
-    print("⏳ Waiting 5 seconds for stream to load...")
-    await asyncio.sleep(5)
+    print(f"⏳ Waiting {WAIT_TIME} seconds for stream to load...")
+    await asyncio.sleep(WAIT_TIME)
 
     page.remove_listener("response", handle_response)
     return {found_stream} if found_stream else set()
@@ -117,7 +121,9 @@ async def main():
         return
 
     async with async_playwright() as p:
-        browser = await p.firefox.launch(headless=True)
+        # Use Chromium in CI for better compatibility
+        browser_type = p.chromium if os.getenv("GITHUB_ACTIONS") == "true" else p.firefox
+        browser = await browser_type.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
 
