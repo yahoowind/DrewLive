@@ -1,0 +1,44 @@
+name: Update Clean Kodi Playlist
+
+on:
+  push:
+    paths:
+      - mergedclean_kodi.py
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15 minutes
+  workflow_dispatch:
+
+jobs:
+  update-playlist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies (if any)
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run Kodi playlist generator
+        run: python3 mergedclean_kodi.py
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Commit and push changes
+        run: |
+          git add MergedPlaylistClean_Kodi.m3u8
+          git diff --cached --quiet || git commit -m "Auto-update Clean Kodi formatted playlist"
+          git pull --rebase
+          git push origin main
