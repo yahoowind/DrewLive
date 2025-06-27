@@ -809,7 +809,7 @@ http://fl2.moveonjoy.com/OWN/index.m3u8
 http://fl2.moveonjoy.com/OUTDOOR_CHANNEL/index.m3u8
 #EXTINF:-1  tvg-name="OUTER MAX" tvg-id="OuterMax.east.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-outermax-us.png?raw=true" group-title="MoveOnJoy" radio="false",OUTER MAX
 http://fl2.moveonjoy.com/OUTER_MAX/index.m3u8
-#EXTINF:-1  tvg-name="OUTSIDE TV" tvg-id="Outside.Television.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/outside-tv-us.png?raw=true" group-title="MoveOnJoy" radio="false",OUTSIDE TV
+#EXTINF:-1  tvg-name="OUTSIDE TV" tvg-id="plex.tv.Outside.plex" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/outside-tv-us.png?raw=true" group-title="MoveOnJoy" radio="false",OUTSIDE TV
 http://fl2.moveonjoy.com/OUTSIDE_TV/index.m3u8
 #EXTINF:-1  tvg-name="Ovation" tvg-id="Ovation.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ovation-us.png?raw=true" group-title="MoveOnJoy" radio="false",Ovation
 http://fl3.moveonjoy.com/Ovation/index.m3u8
