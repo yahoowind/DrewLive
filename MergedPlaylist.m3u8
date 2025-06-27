@@ -3648,7 +3648,7 @@ https://fl3.moveonjoy.com/MTV/index.m3u8
 https://fl3.moveonjoy.com/MTV_LIVE/index.m3u8
 #EXTINF:-1  tvg-name="MTV2" tvg-id="MTV.2.-.East.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-2-us.png?raw=true" group-title="MoveOnJoy" radio="false",MTV2
 *
-#EXTINF:-1  tvg-name="mtvU" tvg-id="MTV-U.(MTV-U).us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-u-us.png?raw=true" group-title="MoveOnJoy" radio="false",MTVU
+#EXTINF:-1  tvg-name="mtvU" tvg-id="Local.Programming.Dummy.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/mtv-u-us.png?raw=true" group-title="MoveOnJoy" radio="false",MTVU
 https://fl3.moveonjoy.com/MTV_U/index.m3u8
 #EXTINF:-1  tvg-name="MUCH" tvg-id="Much.Music.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/much-ca.png?raw=true" group-title="MoveOnJoy" radio="false",MUCH
 *
@@ -3702,7 +3702,7 @@ http://fl1.moveonjoy.com/NICKTOONS/index.m3u8
 https://fl3.moveonjoy.com/OUTDOOR_CHANNEL/index.m3u8
 #EXTINF:-1  tvg-name="OUTER MAX" tvg-id="OuterMax.east.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-outermax-us.png?raw=true" group-title="MoveOnJoy" radio="false",OUTER MAX
 https://fl3.moveonjoy.com/OUTER_MAX/index.m3u8
-#EXTINF:-1  tvg-name="OUTSIDE TV" tvg-id="Outside.Television.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/outside-tv-us.png?raw=true" group-title="MoveOnJoy" radio="false",OUTSIDE TV
+#EXTINF:-1  tvg-name="OUTSIDE TV" tvg-id="plex.tv.Outside.plex" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/outside-tv-us.png?raw=true" group-title="MoveOnJoy" radio="false",OUTSIDE TV
 https://fl3.moveonjoy.com/OUTSIDE_TV/index.m3u8
 #EXTINF:-1  tvg-name="Ovation" tvg-id="Ovation.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ovation-us.png?raw=true" group-title="MoveOnJoy" radio="false",Ovation
 http://fl3.moveonjoy.com/Ovation/index.m3u8
