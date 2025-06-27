@@ -3770,7 +3770,7 @@ http://fl2.moveonjoy.com/OWN/index.m3u8
 http://fl2.moveonjoy.com/OUTDOOR_CHANNEL/index.m3u8
 #EXTINF:-1  tvg-name="OUTER MAX" tvg-id="OuterMax.east.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cinemax-outermax-us.png?raw=true" group-title="MoveOnJoy" radio="false",OUTER MAX
 http://fl2.moveonjoy.com/OUTER_MAX/index.m3u8
-#EXTINF:-1  tvg-name="OUTSIDE TV" tvg-id="Outside.Television.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/outside-tv-us.png?raw=true" group-title="MoveOnJoy" radio="false",OUTSIDE TV
+#EXTINF:-1  tvg-name="OUTSIDE TV" tvg-id="plex.tv.Outside.plex" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/outside-tv-us.png?raw=true" group-title="MoveOnJoy" radio="false",OUTSIDE TV
 http://fl2.moveonjoy.com/OUTSIDE_TV/index.m3u8
 #EXTINF:-1  tvg-name="Ovation" tvg-id="Ovation.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ovation-us.png?raw=true" group-title="MoveOnJoy" radio="false",Ovation
 http://fl3.moveonjoy.com/Ovation/index.m3u8
@@ -3882,7 +3882,7 @@ http://fl2.moveonjoy.com/VICELAND/index.m3u8
 http://fl2.moveonjoy.com/W_NETWORK/index.m3u8
 #EXTINF:-1  tvg-name="Weather Channel" tvg-id="The.Weather.Channel.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s58812_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",Weather Channel
 http://fl2.moveonjoy.com/THE_WEATHER_CHANNEL/index.m3u8
-#EXTINF:-1  tvg-name="WeTV" tvg-id="WE.(Women&apos;s.Entertainment).-.Eastern.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/we-tv-us.png?raw=true" group-title="MoveOnJoy" radio="false",WeTV
+#EXTINF:-1  tvg-name="WeTV" tvg-id="we-womens-entertainment-eastern" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/we-tv-us.png?raw=true" group-title="MoveOnJoy" radio="false",WeTV
 http://fl1.moveonjoy.com/WE_TV/index.m3u8
 #EXTINF:-1  tvg-name="WGN" tvg-id="WGN.Chicago.(LOCAL).us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/wgn-america-us.png" group-title="MoveOnJoy" radio="false",WGN
 http://fl2.moveonjoy.com/WGN/index.m3u8
