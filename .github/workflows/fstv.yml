@@ -8,7 +8,7 @@ on:
       - 'fstv.py'
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'  # every hour on the hour
+    - cron: '0 * * * *'  # every hour at minute 0
 
 jobs:
   update-playlist:
@@ -31,7 +31,17 @@ jobs:
       - name: Run update playlist script
         run: python fstv.py
 
-      - name: Commit and push updated playlist
+      - name: Show updated file info
+        run: |
+          ls -l FSTV24.m3u8
+          head -20 FSTV24.m3u8
+
+      - name: Show git status and diff
+        run: |
+          git status
+          git diff FSTV24.m3u8 || echo "No diff detected"
+
+      - name: Commit and push updated playlist if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
