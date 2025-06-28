@@ -32,9 +32,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add FSTV_updated.m3u8
+          git add FSTV24.m3u8
           if ! git diff --cached --quiet; then
-            git commit -m "Update FSTV_updated.m3u8 with latest URLs"
+            git commit -m "Update FSTV24.m3u8 with latest URLs"
             git push
           else
             echo "No changes to commit"
