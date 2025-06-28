@@ -6,6 +6,7 @@ on:
       - 'FSTV_PAGE_SOURCE.html'
       - 'FSTV.m3u8'
       - 'fstv.py'
+  workflow_dispatch:
 
 jobs:
   update-playlist:
