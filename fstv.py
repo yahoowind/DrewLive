@@ -1,6 +1,15 @@
 from bs4 import BeautifulSoup
 import asyncio
+import json
 from playwright.async_api import async_playwright
+
+def load_name_mapping(filename="FSTV-mapping.json"):
+    try:
+        with open(filename, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"⚠️ Could not load mapping file: {e}")
+        return {}
 
 async def fetch_fstv_html():
     async with async_playwright() as p:
@@ -16,7 +25,7 @@ async def fetch_fstv_html():
         await browser.close()
         return html
 
-def build_playlist_from_html(html):
+def build_playlist_from_html(html, name_mapping):
     soup = BeautifulSoup(html, "html.parser")
     channels = []
 
@@ -26,7 +35,9 @@ def build_playlist_from_html(html):
         name = div.get("title")
 
         if url and name:
-            channels.append({"url": url, "logo": logo, "name": name})
+            # Replace scraped name with mapped name if exists
+            mapped_name = name_mapping.get(name, name)
+            channels.append({"url": url, "logo": logo, "name": mapped_name})
 
     playlist_lines = ['#EXTM3U\n']
     for ch in channels:
@@ -38,8 +49,9 @@ def build_playlist_from_html(html):
     return playlist_lines
 
 async def main():
+    name_mapping = load_name_mapping()
     html = await fetch_fstv_html()
-    playlist_lines = build_playlist_from_html(html)
+    playlist_lines = build_playlist_from_html(html, name_mapping)
     with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
         f.writelines(playlist_lines)
     print(f"✅ Generated playlist with {len(playlist_lines)//2} channels in FSTV24.m3u8")
