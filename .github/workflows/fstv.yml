@@ -7,7 +7,7 @@ on:
       - 'fstv.py'
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'  # every hour at minute 0
+    - cron: '0 * * * *'  # Every hour at minute 0
 
 jobs:
   update-playlist:
@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Needed for full git history to allow rebase
 
       - name: Set up Python 3.x
         uses: actions/setup-python@v4
@@ -39,19 +41,17 @@ jobs:
           ls -l FSTV24.m3u8
           head -20 FSTV24.m3u8
 
-      - name: Show git status and diff
-        run: |
-          git status
-          git diff FSTV24.m3u8 || echo "No diff detected"
-
       - name: Commit and push updated playlist if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git rebase origin/main
+
           git add FSTV24.m3u8
           if ! git diff --cached --quiet; then
             git commit -m "Update FSTV24.m3u8 with latest URLs"
-            git push
+            git push origin main
           else
             echo "No changes to commit"
-          fi
