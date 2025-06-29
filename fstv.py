@@ -34,10 +34,16 @@ def build_playlist_from_html(html, name_mapping):
         logo = div.get("data-logo")
         name = div.get("title")
 
-        if url and name:
-            # Replace scraped name with mapped name if exists
-            mapped_name = name_mapping.get(name, name)
-            channels.append({"url": url, "logo": logo, "name": mapped_name})
+        # Debug print for each channel scraped
+        print(f"DEBUG: name='{name}', logo='{logo}', url='{url}'")
+
+        if not url or not logo or not name:
+            print(f"⚠️ Skipping channel due to missing data: name={name}, logo={logo}, url={url}")
+            continue
+
+        # Replace scraped name with mapped name if exists
+        mapped_name = name_mapping.get(name, name)
+        channels.append({"url": url, "logo": logo, "name": mapped_name})
 
     playlist_lines = ['#EXTM3U\n']
     for ch in channels:
