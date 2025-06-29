@@ -25,12 +25,18 @@ def update_playlist_from_html():
 
     soup = BeautifulSoup(html, "html.parser")
 
-    # Grab the stream URLs
-    html_urls = []
+    # Grab channel data: title, logo, url
+    channel_data = []
     for div in soup.find_all("div", class_="item-channel"):
         url = div.get("data-link")
+        logo = div.get("data-logo", "")
+        title = div.get("title", "Untitled Channel")
         if url:
-            html_urls.append(url)
+            channel_data.append({
+                "url": url,
+                "logo": logo,
+                "title": title
+            })
 
     with open("FSTV.m3u8", "r", encoding="utf-8") as f:
         playlist_lines = f.readlines()
@@ -39,9 +45,12 @@ def update_playlist_from_html():
     url_index = 0
 
     for line in playlist_lines:
-        if line.startswith("http") or line.startswith("https"):
-            if url_index < len(html_urls):
-                updated_lines.append(html_urls[url_index] + "\n")
+        if line.startswith("#EXTINF") and url_index < len(channel_data):
+            extinf = f'#EXTINF:-1 tvg-logo="{channel_data[url_index]["logo"]}" group-title="FSTV", {channel_data[url_index]["title"]}\n'
+            updated_lines.append(extinf)
+        elif line.startswith("http") or line.startswith("https"):
+            if url_index < len(channel_data):
+                updated_lines.append(channel_data[url_index]["url"] + "\n")
                 url_index += 1
             else:
                 updated_lines.append(line)
@@ -51,7 +60,7 @@ def update_playlist_from_html():
     with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
         f.writelines(updated_lines)
 
-    print(f"🎯 Updated {url_index} URLs in FSTV24.m3u8")
+    print(f"🎯 Updated {url_index} streams with logos and titles in FSTV24.m3u8")
 
 async def main():
     await fetch_fstv_html()
