@@ -3,6 +3,7 @@ import asyncio
 import json
 from playwright.async_api import async_playwright
 
+# 🔁 Load name mappings
 def load_name_mapping(filename="FSTV-mapping.json"):
     try:
         with open(filename, "r", encoding="utf-8") as f:
@@ -11,6 +12,7 @@ def load_name_mapping(filename="FSTV-mapping.json"):
         print(f"⚠️ Could not load mapping file: {e}")
         return {}
 
+# 🌐 Scrape HTML from site
 async def fetch_fstv_html():
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
@@ -25,6 +27,7 @@ async def fetch_fstv_html():
         await browser.close()
         return html
 
+# 🛠️ Build playlist and apply mapping
 def build_playlist_from_html(html, name_mapping):
     soup = BeautifulSoup(html, "html.parser")
     channels = []
@@ -32,18 +35,21 @@ def build_playlist_from_html(html, name_mapping):
     for div in soup.find_all("div", class_="item-channel"):
         url = div.get("data-link")
         logo = div.get("data-logo")
-        name = div.get("title")
+        original_name = div.get("title")
 
-        # Debug print for each channel scraped
-        print(f"DEBUG: name='{name}', logo='{logo}', url='{url}'")
-
-        if not url or not logo or not name:
-            print(f"⚠️ Skipping channel due to missing data: name={name}, logo={logo}, url={url}")
+        if not url or not logo or not original_name:
+            print(f"⚠️ Skipping channel due to missing data: {original_name}")
             continue
 
-        # Replace scraped name with mapped name if exists
-        mapped_name = name_mapping.get(name, name)
-        channels.append({"url": url, "logo": logo, "name": mapped_name})
+        # 👇 Normalize key for mapping (case-insensitive, strip whitespace)
+        normalized_key = original_name.strip().lower()
+        mapped_name = name_mapping.get(normalized_key, original_name)
+
+        channels.append({
+            "url": url.strip(),
+            "logo": logo.strip(),
+            "name": mapped_name.strip()
+        })
 
     playlist_lines = ['#EXTM3U\n']
     for ch in channels:
@@ -54,6 +60,7 @@ def build_playlist_from_html(html, name_mapping):
 
     return playlist_lines
 
+# 🚀 Main flow
 async def main():
     name_mapping = load_name_mapping()
     html = await fetch_fstv_html()
