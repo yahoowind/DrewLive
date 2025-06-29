@@ -1,70 +1,64 @@
-import asyncio
-from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
+import re
 
-async def fetch_fstv_html():
-    async with async_playwright() as p:
-        browser = await p.firefox.launch(headless=True)
-        context = await browser.new_context()
-        page = await context.new_page()
-
-        print("🌐 Visiting FSTV...")
-        await page.goto("https://fstv.us/live-tv.html?timezone=America%2FDenver", timeout=60000)
-        await page.wait_for_load_state("networkidle")
-
-        html = await page.content()
-        with open("FSTV_PAGE_SOURCE.html", "w", encoding="utf-8") as f:
-            f.write(html)
-        print("✅ Saved full page source to FSTV_PAGE_SOURCE.html")
-
-        await browser.close()
-
-def update_playlist_from_html():
+def update_playlist_with_logos_and_urls():
     with open("FSTV_PAGE_SOURCE.html", "r", encoding="utf-8") as f:
         html = f.read()
 
     soup = BeautifulSoup(html, "html.parser")
 
-    # Grab channel data: title, logo, url
-    channel_data = []
+    # Extract info per channel div
+    channels = []
     for div in soup.find_all("div", class_="item-channel"):
         url = div.get("data-link")
-        logo = div.get("data-logo", "")
-        title = div.get("title", "Untitled Channel")
-        if url:
-            channel_data.append({
-                "url": url,
-                "logo": logo,
-                "title": title
-            })
+        logo = div.get("data-logo")
+        name = div.get("title")  # channel name from html (optional)
+        channels.append({"url": url, "logo": logo, "name": name})
 
     with open("FSTV.m3u8", "r", encoding="utf-8") as f:
-        playlist_lines = f.readlines()
+        lines = f.readlines()
 
     updated_lines = []
-    url_index = 0
+    channel_index = 0
 
-    for line in playlist_lines:
-        if line.startswith("#EXTINF") and url_index < len(channel_data):
-            extinf = f'#EXTINF:-1 tvg-logo="{channel_data[url_index]["logo"]}" group-title="FSTV", {channel_data[url_index]["title"]}\n'
-            updated_lines.append(extinf)
-        elif line.startswith("http") or line.startswith("https"):
-            if url_index < len(channel_data):
-                updated_lines.append(channel_data[url_index]["url"] + "\n")
-                url_index += 1
+    extinf_pattern = re.compile(r'(#EXTINF:[^\n]*)(?:tvg-logo="[^"]*")?([^\n]*),(.+)')
+    # This pattern matches #EXTINF lines and captures parts before tvg-logo, any trailing text, and channel name.
+
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+
+        if line.startswith("#EXTINF"):
+            match = extinf_pattern.match(line)
+            if match and channel_index < len(channels):
+                prefix = match.group(1)  # e.g. '#EXTINF:-1 '
+                suffix = match.group(2)  # any other attributes besides tvg-logo
+                channel_name = match.group(3).strip()
+
+                # Get new logo url
+                new_logo = channels[channel_index]["logo"]
+
+                # Build new EXTINF line preserving tvg-id and other attrs, only replacing tvg-logo
+                new_extinf = f'{prefix}tvg-logo="{new_logo}"{suffix},{channel_name}\n'
+                updated_lines.append(new_extinf)
+
+                # Next line should be URL, replace with new one from HTML
+                i += 1
+                new_url = channels[channel_index]["url"] + "\n"
+                updated_lines.append(new_url)
+
+                channel_index += 1
             else:
+                # No match or no channel left, just copy line and next line
                 updated_lines.append(line)
+                i += 1
+                if i < len(lines):
+                    updated_lines.append(lines[i])
         else:
             updated_lines.append(line)
+        i += 1
 
     with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
         f.writelines(updated_lines)
 
-    print(f"🎯 Updated {url_index} streams with logos and titles in FSTV24.m3u8")
-
-async def main():
-    await fetch_fstv_html()
-    update_playlist_from_html()
-
-if __name__ == "__main__":
-    asyncio.run(main())
+    print(f"🎯 Updated {channel_index} channels in FSTV24.m3u8")
