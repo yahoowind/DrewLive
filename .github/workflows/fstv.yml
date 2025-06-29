@@ -16,26 +16,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Needed for full history to allow rebase
+          fetch-depth: 0
 
-      - name: Set up Python 3.x
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
+          pip install --upgrade pip
           pip install beautifulsoup4 playwright
 
-      - name: Install Playwright browsers
+      - name: Install Playwright Browsers
         run: |
           python -m playwright install --with-deps
 
-      - name: Run update playlist script
+      - name: Run update script
         run: python fstv.py
 
-      - name: Show updated file info
+      - name: Show file info
         run: |
           ls -l FSTV24.m3u8
           head -20 FSTV24.m3u8
@@ -45,18 +45,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Stash local changes to avoid rebase conflict
           git stash --include-untracked
-
-          # Rebase onto latest remote changes
           git fetch origin main
           git rebase origin/main
-
-          # Reapply local changes after rebase
           git stash pop || echo "Nothing to pop"
 
-          git add FSTV24.m3u8
-          if ! git diff --cached --quiet; then
+          if ! git diff FSTV24.m3u8 --quiet; then
+            git add FSTV24.m3u8
             git commit -m "Update FSTV24.m3u8 with latest URLs"
             git push origin main
           else
