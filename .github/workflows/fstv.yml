@@ -3,7 +3,6 @@ name: Update FSTV Playlist
 on:
   push:
     paths:
-      - 'FSTV_PAGE_SOURCE.html'
       - 'fstv.py'
   workflow_dispatch:
   schedule:
