@@ -3,7 +3,6 @@ import asyncio
 from playwright.async_api import async_playwright
 import re
 
-# Directly embedded mapping (corrected and structured)
 CHANNEL_MAPPINGS = {
     "usanetwork": {"name": "USA Network", "tv-id": "USA.Network.-.East.Feed.us"},
     "VE-usa-cbssport (sv3)": {"name": "CBS Sports", "tv-id": "CBS.Sports.Network.USA.us"},
@@ -146,16 +145,22 @@ def build_playlist_from_html(html, channel_mappings):
     playlist_lines = ['#EXTM3U\n']
 
     for div in soup.find_all("div", class_="item-channel"):
-        raw_key = div.get("id", "").strip()
-        logo = div.get("data-logo", "").strip()
-        url = div.get("data-link", "").strip()
+        url = div.get("data-link")
+        logo = div.get("data-logo")
+        raw_key = div.get("id")  # Use the raw key from the HTML div id
 
-        if not raw_key or not url:
+        if not (url and raw_key):
             continue
 
-        entry = channel_mappings.get(raw_key)
-        tvg_id = entry["tv-id"] if entry else ""
-        display_name = entry["name"] if entry else raw_key  # fall back to raw name if missing
+        # Lookup mapping by raw key from HTML directly
+        channel_info = channel_mappings.get(raw_key.lower())
+        if channel_info:
+            tvg_id = channel_info.get("tv-id", "")
+            display_name = channel_info.get("name", raw_key)
+        else:
+            # Fallback if no mapping found
+            tvg_id = ""
+            display_name = raw_key
 
         playlist_lines.append(
             f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="FSTV",{display_name}\n'
