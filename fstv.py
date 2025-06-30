@@ -145,8 +145,8 @@ def build_playlist_from_html(html, channel_mappings):
     soup = BeautifulSoup(html, "html.parser")
     playlist_lines = ['#EXTM3U\n']
 
-    # Build reverse lookup: pretty name (lower) -> raw key
-    pretty_to_raw = {v["name"].lower(): k for k, v in channel_mappings.items()}
+    # Reverse map: pretty name (lower) -> raw key
+    pretty_name_to_key = {v["name"].lower(): k for k, v in channel_mappings.items()}
 
     for div in soup.find_all("div", class_="item-channel"):
         url = div.get("data-link")
@@ -156,12 +156,14 @@ def build_playlist_from_html(html, channel_mappings):
         if not (url and scraped_name):
             continue
 
-        key = pretty_to_raw.get(scraped_name.lower())
-        if key and key in channel_mappings:
-            tvg_id = channel_mappings[key].get("tv-id", "")
-            display_name = channel_mappings[key]["name"]
+        lookup_key = scraped_name.strip().lower()
+        raw_key = pretty_name_to_key.get(lookup_key)
+
+        if raw_key:
+            tvg_id = channel_mappings[raw_key].get("tv-id", "")
+            display_name = channel_mappings[raw_key]["name"]
         else:
-            # Fallback if no mapping found
+            # fallback if no match found
             tvg_id = ""
             display_name = scraped_name.strip()
 
