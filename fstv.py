@@ -2,12 +2,22 @@ from bs4 import BeautifulSoup
 import asyncio
 import json
 from playwright.async_api import async_playwright
+import re
 
 def load_name_mappings(json_path="FSTV_mapping.json"):
+    # Load the JSON mapping, keys as-is (case sensitive)
     with open(json_path, "r", encoding="utf-8") as f:
         mappings = json.load(f)
-    # Create a fast-lookup dictionary, normalize keys
-    return {entry["old"].strip().lower(): entry["new"].strip() for entry in mappings}
+    # Normalize mapping keys to lowercase and strip spaces for matching
+    normalized_map = {}
+    for k, v in mappings.items():
+        norm_key = re.sub(r'\s+', ' ', k.strip().lower())
+        normalized_map[norm_key] = v.strip()
+    return normalized_map
+
+def normalize_channel_name(name: str) -> str:
+    # Normalize channel name scraped from HTML the same way
+    return re.sub(r'\s+', ' ', name.strip().lower())
 
 async def fetch_fstv_html():
     async with async_playwright() as p:
@@ -35,7 +45,7 @@ def build_playlist_from_html(html, name_map):
         if not (url and name):
             continue
 
-        normalized_name = name.strip().lower()
+        normalized_name = normalize_channel_name(name)
         new_name = name_map.get(normalized_name, name.strip())  # fallback to original
 
         channels.append({"url": url, "logo": logo, "name": new_name})
