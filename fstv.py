@@ -127,13 +127,6 @@ CHANNEL_MAPPINGS = {
 def normalize_channel_name(name: str) -> str:
     return re.sub(r'\s+', ' ', name.strip().lower())
 
-def load_name_mappings():
-    normalized_map = {}
-    for k, v in CHANNEL_MAPPINGS.items():
-        norm_key = re.sub(r'\s+', ' ', k.strip().lower())
-        normalized_map[norm_key] = v["name"].strip()
-    return normalized_map
-
 async def fetch_fstv_html():
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
@@ -148,44 +141,40 @@ async def fetch_fstv_html():
         await browser.close()
         return html
 
-def build_playlist_from_html(html, name_map):
+def build_playlist_from_html(html, channel_mappings):
     soup = BeautifulSoup(html, "html.parser")
-    channels = []
+    playlist_lines = ['#EXTM3U\n']
+
+    # Build reverse lookup: pretty name (lower) -> raw key
+    pretty_to_raw = {v["name"].lower(): k for k, v in channel_mappings.items()}
 
     for div in soup.find_all("div", class_="item-channel"):
         url = div.get("data-link")
         logo = div.get("data-logo")
-        name = div.get("title")
+        scraped_name = div.get("title")
 
-        if not (url and name):
+        if not (url and scraped_name):
             continue
 
-        normalized_name = normalize_channel_name(name)
-
-        # Get display name from name_map or fallback
-        new_name = name_map.get(normalized_name, name.strip())
-
-        # Get tv-id from CHANNEL_MAPPINGS (using normalized key)
-        tv_id = CHANNEL_MAPPINGS.get(normalized_name, {}).get("tv-id", "")
-
-        channels.append({"url": url, "logo": logo, "name": new_name, "tv_id": tv_id})
-
-    playlist_lines = ['#EXTM3U\n']
-    for ch in channels:
-        # Add tvg-id only if present
-        tvg_id_attr = f' tvg-id="{ch["tv_id"]}"' if ch["tv_id"] else ""
+        key = pretty_to_raw.get(scraped_name.lower())
+        if key and key in channel_mappings:
+            tvg_id = channel_mappings[key].get("tv-id", "")
+            display_name = channel_mappings[key]["name"]
+        else:
+            # Fallback if no mapping found
+            tvg_id = ""
+            display_name = scraped_name.strip()
 
         playlist_lines.append(
-            f'#EXTINF:-1{tvg_id_attr} tvg-logo="{ch["logo"]}" group-title="FSTV",{ch["name"]}\n'
+            f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="FSTV",{display_name}\n'
         )
-        playlist_lines.append(ch["url"] + "\n")
+        playlist_lines.append(url + "\n")
 
     return playlist_lines
-    
+
 async def main():
-    name_map = load_name_mappings()
     html = await fetch_fstv_html()
-    playlist_lines = build_playlist_from_html(html, name_map)
+    playlist_lines = build_playlist_from_html(html, CHANNEL_MAPPINGS)
 
     with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
         f.writelines(playlist_lines)
