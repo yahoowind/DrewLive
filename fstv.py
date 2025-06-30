@@ -161,19 +161,27 @@ def build_playlist_from_html(html, name_map):
             continue
 
         normalized_name = normalize_channel_name(name)
+
+        # Get display name from name_map or fallback
         new_name = name_map.get(normalized_name, name.strip())
 
-        channels.append({"url": url, "logo": logo, "name": new_name})
+        # Get tv-id from CHANNEL_MAPPINGS (using normalized key)
+        tv_id = CHANNEL_MAPPINGS.get(normalized_name, {}).get("tv-id", "")
+
+        channels.append({"url": url, "logo": logo, "name": new_name, "tv_id": tv_id})
 
     playlist_lines = ['#EXTM3U\n']
     for ch in channels:
+        # Add tvg-id only if present
+        tvg_id_attr = f' tvg-id="{ch["tv_id"]}"' if ch["tv_id"] else ""
+
         playlist_lines.append(
-            f'#EXTINF:-1 tvg-logo="{ch["logo"]}" group-title="FSTV",{ch["name"]}\n'
+            f'#EXTINF:-1{tvg_id_attr} tvg-logo="{ch["logo"]}" group-title="FSTV",{ch["name"]}\n'
         )
         playlist_lines.append(ch["url"] + "\n")
 
     return playlist_lines
-
+    
 async def main():
     name_map = load_name_mappings()
     html = await fetch_fstv_html()
