@@ -123,6 +123,9 @@ CHANNEL_MAPPINGS = {
     "VE-TSN 5": {"name": "TSN 5", "tv-id": "TSN5.ca"},
 }
 
+# Optional mapping from normalized old names to "pretty" display names
+NAME_MAP = {k: v["name"] for k, v in CHANNEL_MAPPINGS.items()}
+
 def normalize_channel_name(name: str) -> str:
     return re.sub(r'\s+', ' ', name.strip().lower())
 
@@ -140,38 +143,38 @@ async def fetch_fstv_html():
         await browser.close()
         return html
 
-def build_playlist_from_html(html, channel_mappings):
+def build_playlist_from_html(html, name_map, channel_mappings):
     soup = BeautifulSoup(html, "html.parser")
-    playlist_lines = ['#EXTM3U\n']
+    channels = []
 
     for div in soup.find_all("div", class_="item-channel"):
         url = div.get("data-link")
         logo = div.get("data-logo")
-        raw_key = div.get("id")  # Use the raw key from the HTML div id
+        name = div.get("title")
 
-        if not (url and raw_key):
+        if not (url and name):
             continue
 
-        # Lookup mapping by raw key from HTML directly
-        channel_info = channel_mappings.get(raw_key.lower())
-        if channel_info:
-            tvg_id = channel_info.get("tv-id", "")
-            display_name = channel_info.get("name", raw_key)
-        else:
-            # Fallback if no mapping found
-            tvg_id = ""
-            display_name = raw_key
+        normalized_name = normalize_channel_name(name)
 
+        new_name = name_map.get(normalized_name, name.strip())
+        tv_id = channel_mappings.get(normalized_name, {}).get("tv-id", "")
+
+        channels.append({"url": url, "logo": logo, "name": new_name, "tv_id": tv_id})
+
+    playlist_lines = ['#EXTM3U\n']
+    for ch in channels:
+        tvg_id_attr = f' tvg-id="{ch["tv_id"]}"' if ch["tv_id"] else ""
         playlist_lines.append(
-            f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="FSTV",{display_name}\n'
+            f'#EXTINF:-1{tvg_id_attr} tvg-logo="{ch["logo"]}" group-title="FSTV",{ch["name"]}\n'
         )
-        playlist_lines.append(url + "\n")
+        playlist_lines.append(ch["url"] + "\n")
 
     return playlist_lines
 
 async def main():
     html = await fetch_fstv_html()
-    playlist_lines = build_playlist_from_html(html, CHANNEL_MAPPINGS)
+    playlist_lines = build_playlist_from_html(html, NAME_MAP, CHANNEL_MAPPINGS)
 
     with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
         f.writelines(playlist_lines)
