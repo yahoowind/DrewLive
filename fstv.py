@@ -59,7 +59,7 @@ CHANNEL_MAPPINGS = {
     "VE-USA - Beinsport (sv3-CDN)": {"name": "BeIN Sports USA", "tv-id": "beIN.Sport.USA.us"},
     "VE-usa-Bein Espanol Xtra": {"name": "BeIN Sports Español Xtra", "tv-id": ""},
     "VE-usa-beinsport espanol": {"name": "BeIN Sports Español", "tv-id": "beIN.Sports.HDTV.(Spanish).(beINHD).us"},
-    "VE-usa-beinsport xtra (sv3)": {"name": "BeIN Sports Xtra USA", "tv-id": "beIN.Sports.Xtra.(KSKJ-CD).Los.Angeles,.CA.us"},
+    "VE-usa-beinsport xtra (sv3)": {"name": "BeIN Sports Xtra USA", "tv-id": "beIN.Sports.Xtra.(KSKJ-    CD).Los.Angeles,.CA.us"},
     "VE-usa-fubosport (sv3)": {"name": "Fubo Sports USA", "tv-id": "Fubo.Sports.us"},
     "VE-ION USA": {"name": "ION USA", "tv-id": "ION..-.Eastern.Feed.us"},
     "VE-usa-foxsoccerplus": {"name": "Fox Soccer Plus", "tv-id": "FOX.Soccer.Plus.us"},
@@ -123,11 +123,14 @@ CHANNEL_MAPPINGS = {
     "VE-TSN 5": {"name": "TSN 5", "tv-id": "TSN5.ca"},
 }
 
-# Optional mapping from normalized old names to "pretty" display names
-NAME_MAP = {k: v["name"] for k, v in CHANNEL_MAPPINGS.items()}
-
 def normalize_channel_name(name: str) -> str:
     return re.sub(r'\s+', ' ', name.strip().lower())
+
+def prettify_name(raw: str) -> str:
+    raw = re.sub(r'VE[-\s]*', '', raw, flags=re.IGNORECASE)
+    raw = re.sub(r'\([^)]*\)', '', raw)  # remove things in ()
+    raw = re.sub(r'[^a-zA-Z0-9\s]', '', raw)  # remove most non-alphanum
+    return re.sub(r'\s+', ' ', raw.strip()).title()
 
 async def fetch_fstv_html():
     async with async_playwright() as p:
@@ -135,7 +138,7 @@ async def fetch_fstv_html():
         context = await browser.new_context()
         page = await context.new_page()
 
-        print("\U0001f310 Visiting FSTV...")
+        print("🌐 Visiting FSTV...")
         await page.goto("https://fstv.us/live-tv.html?timezone=America%2FDenver", timeout=60000)
         await page.wait_for_load_state("networkidle")
 
@@ -143,7 +146,7 @@ async def fetch_fstv_html():
         await browser.close()
         return html
 
-def build_playlist_from_html(html, name_map, channel_mappings):
+def build_playlist_from_html(html, channel_mappings):
     soup = BeautifulSoup(html, "html.parser")
     channels = []
 
@@ -156,9 +159,19 @@ def build_playlist_from_html(html, name_map, channel_mappings):
             continue
 
         normalized_name = normalize_channel_name(name)
+        matched_key = None
 
-        new_name = name_map.get(normalized_name, name.strip())
-        tv_id = channel_mappings.get(normalized_name, {}).get("tv-id", "")
+        for raw_key in channel_mappings:
+            if normalize_channel_name(raw_key) == normalized_name:
+                matched_key = raw_key
+                break
+
+        if matched_key:
+            new_name = channel_mappings[matched_key]["name"]
+            tv_id = channel_mappings[matched_key]["tv-id"]
+        else:
+            new_name = prettify_name(name)
+            tv_id = ""
 
         channels.append({"url": url, "logo": logo, "name": new_name, "tv_id": tv_id})
 
@@ -174,12 +187,12 @@ def build_playlist_from_html(html, name_map, channel_mappings):
 
 async def main():
     html = await fetch_fstv_html()
-    playlist_lines = build_playlist_from_html(html, NAME_MAP, CHANNEL_MAPPINGS)
+    playlist_lines = build_playlist_from_html(html, CHANNEL_MAPPINGS)
 
     with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
         f.writelines(playlist_lines)
 
-    print(f"\u2705 Generated playlist with {len(playlist_lines)//2} channels in FSTV24.m3u8")
+    print(f"✅ Generated playlist with {len(playlist_lines)//2} channels in FSTV24.m3u8")
 
 if __name__ == "__main__":
     asyncio.run(main())
