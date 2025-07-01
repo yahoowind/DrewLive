@@ -85,7 +85,7 @@ CHANNEL_MAPPINGS = {
     "VE-cdn - us-accnetwork": {"name": "ACC Network", "tv-id": "ACC.Network.us"},
     "VE-us-foxnews": {"name": "Fox News", "tv-id": "Fox.News.us"},
     "VE-cdn - us-wfn": {"name": "World Fishing Network", "tv-id": "World.Fishing.Network.(US).(WFN).us"},
-    "VE-us-fightnetwork": {"name": "The Fight Network", "tv-id": "The.Fight.Network.(United.States).(TFN).us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fight-network-us.png?raw=true}",
+    "VE-us-fightnetwork": {"name": "The Fight Network", "tv-id": "The.Fight.Network.(United.States).(TFN).us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fight-network-us.png?raw=true"},
     "VE-cdn - us-redzone": {"name": "NFL RedZone", "tv-id": "NFL.RedZone.us"},
     "ve-usa-trutv": {"name": "truTV", "tv-id": "truTV.USA.-.Eastern.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/tru-tv-us.png?raw=true"},
     "VE-TNT USA": {"name": "TNT", "tv-id": "TNT.-.Eastern.Feed.us"},
