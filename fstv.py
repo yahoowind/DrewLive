@@ -77,7 +77,7 @@ CHANNEL_MAPPINGS = {
     "VE-cdn -us-nhlnetwork": {"name": "NHL Network", "tv-id": "NHL.Network.USA.us"},
     "VE-us-willowhd": {"name": "Willow Cricket HD", "tv-id": "Willow.Cricket.HDTV.(WILLOWHD).us"},
     "VE-us-willowxtra": {"name": "Willow Xtra", "tv-id": "Willow.Xtra.us"},
-    "VE-us-nbatv": {"name": "NBA TV", "tv-id": "NBA.TV.USA.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/NBATV.png"},
+    "VE-cdn - usnbatv": {"name": "NBA TV", "tv-id": "NBA.TV.USA.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/NBATV.png"},
     "VE-cdn - us-nfl": {"name": "NFL Network", "tv-id": "NFL.Network.us"},
     "VE-us-mlbnetwork": {"name": "MLB Network", "tv-id": "MLB.Network.us"},
     "VE-us-cnn": {"name": "CNN", "tv-id": "CNN.us"},
