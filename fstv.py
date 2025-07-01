@@ -6,7 +6,7 @@ import re
 CHANNEL_MAPPINGS = {
     "usanetwork": {"name": "USA Network", "tv-id": "USA.Network.-.East.Feed.us"},
     "VE-usa-cbssport (sv3)": {"name": "CBS Sports", "tv-id": "CBS.Sports.Network.USA.us"},
-    "VE-usa-cbs los angeles": {"name": "CBS Los Angeles", "tv-id": "CBS.(KCBS).Los.Angeles,.CA.us"},
+    "VE-usa-cbs los angeles": {"name": "CBS Los Angeles", "tv-id": "CBS.(KCBS).Los.Angeles,.CA.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/CBS.png"},
     "VE-usa-CBS GOLAZO CDN SV2": {"name": "CBS Sports Golazo!", "tv-id": "plex.tv.CBS.Sports.Golazo.Network.plex"},
     "VE-us-espn": {"name": "ESPN", "tv-id": "ESPN.us"},
     "VE-us-espn2": {"name": "ESPN2", "tv-id": "ESPN2.us"},
@@ -60,24 +60,24 @@ CHANNEL_MAPPINGS = {
     "VE-usa-Bein Espanol Xtra": {"name": "BeIN Sports Español Xtra", "tv-id": ""},
     "VE-usa-beinsport espanol": {"name": "BeIN Sports Español", "tv-id": "beIN.Sports.HDTV.(Spanish).(beINHD).us"},
     "VE-usa-beinsport xtra (sv3)": {"name": "BeIN Sports Xtra USA", "tv-id": "beIN.Sports.Xtra.(KSKJ-    CD).Los.Angeles,.CA.us"},
-    "VE-usa-fubosport (sv3)": {"name": "Fubo Sports USA", "tv-id": "Fubo.Sports.us"},
+    "VE-usa-fubosport (sv3)": {"name": "Fubo Sports USA", "tv-id": "Fubo.Sports.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fubo-sports-network-us.png?raw=true"},
     "VE-ION USA": {"name": "ION USA", "tv-id": "ION..-.Eastern.Feed.us"},
     "VE-usa-foxsoccerplus": {"name": "Fox Soccer Plus", "tv-id": "FOX.Soccer.Plus.us"},
     "VE-usa-tycsport (sv3)": {"name": "TyC Sports", "tv-id": "TyC.Sports.us"},
     "VE-usa-marquee sport network": {"name": "Marquee Sports Network", "tv-id": "Marquee.Sports.Network.us"},
     "VE-YES USA": {"name": "YES Network USA", "tv-id": "YES.Network.us"},
     "VE-usa-abcnews": {"name": "ABC News", "tv-id": "ABC.NEWS.us"},
-    "VE-usa-bignetwork": {"name": "Big Network USA", "tv-id": "Big.Ten.Network.us"},
+    "VE-usa-bignetwork": {"name": "Big Network USA", "tv-id": "Big.Ten.Network.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/big-ten-network-us.png?raw=true"},
     "VE-usa-uni34": {"name": "UniMás 34", "tv-id": "UniMÃ¡s.(KMEX-DT2).Los.Angeles,.CA.us"},
     "VE-usa-ABC": {"name": "ABC", "tv-id": "ABC.(KABC).Los.Angeles,.CA.us"},
     "VE-usa-tudn (sv3)": {"name": "TUDN", "tv-id": "TUDN.us"},
-    "VE-usa-fox channel": {"name": "Fox Los Angeles", "tv-id": "FOX.(KTTV).Los.Angeles,.CA.us"},
+    "VE-usa-fox channel": {"name": "Fox Los Angeles", "tv-id": "FOX.(KTTV).Los.Angeles,.CA.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/FOX.png"},
     "VE-usa-telemundo": {"name": "Telemundo", "tv-id": "Telemundo.(KVEA).Los.Angeles,.CA.us"},
     "VE-usa-unimas": {"name": "UniMás", "tv-id": "UniMÃ¡s.(KMEX-DT2).Los.Angeles,.CA.us"},
     "VE-cdn -us-nhlnetwork": {"name": "NHL Network", "tv-id": "NHL.Network.USA.us"},
     "VE-us-willowhd": {"name": "Willow Cricket HD", "tv-id": "Willow.Cricket.HDTV.(WILLOWHD).us"},
     "VE-us-willowxtra": {"name": "Willow Xtra", "tv-id": "Willow.Xtra.us"},
-    "VE-cdn - us-nbatv": {"name": "NBA TV", "tv-id": "NBA.TV.USA.us"},
+    "VE-us-nbatv": {"name": "NBA TV", "tv-id": "NBA.TV.USA.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/NBATV.png"},
     "VE-cdn - us-nfl": {"name": "NFL Network", "tv-id": "NFL.Network.us"},
     "VE-us-mlbnetwork": {"name": "MLB Network", "tv-id": "MLB.Network.us"},
     "VE-us-cnn": {"name": "CNN", "tv-id": "CNN.us"},
@@ -89,7 +89,7 @@ CHANNEL_MAPPINGS = {
     "VE-cdn - us-redzone": {"name": "NFL RedZone", "tv-id": "NFL.RedZone.us"},
     "ve-usa-trutv": {"name": "truTV", "tv-id": "truTV.USA.-.Eastern.us"},
     "VE-TNT USA": {"name": "TNT", "tv-id": "TNT.-.Eastern.Feed.us"},
-    "ve-fanduel sport": {"name": "FanDuel Sports Network", "tv-id": "FanDuel.Sports.Network.us"},
+    "ve-fanduel sport": {"name": "FanDuel Sports Network", "tv-id": "FanDuel.Sports.Network.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/FanDuelSportsNetwork.png"},
     "VE-usa-billiard tv": {"name": "Billiard TV", "tv-id": "plex.tv.Billiard.TV.plex"},
     "ve-ori-axstv": {"name": "AXS TV", "tv-id": "AXS.TV.USA.HD.us"},
     "VE-uk-bbcone (sv3)": {"name": "BBC One UK", "tv-id": "BBC.One.EastHD.uk"},
@@ -100,9 +100,9 @@ CHANNEL_MAPPINGS = {
     "VE-Paramount Network": {"name": "Paramount Network", "tv-id": "Paramount.Network.USA.-.Eastern.Feed.us"},
     "VE-uk-skycinemafamily": {"name": "Sky Cinema Family UK", "tv-id": "Sky.Cinema.Family.HD.at"},
     "VE-zeeuk-skycinemacomedy": {"name": "Sky Cinema Comedy UK", "tv-id": "Sky.Cinema.Comedy.it"},
-    "VE-DE - DAZN 1 (sv3)": {"name": "DAZN 1 Germany", "tv-id": "DAZN.1.de"},
+    "VE-DE - DAZN 1 (sv3)": {"name": "DAZN 1 Germany", "tv-id": "DAZN.1.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/germany/dazn1-de.png?raw=true"},
     "VE-de-skyde top event": {"name": "Sky DE Top Event", "tv-id": "Sky.Sport.Top.Event.de"},
-    "VE-DE - DAZN 2 (sv3)": {"name": "DAZN 2 Germany", "tv-id": "DAZN.2.de"},
+    "VE-DE - DAZN 2 (sv3)": {"name": "DAZN 2 Germany", "tv-id": "DAZN.2.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/germany/dazn2-de.png?raw=true"},
     "VE-de-skyde news": {"name": "Sky Sport News DE", "tv-id": "Sky.Sport.News.de"},
     "VE-de-sportdigital (sv3-CDN)": {"name": "SportDigital Germany", "tv-id": "sportdigital.Fussball.de"},
     "VE-de-sky premier league": {"name": "Sky Sport Premier League DE", "tv-id": "Sky.Sport.Premier.League.de"},
@@ -111,8 +111,8 @@ CHANNEL_MAPPINGS = {
     "VE-fox 502": {"name": "Fox Sports 502 AU", "tv-id": "FoxCricket.au"},
     "VE-zent-discovery": {"name": "Discovery Channel", "tv-id": "Discovery.Channel.(US).-.Eastern.Feed.us"},
     "VE-zent-cinemax": {"name": "Cinemax", "tv-id": "Cinemax.-.Eastern.Feed.us"},
-    "VE-usa-hbo2": {"name": "HBO 2", "tv-id": "HBO.2.-.Eastern.Feed.us"},
-    "VE-zent-hbo": {"name": "HBO", "tv-id": "HBO.-.Eastern.Feed.us"},
+    "VE-usa-hbo2": {"name": "HBO 2", "tv-id": "HBO.2.-.Eastern.Feed.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-2-us.png?raw=true"},
+    "VE-zent-hbo": {"name": "HBO", "tv-id": "HBO.-.Eastern.Feed.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-us.png?raw=true"},
     "VE-TBS": {"name": "TBS", "tv-id": "TBS.-.East.us"},
     "VE-PT - Sporttv 1 (sv3)": {"name": "Sport TV1 Portugal", "tv-id": "SPORT.TV1.HD.pt"},
     "VE-GOL TV": {"name": "GOL TV", "tv-id": "Gol.TV.USA.us"},
@@ -152,7 +152,7 @@ def build_playlist_from_html(html, channel_mappings):
 
     for div in soup.find_all("div", class_="item-channel"):
         url = div.get("data-link")
-        logo = div.get("data-logo")
+        logo_html = div.get("data-logo")
         name = div.get("title")
 
         if not (url and name):
@@ -167,19 +167,28 @@ def build_playlist_from_html(html, channel_mappings):
                 break
 
         if matched_key:
-            new_name = channel_mappings[matched_key]["name"]
-            tv_id = channel_mappings[matched_key]["tv-id"]
+            mapping = channel_mappings[matched_key]
+            new_name = mapping.get("name", prettify_name(name))
+            tv_id = mapping.get("tv-id", "")
+            logo = mapping.get("logo", logo_html)  # <- Prioritize mapping logo
         else:
             new_name = prettify_name(name)
             tv_id = ""
+            logo = logo_html
 
-        channels.append({"url": url, "logo": logo, "name": new_name, "tv_id": tv_id})
+        channels.append({
+            "url": url,
+            "logo": logo,
+            "name": new_name,
+            "tv_id": tv_id
+        })
 
     playlist_lines = ['#EXTM3U\n']
     for ch in channels:
         tvg_id_attr = f' tvg-id="{ch["tv_id"]}"' if ch["tv_id"] else ""
+        logo_attr = f' tvg-logo="{ch["logo"]}"' if ch["logo"] else ""
         playlist_lines.append(
-            f'#EXTINF:-1{tvg_id_attr} tvg-logo="{ch["logo"]}" group-title="FSTV",{ch["name"]}\n'
+            f'#EXTINF:-1{tvg_id_attr}{logo_attr} group-title="FSTV",{ch["name"]}\n'
         )
         playlist_lines.append(ch["url"] + "\n")
 
