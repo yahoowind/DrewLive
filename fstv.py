@@ -135,12 +135,20 @@ def prettify_name(raw: str) -> str:
 async def fetch_fstv_html():
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
-        context = await browser.new_context()
+        context = await browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36")
         page = await context.new_page()
 
         print("🌐 Visiting FSTV...")
-        await page.goto("https://fstv.us/live-tv.html?timezone=America%2FDenver", timeout=60000)
-        await page.wait_for_load_state("networkidle")
+
+        for attempt in range(3):
+            try:
+                await page.goto("https://fstv.us/live-tv.html?timezone=America%2FDenver", timeout=90000, wait_until="domcontentloaded")
+                await page.wait_for_selector(".item-channel", timeout=15000)
+                break  # success
+            except Exception as e:
+                print(f"⚠️ Attempt {attempt + 1} failed: {e}")
+                if attempt == 2:
+                    raise
 
         html = await page.content()
         await browser.close()
@@ -170,7 +178,7 @@ def build_playlist_from_html(html, channel_mappings):
             mapping = channel_mappings[matched_key]
             new_name = mapping.get("name", prettify_name(name))
             tv_id = mapping.get("tv-id", "")
-            logo = mapping.get("logo", logo_html)  # <- Prioritize mapping logo
+            logo = mapping.get("logo", logo_html)
         else:
             new_name = prettify_name(name)
             tv_id = ""
@@ -195,13 +203,16 @@ def build_playlist_from_html(html, channel_mappings):
     return playlist_lines
 
 async def main():
-    html = await fetch_fstv_html()
-    playlist_lines = build_playlist_from_html(html, CHANNEL_MAPPINGS)
+    try:
+        html = await fetch_fstv_html()
+        playlist_lines = build_playlist_from_html(html, CHANNEL_MAPPINGS)
 
-    with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
-        f.writelines(playlist_lines)
+        with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
+            f.writelines(playlist_lines)
 
-    print(f"✅ Generated playlist with {len(playlist_lines)//2} channels in FSTV24.m3u8")
+        print(f"✅ Generated playlist with {len(playlist_lines)//2} channels in FSTV24.m3u8")
+    except Exception as e:
+        print(f"❌ Failed to generate playlist: {e}")
 
 if __name__ == "__main__":
     asyncio.run(main())
