@@ -58,7 +58,7 @@ CHANNEL_MAPPINGS = {
     "VE-3uk-premiersport2 (cdn)": {"name": "Premier Sport 2 UK", "tv-id": "Premier.Sports.2.HD.uk", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/premier-sports-2-uk.png?raw=true"},
     "VE-USA - Beinsport (sv3-CDN)": {"name": "BeIN Sports USA", "tv-id": "beIN.Sport.USA.us"},
     "VE-usa-Bein Espanol Xtra": {"name": "BeIN Sports Español Xtra", "tv-id": "60492fdd9989d30007ccd30a"},
-    "VE-usa-beinsport espanol": {"name": "BeIN Sports Español", "tv-id": "613759"},
+    "VE-usa-beinsport espanol": {"name": "BeIN Sports Español", "tv-id": "613758"},
     "VE-usa-beinsport xtra (sv3)": {"name": "BeIN Sports Xtra USA", "tv-id": "beIN.Sports.Xtra.(KSKJ-CD).Los.Angeles,.CA.us"},
     "VE-usa-fubosport (sv3)": {"name": "Fubo Sports USA", "tv-id": "Fubo.Sports.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fubo-sports-network-us.png?raw=true"},
     "VE-ION USA": {"name": "ION USA", "tv-id": "ION..-.Eastern.Feed.us"},
