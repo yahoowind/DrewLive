@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
-# Last forced update: 2025-07-02T14:40:48.397314Z
+# Last forced update: 2025-07-02T14:54:09.290181Z
 
 #EXTGRP:24/7 by Mystique
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
@@ -2550,137 +2550,77 @@ http://vthanh.utako.moe/wprime/index.m3u8
 http://vthanh.utako.moe/ytv/index.m3u8
 
 #EXTGRP:MLB
-#EXTINF:-1  tvg-name="Baltimore Orioles @ Texas Rangers (07/01 8:05 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Baltimore Orioles @ Texas Rangers (07/01 8:05 PM ET) HD
+#EXTINF:-1  tvg-name="Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) HD
 https://tvpass.org/live/mlb-13/hd
-#EXTINF:-1  tvg-name="Baltimore Orioles @ Texas Rangers (07/01 8:05 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Baltimore Orioles @ Texas Rangers (07/01 8:05 PM ET) SD
+#EXTINF:-1  tvg-name="Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) SD
 https://tvpass.org/live/mlb-13/sd
-#EXTINF:-1 tvg-id="" tvg-name="Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) HD" group-title="MLB",Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) HD
-https://tvpass.org/live/mlb-13/hd
-#EXTINF:-1 tvg-id="" tvg-name="Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) SD" group-title="MLB",Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) SD
-https://tvpass.org/live/mlb-13/sd
-#EXTINF:-1  tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/01 10:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/01 10:10 PM ET) HD
+#EXTINF:-1  tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) HD
 https://tvpass.org/live/mlb-14/hd
-#EXTINF:-1  tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/01 10:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/01 10:10 PM ET) SD
+#EXTINF:-1  tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) SD
 https://tvpass.org/live/mlb-14/sd
-#EXTINF:-1 tvg-id="" tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) HD" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) HD
-https://tvpass.org/live/mlb-14/hd
-#EXTINF:-1 tvg-id="" tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) SD" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) SD
-https://tvpass.org/live/mlb-14/sd
-#EXTINF:-1  tvg-name="Cincinnati Reds @ Boston Red Sox (07/01 7:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cincinnati Reds @ Boston Red Sox (07/01 7:10 PM ET) HD
+#EXTINF:-1  tvg-name="Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) HD
 https://tvpass.org/live/mlb-22/hd
-#EXTINF:-1  tvg-name="Cincinnati Reds @ Boston Red Sox (07/01 7:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cincinnati Reds @ Boston Red Sox (07/01 7:10 PM ET) SD
+#EXTINF:-1  tvg-name="Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) SD
 https://tvpass.org/live/mlb-22/sd
-#EXTINF:-1 tvg-id="" tvg-name="Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) HD" group-title="MLB",Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) HD
-https://tvpass.org/live/mlb-22/hd
-#EXTINF:-1 tvg-id="" tvg-name="Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) SD" group-title="MLB",Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) SD
-https://tvpass.org/live/mlb-22/sd
-#EXTINF:-1  tvg-name="Cleveland Guardians @ Chicago Cubs (07/01 8:05 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/01 8:05 PM ET) HD
+#EXTINF:-1  tvg-name="Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) HD
 https://tvpass.org/live/mlb-23/hd
-#EXTINF:-1  tvg-name="Cleveland Guardians @ Chicago Cubs (07/01 8:05 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/01 8:05 PM ET) SD
+#EXTINF:-1  tvg-name="Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) SD
 https://tvpass.org/live/mlb-23/sd
-#EXTINF:-1 tvg-id="" tvg-name="Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) HD" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) HD
-https://tvpass.org/live/mlb-23/hd
-#EXTINF:-1 tvg-id="" tvg-name="Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) SD" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) SD
-https://tvpass.org/live/mlb-23/sd
-#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/01 6:45 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/01 6:45 PM ET) HD
+#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) HD
 https://tvpass.org/live/mlb-01/hd
-#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/01 6:45 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/01 6:45 PM ET) SD
+#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) SD
 https://tvpass.org/live/mlb-01/sd
-#EXTINF:-1 tvg-id="" tvg-name="Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) HD" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) HD
+#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) HD
 https://tvpass.org/live/mlb-01/hd
-#EXTINF:-1 tvg-id="" tvg-name="Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) SD" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) SD
+#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) SD
 https://tvpass.org/live/mlb-01/sd
-#EXTINF:-1 tvg-id="" tvg-name="Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) HD" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) HD
-https://tvpass.org/live/mlb-01/hd
-#EXTINF:-1 tvg-id="" tvg-name="Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) SD" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) SD
-https://tvpass.org/live/mlb-01/sd
-#EXTINF:-1  tvg-name="Houston Astros @ Colorado Rockies (07/01 8:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Houston Astros @ Colorado Rockies (07/01 8:40 PM ET) HD
+#EXTINF:-1  tvg-name="Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) HD
 https://tvpass.org/live/mlb-25/hd
-#EXTINF:-1  tvg-name="Houston Astros @ Colorado Rockies (07/01 8:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Houston Astros @ Colorado Rockies (07/01 8:40 PM ET) SD
+#EXTINF:-1  tvg-name="Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) SD
 https://tvpass.org/live/mlb-25/sd
-#EXTINF:-1 tvg-id="" tvg-name="Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) HD" group-title="MLB",Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) HD
-https://tvpass.org/live/mlb-25/hd
-#EXTINF:-1 tvg-id="" tvg-name="Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) SD" group-title="MLB",Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) SD
-https://tvpass.org/live/mlb-25/sd
-#EXTINF:-1  tvg-name="Kansas City Royals @ Seattle Mariners (07/01 9:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/01 9:40 PM ET) HD
+#EXTINF:-1  tvg-name="Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) HD
 https://tvpass.org/live/mlb-10/hd
-#EXTINF:-1  tvg-name="Kansas City Royals @ Seattle Mariners (07/01 9:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/01 9:40 PM ET) SD
+#EXTINF:-1  tvg-name="Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) SD
 https://tvpass.org/live/mlb-10/sd
-#EXTINF:-1 tvg-id="" tvg-name="Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) HD" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) HD
-https://tvpass.org/live/mlb-10/hd
-#EXTINF:-1 tvg-id="" tvg-name="Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) SD" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) SD
-https://tvpass.org/live/mlb-10/sd
-#EXTINF:-1  tvg-name="Los Angeles Angels @ Atlanta Braves (07/01 7:15 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/01 7:15 PM ET) HD
+#EXTINF:-1  tvg-name="Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) HD
 https://tvpass.org/live/mlb-28/hd
-#EXTINF:-1  tvg-name="Los Angeles Angels @ Atlanta Braves (07/01 7:15 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/01 7:15 PM ET) SD
+#EXTINF:-1  tvg-name="Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) SD
 https://tvpass.org/live/mlb-28/sd
-#EXTINF:-1 tvg-id="" tvg-name="Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) HD" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) HD
-https://tvpass.org/live/mlb-28/hd
-#EXTINF:-1 tvg-id="" tvg-name="Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) SD" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) SD
-https://tvpass.org/live/mlb-28/sd
-#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/01 7:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/01 7:10 PM ET) HD
+#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) HD
 https://tvpass.org/live/mlb-24/hd
-#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/01 7:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/01 7:10 PM ET) SD
+#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) SD
 https://tvpass.org/live/mlb-24/sd
-#EXTINF:-1 tvg-id="" tvg-name="Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) HD" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) HD
+#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) HD
 https://tvpass.org/live/mlb-24/hd
-#EXTINF:-1 tvg-id="" tvg-name="Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) SD" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) SD
+#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) SD
 https://tvpass.org/live/mlb-24/sd
-#EXTINF:-1 tvg-id="" tvg-name="Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) HD" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) HD
-https://tvpass.org/live/mlb-24/hd
-#EXTINF:-1 tvg-id="" tvg-name="Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) SD" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) SD
-https://tvpass.org/live/mlb-24/sd
-#EXTINF:-1  tvg-name="Minnesota Twins @ Miami Marlins (07/01 6:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Minnesota Twins @ Miami Marlins (07/01 6:40 PM ET) HD
+#EXTINF:-1  tvg-name="Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) HD
 https://tvpass.org/live/mlb-07/hd
-#EXTINF:-1  tvg-name="Minnesota Twins @ Miami Marlins (07/01 6:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Minnesota Twins @ Miami Marlins (07/01 6:40 PM ET) SD
+#EXTINF:-1  tvg-name="Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) SD
 https://tvpass.org/live/mlb-07/sd
-#EXTINF:-1 tvg-id="" tvg-name="Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) HD" group-title="MLB",Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) HD
-https://tvpass.org/live/mlb-07/hd
-#EXTINF:-1 tvg-id="" tvg-name="Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) SD" group-title="MLB",Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) SD
-https://tvpass.org/live/mlb-07/sd
-#EXTINF:-1  tvg-name="New York Yankees @ Toronto Blue Jays (07/01 3:07 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/01 3:07 PM ET) HD
+#EXTINF:-1  tvg-name="New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) HD
 https://tvpass.org/live/mlb-12/hd
-#EXTINF:-1  tvg-name="New York Yankees @ Toronto Blue Jays (07/01 3:07 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/01 3:07 PM ET) SD
+#EXTINF:-1  tvg-name="New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) SD
 https://tvpass.org/live/mlb-12/sd
-#EXTINF:-1 tvg-id="" tvg-name="New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) HD" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) HD
-https://tvpass.org/live/mlb-12/hd
-#EXTINF:-1 tvg-id="" tvg-name="New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) SD" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) SD
-https://tvpass.org/live/mlb-12/sd
-#EXTINF:-1  tvg-name="Oakland Athletics @ Tampa Bay Rays (07/01 7:05 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Oakland Athletics @ Tampa Bay Rays (07/01 7:05 PM ET) HD
+#EXTINF:-1  tvg-name="Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) HD
 https://tvpass.org/live/mlb-11/hd
-#EXTINF:-1  tvg-name="Oakland Athletics @ Tampa Bay Rays (07/01 7:05 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Oakland Athletics @ Tampa Bay Rays (07/01 7:05 PM ET) SD
+#EXTINF:-1  tvg-name="Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) SD
 https://tvpass.org/live/mlb-11/sd
-#EXTINF:-1 tvg-id="" tvg-name="Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) HD" group-title="MLB",Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) HD
-https://tvpass.org/live/mlb-11/hd
-#EXTINF:-1 tvg-id="" tvg-name="Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) SD" group-title="MLB",Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) SD
-https://tvpass.org/live/mlb-11/sd
-#EXTINF:-1  tvg-name="San Diego Padres @ Philadelphia Phillies (07/01 6:30 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/01 6:30 PM ET) HD
+#EXTINF:-1  tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) HD
 https://tvpass.org/live/mlb-18/hd
-#EXTINF:-1  tvg-name="San Diego Padres @ Philadelphia Phillies (07/01 6:30 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/01 6:30 PM ET) SD
+#EXTINF:-1  tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) SD
 https://tvpass.org/live/mlb-18/sd
-#EXTINF:-1 tvg-id="" tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) HD" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) HD
+#EXTINF:-1  tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) HD
 https://tvpass.org/live/mlb-18/hd
-#EXTINF:-1 tvg-id="" tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) SD" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) SD
+#EXTINF:-1  tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) SD
 https://tvpass.org/live/mlb-18/sd
-#EXTINF:-1 tvg-id="" tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) HD" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) HD
-https://tvpass.org/live/mlb-18/hd
-#EXTINF:-1 tvg-id="" tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) SD" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) SD
-https://tvpass.org/live/mlb-18/sd
-#EXTINF:-1  tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/01 9:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/01 9:40 PM ET) HD
+#EXTINF:-1  tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) HD
 https://tvpass.org/live/mlb-09/hd
-#EXTINF:-1  tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/01 9:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/01 9:40 PM ET) SD
+#EXTINF:-1  tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) SD
 https://tvpass.org/live/mlb-09/sd
-#EXTINF:-1 tvg-id="" tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) HD" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) HD
-https://tvpass.org/live/mlb-09/hd
-#EXTINF:-1 tvg-id="" tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) SD" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) SD
-https://tvpass.org/live/mlb-09/sd
-#EXTINF:-1  tvg-name="St. Louis Cardinals @ Pittsburgh Pirates (07/01 6:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",St. Louis Cardinals @ Pittsburgh Pirates (07/01 6:40 PM ET) HD
+#EXTINF:-1  tvg-name="St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) HD
 https://tvpass.org/live/mlb-26/hd
-#EXTINF:-1  tvg-name="St. Louis Cardinals @ Pittsburgh Pirates (07/01 6:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",St. Louis Cardinals @ Pittsburgh Pirates (07/01 6:40 PM ET) SD
-https://tvpass.org/live/mlb-26/sd
-#EXTINF:-1 tvg-id="" tvg-name="St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) HD" group-title="MLB",St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) HD
-https://tvpass.org/live/mlb-26/hd
-#EXTINF:-1 tvg-id="" tvg-name="St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) SD" group-title="MLB",St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) SD
+#EXTINF:-1  tvg-name="St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) SD
 https://tvpass.org/live/mlb-26/sd
 
 #EXTGRP:MoveOnJoy
@@ -10883,9 +10823,3 @@ http://ott.udptv.net/stream/iptv/vivacinema/master.m3u8?u=discord.gg/civ3&p=fb3f
 https://ott.udptv.org/stream/astro/wsport/master.m3u8?u=discord.gg/civ3&p=fb3f8f99693741cbbfd578e30b02b25f056a1f0838491f6e186eb1340e3f2c13
 #EXTINF:-1  tvg-name="Warner TV" tvg-id="Warnertv.Hd.ph" tvg-logo="https://i.imgur.com/L6Ta5te.png" group-title="UDPTV Live Streams",Warner TV
 http://ott.udptv.net/stream/iptv/warnertv/master.m3u8?u=discord.gg/civ3&p=fb3f8f99693741cbbfd578e30b02b25f056a1f0838491f6e186eb1340e3f2c13
-
-#EXTGRP:WNBA
-#EXTINF:-1  tvg-name="Indiana Fever @ Minnesota Lynx (07/01 8:00 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Indiana Fever @ Minnesota Lynx (07/01 8:00 PM ET) HD
-https://tvpass.org/live/WNBA02/hd
-#EXTINF:-1  tvg-name="Indiana Fever @ Minnesota Lynx (07/01 8:00 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Indiana Fever @ Minnesota Lynx (07/01 8:00 PM ET) SD
-https://tvpass.org/live/WNBA02/sd
