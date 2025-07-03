@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
-# Last forced update: 2025-07-03T16:33:44.918599Z
+# Last forced update: 2025-07-03T16:54:35.262963Z
 
 #EXTGRP:24/7 by Mystique
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
@@ -2724,118 +2724,46 @@ http://vthanh.utako.moe/wprime/index.m3u8
 http://vthanh.utako.moe/ytv/index.m3u8
 
 #EXTGRP:MLB
-#EXTINF:-1  tvg-name="Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) HD
-https://tvpass.org/live/mlb-13/hd
-#EXTINF:-1  tvg-name="Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Baltimore Orioles @ Texas Rangers (07/02 8:05 PM ET) SD
-https://tvpass.org/live/mlb-13/sd
-#EXTINF:-1  tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) HD
+#EXTINF:-1  tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/03 10:11 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/03 10:11 PM ET) HD
 https://tvpass.org/live/mlb-14/hd
-#EXTINF:-1  tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/02 10:10 PM ET) SD
+#EXTINF:-1  tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/03 10:11 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/03 10:11 PM ET) SD
 https://tvpass.org/live/mlb-14/sd
-#EXTINF:-1 tvg-id="" tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/03 10:11 PM ET) HD" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/03 10:11 PM ET) HD
-https://tvpass.org/live/mlb-14/hd
-#EXTINF:-1 tvg-id="" tvg-name="Chicago White Sox @ Los Angeles Dodgers (07/03 10:11 PM ET) SD" group-title="MLB",Chicago White Sox @ Los Angeles Dodgers (07/03 10:11 PM ET) SD
-https://tvpass.org/live/mlb-14/sd
-#EXTINF:-1  tvg-name="Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) HD
-https://tvpass.org/live/mlb-22/hd
-#EXTINF:-1  tvg-name="Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cincinnati Reds @ Boston Red Sox (07/02 7:10 PM ET) SD
-https://tvpass.org/live/mlb-22/sd
-#EXTINF:-1  tvg-name="Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) HD
+#EXTINF:-1  tvg-name="Cleveland Guardians @ Chicago Cubs (07/03 8:05 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/03 8:05 PM ET) HD
 https://tvpass.org/live/mlb-23/hd
-#EXTINF:-1  tvg-name="Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/02 8:00 PM ET) SD
+#EXTINF:-1  tvg-name="Cleveland Guardians @ Chicago Cubs (07/03 8:05 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/03 8:05 PM ET) SD
 https://tvpass.org/live/mlb-23/sd
-#EXTINF:-1 tvg-id="" tvg-name="Cleveland Guardians @ Chicago Cubs (07/03 8:05 PM ET) HD" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/03 8:05 PM ET) HD
-https://tvpass.org/live/mlb-23/hd
-#EXTINF:-1 tvg-id="" tvg-name="Cleveland Guardians @ Chicago Cubs (07/03 8:05 PM ET) SD" group-title="MLB",Cleveland Guardians @ Chicago Cubs (07/03 8:05 PM ET) SD
-https://tvpass.org/live/mlb-23/sd
-#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) HD
+#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/03 6:46 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/03 6:46 PM ET) HD
 https://tvpass.org/live/mlb-01/hd
-#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 1:05 PM ET) SD
+#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/03 6:46 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/03 6:46 PM ET) SD
 https://tvpass.org/live/mlb-01/sd
-#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) HD
-https://tvpass.org/live/mlb-01/hd
-#EXTINF:-1  tvg-name="Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Detroit Tigers @ Washington Nationals (07/02 6:45 PM ET) SD
-https://tvpass.org/live/mlb-01/sd
-#EXTINF:-1 tvg-id="" tvg-name="Detroit Tigers @ Washington Nationals (07/03 6:46 PM ET) HD" group-title="MLB",Detroit Tigers @ Washington Nationals (07/03 6:46 PM ET) HD
-https://tvpass.org/live/mlb-01/hd
-#EXTINF:-1 tvg-id="" tvg-name="Detroit Tigers @ Washington Nationals (07/03 6:46 PM ET) SD" group-title="MLB",Detroit Tigers @ Washington Nationals (07/03 6:46 PM ET) SD
-https://tvpass.org/live/mlb-01/sd
-#EXTINF:-1  tvg-name="Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) HD
+#EXTINF:-1  tvg-name="Houston Astros @ Colorado Rockies (07/03 3:11 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Houston Astros @ Colorado Rockies (07/03 3:11 PM ET) HD
 https://tvpass.org/live/mlb-25/hd
-#EXTINF:-1  tvg-name="Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Houston Astros @ Colorado Rockies (07/02 8:40 PM ET) SD
+#EXTINF:-1  tvg-name="Houston Astros @ Colorado Rockies (07/03 3:11 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Houston Astros @ Colorado Rockies (07/03 3:11 PM ET) SD
 https://tvpass.org/live/mlb-25/sd
-#EXTINF:-1 tvg-id="" tvg-name="Houston Astros @ Colorado Rockies (07/03 3:11 PM ET) HD" group-title="MLB",Houston Astros @ Colorado Rockies (07/03 3:11 PM ET) HD
-https://tvpass.org/live/mlb-25/hd
-#EXTINF:-1 tvg-id="" tvg-name="Houston Astros @ Colorado Rockies (07/03 3:11 PM ET) SD" group-title="MLB",Houston Astros @ Colorado Rockies (07/03 3:11 PM ET) SD
-https://tvpass.org/live/mlb-25/sd
-#EXTINF:-1  tvg-name="Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) HD
+#EXTINF:-1  tvg-name="Kansas City Royals @ Seattle Mariners (07/03 10:11 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/03 10:11 PM ET) HD
 https://tvpass.org/live/mlb-10/hd
-#EXTINF:-1  tvg-name="Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/02 9:40 PM ET) SD
+#EXTINF:-1  tvg-name="Kansas City Royals @ Seattle Mariners (07/03 10:11 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/03 10:11 PM ET) SD
 https://tvpass.org/live/mlb-10/sd
-#EXTINF:-1 tvg-id="" tvg-name="Kansas City Royals @ Seattle Mariners (07/03 10:11 PM ET) HD" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/03 10:11 PM ET) HD
-https://tvpass.org/live/mlb-10/hd
-#EXTINF:-1 tvg-id="" tvg-name="Kansas City Royals @ Seattle Mariners (07/03 10:11 PM ET) SD" group-title="MLB",Kansas City Royals @ Seattle Mariners (07/03 10:11 PM ET) SD
-https://tvpass.org/live/mlb-10/sd
-#EXTINF:-1  tvg-name="Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) HD
+#EXTINF:-1  tvg-name="Los Angeles Angels @ Atlanta Braves (07/03 7:16 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/03 7:16 PM ET) HD
 https://tvpass.org/live/mlb-28/hd
-#EXTINF:-1  tvg-name="Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/02 7:15 PM ET) SD
+#EXTINF:-1  tvg-name="Los Angeles Angels @ Atlanta Braves (07/03 7:16 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/03 7:16 PM ET) SD
 https://tvpass.org/live/mlb-28/sd
-#EXTINF:-1 tvg-id="" tvg-name="Los Angeles Angels @ Atlanta Braves (07/03 7:16 PM ET) HD" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/03 7:16 PM ET) HD
-https://tvpass.org/live/mlb-28/hd
-#EXTINF:-1 tvg-id="" tvg-name="Los Angeles Angels @ Atlanta Braves (07/03 7:16 PM ET) SD" group-title="MLB",Los Angeles Angels @ Atlanta Braves (07/03 7:16 PM ET) SD
-https://tvpass.org/live/mlb-28/sd
-#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) HD
+#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/03 7:11 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/03 7:11 PM ET) HD
 https://tvpass.org/live/mlb-24/hd
-#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 1:10 PM ET) SD
+#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/03 7:11 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/03 7:11 PM ET) SD
 https://tvpass.org/live/mlb-24/sd
-#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) HD
-https://tvpass.org/live/mlb-24/hd
-#EXTINF:-1  tvg-name="Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Milwaukee Brewers @ New York Mets (07/02 7:10 PM ET) SD
-https://tvpass.org/live/mlb-24/sd
-#EXTINF:-1 tvg-id="" tvg-name="Milwaukee Brewers @ New York Mets (07/03 7:11 PM ET) HD" group-title="MLB",Milwaukee Brewers @ New York Mets (07/03 7:11 PM ET) HD
-https://tvpass.org/live/mlb-24/hd
-#EXTINF:-1 tvg-id="" tvg-name="Milwaukee Brewers @ New York Mets (07/03 7:11 PM ET) SD" group-title="MLB",Milwaukee Brewers @ New York Mets (07/03 7:11 PM ET) SD
-https://tvpass.org/live/mlb-24/sd
-#EXTINF:-1  tvg-name="Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) HD
+#EXTINF:-1  tvg-name="Minnesota Twins @ Miami Marlins (07/03 12:11 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Minnesota Twins @ Miami Marlins (07/03 12:11 PM ET) HD
 https://tvpass.org/live/mlb-07/hd
-#EXTINF:-1  tvg-name="Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Minnesota Twins @ Miami Marlins (07/02 6:40 PM ET) SD
+#EXTINF:-1  tvg-name="Minnesota Twins @ Miami Marlins (07/03 12:11 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Minnesota Twins @ Miami Marlins (07/03 12:11 PM ET) SD
 https://tvpass.org/live/mlb-07/sd
-#EXTINF:-1 tvg-id="" tvg-name="Minnesota Twins @ Miami Marlins (07/03 12:11 PM ET) HD" group-title="MLB",Minnesota Twins @ Miami Marlins (07/03 12:11 PM ET) HD
-https://tvpass.org/live/mlb-07/hd
-#EXTINF:-1 tvg-id="" tvg-name="Minnesota Twins @ Miami Marlins (07/03 12:11 PM ET) SD" group-title="MLB",Minnesota Twins @ Miami Marlins (07/03 12:11 PM ET) SD
-https://tvpass.org/live/mlb-07/sd
-#EXTINF:-1  tvg-name="New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) HD
+#EXTINF:-1  tvg-name="New York Yankees @ Toronto Blue Jays (07/03 7:08 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/03 7:08 PM ET) HD
 https://tvpass.org/live/mlb-12/hd
-#EXTINF:-1  tvg-name="New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/02 7:08 PM ET) SD
+#EXTINF:-1  tvg-name="New York Yankees @ Toronto Blue Jays (07/03 7:08 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/03 7:08 PM ET) SD
 https://tvpass.org/live/mlb-12/sd
-#EXTINF:-1 tvg-id="" tvg-name="New York Yankees @ Toronto Blue Jays (07/03 7:08 PM ET) HD" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/03 7:08 PM ET) HD
-https://tvpass.org/live/mlb-12/hd
-#EXTINF:-1 tvg-id="" tvg-name="New York Yankees @ Toronto Blue Jays (07/03 7:08 PM ET) SD" group-title="MLB",New York Yankees @ Toronto Blue Jays (07/03 7:08 PM ET) SD
-https://tvpass.org/live/mlb-12/sd
-#EXTINF:-1  tvg-name="Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) HD
-https://tvpass.org/live/mlb-11/hd
-#EXTINF:-1  tvg-name="Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",Oakland Athletics @ Tampa Bay Rays (07/02 12:10 PM ET) SD
-https://tvpass.org/live/mlb-11/sd
-#EXTINF:-1  tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) HD
-https://tvpass.org/live/mlb-18/hd
-#EXTINF:-1  tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 1:05 PM ET) SD
-https://tvpass.org/live/mlb-18/sd
-#EXTINF:-1  tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) HD
-https://tvpass.org/live/mlb-18/hd
-#EXTINF:-1  tvg-name="San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Diego Padres @ Philadelphia Phillies (07/02 6:15 PM ET) SD
-https://tvpass.org/live/mlb-18/sd
-#EXTINF:-1  tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) HD
+#EXTINF:-1  tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/03 9:41 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/03 9:41 PM ET) HD
 https://tvpass.org/live/mlb-09/hd
-#EXTINF:-1  tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/02 9:40 PM ET) SD
+#EXTINF:-1  tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/03 9:41 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/03 9:41 PM ET) SD
 https://tvpass.org/live/mlb-09/sd
-#EXTINF:-1 tvg-id="" tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/03 9:41 PM ET) HD" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/03 9:41 PM ET) HD
-https://tvpass.org/live/mlb-09/hd
-#EXTINF:-1 tvg-id="" tvg-name="San Francisco Giants @ Arizona Diamondbacks (07/03 9:41 PM ET) SD" group-title="MLB",San Francisco Giants @ Arizona Diamondbacks (07/03 9:41 PM ET) SD
-https://tvpass.org/live/mlb-09/sd
-#EXTINF:-1  tvg-name="St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) HD
-https://tvpass.org/live/mlb-26/hd
-#EXTINF:-1  tvg-name="St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="MLB",St. Louis Cardinals @ Pittsburgh Pirates (07/02 12:36 PM ET) SD
-https://tvpass.org/live/mlb-26/sd
 
 #EXTGRP:MoveOnJoy
 #EXTINF:-1  tvg-name="5 StarMax" tvg-id="5.Star.Max.-.Eastern.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cinemax-5-starmax-us.png" group-title="MoveOnJoy" radio="false",5 StarMax
@@ -9115,49 +9043,53 @@ https://jmp2.uk/sam-US270000298.m3u8
 
 #EXTGRP:StreamEast - Baseball
 #EXTINF:-1 tvg-id="Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="StreamEast - Baseball",Chicago White Sox vs. Los Angeles Dodgers Live Stream
-https://eastcaster.pro/hls/qsdnajbq32.m3u8?st=iNhn9un8Jt7FrFM9zxbI857yrPCgkihBHpiCjGLOTB8&e=1751564211|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://edge1caster.pro/hls/qsdnajbq32.m3u8?st=eMekdPbUeGFNYIFJmgUmMcS4YArTGTvflL6c-lRFumY&e=1751573643|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+#EXTINF:-1 tvg-id="Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="StreamEast - Baseball",Cleveland Guardians vs. Chicago Cubs Live Stream
+https://edge1caster.pro/hls/hefbafbakx28.m3u8?st=SmeCFPCkAauLJAd7Ms_5WIFKwEW09VgbdXYryuuTpb0&e=1751573552|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="StreamEast - Baseball",Detroit Tigers vs. Washington Nationals Live Stream
-https://eastcaster.pro/hls/ihfazugfyjcazich17.m3u8?st=_z4rEX0ct86LD7Jd6X1h7laOCwEsqThe8Gc-2cEbeeI&e=1751564241|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://eastcaster.pro/hls/ihfazugfyjcazich17.m3u8?st=Z8AfeJEIIIfmXsAP6tk9HPB_Xud3HtdE92qZIxZoOPg&e=1751573508|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="StreamEast - Baseball",Houston Astros vs. Colorado Rockies Live Stream
-https://edge1caster.pro/hls/iueyzbvezch16.m3u8?st=anwwnw4jZPStTJ8nuextiqdSpc1Mrrsr3vuLggQikDc&e=1751564388|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://eastcaster.pro/hls/iueyzbvezch16.m3u8?st=lHo0QxaqqNdw7lxFTZJwWozzQefvd9jfarPuy5r_hxs&e=1751573521|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="StreamEast - Baseball",Kansas City Royals vs. Seattle Mariners Live Stream
-https://eastcaster.pro/hls/JHDAJBDnjdna30.m3u8?st=BDRUPOm6KoYpL2UxeYB_9H2kkLF1kdywI5Xx2nZ55Ek&e=1751564369|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://eastcaster.pro/hls/JHDAJBDnjdna30.m3u8?st=VBluR9Ii-h8QMS-2_mHD-hj6fQBQYCfvyliHIrLAVw8&e=1751573532|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="StreamEast - Baseball",Los Angeles Angels vs. Atlanta Braves Live Stream
-https://eastcaster.pro/hls/jkzahzadach20.m3u8?st=UBPQ113lUPt4_jdZCJ9qE2LD3WmqsO2MlujwFJnRrrw&e=1751564323|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://edge1caster.pro/hls/jkzahzadach20.m3u8?st=j2Eg__CXFgipqdxb0A8o6QXaKA5pyX38TnHuoy9LQP8&e=1751573721|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="StreamEast - Baseball",Milwaukee Brewers vs. New York Mets Live Stream
-https://edge1caster.pro/hls/bzagLHzach19.m3u8?st=qe8LX4I3XZFKgAc_aYQuPKttGAPX9Y1qE073qR6Rc0U&e=1751564352|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://eastcaster.pro/hls/bzagLHzach19.m3u8?st=918o6lVkYQYJIJm8O4-YT3V5ecPTckgcCqRCfy2Fevg&e=1751573492|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="StreamEast - Baseball",Minnesota Twins vs. Miami Marlins Live Stream
-https://edge1caster.pro/hls/dazhfiach15.m3u8?st=rbyrhnmPxu4tP8Uqu8v_p1J8SUvc9q0AlXNi07I7yUM&e=1751564334|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://rr.buytommy.top/secure/pvsLXSlrwh/alpha/stream/miami-marlins-vs-minnesota-twins/1/playlist.m3u8|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="StreamEast - Baseball",New York Yankees vs. Toronto Blue Jays Live Stream
-https://edge1caster.pro/hls/Czajafjihafch18.m3u8?st=GzS6EJavsUVW7bOUMqaaFdK4kOpPT1BBdLx3xzuTGsQ&e=1751564406|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://eastcaster.pro/hls/Czajafjihafch18.m3u8?st=KIw4sN1-j35zSSOKTCUYVIdhVKVx6ufGOx4S4ZPs4kU&e=1751573635|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="StreamEast - Baseball",San Francisco Giants vs. Arizona Diamondbacks Live Stream
-https://edge1caster.pro/hls/sfjnzabacah31.m3u8?st=4t_Y2VkJQLsGpfWv7Ln2oLwMTs9pXgvaFQxc9NGpUc4&e=1751564396|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://edge1caster.pro/hls/sfjnzabacah31.m3u8?st=m-l7TtEIlCdNJj5zxsXWGzFvsYSmr3-8RzcDMc4QtPM&e=1751573574|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 
 #EXTGRP:StreamEast - F1
 #EXTINF:-1 tvg-id="Racing.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Motorsport.png" group-title="StreamEast - F1",F1 British GP Free Practice 1 Live Stream
-https://eastcaster.pro/hls/hbfkazbkaznc49.m3u8?st=MVtHPEIaz3Qh6KLFdZ40GYXLSgXRjAtvH7Gdy7OjipE&e=1751564270|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://eastcaster.pro/hls/hbfkazbkaznc49.m3u8?st=ChxwGRTpyJ1D-Khj_ZjaZEEmXB-3zBkm0PGmvhhyVAI&e=1751573606|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Racing.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Motorsport.png" group-title="StreamEast - F1",F1 British GP Free Practice 2 Live Stream
-https://eastcaster.pro/hls/hbfkazbkaznc49.m3u8?st=0xsJaBTqWhorwT2AQj4bZE7gHKzf05EWXbJ9Mp4tyqU&e=1751564261|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://edge1caster.pro/hls/hbfkazbkaznc49.m3u8?st=3Y5pDU-g_JReMynNOu_IRtWqudENy5UMlGdAmK5gO1k&e=1751573661|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Racing.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Motorsport.png" group-title="StreamEast - F1",F1 British GP Free Practice 3 Live Stream
-https://edge1caster.pro/hls/hbfkazbkaznc49.m3u8?st=vvkugdVElNnWQ0kQ9YY_Rkicoymgk6WGU7R6IiMn-gQ&e=1751564202|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://edge1caster.pro/hls/hbfkazbkaznc49.m3u8?st=PN_4Uc1MU0eOqLf-gLxjjUQf_wkZrUcBqojt8_f1jYM&e=1751573584|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Racing.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Motorsport.png" group-title="StreamEast - F1",F1 British GP Qualifying Live Stream
-https://eastcaster.pro/hls/hbfkazbkaznc49.m3u8?st=WuoGVxajzw6K6A9EXhFGcsmJ_IOaGbDGJhb2T5AqEaY&e=1751564251|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://edge1caster.pro/hls/hbfkazbkaznc49.m3u8?st=zMKA5mutTTgd30wz-8YBuzdc4j68npsjE1AqlPXwLxQ&e=1751573595|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Racing.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Motorsport.png" group-title="StreamEast - F1",F1 British GP Race Live Stream
-https://edge1caster.pro/hls/hbfkazbkaznc49.m3u8?st=Fhpr0BHhzHOLZ4czOnCqBXFAiyktTszQ1xi8MYg4hH0&e=1751564231|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://edge1caster.pro/hls/hbfkazbkaznc49.m3u8?st=8lw402LSQMe5RF_CeVdb79kMi6KBFlcMlwa64ibAuvs&e=1751573671|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 
 #EXTGRP:StreamEast - MMA
 #EXTINF:-1 tvg-id="UFC.Fight.Pass.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MMA.png" group-title="StreamEast - MMA",UFC Fight Night: Lewis vs. Teixeira Live Stream
-https://eastcaster.pro/hls/oeenzgezcz47.m3u8?st=8Wc-QzCh58iPnEA_Dz7XgNZdvBRS0dO0V2Ibb6f7dXY&e=1751564380|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://edge1caster.pro/hls/oeenzgezcz47.m3u8?st=qgQLZpogq2uzQ9ZyvYIdKDg6qp2iAs3KRMKyIyqoPxM&e=1751573650|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 
 #EXTGRP:StreamEast - Soccer
+#EXTINF:-1 tvg-id="Soccer.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Soccer.png" group-title="StreamEast - Soccer",Belgium vs Italy	UEFA Women's Euro Live Stream
+https://nextcast.click/hls/HDGQZ2/index.m3u8?st=UeG-fcV8YLaCeCwe-3rczw&e=1751573542|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Soccer.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Soccer.png" group-title="StreamEast - Soccer",Fluminense vs. Al Hilal Live Stream
-https://eastcaster.pro/hls/24SDAZFcsqnj24.m3u8?st=uQju7JPPiUU5AXPQcDZjzee9GXS6Aau2QqCcxNkJsVs&e=1751564345|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://eastcaster.pro/hls/24SDAZFcsqnj24.m3u8?st=9qHDUB3yXpniPtpX88ZvWJ5a_vJhxYsQUAVQ_P2YmUg&e=1751573680|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Soccer.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Soccer.png" group-title="StreamEast - Soccer",Palmeiras vs. Chelsea Live Stream
-https://eastcaster.pro/hls/24SDAZFcsqnj24.m3u8?st=SW02f5PFHFbg3lGEPQsFnccLhwR37fEwAb_nBWI7eaE&e=1751564220|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://edge1caster.pro/hls/24SDAZFcsqnj24.m3u8?st=X-1m-e4oLT8kVlzsFwNvWXl-SktuAhY95DDpHHTZAWA&e=1751573700|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Soccer.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Soccer.png" group-title="StreamEast - Soccer",Paris Saintvs.Germain vs. Bayern Munich Live Stream
-https://edge1caster.pro/hls/24SDAZFcsqnj24.m3u8?st=7wVt-ASDBz8IbbKrEFVzb3yQnSCRwnx0bvhHuVuKIbo&e=1751564362|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://eastcaster.pro/hls/24SDAZFcsqnj24.m3u8?st=uAOyyf-KgKSlbv3osE7hA2qiDUlOxFBx5LEAGCVDFnk&e=1751573713|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 #EXTINF:-1 tvg-id="Soccer.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Soccer.png" group-title="StreamEast - Soccer",Real Madrid vs. Borussia Dortmund Live Stream
-https://eastcaster.pro/hls/24SDAZFcsqnj24.m3u8?st=E6fVe45_2U8f6tw42Gc7W7W1g_HLCKefMtHdTKAUgdE&e=1751564313|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
+https://edge1caster.pro/hls/24SDAZFcsqnj24.m3u8?st=4S8YFrwEyS2VSv0QwEaz8719hKG81zvRb6OgRrW6sSc&e=1751573732|User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A139.0%29%20Gecko%2F20100101%20Firefox%2F139.0&Origin=https%3A%2F%2Fstreamscenter.online&Referer=https%3A%2F%2Fstreamscenter.online%2F
 
 #EXTGRP:TubiTV
 #EXTINF:-1  tvg-id="400000096" tvg-logo="https://canvas-lb.tubitv.com/opts/EwZ67HuPQsqw_g==/f96dfd36-d049-4c63-ae07-410f192f18b6/CHgQeDoFMS4xLjZAAQ==" group-title="TubiTV",A&E Crime 360
@@ -10938,23 +10870,23 @@ https://ott.udptv.org/stream/astro/wsport/master.m3u8?u=discord.gg/civ3&p=fb3f8f
 http://ott.udptv.net/stream/iptv/warnertv/master.m3u8?u=discord.gg/civ3&p=fb3f8f99693741cbbfd578e30b02b25f056a1f0838491f6e186eb1340e3f2c13
 
 #EXTGRP:WNBA
-#EXTINF:-1 tvg-id="" tvg-name="Las Vegas Aces @ Indiana Fever (07/03 7:00 PM ET) HD" group-title="WNBA",Las Vegas Aces @ Indiana Fever (07/03 7:00 PM ET) HD
+#EXTINF:-1  tvg-name="Las Vegas Aces @ Indiana Fever (07/03 7:00 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Las Vegas Aces @ Indiana Fever (07/03 7:00 PM ET) HD
 https://tvpass.org/live/WNBA01/hd
-#EXTINF:-1 tvg-id="" tvg-name="Las Vegas Aces @ Indiana Fever (07/03 7:00 PM ET) SD" group-title="WNBA",Las Vegas Aces @ Indiana Fever (07/03 7:00 PM ET) SD
+#EXTINF:-1  tvg-name="Las Vegas Aces @ Indiana Fever (07/03 7:00 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Las Vegas Aces @ Indiana Fever (07/03 7:00 PM ET) SD
 https://tvpass.org/live/WNBA01/sd
-#EXTINF:-1 tvg-id="" tvg-name="Los Angeles Sparks @ New York Liberty (07/03 7:00 PM ET) HD" group-title="WNBA",Los Angeles Sparks @ New York Liberty (07/03 7:00 PM ET) HD
+#EXTINF:-1  tvg-name="Los Angeles Sparks @ New York Liberty (07/03 7:00 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Los Angeles Sparks @ New York Liberty (07/03 7:00 PM ET) HD
 https://tvpass.org/live/WNBA02/hd
-#EXTINF:-1 tvg-id="" tvg-name="Los Angeles Sparks @ New York Liberty (07/03 7:00 PM ET) SD" group-title="WNBA",Los Angeles Sparks @ New York Liberty (07/03 7:00 PM ET) SD
+#EXTINF:-1  tvg-name="Los Angeles Sparks @ New York Liberty (07/03 7:00 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Los Angeles Sparks @ New York Liberty (07/03 7:00 PM ET) SD
 https://tvpass.org/live/WNBA02/sd
-#EXTINF:-1 tvg-id="" tvg-name="Phoenix Mercury @ Dallas Wings (07/03 8:00 PM ET) HD" group-title="WNBA",Phoenix Mercury @ Dallas Wings (07/03 8:00 PM ET) HD
+#EXTINF:-1  tvg-name="Phoenix Mercury @ Dallas Wings (07/03 8:00 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Phoenix Mercury @ Dallas Wings (07/03 8:00 PM ET) HD
 https://tvpass.org/live/WNBA04/hd
-#EXTINF:-1 tvg-id="" tvg-name="Phoenix Mercury @ Dallas Wings (07/03 8:00 PM ET) SD" group-title="WNBA",Phoenix Mercury @ Dallas Wings (07/03 8:00 PM ET) SD
+#EXTINF:-1  tvg-name="Phoenix Mercury @ Dallas Wings (07/03 8:00 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Phoenix Mercury @ Dallas Wings (07/03 8:00 PM ET) SD
 https://tvpass.org/live/WNBA04/sd
-#EXTINF:-1 tvg-id="" tvg-name="Seattle Storm @ Atlanta Dream (07/03 7:30 PM ET) HD" group-title="WNBA",Seattle Storm @ Atlanta Dream (07/03 7:30 PM ET) HD
+#EXTINF:-1  tvg-name="Seattle Storm @ Atlanta Dream (07/03 7:30 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Seattle Storm @ Atlanta Dream (07/03 7:30 PM ET) HD
 https://tvpass.org/live/WNBA03/hd
-#EXTINF:-1 tvg-id="" tvg-name="Seattle Storm @ Atlanta Dream (07/03 7:30 PM ET) SD" group-title="WNBA",Seattle Storm @ Atlanta Dream (07/03 7:30 PM ET) SD
+#EXTINF:-1  tvg-name="Seattle Storm @ Atlanta Dream (07/03 7:30 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Seattle Storm @ Atlanta Dream (07/03 7:30 PM ET) SD
 https://tvpass.org/live/WNBA03/sd
-#EXTINF:-1 tvg-id="" tvg-name="Washington Mystics @ Minnesota Lynx (07/03 8:00 PM ET) HD" group-title="WNBA",Washington Mystics @ Minnesota Lynx (07/03 8:00 PM ET) HD
+#EXTINF:-1  tvg-name="Washington Mystics @ Minnesota Lynx (07/03 8:00 PM ET) HD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Washington Mystics @ Minnesota Lynx (07/03 8:00 PM ET) HD
 https://tvpass.org/live/WNBA05/hd
-#EXTINF:-1 tvg-id="" tvg-name="Washington Mystics @ Minnesota Lynx (07/03 8:00 PM ET) SD" group-title="WNBA",Washington Mystics @ Minnesota Lynx (07/03 8:00 PM ET) SD
+#EXTINF:-1  tvg-name="Washington Mystics @ Minnesota Lynx (07/03 8:00 PM ET) SD" tvg-id="Sports.Dummy.us" tvg-logo="https://tinyurl.com/drewsportslogo" group-title="WNBA",Washington Mystics @ Minnesota Lynx (07/03 8:00 PM ET) SD
 https://tvpass.org/live/WNBA05/sd
