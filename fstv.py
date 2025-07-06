@@ -107,7 +107,7 @@ CHANNEL_MAPPINGS = {
     "VE-de-sportdigital (sv3-CDN)": {"name": "SportDigital Germany", "tv-id": "sportdigital.Fussball.de"},
     "VE-de-sky premier league": {"name": "Sky Sport Premier League DE", "tv-id": "Sky.Sport.Premier.League.de"},
     "VE-de-skyde mix": {"name": "Sky Mix DE", "tv-id": "Sky.Sport.Mix.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-mix-uk.png?raw=true"},
-    "VE-de-bundesliga1 (sv3-CDN)": {"name": "Bundesliga 1 Germany", "tv-id": "Sports.Dummy.us"},
+    "VE-de-bundesliga1 (sv3-CDN)": {"name": "Bundesliga 1 Germany", "tv-id": "Sky.Sport.Bundesliga.de"},
     "VE-fox 502": {"name": "Fox Sports 502 AU", "tv-id": "FoxCricket.au"},
     "VE-zent-discovery": {"name": "Discovery Channel", "tv-id": "Discovery.Channel.(US).-.Eastern.Feed.us"},
     "VE-zent-cinemax": {"name": "Cinemax", "tv-id": "Cinemax.-.Eastern.Feed.us"},
