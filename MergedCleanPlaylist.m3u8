@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"
-# Last forced update: 2025-07-08T22:39:46.471483Z
+# Last forced update: 2025-07-08T22:52:10.761759Z
 
 #EXTGRP: Mystique Caribbean
 #EXTINF:-1 tvg-name="CVM" tvg-id="Local.Programming.Dummy.us" tvg-logo="https://cvssja.org/wp-content/uploads/2020/06/CVM-Logo-2016.png" group-title=" Mystique Caribbean", CVM (Jamaica)
@@ -7231,39 +7231,63 @@ https://jmp2.uk/plu-5d14fc31252d35decbc4080b.m3u8
 #EXTINF:-1  tvg-name="Yu-Gi-Oh!" tvg-id="5f4ec10ed9636f00089b8c89" tvg-logo="https://images.pluto.tv/channels/5f4ec10ed9636f00089b8c89/colorLogoPNG.png" tvg-chno="4030" group-title="PlutoTV USA",Yu-Gi-Oh!
 https://jmp2.uk/plu-5f4ec10ed9636f00089b8c89.m3u8
 
+#EXTGRP:PPVLand - Baseball Action HD
+#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",New York Mets vs. Baltimore Orioles
+#EXTVLCOPT:http-origin=https://veplay.top
+#EXTVLCOPT:http-referrer=https://veplay.top/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZmM0NzVlNjM1NTY0LWFjZWEtZDI4NC1kZjllLWVjZDc3N2E4/master.m3u8?md5=VMiSZELM7VO4v2Chz7h5Yg&expires=1752057655&t=1752014455
+#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",Tampa Bay Rays vs. Detroit Tigers
+#EXTVLCOPT:http-origin=https://veplay.top
+#EXTVLCOPT:http-referrer=https://veplay.top/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1YWJmNWYzYjhjNjY2LWE1OGItZmI2NC1iNTUwLTBkNDgwNDg4/master.m3u8?md5=ryO5vSmYBSubpwEweohFug&expires=1752057666&t=1752014466
+
+#EXTGRP:PPVLand - Basketball Hub
+#EXTINF:-1 tvg-id="Basketball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png" group-title="PPVLand - Basketball Hub",Grizzlies at 76ers
+#EXTVLCOPT:http-origin=https://veplay.top
+#EXTVLCOPT:http-referrer=https://veplay.top/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZjY1YzBmMDZmNGU3LWZiMzgtYWI2NC0wYTJkLTEzMmVjYTdh/master.m3u8?md5=5lm1oqwbsuBbtO4vDYn6fQ&expires=1752057803&t=1752014603
+#EXTINF:-1 tvg-id="Basketball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png" group-title="PPVLand - Basketball Hub",Heat at Warriors
+#EXTVLCOPT:http-origin=https://veplay.top
+#EXTVLCOPT:http-referrer=https://veplay.top/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1YTRiNGZkMDY4MmQxLWY3YzgtZGVhNC0xMTNkLTRkYTg4MGFh/master.m3u8?md5=uOvWVHYH2YwxexPuBDWhXw&expires=1752057811&t=1752014611
+
 #EXTGRP:PPVLand - Global Football Streams
 #EXTINF:-1 tvg-id="Soccer.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Soccer2.png" group-title="PPVLand - Global Football Streams",Real Madrid vs. Paris Saint-Germain
 #EXTVLCOPT:http-origin=https://veplay.top
 #EXTVLCOPT:http-referrer=https://veplay.top/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MjFkODA5OWI4ZTVlLWY4YzgtYWYzNC1jNTc3LWNiOTBiMGYz/master.m3u8?md5=tFrf6DAGZxsSRUHIdXgKgA&expires=1752053418&t=1752010218
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MjFkODA5OWI4ZTVlLWY4YzgtYWYzNC1jNTc3LWNiOTBiMGYz/master.m3u8?md5=BhRWrFr9NaljHcnT0CYk6Q&expires=1752057921&t=1752014721
 
 #EXTGRP:PPVLand - Live Channels 24/7
 #EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/247.png" group-title="PPVLand - Live Channels 24/7",(North) Korean Central Television
 #EXTVLCOPT:http-origin=https://veplay.top
 #EXTVLCOPT:http-referrer=https://veplay.top/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MTM1MGFmMDIzODI3LTk3Y2EtMDZhNC0yNTA3LWY0M2Q4NmE0/master.m3u8?md5=tH7rYSiGbBSu0pj7zoo-Iw&expires=1752053520&t=1752010320
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MTM1MGFmMDIzODI3LTk3Y2EtMDZhNC0yNTA3LWY0M2Q4NmE0/master.m3u8?md5=mFVK--pO6YHwg6EkdwZ0Rg&expires=1752058020&t=1752014820
 #EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/247.png" group-title="PPVLand - Live Channels 24/7",24/7 COWS
 #EXTVLCOPT:http-origin=https://veplay.top
 #EXTVLCOPT:http-referrer=https://veplay.top/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1YzlmNWM5ZGQ1ODJmLTcxOTgtNzBkNC1hYzM5LWQyOWM3MjAz/master.m3u8?md5=OPpCttBc2JcpUMgb4pPu6A&expires=1752053493&t=1752010293
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1YzlmNWM5ZGQ1ODJmLTcxOTgtNzBkNC1hYzM5LWQyOWM3MjAz/master.m3u8?md5=Bo_wWCAkZNPv505al_bawQ&expires=1752057993&t=1752014793
 #EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/247.png" group-title="PPVLand - Live Channels 24/7",24/7 Family​‌‌​‌​​​‌‌‌​‌​‌​‌‌​‌​‌​​​‌‌​‌‌​‌ Guy
 #EXTVLCOPT:http-origin=https://veplay.top
 #EXTVLCOPT:http-referrer=https://veplay.top/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1YTA5ZTU3MjFhNTI0LWRkZTktZTRlNC1mMzU4LTQwMWI0YjJk/master.m3u8?md5=EpE2Geh6932tuG4Ug1MhpQ&expires=1752053502&t=1752010302
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1YTA5ZTU3MjFhNTI0LWRkZTktZTRlNC1mMzU4LTQwMWI0YjJk/master.m3u8?md5=alSzuvyMah9THjXsZsYP7Q&expires=1752058002&t=1752014802
 #EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/247.png" group-title="PPVLand - Live Channels 24/7",24/7 South Park
 #EXTVLCOPT:http-origin=https://veplay.top
 #EXTVLCOPT:http-referrer=https://veplay.top/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZGEyNDNkZWMyNzFjLWU2OWItNzFlNC00NWU5LTUyODY0MWIz/master.m3u8?md5=iDPCwdBeKNDTPIiNye1SDg&expires=1752053483&t=1752010283
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZGEyNDNkZWMyNzFjLWU2OWItNzFlNC00NWU5LTUyODY0MWIz/master.m3u8?md5=_qkZxw1Gp6Wu4tU1mtQznQ&expires=1752057985&t=1752014785
 #EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/247.png" group-title="PPVLand - Live Channels 24/7",24/7 The Simpsons
 #EXTVLCOPT:http-origin=https://veplay.top
 #EXTVLCOPT:http-referrer=https://veplay.top/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MGQzNzI5MTE0YjQwLTVmYmEtYmE3NC1kOThlLWY2MmU4NGI4/master.m3u8?md5=oUwbhMUywhAvFoIDUdCa1w&expires=1752053511&t=1752010311
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MGQzNzI5MTE0YjQwLTVmYmEtYmE3NC1kOThlLWY2MmU4NGI4/master.m3u8?md5=6fx2U_yzTH6-WI-BZpNwGw&expires=1752058011&t=1752014811
 
 #EXTGRP:SamsungTVPlus Canada
 #EXTINF:-1  tvg-name="21 Jump Street" tvg-id="CABB26000082J" tvg-logo="https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABB26000082J_20250121T094036SQUARE.png" tvg-chno="1600" group-title="SamsungTVPlus Canada",21 Jump Street
