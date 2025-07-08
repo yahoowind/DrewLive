@@ -129,9 +129,13 @@ def normalize_channel_name(name: str) -> str:
 
 def prettify_name(raw: str) -> str:
     raw = re.sub(r'VE[-\s]*', '', raw, flags=re.IGNORECASE)
-    raw = re.sub(r'\([^)]*\)', '', raw)  # remove things in ()
-    raw = re.sub(r'[^a-zA-Z0-9\s]', '', raw)  # remove most non-alphanum
+    raw = re.sub(r'\([^)]*\)', '', raw)
+    raw = re.sub(r'[^a-zA-Z0-9\s]', '', raw)
     return re.sub(r'\s+', ' ', raw.strip()).title()
+
+NORMALIZED_MAPPINGS = {
+    normalize_channel_name(k): v for k, v in CHANNEL_MAPPINGS.items()
+}
 
 async def fetch_fstv_html():
     async with async_playwright() as p:
@@ -145,7 +149,7 @@ async def fetch_fstv_html():
             try:
                 await page.goto("https://fstv.us/live-tv.html?timezone=America%2FDenver", timeout=90000, wait_until="domcontentloaded")
                 await page.wait_for_selector(".item-channel", timeout=15000)
-                break  # success
+                break
             except Exception as e:
                 print(f"⚠️ Attempt {attempt + 1} failed: {e}")
                 if attempt == 2:
@@ -168,15 +172,9 @@ def build_playlist_from_html(html, channel_mappings):
             continue
 
         normalized_name = normalize_channel_name(name)
-        matched_key = None
 
-        for raw_key in channel_mappings:
-            if normalize_channel_name(raw_key) == normalized_name:
-                matched_key = raw_key
-                break
-
-        if matched_key:
-            mapping = channel_mappings[matched_key]
+        if normalized_name in NORMALIZED_MAPPINGS:
+            mapping = NORMALIZED_MAPPINGS[normalized_name]
             new_name = mapping.get("name", prettify_name(name))
             tv_id = mapping.get("tv-id", "")
             logo = mapping.get("logo", logo_html)
