@@ -3179,29 +3179,31 @@ https://fl3.moveonjoy.com/YES_NETWORK/index.m3u8
 
 #EXTGRP:Mystique AU
 #EXTINF:-1  tvg-id="10BoldAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/10-bold-drama-au.png" group-title="Mystique AU" radio="false",10 Bold Drama
-http://tvhe.neez.id.au/stream/channelid/177421981?profile=pass
+http://115.69.40.212:55555/10Bold
 #EXTINF:-1  tvg-id="10PeachAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/10-peach-comedy-au.png" group-title="Mystique AU" radio="false",10 Peach Comedy
-http://tvhe.neez.id.au/stream/channelid/126080995?profile=pass
+http://115.69.40.212:55555/10Peach
 #EXTINF:-1  tvg-id="7Adelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/seven-au.png" group-title="Mystique AU" radio="false",7
-http://tvhe.neez.id.au/stream/channelid/1539335094?profile=pass
+http://115.69.40.212:55555/7HD%20Newcastle
 #EXTINF:-1  tvg-id="7Bravo.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/7bravo-au.png" group-title="Mystique AU" radio="false",7Bravo
-http://tvhe.neez.id.au/stream/channelid/1013117216?profile=pass
+http://115.69.40.212:55555/7bravo
 #EXTINF:-1  tvg-id="7flixAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/7flix-au.png" group-title="Mystique AU" radio="false",7Flix
-http://tvhe.neez.id.au/stream/channelid/630621048?profile=pass
+http://115.69.40.212:55555/7flix
 #EXTINF:-1  tvg-id="7mateAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/7mate-au.png" group-title="Mystique AU" radio="false",7Mate
-http://tvhe.neez.id.au/stream/channelid/750052291?profile=pass
+http://115.69.40.212:55555/7mateHD%20Newcastle
 #EXTINF:-1  tvg-id="7TWOAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/7two-au.png" group-title="Mystique AU" radio="false",7Two
-http://tvhe.neez.id.au/stream/channelid/294715339?profile=pass
+http://115.69.40.212:55555/7two%20Newcastle
+#EXTINF:-1  tvg-id="9Adelaide.au" tvg-logo="https://1000logos.net/wp-content/uploads/2022/01/Nine-Network-Productions-Logo-2015.png" group-title="Mystique AU" radio="false",9 Network
+http://115.69.40.212:55555/9HD%20Newcastle
 #EXTINF:-1  tvg-id="9GemAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/nine-gem-au.png" group-title="Mystique AU" radio="false",9Gem
-http://tvhe.neez.id.au/stream/channelid/758254891?profile=pass
+http://115.69.40.212:55555/9GemHD%20Newcastle
 #EXTINF:-1  tvg-id="9GoAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/nine-go-au.png" group-title="Mystique AU" radio="false",9Go!
-http://tvhe.neez.id.au/stream/channelid/1440783481?profile=pass
+http://115.69.40.212:55555/9Go!%20Newcastle
 #EXTINF:-1  tvg-id="9LifeAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/nine-life-au.png" group-title="Mystique AU" radio="false",9Life
-http://tvhe.neez.id.au/stream/channelid/1206278726?profile=pass
+http://115.69.40.212:55555/9Life%20Newcastle
 #EXTINF:-1  tvg-id="9RushAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/nine-rush-au.png" group-title="Mystique AU" radio="false",9Rush
-http://tvhe.neez.id.au/stream/channelid/1415085761?profile=pass
-#EXTINF:-1  tvg-id="ABCAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/abc-au.png" group-title="Mystique AU" radio="false",ABC
-https://c.mjh.nz/abc-nsw.m3u8
+https://tvnow.best/api/stream/mikemog/878404/livetv.epg/melbourne.9.rush.au.m3u8
+#EXTINF:-1  tvg-id="ABCAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/abc-au.png" group-title="Mystique AU" radio="false",ABC Australia
+https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8
 #EXTINF:-1  tvg-id="ABCEntertainsAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/abc-entertains-au.png" group-title="Mystique AU" radio="false",ABC Entertains
 https://c.mjh.nz/abc-me.m3u8
 #EXTINF:-1  tvg-id="ABCFamilyAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/abc-family-au.png" group-title="Mystique AU" radio="false",ABC Family
@@ -3210,10 +3212,8 @@ https://c.mjh.nz/abc-tv-plus.m3u8
 https://c.mjh.nz/abc-kids.m3u8
 #EXTINF:-1  tvg-id="ABCNewsAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/abc-news-au.png" group-title="Mystique AU" radio="false",ABC News
 https://c.mjh.nz/abc-news.m3u8
-#EXTINF:-1  tvg-id="ESPN.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/espn-au.png" group-title="Mystique AU" radio="false",ESPN
-http://pinkpony.lol:80/live/Heather/Heather/250175.ts
-#EXTINF:-1  tvg-id="ESPN2.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/espn-2-au.png" group-title="Mystique AU" radio="false",ESPN 2
-http://pinkpony.lol:80/live/Heather/Heather/250176.ts
+#EXTINF:-1  tvg-id="ABCBrisbane.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/abc-au.png" group-title="Mystique AU" radio="false",ABC TV
+https://c.mjh.nz/abc-nsw.m3u8
 #EXTINF:-1  tvg-id="FoxCricket.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/fox-sports-cricket-501-au.png?raw=true" group-title="Mystique AU" radio="false",FOX Sport 501
 https://a1xs.vip/700001
 #EXTINF:-1  tvg-id="FoxLeague.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/fox-sports-league-502-au.png?raw=true" group-title="Mystique AU" radio="false",FOX Sport 502
@@ -3227,25 +3227,35 @@ https://a1xs.vip/700005
 #EXTINF:-1  tvg-id="FoxSports506.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/fox-sports-506-au.png?raw=true" group-title="Mystique AU" radio="false",FOX Sport 506
 https://a1xs.vip/700006
 #EXTINF:-1  tvg-id="FoxSportsMore.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/fox-sports-507-au.png?raw=true" group-title="Mystique AU" radio="false",FOX Sport 507
-http://iptvtree.net:8080/live/test_acct/ohbo1veifa4AhD/280194.ts
+http://115.69.40.212:55555/10HD%20Newcastle
 #EXTINF:-1  tvg-id="10Adelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/network-10-au.png" group-title="Mystique AU" radio="false",Network 10
 http://tvhe.neez.id.au/stream/channelid/1703206964?profile=pass
 #EXTINF:-1  tvg-id="NickelodeonAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/nickelodeon-au.png" group-title="Mystique AU" radio="false",Nickelodeon
-http://tvhe.neez.id.au/stream/channelid/1564037361?profile=pass
+http://tvmate.icu:8080/Mike@ohalloran2930/Mikeohalloran@2930/121003
 #EXTINF:-1  tvg-id="9Adelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/nine-au.png" group-title="Mystique AU" radio="false",Nine
 http://tvhe.neez.id.au/stream/channelid/881330051?profile=pass
 #EXTINF:-1  tvg-id="NITVAdelaide.au" tvg-logo="https://i.ibb.co/7xDL4NMY/NITV-logo-svg.png" group-title="Mystique AU" radio="false",NITV
 http://49.188.116.214:9981/stream/channelid/648325516?profile=pass
-#EXTINF:-1  tvg-id="Redbull.Dummy.us" tvg-logo="https://digitaladvertisingmedia.com/wp-content/uploads/2019/12/S_RedBullTV00.jpg" group-title="Mystique AU" radio="false",Redbull TV
-http://pinkpony.lol:80/live/Heather/Heather/165576.ts
+#EXTINF:-1  tvg-id="Racingcom.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/racing-com-au.png?raw=true" group-title="Mystique AU" radio="false",Racing.com
+https://racingvic-i.akamaized.net/hls/live/598695/racingvic/index1500.m3u8
 #EXTINF:-1  tvg-id="SBSAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/sbs-au.png" group-title="Mystique AU" radio="false",SBS
-http://49.188.116.214:9981/stream/channelid/443330529?profile=pass
+http://115.69.40.212:55555/SBS%20ONE%20HD
 #EXTINF:-1  tvg-id="SBSFoodAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/sbs-food-au.png" group-title="Mystique AU" radio="false",SBS Food
-http://49.188.116.214:9981/stream/channelid/756303200?profile=pass
+http://mu3241218.oknirvana.club:8880/kg14m2n04290002/79831148/61091
 #EXTINF:-1  tvg-id="SBSVicelandAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/sbs-viceland-au.png" group-title="Mystique AU" radio="false",SBS Viceland
-http://49.188.116.214:9981/stream/channelid/538980733?profile=pass
+http://mu3241218.oknirvana.club:8880/kg14m2n04290002/79831148/61093
 #EXTINF:-1  tvg-id="SBSWorldWatchAdelaide.au" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/sbs-world-watch-au.png" group-title="Mystique AU" radio="false",SBS WorldWatch
-http://49.188.116.214:9981/stream/channelid/1039209094?profile=pass
+http://mu3241218.oknirvana.club:8880/kg14m2n04290002/79831148/61094
+#EXTINF:-1  tvg-id="SkyNewsExtra1.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/sky-news-extra-au.png?raw=true" group-title="Mystique AU" radio="false",Sky News Extra 1
+https://skynewsau-live.akamaized.net/hls/live/2002689/skynewsau-extra1/master.m3u8
+#EXTINF:-1  tvg-id="SkyNewsExtra2.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/sky-news-extra-au.png?raw=true" group-title="Mystique AU" radio="false",Sky News Extra 2
+https://skynewsau-live.akamaized.net/hls/live/2002690/skynewsau-extra2/master.m3u8
+#EXTINF:-1  tvg-id="SkyNewsExtra3.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/sky-news-extra-au.png?raw=true" group-title="Mystique AU" radio="false",Sky News Extra 3
+https://skynewsau-live.akamaized.net/hls/live/2002691/skynewsau-extra3/master.m3u8
+#EXTINF:-1  tvg-id="SkyNews.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/sky-news-hd-au.png?raw=true" group-title="Mystique AU" radio="false",Sky News Regional
+http://115.69.40.212:55555/Sky%20News%20Regional
+#EXTINF:-1  tvg-id="TVSN.au" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/australia/tvsn-au.png?raw=true" group-title="Mystique AU" radio="false",TVSN
+https://tvsnhlslivetest.akamaized.net/hls/live/2034711/TVSN-MSL4/master.m3u8
 
 #EXTGRP:Mystique CA
 #EXTINF:-1  tvg-id="ABC.Spark.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/abc-spark-ca.png" group-title="Mystique CA" radio="false",ABC Spark
@@ -7296,54 +7306,52 @@ https://jmp2.uk/plu-5d14fc31252d35decbc4080b.m3u8
 https://jmp2.uk/plu-5f4ec10ed9636f00089b8c89.m3u8
 
 #EXTGRP:PPVLand - Baseball Action HD
+#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",Arizona Diamondbacks vs. San Diego Padres
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1OGRiM2QyY2Q3MzU5LWUyNWEtYjY3NC1hYWIwLWEzMDM1NDU5/master.m3u8?md5=cAceT_gOtFUpNll39F1iJw&expires=1751985248&t=1751942048|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",Cleveland Guardians vs. Houston Astros
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZGEzZjZhMzYwNTQ3LTU4OWEtYmY1NC1hMTYzLTRiODA1MWZl/master.m3u8?md5=gDovSfTKknfRH195p_DOgA&expires=1751980266&t=1751937066|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
-#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",Colorado Rockies vs. Boston Red Sox
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MTM3YjUwMzQxMDZmLTZiZDktY2E4NC1lNzZkLWNiNmNlOGUw/master.m3u8?md5=SqxmaGiT9zPgm5qngsTO_w&expires=1751980218&t=1751937018|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZGEzZjZhMzYwNTQ3LTU4OWEtYmY1NC1hMTYzLTRiODA1MWZl/master.m3u8?md5=U0O9HcPhksmFtwKV9U7DKw&expires=1751985228&t=1751942028|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",Los Angeles Dodgers vs. Milwaukee Brewers
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MjU5MGQ0MTJkM2FkLTJhYTgtNDVkNC1iNGEwLTgyOTZhMDJj/master.m3u8?md5=YyokYQpYZX7MoB_b9E95nw&expires=1751980237&t=1751937037|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
-#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",Miami Marlins vs. Cincinnati Reds
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MmZlYmFjYzI2MDc1LWYzZjktNjk3NC1lZDRhLTg5MDQ1NDU4/master.m3u8?md5=26Wm8A6OVXN8PteJjx5VLQ&expires=1751980228&t=1751937028|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MjU5MGQ0MTJkM2FkLTJhYTgtNDVkNC1iNGEwLTgyOTZhMDJj/master.m3u8?md5=_Q4iORDh0IMn8IwCRsAy2A&expires=1751985200&t=1751942000|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",Philadelphia Phillies vs. San Francisco Giants
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1M2IyYTE4OGFmNjY5LWRlMDktYTc0NC0yMjg1LWU0MjAyNDU1/master.m3u8?md5=tg_h4wuOIVXWvWQIGx0Rag&expires=1751985258&t=1751942058|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",Pittsburgh Pirates vs. Kansas City Royals
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MGY0YTI5ZjVkMGRiLTkyNTktODgyNC03OTQ3LTBiOWIzYzRm/master.m3u8?md5=APzTO0EoP0dU8xKgMBrRhg&expires=1751980247&t=1751937047|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
-#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",Tampa Bay Rays vs. Detroit Tigers
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1YWJmNWYzYjhjNjY2LWE1OGItZmI2NC1iNTUwLTBkNDgwNDg4/master.m3u8?md5=ard49mdhdvdCfRC1XuDDfA&expires=1751980208&t=1751937008|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MGY0YTI5ZjVkMGRiLTkyNTktODgyNC03OTQ3LTBiOWIzYzRm/master.m3u8?md5=zPULtnKlc4HB05O4XqSGtg&expires=1751985210&t=1751942010|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",Texas Rangers vs. Los Angeles Angels
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1OWU2MzFkOTA2ZDFiLTQ4ZTktYTQyNC1lMWNiLWU5YzZhODVm/master.m3u8?md5=1M0ayJbQEojTncZZcHS4CA&expires=1751985239&t=1751942039|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball.png" group-title="PPVLand - Baseball Action HD",Toronto Blue Jays vs. Chicago White Sox
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZjA3N2MwNjE0OWVkLTljZDgtMzAxNC05OTA4LTdhZTgzNDk5/master.m3u8?md5=94Cm9R2fFtqwXgqIDXKgDA&expires=1751980256&t=1751937056|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZjA3N2MwNjE0OWVkLTljZDgtMzAxNC05OTA4LTdhZTgzNDk5/master.m3u8?md5=SGshkOTlpXT6jEIRSQFguQ&expires=1751985219&t=1751942019|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 
 #EXTGRP:PPVLand - Basketball Hub
 #EXTINF:-1 tvg-id="Basketball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png" group-title="PPVLand - Basketball Hub",Grizzlies at Jazz
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZWM2M2M4NGQzYzk4LTExOTgtZjMzNC1iNThkLWI2ZWEzMjM2/master.m3u8?md5=3Nedf6RjcA3ljlc7MbbdZQ&expires=1751980320&t=1751937120|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
-#EXTINF:-1 tvg-id="Basketball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png" group-title="PPVLand - Basketball Hub",Thunder at 76ers
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZjY1YzBmMDZmNGU3LWZiMzgtYWI2NC0wYTJkLTEzMmVjYTdh/master.m3u8?md5=CarF78GoI7v2QDP9KN1UHA&expires=1751980302&t=1751937102|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
-#EXTINF:-1 tvg-id="Basketball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png" group-title="PPVLand - Basketball Hub",Valkyries at Dream
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Nzg0YThjYjExMjM5LWRjNmEtOGRmNC05ODQ5LWExNTFhZDU1/master.m3u8?md5=OrFCLKg1mJIf9RVccjYWsw&expires=1751980311&t=1751937111|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZWM2M2M4NGQzYzk4LTExOTgtZjMzNC1iNThkLWI2ZWEzMjM2/master.m3u8?md5=3mSwZw5SzZDuT4vDi8ssyg&expires=1751985267&t=1751942067|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+#EXTINF:-1 tvg-id="Basketball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png" group-title="PPVLand - Basketball Hub",Wings at Mercury
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Nzc1NDg5YWIxMDZhLWUwMmItMWMwNC0wYTQ3LTM3Y2JjNGMy/master.m3u8?md5=fBgM1uARPnPiK1HeRl2oWQ&expires=1751985275&t=1751942075|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 
 #EXTGRP:PPVLand - Live Channels 24/7
 #EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/247.png" group-title="PPVLand - Live Channels 24/7",(North) Korean Central Television
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MTM1MGFmMDIzODI3LTk3Y2EtMDZhNC0yNTA3LWY0M2Q4NmE0/master.m3u8?md5=98D99D9em7HMHFqxg2updg&expires=1751980490&t=1751937290|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MTM1MGFmMDIzODI3LTk3Y2EtMDZhNC0yNTA3LWY0M2Q4NmE0/master.m3u8?md5=RDyDM10cJj8gL8FmKjENMg&expires=1751985439&t=1751942239|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/247.png" group-title="PPVLand - Live Channels 24/7",24/7 COWS
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1YzlmNWM5ZGQ1ODJmLTcxOTgtNzBkNC1hYzM5LWQyOWM3MjAz/master.m3u8?md5=8vsseYlC8oDk-dZbcCF-NQ&expires=1751980464&t=1751937264|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1YzlmNWM5ZGQ1ODJmLTcxOTgtNzBkNC1hYzM5LWQyOWM3MjAz/master.m3u8?md5=lIIL8sJnr_4JeCYizcN9DQ&expires=1751985412&t=1751942212|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/247.png" group-title="PPVLand - Live Channels 24/7",24/7 Family Guy
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1YTA5ZTU3MjFhNTI0LWRkZTktZTRlNC1mMzU4LTQwMWI0YjJk/master.m3u8?md5=ruVIR6qe_69LcFS_WuOmsg&expires=1751980472&t=1751937272|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1YTA5ZTU3MjFhNTI0LWRkZTktZTRlNC1mMzU4LTQwMWI0YjJk/master.m3u8?md5=VkdP_udvKqRrPX8dpn2i0w&expires=1751985421&t=1751942221|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/247.png" group-title="PPVLand - Live Channels 24/7",24/7 South Park
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZGEyNDNkZWMyNzFjLWU2OWItNzFlNC00NWU5LTUyODY0MWIz/master.m3u8?md5=wxImouoeX9K6W9LqIfV00g&expires=1751980455&t=1751937255|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1ZGEyNDNkZWMyNzFjLWU2OWItNzFlNC00NWU5LTUyODY0MWIz/master.m3u8?md5=26YQ-9SjzqNI72PE8LjdsQ&expires=1751985403&t=1751942203|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/247.png" group-title="PPVLand - Live Channels 24/7",24/7 The Simpsons
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MGQzNzI5MTE0YjQwLTVmYmEtYmE3NC1kOThlLWY2MmU4NGI4/master.m3u8?md5=Iew6ruUu2qDWmshN6_XwZg&expires=1751980481&t=1751937281|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1MGQzNzI5MTE0YjQwLTVmYmEtYmE3NC1kOThlLWY2MmU4NGI4/master.m3u8?md5=MX21MvNWJDrqOnyfIPaq3Q&expires=1751985430&t=1751942230|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 
 #EXTGRP:PPVLand - Wrestling Events
 #EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Wrestling.png" group-title="PPVLand - Wrestling Events",AEW: Saturday Night Collision
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=eTkAUVU4vTNg6Orju6S9dA&expires=1751980446&t=1751937246|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=ONfejduMk2VwGhDkY1XWGg&expires=1751985394&t=1751942194|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Wrestling.png" group-title="PPVLand - Wrestling Events",AEW: Wednesday Night Dynamite
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=cG7fFNbDPgUzpLJQ0edimg&expires=1751980418&t=1751937218|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=XT0UadvTYlJ-7zgZfCVXnA&expires=1751985367&t=1751942167|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Wrestling.png" group-title="PPVLand - Wrestling Events",TNA: Impact
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=WCm16WH-u0E7mZs8-xIsFQ&expires=1751980427&t=1751937227|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=eFhN_bcMoZaWLNRTfCQZWQ&expires=1751985376&t=1751942176|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Wrestling.png" group-title="PPVLand - Wrestling Events",WWE: Friday Night Smackdown
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=IF6HguIfP_YE0Nkbkr0ehw&expires=1751980436&t=1751937236|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=QzTeHgr_6XcDqDyAvhtILA&expires=1751985385&t=1751942185|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Wrestling.png" group-title="PPVLand - Wrestling Events",WWE: Monday Night RAW
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=HTj0Xbf6ZaapwA6HE-i-1w&expires=1751980401&t=1751937201|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=4A-d51LIG_P-ffI04p9OgA&expires=1751985349&t=1751942149|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 #EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Wrestling.png" group-title="PPVLand - Wrestling Events",WWE: NXT
-https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=ooHbQysNpwaFdKa0pIJqkg&expires=1751980409&t=1751937209|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
+https://5nhp186eg31fofnc.api-redeem-coupon.click/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=U8qdBiwFyjZP3TkOT9ra0A&expires=1751985358&t=1751942158|Origin=https%3A%2F%2Fveplay.top&Referer=https%3A%2F%2Fveplay.top%2F&User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A140.0%29%20Gecko%2F20100101%20Firefox%2F140.0
 
 #EXTGRP:SamsungTVPlus Canada
 #EXTINF:-1  tvg-name="21 Jump Street" tvg-id="CABB26000082J" tvg-logo="https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABB26000082J_20250121T094036SQUARE.png" tvg-chno="1600" group-title="SamsungTVPlus Canada",21 Jump Street
