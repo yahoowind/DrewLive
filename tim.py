@@ -27,8 +27,8 @@ def main():
 
     for line in lines:
         line = line.strip()
-        if not line:
-            continue
+        if not line or line.startswith("#EXTM3U"):
+            continue  # skip upstream playlist header lines
         output_lines.append(force_group_title(line))
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
