@@ -121,7 +121,7 @@ CHANNEL_MAPPINGS = {
     "VE-TSN 3": {"name": "TSN 3", "tv-id": "TSN3.ca"},
     "VE-TSN 4": {"name": "TSN 4", "tv-id": "TSN4.ca"},
     "VE-TSN 5": {"name": "TSN 5", "tv-id": "TSN5.ca"},
-    "Uksv2Sky - Sport Plus": {"name": "Sky Sports Plus", "tv-id": "Sky.Sports.Plus.ie"},
+    "Uksv2Sky Sport Plus": {"name": "Sky Sports Plus", "tv-id": "Sky.Sports.Plus.ie"},
 }
 
 def normalize_channel_name(name: str) -> str:
