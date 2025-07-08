@@ -1,4 +1,4 @@
-﻿#EXTM3U url-tvg="https://github.com/matthuisman/i.mjh.nz/raw/master/PBS/kids_all.xml.gz"
+﻿#EXTM3U url-tvg="https://raw.githubusercontent.com/matthuisman/i.mjh.nz/refs/heads/master/PBS/all.xml"
 #EXTINF:-1  tvg-name="Alaska Public Media" tvg-id="KAKM" tvg-logo="https://image.pbs.org/stations/kakm-color-single-brand-logo-CKvfnQs.png" group-title="PBSKids",Alaska Public Media
 https://livestream.pbskids.org/out/v1/1e3d77b418ad4a819b3f4c80ac0373b5/est.m3u8
 #EXTINF:-1  tvg-name="APT PBS" tvg-id="WBIQ" tvg-logo="https://image.pbs.org/stations/wbiq-color-single-brand-logo-N8IgxM1.png" group-title="PBSKids",APT PBS
