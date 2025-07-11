@@ -180,14 +180,14 @@ def append_new_streams(lines, new_urls_with_groups):
     # Remove empty lines if any
     lines = [line for line in lines if line.strip()]
     # Insert exactly one #EXTM3U header with url-tvg at the top
-    lines.insert(0, '#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"')
+    lines.insert(0, '#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg"')
     return lines
 
 def clean_m3u_header_with_epg(lines):
     # Remove any existing #EXTM3U lines (with or without attributes)
     lines = [line for line in lines if not line.strip().startswith("#EXTM3U")]
     # Insert exactly one with the url-tvg attribute at the very top
-    lines.insert(0, '#EXTM3U url-tvg="https://tinyurl.com/merged2423-epg"')
+    lines.insert(0, '#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg"')
     return lines
 
 async def main():
