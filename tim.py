@@ -3,7 +3,7 @@ import re
 from datetime import datetime
 
 UPSTREAM_URL = "https://pigzillaaa-scraper.vercel.app/tims"
-EPG_URL = "https://tinyurl.com/merged2423-epg"
+EPG_URL = "https://tinyurl.com/DrewLive002-epg"
 OUTPUT_FILE = "Tims247.m3u8"
 FORCED_GROUP = "Tims247"
 
