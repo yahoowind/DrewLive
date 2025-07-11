@@ -56,16 +56,16 @@ Stay synced with live guide data for your players. Pick the one that fits your n
 🔗 Merged EPG (Full Source)  
 ✔️ Full EPG data from all sources  
 ⚠️ Missing some world/regional info  
-• [https://tinyurl.com/merged24-epg](https://tinyurl.com/merged24-epg)  
+• [https://tinyurl.com/DrewLive001-epg](https://tinyurl.com/DrewLive001-epg)  
 
 🔗 Merged EPG (No IPTV Crashes)  
 ✔️ Smooth on most players  
 ⚠️ May lack some local USA EPG  
-• [https://tinyurl.com/merged2423-epg](https://tinyurl.com/merged2423-epg)  
+• [https://tinyurl.com/DrewLive002-epg](https://tinyurl.com/DrewLive002-epg)  
 
 🔗 All Source EPG  
 ✔️ Most comprehensive option available  
-• [https://tinyurl.com/vizo24](https://tinyurl.com/vizo24)  
+• [[https://tinyurl.com/vizo24](https://tinyurl.com/DrewLive003-epg)](https://tinyurl.com/DrewLive003-epg)  
 
 ━━━━━━━━━━━━━━━━━━
 
