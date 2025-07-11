@@ -2,7 +2,7 @@ name: 🚀 Update TheTVApp Playlist 📺
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # Every 4 hours on the hour (00:00, 04:00, 08:00, 12:00, 16:00, 20:00 UTC)
+    - cron: '0 */2 * * *'  # Every 2 hours on the hour (00:00, 04:00, 08:00, 12:00, 16:00, 20:00 UTC)
   workflow_dispatch:      # Manual trigger
 
 jobs:
