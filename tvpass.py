@@ -4,15 +4,15 @@ UPSTREAM_URL = "http://tvpass.org/playlist/m3u"
 LOCAL_FILE = "TVPass.m3u"
 
 LOCKED_GROUPS = {
-    "ppv": {
+    "PPV": {
         "tvg-id": "PPV.EVENTS.Dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/DrewLiveSports.png"
     },
-    "mlb": {
+    "MLB": {
         "tvg-id": "MLB.Baseball.Dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/Baseball3.png"
     },
-    "wnba": {
+    "WNBA": {
         "tvg-id": "WNBA.dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/WNBA.png"
     }
