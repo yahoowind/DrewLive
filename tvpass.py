@@ -3,6 +3,21 @@ import requests
 UPSTREAM_URL = "http://tvpass.org/playlist/m3u"
 LOCAL_FILE = "TVPass.m3u"
 
+LOCKED_GROUPS = {
+    "ppv": {
+        "tvg-id": "PPV.EVENTS.Dummy.us",
+        "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/DrewLiveSports.png"
+    },
+    "mlb": {
+        "tvg-id": "MLB.Baseball.Dummy.us",
+        "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/Baseball3.png"
+    },
+    "wnba": {
+        "tvg-id": "WNBA.dummy.us",
+        "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/WNBA.png"
+    }
+}
+
 def fetch_upstream_pairs():
     res = requests.get(UPSTREAM_URL, timeout=15)
     res.raise_for_status()
@@ -39,25 +54,37 @@ def parse_local_playlist():
 def extract_title(extinf_line):
     return extinf_line.split(",")[-1].strip().lower()
 
+def extract_group(extinf_line):
+    if 'group-title="' in extinf_line:
+        return extinf_line.split('group-title="')[1].split('"')[0].strip().lower()
+    return ""
+
+def lock_metadata(meta_line, title):
+    group = extract_group(meta_line)
+    if group in LOCKED_GROUPS:
+        locked = LOCKED_GROUPS[group]
+        return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title}" tvg-logo="{locked["tvg-logo"]}" group-title="{group}",{title}'
+    return meta_line
+
 def update_playlist(local_pairs, upstream_pairs):
     updated = []
     used_titles = set()
-
     upstream_map = {extract_title(meta): url for meta, url in upstream_pairs}
 
     for meta, url in local_pairs:
         title = extract_title(meta)
         if title in upstream_map:
-            updated.append((meta, upstream_map[title]))  # Update URL
+            new_url = upstream_map[title]
+            new_meta = lock_metadata(meta, title)
+            updated.append((new_meta, new_url))
             used_titles.add(title)
         else:
-            updated.append((meta, url))  # Keep as-is
+            updated.append((lock_metadata(meta, title), url))
 
-    # Add new entries from upstream that don't exist locally
     for meta, url in upstream_pairs:
         title = extract_title(meta)
         if title not in used_titles:
-            updated.append((meta, url))
+            updated.append((lock_metadata(meta, title), url))
 
     return updated
 
