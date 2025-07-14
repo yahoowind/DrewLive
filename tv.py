@@ -149,10 +149,21 @@ def replace_urls_in_tv_section(lines, tv_urls):
             result.append(line)
     return result
 
-def append_new_streams(lines, new_urls_with_groups):
-    # Remove all existing #EXTM3U lines to avoid duplicates
-    lines = [line for line in lines if not line.strip().startswith("#EXTM3U")]
+def remove_old_section_entries(lines, section_groups):
+    cleaned = []
+    skip_next = False
+    for i, line in enumerate(lines):
+        if skip_next:
+            skip_next = False
+            continue
+        if line.startswith("#EXTINF") and any(f'group-title="{group}"' in line for group in section_groups):
+            skip_next = True
+            continue
+        cleaned.append(line)
+    return cleaned
 
+def append_new_streams(lines, new_urls_with_groups):
+    lines = [line for line in lines if not line.strip().startswith("#EXTM3U")]
     existing = {}
     i = 0
     while i < len(lines) - 1:
@@ -179,16 +190,12 @@ def append_new_streams(lines, new_urls_with_groups):
                 lines.append(f'#EXTINF:-1 group-title="{group}",{title}')
             lines.append(url)
 
-    # Remove empty lines if any
     lines = [line for line in lines if line.strip()]
-    # Insert exactly one #EXTM3U header with url-tvg at the top
     lines.insert(0, '#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg"')
     return lines
 
 def clean_m3u_header_with_epg(lines):
-    # Remove any existing #EXTM3U lines (with or without attributes)
     lines = [line for line in lines if not line.strip().startswith("#EXTM3U")]
-    # Insert exactly one with the url-tvg attribute at the very top
     lines.insert(0, '#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg"')
     return lines
 
@@ -200,7 +207,6 @@ async def main():
     with open(M3U8_FILE, "r", encoding="utf-8") as f:
         lines = f.read().splitlines()
 
-    # Clean header before processing to remove duplicates and add EPG header
     lines = clean_m3u_header_with_epg(lines)
 
     print("🔧 Replacing only /tv stream URLs...")
@@ -213,16 +219,21 @@ async def main():
 
     print("\n📦 Scraping all other sections (NBA, NFL, Events, etc)...")
     append_new_urls = await scrape_all_append_sections()
+
     if append_new_urls:
+        # 🧹 Remove old section entries before appending new ones
+        section_groups = list(SECTIONS_TO_APPEND.values())
+        updated_lines = remove_old_section_entries(updated_lines, section_groups)
+
+        # ➕ Append new streams
         updated_lines = append_new_streams(updated_lines, append_new_urls)
 
-    # Clean header on final output to guarantee one EPG header only
     updated_lines = clean_m3u_header_with_epg(updated_lines)
 
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} updated: Clean top, no duplicates, URLs updated properly.")
+    print(f"\n✅ {M3U8_FILE} updated: Cleaned old sections, added new streams, header set.")
 
 if __name__ == "__main__":
     asyncio.run(main())
