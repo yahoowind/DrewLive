@@ -32,6 +32,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Streamast.m3u8
+          git add StreamEast.m3u8
           git reset .github/workflows/ || true  # Avoid staging workflow files if changed
           git diff --cached --quiet || (git commit -m "Update playlist $(date -u)" && git push --force origin main)
