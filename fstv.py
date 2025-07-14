@@ -147,7 +147,7 @@ async def fetch_fstv_html():
 
         for attempt in range(3):
             try:
-                await page.goto("https://fstv.us/live-tv.html?timezone=America%2FDenver", timeout=90000, wait_until="domcontentloaded")
+                await page.goto("https://fstv.online/live-tv.html", timeout=90000, wait_until="domcontentloaded")
                 await page.wait_for_selector(".item-channel", timeout=15000)
                 break
             except Exception as e:
