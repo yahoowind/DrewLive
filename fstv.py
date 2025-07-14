@@ -137,27 +137,34 @@ NORMALIZED_MAPPINGS = {
     normalize_channel_name(k): v for k, v in CHANNEL_MAPPINGS.items()
 }
 
+MIRRORS = [
+    "https://fstv.us/live-tv.html?timezone=America%2FDenver",
+    "https://fstv.online/live-tv.html?timezone=America%2FDenver",
+    "https://fstv.space/live-tv.html?timezone=America%2FDenver",
+]
+
 async def fetch_fstv_html():
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36")
         page = await context.new_page()
 
-        print("🌐 Visiting FSTV...")
+        print("🌐 Visiting FSTV mirrors...")
 
-        for attempt in range(3):
+        for url in MIRRORS:
             try:
-                await page.goto("https://fstv.online/live-tv.html", timeout=90000, wait_until="domcontentloaded")
+                print(f"Trying {url}")
+                await page.goto(url, timeout=90000, wait_until="domcontentloaded")
                 await page.wait_for_selector(".item-channel", timeout=15000)
-                break
+                print(f"Success with {url}")
+                html = await page.content()
+                await browser.close()
+                return html
             except Exception as e:
-                print(f"⚠️ Attempt {attempt + 1} failed: {e}")
-                if attempt == 2:
-                    raise
+                print(f"Failed on {url}: {e}")
 
-        html = await page.content()
         await browser.close()
-        return html
+        raise Exception("All mirrors failed to load the channel list")
 
 def build_playlist_from_html(html, channel_mappings):
     soup = BeautifulSoup(html, "html.parser")
