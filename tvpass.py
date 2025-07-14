@@ -4,15 +4,15 @@ UPSTREAM_URL = "http://tvpass.org/playlist/m3u"
 LOCAL_FILE = "TVPass.m3u"
 
 LOCKED_GROUPS = {
-    "PPV": {
+    "ppv": {
         "tvg-id": "PPV.EVENTS.Dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/DrewLiveSports.png"
     },
-    "MLB": {
+    "mlb": {
         "tvg-id": "MLB.Baseball.Dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/Baseball3.png"
     },
-    "WNBA": {
+    "wnba": {
         "tvg-id": "WNBA.dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/WNBA.png"
     }
@@ -56,14 +56,17 @@ def extract_title(extinf_line):
 
 def extract_group(extinf_line):
     if 'group-title="' in extinf_line:
-        return extinf_line.split('group-title="')[1].split('"')[0].strip().lower()
+        return extinf_line.split('group-title="')[1].split('"')[0].strip()
     return ""
 
 def lock_metadata(meta_line, title):
-    group = extract_group(meta_line)
-    if group in LOCKED_GROUPS:
-        locked = LOCKED_GROUPS[group]
-        return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title}" tvg-logo="{locked["tvg-logo"]}" group-title="{group}",{title}'
+    original_group = extract_group(meta_line)
+    group_key = original_group.lower()
+    if group_key in LOCKED_GROUPS:
+        locked = LOCKED_GROUPS[group_key]
+        display_group = group_key.upper()
+        title_cased = title.title()
+        return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title_cased}" tvg-logo="{locked["tvg-logo"]}" group-title="{display_group}",{title_cased}'
     return meta_line
 
 def update_playlist(local_pairs, upstream_pairs):
