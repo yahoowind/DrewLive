@@ -58,10 +58,12 @@ async def scrape_tv_urls():
 
                 new_page.on("response", handle_response)
                 await new_page.goto(full_url)
+
                 try:
                     await new_page.get_by_text(f"Load {quality} Stream", exact=True).click(timeout=5000)
                 except:
                     pass
+
                 await asyncio.sleep(4)
                 await new_page.close()
 
@@ -120,6 +122,7 @@ async def scrape_section_urls(context, section_path, group_name):
             if stream_url:
                 print(f"✅ {quality}: {stream_url}")
                 urls.append((stream_url, group_name, title))
+                break  # Once one quality is found, skip the other
             else:
                 print(f"❌ {quality} not found")
 
@@ -164,31 +167,15 @@ def remove_old_section_entries(lines, section_groups):
 
 def append_new_streams(lines, new_urls_with_groups):
     lines = [line for line in lines if not line.strip().startswith("#EXTM3U")]
-    existing = {}
-    i = 0
-    while i < len(lines) - 1:
-        if lines[i].startswith("#EXTINF:-1"):
-            group = None
-            title = lines[i].split(",")[-1].strip()
-            if 'group-title="' in lines[i]:
-                group = lines[i].split('group-title="')[1].split('"')[0]
-            if group:
-                existing[(group, title)] = i + 1
-        i += 1
 
     for url, group, title in new_urls_with_groups:
-        key = (group, title)
-        if key in existing:
-            if lines[existing[key]] != url:
-                lines[existing[key]] = url
+        if group == "MLB":
+            lines.append(f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}')
+        elif group == "PPV":
+            lines.append(f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}')
         else:
-            if group == "MLB":
-                lines.append(f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}')
-            elif group == "PPV":
-                lines.append(f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}')
-            else:
-                lines.append(f'#EXTINF:-1 group-title="{group}",{title}')
-            lines.append(url)
+            lines.append(f'#EXTINF:-1 group-title="{group}",{title}')
+        lines.append(url)
 
     lines = [line for line in lines if line.strip()]
     lines.insert(0, '#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg"')
@@ -220,12 +207,12 @@ async def main():
     print("\n📦 Scraping all other sections (NBA, NFL, Events, etc)...")
     append_new_urls = await scrape_all_append_sections()
 
-    if append_new_urls:
-        # 🧹 Remove old section entries before appending new ones
-        section_groups = list(SECTIONS_TO_APPEND.values())
-        updated_lines = remove_old_section_entries(updated_lines, section_groups)
+    # 🧹 Always remove old section entries
+    section_groups = list(SECTIONS_TO_APPEND.values())
+    updated_lines = remove_old_section_entries(updated_lines, section_groups)
 
-        # ➕ Append new streams
+    # ➕ Append only if new streams are found
+    if append_new_urls:
         updated_lines = append_new_streams(updated_lines, append_new_urls)
 
     updated_lines = clean_m3u_header_with_epg(updated_lines)
@@ -233,7 +220,7 @@ async def main():
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} updated: Cleaned old sections, added new streams, header set.")
+    print(f"\n✅ {M3U8_FILE} updated: TV streams refreshed, sports sections rebuilt clean.")
 
 if __name__ == "__main__":
     asyncio.run(main())
