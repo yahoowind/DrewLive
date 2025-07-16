@@ -1,6 +1,7 @@
 import asyncio
 from playwright.async_api import async_playwright
 from datetime import datetime
+import aiohttp
 import os
 
 ALLOWED_CATEGORIES = {
@@ -33,6 +34,18 @@ ALLOWED_CATEGORIES = {
         "logo": "http://drewlive24.duckdns.org:9000/Logos/PPV.png"
     }
 }
+
+async def check_m3u8_url(url):
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url, timeout=10) as resp:
+                if resp.status == 200:
+                    content_type = resp.headers.get("Content-Type", "")
+                    # Optional: you can add more content-type checks here if needed
+                    return True
+    except Exception:
+        pass
+    return False
 
 async def main():
     m3u_path = "StreamedSU.m3u8"
@@ -74,8 +87,9 @@ async def main():
                 if not sources:
                     continue
 
-                valid_stream = None
-
+                # We'll attempt each source in order to find a valid working stream
+                m3u8_url = None
+                used_source_type = None
                 for source in sources:
                     source_id = source.get("id")
                     source_type = source.get("source")
@@ -90,59 +104,59 @@ async def main():
 
                         language = stream_info.get("language", "Unknown")
                         quality = "HD" if stream_info.get("hd") else "SD"
+
+                        # Reset URL before browsing
                         m3u8_url = None
 
+                        async def capture_route(route, req):
+                            nonlocal m3u8_url
+                            if ".m3u8" in req.url:
+                                m3u8_url = req.url
+                            await route.continue_()
+
+                        await context.route("**/*", capture_route)
+
                         try:
-                            async def capture_route(route, req):
-                                nonlocal m3u8_url
-                                if ".m3u8" in req.url and "master" in req.url:
-                                    m3u8_url = req.url
-                                await route.continue_()
-
-                            await context.route("**/*", capture_route)
-
-                            print(f"▶️ Trying stream: {embed_url}")
+                            print(f"\nVisiting: {title} (source: {source_type})")
                             await page.goto(embed_url, timeout=30000)
                             await page.wait_for_timeout(3000)
 
-                            box = await page.evaluate("""() => ({
-                                width: window.innerWidth,
-                                height: window.innerHeight
-                            })""")
-                            x, y = box["width"] // 2, box["height"] // 2
+                            box = await page.evaluate("""() => {
+                                return { width: window.innerWidth, height: window.innerHeight };
+                            }""")
+                            x = box["width"] // 2
+                            y = box["height"] // 2
 
+                            # Click multiple times to bypass ads or trigger player
                             for _ in range(6):
                                 await page.mouse.click(x, y)
                                 await page.wait_for_timeout(2000)
                                 if m3u8_url:
                                     break
 
-                            # If no URL or player error visible
-                            error_text = await page.inner_text("body", timeout=5000).catch(lambda _: "")
-                            if "error" in error_text.lower() or not m3u8_url:
-                                print(f"[✖] Skipped: Playback error or no m3u8 found.")
-                                continue
-
-                            valid_stream = {
-                                "url": m3u8_url,
-                                "language": language,
-                                "quality": quality,
-                                "embed": embed_url
-                            }
-                            break  # ✅ Found good stream, stop checking backups
+                            if m3u8_url:
+                                # Check URL validity before accepting
+                                valid = await check_m3u8_url(m3u8_url)
+                                if valid:
+                                    used_source_type = source_type
+                                    break
+                                else:
+                                    print(f"[!] Invalid stream URL (not 200): {m3u8_url}")
+                                    m3u8_url = None
+                                    continue
 
                         except Exception as e:
-                            print(f"[!] Error checking stream: {e}")
+                            print(f"[!] Error visiting embed for {title}: {e}")
                             continue
 
-                    if valid_stream:
+                    if m3u8_url:
+                        # Found a valid stream URL, stop checking other sources
                         break
 
-                if not valid_stream:
-                    print(f"[✖] No valid stream found for {title}")
+                if not m3u8_url:
+                    print(f"[✖] Failed: No valid stream found for {title}")
                     continue
 
-                # Use fallback logo unless better one found
                 logo = fallback_logo
                 teams = match.get("teams")
                 if teams:
@@ -150,13 +164,15 @@ async def main():
                     if home and home.get("badge"):
                         logo = f"https://streamed.su/api/images/badge/{home['badge']}.webp"
 
-                extinf = f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{group_title}",{title} ({valid_stream["language"]} - {valid_stream["quality"]})'
+                extinf = f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{group_title}",{title} ({language} - {quality})'
                 m3u.append(extinf)
-                m3u.append(valid_stream["url"])
-                print(f"[✔] Added: {title} ({valid_stream['language']} - {valid_stream['quality']})")
+                m3u.append(m3u8_url)
 
+                print(f"[✔] Success: {title} ({language} - {quality})")
+
+        playlist = "\n".join(m3u)
         with open(m3u_path, "w", encoding="utf-8") as f:
-            f.write("\n".join(m3u))
+            f.write(playlist)
 
         print("\n✅ Done. Playlist written to StreamedSU.m3u8")
         await browser.close()
