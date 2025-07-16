@@ -2,7 +2,7 @@ name: 🚀 Update StreamedSU Playlist 📺
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 * * * *'  # Every hour on the hour (UTC)
   workflow_dispatch:
 
 jobs:
