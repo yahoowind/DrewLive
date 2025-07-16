@@ -57,17 +57,14 @@ GROUP_RENAME_MAP = {
     "Darts": "PPVLand - Darts"
 }
 
-
 def parse_backend_time(timestr):
     try:
         h, m, s = map(int, timestr.strip().split(":"))
         now_utc = datetime.utcnow().replace(tzinfo=ZoneInfo("UTC"))
-        # Reset to midnight UTC, then add time offset
         return now_utc.replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(hours=h, minutes=m, seconds=s)
     except Exception as e:
         print(f"❌ Failed to parse time '{timestr}': {e}")
         return None
-
 
 def convert_to_local_str(dt_obj):
     try:
@@ -80,22 +77,27 @@ def convert_to_local_str(dt_obj):
         print(f"❌ Failed to format time: {e}")
         return None
 
+async def check_m3u8_url(url):
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url, timeout=10) as resp:
+                return resp.status == 200
+    except Exception:
+        return False
 
 async def get_streams():
     async with aiohttp.ClientSession() as session:
         async with session.get(API_URL) as resp:
             return await resp.json()
 
-
 async def grab_m3u8_from_iframe(page, iframe_url):
-    found_stream = None
+    found_streams = set()
 
     def handle_response(response):
-        nonlocal found_stream
         url = response.url
-        if not found_stream and ".m3u8" in url and response.status == 200:
-            found_stream = url
-            print(f"🎯 Found stream: {url}")
+        if ".m3u8" in url:
+            print(f"🔎 Detected stream URL: {url}")
+            found_streams.add(url)
 
     page.on("response", handle_response)
     print(f"🌐 Navigating to: {iframe_url}")
@@ -107,7 +109,7 @@ async def grab_m3u8_from_iframe(page, iframe_url):
     center_y = viewport["height"] / 2
 
     for i in range(5):
-        if found_stream:
+        if found_streams:
             break
         print(f"🖱️ Click #{i + 1}")
         await page.mouse.click(center_x, center_y)
@@ -117,20 +119,26 @@ async def grab_m3u8_from_iframe(page, iframe_url):
     await asyncio.sleep(5)
     page.remove_listener("response", handle_response)
 
-    return {found_stream} if found_stream else set()
-
+    # ✅ Filter for valid 200 links
+    valid_urls = set()
+    for url in found_streams:
+        if await check_m3u8_url(url):
+            print(f"✅ Validated: {url}")
+            valid_urls.add(url)
+        else:
+            print(f"❌ Rejected (non-200): {url}")
+    return valid_urls
 
 def build_m3u(streams, url_map):
     lines = ['#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg"']
     for s in streams:
         urls = url_map.get(s["name"], [])
         if not urls:
-            print(f"⚠️ No URL found for {s['name']}")
+            print(f"⚠️ No working URLs for {s['name']}")
             continue
 
         orig_category = s["category"].strip()
         final_group_title = GROUP_RENAME_MAP.get(orig_category, orig_category)
-
         logo = CATEGORY_LOGOS.get(orig_category, "")
         tvg_id = CATEGORY_TVG_IDS.get(orig_category, "Sports.Dummy.us")
 
@@ -141,13 +149,8 @@ def build_m3u(streams, url_map):
 
     return "\n".join(lines)
 
-
 async def main():
     data = await get_streams()
-    print("📡 Categories found from API:")
-    for category in data.get("streams", []):
-        print(f" - {category.get('category')}")
-
     streams = []
     for category in data.get("streams", []):
         cat_name = category.get("category", "").strip()
@@ -198,7 +201,6 @@ async def main():
         f.write(playlist)
 
     print("✅ Done! Playlist saved as PPVLand.m3u8")
-
 
 if __name__ == "__main__":
     asyncio.run(main())
