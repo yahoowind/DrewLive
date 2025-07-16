@@ -2,8 +2,8 @@ name: 🚀 Update StreamedSU Playlist 📺
 
 on:
   schedule:
-    - cron: '0 * * * *'  # ⏰ Every hour on the hour (UTC)
-  workflow_dispatch:        # Manual trigger
+    - cron: '0 * * * *'  # Every hour on the hour (UTC)
+  workflow_dispatch:      # Manual trigger
 
 jobs:
   scrape:
@@ -28,10 +28,20 @@ jobs:
       - name: 🎯 Run scraping script
         run: python streamsu.py
 
+      - name: 🐛 Debug: Show playlist contents and file info
+        run: |
+          echo "=== StreamedSU.m3u8 contents ==="
+          cat StreamedSU.m3u8 || echo "Playlist file missing!"
+          echo
+          ls -lh StreamedSU.m3u8
+          echo
+          git status
+          git diff
+
       - name: 💾 Commit & force-push playlist if changed (excluding workflow files)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add StreamedSU.m3u8
-          git reset .github/workflows/ || true  # Avoid staging workflow files if changed
+          git reset .github/workflows/ || true
           git diff --cached --quiet || (git commit -m "Update playlist $(date -u)" && git push --force origin main)
