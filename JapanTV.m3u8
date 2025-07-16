@@ -1,10 +1,12 @@
-#EXTM3U url-tvg="http://epg.utako.moe/jcom.xml,https://animenosekai.github.io/japanterebi-xmltv/guide.xml" tvg-shift=0 m3uautoload=1
+﻿#EXTM3U url-tvg="http://epg.utako.moe/jcom.xml,https://animenosekai.github.io/japanterebi-xmltv/guide.xml" tvg-shift=0 m3uautoload=1
 #EXTINF:-1  tvg-id="JOAYDTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Asahi_Broadcasting_Corporation_Logo.svg/261px-Asahi_Broadcasting_Corporation_Logo.svg.png" group-title="JapanTV",ABC
 http://vthanh.utako.moe/abc/index.m3u8
 #EXTINF:-1  tvg-id="AnimaxAsia.sg@Japan" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Animax.svg/1920px-Animax.svg.png" group-title="JapanTV",Animax
 http://vthanh.utako.moe/Animax/index.m3u8
 #EXTINF:-1  tvg-id="ATX.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/AT-X_logo.svg/2560px-AT-X_logo.svg.png" group-title="JapanTV",AT-X
 http://vthanh.utako.moe/AT-X/index.m3u8
+#EXTINF:-1  tvg-id="StarBS10.jp" tvg-logo="https://www.lyngsat.com/logo/tv/bb/bs-10-star-channel-jp.png" group-title="JapanTV",BS 10 Star Channel
+http://vthanh.utako.moe/bs10_star/index.m3u8
 #EXTINF:-1  tvg-id="BSAsahi.jp" tvg-logo="https://www.bs-asahi.co.jp/wp-content/uploads/2021/06/oglogo.jpg" group-title="JapanTV",BS Asahi
 http://vthanh.utako.moe/bsasahi/index.m3u8
 #EXTINF:-1  tvg-id="BSFuji.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/7/74/BSFuji2008Symbol.svg/1280px-BSFuji2008Symbol.svg.png" group-title="JapanTV",BS Fuji
@@ -31,6 +33,8 @@ http://vthanh.utako.moe/familygeki/index.m3u8
 http://vthanh.utako.moe/Fuji_TV/index.m3u8
 #EXTINF:-1  tvg-id="GreenChannel.jp" tvg-logo="https://www.lyngsat.com/logo/tv/gg/green-channel-jp.svg" group-title="JapanTV",Green Channel
 http://vthanh.utako.moe/green/index.m3u8
+#EXTINF:-1  tvg-id="HomeDramaChannel.jp" tvg-logo="https://www.lyngsat.com/logo/tv/hh/home-drama-channelpng-jp.png" group-title="JapanTV",Home Drama Channel
+http://vthanh.utako.moe/homedrama/index.m3u8
 #EXTINF:-1  tvg-id="Kids.Dummy.us" tvg-logo="https://static.wikia.nocookie.net/cartoonnetwork/images/3/3e/Cnlogo.png/revision/latest?cb=20111112142543" group-title="JapanTV",JP | Cartoon Network
 http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs25&isp=4
 #EXTINF:-1  tvg-id="Kids.Dummy.us" tvg-logo="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/69c84613-a1a3-4e06-ab40-bb4889dc214a/deyq3dk-28f104e3-ad8c-4ad1-8f7e-9a695bc7d035.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY5Yzg0NjEzLWExYTMtNGUwNi1hYjQwLWJiNDg4OWRjMjE0YVwvZGV5cTNkay0yOGYxMDRlMy1hZDhjLTRhZDEtOGY3ZS05YTY5NWJjN2QwMzUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZZ-KQAVkBD-Mxm2f6gbwgJtx7Hzy309h8qB4vZpC3Dw" group-title="JapanTV",JP | Disney Channel
@@ -65,6 +69,8 @@ http://vthanh.utako.moe/kansaitv/index.m3u8
 http://vthanh.utako.moe/kbs/index.m3u8
 #EXTINF:-1  tvg-id="JOOYDTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Mainichi_Broadcasting_System_logo.svg/1920px-Mainichi_Broadcasting_System_logo.svg.png" group-title="JapanTV",MBS
 http://vthanh.utako.moe/mbs/index.m3u8
+#EXTINF:-1  tvg-id="MTV.jp" tvg-logo="https://www.lyngsat.com/logo/tv/mm/mtv-us.svg" group-title="JapanTV",MTV
+http://vthanh.utako.moe/mtv/index.m3u8
 #EXTINF:-1  tvg-id="NHKBS.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6c/NHK_BS.png" group-title="JapanTV",NHK BS
 http://vthanh.utako.moe/NHK_BS/index.m3u8
 #EXTINF:-1  tvg-id="NHKBSP4K.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/NHK_BSP4K_2023_logo.svg/1920px-NHK_BSP4K_2023_logo.svg.png" group-title="JapanTV",NHK BS4K
@@ -73,14 +79,22 @@ http://vthanh.utako.moe/bsp4k/index.m3u8
 http://vthanh.utako.moe/NHK_E/index.m3u8
 #EXTINF:-1  tvg-id="JOAKDTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6f/NHK%E7%B7%8F%E5%90%88%E3%83%AD%E3%82%B42020-.png" group-title="JapanTV",NHK G
 http://vthanh.utako.moe/NHK_G/index.m3u8
+#EXTINF:-1  tvg-id="JOAKDTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6f/NHK%E7%B7%8F%E5%90%88%E3%83%AD%E3%82%B42020-.png" group-title="JapanTV",NHK G (low latency test)
+http://vthanh.utako.moe/nhkg_fast/index.m3u8
 #EXTINF:-1  tvg-id="NHKWorldJapan.jp" tvg-logo="https://www.lyngsat.com/logo/tv/nn/nhk-world-japan-jp.svg" group-title="JapanTV",NHK World Japan
 https://master.nhkworld.jp/nhkworld-tv/playlist/live.m3u8
+#EXTINF:-1  tvg-id="NHKWorldPremium.jp" tvg-logo="https://www.lyngsat.com/logo/tv/nn/nhk-world-premium-jp.png" group-title="JapanTV",NHK World Premium
+https://cdn.skygo.mn/live/disk1/NHK_World_Premium/HLSv3-FTA/NHK_World_Premium.m3u8
+#EXTINF:-1  tvg-id="NihonEigaSenmonChannel.jp" tvg-logo="https://www.lyngsat.com/logo/tv/nn/nihon_eiga_senmon.png" group-title="JapanTV",Nihon Eiga Senmon
+http://vthanh.utako.moe/nihon_eiga/index.m3u8
 #EXTINF:-1  tvg-id="JOAXDTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Nippon_TV_logo_2014.svg/2560px-Nippon_TV_logo_2014.svg.png" group-title="JapanTV",NTV
 http://vthanh.utako.moe/Nippon_TV/index.m3u8
 #EXTINF:-1  tvg-id="Pigoo.jp" tvg-logo="https://www.lyngsat.com/logo/tv/pp/pigoo-jp.png" group-title="JapanTV",Pigoo-test (NSFW)
 http://vthanh.utako.moe/pigoo/index.m3u8
 #EXTINF:-1  tvg-id="QVC.jp" tvg-logo="https://i.imgur.com/xWSzQ34.png" group-title="JapanTV",QVC
 https://cdn-live1.qvc.jp/iPhone/1501/1501.m3u8
+#EXTINF:-1  tvg-id="SkyA.jp" tvg-logo="https://www.lyngsat.com/logo/tv/ss/sky-a-jp.svg" group-title="JapanTV",Sky A
+http://vthanh.utako.moe/skya/index.m3u8
 #EXTINF:-1  tvg-id="SpaceShowerTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/05/SPACE_SHOWER_TV.jpg" group-title="JapanTV",Space Shower TV
 http://vthanh.utako.moe/spaceshower/index.m3u8
 #EXTINF:-1  tvg-id="JOUHDTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/SUN-TV_wordmark_2019.png/180px-SUN-TV_wordmark_2019.png" group-title="JapanTV",SUN
@@ -97,6 +111,10 @@ http://vthanh.utako.moe/Tokyo_MX1/index.m3u8
 http://vthanh.utako.moe/Tokyo_MX2/index.m3u8
 #EXTINF:-1  tvg-id="JOEXDTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/TV_Asahi_Logo.svg/2560px-TV_Asahi_Logo.svg.png" group-title="JapanTV",TV Asahi
 http://vthanh.utako.moe/TV_Asahi/index.m3u8
+#EXTINF:-1  tvg-id="TVAsahiChannel1.jp" tvg-logo="https://www.lyngsat.com/logo/tv/tt/tv-asahi-channel-1-jp.png" group-title="JapanTV",TV Asahi Channel 1
+http://vthanh.utako.moe/ex_ch1/index.m3u8
+#EXTINF:-1  tvg-id="TVAsahiChannel2.jp" tvg-logo="https://www.lyngsat.com/logo/tv/tt/tv-asahi-channel-2-jp.png" group-title="JapanTV",TV Asahi Channel 2
+http://vthanh.utako.moe/ex_ch2/index.m3u8
 #EXTINF:-1  tvg-id="JOBHDTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Tv_osaka_logo.svg/178px-Tv_osaka_logo.svg.png" group-title="JapanTV",TV Osaka
 http://vthanh.utako.moe/tvo/index.m3u8
 #EXTINF:-1  tvg-id="JOTXDTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/TV_Tokyo_logo_2023.svg/2560px-TV_Tokyo_logo_2023.svg.png" group-title="JapanTV",TV Tokyo
@@ -109,5 +127,3 @@ http://vthanh.utako.moe/wlive/index.m3u8
 http://vthanh.utako.moe/wprime/index.m3u8
 #EXTINF:-1  tvg-id="JOIXDTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Yomiuri_Telecasting_Corporation_Logo.svg/150px-Yomiuri_Telecasting_Corporation_Logo.svg.png" group-title="JapanTV",ytv
 http://vthanh.utako.moe/ytv/index.m3u8
-#EXTINF:-1  group-title="JapanTV" tvg-id="JOAKDTV.jp" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6f/NHK%E7%B7%8F%E5%90%88%E3%83%AD%E3%82%B42020-.png",NHK G (low latency test)
-http://vthanh.utako.moe/nhkg_fast/index.m3u8
