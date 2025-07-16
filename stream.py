@@ -60,12 +60,33 @@ def categorize_stream(url, title=""):
         return "StreamEast - F1"
     return "StreamEast - PPV Events"
 
+
+async def safe_goto(page, url, tries=3):
+    for attempt in range(tries):
+        try:
+            print(f"🌐 Attempt {attempt+1} loading {url}")
+            await page.goto(url, timeout=60000)
+            html = await page.content()
+            if "cloudflare" in html.lower() or "just a moment" in html.lower() or "attention required" in html.lower():
+                print("🚨 Block or challenge detected, retrying after delay...")
+                await asyncio.sleep(5)
+                continue
+            return True
+        except Exception as e:
+            print(f"⚠️ Error loading page (try {attempt+1}): {e}")
+            await asyncio.sleep(5)
+    print(f"❌ Failed to load page after {tries} tries: {url}")
+    return False
+
+
 async def get_event_links(page):
     print("🌐 Navigating to the main page to collect event links...")
-    await page.goto(BASE_URL, timeout=60000)
-    await asyncio.sleep(5)
-    links = await page.evaluate("""
-        () => Array.from(document.querySelectorAll('a'))
+    success = await safe_goto(page, BASE_URL)
+    if not success:
+        return []
+
+    await asyncio.sleep(3)
+    links = await page.evaluate("""() => Array.from(document.querySelectorAll('a'))
         .map(a => a.href)
         .filter(h =>
             h.includes('/nba') ||
@@ -82,6 +103,7 @@ async def get_event_links(page):
     print(f"📥 Collected {len(unique_links)} unique event links.")
     return unique_links
 
+
 async def click_center_once(page):
     box = await page.evaluate_handle("document.body.getBoundingClientRect()")
     dimensions = await box.json_value()
@@ -91,14 +113,17 @@ async def click_center_once(page):
     await page.mouse.click(x, y)
     await asyncio.sleep(1.5)
 
+
 async def fetch_v90_streams(context, sport):
     api_url = f"https://the.streameast.app/v90/{sport}/streams4"
     print(f"🔗 Fetching v90 API streams from: {api_url}")
     page = await context.new_page()
     m3u8_links = set()
     try:
-        response = await page.goto(api_url, timeout=30000)
-        text = await response.text()
+        success = await safe_goto(page, api_url)
+        if not success:
+            return []
+        text = await (await page.wait_for_response(api_url, timeout=30000)).text()
         data = json.loads(text)
 
         for stream in data.get("streams", []):
@@ -112,6 +137,7 @@ async def fetch_v90_streams(context, sport):
         await page.close()
 
     return list(m3u8_links)
+
 
 async def scrape_stream_url(context, url):
     m3u8_links = set()
@@ -141,7 +167,10 @@ async def scrape_stream_url(context, url):
 
     try:
         print(f"\n🔍 Scraping event page: {url}")
-        await page.goto(url, timeout=60000)
+        success = await safe_goto(page, url)
+        if not success:
+            return event_name, []
+
         await asyncio.sleep(3)
 
         event_name = await page.evaluate(r"""
@@ -194,11 +223,12 @@ async def scrape_stream_url(context, url):
 
     return event_name, list(m3u8_links)
 
+
 async def main():
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0",
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
             locale="en-US"
         )
 
@@ -223,6 +253,8 @@ async def main():
                     f.write('#EXTVLCOPT:http-origin=https://streamscenter.online\n')
                     f.write('#EXTVLCOPT:http-referrer=https://streamscenter.online/\n')
                     f.write(f'{stream_url}\n\n')
+
+                await asyncio.sleep(3)  # Small delay between processing links to reduce rate limiting
 
         print("\n✅ StreamEast.m3u8 saved with all streams.")
         await browser.close()
