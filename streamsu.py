@@ -1,7 +1,9 @@
 import asyncio
 from playwright.async_api import async_playwright
 from datetime import datetime
+
 import re
+import os
 
 ALLOWED_CATEGORIES = {
     "Basketball": {
@@ -35,6 +37,11 @@ ALLOWED_CATEGORIES = {
 }
 
 async def main():
+    # 🔁 Always start fresh — remove old playlist if it exists
+    m3u_path = "StreamedSU.m3u8"
+    if os.path.exists(m3u_path):
+        os.remove(m3u_path)
+
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
@@ -137,7 +144,7 @@ async def main():
                         continue
 
         playlist = "\n".join(m3u)
-        with open("StreamedSU.m3u8", "w", encoding="utf-8") as f:
+        with open(m3u_path, "w", encoding="utf-8") as f:
             f.write(playlist)
 
         print("\n✅ Done. Playlist written to StreamedSU.m3u8")
