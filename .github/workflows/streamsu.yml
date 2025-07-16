@@ -3,7 +3,7 @@ name: 🚀 Update StreamedSU Playlist 📺
 on:
   schedule:
     - cron: '0 * * * *'  # Every hour on the hour (UTC)
-  workflow_dispatch:      # Manual trigger
+  workflow_dispatch:
 
 jobs:
   scrape:
@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 📦 Install Python dependencies & Playwright browsers + system deps
+      - name: 📦 Install dependencies & Playwright
         run: |
           python -m pip install --upgrade pip
           pip install playwright urllib3 aiohttp
@@ -28,17 +28,16 @@ jobs:
       - name: 🎯 Run scraping script
         run: python streamsu.py
 
-      - name: 🐛 Debug: Show playlist contents and file info
+      - name: 🐛 Debug: Show playlist output
         run: |
-          echo "=== StreamedSU.m3u8 contents ==="
-          cat StreamedSU.m3u8 || echo "Playlist file missing!"
+          echo "=== Playlist Contents ==="
+          cat StreamedSU.m3u8 || echo "File missing!"
           echo
           ls -lh StreamedSU.m3u8
-          echo
           git status
           git diff
 
-      - name: 💾 Commit & force-push playlist if changed (excluding workflow files)
+      - name: 💾 Commit & push playlist if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
