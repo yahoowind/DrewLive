@@ -2,8 +2,8 @@ name: 🚀 Update TheTVApp Playlist 📺
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # Every 2 hours on the hour (00:00, 02:00, ..., 22:00 UTC)
-  workflow_dispatch:        # Manual trigger
+    - cron: '0 */2 * * *'  # ⏰ Every 2 hours
+  workflow_dispatch:        # 🔘 Manual trigger
 
 jobs:
   scrape:
@@ -32,6 +32,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git rebase origin/main || git rebase --skip
+
           git add TheTVApp.m3u8
-          git reset -- .github/workflows/ || true    # Unstage workflow files if staged
-          git diff --cached --quiet || (git commit -m "Update playlist $(date -u)" && git push --force origin main)
+          git reset .github/workflows/ || true
+
+          git diff --cached --quiet || (
+            git commit -m "Update TheTVApp playlist $(date -u)" &&
+            git push --force origin main
+          )
