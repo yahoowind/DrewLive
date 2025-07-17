@@ -32,7 +32,7 @@ CATEGORY_TVG_IDS = {
     "StreamEast - Baseball": "MLB.Baseball.Dummy.us",
     "StreamEast - Basketball Hub": "Basketball.Dummy.us",
     "StreamEast - Hockey": "NHL.Hockey.Dummy.us",
-    "StreamEast - WNBA": "WNBA.Basketball.Dummy.us",
+    "StreamEast - WNBA": "WNBA.dummy.us",
 }
 
 def categorize_stream(url, title=""):
