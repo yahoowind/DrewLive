@@ -152,42 +152,50 @@ def replace_urls_in_tv_section(lines, tv_urls):
 def append_new_streams(lines, new_urls_with_groups):
     lines = [line for line in lines if line.strip() != "#EXTM3U"]
 
+    # Remove old MLB & PPV entries (both EXTINF and URL line)
+    clean_lines = []
+    skip_next = False
+    for line in lines:
+        if skip_next:
+            skip_next = False
+            continue
+        if line.startswith("#EXTINF:-1") and ('group-title="MLB"' in line or 'group-title="PPV"' in line):
+            skip_next = True
+            continue
+        clean_lines.append(line)
+
     existing_entries = set()
     existing_urls = set()
 
-    # Scan existing lines
     i = 0
-    while i < len(lines) - 1:
-        if lines[i].startswith("#EXTINF:-1"):
+    while i < len(clean_lines) - 1:
+        if clean_lines[i].startswith("#EXTINF:-1"):
             group = None
-            title = lines[i].split(",")[-1].strip()
-            if 'group-title="' in lines[i]:
-                group = lines[i].split('group-title="')[1].split('"')[0]
-            url = lines[i + 1].strip()
+            title = clean_lines[i].split(",")[-1].strip()
+            if 'group-title="' in clean_lines[i]:
+                group = clean_lines[i].split('group-title="')[1].split('"')[0]
+            url = clean_lines[i + 1].strip()
             existing_entries.add((group, title))
             existing_urls.add(url)
         i += 1
 
-    # Append new streams without duplicates
     for url, group, title in new_urls_with_groups:
         if (group, title) in existing_entries or url in existing_urls:
             continue
 
         if group == "MLB":
-            lines.append(f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}')
+            clean_lines.append(f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}')
         elif group == "PPV":
-            lines.append(f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}')
+            clean_lines.append(f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}')
         else:
-            lines.append(f'#EXTINF:-1 group-title="{group}",{title}')
-        lines.append(url)
+            clean_lines.append(f'#EXTINF:-1 group-title="{group}",{title}')
+        clean_lines.append(url)
 
-        # Mark as added
         existing_entries.add((group, title))
         existing_urls.add(url)
 
-    lines = [line for line in lines if line.strip()]
-    lines.insert(0, "#EXTM3U")
-    return lines
+    clean_lines.insert(0, "#EXTM3U")
+    return clean_lines
 
 async def main():
     if not Path(M3U8_FILE).exists():
