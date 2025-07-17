@@ -2,8 +2,8 @@ name: 🚀 Update PPVLand Playlist 📺
 
 on:
   schedule:
-    - cron: '0 * * * *'   # Every hour 🕒
-  workflow_dispatch:      # Manual trigger ✋
+    - cron: '0 * * * *'  # ⏰ Every hour on the hour (UTC)
+  workflow_dispatch:        # 🔘 Manual trigger
 
 jobs:
   scrape:
@@ -21,7 +21,7 @@ jobs:
       - name: 📦 Install Python dependencies & Playwright browsers + system deps
         run: |
           python -m pip install --upgrade pip
-          pip install playwright urllib3
+          pip install playwright urllib3 aiohttp
           playwright install firefox
           playwright install-deps
 
