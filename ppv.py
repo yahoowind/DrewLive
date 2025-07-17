@@ -79,10 +79,17 @@ def convert_to_local_str(dt_obj):
 
 async def check_m3u8_url(url):
     try:
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url, timeout=10) as resp:
+        headers = {
+            "User-Agent": "Mozilla/5.0",
+            "Referer": "https://veplay.top",
+            "Origin": "https://veplay.top"
+        }
+        timeout = aiohttp.ClientTimeout(total=15)
+        async with aiohttp.ClientSession(timeout=timeout) as session:
+            async with session.get(url, headers=headers) as resp:
                 return resp.status == 200
-    except Exception:
+    except Exception as e:
+        print(f"❌ Error checking {url}: {e}")
         return False
 
 async def get_streams():
@@ -95,12 +102,12 @@ async def grab_m3u8_from_iframe(page, iframe_url):
     found_streams = set()
 
     def handle_response(response):
-        url = response.url
-        if ".m3u8" in url:
-            found_streams.add(url)
+        if ".m3u8" in response.url:
+            found_streams.add(response.url)
 
     page.on("response", handle_response)
     print(f"🌐 Navigating to iframe: {iframe_url}")
+
     try:
         await page.goto(iframe_url, timeout=15000)
     except Exception as e:
@@ -110,21 +117,22 @@ async def grab_m3u8_from_iframe(page, iframe_url):
 
     await asyncio.sleep(2)
 
-    viewport = page.viewport_size or {"width": 1280, "height": 720}
-    center_x = viewport["width"] / 2
-    center_y = viewport["height"] / 2
+    try:
+        box = page.viewport_size or {"width": 1280, "height": 720}
+        cx, cy = box["width"] / 2, box["height"] / 2
+        for i in range(4):
+            if found_streams:
+                break
+            print(f"🖱️ Click #{i + 1}")
+            try:
+                await page.mouse.click(cx, cy)
+            except Exception:
+                pass
+            await asyncio.sleep(0.3)
+    except Exception as e:
+        print(f"❌ Mouse click error: {e}")
 
-    for i in range(5):
-        if found_streams:
-            break
-        print(f"🖱️ Click #{i + 1} at center")
-        try:
-            await page.mouse.click(center_x, center_y)
-        except Exception as e:
-            print(f"❌ Click failed: {e}")
-        await asyncio.sleep(0.2)
-
-    print("⏳ Waiting 5s for streams to load...")
+    print("⏳ Waiting 5s for final stream load...")
     await asyncio.sleep(5)
     page.remove_listener("response", handle_response)
 
@@ -134,7 +142,6 @@ async def grab_m3u8_from_iframe(page, iframe_url):
             valid_urls.add(url)
         else:
             print(f"❌ Invalid or unreachable URL: {url}")
-
     return valid_urls
 
 def build_m3u(streams, url_map):
@@ -142,16 +149,15 @@ def build_m3u(streams, url_map):
     added_urls = set()
 
     for s in streams:
-        # Use unique key to avoid duplicates, composed from name+category+iframe (variant)
         unique_key = f"{s['name']}::{s['category']}::{s['iframe']}"
-
         urls = url_map.get(unique_key, [])
+
         if not urls:
             print(f"⚠️ No working URLs for {s['name']}")
             continue
 
         orig_category = s["category"].strip()
-        final_group_title = GROUP_RENAME_MAP.get(orig_category, orig_category)
+        final_group = GROUP_RENAME_MAP.get(orig_category, orig_category)
         logo = CATEGORY_LOGOS.get(orig_category, "")
         tvg_id = CATEGORY_TVG_IDS.get(orig_category, "Sports.Dummy.us")
 
@@ -160,11 +166,7 @@ def build_m3u(streams, url_map):
                 continue
             added_urls.add(url)
 
-            # Append variant info (part of iframe url) to distinguish duplicates
-            variant = s["iframe"].split("//")[-1].split("/")[0]  # hostname part
-            display_name = f"{s['name']} [{variant}]"
-
-            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{final_group_title}",{display_name}')
+            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{final_group}",{s["name"]}')
             lines.extend(CUSTOM_HEADERS)
             lines.append(url)
 
@@ -175,28 +177,24 @@ async def main():
     streams = []
 
     for category in data.get("streams", []):
-        cat_name = category.get("category", "").strip()
-        if cat_name not in ALLOWED_CATEGORIES:
+        cat = category.get("category", "").strip()
+        if cat not in ALLOWED_CATEGORIES:
             continue
         for stream in category.get("streams", []):
             iframe = stream.get("iframe")
             channel = stream.get("channel", "")
-            event_name = stream.get("name", "Unnamed Event")
+            name = stream.get("name", "Unnamed Event")
 
-            if any(c.isdigit() for c in channel):
+            if any(char.isdigit() for char in channel):
                 time_part = channel.strip().split()[-1]
-                dt_utc = parse_backend_time(time_part)
-                if dt_utc:
-                    local_time = convert_to_local_str(dt_utc)
+                dt = parse_backend_time(time_part)
+                if dt:
+                    local_time = convert_to_local_str(dt)
                     if local_time:
-                        event_name += f" ({local_time})"
+                        name += f" ({local_time})"
 
             if iframe:
-                streams.append({
-                    "name": event_name,
-                    "iframe": iframe,
-                    "category": cat_name
-                })
+                streams.append({"name": name, "iframe": iframe, "category": cat})
 
     if not streams:
         print("🚫 No valid streams found.")
@@ -209,12 +207,12 @@ async def main():
 
         url_map = {}
         for s in streams:
-            unique_key = f"{s['name']}::{s['category']}::{s['iframe']}"
-            print(f"\n🔍 Scraping: {s['name']} ({s['category']}) - iframe host: {unique_key.split('::')[2].split('//')[-1].split('/')[0]}")
-            found_urls = await grab_m3u8_from_iframe(page, s["iframe"])
-            if found_urls:
-                print(f"✅ Got {len(found_urls)} URL(s) for {s['name']}")
-            url_map[unique_key] = found_urls
+            key = f"{s['name']}::{s['category']}::{s['iframe']}"
+            print(f"\n🔍 Scraping: {s['name']} ({s['category']})")
+            urls = await grab_m3u8_from_iframe(page, s["iframe"])
+            if urls:
+                print(f"✅ Got {len(urls)} stream(s) for {s['name']}")
+            url_map[key] = urls
 
         await browser.close()
 
