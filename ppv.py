@@ -88,6 +88,7 @@ async def check_m3u8_url(url):
 async def get_streams():
     async with aiohttp.ClientSession() as session:
         async with session.get(API_URL) as resp:
+            resp.raise_for_status()
             return await resp.json()
 
 async def grab_m3u8_from_iframe(page, iframe_url):
@@ -96,12 +97,17 @@ async def grab_m3u8_from_iframe(page, iframe_url):
     def handle_response(response):
         url = response.url
         if ".m3u8" in url:
-            print(f"🔎 Detected stream URL: {url}")
             found_streams.add(url)
 
     page.on("response", handle_response)
-    print(f"🌐 Navigating to: {iframe_url}")
-    await page.goto(iframe_url)
+    print(f"🌐 Navigating to iframe: {iframe_url}")
+    try:
+        await page.goto(iframe_url, timeout=15000)
+    except Exception as e:
+        print(f"❌ Failed to load iframe: {e}")
+        page.remove_listener("response", handle_response)
+        return set()
+
     await asyncio.sleep(2)
 
     viewport = page.viewport_size or {"width": 1280, "height": 720}
@@ -111,28 +117,35 @@ async def grab_m3u8_from_iframe(page, iframe_url):
     for i in range(5):
         if found_streams:
             break
-        print(f"🖱️ Click #{i + 1}")
-        await page.mouse.click(center_x, center_y)
+        print(f"🖱️ Click #{i + 1} at center")
+        try:
+            await page.mouse.click(center_x, center_y)
+        except Exception as e:
+            print(f"❌ Click failed: {e}")
         await asyncio.sleep(0.2)
 
-    print("⏳ Waiting 5s for stream to load...")
+    print("⏳ Waiting 5s for streams to load...")
     await asyncio.sleep(5)
     page.remove_listener("response", handle_response)
 
-    # ✅ Filter for valid 200 links
     valid_urls = set()
     for url in found_streams:
         if await check_m3u8_url(url):
-            print(f"✅ Validated: {url}")
             valid_urls.add(url)
         else:
-            print(f"❌ Rejected (non-200): {url}")
+            print(f"❌ Invalid or unreachable URL: {url}")
+
     return valid_urls
 
 def build_m3u(streams, url_map):
     lines = ['#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg"']
+    added_urls = set()
+
     for s in streams:
-        urls = url_map.get(s["name"], [])
+        # Use unique key to avoid duplicates, composed from name+category+iframe (variant)
+        unique_key = f"{s['name']}::{s['category']}::{s['iframe']}"
+
+        urls = url_map.get(unique_key, [])
         if not urls:
             print(f"⚠️ No working URLs for {s['name']}")
             continue
@@ -143,7 +156,15 @@ def build_m3u(streams, url_map):
         tvg_id = CATEGORY_TVG_IDS.get(orig_category, "Sports.Dummy.us")
 
         for url in urls:
-            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{final_group_title}",{s["name"]}')
+            if url in added_urls:
+                continue
+            added_urls.add(url)
+
+            # Append variant info (part of iframe url) to distinguish duplicates
+            variant = s["iframe"].split("//")[-1].split("/")[0]  # hostname part
+            display_name = f"{s['name']} [{variant}]"
+
+            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{final_group_title}",{display_name}')
             lines.extend(CUSTOM_HEADERS)
             lines.append(url)
 
@@ -152,6 +173,7 @@ def build_m3u(streams, url_map):
 async def main():
     data = await get_streams()
     streams = []
+
     for category in data.get("streams", []):
         cat_name = category.get("category", "").strip()
         if cat_name not in ALLOWED_CATEGORIES:
@@ -187,11 +209,12 @@ async def main():
 
         url_map = {}
         for s in streams:
-            print(f"\n🔍 Scraping: {s['name']} ({s['category']})")
+            unique_key = f"{s['name']}::{s['category']}::{s['iframe']}"
+            print(f"\n🔍 Scraping: {s['name']} ({s['category']}) - iframe host: {unique_key.split('::')[2].split('//')[-1].split('/')[0]}")
             found_urls = await grab_m3u8_from_iframe(page, s["iframe"])
             if found_urls:
                 print(f"✅ Got {len(found_urls)} URL(s) for {s['name']}")
-            url_map[s["name"]] = found_urls
+            url_map[unique_key] = found_urls
 
         await browser.close()
 
@@ -200,7 +223,7 @@ async def main():
     with open("PPVLand.m3u8", "w", encoding="utf-8") as f:
         f.write(playlist)
 
-    print("✅ Done! Playlist saved as PPVLand.m3u8")
+    print(f"✅ Done! Playlist saved as PPVLand.m3u8 at {datetime.utcnow().isoformat()} UTC")
 
 if __name__ == "__main__":
     asyncio.run(main())
