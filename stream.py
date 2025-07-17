@@ -1,8 +1,23 @@
 import asyncio
 import json
+import subprocess
 from playwright.async_api import async_playwright, Request
 
 BASE_URL = "https://www.streameast.xyz"
+
+MIRRORS = [
+    "streameast.sk",
+    "streameast.ch",
+    "streameast.ec",
+    "streameast.fi",
+    "streameast.ms",
+    "streameast.ps",
+    "streameast.ph",
+    "streameast.sg",
+    "thestreameast.ru",
+    "thestreameast.st",
+    "thestreameast.su",
+]
 
 CATEGORY_LOGOS = {
     "StreamEast - PPV Events": "http://drewlive24.duckdns.org:9000/Logos/PPV.png",
@@ -60,7 +75,6 @@ def categorize_stream(url, title=""):
         return "StreamEast - F1"
     return "StreamEast - PPV Events"
 
-
 async def safe_goto(page, url, tries=3):
     for attempt in range(tries):
         try:
@@ -78,10 +92,9 @@ async def safe_goto(page, url, tries=3):
     print(f"❌ Failed to load page after {tries} tries: {url}")
     return False
 
-
-async def get_event_links(page):
-    print("🌐 Navigating to the main page to collect event links...")
-    success = await safe_goto(page, BASE_URL)
+async def get_event_links(page, base_url):
+    print(f"🌐 Navigating to {base_url} to collect event links...")
+    success = await safe_goto(page, base_url)
     if not success:
         return []
 
@@ -100,9 +113,8 @@ async def get_event_links(page):
         )
     """)
     unique_links = list(set(links))
-    print(f"📥 Collected {len(unique_links)} unique event links.")
+    print(f"📥 Collected {len(unique_links)} unique event links from {base_url}")
     return unique_links
-
 
 async def click_center_once(page):
     box = await page.evaluate_handle("document.body.getBoundingClientRect()")
@@ -113,7 +125,6 @@ async def click_center_once(page):
     await page.mouse.click(x, y)
     await asyncio.sleep(1.5)
 
-
 async def fetch_v90_streams(context, sport):
     api_url = f"https://the.streameast.app/v90/{sport}/streams4"
     print(f"🔗 Fetching v90 API streams from: {api_url}")
@@ -123,7 +134,8 @@ async def fetch_v90_streams(context, sport):
         success = await safe_goto(page, api_url)
         if not success:
             return []
-        text = await (await page.wait_for_response(api_url, timeout=30000)).text()
+        response = await page.wait_for_response(api_url, timeout=30000)
+        text = await response.text()
         data = json.loads(text)
 
         for stream in data.get("streams", []):
@@ -137,7 +149,6 @@ async def fetch_v90_streams(context, sport):
         await page.close()
 
     return list(m3u8_links)
-
 
 async def scrape_stream_url(context, url):
     m3u8_links = set()
@@ -159,9 +170,10 @@ async def scrape_stream_url(context, url):
     page = await context.new_page()
 
     def capture_request(request: Request):
-        if ".m3u8" in request.url.lower() and len(m3u8_links) == 0:
-            print(f"🎯 Captured .m3u8 URL: {request.url}")
-            m3u8_links.add(request.url)
+        if ".m3u8" in request.url.lower():
+            if request.url not in m3u8_links:
+                print(f"🎯 Captured .m3u8 URL: {request.url}")
+                m3u8_links.add(request.url)
 
     page.on("request", capture_request)
 
@@ -203,15 +215,16 @@ async def scrape_stream_url(context, url):
 
         for _ in range(12):
             if m3u8_links:
-                print("⏩ Stream found, moving on early...")
+                print("⏩ Stream(s) found, moving on early...")
                 break
             await asyncio.sleep(0.5)
-        else:
+
+        if not m3u8_links:
             print("⚠️ No streams detected after wait, clicking once more...")
             await click_center_once(page)
-            for _ in range(6):
+            for _ in range(12):
                 if m3u8_links:
-                    print("⏩ Stream found after second click.")
+                    print("⏩ Stream(s) found after second click.")
                     break
                 await asyncio.sleep(0.5)
 
@@ -223,6 +236,17 @@ async def scrape_stream_url(context, url):
 
     return event_name, list(m3u8_links)
 
+def git_commit_and_push(filename):
+    try:
+        print(f"🧾 Adding {filename} to git...")
+        subprocess.run(["git", "add", filename], check=True)
+        print("📝 Committing changes...")
+        subprocess.run(["git", "commit", "-m", f"Update playlist {filename}"], check=True)
+        print("📤 Pushing to remote...")
+        subprocess.run(["git", "push"], check=True)
+        print("✅ Git push complete.")
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Git error: {e}")
 
 async def main():
     async with async_playwright() as p:
@@ -232,21 +256,68 @@ async def main():
             locale="en-US"
         )
 
+        all_streams = {}
+        total_stream_count = 0
+
+        # 1) Scrape main site first
+        print(f"\n🌟 Scraping main site: {BASE_URL}")
         page = await context.new_page()
-        event_links = await get_event_links(page)
+        main_links = await get_event_links(page, BASE_URL)
         await page.close()
 
+        for link in main_links:
+            if link in all_streams:
+                continue
+            event_name, streams = await scrape_stream_url(context, link)
+            if streams:
+                all_streams[link] = {
+                    "event_name": event_name,
+                    "streams": streams,
+                }
+                total_stream_count += len(streams)
+            if total_stream_count >= 200:
+                print(f"✅ Reached {total_stream_count} streams from main site. No need to use mirrors.")
+                break
+
+        # 2) Fall back to mirrors if less than 200 streams found
+        if total_stream_count < 200:
+            print(f"\n⚠️ Only found {total_stream_count} streams from main site, trying mirrors...")
+            for mirror in MIRRORS:
+                if total_stream_count >= 200:
+                    break
+                mirror_url = f"https://{mirror}"
+                print(f"\n🌐 Trying mirror: {mirror_url}")
+                page = await context.new_page()
+                mirror_links = await get_event_links(page, mirror_url)
+                await page.close()
+
+                for link in mirror_links:
+                    if link in all_streams:
+                        continue
+                    event_name, streams = await scrape_stream_url(context, link)
+                    if streams:
+                        all_streams[link] = {
+                            "event_name": event_name,
+                            "streams": streams,
+                        }
+                        total_stream_count += len(streams)
+                    if total_stream_count >= 200:
+                        print(f"✅ Reached {total_stream_count} streams with mirrors. Stopping.")
+                        break
+
+        if total_stream_count == 0:
+            print("❌ No streams found from main or any mirror.")
+
+        print(f"\n📝 Writing playlist file with {total_stream_count} streams...")
         with open("StreamEast.m3u8", "w", encoding="utf-8") as f:
             f.write("#EXTM3U\n")
-            total = len(event_links)
-            for idx, link in enumerate(event_links, 1):
-                print(f"\n➡️ [{idx}/{total}] Processing: {link}")
-                event_name, streams = await scrape_stream_url(context, link)
+            for link, info in all_streams.items():
+                event_name = info["event_name"]
+                streams = info["streams"]
                 category = categorize_stream(link, event_name)
                 logo = CATEGORY_LOGOS.get(category, "")
                 tvg_id = CATEGORY_TVG_IDS.get(category, "")
                 group = category
-
                 for stream_url in streams:
                     f.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{group}",{event_name}\n')
                     f.write('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0\n')
@@ -254,9 +325,11 @@ async def main():
                     f.write('#EXTVLCOPT:http-referrer=https://streamscenter.online/\n')
                     f.write(f'{stream_url}\n\n')
 
-                await asyncio.sleep(3)  # Small delay between processing links to reduce rate limiting
+        print("✅ Playlist file write complete.")
 
-        print("\n✅ StreamEast.m3u8 saved with all streams.")
+        # Git commit & push
+        git_commit_and_push("StreamEast.m3u8")
+
         await browser.close()
 
 if __name__ == "__main__":
