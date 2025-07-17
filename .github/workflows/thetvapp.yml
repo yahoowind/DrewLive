@@ -2,8 +2,8 @@ name: 🚀 Update TheTVApp Playlist 📺
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # ⏰ Every 2 hours
-  workflow_dispatch:        # 🔘 Manual trigger
+    - cron: '0 * * * *'   # Every hour 🕒
+  workflow_dispatch:      # Manual trigger ✋
 
 jobs:
   scrape:
@@ -28,18 +28,10 @@ jobs:
       - name: 🎯 Run scraping script
         run: python tv.py
 
-      - name: 💾 Commit & force-push playlist if changed (excluding workflow files)
+      - name: 💾 Commit & force-push playlist every run
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git fetch origin main
-          git reset --hard origin/main
-
           git add TheTVApp.m3u8
-          git reset .github/workflows/ || true
-
-          git diff --cached --quiet || (
-            git commit -m "Update TheTVApp playlist $(date -u)" &&
-            git push --force origin main
-          )
+          git commit -m "Force update playlist $(date -u)" --allow-empty
+          git push --force origin main
