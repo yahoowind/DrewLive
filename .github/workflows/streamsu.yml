@@ -33,6 +33,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add StreamedSU.m3u8
+          git reset .github/workflows/ || true
           git diff --cached --quiet && echo "✅ No changes in playlist" || (
             git commit -m "🔁 Update playlist $(date -u)" &&
             git push --force origin main
