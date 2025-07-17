@@ -41,7 +41,7 @@ async def check_m3u8_url(url):
             async with session.get(url, timeout=10) as resp:
                 if resp.status == 200:
                     content_type = resp.headers.get("Content-Type", "")
-                    # Optional: you can add more content-type checks here if needed
+                    # Optional: add more content-type validation here if needed
                     return True
     except Exception:
         pass
@@ -60,8 +60,12 @@ async def main():
 
         m3u = ["#EXTM3U"]
 
-        sports_resp = await request.get("https://streamed.su/api/sports")
-        sports = await sports_resp.json()
+        try:
+            sports_resp = await request.get("https://streamed.su/api/sports", timeout=60000)
+            sports = await sports_resp.json()
+        except Exception as e:
+            print(f"[!] Failed to get sports list: {e}")
+            sports = []
 
         for sport in sports:
             sport_name = sport["name"]
@@ -75,8 +79,12 @@ async def main():
 
             print(f"\n=== {sport_name} ===")
 
-            matches_resp = await request.get(f"https://streamed.su/api/matches/{sport_id}")
-            matches = await matches_resp.json()
+            try:
+                matches_resp = await request.get(f"https://streamed.su/api/matches/{sport_id}", timeout=60000)
+                matches = await matches_resp.json()
+            except Exception as e:
+                print(f"[!] Failed to get matches for {sport_name}: {e}")
+                matches = []
 
             for match in matches:
                 title = match.get("title", "No Title")
@@ -94,8 +102,12 @@ async def main():
                     source_id = source.get("id")
                     source_type = source.get("source")
 
-                    streams_resp = await request.get(f"https://streamed.su/api/stream/{source_type}/{source_id}")
-                    streams = await streams_resp.json()
+                    try:
+                        streams_resp = await request.get(f"https://streamed.su/api/stream/{source_type}/{source_id}", timeout=60000)
+                        streams = await streams_resp.json()
+                    except Exception as e:
+                        print(f"[!] Failed to get streams for source {source_type}/{source_id}: {e}")
+                        continue
 
                     for stream_info in streams:
                         embed_url = stream_info.get("embedUrl")
