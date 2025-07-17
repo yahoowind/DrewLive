@@ -1,5 +1,6 @@
 import asyncio
 import json
+from datetime import datetime
 from playwright.async_api import async_playwright, Request
 
 BASE_URL = "https://www.streameast.xyz"
@@ -35,6 +36,7 @@ CATEGORY_TVG_IDS = {
     "StreamEast - WNBA": "WNBA.dummy.us",
 }
 
+
 def categorize_stream(url, title=""):
     lowered = (url + " " + title).lower()
     if "wnba" in lowered: return "StreamEast - WNBA"
@@ -50,6 +52,7 @@ def categorize_stream(url, title=""):
     if "f1" in lowered or "nascar" in lowered or "motorsport" in lowered: return "StreamEast - F1"
     return "StreamEast - PPV Events"
 
+
 async def safe_goto(page, url, tries=2, timeout=20000):
     for attempt in range(tries):
         try:
@@ -64,6 +67,7 @@ async def safe_goto(page, url, tries=2, timeout=20000):
             await asyncio.sleep(2)
     return False
 
+
 async def get_event_links(page):
     print("🌐 Gathering links...")
     if not await safe_goto(page, BASE_URL):
@@ -74,6 +78,7 @@ async def get_event_links(page):
                      h.includes('/f1') || h.includes('/soccer') || h.includes('/wnba') ||
                      h.includes('/boxing') || h.includes('/wwe'))""")
     return list(set(links))
+
 
 async def scrape_stream_url(context, url):
     m3u8_links = set()
@@ -91,7 +96,6 @@ async def scrape_stream_url(context, url):
         if not await safe_goto(page, url): return event_name, []
         await asyncio.sleep(1)
 
-        # Try to extract title
         event_name = await page.evaluate("""
             () => {
                 const selectors = ['h1', '.event-title', '.title', '.stream-title'];
@@ -116,6 +120,7 @@ async def scrape_stream_url(context, url):
 
     return event_name, list(m3u8_links)
 
+
 async def main():
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
@@ -126,6 +131,7 @@ async def main():
         await main_page.close()
 
         with open(M3U8_FILE, "w", encoding="utf-8") as f:
+            f.write(f"# Updated at {datetime.utcnow().isoformat()}Z\n")
             f.write("#EXTM3U\n")
 
             for idx, link in enumerate(links, 1):
@@ -141,11 +147,11 @@ async def main():
                     f.write('#EXTVLCOPT:http-origin=https://streamscenter.online\n')
                     f.write('#EXTVLCOPT:http-referrer=https://streamscenter.online/\n')
                     f.write(f'{s_url}\n\n')
-
-                await asyncio.sleep(0.5)  # reduced delay
+                await asyncio.sleep(0.5)
 
         print("✅ StreamEast.m3u8 saved.")
         await browser.close()
+
 
 if __name__ == "__main__":
     asyncio.run(main())
