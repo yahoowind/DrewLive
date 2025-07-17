@@ -1,6 +1,7 @@
 import asyncio
 import urllib.parse
 from pathlib import Path
+from datetime import datetime
 from playwright.async_api import async_playwright
 
 M3U8_FILE = "TheTVApp.m3u8"
@@ -68,8 +69,11 @@ async def scrape_tv_urls():
                 await new_page.close()
 
                 if stream_url:
+                    # Add timestamp to URL to force update on each run
+                    stream_url = f"{stream_url}?t={int(datetime.utcnow().timestamp())}"
                     print(f"✅ {quality}: {stream_url}")
                     urls.append(stream_url)
+                    break
                 else:
                     print(f"❌ {quality} not found")
 
@@ -120,9 +124,11 @@ async def scrape_section_urls(context, section_path, group_name):
             await new_page.close()
 
             if stream_url:
+                # Add timestamp to URL to force update on each run
+                stream_url = f"{stream_url}?t={int(datetime.utcnow().timestamp())}"
                 print(f"✅ {quality}: {stream_url}")
                 urls.append((stream_url, group_name, title))
-                break  # Once one quality is found, skip the other
+                break
             else:
                 print(f"❌ {quality} not found")
 
@@ -141,21 +147,34 @@ async def scrape_all_append_sections():
         await browser.close()
     return all_urls
 
-def replace_urls_in_tv_section(lines, tv_urls):
-    result = []
+def clean_m3u_header_with_epg(lines):
+    lines = [line for line in lines if not line.strip().startswith("#EXTM3U")]
+    timestamp = int(datetime.utcnow().timestamp())
+    lines.insert(0, f'#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg" # Updated: {timestamp}')
+    return lines
+
+def replace_urls_in_tv_section(lines, new_urls):
+    new_lines = []
     url_idx = 0
     for line in lines:
-        if line.strip().startswith("http") and url_idx < len(tv_urls):
-            result.append(tv_urls[url_idx])
-            url_idx += 1
+        if line.strip().startswith("http"):
+            if url_idx < len(new_urls):
+                new_lines.append(new_urls[url_idx])
+                url_idx += 1
+            else:
+                # Skip old URLs if no new URL to replace with
+                continue
         else:
-            result.append(line)
-    return result
+            new_lines.append(line)
+    # Append any leftover new URLs if new_urls longer than old URLs count
+    if url_idx < len(new_urls):
+        new_lines.extend(new_urls[url_idx:])
+    return new_lines
 
 def remove_old_section_entries(lines, section_groups):
     cleaned = []
     skip_next = False
-    for i, line in enumerate(lines):
+    for line in lines:
         if skip_next:
             skip_next = False
             continue
@@ -181,11 +200,6 @@ def append_new_streams(lines, new_urls_with_groups):
     lines.insert(0, '#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg"')
     return lines
 
-def clean_m3u_header_with_epg(lines):
-    lines = [line for line in lines if not line.strip().startswith("#EXTM3U")]
-    lines.insert(0, '#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg"')
-    return lines
-
 async def main():
     if not Path(M3U8_FILE).exists():
         print(f"❌ File not found: {M3U8_FILE}")
@@ -194,9 +208,10 @@ async def main():
     with open(M3U8_FILE, "r", encoding="utf-8") as f:
         lines = f.read().splitlines()
 
+    # Clean old header, add new header with fresh timestamp
     lines = clean_m3u_header_with_epg(lines)
 
-    print("🔧 Replacing only /tv stream URLs...")
+    print("🔧 Replacing /tv stream URLs...")
     tv_new_urls = await scrape_tv_urls()
     if not tv_new_urls:
         print("❌ No TV URLs scraped.")
@@ -207,20 +222,20 @@ async def main():
     print("\n📦 Scraping all other sections (NBA, NFL, Events, etc)...")
     append_new_urls = await scrape_all_append_sections()
 
-    # 🧹 Always remove old section entries
+    # Remove old sections before appending fresh
     section_groups = list(SECTIONS_TO_APPEND.values())
     updated_lines = remove_old_section_entries(updated_lines, section_groups)
 
-    # ➕ Append only if new streams are found
     if append_new_urls:
         updated_lines = append_new_streams(updated_lines, append_new_urls)
 
+    # Final header refresh with timestamp before writing
     updated_lines = clean_m3u_header_with_epg(updated_lines)
 
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} updated: TV streams refreshed, sports sections rebuilt clean.")
+    print(f"\n✅ {M3U8_FILE} updated: header and URLs fully refreshed.")
 
 if __name__ == "__main__":
     asyncio.run(main())
