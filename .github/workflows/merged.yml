@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout repository
+      - name: 📥 Checkout repository (full history)
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
@@ -35,22 +35,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: 🔃 Pull latest changes with rebase
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Drewski2423/DrewLive.git
-          git pull origin main --rebase
-
       - name: ▶️ Run IPTV merging script
         run: python iptv.py
 
-      - name: 💾 Force commit even if no content diff
+      - name: 💾 Force add and commit, even if unchanged
         run: |
           git add MergedPlaylist.m3u8
-          git commit -m "📝 Forced update of merged playlist" || echo "No changes to commit"
+          timestamp=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          git commit -m "📝 Force update of merged playlist at $timestamp" || echo "No changes to commit"
 
-      - name: 🚀 Force push changes
+      - name: 🚀 Force push to origin
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: git push --force origin main
+        run: |
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          git push --force origin main
