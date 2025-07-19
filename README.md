@@ -65,7 +65,7 @@ Stay synced with live guide data for your players. Pick the one that fits your n
 
 🔗 All Source EPG  
 ✔️ Most comprehensive option available  
-• [https://tinyurl.com/DrewLiveNEW-epg3](https://tinyurl.com/DrewLiveNEW-epg3)
+• [https://tinyurl.com/DrewLiveNEW-epg03](https://tinyurl.com/DrewLiveNEW-epg03)
 
 ━━━━━━━━━━━━━━━━━━
 
