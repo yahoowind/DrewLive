@@ -2,8 +2,8 @@ name: 🚀 Update TheTVApp Playlist 📺
 
 on:
   schedule:
-    - cron: '0 * * * *'   # Every hour 🕒
-  workflow_dispatch:      # Manual trigger ✋
+    - cron: '0 * * * *'  # Every hour (UTC)
+  workflow_dispatch:      # Manual trigger
 
 jobs:
   scrape:
@@ -27,15 +27,17 @@ jobs:
           playwright install firefox
           playwright install-deps
 
-      - name: 🎯 Run scraping script
-        run: python tv.py
-
-      - name: 💾 Commit & force-push if changed
+      - name: 🧹 Pull latest changes BEFORE script
         run: |
-          cd $GITHUB_WORKSPACE  # Ensure we're in the repo
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull origin main --rebase
+
+      - name: 🎯 Run scraping script
+        run: python tv.py
+
+      - name: 💾 Commit & force-push playlist
+        run: |
           git add TheTVApp.m3u8
-          git commit -m "Update TheTVApp playlist $(date -u)" || echo "No changes"
+          git commit -m "Force update PPVLand playlist $(date -u)" || echo "No changes to commit"
           git push --force origin main
