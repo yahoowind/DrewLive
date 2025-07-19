@@ -31,7 +31,7 @@ def extract_real_m3u8(url: str):
     return None
 
 async def scrape_tv_urls():
-    urls = []
+    results = []  # List of tuples: (url, quality, title)
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
@@ -40,12 +40,16 @@ async def scrape_tv_urls():
         print(f"🔄 Loading /tv channel list...")
         await page.goto(CHANNEL_LIST_URL, timeout=60000)
         links = await page.locator("ol.list-group a").all()
-        hrefs = [await link.get_attribute("href") for link in links if await link.get_attribute("href")]
-        await page.close()
 
-        for href in hrefs:
+        for link in links:
+            href = await link.get_attribute("href")
+            title_raw = await link.text_content()
+            if not href or not title_raw:
+                continue
+            title = " - ".join(line.strip() for line in title_raw.splitlines() if line.strip())
             full_url = BASE_URL + href
             print(f"🎯 Scraping TV page: {full_url}")
+
             for quality in ["SD", "HD"]:
                 stream_url = None
                 new_page = await context.new_page()
@@ -67,12 +71,12 @@ async def scrape_tv_urls():
 
                 if stream_url:
                     print(f"✅ {quality}: {stream_url}")
-                    urls.append(stream_url)
+                    results.append((stream_url, quality, title))
                 else:
                     print(f"❌ {quality} not found")
 
         await browser.close()
-    return urls
+    return results
 
 async def scrape_section_urls(context, section_path, group_name):
     urls = []
@@ -119,7 +123,9 @@ async def scrape_section_urls(context, section_path, group_name):
 
             if stream_url:
                 print(f"✅ {quality}: {stream_url}")
-                urls.append((stream_url, group_name, title))
+                # Append quality to title here too
+                full_title = f"{title} ({quality})"
+                urls.append((stream_url, group_name, full_title))
             else:
                 print(f"❌ {quality} not found")
 
@@ -138,15 +144,40 @@ async def scrape_all_append_sections():
         await browser.close()
     return all_urls
 
-def replace_urls_in_tv_section(lines, tv_urls):
+def replace_urls_in_tv_section(lines, tv_streams):
+    # tv_streams is list of tuples: (url, quality, title)
     result = []
-    url_idx = 0
-    for line in lines:
-        if line.strip().startswith("http") and url_idx < len(tv_urls):
-            result.append(tv_urls[url_idx])
-            url_idx += 1
+    stream_idx = 0
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if line.strip().startswith("#EXTINF:-1") and stream_idx < len(tv_streams):
+            # Replace title line with quality appended
+            url, quality, title = tv_streams[stream_idx]
+            quality_tag = f" ({quality})"
+            parts = line.split(",")
+            base_title = parts[-1].strip()
+            # Replace title with scraped title + quality (use scraped title to keep consistency)
+            new_title = f"{title}"
+            new_extinf = ",".join(parts[:-1]) + "," + new_title
+
+            result.append(new_extinf)
+            i += 1  # next line should be URL line
+            # Replace URL line with the scraped url
+            result.append(url)
+            stream_idx += 1
+        elif line.strip().startswith("http") and stream_idx < len(tv_streams):
+            # Skip old URL lines since replaced above
+            i += 1
+            continue
         else:
             result.append(line)
+            i += 1
+    # Append remaining lines if any
+    while i < len(lines):
+        result.append(lines[i])
+        i += 1
+
     return result
 
 def append_new_streams(lines, new_urls_with_groups):
