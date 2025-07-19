@@ -30,14 +30,20 @@ def extract_real_m3u8(url: str):
         return url
     return None
 
+def normalize_title(title: str):
+    title = title.lower()
+    for tag in [" (hd)", " (sd)"]:
+        title = title.replace(tag, "")
+    return title.strip()
+
 async def scrape_tv_urls():
-    results = []  # List of tuples: (url, quality, title)
+    results = []
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
 
-        print(f"🔄 Loading /tv channel list...")
+        print("🔄 Loading TV channels...")
         await page.goto(CHANNEL_LIST_URL, timeout=60000)
         links = await page.locator("ol.list-group a").all()
 
@@ -48,7 +54,7 @@ async def scrape_tv_urls():
                 continue
             title = " - ".join(line.strip() for line in title_raw.splitlines() if line.strip())
             full_url = BASE_URL + href
-            print(f"🎯 Scraping TV page: {full_url}")
+            print(f"🎯 {title} - {full_url}")
 
             for quality in ["SD", "HD"]:
                 stream_url = None
@@ -70,10 +76,8 @@ async def scrape_tv_urls():
                 await new_page.close()
 
                 if stream_url:
-                    print(f"✅ {quality}: {stream_url}")
-                    results.append((stream_url, quality, title))
-                else:
-                    print(f"❌ {quality} not found")
+                    title_q = f"{title} ({quality})"
+                    results.append((stream_url, quality, title_q))
 
         await browser.close()
     return results
@@ -98,8 +102,6 @@ async def scrape_section_urls(context, section_path, group_name):
 
     for href, title in hrefs_and_titles:
         full_url = BASE_URL + href
-        print(f"🎯 Scraping {group_name}: {title}")
-
         for quality in ["SD", "HD"]:
             stream_url = None
             new_page = await context.new_page()
@@ -112,23 +114,16 @@ async def scrape_section_urls(context, section_path, group_name):
 
             new_page.on("response", handle_response)
             await new_page.goto(full_url, timeout=60000)
-
             try:
                 await new_page.get_by_text(f"Load {quality} Stream", exact=True).click(timeout=5000)
             except:
                 pass
-
             await asyncio.sleep(4)
             await new_page.close()
 
             if stream_url:
-                print(f"✅ {quality}: {stream_url}")
-                # Append quality to title here too
                 full_title = f"{title} ({quality})"
                 urls.append((stream_url, group_name, full_title))
-            else:
-                print(f"❌ {quality} not found")
-
     return urls
 
 async def scrape_all_append_sections():
@@ -144,86 +139,57 @@ async def scrape_all_append_sections():
         await browser.close()
     return all_urls
 
-def replace_urls_in_tv_section(lines, tv_streams):
-    # tv_streams is list of tuples: (url, quality, title)
+def replace_tv_section(lines, tv_streams):
     result = []
     stream_idx = 0
     i = 0
     while i < len(lines):
         line = lines[i]
-        if line.strip().startswith("#EXTINF:-1") and stream_idx < len(tv_streams):
-            # Replace title line with quality appended
+        if line.startswith("#EXTINF:-1") and stream_idx < len(tv_streams):
             url, quality, title = tv_streams[stream_idx]
-            quality_tag = f" ({quality})"
             parts = line.split(",")
-            base_title = parts[-1].strip()
-            # Replace title with scraped title + quality (use scraped title to keep consistency)
-            new_title = f"{title}"
-            new_extinf = ",".join(parts[:-1]) + "," + new_title
-
+            new_extinf = ",".join(parts[:-1]) + "," + title
             result.append(new_extinf)
-            i += 1  # next line should be URL line
-            # Replace URL line with the scraped url
             result.append(url)
             stream_idx += 1
-        elif line.strip().startswith("http") and stream_idx < len(tv_streams):
-            # Skip old URL lines since replaced above
-            i += 1
-            continue
+            i += 2
         else:
             result.append(line)
             i += 1
-    # Append remaining lines if any
-    while i < len(lines):
-        result.append(lines[i])
-        i += 1
-
     return result
 
 def append_new_streams(lines, new_urls_with_groups):
     lines = [line for line in lines if line.strip() != "#EXTM3U"]
 
-    # Remove old MLB & PPV entries (both EXTINF and URL line)
     clean_lines = []
     skip_next = False
     for line in lines:
         if skip_next:
             skip_next = False
             continue
-        if line.startswith("#EXTINF:-1") and ('group-title="MLB"' in line or 'group-title="PPV"' in line):
+        if line.startswith("#EXTINF:-1") and any(g in line for g in ["MLB", "PPV"]):
             skip_next = True
             continue
         clean_lines.append(line)
 
-    existing_entries = set()
-    existing_urls = set()
-
-    i = 0
-    while i < len(clean_lines) - 1:
+    existing_titles = set()
+    for i in range(0, len(clean_lines) - 1, 2):
         if clean_lines[i].startswith("#EXTINF:-1"):
-            group = None
             title = clean_lines[i].split(",")[-1].strip()
-            if 'group-title="' in clean_lines[i]:
-                group = clean_lines[i].split('group-title="')[1].split('"')[0]
-            url = clean_lines[i + 1].strip()
-            existing_entries.add((group, title))
-            existing_urls.add(url)
-        i += 1
+            existing_titles.add(normalize_title(title))
 
     for url, group, title in new_urls_with_groups:
-        if (group, title) in existing_entries or url in existing_urls:
+        if normalize_title(title) in existing_titles:
             continue
-
         if group == "MLB":
-            clean_lines.append(f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}')
+            ext = f'#EXTINF:-1 tvg-id="MLB.Dummy" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
         elif group == "PPV":
-            clean_lines.append(f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}')
+            ext = f'#EXTINF:-1 tvg-id="PPV.Dummy" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
         else:
-            clean_lines.append(f'#EXTINF:-1 group-title="{group}",{title}')
+            ext = f'#EXTINF:-1 group-title="{group}",{title}'
+        clean_lines.append(ext)
         clean_lines.append(url)
-
-        existing_entries.add((group, title))
-        existing_urls.add(url)
+        existing_titles.add(normalize_title(title))
 
     clean_lines.insert(0, "#EXTM3U")
     return clean_lines
@@ -236,23 +202,18 @@ async def main():
     with open(M3U8_FILE, "r", encoding="utf-8") as f:
         lines = f.read().splitlines()
 
-    print("🔧 Replacing only /tv stream URLs...")
+    print("🔧 Replacing /tv streams...")
     tv_new_urls = await scrape_tv_urls()
-    if not tv_new_urls:
-        print("❌ No TV URLs scraped.")
-        return
+    updated_lines = replace_tv_section(lines, tv_new_urls)
 
-    updated_lines = replace_urls_in_tv_section(lines, tv_new_urls)
-
-    print("\n📦 Scraping all other sections (NBA, NFL, Events, etc)...")
-    append_new_urls = await scrape_all_append_sections()
-    if append_new_urls:
-        updated_lines = append_new_streams(updated_lines, append_new_urls)
+    print("\n📦 Scraping additional sections...")
+    append_urls = await scrape_all_append_sections()
+    updated_lines = append_new_streams(updated_lines, append_urls)
 
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} updated: Clean top, no dups, proper logo/ID for MLB and PPV.")
+    print("\n✅ Playlist updated successfully.")
 
 if __name__ == "__main__":
     asyncio.run(main())
