@@ -1,7 +1,7 @@
 import asyncio
 from playwright.async_api import async_playwright
 import aiohttp
-from datetime import datetime, timedelta
+from datetime import datetime
 from zoneinfo import ZoneInfo
 import platform
 
@@ -56,26 +56,6 @@ GROUP_RENAME_MAP = {
     "Boxing": "PPVLand - Boxing",
     "Darts": "PPVLand - Darts"
 }
-
-def parse_backend_time(timestr):
-    try:
-        h, m, s = map(int, timestr.strip().split(":"))
-        now_utc = datetime.utcnow().replace(tzinfo=ZoneInfo("UTC"))
-        return now_utc.replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(hours=h, minutes=m, seconds=s)
-    except Exception as e:
-        print(f"❌ Failed to parse time '{timestr}': {e}")
-        return None
-
-def convert_to_local_str(dt_obj):
-    try:
-        local_tz = ZoneInfo("America/Denver")
-        dt_local = dt_obj.astimezone(local_tz)
-        is_windows = platform.system() == "Windows"
-        format_str = "%b %#d, %Y %#I:%M %p" if is_windows else "%b %-d, %Y %-I:%M %p"
-        return dt_local.strftime(format_str)
-    except Exception as e:
-        print(f"❌ Failed to format time: {e}")
-        return None
 
 async def check_m3u8_url(url):
     try:
@@ -146,9 +126,14 @@ async def grab_m3u8_from_iframe(page, iframe_url):
 
 def build_m3u(streams, url_map):
     lines = ['#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg"']
-    added_urls = set()
+    seen_names = set()
 
     for s in streams:
+        name_lower = s["name"].strip().lower()
+        if name_lower in seen_names:
+            continue  # skip duplicates by display name
+        seen_names.add(name_lower)
+
         unique_key = f"{s['name']}::{s['category']}::{s['iframe']}"
         urls = url_map.get(unique_key, [])
 
@@ -161,14 +146,12 @@ def build_m3u(streams, url_map):
         logo = CATEGORY_LOGOS.get(orig_category, "")
         tvg_id = CATEGORY_TVG_IDS.get(orig_category, "Sports.Dummy.us")
 
-        for url in urls:
-            if url in added_urls:
-                continue
-            added_urls.add(url)
+        # Use first valid URL only to avoid multiple entries with same name
+        url = next(iter(urls))
 
-            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{final_group}",{s["name"]}')
-            lines.extend(CUSTOM_HEADERS)
-            lines.append(url)
+        lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{final_group}",{s["name"]}')
+        lines.extend(CUSTOM_HEADERS)
+        lines.append(url)
 
     return "\n".join(lines)
 
@@ -182,19 +165,19 @@ async def main():
             continue
         for stream in category.get("streams", []):
             iframe = stream.get("iframe")
-            channel = stream.get("channel", "")
             name = stream.get("name", "Unnamed Event")
-
-            if any(char.isdigit() for char in channel):
-                time_part = channel.strip().split()[-1]
-                dt = parse_backend_time(time_part)
-                if dt:
-                    local_time = convert_to_local_str(dt)
-                    if local_time:
-                        name += f" ({local_time})"
-
             if iframe:
                 streams.append({"name": name, "iframe": iframe, "category": cat})
+
+    # Deduplicate streams by name (case-insensitive) before scraping
+    seen_names = set()
+    deduped_streams = []
+    for s in streams:
+        name_key = s["name"].strip().lower()
+        if name_key not in seen_names:
+            seen_names.add(name_key)
+            deduped_streams.append(s)
+    streams = deduped_streams
 
     if not streams:
         print("🚫 No valid streams found.")
