@@ -4,29 +4,30 @@ on:
   schedule:
     - cron: '*/10 * * * *'  # Every 10 minutes
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'MergedPlaylist.m3u8'
-      - 'iptv.py'
+
+concurrency:
+  group: "iptv-playlist-update"
+  cancel-in-progress: true
 
 jobs:
   update-playlist:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout fresh repository (no cache, no stale state)
+      - name: 🕒 Print runner UTC time
+        run: date -u
+
+      - name: 📥 Checkout repo (latest only)
         uses: actions/checkout@v3
         with:
-          fetch-depth: 1  # Only the latest commit, no full history
+          fetch-depth: 1
 
-      - name: 🐍 Set up Python 3
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: 📦 Install Python dependencies
+      - name: 📦 Install requests
         run: pip install requests
 
       - name: 🧠 Set Git identity
@@ -34,23 +35,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: ▶️ Run IPTV merging script
+      - name: ▶️ Run playlist generator
         run: |
-          echo "# Last forced update: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" > MergedPlaylist.m3u8
+          echo "# Last update: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" > MergedPlaylist.m3u8
           python iptv.py
 
-      - name: 🧼 Clean Git state (optional, makes sure no junk is hanging around)
-        run: git reset --hard HEAD
-
-      - name: 💾 Commit with timestamp
+      - name: 💾 Commit and push update
         run: |
           git add MergedPlaylist.m3u8
-          timestamp=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
-          git commit -m "📝 Forced update at $timestamp" || echo "Nothing to commit."
-
-      - name: 🚀 Force push without any pull (overwrite everything)
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
-          git push --force origin main
+          git commit -m "📝 Update at $(date -u +"%Y-%m-%d %H:%M:%S UTC")" || echo "Nothing to commit."
+          git push origin main
