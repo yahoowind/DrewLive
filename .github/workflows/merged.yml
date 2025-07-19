@@ -36,13 +36,15 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: ▶️ Run IPTV merging script
-        run: python iptv.py
+        run: |
+          echo "# Last forced update: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> MergedPlaylist.m3u8
+          python iptv.py
 
-      - name: 💾 Force add and commit, even if unchanged
+      - name: 💾 Force add and commit with timestamp
         run: |
           git add MergedPlaylist.m3u8
           timestamp=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
-          git commit -m "📝 Force update of merged playlist at $timestamp" || echo "No changes to commit"
+          git commit -m "📝 Forced update at $timestamp" || echo "Nothing new to commit."
 
       - name: 🚀 Force push to origin
         env:
