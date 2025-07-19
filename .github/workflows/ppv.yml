@@ -2,8 +2,8 @@ name: 🚀 Update PPVLand Playlist 📺
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Every hour on the hour (UTC)
-  workflow_dispatch:       # Manual trigger
+    - cron: '0 * * * *'  # Every hour ⏰ (UTC)
+  workflow_dispatch:      # Manual trigger
 
 jobs:
   scrape:
@@ -13,7 +13,7 @@ jobs:
       - name: 📥 Checkout repository (full history)
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0    # Pull full history for force push
+          fetch-depth: 0  # required for rebase and force push
 
       - name: 🐍 Set up Python 3.11
         uses: actions/setup-python@v4
@@ -32,9 +32,10 @@ jobs:
 
       - name: 💾 Commit & force-push playlist
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull origin main --rebase  # Ensure latest
+          cd $GITHUB_WORKSPACE  # 👈 Ensures we're in the Git repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main --rebase
           git add PPVLand.m3u8
           git commit -m "Force update PPVLand playlist $(date -u)" || echo "No changes to commit"
-          git push origin main --force
+          git push --force origin main
