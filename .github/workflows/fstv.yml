@@ -1,51 +1,39 @@
 name: 🔁 Force Update FSTV Playlist 🚀
 
 on:
-  workflow_dispatch:       # 🖐️ Manual trigger
+  workflow_dispatch:     # manual trigger
   schedule:
-    - cron: '0 * * * *'    # ⏰ Hourly refresh on the hour
-  push:
-    paths:
-      - 'fstv.py'          # 🛠️ Run on changes to the script
+    - cron: '0 * * * *'  # hourly
 
 permissions:
-  contents: write           # 🔐 Needed to push commits
+  contents: write       # to push commits
 
 jobs:
   update-playlist:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
-          fetch-depth: 0    # Full git history for rebase safety
+          fetch-depth: 0  # full history
 
-      - name: 🐍 Setup Python environment
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: 📦 Install dependencies
-        run: |
+      - run: |
           pip install --upgrade pip
           pip install beautifulsoup4 playwright
           python -m playwright install --with-deps
 
-      - name: 🎯 Run playlist generator
-        run: python fstv.py
+      - run: python fstv.py
 
-      - name: 💾 Commit & push safely
-        env:
+      - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin main || true
           git add FSTV24.m3u8
-
-          # Commit message with timestamp
-          COMMIT_MSG="🔁 Auto-update FSTV playlist at $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
-          git commit -m "$COMMIT_MSG" || echo "🟡 No changes to commit"
-
+          git diff --cached --quiet || git commit -m "🔁 Auto-update FSTV playlist"
           git push --force-with-lease origin main
