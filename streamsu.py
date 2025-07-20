@@ -38,7 +38,7 @@ ALLOWED_CATEGORIES = {
 async def check_m3u8_url(url):
     try:
         async with aiohttp.ClientSession() as session:
-            async with session.get(url, timeout=10) as resp:
+            async with session.get(url, timeout=7) as resp:  # Reduced timeout to 7s
                 if resp.status == 200:
                     content_type = resp.headers.get("Content-Type", "")
                     # Optional: add more content-type validation here if needed
@@ -60,6 +60,18 @@ async def main():
 
         m3u = ["#EXTM3U"]
 
+        # Shared variable for m3u8_url found by route handler
+        m3u8_url = None
+
+        # Route handler only once, outside loops
+        async def capture_route(route, req):
+            nonlocal m3u8_url
+            if ".m3u8" in req.url:
+                m3u8_url = req.url
+            await route.continue_()
+
+        await context.route("**/*", capture_route)
+
         try:
             sports_resp = await request.get("https://streamed.su/api/sports", timeout=60000)
             sports = await sports_resp.json()
@@ -68,11 +80,11 @@ async def main():
             sports = []
 
         for sport in sports:
-            sport_name = sport["name"]
+            sport_name = sport.get("name")
             if sport_name not in ALLOWED_CATEGORIES:
                 continue
 
-            sport_id = sport["id"]
+            sport_id = sport.get("id")
             tvg_id = ALLOWED_CATEGORIES[sport_name]["tvg-id"]
             fallback_logo = ALLOWED_CATEGORIES[sport_name]["logo"]
             group_title = f"StreamedSU - {sport_name}"
@@ -95,9 +107,13 @@ async def main():
                 if not sources:
                     continue
 
-                # We'll attempt each source in order to find a valid working stream
+                # Reset URL before browsing this match
                 m3u8_url = None
                 used_source_type = None
+                language = "Unknown"
+                quality = "SD"
+
+                # We'll attempt each source in order to find a valid working stream
                 for source in sources:
                     source_id = source.get("id")
                     source_type = source.get("source")
@@ -117,20 +133,11 @@ async def main():
                         language = stream_info.get("language", "Unknown")
                         quality = "HD" if stream_info.get("hd") else "SD"
 
-                        # Reset URL before browsing
-                        m3u8_url = None
-
-                        async def capture_route(route, req):
-                            nonlocal m3u8_url
-                            if ".m3u8" in req.url:
-                                m3u8_url = req.url
-                            await route.continue_()
-
-                        await context.route("**/*", capture_route)
+                        m3u8_url = None  # Reset for each embed URL try
 
                         try:
                             print(f"\nVisiting: {title} (source: {source_type})")
-                            await page.goto(embed_url, timeout=30000)
+                            await page.goto(embed_url, timeout=15000)  # Reduced timeout to 15s
                             await page.wait_for_timeout(3000)
 
                             box = await page.evaluate("""() => {
@@ -147,7 +154,6 @@ async def main():
                                     break
 
                             if m3u8_url:
-                                # Check URL validity before accepting
                                 valid = await check_m3u8_url(m3u8_url)
                                 if valid:
                                     used_source_type = source_type
@@ -162,8 +168,7 @@ async def main():
                             continue
 
                     if m3u8_url:
-                        # Found a valid stream URL, stop checking other sources
-                        break
+                        break  # found valid stream, break sources loop
 
                 if not m3u8_url:
                     print(f"[✖] Failed: No valid stream found for {title}")
@@ -189,4 +194,8 @@ async def main():
         print("\n✅ Done. Playlist written to StreamedSU.m3u8")
         await browser.close()
 
-asyncio.run(main())
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except Exception as e:
+        print(f"[!] Fatal error in main: {e}")
