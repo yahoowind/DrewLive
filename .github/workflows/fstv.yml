@@ -1,4 +1,4 @@
-name: 🔁 Force Update FSTV Playlist 🚀
+name: Force Update FSTV Playlist
 
 on:
   workflow_dispatch:
@@ -16,41 +16,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: 🐍 Setup Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: 3.x
 
-      - name: 📦 Install dependencies
+      - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install beautifulsoup4 playwright
           python -m playwright install --with-deps
 
-      - name: 🎯 Run playlist generator
+      - name: Run playlist generator
         run: python fstv.py
 
-      - name: 🔍 Check generated files & git status
-        run: |
-          ls -al
-          git status
-          git diff --cached || echo "No staged changes yet"
-
-      - name: 💾 Commit & push safely
+      - name: Commit & push safely
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin main || true
-          git add FSTV24.m3u8 || echo "Warning: file not found, skipping git add"
+          git add FSTV24.m3u8 || echo "No file to add"
           if ! git diff --cached --quiet; then
-            git commit -m "🔁 Auto-update FSTV playlist"
+            git commit -m "Auto-update FSTV playlist"
             git push --force-with-lease origin main
           else
             echo "No changes to commit"
