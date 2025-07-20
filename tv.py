@@ -62,15 +62,20 @@ async def fetch_stream_url(context, full_url: str, qualities=("HD", "SD"), wait_
             await page.close()
             continue
 
-        # Try qualities in order
+        # Try qualities in order, print for each quality
         for q in qualities:
             if stream_url:
+                print(f"   ✅ Stream captured, skipping {q} button")
                 break
             button_label = f"Load {q} Stream"
             try:
                 await page.get_by_text(button_label, exact=True).click(timeout=5000)
                 print(f"   🔘 Clicked {button_label}")
                 await asyncio.sleep(wait_seconds)
+                if stream_url:
+                    print(f"   ✅ {q} stream captured!")
+                else:
+                    print(f"   ⚠️ {q} stream not detected yet")
             except PlaywrightTimeoutError:
                 print(f"   ⚠️ {button_label} not found (timeout)")
             except Exception:
