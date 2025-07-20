@@ -2,6 +2,7 @@ import asyncio
 import urllib.parse
 from pathlib import Path
 from playwright.async_api import async_playwright
+from datetime import datetime
 
 M3U8_FILE = "TheTVApp.m3u8"
 BASE_URL = "https://thetvapp.to"
@@ -149,17 +150,15 @@ def parse_m3u_sections(lines):
     while i < len(lines):
         line = lines[i].strip()
 
-        # Header is all lines before first #EXTINF:
         if current_section == "header":
             if line.startswith("#EXTINF:"):
                 current_section = "tv"
-                continue  # don't append this line to header, next loop handles tv
+                continue
             else:
                 sections["header"].append(line)
                 i += 1
                 continue
 
-        # Now inside tv or other sections
         if current_section == "tv":
             if line.startswith("#EXTINF:"):
                 sections["tv"].append(line)
@@ -170,7 +169,6 @@ def parse_m3u_sections(lines):
                 sections["other"].append(line)
             i += 1
         else:
-            # fallback to other section for safety
             sections["other"].append(line)
             i += 1
 
@@ -179,13 +177,16 @@ def parse_m3u_sections(lines):
 def rebuild_m3u_from_sections(sections, tv_urls, sports_urls):
     result = []
 
-    # Write full header intact
+    # Get today's date string (UTC)
+    today_str = datetime.utcnow().strftime("%Y-%m-%d")
+
+    # Write header
     if "header" in sections and sections["header"]:
         result.extend(sections["header"])
     else:
         result.append("#EXTM3U")
 
-    # Rebuild tv section with replaced URLs but keep metadata lines
+    # Rebuild tv section with new URLs
     if "tv" in sections:
         tv_lines = sections["tv"]
         url_idx = 0
@@ -200,8 +201,14 @@ def rebuild_m3u_from_sections(sections, tv_urls, sports_urls):
             else:
                 result.append(line)
 
-    # Append fresh sports section streams with metadata
+    # Append sports section streams filtered by date
     for url, group, title in sports_urls:
+        # Skip entries with a date that is not today (flexible for common date formats)
+        # Checks if title contains a date string that is NOT today's date
+        if any(d in title for d in ["202", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]):
+            if today_str not in title:
+                continue  # skip old dated entry
+
         if group == "MLB":
             ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
         elif group == "PPV":
@@ -211,7 +218,7 @@ def rebuild_m3u_from_sections(sections, tv_urls, sports_urls):
         result.append(ext)
         result.append(url)
 
-    # Add any other leftover lines
+    # Append other leftover lines
     if "other" in sections:
         result.extend(sections["other"])
 
