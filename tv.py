@@ -151,50 +151,55 @@ def replace_urls_in_tv_section(lines, tv_urls):
     return result
 
 def append_new_streams(lines, new_urls_with_groups):
-    # Build dict of existing (group, title) => url line index to avoid duplicates
-    existing = {}
+    # Build dict to track existing entries by (group, title)
+    existing_entries = {}
     i = 0
     while i < len(lines) - 1:
         if lines[i].startswith("#EXTINF:-1"):
+            line = lines[i]
             group = None
-            title = lines[i].split(",")[-1].strip()
-            if 'group-title="' in lines[i]:
-                group = lines[i].split('group-title="')[1].split('"')[0]
+            title = line.split(",")[-1].strip()
+            if 'group-title="' in line:
+                group = line.split('group-title="')[1].split('"')[0]
             if group:
-                existing[(group, title)] = i + 1  # url line index is next line
+                url = lines[i + 1]
+                if (group, title) not in existing_entries:
+                    existing_entries[(group, title)] = set()
+                existing_entries[(group, title)].add(url)
         i += 1
+
+    new_entries_added = {}
 
     for url, group, title in new_urls_with_groups:
         key = (group, title)
-        if key in existing:
-            # Update URL if changed
-            if lines[existing[key]] != url:
-                lines[existing[key]] = url
+        if key not in new_entries_added:
+            new_entries_added[key] = set()
+
+        # Skip if URL already exists in file or newly added
+        if (key in existing_entries and url in existing_entries[key]) or (url in new_entries_added[key]):
+            continue
+
+        # Limit max 2 streams (SD + HD) per (group,title)
+        if len(new_entries_added[key]) >= 2:
+            continue
+
+        # Append with proper metadata
+        if group == "MLB":
+            ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.{title.replace(" ", "")}.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
+        elif group == "PPV":
+            ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.{title.replace(" ", "")}.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
         else:
-            # Skip duplicate MLB or PPV by title if already in lines
-            if group in ["MLB", "PPV"]:
-                if any(
-                    line.startswith("#EXTINF:-1") and
-                    f'group-title="{group}"' in line and
-                    f",{title}" in line
-                    for line in lines
-                ):
-                    continue  # Already exists, skip
+            ext = f'#EXTINF:-1 group-title="{group}",{title}'
 
-            # Append new entry at the end with special handling for MLB and PPV groups
-            if group == "MLB":
-                ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
-            elif group == "PPV":
-                ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
-            else:
-                ext = f'#EXTINF:-1 group-title="{group}",{title}'
-            lines.append(ext)
-            lines.append(url)
+        lines.append(ext)
+        lines.append(url)
+        new_entries_added[key].add(url)
 
-    # Remove empty lines, then insert #EXTM3U at the top if missing
+    # Clean empty lines and ensure #EXTM3U at start
     lines = [line for line in lines if line.strip()]
-    if not lines or not lines[0].strip() == "#EXTM3U":
+    if not lines or lines[0].strip() != "#EXTM3U":
         lines.insert(0, "#EXTM3U")
+
     return lines
 
 async def main():
@@ -213,7 +218,7 @@ async def main():
 
     updated_lines = replace_urls_in_tv_section(lines, tv_new_urls)
 
-    print("\n📦 Scraping all other sections (NBA, NFL, Events, etc)...")
+    print("\n📦 Scraping all other sections (NBA, NFL, Events, MLB, PPV, etc)...")
     append_new_urls = await scrape_all_append_sections()
     if append_new_urls:
         updated_lines = append_new_streams(updated_lines, append_new_urls)
