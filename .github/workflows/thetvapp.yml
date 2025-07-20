@@ -26,20 +26,14 @@ jobs:
       - name: 📦 Install dependencies
         run: pip install -r requirements.txt
 
-      - name: 🧼 Stash any local changes (clean slate)
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git stash || true
-          git pull --ff-only || true
-
       - name: ▶️ Run scraper
         run: python tv.py
 
       - name: 📡 Commit updated playlist
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add TheTVApp.m3u8
-          git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')" || echo "No changes to commit"
-
-      - name: ⬆️ Push to repo (force to avoid conflict)
-        run: git push origin main
+          git diff --cached --quiet || git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')"
+          git pull --rebase --autostash || true
+          git push origin main
