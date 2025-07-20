@@ -57,14 +57,13 @@ async def scrape_tv_urls():
             print(f"🎯 {title} - {full_url}")
 
             for quality in ["SD", "HD"]:
-                stream_url = None
+                stream_urls = set()
                 new_page = await context.new_page()
 
                 async def handle_response(response):
-                    nonlocal stream_url
                     real = extract_real_m3u8(response.url)
-                    if real and not stream_url:
-                        stream_url = real
+                    if real:
+                        stream_urls.add(real)
 
                 new_page.on("response", handle_response)
                 await new_page.goto(full_url)
@@ -75,9 +74,9 @@ async def scrape_tv_urls():
                 await asyncio.sleep(4)
                 await new_page.close()
 
-                if stream_url:
+                for s_url in stream_urls:
                     title_q = f"{title} ({quality})"
-                    results.append((stream_url, quality, title_q))
+                    results.append((s_url, quality, title_q))
 
         await browser.close()
     return results
@@ -103,14 +102,13 @@ async def scrape_section_urls(context, section_path, group_name):
     for href, title in hrefs_and_titles:
         full_url = BASE_URL + href
         for quality in ["SD", "HD"]:
-            stream_url = None
+            stream_urls = set()
             new_page = await context.new_page()
 
             async def handle_response(response):
-                nonlocal stream_url
                 real = extract_real_m3u8(response.url)
-                if real and not stream_url:
-                    stream_url = real
+                if real:
+                    stream_urls.add(real)
 
             new_page.on("response", handle_response)
             await new_page.goto(full_url, timeout=60000)
@@ -121,9 +119,9 @@ async def scrape_section_urls(context, section_path, group_name):
             await asyncio.sleep(4)
             await new_page.close()
 
-            if stream_url:
+            for s_url in stream_urls:
                 full_title = f"{title} ({quality})"
-                urls.append((stream_url, group_name, full_title))
+                urls.append((s_url, group_name, full_title))
     return urls
 
 async def scrape_all_append_sections():
