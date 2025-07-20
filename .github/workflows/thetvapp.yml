@@ -34,7 +34,7 @@ jobs:
           git pull --ff-only || true
 
       - name: ▶️ Run scraper
-        run: python streamsu.py
+        run: python tv.py
 
       - name: 📡 Commit updated playlist
         run: |
