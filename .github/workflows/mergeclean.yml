@@ -5,12 +5,12 @@ on:
     branches:
       - main
     paths:
-      - 'mergeclean.py'                  # 🛠 Trigger on script changes
+      - 'mergeclean.py'                   # 🛠 Trigger on script changes
       - '.github/workflows/mergeclean.yml'  # 📝 Or workflow changes
   schedule:
-    - cron: '0 * * * *'      # 🕛 Every hour at minute 0
-    - cron: '*/10 * * * *'   # ⏱ Every 10 minutes
-  workflow_dispatch:          # 🔘 Manual trigger
+    - cron: '0 * * * *'                   # 🕛 Every hour at minute 0
+    - cron: '*/10 * * * *'                # ⏱ Every 10 minutes
+  workflow_dispatch:                      # 🔘 Manual trigger
 
 jobs:
   update-playlist:
@@ -40,7 +40,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
-          git pull origin main --rebase || true
+          git pull --rebase --autostash origin main
 
       - name: ▶️ Run mergeclean.py script
         run: python mergeclean.py
