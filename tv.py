@@ -171,6 +171,16 @@ def append_new_streams(lines, new_urls_with_groups):
             if lines[existing[key]] != url:
                 lines[existing[key]] = url
         else:
+            # Skip duplicate MLB or PPV by title if already in lines
+            if group in ["MLB", "PPV"]:
+                if any(
+                    line.startswith("#EXTINF:-1") and
+                    f'group-title="{group}"' in line and
+                    f",{title}" in line
+                    for line in lines
+                ):
+                    continue  # Already exists, skip
+
             # Append new entry at the end with special handling for MLB and PPV groups
             if group == "MLB":
                 ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
