@@ -151,6 +151,20 @@ def replace_urls_in_tv_section(lines, tv_urls):
     return result
 
 def append_new_streams(lines, new_urls_with_groups):
+    # Delete existing MLB and PPV entries first
+    cleaned_lines = []
+    skip_next = False
+    for line in lines:
+        if skip_next:
+            skip_next = False
+            continue
+        if line.startswith("#EXTINF:-1") and ("group-title=\"MLB\"" in line or "group-title=\"PPV\"" in line):
+            skip_next = True  # skip URL line also
+            continue
+        cleaned_lines.append(line)
+
+    lines = cleaned_lines
+
     # Build dict to track existing entries by (group, title)
     existing_entries = {}
     i = 0
@@ -183,11 +197,11 @@ def append_new_streams(lines, new_urls_with_groups):
         if len(new_entries_added[key]) >= 2:
             continue
 
-        # Append with proper metadata
+        # Append with original fixed metadata
         if group == "MLB":
-            ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.{title.replace(" ", "")}.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
+            ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
         elif group == "PPV":
-            ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.{title.replace(" ", "")}.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
+            ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
         else:
             ext = f'#EXTINF:-1 group-title="{group}",{title}'
 
