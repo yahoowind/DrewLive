@@ -203,11 +203,10 @@ def rebuild_m3u_from_sections(sections, tv_urls, sports_urls):
 
     # Append sports section streams filtered by date
     for url, group, title in sports_urls:
-        # Skip entries with a date that is not today (flexible for common date formats)
-        # Checks if title contains a date string that is NOT today's date
-        if any(d in title for d in ["202", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]):
-            if today_str not in title:
-                continue  # skip old dated entry
+        # Only include entries that explicitly contain today's date
+        if today_str not in title:
+            print(f"🧹 Skipping old or undated event: {title}")
+            continue
 
         if group == "MLB":
             ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
@@ -251,6 +250,9 @@ async def main():
         f.write("\n".join(updated_lines))
 
     print(f"\n✅ {M3U8_FILE} updated successfully.")
+
+if __name__ == "__main__":
+    asyncio.run(main())
 
 if __name__ == "__main__":
     asyncio.run(main())
