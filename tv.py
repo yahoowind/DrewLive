@@ -15,7 +15,8 @@ SECTIONS_TO_APPEND = {
     "/ncaaf": "NCAAF",
     "/ncaab": "NCAAB",
     "/soccer": "Soccer",
-    "/ppv": "PPV"
+    "/ppv": "PPV",
+    "/events": "Events"
 }
 
 def extract_real_m3u8(url: str):
@@ -138,6 +139,7 @@ async def scrape_all_append_sections():
     return all_urls
 
 def replace_urls_in_tv_section(lines, tv_urls):
+    # Replace only URLs (lines starting with http) in order with new scraped tv URLs
     result = []
     url_idx = 0
     for line in lines:
@@ -149,9 +151,7 @@ def replace_urls_in_tv_section(lines, tv_urls):
     return result
 
 def append_new_streams(lines, new_urls_with_groups):
-    # Remove existing #EXTM3U to avoid duplicate header
-    lines = [line for line in lines if line.strip() != "#EXTM3U"]
-
+    # Build dict of existing (group, title) => url line index to avoid duplicates
     existing = {}
     i = 0
     while i < len(lines) - 1:
@@ -160,15 +160,18 @@ def append_new_streams(lines, new_urls_with_groups):
             title = lines[i].split(",")[-1].strip()
             if 'group-title="' in lines[i]:
                 group = lines[i].split('group-title="')[1].split('"')[0]
-            existing[(group, title)] = i + 1
+            if group:
+                existing[(group, title)] = i + 1  # url line index is next line
         i += 1
 
     for url, group, title in new_urls_with_groups:
         key = (group, title)
         if key in existing:
+            # Update URL if changed
             if lines[existing[key]] != url:
                 lines[existing[key]] = url
         else:
+            # Append new entry at the end with special handling for MLB and PPV groups
             if group == "MLB":
                 ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
             elif group == "PPV":
@@ -178,8 +181,10 @@ def append_new_streams(lines, new_urls_with_groups):
             lines.append(ext)
             lines.append(url)
 
+    # Remove empty lines, then insert #EXTM3U at the top if missing
     lines = [line for line in lines if line.strip()]
-    lines.insert(0, "#EXTM3U")
+    if not lines or not lines[0].strip() == "#EXTM3U":
+        lines.insert(0, "#EXTM3U")
     return lines
 
 async def main():
@@ -198,7 +203,7 @@ async def main():
 
     updated_lines = replace_urls_in_tv_section(lines, tv_new_urls)
 
-    print("\n📦 Scraping all other sections (NBA, NFL, PPV, etc)...")
+    print("\n📦 Scraping all other sections (NBA, NFL, Events, etc)...")
     append_new_urls = await scrape_all_append_sections()
     if append_new_urls:
         updated_lines = append_new_streams(updated_lines, append_new_urls)
@@ -206,7 +211,7 @@ async def main():
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} updated: Clean top, no dups, proper logos and IDs for MLB & PPV.")
+    print(f"\n✅ {M3U8_FILE} updated: Clean top, no duplicates, proper MLB and PPV logos.")
 
 if __name__ == "__main__":
     asyncio.run(main())
