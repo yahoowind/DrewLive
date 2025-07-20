@@ -35,23 +35,17 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Stage the modified playlist
           git add StreamEast.m3u8
 
-          # Exit if no changes
           if git diff --cached --quiet; then
             echo "✅ No changes to commit"
             exit 0
           fi
 
-          # Commit changes
           git commit -m "🔁 Update playlist $(date -u)"
 
-          # Safely rebase with latest remote changes
+          # Rebase to avoid stale push
           git pull --rebase origin main
 
-          # Random delay to reduce race condition risk
-          sleep $((RANDOM % 10 + 5))
-
-          # Push safely
+          # Push updates (no retry, will fail if stale)
           git push --force-with-lease origin main
