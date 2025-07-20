@@ -3,49 +3,45 @@ name: 🔁 Force Update FSTV Playlist
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'  # ⏰ Hourly refresh
+    - cron: '0 * * * *'  # Hourly refresh
   push:
     paths:
       - 'fstv.py'
 
 permissions:
-  contents: write  # ✅ Required to push changes
+  contents: write
 
 jobs:
   update-playlist:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout Repo
+      - name: Checkout Repo
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: 🐍 Set Up Python
+      - name: Set Up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: 📦 Install Dependencies
+      - name: Install Dependencies
         run: |
           pip install --upgrade pip
           pip install beautifulsoup4 playwright
           python -m playwright install --with-deps
 
-      - name: ⚙️ Run Scraper
+      - name: Run Scraper
         run: python fstv.py
 
-      - name: 💾 Commit & Push Playlist
+      - name: Commit & Push Playlist
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
           git pull --rebase origin main || true
           git add FSTV24.m3u8
-
-          timestamp=$(date -u "+%Y-%m-%d %H:%M:%S UTC")
-          git commit -m "🔁 Auto-update FSTV24.m3u8 at $timestamp" || echo "No changes to commit"
-
+          git commit -m "Auto-refresh FSTV playlist at $(date -u)" || echo "No changes to commit"
           git push --force-with-lease origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
