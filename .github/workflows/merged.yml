@@ -2,8 +2,8 @@ name: 🔄 Auto Update Merged IPTV Playlist
 
 on:
   schedule:
-    - cron: '*/10 * * * *'  # Every 10 minutes
-  workflow_dispatch:
+    - cron: '*/10 * * * *'  # ⏰ Every 10 minutes
+  workflow_dispatch:        # 🔘 Manual trigger
 
 concurrency:
   group: "iptv-playlist-update"
@@ -27,16 +27,13 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: 📦 Install requests
+      - name: 📦 Install dependencies
         run: pip install requests
 
       - name: 🧠 Set Git identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: 🔃 Pull latest changes and rebase
-        run: git pull --rebase origin main || true
 
       - name: ▶️ Run playlist generator
         run: |
@@ -48,7 +45,11 @@ jobs:
           git add MergedPlaylist.m3u8
           git commit -m "📝 Update at $(date -u +"%Y-%m-%d %H:%M:%S UTC")" || echo "Nothing to commit."
 
-          # Random delay to reduce push collisions
+          # 🔃 Pull latest changes with rebase to avoid stale push errors
+          git pull --rebase origin main
+
+          # ⏳ Random delay to reduce push collisions
           sleep $((RANDOM % 10 + 5))
 
+          # 🚀 Push safely using force-with-lease
           git push --force-with-lease origin main
