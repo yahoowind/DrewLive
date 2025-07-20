@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: main
+          fetch-depth: 0  # Full history for rebase
 
       - name: 🐍 Set up Python
         uses: actions/setup-python@v4
@@ -33,12 +34,22 @@ jobs:
         run: |
           echo "# Updated at $(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> Tims247.m3u8
 
-      - name: 💾 Commit and push updated playlist
+      - name: 🧠 Set Git identity
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add Tims247.m3u8
-          git commit -m "Force update Tims247.m3u8 with timestamp" || echo "No changes to commit"
-          git push origin main
+
+      - name: 🔃 Pull latest changes and rebase
+        run: git pull --rebase origin main || true
+
+      - name: 💾 Commit and push updated playlist safely
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add Tims247.m3u8
+          git commit -m "Force update Tims247.m3u8 with timestamp at $(date -u)" || echo "No changes to commit"
+
+          # Random sleep to reduce push collisions
+          sleep $((RANDOM % 10 + 5))
+
+          git push --force-with-lease origin main
