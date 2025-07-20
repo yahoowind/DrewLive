@@ -2,7 +2,7 @@ name: 🚀 Update StreamedSU Playlist 📺
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 */2 * * *'  # every 2 hours
   workflow_dispatch:
 
 permissions:
@@ -30,6 +30,7 @@ jobs:
 
       - name: 🎯 Run scraping script
         run: python streamsu.py
+        timeout-minutes: 10  # optional timeout to fail fast if it hangs
 
       - name: 💾 Commit & push if playlist changed safely
         env:
@@ -37,19 +38,15 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Clean working tree before pulling (discard unstaged changes)
-          git reset --hard
-
-          # Set authenticated remote URL
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
 
-          # Pull latest changes with rebase
-          git pull --rebase origin main
+          # Pull latest changes without rebase or reset
+          git pull origin main
 
-          # Add playlist file changed by scraping script
+          # Add the playlist file changed by the scraper
           git add StreamedSU.m3u8
 
+          # Check if there are changes to commit
           if git diff --cached --quiet; then
             echo "✅ No changes in playlist"
             exit 0
@@ -57,8 +54,5 @@ jobs:
             git commit -m "🔁 Update playlist $(date -u)"
           fi
 
-          # Random sleep to reduce push collisions
-          sleep $((RANDOM % 10 + 5))
-
-          # Push changes safely
-          git push --force-with-lease origin main
+          # Push the changes (normal push)
+          git push origin main
