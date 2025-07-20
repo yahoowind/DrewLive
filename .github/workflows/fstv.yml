@@ -8,6 +8,9 @@ on:
     paths:
       - 'fstv.py'
 
+permissions:
+  contents: write  # ✅ Required to push changes
+
 jobs:
   update-playlist:
     runs-on: ubuntu-latest
@@ -32,19 +35,17 @@ jobs:
       - name: ⚙️ Run Scraper
         run: python fstv.py
 
-      - name: 💾 Commit & Push Playlist Safely
+      - name: 💾 Commit & Push Playlist
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Pull latest changes and rebase to avoid overwriting newer commits
           git pull --rebase origin main || true
-
           git add FSTV24.m3u8
-          git commit -m "🔁 Auto-refresh FSTV playlist at $(date -u)" || echo "🟡 No changes to commit"
 
-          # Random delay to reduce push collisions
-          sleep $((RANDOM % 10 + 5))
+          timestamp=$(date -u "+%Y-%m-%d %H:%M:%S UTC")
+          git commit -m "🔁 Auto-update FSTV24.m3u8 at $timestamp" || echo "No changes to commit"
 
-          # Push safely with lease protection
           git push --force-with-lease origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
