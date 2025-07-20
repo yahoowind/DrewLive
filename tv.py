@@ -30,32 +30,22 @@ def extract_real_m3u8(url: str):
         return url
     return None
 
-def normalize_title(title: str):
-    title = title.lower()
-    for tag in [" (hd)", " (sd)"]:
-        title = title.replace(tag, "")
-    return title.strip()
-
 async def scrape_tv_urls():
-    results = []
+    urls = []
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
 
-        print("🔄 Loading TV channels...")
+        print(f"🔄 Loading /tv channel list...")
         await page.goto(CHANNEL_LIST_URL, timeout=60000)
         links = await page.locator("ol.list-group a").all()
+        hrefs = [await link.get_attribute("href") for link in links if await link.get_attribute("href")]
+        await page.close()
 
-        for link in links:
-            href = await link.get_attribute("href")
-            title_raw = await link.text_content()
-            if not href or not title_raw:
-                continue
-            title = " - ".join(line.strip() for line in title_raw.splitlines() if line.strip())
+        for href in hrefs:
             full_url = BASE_URL + href
-            print(f"🎯 {title} - {full_url}")
-
+            print(f"🎯 Scraping TV page: {full_url}")
             for quality in ["SD", "HD"]:
                 stream_url = None
                 new_page = await context.new_page()
@@ -76,11 +66,13 @@ async def scrape_tv_urls():
                 await new_page.close()
 
                 if stream_url:
-                    title_q = f"{title} ({quality})"
-                    results.append((stream_url, quality, title_q))
+                    print(f"✅ {quality}: {stream_url}")
+                    urls.append(stream_url)
+                else:
+                    print(f"❌ {quality} not found")
 
         await browser.close()
-    return results
+    return urls
 
 async def scrape_section_urls(context, section_path, group_name):
     urls = []
@@ -102,6 +94,8 @@ async def scrape_section_urls(context, section_path, group_name):
 
     for href, title in hrefs_and_titles:
         full_url = BASE_URL + href
+        print(f"🎯 Scraping {group_name}: {title}")
+
         for quality in ["SD", "HD"]:
             stream_url = None
             new_page = await context.new_page()
@@ -114,16 +108,21 @@ async def scrape_section_urls(context, section_path, group_name):
 
             new_page.on("response", handle_response)
             await new_page.goto(full_url, timeout=60000)
+
             try:
                 await new_page.get_by_text(f"Load {quality} Stream", exact=True).click(timeout=5000)
             except:
                 pass
+
             await asyncio.sleep(4)
             await new_page.close()
 
             if stream_url:
-                full_title = f"{title} ({quality})"
-                urls.append((stream_url, group_name, full_title))
+                print(f"✅ {quality}: {stream_url}")
+                urls.append((stream_url, group_name, title))
+            else:
+                print(f"❌ {quality} not found")
+
     return urls
 
 async def scrape_all_append_sections():
@@ -139,60 +138,84 @@ async def scrape_all_append_sections():
         await browser.close()
     return all_urls
 
-def replace_tv_section(lines, tv_streams):
-    result = []
-    stream_idx = 0
+def parse_m3u_sections(lines):
+    sections = {
+        "header": [],
+        "tv": [],
+        "other": []
+    }
+    current_section = "header"
     i = 0
     while i < len(lines):
-        line = lines[i]
-        if line.startswith("#EXTINF:-1") and stream_idx < len(tv_streams):
-            url, quality, title = tv_streams[stream_idx]
-            parts = line.split(",")
-            new_extinf = ",".join(parts[:-1]) + "," + title
-            result.append(new_extinf)
-            result.append(url)
-            stream_idx += 1
-            i += 2
-        else:
-            result.append(line)
+        line = lines[i].strip()
+
+        # Header is all lines before first #EXTINF:
+        if current_section == "header":
+            if line.startswith("#EXTINF:"):
+                current_section = "tv"
+                continue  # don't append this line to header, next loop handles tv
+            else:
+                sections["header"].append(line)
+                i += 1
+                continue
+
+        # Now inside tv or other sections
+        if current_section == "tv":
+            if line.startswith("#EXTINF:"):
+                sections["tv"].append(line)
+                i += 1
+                if i < len(lines):
+                    sections["tv"].append(lines[i].strip())
+            else:
+                sections["other"].append(line)
             i += 1
-    return result
+        else:
+            # fallback to other section for safety
+            sections["other"].append(line)
+            i += 1
 
-def append_new_streams(lines, new_urls_with_groups):
-    lines = [line for line in lines if line.strip() != "#EXTM3U"]
+    return sections
 
-    clean_lines = []
-    skip_next = False
-    for line in lines:
-        if skip_next:
-            skip_next = False
-            continue
-        if line.startswith("#EXTINF:-1") and any(g in line for g in ["MLB", "PPV"]):
-            skip_next = True
-            continue
-        clean_lines.append(line)
+def rebuild_m3u_from_sections(sections, tv_urls, sports_urls):
+    result = []
 
-    existing_titles = set()
-    for i in range(0, len(clean_lines) - 1, 2):
-        if clean_lines[i].startswith("#EXTINF:-1"):
-            title = clean_lines[i].split(",")[-1].strip()
-            existing_titles.add(normalize_title(title))
+    # Write full header intact
+    if "header" in sections and sections["header"]:
+        result.extend(sections["header"])
+    else:
+        result.append("#EXTM3U")
 
-    for url, group, title in new_urls_with_groups:
-        if normalize_title(title) in existing_titles:
-            continue
+    # Rebuild tv section with replaced URLs but keep metadata lines
+    if "tv" in sections:
+        tv_lines = sections["tv"]
+        url_idx = 0
+        for i in range(len(tv_lines)):
+            line = tv_lines[i]
+            if not line.startswith("#EXTINF:") and line.strip().startswith("http"):
+                if url_idx < len(tv_urls):
+                    result.append(tv_urls[url_idx])
+                    url_idx += 1
+                else:
+                    result.append(line)
+            else:
+                result.append(line)
+
+    # Append fresh sports section streams with metadata
+    for url, group, title in sports_urls:
         if group == "MLB":
             ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
         elif group == "PPV":
             ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
         else:
             ext = f'#EXTINF:-1 group-title="{group}",{title}'
-        clean_lines.append(ext)
-        clean_lines.append(url)
-        existing_titles.add(normalize_title(title))
+        result.append(ext)
+        result.append(url)
 
-    clean_lines.insert(0, "#EXTM3U")
-    return clean_lines
+    # Add any other leftover lines
+    if "other" in sections:
+        result.extend(sections["other"])
+
+    return result
 
 async def main():
     if not Path(M3U8_FILE).exists():
@@ -202,18 +225,25 @@ async def main():
     with open(M3U8_FILE, "r", encoding="utf-8") as f:
         lines = f.read().splitlines()
 
-    print("🔧 Replacing /tv streams...")
-    tv_new_urls = await scrape_tv_urls()
-    updated_lines = replace_tv_section(lines, tv_new_urls)
+    print("🔧 Parsing M3U sections...")
+    sections = parse_m3u_sections(lines)
 
-    print("\n📦 Scraping additional sections...")
-    append_urls = await scrape_all_append_sections()
-    updated_lines = append_new_streams(updated_lines, append_urls)
+    print("🔄 Scraping /tv section URLs...")
+    tv_urls = await scrape_tv_urls()
+    if not tv_urls:
+        print("❌ No TV URLs scraped, aborting.")
+        return
+
+    print("\n📦 Scraping sports and other sections...")
+    sports_urls = await scrape_all_append_sections()
+
+    print("\n🔧 Rebuilding playlist with updated URLs...")
+    updated_lines = rebuild_m3u_from_sections(sections, tv_urls, sports_urls)
 
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print("\n✅ Playlist updated successfully.")
+    print(f"\n✅ {M3U8_FILE} updated successfully.")
 
 if __name__ == "__main__":
     asyncio.run(main())
