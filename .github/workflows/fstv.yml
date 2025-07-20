@@ -6,10 +6,10 @@ on:
     - cron: '0 * * * *'  # ⏰ Hourly refresh
   push:
     paths:
-      - 'fstv.py'       # 🛠️ Only run when script changes
+      - 'fstv.py'       # 🛠️ Run when script changes
 
 permissions:
-  contents: write        # 🔐 Required to push changes
+  contents: write        # 🔐 Needed to push changes
 
 jobs:
   update-playlist:
@@ -43,5 +43,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin main || true
           git add FSTV24.m3u8
-          git commit -m "🔁 Auto-update FSTV playlist" || echo "🟡 No changes to commit"
+          git commit -m '🔁 Auto-update FSTV playlist at '"$(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "🟡 No changes to commit"
           git push --force-with-lease origin main
