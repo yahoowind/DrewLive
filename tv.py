@@ -16,8 +16,7 @@ SECTIONS_TO_APPEND = {
     "/ncaaf": "NCAAF",
     "/ncaab": "NCAAB",
     "/soccer": "Soccer",
-    "/ppv": "PPV",
-    "/events": "Events"
+    "/ppv": "PPV"
 }
 
 def extract_real_m3u8(url: str):
