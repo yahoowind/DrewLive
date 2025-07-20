@@ -1,15 +1,15 @@
 name: 🔁 Force Update FSTV Playlist 🚀
 
 on:
-  workflow_dispatch:   # 🖐️ Manual trigger
+  workflow_dispatch:       # 🖐️ Manual trigger
   schedule:
-    - cron: '0 * * * *'  # ⏰ Hourly refresh
+    - cron: '0 * * * *'    # ⏰ Hourly refresh on the hour
   push:
     paths:
-      - 'fstv.py'       # 🛠️ Run when script changes
+      - 'fstv.py'          # 🛠️ Run on changes to the script
 
 permissions:
-  contents: write        # 🔐 Needed to push changes
+  contents: write           # 🔐 Needed to push commits
 
 jobs:
   update-playlist:
@@ -19,7 +19,7 @@ jobs:
       - name: 📥 Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # 🧠 Full git history
+          fetch-depth: 0    # Full git history for rebase safety
 
       - name: 🐍 Setup Python environment
         uses: actions/setup-python@v4
@@ -35,7 +35,7 @@ jobs:
       - name: 🎯 Run playlist generator
         run: python fstv.py
 
-      - name: 💾 Commit & push changes safely
+      - name: 💾 Commit & push safely
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -43,5 +43,9 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin main || true
           git add FSTV24.m3u8
-          git commit -m '🔁 Auto-update FSTV playlist at '"$(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "🟡 No changes to commit"
+
+          # Commit message with timestamp
+          COMMIT_MSG="🔁 Auto-update FSTV playlist at $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git commit -m "$COMMIT_MSG" || echo "🟡 No changes to commit"
+
           git push --force-with-lease origin main
