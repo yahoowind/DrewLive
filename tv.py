@@ -15,8 +15,7 @@ SECTIONS_TO_APPEND = {
     "/ncaaf": "NCAAF",
     "/ncaab": "NCAAB",
     "/soccer": "Soccer",
-    "/ppv": "PPV",
-    "/events": "Events"
+    "/ppv": "PPV"
 }
 
 def extract_real_m3u8(url: str):
@@ -38,7 +37,7 @@ async def scrape_tv_urls():
         page = await context.new_page()
 
         print(f"🔄 Loading /tv channel list...")
-        await page.goto(CHANNEL_LIST_URL, timeout=60000)  # 60 seconds)
+        await page.goto(CHANNEL_LIST_URL, timeout=60000)
         links = await page.locator("ol.list-group a").all()
         hrefs = [await link.get_attribute("href") for link in links if await link.get_attribute("href")]
         await page.close()
@@ -92,8 +91,6 @@ async def scrape_section_urls(context, section_path, group_name):
 
     await page.close()
 
-    seen_urls = set()
-
     for href, title in hrefs_and_titles:
         full_url = BASE_URL + href
         print(f"🎯 Scraping {group_name}: {title}")
@@ -120,12 +117,8 @@ async def scrape_section_urls(context, section_path, group_name):
             await new_page.close()
 
             if stream_url:
-                if stream_url not in seen_urls:
-                    print(f"✅ {quality}: {stream_url}")
-                    urls.append((stream_url, group_name, title))
-                    seen_urls.add(stream_url)
-                else:
-                    print(f"⚠️ Duplicate URL skipped: {stream_url}")
+                print(f"✅ {quality}: {stream_url}")
+                urls.append((stream_url, group_name, title))
             else:
                 print(f"❌ {quality} not found")
 
@@ -153,12 +146,12 @@ def replace_urls_in_tv_section(lines, tv_urls):
             url_idx += 1
         else:
             result.append(line)
-    # If new tv_urls are more than old, append extra URLs at the end of /tv block
-    # (Optional: You can modify if you want strict replacement)
     return result
 
 def append_new_streams(lines, new_urls_with_groups):
-    # Extract existing entries (group, title) and their URL line indexes
+    # Remove existing #EXTM3U to avoid duplicate header
+    lines = [line for line in lines if line.strip() != "#EXTM3U"]
+
     existing = {}
     i = 0
     while i < len(lines) - 1:
@@ -167,66 +160,27 @@ def append_new_streams(lines, new_urls_with_groups):
             title = lines[i].split(",")[-1].strip()
             if 'group-title="' in lines[i]:
                 group = lines[i].split('group-title="')[1].split('"')[0]
-            if group:
-                existing[(group, title)] = i + 1  # URL line index
+            existing[(group, title)] = i + 1
         i += 1
 
-    # Build set of current scraped keys to keep only scraped entries
-    current_keys = set((group, title) for _, group, title in new_urls_with_groups)
-
-    # Remove old entries not in current scrape
-    cleaned_lines = []
-    i = 0
-    while i < len(lines):
-        line = lines[i]
-        if line.startswith("#EXTINF:-1"):
-            group = None
-            title = line.split(",")[-1].strip()
-            if 'group-title="' in line:
-                group = line.split('group-title="')[1].split('"')[0]
-            if (group, title) in current_keys:
-                cleaned_lines.append(line)
-                if i + 1 < len(lines):
-                    cleaned_lines.append(lines[i + 1])
-                i += 2
-            else:
-                # Skip this old entry
-                i += 2
-        else:
-            cleaned_lines.append(line)
-            i += 1
-
-    # Append or update scraped streams
     for url, group, title in new_urls_with_groups:
         key = (group, title)
-        # Check if exists in cleaned lines (re-check)
-        found = False
-        for idx, line in enumerate(cleaned_lines):
-            if line.startswith("#EXTINF:-1"):
-                line_group = None
-                line_title = line.split(",")[-1].strip()
-                if 'group-title="' in line:
-                    line_group = line.split('group-title="')[1].split('"')[0]
-                if (line_group, line_title) == key:
-                    # Update URL line after this
-                    if idx + 1 < len(cleaned_lines):
-                        cleaned_lines[idx + 1] = url
-                        found = True
-                        break
-        if not found:
+        if key in existing:
+            if lines[existing[key]] != url:
+                lines[existing[key]] = url
+        else:
             if group == "MLB":
                 ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
             elif group == "PPV":
                 ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
             else:
                 ext = f'#EXTINF:-1 group-title="{group}",{title}'
-            cleaned_lines.append(ext)
-            cleaned_lines.append(url)
+            lines.append(ext)
+            lines.append(url)
 
-    # Clean empty lines and insert header
-    cleaned_lines = [line for line in cleaned_lines if line.strip()]
-    cleaned_lines.insert(0, "#EXTM3U")
-    return cleaned_lines
+    lines = [line for line in lines if line.strip()]
+    lines.insert(0, "#EXTM3U")
+    return lines
 
 async def main():
     if not Path(M3U8_FILE).exists():
@@ -244,18 +198,15 @@ async def main():
 
     updated_lines = replace_urls_in_tv_section(lines, tv_new_urls)
 
-    print("\n📦 Scraping all other sections (NBA, NFL, Events, etc)...")
+    print("\n📦 Scraping all other sections (NBA, NFL, PPV, etc)...")
     append_new_urls = await scrape_all_append_sections()
     if append_new_urls:
         updated_lines = append_new_streams(updated_lines, append_new_urls)
-    else:
-        # If no new appended streams, clean old appended entries anyway
-        updated_lines = append_new_streams(updated_lines, [])
 
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} updated: Clean top, no dups, cleaned old entries.")
+    print(f"\n✅ {M3U8_FILE} updated: Clean top, no dups, proper logos and IDs for MLB & PPV.")
 
 if __name__ == "__main__":
     asyncio.run(main())
