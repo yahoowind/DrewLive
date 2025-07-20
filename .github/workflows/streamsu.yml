@@ -38,12 +38,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git reset .github/workflows/ || true
+          # Clean working tree before pulling (discard unstaged changes)
+          git reset --hard
 
-          # Pull latest changes and rebase to avoid overwriting newer commits
+          # Set authenticated remote URL
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
-          git pull --rebase origin main || true
 
+          # Pull latest changes with rebase
+          git pull --rebase origin main
+
+          # Add playlist file changed by scraping script
           git add StreamedSU.m3u8
 
           if git diff --cached --quiet; then
@@ -56,4 +60,5 @@ jobs:
           # Random sleep to reduce push collisions
           sleep $((RANDOM % 10 + 5))
 
+          # Push changes safely
           git push --force-with-lease origin main
