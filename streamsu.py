@@ -1,5 +1,5 @@
 import asyncio
-from playwright.async_api import async_playwright
+from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeoutError
 from datetime import datetime
 import aiohttp
 import os
@@ -38,10 +38,8 @@ ALLOWED_CATEGORIES = {
 async def check_m3u8_url(url):
     try:
         async with aiohttp.ClientSession() as session:
-            async with session.get(url, timeout=7) as resp:  # Reduced timeout to 7s
+            async with session.get(url, timeout=7) as resp:
                 if resp.status == 200:
-                    content_type = resp.headers.get("Content-Type", "")
-                    # Optional: add more content-type validation here if needed
                     return True
     except Exception:
         pass
@@ -60,10 +58,8 @@ async def main():
 
         m3u = ["#EXTM3U"]
 
-        # Shared variable for m3u8_url found by route handler
         m3u8_url = None
 
-        # Route handler only once, outside loops
         async def capture_route(route, req):
             nonlocal m3u8_url
             if ".m3u8" in req.url:
@@ -107,13 +103,11 @@ async def main():
                 if not sources:
                     continue
 
-                # Reset URL before browsing this match
                 m3u8_url = None
                 used_source_type = None
                 language = "Unknown"
                 quality = "SD"
 
-                # We'll attempt each source in order to find a valid working stream
                 for source in sources:
                     source_id = source.get("id")
                     source_type = source.get("source")
@@ -133,11 +127,11 @@ async def main():
                         language = stream_info.get("language", "Unknown")
                         quality = "HD" if stream_info.get("hd") else "SD"
 
-                        m3u8_url = None  # Reset for each embed URL try
+                        m3u8_url = None
 
                         try:
                             print(f"\nVisiting: {title} (source: {source_type})")
-                            await page.goto(embed_url, timeout=15000)  # Reduced timeout to 15s
+                            await page.goto(embed_url, timeout=15000)
                             await page.wait_for_timeout(3000)
 
                             box = await page.evaluate("""() => {
@@ -146,12 +140,15 @@ async def main():
                             x = box["width"] // 2
                             y = box["height"] // 2
 
-                            # Click multiple times to bypass ads or trigger player
                             for _ in range(6):
-                                await page.mouse.click(x, y)
-                                await page.wait_for_timeout(2000)
-                                if m3u8_url:
-                                    break
+                                try:
+                                    await page.mouse.click(x, y)
+                                    await page.wait_for_timeout(2000)
+                                    if m3u8_url:
+                                        break
+                                except Exception as click_err:
+                                    print(f"[!] Mouse click error: {click_err}")
+                                    continue
 
                             if m3u8_url:
                                 valid = await check_m3u8_url(m3u8_url)
@@ -162,13 +159,18 @@ async def main():
                                     print(f"[!] Invalid stream URL (not 200): {m3u8_url}")
                                     m3u8_url = None
                                     continue
+                            else:
+                                print(f"[✖] No m3u8 found at: {embed_url}")
 
+                        except PlaywrightTimeoutError:
+                            print(f"[!] Timeout while loading: {embed_url}")
+                            continue
                         except Exception as e:
                             print(f"[!] Error visiting embed for {title}: {e}")
                             continue
 
                     if m3u8_url:
-                        break  # found valid stream, break sources loop
+                        break
 
                 if not m3u8_url:
                     print(f"[✖] Failed: No valid stream found for {title}")
