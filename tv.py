@@ -57,13 +57,14 @@ async def scrape_tv_urls():
             print(f"🎯 {title} - {full_url}")
 
             for quality in ["SD", "HD"]:
-                stream_urls = set()
+                stream_url = None
                 new_page = await context.new_page()
 
                 async def handle_response(response):
+                    nonlocal stream_url
                     real = extract_real_m3u8(response.url)
-                    if real:
-                        stream_urls.add(real)
+                    if real and not stream_url:
+                        stream_url = real
 
                 new_page.on("response", handle_response)
                 await new_page.goto(full_url)
@@ -74,9 +75,9 @@ async def scrape_tv_urls():
                 await asyncio.sleep(4)
                 await new_page.close()
 
-                for s_url in stream_urls:
+                if stream_url:
                     title_q = f"{title} ({quality})"
-                    results.append((s_url, quality, title_q))
+                    results.append((stream_url, quality, title_q))
 
         await browser.close()
     return results
@@ -102,13 +103,14 @@ async def scrape_section_urls(context, section_path, group_name):
     for href, title in hrefs_and_titles:
         full_url = BASE_URL + href
         for quality in ["SD", "HD"]:
-            stream_urls = set()
+            stream_url = None
             new_page = await context.new_page()
 
             async def handle_response(response):
+                nonlocal stream_url
                 real = extract_real_m3u8(response.url)
-                if real:
-                    stream_urls.add(real)
+                if real and not stream_url:
+                    stream_url = real
 
             new_page.on("response", handle_response)
             await new_page.goto(full_url, timeout=60000)
@@ -119,9 +121,9 @@ async def scrape_section_urls(context, section_path, group_name):
             await asyncio.sleep(4)
             await new_page.close()
 
-            for s_url in stream_urls:
+            if stream_url:
                 full_title = f"{title} ({quality})"
-                urls.append((s_url, group_name, full_title))
+                urls.append((stream_url, group_name, full_title))
     return urls
 
 async def scrape_all_append_sections():
@@ -180,9 +182,9 @@ def append_new_streams(lines, new_urls_with_groups):
         if normalize_title(title) in existing_titles:
             continue
         if group == "MLB":
-            ext = f'#EXTINF:-1 tvg-id="MLB.Dummy" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
+            ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
         elif group == "PPV":
-            ext = f'#EXTINF:-1 tvg-id="PPV.Dummy" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
+            ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
         else:
             ext = f'#EXTINF:-1 group-title="{group}",{title}'
         clean_lines.append(ext)
