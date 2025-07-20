@@ -1,9 +1,9 @@
 name: 🔁 Force Update PPVLand Playlist
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:         # 🔘 Manual trigger
   schedule:
-    - cron: '0 * * * *'  # ⏰ Hourly refresh
+    - cron: '0 * * * *'       # ⏰ Hourly refresh
   push:
     paths:
       - 'ppv.py'
@@ -26,7 +26,7 @@ jobs:
       - name: 📦 Install Dependencies
         run: |
           pip install --upgrade pip
-          pip install beautifulsoup4 playwright
+          pip install beautifulsoup4 playwright aiohttp
           python -m playwright install --with-deps
 
       - name: ⚙️ Run Scraper
@@ -36,6 +36,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add PPVLand.m3u8
           git commit -m "🔁 Auto-refresh PPVLand playlist" || echo "🟡 No changes to commit"
-          git push origin main --force
+
+          # ⤴️ Pull with rebase to avoid stale push
+          git pull --rebase origin main
+
+          # 🚀 Push safely with lease
+          git push --force-with-lease origin main
