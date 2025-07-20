@@ -38,10 +38,24 @@ jobs:
 
       - name: 💾 Commit & Push Changes Safely
         run: |
-          # Pull latest changes and rebase to avoid overwriting newer commits
-          git pull --rebase origin main || true
+          # Stash all local changes including untracked files before pulling
+          git stash push -u -m "ci stash before pull" || true
 
+          # Pull latest changes and rebase to avoid overwriting newer commits
+          git pull --rebase origin main || {
+            echo "⚠️ Pull with rebase failed, aborting rebase and restoring stash"
+            git rebase --abort || true
+            git stash pop || true
+            exit 1
+          }
+
+          # Apply stashed changes back
+          git stash pop || true
+
+          # Add updated playlist file
           git add MergedPlaylist_Kodi.m3u8
+
+          # Commit if there are changes
           git commit -m "📡 Auto-update Kodi formatted playlist at $(date -u)" || echo "🟡 No changes to commit"
 
           # Random delay to reduce push collisions
