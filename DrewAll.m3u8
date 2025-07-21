@@ -439,7 +439,7 @@ http://api.toonamiaftermath.com:3000/est/playlist.m3u8
 http://api.toonamiaftermath.com:3000/movies/playlist.m3u8
 #EXTINF:-1  tvg-name="Toonami Aftermath Radio" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20radio.jpg" group-title="DrewLive Fan Made TV" radio="false",Toonami Aftermath Radio
 http://api.toonamiaftermath.com:3000/radio/playlist.m3u8
-#EXTINF:-1  tvg-name="Toonami Aftermath West" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20west.jpg" group-title="DrewLive Fan Made TV" radio="false",Toonami Aftermath West
+#EXTINF:-1  tvg-name="Toonami Aftermath West" tvg-id="toonamiwest" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20west.jpg" group-title="DrewLive Fan Made TV" radio="false",Toonami Aftermath West
 http://api.toonamiaftermath.com:3000/pst/playlist.m3u8
 #EXTINF:-1  tvg-name="iHeartRadio Hip Hop Beats" tvg-id="24.7.Dummy.us" tvg-logo="https://image.xumo.com/v1/channels/channel/9995103/600x337.webp?type=channelTile" group-title="DrewLive Music Video Channels" radio="false",iHeartRadio Hip Hop Beats
 https://iheart-iheartthebeat-1-us.xumo.wurl.tv/playlist.m3u8
