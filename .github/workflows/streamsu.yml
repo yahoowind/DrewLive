@@ -2,8 +2,8 @@ name: 🚀 Update StreamedSU Playlist 📺
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
-  workflow_dispatch:       # 🔘 Allow manual trigger
+    - cron: '0 */2 * * *'  # ⏰ Every 2 hours
+  workflow_dispatch:        # 🔘 Allow manual trigger
 
 jobs:
   scrape:
@@ -44,8 +44,9 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u)"
 
-          # Rebase to avoid stale push
-          git pull --rebase origin main
-
-          # Push updates (no retry, will fail if stale)
+          # Fetch and safely apply local changes
+          git fetch origin main
+          git reset --soft origin/main
+          
+          git commit -m "🔁 Update playlist $(date -u)"
           git push --force-with-lease origin main
