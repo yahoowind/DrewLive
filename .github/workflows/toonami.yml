@@ -1,0 +1,40 @@
+name: 🚀 Force XMLTV Update
+
+on:
+  workflow_dispatch:  # 🖱️ Manual trigger from GitHub UI
+  schedule:
+    - cron: '0 */4 * * *'  # ⏰ Every 4 hours (UTC)
+
+jobs:
+  run-epg-scripts:
+    name: 📺 Generate EPG Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright beautifulsoup4 lxml
+          playwright install firefox
+
+      - name: 🎬 Run toon.py
+        run: python toon.py
+
+      - name: 🎬 Run toon2.py
+        run: python toon2.py
+
+      - name: 💾 Commit and push updated XMLTV files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add *.xml
+          git diff --cached --quiet || git commit -m "🆕 Auto-updated XMLTV files"
+          git push
