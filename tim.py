@@ -14,14 +14,33 @@ def force_group_and_tvgid(line):
         line = re.sub(r'tvg-id="[^"]*"', '', line)
         line = re.sub(r'group-title="[^"]*"', '', line)
 
-        # Ensure spacing is correct and insert new attributes
+        # Insert new attributes
         line = line.replace('#EXTINF:', f'#EXTINF:-1 tvg-id="{FORCED_TVG_ID}" group-title="{FORCED_GROUP}" ', 1)
     return line.strip()
 
 def main():
-    res = requests.get(UPSTREAM_URL, timeout=15)
-    res.raise_for_status()
-    lines = res.text.strip().splitlines()
+    print("[🔁] Fetching upstream playlist...")
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        'Accept': '*/*'
+    }
+
+    try:
+        res = requests.get(UPSTREAM_URL, headers=headers, timeout=15)
+        res.raise_for_status()
+        lines = res.text.strip().splitlines()
+        print(f"[✅] Upstream fetched successfully, {len(lines)} lines.")
+    except requests.exceptions.RequestException as e:
+        print(f"[❌] Failed to fetch upstream: {e}")
+        # Optional: fallback to a backup file
+        # try:
+        #     with open("backup.m3u8", "r", encoding="utf-8") as f:
+        #         lines = f.read().splitlines()
+        #         print("[⚠️] Using backup.m3u8")
+        # except Exception as e2:
+        #     print(f"[❌] No backup available: {e2}")
+        return
 
     output_lines = [
         f'#EXTM3U url-tvg="{EPG_URL}"',
@@ -34,10 +53,12 @@ def main():
             continue
         output_lines.append(force_group_and_tvgid(line))
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(output_lines) + "\n")
-
-    print(f"[✅] Playlist saved to {OUTPUT_FILE} with tvg-id='{FORCED_TVG_ID}' and group-title='{FORCED_GROUP}'.")
+    try:
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            f.write("\n".join(output_lines) + "\n")
+        print(f"[💾] Playlist saved to {OUTPUT_FILE} with group-title='{FORCED_GROUP}' and tvg-id='{FORCED_TVG_ID}'.")
+    except Exception as e:
+        print(f"[❌] Failed to write playlist: {e}")
 
 if __name__ == "__main__":
     main()
