@@ -9,26 +9,16 @@ FORCED_GROUP = "Tims247"
 FORCED_TVG_ID = "24.7.Dummy.us"
 
 def inject_group_and_tvgid(extinf_line):
-    # Remove existing tvg-id and group-title if present
     extinf_line = re.sub(r'tvg-id="[^"]*"', '', extinf_line)
     extinf_line = re.sub(r'group-title="[^"]*"', '', extinf_line)
-
-    # Remove any extra '-1' *after* the first -1 in the line
-    # This fixes lines like: #EXTINF:-1 ... -1 tvg-logo="..."
-    # We keep only the first -1 after #EXTINF:
     extinf_line = re.sub(r'(#EXTINF:-1)\s+-1\s+', r'\1 ', extinf_line)
-
-    # Insert new attributes right after "#EXTINF:-1"
     extinf_line = extinf_line.replace(
         "#EXTINF:-1",
         f'#EXTINF:-1 tvg-id="{FORCED_TVG_ID}" group-title="{FORCED_GROUP}"',
         1
     )
-
-    # Clean up multiple spaces and fix space before commas
     extinf_line = re.sub(r'\s+', ' ', extinf_line).strip()
     extinf_line = re.sub(r' ,', ',', extinf_line)
-
     return extinf_line
 
 def main():
@@ -55,7 +45,7 @@ def main():
 
     for line in lines:
         line = line.strip()
-        if not line:
+        if not line or line.startswith("#EXTM3U"):
             continue
         if line.startswith("#EXTINF:-1"):
             fixed_line = inject_group_and_tvgid(line)
