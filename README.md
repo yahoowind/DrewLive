@@ -16,13 +16,6 @@ Simplify your setup with every playlist in one place.
 
 ━━━━━━━━━━━━━━━━━━
 
-🎮 KODI FORMAT PLAYLIST  
-Built for Kodi's PVR IPTV Simple Client with full header support — plug and play.  
-🔗 Kodi Playlist - DrewLive URL:  
-• [https://tinyurl.com/drewallkodi8](https://tinyurl.com/drewallkodi8)  
-
-━━━━━━━━━━━━━━━━━━
-
 📂 DREWLIVE VOD STRM BUNDLE  
 Want to take DrewLive with you? Grab our `.strm` files!  
 
