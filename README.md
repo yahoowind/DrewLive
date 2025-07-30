@@ -56,16 +56,16 @@ Stay synced with live guide data for your players. Pick the one that fits your n
 🔗 Merged EPG (Full Source)  
 ✔️ Full EPG data from all sources  
 ⚠️ Missing some world/regional info  
-• [https://tinyurl.com/DrewLiveNEW-epg1](https://tinyurl.com/DrewLiveNEW-epg1)  
+• [https://zipline.nocn.ddnsfree.com/u/merged_epg.xml.gz](https://zipline.nocn.ddnsfree.com/u/merged_epg.xml.gz)  
 
 🔗 Merged EPG (No IPTV Crashes)  
 ✔️ Smooth on most players  
 ⚠️ May lack some local USA EPG  
-• [https://tinyurl.com/DrewLiveNEW-epg2](https://tinyurl.com/DrewLiveNEW-epg2)  
+• [https://zipline.nocn.ddnsfree.com/u/merged2_epg.xml.gz](https://zipline.nocn.ddnsfree.com/u/merged2_epg.xml.gz)  
 
 🔗 All Source EPG  
 ✔️ Most comprehensive option available  
-• [https://tinyurl.com/DrewLiveNEW-epg03](https://tinyurl.com/DrewLiveNEW-epg03)
+• [https://zipline.nocn.ddnsfree.com/u/merged3_epg.xml.gz](https://zipline.nocn.ddnsfree.com/u/merged3_epg.xml.gz)
 
 ━━━━━━━━━━━━━━━━━━
 
