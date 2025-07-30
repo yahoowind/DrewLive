@@ -40,6 +40,11 @@ jobs:
       - name: 💤 Sleep random delay (to reduce collision)
         run: sleep $((RANDOM % 10 + 5))
 
+      - name: 🧹 Commit local changes before pull
+        run: |
+          git add Tims247.m3u8
+          git diff --cached --quiet || git commit -m "💾 Local update before pull @ $(date -u +'%Y-%m-%d %H:%M:%S')"
+
       - name: 🔃 Pull latest changes with rebase
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
