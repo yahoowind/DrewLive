@@ -8,15 +8,18 @@ OUTPUT_FILE = "Tims247.m3u8"
 FORCED_GROUP = "Tims247"
 FORCED_TVG_ID = "24.7.Dummy.us"
 
-def force_group_and_tvgid(line):
-    if line.startswith("#EXTINF"):
-        # Remove existing tvg-id and group-title attributes
-        line = re.sub(r'tvg-id="[^"]*"', '', line)
-        line = re.sub(r'group-title="[^"]*"', '', line)
+def inject_group_and_tvgid(extinf_line):
+    # Remove existing tvg-id and group-title if present
+    extinf_line = re.sub(r'tvg-id="[^"]*"', '', extinf_line)
+    extinf_line = re.sub(r'group-title="[^"]*"', '', extinf_line)
 
-        # Insert new attributes
-        line = line.replace('#EXTINF:', f'#EXTINF:-1 tvg-id="{FORCED_TVG_ID}" group-title="{FORCED_GROUP}" ', 1)
-    return line.strip()
+    # Insert new attributes right after "#EXTINF:-1"
+    extinf_line = extinf_line.replace("#EXTINF:-1", f'#EXTINF:-1 tvg-id="{FORCED_TVG_ID}" group-title="{FORCED_GROUP}"', 1)
+
+    # Clean up multiple spaces and commas
+    extinf_line = re.sub(r'\s+', ' ', extinf_line).strip()
+    extinf_line = re.sub(r' ,', ',', extinf_line)
+    return extinf_line
 
 def main():
     print("[🔁] Fetching upstream playlist...")
@@ -30,16 +33,9 @@ def main():
         res = requests.get(UPSTREAM_URL, headers=headers, timeout=15)
         res.raise_for_status()
         lines = res.text.strip().splitlines()
-        print(f"[✅] Upstream fetched successfully, {len(lines)} lines.")
+        print(f"[✅] Upstream fetched: {len(lines)} lines.")
     except requests.exceptions.RequestException as e:
         print(f"[❌] Failed to fetch upstream: {e}")
-        # Optional: fallback to a backup file
-        # try:
-        #     with open("backup.m3u8", "r", encoding="utf-8") as f:
-        #         lines = f.read().splitlines()
-        #         print("[⚠️] Using backup.m3u8")
-        # except Exception as e2:
-        #     print(f"[❌] No backup available: {e2}")
         return
 
     output_lines = [
@@ -49,14 +45,17 @@ def main():
 
     for line in lines:
         line = line.strip()
-        if not line or line.startswith("#EXTM3U"):
+        if not line:
             continue
-        output_lines.append(force_group_and_tvgid(line))
+        if line.startswith("#EXTINF:-1"):
+            output_lines.append(inject_group_and_tvgid(line))
+        else:
+            output_lines.append(line)
 
     try:
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write("\n".join(output_lines) + "\n")
-        print(f"[💾] Playlist saved to {OUTPUT_FILE} with group-title='{FORCED_GROUP}' and tvg-id='{FORCED_TVG_ID}'.")
+        print(f"[💾] Playlist saved to {OUTPUT_FILE}")
     except Exception as e:
         print(f"[❌] Failed to write playlist: {e}")
 
