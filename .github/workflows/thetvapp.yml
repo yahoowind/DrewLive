@@ -44,8 +44,7 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')"
 
-          # Rebase to avoid stale push conflicts
-          git pull --rebase origin main
+          # Pull with ours strategy to avoid merge conflicts
+          git pull --strategy=ours origin main
 
-          # Push updates, fail if repo changed remotely during push
           git push --force-with-lease origin main
