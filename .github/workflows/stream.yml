@@ -13,7 +13,7 @@ jobs:
       - name: 📥 Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Ensure full commit history
 
       - name: 🐍 Set up Python 3.11
         uses: actions/setup-python@v4
@@ -30,7 +30,7 @@ jobs:
       - name: 🎯 Run scraping script
         run: python stream.py
 
-      - name: 💾 Commit & Push if Playlist Changed
+      - name: 💾 Commit & Safe Push if Playlist Changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -44,8 +44,8 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u)"
 
-          # Optional: random delay to reduce collision risk
-          sleep $((RANDOM % 10 + 5))
+          # 🧠 Pull with fast-forward only to avoid unwanted rebase/merge/revert
+          git pull --ff-only origin main || exit 0
 
-          # 🚫 No rebase, no force, safe push only
+          # ✅ Safe push — only goes through if fast-forward worked
           git push origin main
