@@ -38,7 +38,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Stage only the playlist file (exclude workflows)
           git add StreamedSU.m3u8
 
           if git diff --cached --quiet; then
@@ -48,8 +47,5 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u)"
 
-          # Safely fetch and merge changes
-          git pull --ff-only origin main
-
-          # ✅ Push without force
+          git pull --rebase origin main
           git push origin main
