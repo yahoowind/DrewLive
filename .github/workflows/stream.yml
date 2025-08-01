@@ -3,7 +3,10 @@ name: 🚀 Update StreamEast Playlist 📺
 on:
   schedule:
     - cron: '0 * * * *'  # ⏰ Run every hour on the hour (UTC)
-  workflow_dispatch:       # 🔘 Allow manual trigger
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   scrape:
@@ -13,7 +16,7 @@ jobs:
       - name: 📥 Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Ensure full commit history
+          fetch-depth: 0
 
       - name: 🐍 Set up Python 3.11
         uses: actions/setup-python@v4
@@ -27,6 +30,12 @@ jobs:
           playwright install firefox
           playwright install-deps
 
+      - name: 🔄 Pull latest before scrape (prevent stale state)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main
+
       - name: 🎯 Run scraping script
         run: python stream.py
 
@@ -36,6 +45,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add StreamEast.m3u8
+          git reset .github/workflows/ || true
 
           if git diff --cached --quiet; then
             echo "✅ No changes to commit"
@@ -44,8 +54,7 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u)"
 
-          # 🧠 Pull with fast-forward only to avoid unwanted rebase/merge/revert
+          # Pull again just in case a race condition happened
           git pull --ff-only origin main || exit 0
 
-          # ✅ Safe push — only goes through if fast-forward worked
           git push origin main
