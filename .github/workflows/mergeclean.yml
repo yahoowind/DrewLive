@@ -41,7 +41,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
-          git pull --rebase --autostash origin main
+          git pull --rebase --autostash origin main || {
+            echo "❌ Rebase failed. Exiting to avoid overwriting newer commits."
+            exit 1
+          }
 
       - name: ▶️ Run mergeclean.py script
         run: python mergeclean.py
