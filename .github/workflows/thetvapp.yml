@@ -34,7 +34,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config pull.rebase false  # 👈 Prevents the divergent pull error
 
           git add TheTVApp.m3u8
 
@@ -45,8 +44,8 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')"
 
-          # 👇 Use merge strategy and resolve conflicts in favor of bot's version
-          git pull --strategy=ours origin main
+          # ⏱ Optional: random delay to reduce conflict window
+          sleep $((RANDOM % 10 + 5))
 
-          # 👇 Push with lease to avoid overwriting concurrent changes
-          git push --force-with-lease origin main
+          # ✅ Safe push — won't override anything
+          git push origin main
