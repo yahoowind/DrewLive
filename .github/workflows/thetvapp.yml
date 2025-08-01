@@ -30,7 +30,7 @@ jobs:
       - name: 🎯 Run scraping script
         run: python tv.py
 
-      - name: 💾 Commit & Push if Playlist Changed
+      - name: 💾 Commit & safely push if Playlist Changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -44,8 +44,19 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')"
 
-          # ⏱ Optional: random delay to reduce conflict window
+          # ⏱ Optional delay to reduce conflict window
           sleep $((RANDOM % 10 + 5))
 
-          # ✅ Safe push — won't override anything
-          git push origin main
+          # 🚀 Try safe push, retry with fetch+merge if rejected
+          if ! git push origin main; then
+            echo "⚠️ Push rejected. Trying safe fetch + merge..."
+            git fetch origin main
+            git merge origin/main --no-edit || {
+              echo "❌ Merge failed. Exiting to avoid overwrite."
+              exit 1
+            }
+            git push origin main || {
+              echo "❌ Second push failed. Remote updated again."
+              exit 1
+            }
+          fi
