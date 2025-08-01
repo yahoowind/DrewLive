@@ -44,8 +44,8 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u)"
 
-          # Rebase to avoid stale push
-          git pull --rebase origin main
+          # Optional: random delay to reduce collision risk
+          sleep $((RANDOM % 10 + 5))
 
-          # Push updates (no retry, will fail if stale)
-          git push --force-with-lease origin main
+          # 🚫 No rebase, no force, safe push only
+          git push origin main
