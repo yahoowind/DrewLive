@@ -4,9 +4,21 @@ from datetime import datetime
 import aiohttp
 import os
 
-# 🔁 Map all .su URLs to .pk to bypass 301 redirects from DDoS-Guard
+# 🛡️ Force .su → .pk to bypass 301 redirects
 def fix_url(url):
     return url.replace("streamed.su", "streamed.pk")
+
+# 🧠 Retry failed API calls with delay
+async def safe_request_with_retry(request, url, retries=3, delay=5, headers=None):
+    for attempt in range(retries):
+        try:
+            resp = await request.get(url, timeout=60000, headers=headers)
+            return await resp.json()
+        except Exception as e:
+            print(f"[!] Error fetching {url} (attempt {attempt + 1}/{retries}): {e}")
+            if attempt < retries - 1:
+                await asyncio.sleep(delay)
+    return []
 
 ALLOWED_CATEGORIES = {
     "Basketball": {
@@ -39,6 +51,7 @@ ALLOWED_CATEGORIES = {
     }
 }
 
+# 🎯 Validate stream link
 async def check_m3u8_url(url):
     try:
         async with aiohttp.ClientSession() as session:
@@ -54,7 +67,7 @@ async def main():
 
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
-        context = await browser.new_context()
+        context = await browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36")
         page = await context.new_page()
         request = context.request
 
@@ -69,12 +82,16 @@ async def main():
 
         await context.route("**/*", capture_route)
 
-        try:
-            sports_resp = await request.get(fix_url("https://streamed.su/api/sports"), timeout=60000)
-            sports = await sports_resp.json()
-        except Exception as e:
-            print(f"[!] Failed to get sports list: {e}")
-            sports = []
+        headers = {
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36"
+        }
+
+        sports = await safe_request_with_retry(request, fix_url("https://streamed.su/api/sports"), headers=headers)
+        if not sports:
+            print("[✖] No sports data fetched. Aborting.")
+            return
 
         for sport in sports:
             sport_name = sport.get("name")
@@ -88,12 +105,10 @@ async def main():
 
             print(f"\n=== {sport_name} ===")
 
-            try:
-                matches_resp = await request.get(fix_url(f"https://streamed.su/api/matches/{sport_id}"), timeout=60000)
-                matches = await matches_resp.json()
-            except Exception as e:
-                print(f"[!] Failed to get matches for {sport_name}: {e}")
-                matches = []
+            matches = await safe_request_with_retry(request, fix_url(f"https://streamed.su/api/matches/{sport_id}"), headers=headers)
+            if not matches:
+                print(f"[!] No matches for {sport_name}")
+                continue
 
             for match in matches:
                 title = match.get("title", "No Title")
@@ -105,7 +120,6 @@ async def main():
                     continue
 
                 m3u8_url = None
-                used_source_type = None
                 language = "Unknown"
                 quality = "SD"
 
@@ -113,14 +127,13 @@ async def main():
                     source_id = source.get("id")
                     source_type = source.get("source")
 
-                    try:
-                        streams_resp = await request.get(fix_url(f"https://streamed.su/api/stream/{source_type}/{source_id}"), timeout=60000)
-                        streams = await streams_resp.json()
-                    except Exception as e:
-                        print(f"[!] Failed to get streams for source {source_type}/{source_id}: {e}")
-                        continue
+                    stream_data = await safe_request_with_retry(
+                        request,
+                        fix_url(f"https://streamed.su/api/stream/{source_type}/{source_id}"),
+                        headers=headers
+                    )
 
-                    for stream_info in streams:
+                    for stream_info in stream_data:
                         embed_url = stream_info.get("embedUrl")
                         if not embed_url:
                             continue
@@ -153,7 +166,6 @@ async def main():
                             if m3u8_url:
                                 valid = await check_m3u8_url(m3u8_url)
                                 if valid:
-                                    used_source_type = source_type
                                     break
                                 else:
                                     print(f"[!] Invalid stream URL (not 200): {m3u8_url}")
