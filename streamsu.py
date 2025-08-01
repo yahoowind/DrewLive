@@ -4,6 +4,10 @@ from datetime import datetime
 import aiohttp
 import os
 
+# 🔁 Map all .su URLs to .pk to bypass 301 redirects from DDoS-Guard
+def fix_url(url):
+    return url.replace("streamed.su", "streamed.pk")
+
 ALLOWED_CATEGORIES = {
     "Basketball": {
         "tvg-id": "Basketball.Dummy.us",
@@ -39,11 +43,9 @@ async def check_m3u8_url(url):
     try:
         async with aiohttp.ClientSession() as session:
             async with session.get(url, timeout=7) as resp:
-                if resp.status == 200:
-                    return True
+                return resp.status == 200
     except Exception:
-        pass
-    return False
+        return False
 
 async def main():
     m3u_path = "StreamedSU.m3u8"
@@ -57,7 +59,6 @@ async def main():
         request = context.request
 
         m3u = ["#EXTM3U"]
-
         m3u8_url = None
 
         async def capture_route(route, req):
@@ -69,7 +70,7 @@ async def main():
         await context.route("**/*", capture_route)
 
         try:
-            sports_resp = await request.get("https://streamed.su/api/sports", timeout=60000)
+            sports_resp = await request.get(fix_url("https://streamed.su/api/sports"), timeout=60000)
             sports = await sports_resp.json()
         except Exception as e:
             print(f"[!] Failed to get sports list: {e}")
@@ -88,7 +89,7 @@ async def main():
             print(f"\n=== {sport_name} ===")
 
             try:
-                matches_resp = await request.get(f"https://streamed.su/api/matches/{sport_id}", timeout=60000)
+                matches_resp = await request.get(fix_url(f"https://streamed.su/api/matches/{sport_id}"), timeout=60000)
                 matches = await matches_resp.json()
             except Exception as e:
                 print(f"[!] Failed to get matches for {sport_name}: {e}")
@@ -113,7 +114,7 @@ async def main():
                     source_type = source.get("source")
 
                     try:
-                        streams_resp = await request.get(f"https://streamed.su/api/stream/{source_type}/{source_id}", timeout=60000)
+                        streams_resp = await request.get(fix_url(f"https://streamed.su/api/stream/{source_type}/{source_id}"), timeout=60000)
                         streams = await streams_resp.json()
                     except Exception as e:
                         print(f"[!] Failed to get streams for source {source_type}/{source_id}: {e}")
@@ -126,7 +127,6 @@ async def main():
 
                         language = stream_info.get("language", "Unknown")
                         quality = "HD" if stream_info.get("hd") else "SD"
-
                         m3u8_url = None
 
                         try:
@@ -158,16 +158,13 @@ async def main():
                                 else:
                                     print(f"[!] Invalid stream URL (not 200): {m3u8_url}")
                                     m3u8_url = None
-                                    continue
                             else:
                                 print(f"[✖] No m3u8 found at: {embed_url}")
 
                         except PlaywrightTimeoutError:
                             print(f"[!] Timeout while loading: {embed_url}")
-                            continue
                         except Exception as e:
                             print(f"[!] Error visiting embed for {title}: {e}")
-                            continue
 
                     if m3u8_url:
                         break
@@ -181,12 +178,11 @@ async def main():
                 if teams:
                     home = teams.get("home")
                     if home and home.get("badge"):
-                        logo = f"https://streamed.su/api/images/badge/{home['badge']}.webp"
+                        logo = f"https://streamed.pk/api/images/badge/{home['badge']}.webp"
 
                 extinf = f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{group_title}",{title} ({language} - {quality})'
                 m3u.append(extinf)
                 m3u.append(m3u8_url)
-
                 print(f"[✔] Success: {title} ({language} - {quality})")
 
         playlist = "\n".join(m3u)
