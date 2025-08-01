@@ -33,9 +33,6 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
 
-      - name: 🔃 Pull latest changes with rebase
-        run: git pull --rebase origin main
-
       - name: 🔄 Run update script and update timestamp
         run: |
           python tim.py
