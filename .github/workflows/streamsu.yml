@@ -5,6 +5,9 @@ on:
     - cron: '0 */2 * * *'  # ⏰ Every 2 hours
   workflow_dispatch:        # 🔘 Allow manual trigger
 
+permissions:
+  contents: write  # ✅ Needed to push commits
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -35,6 +38,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # Stage only the playlist file (exclude workflows)
           git add StreamedSU.m3u8
 
           if git diff --cached --quiet; then
@@ -44,9 +48,8 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u)"
 
-          # Fetch and safely apply local changes
-          git fetch origin main
-          git reset --soft origin/main
-          
-          git commit -m "🔁 Update playlist $(date -u)"
-          git push --force-with-lease origin main
+          # Safely fetch and merge changes
+          git pull --ff-only origin main
+
+          # ✅ Push without force
+          git push origin main
