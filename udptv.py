@@ -2,7 +2,7 @@ import requests
 import re
 from datetime import datetime
 
-UPSTREAM_URL = "https://tinyurl.com/DrewLiveUDPTV24"
+UPSTREAM_URL = "https://tinyurl.com/DrewUDPTV"
 EPG_URL = "https://tinyurl.com/DrewLive002-epg"
 OUTPUT_FILE = "UDPTV.m3u"
 FORCED_GROUP = "UDPTV Live Streams"
