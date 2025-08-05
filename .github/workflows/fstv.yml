@@ -39,6 +39,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # Sync with remote to avoid stale push errors
+          git fetch origin main
+          git reset origin/main --hard
+
           git add FSTV24.m3u8
 
           # Only commit if there’s a real change
