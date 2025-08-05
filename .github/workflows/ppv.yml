@@ -30,8 +30,13 @@ jobs:
           pip install beautifulsoup4 playwright aiohttp
           python -m playwright install --with-deps
 
-      - name: ⚙️ Run Scraper
-        run: python ppv.py
+      - name: ⚙️ Run Scraper and Append Timestamp
+        run: |
+          python ppv.py
+          # Remove any previous timestamp lines to avoid duplicates
+          sed -i '/^# Updated at/d' PPVLand.m3u8
+          # Append new timestamp to force git detection of changes
+          echo "# Updated at $(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> PPVLand.m3u8
 
       - name: 💾 Commit & Push Playlist
         env:
@@ -45,12 +50,8 @@ jobs:
 
           git add PPVLand.m3u8
 
-          git diff --cached --quiet && {
-            echo "🟡 No changes to commit";
-            exit 0;
-          }
-
-          git commit -m "🔁 Auto-refresh PPVLand playlist at $(date -u)"
+          # Always commit because timestamp guarantees change
+          git commit -m "🔁 Auto-refresh PPVLand playlist at $(date -u)" || echo "🟡 No changes to commit"
 
           sleep $((RANDOM % 10 + 5))
 
