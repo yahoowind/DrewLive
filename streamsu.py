@@ -39,7 +39,16 @@ ALLOWED_CATEGORIES = {
 
 async def fetch_via_browser(page, url):
     try:
-        return await page.evaluate(f"""() => fetch('{url}').then(r => r.json())""")
+        return await page.evaluate(f"""async () => {{
+            const res = await fetch('{url}');
+            const text = await res.text();
+            try {{
+                return JSON.parse(text);
+            }} catch (e) {{
+                console.error('❌ JSON parse failed. Raw response:', text.slice(0, 300));
+                return [];
+            }}
+        }}""")
     except Exception as e:
         print(f"[!] Browser fetch failed for {url}: {e}")
         return []
@@ -54,7 +63,7 @@ async def main():
         page = await context.new_page()
 
         await page.goto("https://streamed.pk", timeout=30000)
-        await page.wait_for_timeout(5000)  # let it set cookies
+        await page.wait_for_timeout(5000)
 
         m3u = ["#EXTM3U"]
 
@@ -107,7 +116,6 @@ async def main():
                             await page.goto(embed_url, timeout=20000)
                             await page.wait_for_timeout(5000)
 
-                            # Try to extract m3u8
                             content = await page.content()
                             if ".m3u8" in content:
                                 start = content.find(".m3u8")
