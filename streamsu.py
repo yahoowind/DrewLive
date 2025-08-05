@@ -40,7 +40,10 @@ ALLOWED_CATEGORIES = {
 
 async def fetch_via_browser(page, url):
     try:
-        await page.goto(url, timeout=15000)
+        # Go to the page but don’t wait for full load, just DOMContentLoaded
+        await page.goto(url, timeout=5000, wait_until="domcontentloaded")
+        await page.wait_for_timeout(2000)
+
         pre_element = await page.query_selector("pre")
         if pre_element:
             raw_text = await pre_element.inner_text()
@@ -51,7 +54,7 @@ async def fetch_via_browser(page, url):
                 print(f"[📄] Raw content preview: {raw_text[:300]}")
                 return []
         else:
-            print("[✖] No <pre> element found, likely blocked or HTML page")
+            print("[✖] No <pre> element found, possibly blocked or HTML page")
             return []
     except Exception as e:
         print(f"[!] Browser hard fetch failed for {url}: {e}")
