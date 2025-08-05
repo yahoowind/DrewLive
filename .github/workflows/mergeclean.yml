@@ -1,19 +1,15 @@
-name: 🔄 Auto Update Merged Clean IPTV Playlist
+name: 🚀 Update Auto Merged Clean Playlist 📺
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'mergeclean.py'
-      - '.github/workflows/mergeclean.yml'
   schedule:
-    - cron: '0 * * * *'
-    - cron: '*/10 * * * *'
-  workflow_dispatch:
+    - cron: '*/10 * * * *'  # ⏰ Every 10 minutes
+  workflow_dispatch:        # 🔘 Manual trigger
+
+permissions:
+  contents: write
 
 jobs:
-  update-playlist:
+  scrape:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,47 +17,45 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          persist-credentials: true
 
-      - name: 🐍 Set up Python environment
+      - name: 🐍 Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
-      - name: 📦 Install dependencies
-        run: pip install requests
+      - name: 🎯 Run scraping script
+        run: python mergeclean.py
 
-      - name: 🧠 Set Git identity
+      - name: 💾 Commit & Safely Push if Playlist Changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: ▶️ Run mergeclean.py script
-        run: python mergeclean.py
-
-      - name: 🔄 Sync local branch to remote to avoid stale push error
-        run: |
-          git fetch origin main
-          git reset origin/main --hard
-
-      - name: 📂 Stage & commit updated playlist
-        run: |
+          # Stage the output
           git add MergedCleanPlaylist.m3u8
 
-          # Only commit if there are real changes
-          git diff --cached --quiet && {
-            echo "⚠️ No changes to commit. Skipping push.";
-            exit 0;
-          }
+          # Check if file actually changed
+          if git diff --cached --quiet; then
+            echo "✅ No changes to commit"
+            exit 0
+          fi
 
-          git commit -m "📝 Auto-update merged clean IPTV playlist at $(date -u)"
+          git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')"
 
-      - name: ⏳ Random delay before push to reduce collisions
-        run: sleep $((RANDOM % 10 + 5))
+          # Small random delay to reduce collisions
+          sleep $((RANDOM % 10 + 5))
 
-      - name: 🚀 Force push with lease to avoid stale conflicts
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
-          git push --force-with-lease origin main
+          # Safe push, fallback merge if rejected
+          if ! git push origin main; then
+            echo "⚠️ Push rejected. Trying safe fetch + merge..."
+            git pull origin main --rebase || {
+              echo "❌ Rebase failed. Exiting to avoid corruption."
+              exit 1
+            }
+            git push origin main || {
+              echo "❌ Second push failed. Remote changed again."
+              exit 1
+            }
+          fi
