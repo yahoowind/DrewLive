@@ -23,6 +23,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: 📦 Install minimal dependencies
+        run: pip install requests
+
       - name: 🎯 Run scraping script
         run: python iptv.py
 
