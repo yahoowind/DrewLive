@@ -2,7 +2,7 @@ name: 🔄 Update Tims247 Playlist
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # every 5 minutes
+    - cron: '*/5 * * * *'  # ⏱ Every 5 minutes
   workflow_dispatch:
 
 permissions:
@@ -30,8 +30,8 @@ jobs:
 
       - name: 🧠 Configure Git user
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: 🔄 Run update script and update timestamp
         run: |
@@ -39,7 +39,7 @@ jobs:
           sed -i '/^# Updated at/d' Tims247.m3u8
           echo "# Updated at $(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> Tims247.m3u8
 
-      - name: 💤 Sleep random delay
+      - name: 💤 Random delay
         run: sleep $((RANDOM % 10 + 5))
 
       - name: 💾 Commit and safely push if changes
@@ -55,6 +55,13 @@ jobs:
 
           git commit -m "🔄 Updated Tims247.m3u8 @ $(date -u +'%Y-%m-%d %H:%M:%S')"
 
-          # Use force-with-lease for safe overwrite without stale pull
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
-          git push --force-with-lease origin main
+          # Optional: Pull + rebase to avoid stale push errors
+          git pull --rebase origin main || {
+            echo "❌ Rebase failed. Exiting to avoid overwrite."
+            exit 1
+          }
+
+          git push origin main || {
+            echo "❌ Push failed after rebase."
+            exit 1
+          }
