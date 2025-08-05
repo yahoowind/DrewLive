@@ -30,16 +30,12 @@ jobs:
           playwright install firefox
           playwright install-deps
 
-      - name: 🔄 Pull latest before scrape (prevent stale state)
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull origin main
-
       - name: 🎯 Run scraping script
         run: python stream.py
 
-      - name: 💾 Commit & Safe Push if Playlist Changed
+      - name: 💾 Commit & safe push if playlist changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -54,7 +50,8 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u)"
 
-          # Pull again just in case a race condition happened
-          git pull --ff-only origin main || exit 0
+          # Optional random delay to avoid push collisions
+          sleep $((RANDOM % 10 + 5))
 
-          git push origin main
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          git push --force-with-lease origin main
