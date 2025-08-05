@@ -43,7 +43,7 @@ jobs:
         run: |
           git add MergedCleanPlaylist.m3u8
 
-          # Only commit if there's a real change
+          # Only commit if there are real changes
           git diff --cached --quiet && {
             echo "⚠️ No changes to commit. Skipping push.";
             exit 0;
@@ -54,9 +54,9 @@ jobs:
       - name: ⏳ Random delay before push to reduce collisions
         run: sleep $((RANDOM % 10 + 5))
 
-      - name: 🚀 Push changes to main branch
+      - name: 🚀 Force push with lease to avoid stale conflicts
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
-          git push origin main
+          git push --force-with-lease origin main
