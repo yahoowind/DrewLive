@@ -1,29 +1,31 @@
-name: 🚀 Update StreamEast Playlist 📺
+name: 🚀 Force Update StreamEast Playlist 📺
 
 on:
   schedule:
-    - cron: '0 * * * *'  # ⏰ Run every hour on the hour (UTC)
+    - cron: '0 * * * *'  # ⏰ Every hour
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  scrape:
+  force-update:
     runs-on: ubuntu-latest
 
     steps:
       - name: 📥 Checkout repository
         uses: actions/checkout@v3
         with:
+          ref: main
           fetch-depth: 0
+          persist-credentials: true
 
       - name: 🐍 Set up Python 3.11
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: 📦 Install Python dependencies & Playwright
+      - name: 📦 Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install playwright urllib3 aiohttp
@@ -33,7 +35,12 @@ jobs:
       - name: 🎯 Run scraping script
         run: python stream.py
 
-      - name: 💾 Commit & safe push if playlist changed
+      - name: 🕒 Append unique timestamp (forces commit)
+        run: |
+          sed -i '/^# Updated at/d' StreamEast.m3u8
+          echo "# Updated at $(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> StreamEast.m3u8
+
+      - name: 💾 Commit & push with force-with-lease
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -41,17 +48,11 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git fetch origin main
-          git reset origin/main --hard
+          git reset --hard origin/main
 
           git add StreamEast.m3u8
-          git reset .github/workflows/ || true
 
-          if git diff --cached --quiet; then
-            echo "✅ No changes to commit"
-            exit 0
-          fi
-
-          git commit -m "🔁 Update playlist $(date -u)"
+          git commit -m "🔁 Forced update StreamEast @ $(date -u '+%Y-%m-%d %H:%M:%S')" || echo "🟡 Nothing to commit"
 
           sleep $((RANDOM % 10 + 5))
 
