@@ -39,6 +39,11 @@ jobs:
       - name: ▶️ Run mergeclean.py script
         run: python mergeclean.py
 
+      - name: 🔄 Sync local branch to remote to avoid stale push error
+        run: |
+          git fetch origin main
+          git reset origin/main --hard
+
       - name: 📂 Stage & commit updated playlist
         run: |
           git add MergedCleanPlaylist.m3u8
