@@ -32,4 +32,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add JapanTV.m3u8
           git commit -m "🔁 Update JapanTV Playlist — $(date -u '+%Y-%m-%d %H:%M UTC')" || echo "No changes to commit"
+          git pull --rebase origin main
           git push --force-with-lease origin main
