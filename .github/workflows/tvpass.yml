@@ -42,9 +42,11 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
 
+          git fetch origin main
+          git reset origin/main --hard
+
           git add TVPass.m3u
 
-          # Always commit because timestamp was added, but just in case:
           git commit -m "🔁 Force update TVPass.m3u on $(date -u)" || echo "🟡 No changes to commit"
 
           git push --force-with-lease origin main
