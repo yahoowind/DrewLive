@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 📦 Install minimal dependency
+      - name: 📦 Install required Python dependency
         run: pip install requests
 
       - name: 🎯 Run scraping script
@@ -34,7 +34,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "github-actions@users.noreply.github.com"
 
           git add MergedCleanPlaylist.m3u8
 
@@ -48,7 +48,7 @@ jobs:
           sleep $((RANDOM % 10 + 5))
 
           if ! git push origin main; then
-            echo "⚠️ Push rejected. Trying safe fetch + merge..."
+            echo "⚠️ Push rejected. Trying safe fetch + rebase..."
             git pull origin main --rebase || {
               echo "❌ Rebase failed. Exiting to avoid corruption."
               exit 1
