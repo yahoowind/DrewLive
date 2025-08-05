@@ -44,7 +44,7 @@ jobs:
         run: |
           git add MergedPlaylist.m3u8
 
-          # Exit if there's nothing to commit (no change)
+          # Exit early if no changes are staged
           git diff --cached --quiet && {
             echo "⚠️ No changes to commit. Skipping push.";
             exit 0;
@@ -52,8 +52,9 @@ jobs:
 
           git commit -m "📝 Update at $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
 
-          # Optional delay to reduce push collisions
+          # Delay to avoid race conditions in concurrent pushes
           sleep $((RANDOM % 10 + 5))
 
-          # Push without pulling or rebasing
+          # Pull remote changes with rebase before pushing
+          git pull --rebase origin main
           git push origin main
