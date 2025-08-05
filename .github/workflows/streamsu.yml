@@ -2,8 +2,8 @@ name: 🚀 Update StreamedSU Playlist 📺
 
 on:
   schedule:
-    - cron: '0 * * * *'  # ⏰ Run every hour
-  workflow_dispatch:
+    - cron: '0 */2 * * *'  # ⏰ Run every 2 hours
+    workflow_dispatch:
 
 permissions:
   contents: write
