@@ -2,7 +2,7 @@ name: 🚀 Update TheTVApp Playlist 📺
 
 on:
   schedule:
-    - cron: '0 * * * *'  # ⏰ Run every hour on the hour (UTC)
+    - cron: '0 * * * *'  # ⏰ Run every hour
   workflow_dispatch:
 
 permissions:
@@ -40,11 +40,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git fetch origin main
-          git reset origin/main --hard
-
+          # Stage the output
           git add TheTVApp.m3u8
 
+          # Check if file actually changed
           if git diff --cached --quiet; then
             echo "✅ No changes to commit"
             exit 0
@@ -52,7 +51,18 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')"
 
+          # Small random delay to reduce collisions
           sleep $((RANDOM % 10 + 5))
 
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
-          git push --force-with-lease origin main
+          # Safe push, fallback merge if rejected
+          if ! git push origin main; then
+            echo "⚠️ Push rejected. Trying safe fetch + merge..."
+            git pull origin main --rebase || {
+              echo "❌ Rebase failed. Exiting to avoid corruption."
+              exit 1
+            }
+            git push origin main || {
+              echo "❌ Second push failed. Remote changed again."
+              exit 1
+            }
+          fi
