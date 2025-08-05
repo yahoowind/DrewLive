@@ -2,6 +2,7 @@ import asyncio
 from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeoutError
 from datetime import datetime
 import os
+import json
 
 # Config
 m3u_path = "StreamedSU.m3u8"
@@ -39,18 +40,21 @@ ALLOWED_CATEGORIES = {
 
 async def fetch_via_browser(page, url):
     try:
-        return await page.evaluate(f"""async () => {{
-            const res = await fetch('{url}');
-            const text = await res.text();
-            try {{
-                return JSON.parse(text);
-            }} catch (e) {{
-                console.error('❌ JSON parse failed. Raw response:', text.slice(0, 300));
-                return [];
-            }}
-        }}""")
+        await page.goto(url, timeout=15000)
+        pre_element = await page.query_selector("pre")
+        if pre_element:
+            raw_text = await pre_element.inner_text()
+            try:
+                return json.loads(raw_text)
+            except Exception as e:
+                print(f"[!] JSON decode error: {e}")
+                print(f"[📄] Raw content preview: {raw_text[:300]}")
+                return []
+        else:
+            print("[✖] No <pre> element found, likely blocked or HTML page")
+            return []
     except Exception as e:
-        print(f"[!] Browser fetch failed for {url}: {e}")
+        print(f"[!] Browser hard fetch failed for {url}: {e}")
         return []
 
 async def main():
