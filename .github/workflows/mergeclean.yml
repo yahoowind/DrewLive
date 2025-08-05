@@ -23,6 +23,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: 📦 Install minimal dependency
+        run: pip install requests
+
       - name: 🎯 Run scraping script
         run: python mergeclean.py
 
@@ -33,10 +36,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Stage the output
           git add MergedCleanPlaylist.m3u8
 
-          # Check if file actually changed
           if git diff --cached --quiet; then
             echo "✅ No changes to commit"
             exit 0
@@ -44,10 +45,8 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')"
 
-          # Small random delay to reduce collisions
           sleep $((RANDOM % 10 + 5))
 
-          # Safe push, fallback merge if rejected
           if ! git push origin main; then
             echo "⚠️ Push rejected. Trying safe fetch + merge..."
             git pull origin main --rebase || {
