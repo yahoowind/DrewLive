@@ -40,11 +40,11 @@ jobs:
           echo "# Last update: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" > MergedPlaylist.m3u8
           python iptv.py
 
-      - name: 💾 Commit and push if there’s a real change
+      - name: 💾 Commit and force-push if there’s a real change
         run: |
           git add MergedPlaylist.m3u8
 
-          # Exit early if no changes are staged
+          # Exit if nothing to commit
           git diff --cached --quiet && {
             echo "⚠️ No changes to commit. Skipping push.";
             exit 0;
@@ -52,9 +52,8 @@ jobs:
 
           git commit -m "📝 Update at $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
 
-          # Delay to avoid race conditions in concurrent pushes
+          # Delay to prevent collisions in concurrent runs
           sleep $((RANDOM % 10 + 5))
 
-          # Pull remote changes with rebase before pushing
-          git pull --rebase origin main
-          git push origin main
+          # Safely overwrite remote if no one else pushed
+          git push --force-with-lease origin main
