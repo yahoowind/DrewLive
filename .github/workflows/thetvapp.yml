@@ -5,6 +5,9 @@ on:
     - cron: '0 * * * *'  # ⏰ Run every hour on the hour (UTC)
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -30,7 +33,9 @@ jobs:
       - name: 🎯 Run scraping script
         run: python tv.py
 
-      - name: 💾 Commit & safely push if Playlist Changed
+      - name: 💾 Commit & Safely Push if Playlist Changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -44,19 +49,8 @@ jobs:
 
           git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')"
 
-          # ⏱ Optional delay to reduce conflict window
+          # Optional delay to reduce push collisions
           sleep $((RANDOM % 10 + 5))
 
-          # 🚀 Try safe push, retry with fetch+merge if rejected
-          if ! git push origin main; then
-            echo "⚠️ Push rejected. Trying safe fetch + merge..."
-            git fetch origin main
-            git merge origin/main --no-edit || {
-              echo "❌ Merge failed. Exiting to avoid overwrite."
-              exit 1
-            }
-            git push origin main || {
-              echo "❌ Second push failed. Remote updated again."
-              exit 1
-            }
-          fi
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          git push --force-with-lease origin main
