@@ -2,11 +2,11 @@ name: 🔁 Force Update UDPTV Playlist
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # ⏱ Auto update every 5 minutes
-  workflow_dispatch:        # ✅ Manual trigger
+    - cron: '*/5 * * * *'  # ⏱ Every 5 minutes
+  workflow_dispatch:
 
 permissions:
-  contents: write           # ✅ Needed to push from Actions
+  contents: write
 
 jobs:
   update-playlist:
@@ -26,29 +26,45 @@ jobs:
           python-version: '3.x'
 
       - name: 📦 Install dependencies
-        run: pip install requests
+        run: pip install --upgrade pip requests
 
       - name: ▶️ Run UDPTV playlist update script
         run: python udptv.py
 
       - name: 🕒 Inject timestamp to guarantee update
         run: |
+          sed -i '/^# Updated at/d' UDPTV.m3u
           echo "# Updated at $(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> UDPTV.m3u
 
       - name: 💾 Commit and safely push UDPTV.m3u
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git fetch origin main
-          git reset origin/main --hard
+          git reset --hard origin/main
 
           git add UDPTV.m3u
 
-          git commit -m "🔁 Force update UDPTV.m3u at $(date -u)" || echo "🟡 No changes to commit"
+          if git diff --cached --quiet; then
+            echo "✅ No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "🔁 Force update UDPTV.m3u at $(date -u)"
 
           sleep $((RANDOM % 10 + 5))
 
-          git push --force-with-lease origin main
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
+
+          git pull --rebase origin main || {
+            echo "❌ Rebase failed. Exiting."
+            exit 1
+          }
+
+          git push origin main || {
+            echo "❌ Push failed. Try again later."
+            exit 1
+          }
