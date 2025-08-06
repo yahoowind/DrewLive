@@ -3,7 +3,7 @@ import re
 from datetime import datetime
 
 UPSTREAM_URL = "https://tinyurl.com/DrewUDPTV"
-EPG_URL = "https://tinyurl.com/DrewLive002-epg"
+EPG_URL = "https://zipline.nocn.ddnsfree.com/u/merged2_epg.xml.gz"
 OUTPUT_FILE = "UDPTV.m3u"
 FORCED_GROUP = "UDPTV Live Streams"
 
