@@ -28,7 +28,7 @@ playlist_urls = [
 ]
 
 UDPTV_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
-EPG_URL = "https://tinyurl.com/DrewLive002-epg"
+EPG_URL = "https://zipline.nocn.ddnsfree.com/u/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedCleanPlaylist.m3u8"
 REMOVED_FILE = "Removed_NSFW.m3u8"
 
