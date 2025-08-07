@@ -2,7 +2,7 @@ name: 🔄 Force Update TVPass Playlist
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # ⏱ Every 30 minutes
+    - cron: '*/30 * * * *'  # ⏱ Every 30 minutes (UTC)
   workflow_dispatch:        # 🔘 Manual trigger
 
 permissions:
@@ -23,13 +23,16 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 📦 Install required Python dependency
+      - name: 📦 Install dependencies
         run: pip install requests
 
       - name: 🎯 Run scraping script
-        run: python tvpass.py
+        run: |
+          echo "▶ Running tvpass.py..."
+          python tvpass.py
+          echo "✅ Script finished."
 
-      - name: 💾 Commit & Safely Push if Playlist Changed
+      - name: 💾 Commit & Push if Playlist Changed
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -39,22 +42,21 @@ jobs:
           git add TVPass.m3u
 
           if git diff --cached --quiet; then
-            echo "✅ No changes to commit"
+            echo "✅ No changes detected in TVPass.m3u — skipping commit."
             exit 0
           fi
 
-          git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')"
+          git commit -m "🔁 Update playlist $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
 
-          sleep $((RANDOM % 10 + 5))
-
-          if ! git push origin main; then
-            echo "⚠️ Push rejected. Trying safe fetch + rebase..."
-            git pull origin main --rebase || {
-              echo "❌ Rebase failed. Exiting to avoid corruption."
+          echo "📤 Attempting to push..."
+          if ! git push origin HEAD; then
+            echo "⚠️ Push failed. Attempting rebase..."
+            git pull --rebase origin HEAD || {
+              echo "❌ Rebase failed — exiting to prevent corruption."
               exit 1
             }
-            git push origin main || {
-              echo "❌ Second push failed. Remote changed again."
+            git push origin HEAD || {
+              echo "❌ Push failed again — giving up."
               exit 1
             }
           fi
