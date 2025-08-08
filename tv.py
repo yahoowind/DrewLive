@@ -202,7 +202,7 @@ def append_new_streams(lines, new_urls_with_groups):
         elif group == "PPV":
             ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
         elif group == "NFL":
-            ext = f'#EXTINF:-1 tvg-id="Football.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL.png" group-title="NFL",{title}'
+            ext = f'#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL.png" group-title="NFL",{title}'
         else:
             ext = f'#EXTINF:-1 group-title="{group}",{title}'
 
