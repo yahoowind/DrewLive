@@ -15,7 +15,8 @@ CUSTOM_HEADERS = [
 
 ALLOWED_CATEGORIES = {
     "24/7 Streams", "Wrestling", "Football", "Basketball", "Baseball",
-    "Combat Sports", "Motorsports", "Miscellaneous", "Boxing", "Darts"
+    "Combat Sports", "Motorsports", "Miscellaneous", "Boxing", "Darts",
+    "American Football"
 }
 
 CATEGORY_LOGOS = {
@@ -28,7 +29,8 @@ CATEGORY_LOGOS = {
     "Motorsports": "http://drewlive24.duckdns.org:9000/Logos/F12.png",
     "Miscellaneous": "http://drewlive24.duckdns.org:9000/Logos/247.png",
     "Boxing": "http://drewlive24.duckdns.org:9000/Logos/Boxing.png",
-    "Darts": "http://drewlive24.duckdns.org:9000/Logos/Darts.png"
+    "Darts": "http://drewlive24.duckdns.org:9000/Logos/Darts.png",
+    "American Football": "http://drewlive24.duckdns.org:9000/Logos/NFL2.png"
 }
 
 CATEGORY_TVG_IDS = {
@@ -41,7 +43,8 @@ CATEGORY_TVG_IDS = {
     "Motorsports": "Racing.Dummy.us",
     "Miscellaneous": "PPV.EVENTS.Dummy.us",
     "Boxing": "PPV.EVENTS.Dummy.us",
-    "Darts": "Darts.Dummy.us"
+    "Darts": "Darts.Dummy.us",
+    "American Football": "NFL.Dummy.us"
 }
 
 GROUP_RENAME_MAP = {
@@ -54,7 +57,8 @@ GROUP_RENAME_MAP = {
     "Motorsports": "PPVLand - Motorsport Live",
     "Miscellaneous": "PPVLand - Random Events",
     "Boxing": "PPVLand - Boxing",
-    "Darts": "PPVLand - Darts"
+    "Darts": "PPVLand - Darts",
+    "American Football": "PPVLand - NFL Action"
 }
 
 async def check_m3u8_url(url):
