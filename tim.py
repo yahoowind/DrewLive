@@ -1,5 +1,6 @@
 import requests
 import re
+import socket
 from datetime import datetime
 
 UPSTREAM_URL = "https://pigscanflyyy-scraper.vercel.app/tims"
@@ -7,6 +8,11 @@ EPG_URL = "https://zipline.nocn.ddnsfree.com/u/merged2_epg.xml.gz"
 OUTPUT_FILE = "Tims247.m3u8"
 FORCED_GROUP = "Tims247"
 FORCED_TVG_ID = "24.7.Dummy.us"
+
+# Force IPv4 for all requests
+def force_ipv4(host, port=0, family=0, type=0, proto=0, flags=0):
+    return [(socket.AF_INET, socket.SOCK_STREAM, proto, "", (host, port))]
+socket.getaddrinfo = force_ipv4
 
 def inject_group_and_tvgid(extinf_line):
     extinf_line = re.sub(r'tvg-id="[^"]*"', '', extinf_line)
@@ -26,11 +32,12 @@ def main():
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-        'Accept': '*/*'
+        'Accept': '*/*',
+        'Cache-Control': 'no-cache'
     }
 
     try:
-        res = requests.get(UPSTREAM_URL, headers=headers, timeout=15)
+        res = requests.get(UPSTREAM_URL, headers=headers, timeout=30)
         res.raise_for_status()
         lines = res.text.strip().splitlines()
         print(f"[✅] Upstream fetched: {len(lines)} lines.")
