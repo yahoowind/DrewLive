@@ -1,6 +1,6 @@
 import requests
 import re
-import socket
+import os
 from datetime import datetime
 
 UPSTREAM_URL = "https://pigscanflyyy-scraper.vercel.app/tims"
@@ -9,25 +9,27 @@ OUTPUT_FILE = "Tims247.m3u8"
 FORCED_GROUP = "Tims247"
 FORCED_TVG_ID = "24.7.Dummy.us"
 
-# Force IPv4 for all requests
-def force_ipv4(host, port=0, family=0, type=0, proto=0, flags=0):
-    return [(socket.AF_INET, socket.SOCK_STREAM, proto, "", (host, port))]
-socket.getaddrinfo = force_ipv4
-
 def inject_group_and_tvgid(extinf_line):
+    # Remove any existing tvg-id and group-title
     extinf_line = re.sub(r'tvg-id="[^"]*"', '', extinf_line)
     extinf_line = re.sub(r'group-title="[^"]*"', '', extinf_line)
+
+    # Normalize EXTINF formatting
     extinf_line = re.sub(r'(#EXTINF:-1)\s+-1\s+', r'\1 ', extinf_line)
+
+    # Insert forced group & tvg-id
     extinf_line = extinf_line.replace(
         "#EXTINF:-1",
         f'#EXTINF:-1 tvg-id="{FORCED_TVG_ID}" group-title="{FORCED_GROUP}"',
         1
     )
+
+    # Cleanup spaces
     extinf_line = re.sub(r'\s+', ' ', extinf_line).strip()
     extinf_line = re.sub(r' ,', ',', extinf_line)
     return extinf_line
 
-def main():
+def fetch_upstream():
     print("[🔁] Fetching upstream playlist...")
 
     headers = {
@@ -36,10 +38,29 @@ def main():
         'Cache-Control': 'no-cache'
     }
 
+    res = requests.get(UPSTREAM_URL, headers=headers, timeout=30)
+    res.raise_for_status()
+    return res.text.strip().splitlines()
+
+def save_if_changed(content):
+    new_content = "\n".join(content) + "\n"
+
+    if os.path.exists(OUTPUT_FILE):
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+            old_content = f.read()
+        if old_content == new_content:
+            print("[ℹ️] No changes detected, skipping update.")
+            return False
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(new_content)
+
+    print(f"[💾] Playlist updated and saved to {OUTPUT_FILE}")
+    return True
+
+def main():
     try:
-        res = requests.get(UPSTREAM_URL, headers=headers, timeout=30)
-        res.raise_for_status()
-        lines = res.text.strip().splitlines()
+        lines = fetch_upstream()
         print(f"[✅] Upstream fetched: {len(lines)} lines.")
     except requests.exceptions.RequestException as e:
         print(f"[❌] Failed to fetch upstream: {e}")
@@ -55,17 +76,11 @@ def main():
         if not line or line.startswith("#EXTM3U"):
             continue
         if line.startswith("#EXTINF:-1"):
-            fixed_line = inject_group_and_tvgid(line)
-            output_lines.append(fixed_line)
+            output_lines.append(inject_group_and_tvgid(line))
         else:
             output_lines.append(line)
 
-    try:
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            f.write("\n".join(output_lines) + "\n")
-        print(f"[💾] Playlist saved to {OUTPUT_FILE}")
-    except Exception as e:
-        print(f"[❌] Failed to write playlist: {e}")
+    save_if_changed(output_lines)
 
 if __name__ == "__main__":
     main()
