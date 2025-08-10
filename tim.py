@@ -1,6 +1,7 @@
-from playwright.sync_api import sync_playwright
-import time
 import re
+import time
+from datetime import datetime
+from playwright.sync_api import sync_playwright
 
 UPSTREAM_URL = "https://pigscanflyyy-scraper.vercel.app/tims"
 EPG_URL = "https://zipline.nocn.ddnsfree.com/u/merged2_epg.xml.gz"
@@ -18,17 +19,19 @@ def inject_group_and_tvgid(extinf_line):
         1
     )
 
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=True)
-    page = browser.new_page()
-    page.goto(f"{UPSTREAM_URL}?_={int(time.time())}", wait_until="networkidle")
-    text = page.content()
+def main():
+    with sync_playwright() as p:
+        browser = p.firefox.launch(headless=True)
+        page = browser.new_page()
+        page.goto(f"{UPSTREAM_URL}?_={int(time.time())}", wait_until="networkidle")
+        content = page.content()
+        browser.close()
 
-    # Extract text inside <pre> or body
-    lines = text.splitlines()
+    lines = content.splitlines()
 
     output_lines = []
     first_line = True
+
     for line in lines:
         if first_line:
             output_lines.append(f'#EXTM3U url-tvg="{EPG_URL}"')
@@ -42,4 +45,8 @@ with sync_playwright() as p:
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(output_lines) + "\n")
 
-    browser.close()
+    print(f"[💾] Playlist updated -> {OUTPUT_FILE}")
+    print(f"[⏰] Updated at: {datetime.now()}")
+
+if __name__ == "__main__":
+    main()
