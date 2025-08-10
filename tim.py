@@ -1,7 +1,7 @@
 import re
 import time
 from datetime import datetime
-from playwright.sync_api import sync_playwright
+import requests
 
 UPSTREAM_URL = "https://pigscanflyyy-scraper.vercel.app/tims"
 EPG_URL = "https://zipline.nocn.ddnsfree.com/u/merged2_epg.xml.gz"
@@ -10,9 +10,12 @@ FORCED_GROUP = "Tims247"
 FORCED_TVG_ID = "24.7.Dummy.us"
 
 def inject_group_and_tvgid(extinf_line):
+    # Remove any existing tvg-id or group-title to avoid duplicates
     extinf_line = re.sub(r'tvg-id="[^"]*"', '', extinf_line)
     extinf_line = re.sub(r'group-title="[^"]*"', '', extinf_line)
+    # Clean up any weird formatting if needed
     extinf_line = re.sub(r'(#EXTINF:-1)\s+-1\s+', r'\1 ', extinf_line)
+    # Inject your forced group and tvg-id
     return extinf_line.replace(
         "#EXTINF:-1",
         f'#EXTINF:-1 tvg-id="{FORCED_TVG_ID}" group-title="{FORCED_GROUP}"',
@@ -20,13 +23,11 @@ def inject_group_and_tvgid(extinf_line):
     )
 
 def main():
-    with sync_playwright() as p:
-        browser = p.firefox.launch(headless=True)
-        page = browser.new_page()
-        page.goto(f"{UPSTREAM_URL}?_={int(time.time())}", wait_until="networkidle")
-        content = page.content()
-        browser.close()
+    url = f"{UPSTREAM_URL}?_={int(time.time())}"
+    response = requests.get(url)
+    response.raise_for_status()  # Fail if request failed
 
+    content = response.text
     lines = content.splitlines()
 
     output_lines = []
@@ -34,6 +35,7 @@ def main():
 
     for line in lines:
         if first_line:
+            # Replace the first line with your own #EXTM3U header referencing the EPG URL
             output_lines.append(f'#EXTM3U url-tvg="{EPG_URL}"')
             first_line = False
             continue
