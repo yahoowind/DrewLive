@@ -14,7 +14,7 @@ CATEGORY_LOGOS = {
     "StreamEast - MMA": "http://drewlive24.duckdns.org:9000/Logos/MMA.png",
     "StreamEast - WWE": "http://drewlive24.duckdns.org:9000/Logos/WWE.png",
     "StreamEast - Golf": "http://drewlive24.duckdns.org:9000/Logos/Golf.png",
-    "StreamEast - Am. Football": "http://drewlive24.duckdns.org:9000/Logos/Am-Football.png",
+    "StreamEast - Am. Football": "http://drewlive24.duckdns.org:9000/Logos/NFL4.png",
     "StreamEast - Baseball": "http://drewlive24.duckdns.org:9000/Logos/MLB.png",
     "StreamEast - Basketball Hub": "http://drewlive24.duckdns.org:9000/Logos/Basketball5.png",
     "StreamEast - Hockey": "http://drewlive24.duckdns.org:9000/Logos/Hockey.png",
@@ -29,7 +29,7 @@ CATEGORY_TVG_IDS = {
     "StreamEast - MMA": "UFC.Fight.Pass.Dummy.us",
     "StreamEast - WWE": "PPV.EVENTS.Dummy.us",
     "StreamEast - Golf": "Golf.Dummy.us",
-    "StreamEast - Am. Football": "Football.Dummy.us",
+    "StreamEast - Am. Football": "NFL.Dummy.us",
     "StreamEast - Baseball": "MLB.Baseball.Dummy.us",
     "StreamEast - Basketball Hub": "Basketball.Dummy.us",
     "StreamEast - Hockey": "NHL.Hockey.Dummy.us",
@@ -151,7 +151,6 @@ async def main():
 
         print("✅ StreamEast.m3u8 saved.")
         await browser.close()
-
 
 if __name__ == "__main__":
     asyncio.run(main())
