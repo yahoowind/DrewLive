@@ -1,10 +1,11 @@
 import requests
 import re
 import os
+import time
 from datetime import datetime
 
 UPSTREAM_URL = "https://pigscanflyyy-scraper.vercel.app/tims"
-EPG_URL = "https://zipline.nocn.ddnsfree.com/u/merged2_epg.xml.gz"
+EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "Tims247.m3u8"
 FORCED_GROUP = "Tims247"
 FORCED_TVG_ID = "24.7.Dummy.us"
@@ -21,14 +22,22 @@ def inject_group_and_tvgid(extinf_line):
     )
 
 def main():
-    print("[🔁] Fetching upstream playlist...")
+    print("[🔁] Fetching latest upstream playlist...")
     try:
-        res = requests.get(UPSTREAM_URL, headers={
-            'User-Agent': 'Mozilla/5.0'
-        }, timeout=30)
+        # Add cache-buster so we never get a stale copy
+        url_with_cachebuster = f"{UPSTREAM_URL}?_={int(time.time())}"
+        res = requests.get(
+            url_with_cachebuster,
+            headers={
+                'User-Agent': 'Mozilla/5.0',
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache'
+            },
+            timeout=30
+        )
         res.raise_for_status()
         lines = res.text.splitlines()
-        print(f"[✅] Fetched {len(lines)} lines.")
+        print(f"[✅] Fresh playlist pulled: {len(lines)} lines.")
     except Exception as e:
         print(f"[❌] Failed to fetch upstream: {e}")
         return
@@ -38,7 +47,7 @@ def main():
 
     for line in lines:
         if first_line:
-            # Keep upstream first line but add our EPG URL
+            # Replace first line with EPG info
             output_lines.append(f'#EXTM3U url-tvg="{EPG_URL}"')
             first_line = False
             continue
@@ -50,7 +59,9 @@ def main():
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(output_lines) + "\n")
-    print(f"[💾] Updated playlist saved -> {OUTPUT_FILE}")
+
+    print(f"[💾] Playlist updated -> {OUTPUT_FILE}")
+    print(f"[⏰] Updated at: {datetime.now()}")
 
 if __name__ == "__main__":
     main()
