@@ -76,7 +76,7 @@ async def get_event_links(page):
         .map(a => a.href)
         .filter(h => h.includes('/nba') || h.includes('/mlb') || h.includes('/ufc') ||
                      h.includes('/f1') || h.includes('/soccer') || h.includes('/wnba') ||
-                     h.includes('/boxing') || h.includes('/wwe'))""")
+                     h.includes('/boxing') || h.includes('/wwe') || h.includes('/nfl'))""")
     return list(set(links))
 
 
