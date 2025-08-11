@@ -2,7 +2,7 @@ name: 🔄 Update Tims247 Playlist
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # ⏱ Every 5 minutes
+    - cron: '*/5 * * * *'  # Every 5 minutes
   workflow_dispatch:
 
 permissions:
@@ -23,42 +23,22 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 📦 Install Python dependencies & Playwright
+      - name: 📦 Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests bs4 playwright aiohttp
-          playwright install firefox
-          playwright install-deps
+          pip install requests
 
       - name: 🎯 Run scraping script
         run: python tim.py
 
-      - name: 💾 Commit & Safely Push if Playlist Changed
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 💾 Commit & Push if Playlist Changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
           git add Tims247.m3u8
-
           if git diff --cached --quiet; then
             echo "✅ No changes to commit"
             exit 0
           fi
-
           git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')"
-
-          sleep $((RANDOM % 10 + 5))
-
-          if ! git push origin main; then
-            echo "⚠️ Push rejected. Trying safe fetch + merge..."
-            git pull origin main --rebase || {
-              echo "❌ Rebase failed. Exiting to avoid corruption."
-              exit 1
-            }
-            git push origin main || {
-              echo "❌ Second push failed. Remote changed again."
-              exit 1
-            }
-          fi
+          git push origin main
