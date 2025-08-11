@@ -1,73 +1,52 @@
-import re
-import time
-from datetime import datetime
 import requests
+import re
 
 UPSTREAM_URL = "https://pigscanflyyy-scraper.vercel.app/tims"
-EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "Tims247.m3u8"
 FORCED_GROUP = "Tims247"
 FORCED_TVG_ID = "24.7.Dummy.us"
 
-def inject_group_and_tvgid(extinf_line):
-    # Only inject tvg-id if missing
-    if 'tvg-id=' not in extinf_line:
-        extinf_line = extinf_line.replace(
-            "#EXTINF:-1",
-            f'#EXTINF:-1 tvg-id="{FORCED_TVG_ID}"',
-            1
-        )
-    # Only inject group-title if missing
-    if 'group-title=' not in extinf_line:
-        extinf_line = extinf_line.replace(
-            "#EXTINF:-1",
-            f'#EXTINF:-1 group-title="{FORCED_GROUP}"',
-            1
-        )
-    return extinf_line
+def fetch_url(url):
+    try:
+        r = requests.get(url, timeout=15)
+        r.raise_for_status()
+        return r.text
+    except Exception as e:
+        print(f"Error fetching {url}: {e}")
+        return None
+
+def modify_playlist(playlist_text):
+    # Inject FORCED_GROUP and FORCED_TVG_ID into each #EXTINF line
+    def repl(match):
+        attrs = match.group(1)
+        # Remove existing tvg-id and group-title if present
+        attrs = re.sub(r'tvg-id="[^"]*"', '', attrs)
+        attrs = re.sub(r'group-title="[^"]*"', '', attrs)
+        attrs = attrs.strip()
+
+        new_attrs = f'tvg-id="{FORCED_TVG_ID}" group-title="{FORCED_GROUP}"'
+        if attrs:
+            new_attrs = attrs + ' ' + new_attrs
+        return f'#EXTINF:{new_attrs},'
+
+    modified = re.sub(r'#EXTINF:([^\n]*),', repl, playlist_text)
+    return modified
 
 def main():
-    url = f"{UPSTREAM_URL}?_={int(time.time())}"
-    response = requests.get(url)
-    response.raise_for_status()
+    print("Fetching upstream playlist...")
+    playlist = fetch_url(UPSTREAM_URL)
+    if playlist is None:
+        print("Failed to fetch upstream playlist. Exiting.")
+        return
 
-    content = response.text
-    lines = content.splitlines()
+    print("Modifying playlist with forced group and tvg-id...")
+    modified_playlist = modify_playlist(playlist)
 
-    output_lines = []
-    first_line = True
-    header_handled = False
-
-    for line in lines:
-        # Handle #EXTM3U header line
-        if first_line:
-            if line.strip().startswith("#EXTM3U"):
-                # Keep upstream header but add EPG URL as a comment (if you want)
-                output_lines.append(line.strip())
-                # Optionally add a separate comment line with EPG URL
-                output_lines.append(f"#EXT-X-EPG-URL:{EPG_URL}")
-                header_handled = True
-            else:
-                # No header from upstream, add our own clean one
-                output_lines.append("#EXTM3U")
-                output_lines.append(f"#EXT-X-EPG-URL:{EPG_URL}")
-                # Also add the current line since it’s not header
-                output_lines.append(line)
-            first_line = False
-            continue
-
-        # Inject tvg-id and group-title if EXTINF line
-        if line.startswith("#EXTINF:-1"):
-            output_lines.append(inject_group_and_tvgid(line))
-        else:
-            output_lines.append(line)
-
-    # Save output
+    print(f"Saving to {OUTPUT_FILE}...")
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(output_lines) + "\n")
+        f.write(modified_playlist)
 
-    print(f"[💾] Playlist updated -> {OUTPUT_FILE}")
-    print(f"[⏰] Updated at: {datetime.now()}")
+    print("Done.")
 
 if __name__ == "__main__":
     main()
