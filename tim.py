@@ -48,15 +48,34 @@ def modify_playlist(playlist_text):
     pattern = re.compile(r'#EXTINF:([-\d\.]+)\s*([^,]*),(.*)')
     return pattern.sub(repl, playlist_text)
 
+def validate_playlist(text):
+    if not text.startswith("#EXTM3U"):
+        print("❌ Validation failed: Missing #EXTM3U header")
+        return False
+    extinf_lines = [line for line in text.splitlines() if line.startswith("#EXTINF:")]
+    if not extinf_lines:
+        print("❌ Validation failed: No #EXTINF lines found")
+        return False
+    for line in extinf_lines:
+        if not re.match(r'#EXTINF:-?\d+(\.\d+)?', line):
+            print(f"❌ Validation failed: Malformed #EXTINF line: {line}")
+            return False
+    return True
+
 def main():
     playlist = fetch_url(UPSTREAM_URL)
     if playlist is None:
         print("Failed to fetch upstream playlist. Exiting.")
         return
+
     modified_playlist = modify_playlist(playlist)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(modified_playlist)
-    print("✅ Done.")
+
+    if validate_playlist(modified_playlist):
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            f.write(modified_playlist)
+        print("✅ Playlist validated and saved successfully.")
+    else:
+        print("⚠️ Playlist validation failed. Not saving broken playlist.")
 
 if __name__ == "__main__":
     main()
