@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
-# Last forced update: 2025-08-11T17:51:32.721598Z
+# Last forced update: 2025-08-11T17:57:21.341457Z
 
 #EXTGRP: Mystique Caribbean
 #EXTINF:-1 tvg-name="CVM" tvg-id="Local.Programming.Dummy.us" tvg-logo="https://cvssja.org/wp-content/uploads/2020/06/CVM-Logo-2016.png" group-title=" Mystique Caribbean", CVM (Jamaica)
@@ -3506,6 +3506,8 @@ https://fl3.moveonjoy.com/C-SPAN/index.m3u8
 http://fl1.moveonjoy.com/CARTOON_NETWORK/index.m3u8
 #EXTINF:-1  tvg-name="CBS" tvg-id="WSBK.(TV-38).Boston.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s10098_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",CBS
 https://fl3.moveonjoy.com/CBS_News/index.m3u8
+#EXTINF:-1  tvg-id="CBS.(KKTV).Colorado.Springs,.CO.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/CBS2.png" group-title="MoveOnJoy",CBS (KKTV)
+https://tinyurl.com/cbskktv24
 #EXTINF:-1  tvg-name="CBS SPORTS NETWORK" tvg-id="CBS.Sports.Network.USA.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s16365_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",CBS SPORTS NETWORK
 https://fl3.moveonjoy.com/CBS_SPORTS_NETWORK/index.m3u8
 #EXTINF:-1  tvg-name="CINEMAX EAST" tvg-id="Cinemax.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cinemax-us.png" group-title="MoveOnJoy" radio="false",CINEMAX EAST
