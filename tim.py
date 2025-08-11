@@ -4,7 +4,7 @@ from datetime import datetime
 import requests
 
 UPSTREAM_URL = "https://pigscanflyyy-scraper.vercel.app/tims"
-EPG_URL = "https://zipline.nocn.ddnsfree.com/u/merged2_epg.xml.gz"
+EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "Tims247.m3u8"
 FORCED_GROUP = "Tims247"
 FORCED_TVG_ID = "24.7.Dummy.us"
