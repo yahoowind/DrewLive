@@ -129,7 +129,7 @@ async def grab_m3u8_from_iframe(page, iframe_url):
     return valid_urls
 
 def build_m3u(streams, url_map):
-    lines = ['#EXTM3U url-tvg="https://zipline.nocn.ddnsfree.com/u/merged2_epg.xml.gz"']
+    lines = ['#EXTM3U url-tvg="http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"']
     seen_names = set()
 
     for s in streams:
