@@ -22,7 +22,8 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PBSKids.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Roku.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TheTVApp.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/StreamedSU.m3u8"
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/StreamedSU.m3u8",
+    "http://drewlive24.duckdns.org:8081/Tims247.m3u8"
 ]
 
 UDPTV_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
@@ -132,11 +133,14 @@ if __name__ == "__main__":
     print(f"Starting merge at {datetime.now()}\n")
 
     all_channels = set()
+
+    # First fetch UDPTV to extract timestamp and channels
     udptv_lines = fetch_playlist(UDPTV_URL)
     udptv_timestamp = extract_udptv_timestamp(udptv_lines)
     udptv_channels = parse_playlist(udptv_lines, source="UDPTV")
     all_channels.update(udptv_channels)
 
+    # Fetch and parse all other playlists including your new upstream
     for url in playlist_urls:
         if url == UDPTV_URL:
             continue
