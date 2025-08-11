@@ -1,5 +1,4 @@
 import requests
-from collections import defaultdict
 import re
 from datetime import datetime
 
@@ -32,147 +31,120 @@ EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedPlaylist.m3u8"
 
 def fetch_playlist(url):
-    """
-    Fetches raw playlist content from a URL and returns it as a list of lines.
-    Includes robust error handling for network issues.
-    """
-    print(f"Attempting to fetch: {url}")
+    print(f"Fetching playlist: {url}")
     try:
-        res = requests.get(url, timeout=15)
-        res.raise_for_status()
-        return res.content.decode('utf-8', errors='ignore').strip().splitlines()
-    except requests.exceptions.Timeout:
-        print(f"❌ Failed to fetch {url}: Request timed out after 15 seconds.")
-    except requests.exceptions.ConnectionError:
-        print(f"❌ Failed to fetch {url}: Connection error (e.g., DNS failure, refused connection).")
-    except requests.exceptions.HTTPError as err:
-        print(f"❌ Failed to fetch {url}: HTTP Error {err.response.status_code} - {err.response.reason}")
+        response = requests.get(url, timeout=15)
+        response.raise_for_status()
+        content = response.content.decode("utf-8", errors="ignore")
+        return content.strip().splitlines()
     except Exception as e:
-        print(f"❌ An unexpected error occurred while fetching {url}: {e}")
-    return []
+        print(f"❌ Failed to fetch {url}: {e}")
+        return []
 
-def extract_timestamp_from_udptv(lines):
-    """
-    Extracts the '# Last forced update:' line from UDPTV content.
-    """
+def extract_udptv_timestamp(lines):
     for line in lines:
         if line.strip().startswith("# Last forced update:"):
-            print(f"✅ Found UDPTV timestamp: {line.strip()}")
+            print(f"✅ UDPTV timestamp found: {line.strip()}")
             return line.strip()
-    print("⚠️ No '# Last forced update:' line found in UDPTV playlist.")
+    print("⚠️ UDPTV timestamp not found.")
     return None
 
-def parse_playlist(lines, source_url="Unknown"):
-    """
-    Parses M3U/M3U8 lines. Collects EXTINF, associated special headers, and URL.
-    Returns a list of tuples: (extinf_line, tuple_of_headers, url_line).
-    """
-    parsed_channels = []
+def parse_playlist(lines, source="Unknown"):
+    parsed = []
     i = 0
     while i < len(lines):
         line = lines[i].strip()
 
         if line.startswith("#EXTINF:"):
-            extinf_line = line
-            channel_headers = []
-
+            extinf = line
+            metadata_lines = []
             i += 1
 
-            while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
-                channel_headers.append(lines[i].strip())
-                i += 1
-
-            if i < len(lines) and not lines[i].strip().startswith("#") and lines[i].strip():
-                url_line = lines[i].strip()
-                parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
-                i += 1 
+            # Collect all metadata lines until URL or next EXTINF or EOF
+            while i < len(lines):
+                next_line = lines[i].strip()
+                if next_line == "":
+                    i += 1  # skip empty lines
+                elif next_line.startswith("#") and not next_line.startswith("#EXTINF:"):
+                    metadata_lines.append(next_line)
+                    i += 1
+                elif next_line.startswith("#EXTINF:"):
+                    # Next channel starts, break
+                    break
+                else:
+                    # Found URL line
+                    url = next_line
+                    i += 1
+                    parsed.append((extinf, tuple(metadata_lines), url))
+                    break
             else:
-                print(f"⚠️ Warning ({source_url}): #EXTINF at line {i} ('{extinf_line}') not followed by a valid stream URL. Skipping this entry.")
-
-        elif line.strip() == "" or line.startswith("#EXTM3U") or line.startswith("#EXT-X"):
-            i += 1
+                print(f"⚠️ Warning ({source}): EXTINF without URL near line {i}: {extinf}")
         else:
             i += 1
-    print(f"✅ Parsed {len(parsed_channels)} channels from {source_url}.")
-    return parsed_channels
 
-def write_merged_playlist(all_unique_channels, timestamp_line):
-    """
-    Writes the merged playlist to the OUTPUT_FILE, sorted by group-title and then channel name.
-    """
-    lines = [
-        f'#EXTM3U url-tvg="{EPG_URL}"'
-    ]
-    if timestamp_line:
-        lines.append(timestamp_line)
-    lines.append("")
+    print(f"✅ Parsed {len(parsed)} entries from {source}")
+    return parsed
 
-    sortable_channels = []
-    for extinf, headers, url in all_unique_channels:
-        group_match = re.search(r'group-title="([^"]+)"', extinf)
-        group = group_match.group(1) if group_match else "Other"
-        
-        title_match = re.search(r',([^,]+)$', extinf)
-        title = title_match.group(1).strip() if title_match else ""
-        
-        sortable_channels.append((group.lower(), title.lower(), extinf, headers, url))
+def write_merged_playlist(channels, udptv_timestamp):
+    lines = [f'#EXTM3U url-tvg="{EPG_URL}"']
+    if udptv_timestamp:
+        lines.append(udptv_timestamp)
+    lines.append("")  # blank line
 
-    sorted_channels = sorted(sortable_channels)
+    # Sort by group-title and then by channel name
+    def get_group_title(extinf):
+        m = re.search(r'group-title="([^"]+)"', extinf)
+        return m.group(1) if m else "Other"
+
+    def get_channel_name(extinf):
+        m = re.search(r',([^,]+)$', extinf)
+        return m.group(1).strip() if m else ""
+
+    sorted_channels = sorted(
+        channels,
+        key=lambda c: (get_group_title(c[0]).lower(), get_channel_name(c[0]).lower())
+    )
 
     current_group = None
-    total_channels_written = 0
-
-    for group_lower, title_lower, extinf, headers, url in sorted_channels:
-        
-        group_match = re.search(r'group-title="([^"]+)"', extinf)
-        actual_group_name = group_match.group(1) if group_match else "Other"
-
-        if actual_group_name != current_group:
+    for extinf, metadata, url in sorted_channels:
+        group = get_group_title(extinf)
+        if group != current_group:
             if current_group is not None:
-                lines.append("")
-            lines.append(f'#EXTGRP:{actual_group_name}')
-            current_group = actual_group_name
-            
+                lines.append("")  # blank line between groups
+            lines.append(f'#EXTGRP:{group}')
+            current_group = group
+
         lines.append(extinf)
-        for hdr_line in headers:
-            lines.append(hdr_line)
+        lines.extend(metadata)
         lines.append(url)
-        total_channels_written += 1
 
-    if lines and lines[-1] == "":
-        lines.pop()
-    
-    final_output_string = '\n'.join(lines)
-    if not final_output_string.endswith('\n'):
-        final_output_string += '\n'
+    # Ensure file ends with newline
+    if lines and lines[-1] != "":
+        lines.append("")
 
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        f.write(final_output_string)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
 
-    print(f"\n✅ Merged playlist written to {OUTPUT_FILE}.")
-    print(f"📊 Total unique channels merged: {total_channels_written}.")
-    print(f"📝 Total lines in output file: {len(final_output_string.splitlines())}.")
+    print(f"\n✅ Merged playlist saved to {OUTPUT_FILE}")
+    print(f"📺 Total channels: {len(channels)}")
+    print(f"🕒 Saved at: {datetime.now()}")
 
 if __name__ == "__main__":
-    print(f"Starting playlist merge at {datetime.now()}...")
-    
-    all_unique_channels_set = set()
-    timestamp_line = None
+    print(f"Starting merge at {datetime.now()}\n")
 
-    print(f"\n--- Processing UDPTV playlist ({UDPTV_URL}) ---")
-    udptv_raw_lines = fetch_playlist(UDPTV_URL)
-    timestamp_line = extract_timestamp_from_udptv(udptv_raw_lines)
-    
-    udptv_parsed_channels = parse_playlist(udptv_raw_lines, source_url=UDPTV_URL)
-    all_unique_channels_set.update(udptv_parsed_channels)
+    all_channels = set()
+    udptv_lines = fetch_playlist(UDPTV_URL)
+    udptv_timestamp = extract_udptv_timestamp(udptv_lines)
+    udptv_channels = parse_playlist(udptv_lines, source="UDPTV")
+    all_channels.update(udptv_channels)
 
-    print("\n--- Processing other playlists ---")
     for url in playlist_urls:
         if url == UDPTV_URL:
             continue
         lines = fetch_playlist(url)
-        parsed_channels = parse_playlist(lines, source_url=url)
-        all_unique_channels_set.update(parsed_channels)
+        parsed = parse_playlist(lines, source=url)
+        all_channels.update(parsed)
 
-    write_merged_playlist(list(all_unique_channels_set), timestamp_line)
-    print(f"Merging complete at {datetime.now()}.")
+    write_merged_playlist(list(all_channels), udptv_timestamp)
+
+    print(f"\nMerge complete at {datetime.now()}")
