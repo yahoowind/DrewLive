@@ -25,15 +25,28 @@ def fetch_url(url, retries=5, delay=5):
 
 def modify_playlist(playlist_text):
     def repl(match):
-        attrs = match.group(1)
-        attrs = re.sub(r'tvg-id="[^"]*"', '', attrs)
-        attrs = re.sub(r'group-title="[^"]*"', '', attrs)
-        attrs = attrs.strip()
-        new_attrs = f'tvg-id="{FORCED_TVG_ID}" group-title="{FORCED_GROUP}"'
-        if attrs:
-            new_attrs = attrs + ' ' + new_attrs
-        return f'#EXTINF:{new_attrs},'
-    return re.sub(r'#EXTINF:([^\n]*),', repl, playlist_text)
+        duration = match.group(1)  # e.g. "-1"
+        attrs_str = match.group(2) or ""  # attributes like tvg-id, group-title, etc.
+        channel_name = match.group(3) or ""  # channel name
+
+        # Remove existing tvg-id and group-title attrs
+        attrs_str = re.sub(r'tvg-id="[^"]*"', '', attrs_str)
+        attrs_str = re.sub(r'group-title="[^"]*"', '', attrs_str)
+
+        attrs_str = attrs_str.strip()
+        # Add forced attributes, preserving any other attributes
+        forced_attrs = f'tvg-id="{FORCED_TVG_ID}" group-title="{FORCED_GROUP}"'
+
+        if attrs_str:
+            new_attrs = attrs_str + ' ' + forced_attrs
+        else:
+            new_attrs = forced_attrs
+
+        # Rebuild the #EXTINF line:
+        return f'#EXTINF:{duration} {new_attrs},{channel_name}'
+
+    pattern = re.compile(r'#EXTINF:([-\d\.]+)\s*([^,]*),(.*)')
+    return pattern.sub(repl, playlist_text)
 
 def main():
     playlist = fetch_url(UPSTREAM_URL)
