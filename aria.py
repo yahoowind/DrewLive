@@ -13,6 +13,15 @@ def fetch_playlist(url):
     r.raise_for_status()
     return r.text.splitlines()
 
+def force_group_title(line):
+    if "group-title=" in line:
+        # Replace existing group-title
+        line = re.sub(r'group-title="[^"]*"', 'group-title="AriaPlus"', line)
+    else:
+        # Add group-title right after #EXTINF
+        line = line.replace("#EXTINF", '#EXTINF group-title="AriaPlus"', 1)
+    return line
+
 def parse_and_filter(lines):
     output_lines = ["#EXTM3U"]
     keep_channel = False
@@ -21,11 +30,7 @@ def parse_and_filter(lines):
             country_match = re.search(r"group-title=\"([^\"]+)\"", line)
             country = country_match.group(1) if country_match else ""
             if any(c.lower() in country.lower() for c in ALLOWED_COUNTRIES):
-                # Replace or add group-title to AriaPlus
-                if "group-title=" in line:
-                    line = re.sub(r'group-title="[^"]+"', 'group-title="AriaPlus"', line)
-                else:
-                    line = line.replace("#EXTINF", '#EXTINF group-title="AriaPlus"', 1)
+                line = force_group_title(line)
                 output_lines.append(line)
                 keep_channel = True
             else:
@@ -40,4 +45,4 @@ if __name__ == "__main__":
     filtered_playlist = parse_and_filter(lines)
     with open("AriaPlus.m3u8", "w", encoding="utf-8") as f:
         f.write(filtered_playlist)
-    print("Filtered playlist saved as AriaPlus.m3u8 with group-title forced to AriaPlus.")
+    print("✅ AriaPlus playlist updated with forced group-title.")
