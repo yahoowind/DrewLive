@@ -14,12 +14,20 @@ def fetch_playlist(url):
     return r.text.splitlines()
 
 def force_group_title(line):
-    if "group-title=" in line:
-        # Replace existing group-title
-        line = re.sub(r'group-title="[^"]*"', 'group-title="AriaPlus"', line)
-    else:
-        # Add group-title right after #EXTINF
-        line = line.replace("#EXTINF", '#EXTINF group-title="AriaPlus"', 1)
+    # Remove any existing group-title attribute
+    line = re.sub(r'\s*group-title="[^"]*"', '', line)
+    # Remove extra spaces that might remain
+    line = re.sub(r'\s{2,}', ' ', line).strip()
+
+    if line.startswith("#EXTINF:"):
+        parts = line.split(",", 1)
+        header = parts[0]
+        title = parts[1] if len(parts) > 1 else ""
+
+        # Append forced group-title exactly after the duration part
+        header = header.strip() + ' group-title="AriaPlus"'
+
+        return f"{header},{title}"
     return line
 
 def parse_and_filter(lines):
@@ -27,8 +35,11 @@ def parse_and_filter(lines):
     keep_channel = False
     for line in lines:
         if line.startswith("#EXTINF"):
-            country_match = re.search(r"group-title=\"([^\"]+)\"", line)
+            # Extract group-title to check country, fallback to empty string if missing
+            country_match = re.search(r'group-title="([^"]+)"', line)
             country = country_match.group(1) if country_match else ""
+
+            # Keep channel if country matches allowed list
             if any(c.lower() in country.lower() for c in ALLOWED_COUNTRIES):
                 line = force_group_title(line)
                 output_lines.append(line)
