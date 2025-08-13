@@ -8,6 +8,17 @@ ALLOWED_COUNTRIES = [
     "North Korea", "United Kingdom", "United States"
 ]
 
+# Optional: aliases so matching works even if group-title doesn't have the exact name
+COUNTRY_ALIASES = {
+    "Australia": ["Australia", "AUS"],
+    "Canada": ["Canada", "CAN"],
+    "Japan": ["Japan", "JP", "JPN", "NHK", "TV Asahi", "Fuji TV", "Tokyo"],
+    "New Zealand": ["New Zealand", "NZ"],
+    "North Korea": ["North Korea", "DPRK"],
+    "United Kingdom": ["United Kingdom", "UK", "Britain", "England"],
+    "United States": ["United States", "USA", "US", "America"]
+}
+
 def fetch_playlist(url):
     r = requests.get(url)
     r.raise_for_status()
@@ -16,7 +27,6 @@ def fetch_playlist(url):
 def force_group_title(line, country):
     # Remove any existing group-title attribute
     line = re.sub(r'\s*group-title="[^"]*"', '', line)
-    # Clean extra spaces
     line = re.sub(r'\s{2,}', ' ', line).strip()
 
     if line.startswith("#EXTINF:"):
@@ -24,10 +34,8 @@ def force_group_title(line, country):
         header = parts[0]
         title = parts[1] if len(parts) > 1 else ""
 
-        # Compose new group-title: AriaPlus - CountryName
+        # New forced group-title
         new_group = f'AriaPlus - {country}'
-
-        # Append forced group-title exactly after the duration part
         header = header.strip() + f' group-title="{new_group}"'
 
         return f"{header},{title}"
@@ -41,11 +49,15 @@ def parse_and_filter(lines):
     for line in lines:
         if line.startswith("#EXTINF"):
             country_match = re.search(r'group-title="([^"]+)"', line)
-            country = country_match.group(1) if country_match else ""
+            country_text = country_match.group(1) if country_match else ""
+
+            # Also include channel name in search
+            title_text = line.split(",", 1)[1] if "," in line else ""
+            search_area = (country_text + " " + title_text).lower()
 
             matched_country = ""
-            for c in ALLOWED_COUNTRIES:
-                if c.lower() in country.lower():
+            for c, aliases in COUNTRY_ALIASES.items():
+                if any(alias.lower() in search_area for alias in aliases):
                     matched_country = c
                     break
 
@@ -60,6 +72,7 @@ def parse_and_filter(lines):
         elif line.startswith("http"):
             if keep_channel:
                 output_lines.append(line)
+
     return "\n".join(output_lines)
 
 if __name__ == "__main__":
