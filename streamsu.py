@@ -74,13 +74,17 @@ async def main():
         m3u = ["#EXTM3U"]
         m3u8_url = None
 
-        async def capture_route(route, req):
+        # 🆕 Capture all requests to find .m3u8
+        async def capture_request(req):
             nonlocal m3u8_url
             if ".m3u8" in req.url:
-                m3u8_url = req.url
-            await route.continue_()
+                if not m3u8_url:
+                    m3u8_url = req.url
+                    print(f"[🎯] Captured M3U8: {m3u8_url}")
+            else:
+                print(f"[REQ] {req.url}")
 
-        await context.route("**/*", capture_route)
+        page.on("request", capture_request)
 
         headers = {
             "Accept": "*/*",
@@ -147,21 +151,18 @@ async def main():
                             await page.goto(embed_url, timeout=15000)
                             await page.wait_for_timeout(3000)
 
-                            box = await page.evaluate("""() => {
-                                return { width: window.innerWidth, height: window.innerHeight };
-                            }""")
-                            x = box["width"] // 2
-                            y = box["height"] // 2
+                            # Try clicking actual play button first
+                            try:
+                                play_btn = await page.query_selector("button")
+                                if play_btn:
+                                    await play_btn.click()
+                                else:
+                                    box = await page.evaluate("""() => ({width: window.innerWidth, height: window.innerHeight})""")
+                                    await page.mouse.click(box["width"] // 2, box["height"] // 2)
+                            except:
+                                pass
 
-                            for _ in range(6):
-                                try:
-                                    await page.mouse.click(x, y)
-                                    await page.wait_for_timeout(2000)
-                                    if m3u8_url:
-                                        break
-                                except Exception as click_err:
-                                    print(f"[!] Mouse click error: {click_err}")
-                                    continue
+                            await page.wait_for_timeout(5000)  # Give time for m3u8 to load
 
                             if m3u8_url:
                                 valid = await check_m3u8_url(m3u8_url)
