@@ -4,11 +4,9 @@ from datetime import datetime
 import aiohttp
 import os
 
-# 🛡️ Force .su → .pk to bypass 301 redirects
 def fix_url(url):
     return url.replace("streamed.su", "streamed.pk")
 
-# 🧠 Retry failed API calls with delay
 async def safe_request_with_retry(request, url, retries=3, delay=5, headers=None):
     for attempt in range(retries):
         try:
@@ -51,7 +49,6 @@ ALLOWED_CATEGORIES = {
     }
 }
 
-# 🎯 Validate stream link
 async def check_m3u8_url(url):
     try:
         async with aiohttp.ClientSession() as session:
@@ -72,19 +69,18 @@ async def main():
         request = context.request
 
         m3u = ["#EXTM3U"]
+
+        # Shared capture variable
         m3u8_url = None
 
-        # 🆕 Capture all requests to find .m3u8
-        async def capture_request(req):
+        # Capture all .m3u8 from any frame/page
+        def capture_request(req):
             nonlocal m3u8_url
-            if ".m3u8" in req.url:
-                if not m3u8_url:
-                    m3u8_url = req.url
-                    print(f"[🎯] Captured M3U8: {m3u8_url}")
-            else:
-                print(f"[REQ] {req.url}")
+            if ".m3u8" in req.url and not m3u8_url:
+                m3u8_url = req.url
+                print(f"[🎯] Captured M3U8: {m3u8_url}")
 
-        page.on("request", capture_request)
+        context.on("request", capture_request)
 
         headers = {
             "Accept": "*/*",
@@ -149,20 +145,23 @@ async def main():
                         try:
                             print(f"\nVisiting: {title} (source: {source_type})")
                             await page.goto(embed_url, timeout=15000)
-                            await page.wait_for_timeout(3000)
+                            await page.wait_for_timeout(2000)
 
-                            # Try clicking actual play button first
-                            try:
-                                play_btn = await page.query_selector("button")
-                                if play_btn:
-                                    await play_btn.click()
-                                else:
-                                    box = await page.evaluate("""() => ({width: window.innerWidth, height: window.innerHeight})""")
-                                    await page.mouse.click(box["width"] // 2, box["height"] // 2)
-                            except:
-                                pass
+                            # Check for iframe
+                            iframe_el = await page.query_selector("iframe")
+                            if iframe_el:
+                                iframe_src = await iframe_el.get_attribute("src")
+                                if iframe_src:
+                                    print(f"[🔍] Found iframe: {iframe_src}")
+                                    await page.goto(iframe_src, timeout=15000)
+                                    await page.wait_for_timeout(4000)
 
-                            await page.wait_for_timeout(5000)  # Give time for m3u8 to load
+                            # Click to trigger playback
+                            for _ in range(6):
+                                await page.mouse.click(400, 300)
+                                await page.wait_for_timeout(2000)
+                                if m3u8_url:
+                                    break
 
                             if m3u8_url:
                                 valid = await check_m3u8_url(m3u8_url)
@@ -172,7 +171,7 @@ async def main():
                                     print(f"[!] Invalid stream URL (not 200): {m3u8_url}")
                                     m3u8_url = None
                             else:
-                                print(f"[✖] No m3u8 found at: {embed_url}")
+                                print(f"[✖] No m3u8 found for: {embed_url}")
 
                         except PlaywrightTimeoutError:
                             print(f"[!] Timeout while loading: {embed_url}")
