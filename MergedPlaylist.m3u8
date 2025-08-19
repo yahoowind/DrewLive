@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
-# Last forced update: 2025-08-19T04:47:30.060850Z
+# Last forced update: 2025-08-19T04:59:45.665220Z
 
 #EXTGRP: Mystique Caribbean
 #EXTINF:-1 tvg-name="CVM" tvg-id="Local.Programming.Dummy.us" tvg-logo="https://cvssja.org/wp-content/uploads/2020/06/CVM-Logo-2016.png" group-title=" Mystique Caribbean", CVM (Jamaica)
@@ -14,6 +14,148 @@ https://apollo.production-public.tubi.io/live/ac-bbc-top-gear2.m3u8
 http://user.scalecdn.co:8080/live/26725074/92867131/30731.ts
 #EXTINF:-1  tvg-name="Family Guy 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://www.pngmart.com/files/15/Family-Guy-Logo-PNG-Image-420x236.png" group-title="24/7 by Mystique" radio="false",Family Guy 24/7
 http://user.scalecdn.co:8080/live/26725074/92867131/50187.ts
+
+#EXTGRP:24/7 CHANNELS
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/ACC.png" group-title="24/7 CHANNELS",ACC
+https://world-proxifier.xyz/zuzz/channel/SEFO.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/Ur1oUyb54Mtf3aCHvhzG8NgH0BCbchvIJgMey1G46cNBkOPOAF.png" group-title="24/7 CHANNELS",Altitude Sports
+https://world-proxifier.xyz/zuzz/channel/SEg_QD8zT0w=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/GVh44c9G20kFhdXVs6NfpexqaoEYqqBFfOHxproCrfMGNkOxKt.png" group-title="24/7 CHANNELS",Bally Sports Detroit
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApT0w-MDk6QDA=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/G9c1CVMpjxYPGNoIahXsA6TTsTXrAto84QDuChCL9Epz8uAvKW.png" group-title="24/7 CHANNELS",Bally Sports Florida
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApTUc6NkBPSA==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/bZ61Nbeas7ibxfF9SlSoV14DbhSKMVyKvrt5Thv4YDLUzWGJkX.png" group-title="24/7 CHANNELS",Bally Sports Indiana
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApQEVPT0hFSA==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/M5MKN3oavy6bFWpSGc4aFsdV795mjG6EL0lozv4S44n9aIlc0f.png" group-title="24/7 CHANNELS",Bally Sports Midwest
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApREBPPUw-Pw==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/KHBuMx7VxJcBmZ1lulnUgDCPzdzhXnBZLphXFgbesOMiV8vk9r.png" group-title="24/7 CHANNELS",Bally Sports North
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApRTo5MEM=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/rTs4M2wtHxzXQdOPIaTSYZCt0lJJeMQVn6Am2M7Omu55XaCcXa.png" group-title="24/7 CHANNELS",Bally Sports Oklahoma
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApOkZHR0M6REc=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/ZzSnZlU4hlkovhQijk9aW9rvk2aJdH2KSh0iMt2D44LATGDXau.png" group-title="24/7 CHANNELS",Bally Sports Socal
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApPjpOR0c=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/tFlGQjrzJL7IBgJgS6deU2tSt0jHsVVrPQ5poOR9Z69zmpNBMB.png" group-title="24/7 CHANNELS",Bally Sports South
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApPjo8MEM=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/u1iEAXuw3RNyxCwbyrPWoRDLJ8d5jhJdnPKTbz9USybcaNIsP2.png" group-title="24/7 CHANNELS",Bally Sports Southeast
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApPjo8MENMSDE_.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/7fLVgsos6bmFw1zbzw1YxReNmLrtHPTsOxKJR1dhH3YBbLGNjo.png" group-title="24/7 CHANNELS",Bally Sports Southeast ATL
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApPjo8MENMSDE_JkgwRw==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/0q4C5STUfpywZ5T9SkoHbYX7TifPHKYHPcUGFl6jYlTGNn8Hl9.png" group-title="24/7 CHANNELS",Bally Sports Southeast Cha
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApPjo8MENMSDE_Jk5MSDlH.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/Y2rwjjfHY0UgvnXAbkhQmsjeig1AwjXSogus2DyHb2Yu2XU0xs.png" group-title="24/7 CHANNELS",Bally Sports Southeast Mem
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApPjo8MENMSDE_JkRDRA==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/g6Lo0pBejza7eroUozvdHfmftmeFKvtFIqzbVKlg2T3ayBE0Hj.png" group-title="24/7 CHANNELS",Bally Sports Southwest
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApPjo8MEMyTDE_.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/W75y6914jSqW1yMO3bdGzVnQdgteYawbHPekHhl7rRLqHpDSdh.png" group-title="24/7 CHANNELS",Bally Sports Sun
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApPjxF.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/aSuLhUTGpzVNC8P7GjofKt9R9CZbqs0ILPEzjOGKfUV8xu59e5.png" group-title="24/7 CHANNELS",Bally Sports West
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApMkw-MA==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/kIb749cw0rmChxeEeLxlVOk2tRHiTgCmpa1nIj7yos7ucJGlPA.png" group-title="24/7 CHANNELS",Bally Sports Wisconsin
+https://world-proxifier.xyz/zuzz/channel/SUdHRzApMkA-QTpFPk9F.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/big10.png" group-title="24/7 CHANNELS",BIG 10
+https://world-proxifier.xyz/zuzz/channel/SU9CGiU=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/CBS.png" group-title="24/7 CHANNELS",CBS
+https://world-proxifier.xyz/zuzz/channel/TkY-.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/nQHA4H2nbSgMgsyIZxip5X0anhT605Gxq8elGxCsoXkPVzZjJD.png" group-title="24/7 CHANNELS",CBS Sports Network
+https://world-proxifier.xyz/zuzz/channel/TkY-Jj40Ojk_KUVMPz06OUY=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/QbrydM96AcVpeUjROcy5LjHEEaPmbmfIfaPJ7YGshkb2m2ub2f.png" group-title="24/7 CHANNELS",CNBC
+https://world-proxifier.xyz/zuzz/channel/TkpJTg==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/cowboy.png" group-title="24/7 CHANNELS",Cowboy Channel
+https://world-proxifier.xyz/zuzz/channel/TjUySTo_.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/0n7d6FQkfkqe7k80zzsD3tZx6vEJuuGahPbzjCGSnk2uSK7SO2.png" group-title="24/7 CHANNELS",ESPN
+https://world-proxifier.xyz/zuzz/channel/TDE7RQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/DbRwK42zSLyeCsWYxv1SIQcvBsHzhhEsUr8pW1pPmDoKVQtcEt.png" group-title="24/7 CHANNELS",ESPN 2
+https://world-proxifier.xyz/zuzz/channel/TDE7RRs=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/YQ3qg7gIp6FI2k7kGAl73aB9aT4k2VgMZd1SYAV21JhDZsanrk.png" group-title="24/7 CHANNELS",ESPN NEWS
+https://world-proxifier.xyz/zuzz/channel/TDE7RUVDMj4=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/ADqzwrsmny6Tyc4l6K5OF9tNeEY0szYUiVaodlzI7H2JC4b6uk.png" group-title="24/7 CHANNELS",ESPN U
+https://world-proxifier.xyz/zuzz/channel/TDE7RTw=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/qvaWX6mlwH0ZtIN66wd9qnN5DaLIMw6IeRjGrQaViGNjZIVcsI.png" group-title="24/7 CHANNELS",FOX
+https://world-proxifier.xyz/zuzz/channel/TTUz.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/GhjV5JvfTd00OYslaebluTQ0ctK8lyOcMd4TZzvpEFlbJnITFn.png" group-title="24/7 CHANNELS",Fox Sports 1
+https://world-proxifier.xyz/zuzz/channel/TTEa.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/RrZjqqiVySHtSDHJ2nOAovVI6adigv08Nr5kK2Yvkp6mycDiIA.png" group-title="24/7 CHANNELS",FOX Sports 2
+https://world-proxifier.xyz/zuzz/channel/TTEb.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/uwGHnFtPLYvdhmk5x9BXEzc3orQD2HC9YQAtho6g7IjTddX27K.png" group-title="24/7 CHANNELS",Golf Channel
+https://world-proxifier.xyz/zuzz/channel/RUZOJkI1R00=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/cjV6PGDwMfgwJSw792k9JIol2oyj0S9nhZka8bzRman6jwjdVa.png" group-title="24/7 CHANNELS",Marquee Sports Network
+https://world-proxifier.xyz/zuzz/channel/REc5ODxDTCY-NDo5PzE=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/xACG0Qp5aGZQcAs00UU2PwLcNkR4cA4dCmfW24DNxNSh1TUXPT.png" group-title="24/7 CHANNELS",MASN
+https://world-proxifier.xyz/zuzz/channel/REc-RQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/qQninMWOW5Qz75XJpecITZ9mVMGLcFwiofVViysJwvPx9xWWeX.png" group-title="24/7 CHANNELS",MASN 2
+https://world-proxifier.xyz/zuzz/channel/REc-RRs=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/3L0eJOtGsM3dfPE3EKTyrlSOSy3eLt5gkxDWBfITnL2JXcK8D6.png" group-title="24/7 CHANNELS",MLB Network
+https://world-proxifier.xyz/zuzz/channel/REhJRUwwMjo5SQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/vq0jgg1bIpyIKtONj9nCYOWLeZlD4gYx4S5am5zwncX87xgOf7.png" group-title="24/7 CHANNELS",Monumental Sports Network
+https://world-proxifier.xyz/zuzz/channel/RDVFPERDRT9ISA==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/a89vxExD8KOP2wGsOsKcLg18n0c7mie05YLEhBQoJH51HAVc4H.png" group-title="24/7 CHANNELS",MSG SPORTSNET
+https://world-proxifier.xyz/zuzz/channel/RDFCJj5K.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/uTIfEcLMqxJjXaVZaGqCLBWaJCN6ML7saYVypSeCMAoVqNoNUe.png" group-title="24/7 CHANNELS",MSGHD
+https://world-proxifier.xyz/zuzz/channel/RDFCQ08=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/nQWkxr73TBBJoByDoKwirX90t4efemvAVwYF15PM9Xt7uD8pk2.png" group-title="24/7 CHANNELS",NBA TV
+https://world-proxifier.xyz/zuzz/channel/RUZIPz0=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/leP0I9zVkdBVQUefXv9iSgvK7vMtNTqlRwNZGST7ED8aHoMcgA.png" group-title="24/7 CHANNELS",NBC
+https://world-proxifier.xyz/zuzz/channel/RUZO.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/35h2LeGaAVnL64dYxnCy8zspXR8zeDdsVSdGXt1n07HMlBCSDp.png" group-title="24/7 CHANNELS",NBC Sports Bay Area
+https://world-proxifier.xyz/zuzz/channel/RUZOJklHMEg5Q0g=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/b6MjsvM3qfQY4CZV1LVJWwFt1mVVoj3iX7gmPTH7MiP8rFWFAk.png" group-title="24/7 CHANNELS",NBC Sports Boston
+https://world-proxifier.xyz/zuzz/channel/RUZOJkk1Pj86Sg==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/lHugi0zpPJ11U35NJGjURfOTDd2q6sunKjwinL4CKeFHMEhtwg.png" group-title="24/7 CHANNELS",NBC Sports California
+https://world-proxifier.xyz/zuzz/channel/RUZOJk5HR0BNNTlFQEc=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/BRl9aoEQvP9ZGG3snU1M6BD3t7Mbek4xho9npvybfuLCfR2qRa.png" group-title="24/7 CHANNELS",NBC Sports Chicago
+https://world-proxifier.xyz/zuzz/channel/RUZOJk5MQE5ITTo=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/pNcr1AgqdNw9MAjXJeWzOgxwUx3XJ7CdLZs2BGThVwk3LR4C4a.png" group-title="24/7 CHANNELS",NESN
+https://world-proxifier.xyz/zuzz/channel/RUM-RRoU.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/3DkMPY1wYO7mFGTGispHwPtw5VWwLGQvfhJGodUp4isSONVxwI.png" group-title="24/7 CHANNELS",NFL Network
+https://world-proxifier.xyz/zuzz/channel/RUJHRUwwMjo5SQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/QNw5GGgZ1VLbCNOXockuk9xTRBgXzRGkZBvWzXw4PZ6hMB6Pn7.png" group-title="24/7 CHANNELS",NFL Redzone
+https://world-proxifier.xyz/zuzz/channel/OUNPMTpKTA==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/fmmBmmJBXkKtQQPtny0LyE8eS3AIU6yY5mroBTv0Q6SLuriMQy.png" group-title="24/7 CHANNELS",NHL Network
+https://world-proxifier.xyz/zuzz/channel/RUxHRUwwMjo5SQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/lzzZXHuMVcugKNHyg0u0cQhYivd2jlfNHdXzvtxju3iyvAZhxj.png" group-title="24/7 CHANNELS",ROOTSPORTS
+https://world-proxifier.xyz/zuzz/channel/OTU6Pz40Ojk_MQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/sec.png" group-title="24/7 CHANNELS",SEC Network
+https://world-proxifier.xyz/zuzz/channel/PkNO.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/0hvGMTIibJgruQZo0hT1WaeYOkJJZtrtK18I2Y0kjxzdpzRcGr.png" group-title="24/7 CHANNELS",SN 360
+https://world-proxifier.xyz/zuzz/channel/PkoYHyU=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/645UjJr3vArxn1vLykJcOvIjtDDUhVjHEsOBxYfdx5UBI8kiJ5.png" group-title="24/7 CHANNELS",SN East
+https://world-proxifier.xyz/zuzz/channel/PkpMSD4w.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/7lSXDmzSl6XhS0ThUc1ve3CpdrYgFfr3jOoK5CDDPHkxNdaLVU.png" group-title="24/7 CHANNELS",SN One
+https://world-proxifier.xyz/zuzz/channel/Pko6RUw=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/3uG0nL2Wp3ey1ixpKnTZppIZPoukSILXBB0WX9HyuACmyK9Z3A.png" group-title="24/7 CHANNELS",SN Ontario
+https://world-proxifier.xyz/zuzz/channel/Pko6RT9HOUA6.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/x2IVcoh2amAFVmAxRhw0t4WJvSIURrgQ2jgsrYWAAt7Il9CIRa.png" group-title="24/7 CHANNELS",SN Pacific
+https://world-proxifier.xyz/zuzz/channel/Pko7SE5PTUBO.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/6RuLHjfUbnLRqOTuwepYsaGveKflL1gWopzlB1mFk3DdLxscVa.png" group-title="24/7 CHANNELS",SN West
+https://world-proxifier.xyz/zuzz/channel/PkoyTD4w.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/lsz6shtCte3Bzw6q2jDvCpRbKigZFLCEtxp3ZlMP718F3dowPQ.png" group-title="24/7 CHANNELS",SN World
+https://world-proxifier.xyz/zuzz/channel/PkoyOjlITw==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/Hsu3f0ihQUnAlxXvbUCEzeHVFlhHytPqdau7IV1oFSF2yqJLIp.png" group-title="24/7 CHANNELS",Space City Home Network
+https://world-proxifier.xyz/zuzz/channel/PjRITkwpTkA_PyZDRQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/ayyQfc7mvLEm622qwm3rnMu4FovaKwB1UqlYdiRbK8n5aLbQwK.png" group-title="24/7 CHANNELS",Spectrum SportsNet
+https://world-proxifier.xyz/zuzz/channel/PjRMTj82PEQmMTs6OTA-RUww.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/dVRYjv96Rtx6GM8U98OUA96jvaMOt6UULcGa24qd1L6Q7Rsct4.png" group-title="24/7 CHANNELS",SportsNet Pittsburgh
+https://world-proxifier.xyz/zuzz/channel/PjQ6OT8xRUw_KTtAPzA-STw2QkM=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/8xATOcQY2eBC8e4MoBuYkunNjerUuTIf8kIQck1kxz7nqFAZXC.png" group-title="24/7 CHANNELS",TBS
+https://world-proxifier.xyz/zuzz/channel/P0Y-.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/ayMeJQav62KfinMx6oJF7dJrfVM4m1PZqC6rYK9mvdpTr27lqc.png" group-title="24/7 CHANNELS",Tennis Channel
+https://world-proxifier.xyz/zuzz/channel/P0NFRUAxTkM=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/oJBjZDXoV5MyJ2GduEASuGGvqvyP00o0YsgsSSwhzR4Dl3wndB.png" group-title="24/7 CHANNELS",TNT
+https://world-proxifier.xyz/zuzz/channel/P0o_.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/tQS7GnEAURnhchSfRoICM80sNF3w6cz1Oy1kERQINgnbPF5a6o.png" group-title="24/7 CHANNELS",TSN 1
+https://world-proxifier.xyz/zuzz/channel/PzFFGg==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/MrRZ4nMuezzMaDtTG5njMtfU1yWtZ66NnDedPO4bRZPeAlveQr.png" group-title="24/7 CHANNELS",TSN 2
+https://world-proxifier.xyz/zuzz/channel/PzFFGw==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/NMFrmjkr6ks5ufS50WxHZ2J5k2R7C0rZxoJYdrYslKt8MVGuok.png" group-title="24/7 CHANNELS",TSN 3
+https://world-proxifier.xyz/zuzz/channel/PzFFGA==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/Mt5DDoZTFkQojCM4HoHBDWEveQQ5RGWuH4coiIucWhmtayTaSv.png" group-title="24/7 CHANNELS",TSN 4
+https://world-proxifier.xyz/zuzz/channel/PzFFGQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/Y7vsUoQbe2X2rs7xcaYNG0mvOKncb9z4fEpPjhzdZXXNPqHTvK.png" group-title="24/7 CHANNELS",TSN 5
+https://world-proxifier.xyz/zuzz/channel/PzFFHg==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/j6IDLeDYF3QFLoNE2vHQEu7SZcvNFt0QnHmApJqckwuHlcOJhx.png" group-title="24/7 CHANNELS",USA Network
+https://world-proxifier.xyz/zuzz/channel/PDFIRUwwMjo5SQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/IWeXhdnKlWTNNugPeZLYDuEAhB60dTmvTcVOKk0RJoupzRYyWA.png" group-title="24/7 CHANNELS",YES NETWORK
+https://world-proxifier.xyz/zuzz/channel/MEM-JkVDPzI6NkY=.m3u8
 
 #EXTGRP:A1xmedia AU Sports
 #EXTINF:-1  tvg-name="Fox Sports 501 FHD" tvg-id="FoxCricket.au" tvg-logo="https://i.imgur.com/59gCbVd.png" group-title="A1xmedia AU Sports" radio="false",Fox Sports 501 FHD
@@ -5078,6 +5220,92 @@ https://v4.thetvapp.to/hls/mlb-02/tracks-v1a1/mono.m3u8?token=o8eJalnBlowSOVHXat
 https://v15.thetvapp.to/hls/mlb-23/tracks-v2a1/mono.m3u8?token=F3xX3fwW1qNi6z15vDxd1w&expires=1755599839&user_id=ODE0WEs2TDJ6ZjA4YWd6dHZRRzVRaFZ3cVJ0dFNDR05rUzZRREJ3Tg==
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="Milwaukee Brewers @ Chicago Cubs - 8/18/25, 6:21:00 PM UTC" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",Milwaukee Brewers @ Chicago Cubs - 8/18/25, 6:21:00 PM UTC
 https://v2.thetvapp.to/hls/mlb-23/tracks-v1a1/mono.m3u8?token=E6YnrwiItX7y_kKipsuMMg&expires=1755599844&user_id=ODE0WEs2TDJ6ZjA4YWd6dHZRRzVRaFZ3cVJ0dFNDR05rUzZRREJ3Tg==
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Arizona%20Diamondbacks.png" group-title="MLB",Arizona Diamondbacks vs Cleveland Guardians [DIAMONDBACKS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGhk=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Arizona%20Diamondbacks.png" group-title="MLB",Arizona Diamondbacks vs Cleveland Guardians [GUARDIANS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGxs=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Atlanta%20Braves.png" group-title="MLB",Atlanta Braves vs Chicago White Sox [BRAVES FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGh4=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Atlanta%20Braves.png" group-title="MLB",Atlanta Braves vs Chicago White Sox [CHICAGO SPORTS NETWORK]
+https://world-proxifier.xyz/zuzz/channel/RUZOJk5MQE5ITTo=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Atlanta%20Braves.png" group-title="MLB",Atlanta Braves vs Chicago White Sox [WHITE SOX FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGyU=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Boston%20Red%20Sox.png" group-title="MLB",Boston Red Sox vs Baltimore Orioles [MASN]
+https://world-proxifier.xyz/zuzz/channel/REc-RQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Boston%20Red%20Sox.png" group-title="MLB",Boston Red Sox vs Baltimore Orioles [NESN]
+https://world-proxifier.xyz/zuzz/channel/RUM-RRoU.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Boston%20Red%20Sox.png" group-title="MLB",Boston Red Sox vs Baltimore Orioles [ORIOLES FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGh8=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Boston%20Red%20Sox.png" group-title="MLB",Boston Red Sox vs Baltimore Orioles [RED SOX FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGh0=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Boston%20Red%20Sox.png" group-title="MLB",Boston Red Sox vs Baltimore Orioles [SN ONE]
+https://world-proxifier.xyz/zuzz/channel/Pko6RUw=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20Cubs.png" group-title="MLB",Chicago Cubs vs Milwaukee Brewers [BREWERS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGBo=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20Cubs.png" group-title="MLB",Chicago Cubs vs Milwaukee Brewers [BREWERS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGBo=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20Cubs.png" group-title="MLB",Chicago Cubs vs Milwaukee Brewers [CUBS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGhI=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20Cubs.png" group-title="MLB",Chicago Cubs vs Milwaukee Brewers [CUBS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGhI=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20Cubs.png" group-title="MLB",Chicago Cubs vs Milwaukee Brewers [MARQUEE SPORTS NETWORK]
+https://world-proxifier.xyz/zuzz/channel/REc5ODxDTCY-NDo5PzE=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20Cubs.png" group-title="MLB",Chicago Cubs vs Milwaukee Brewers [MARQUEE SPORTS NETWORK]
+https://world-proxifier.xyz/zuzz/channel/REc5ODxDTCY-NDo5PzE=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Colorado%20Rockies.png" group-title="MLB",Colorado Rockies vs Los Angeles Dodgers [DODGERS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGxw=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Colorado%20Rockies.png" group-title="MLB",Colorado Rockies vs Los Angeles Dodgers [ROCKIES FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGxg=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Colorado%20Rockies.png" group-title="MLB",Colorado Rockies vs Los Angeles Dodgers [SPECTRUM SPORTSNET LA]
+https://world-proxifier.xyz/zuzz/channel/PjRMTj82PEQmSEg=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Detroit%20Tigers.png" group-title="MLB",Detroit Tigers vs Houston Astros [ASTROS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGx4=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Detroit%20Tigers.png" group-title="MLB",Detroit Tigers vs Houston Astros [RDS]
+https://world-proxifier.xyz/zuzz/channel/OUA-.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Detroit%20Tigers.png" group-title="MLB",Detroit Tigers vs Houston Astros [SPACE CITY HOME NETWORK]
+https://world-proxifier.xyz/zuzz/channel/PjRITkwpTkA_PyZDRQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Detroit%20Tigers.png" group-title="MLB",Detroit Tigers vs Houston Astros [TIGERS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGxk=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Kansas%20City%20Royals.png" group-title="MLB",Kansas City Royals vs Texas Rangers [RANGERS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGRs=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Kansas%20City%20Royals.png" group-title="MLB",Kansas City Royals vs Texas Rangers [ROYALS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGx8=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Los%20Angeles%20Angels.png" group-title="MLB",Los Angeles Angels vs Cincinnati Reds [ANGELS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGx0=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Los%20Angeles%20Angels.png" group-title="MLB",Los Angeles Angels vs Cincinnati Reds [CINCINNATI REDS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGxo=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Los%20Angeles%20Angels.png" group-title="MLB",Los Angeles Angels vs Cincinnati Reds [FOX SPORTS 1]
+https://world-proxifier.xyz/zuzz/channel/TTEa.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Pittsburgh%20Pirates.png" group-title="MLB",Pittsburgh Pirates vs Toronto Blue Jays [BLUE JAYS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGRg=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Pittsburgh%20Pirates.png" group-title="MLB",Pittsburgh Pirates vs Toronto Blue Jays [PIRATES FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGBw=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Pittsburgh%20Pirates.png" group-title="MLB",Pittsburgh Pirates vs Toronto Blue Jays [SN ONTARIO]
+https://world-proxifier.xyz/zuzz/channel/Pko6RT9HOUA6.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Pittsburgh%20Pirates.png" group-title="MLB",Pittsburgh Pirates vs Toronto Blue Jays [SN PACIFIC]
+https://world-proxifier.xyz/zuzz/channel/Pko7SE5PTUBO.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Pittsburgh%20Pirates.png" group-title="MLB",Pittsburgh Pirates vs Toronto Blue Jays [SPORTSNET PITTSBURGH]
+https://world-proxifier.xyz/zuzz/channel/PjQ6OT8xRUw_KTtAPzA-STw2QkM=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" group-title="MLB",San Diego Padres vs San Francisco Giants [GIANTS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGBI=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" group-title="MLB",San Diego Padres vs San Francisco Giants [NBC SPORTS BAY AREA]
+https://world-proxifier.xyz/zuzz/channel/RUZOJklHMEg5Q0g=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" group-title="MLB",San Diego Padres vs San Francisco Giants [PADRES FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGB0=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" group-title="MLB",San Diego Padres vs San Francisco Giants [TSN 4]
+https://world-proxifier.xyz/zuzz/channel/PzFFGQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" group-title="MLB",Seattle Mariners vs Philadelphia Phillies [MARINERS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGSU=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" group-title="MLB",Seattle Mariners vs Philadelphia Phillies [PHILLIES FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGB8=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" group-title="MLB",Seattle Mariners vs Philadelphia Phillies [ROOT SPORTS PLUS]
+https://world-proxifier.xyz/zuzz/channel/OTU6PyYxOzo5MD4mO0g8Pg==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" group-title="MLB",Seattle Mariners vs Philadelphia Phillies [ROOTSPORTS]
+https://world-proxifier.xyz/zuzz/channel/OTU6Pz40Ojk_MQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/St.%20Louis%20Cardinals.png" group-title="MLB",St. Louis Cardinals vs Miami Marlins [CARDINALS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGxI=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/St.%20Louis%20Cardinals.png" group-title="MLB",St. Louis Cardinals vs Miami Marlins [MARLINS FEED]
+https://world-proxifier.xyz/zuzz/channel/REhJGCU=.m3u8
 
 #EXTGRP:MoveOnJoy
 #EXTINF:-1  tvg-name="5 StarMax" tvg-id="5.Star.Max.-.Eastern.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cinemax-5-starmax-us.png" group-title="MoveOnJoy" radio="false",5 StarMax
@@ -6646,6 +6874,16 @@ http://cdn1host.online:2999/kratorius/opLcbhlXaT/245
 https://v4.thetvapp.to/hls/NFL24/tracks-v2a1/mono.m3u8?token=_46nLUgk_EfTHcsajN_n1A&expires=1755599959&user_id=ODE0WEs2TDJ6ZjA4YWd6dHZRRzVRaFZ3cVJ0dFNDR05rUzZRREJ3Tg==
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Cincinnati Bengals @ Washington Commanders - 8/19/25, 12:01:00 AM UTC" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL.png" group-title="NFL",Cincinnati Bengals @ Washington Commanders - 8/19/25, 12:01:00 AM UTC
 https://v13.thetvapp.to/hls/NFL24/tracks-v1a1/mono.m3u8?token=BOzidAgb_8xvpdlpWUeLxg&expires=1755599963&user_id=ODE0WEs2TDJ6ZjA4YWd6dHZRRzVRaFZ3cVJ0dFNDR05rUzZRREJ3Tg==
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Washington%20Commanders.png" group-title="NFL",Washington Commanders vs Cincinnati Bengals [ESPN]
+https://world-proxifier.xyz/zuzz/channel/TDE7RQ==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Washington%20Commanders.png" group-title="NFL",Washington Commanders vs Cincinnati Bengals [NFL HD2]
+https://world-proxifier.xyz/zuzz/channel/RUJHGzE=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Washington%20Commanders.png" group-title="NFL",Washington Commanders vs Cincinnati Bengals [TSN 1]
+https://world-proxifier.xyz/zuzz/channel/PzFFGg==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Washington%20Commanders.png" group-title="NFL",Washington Commanders vs Cincinnati Bengals [TSN 3]
+https://world-proxifier.xyz/zuzz/channel/PzFFGA==.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Washington%20Commanders.png" group-title="NFL",Washington Commanders vs Cincinnati Bengals [TSN 5]
+https://world-proxifier.xyz/zuzz/channel/PzFFHg==.m3u8
 
 #EXTGRP:PBS
 #EXTINF:-1  tvg-name="Alaska Public Media" tvg-id="PBS.Kids.us" tvg-logo="https://image.pbs.org/stations/kakm-color-single-brand-logo-CKvfnQs.png" group-title="PBS",Alaska Public Media
