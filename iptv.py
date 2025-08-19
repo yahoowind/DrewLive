@@ -24,7 +24,8 @@ playlist_urls = [
     "http://drewlive24.duckdns.org:8081/StreamedSU.m3u8",
     "http://drewlive24.duckdns.org:8081/Tims247.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/LGTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/AriaPlus.m3u8"
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/AriaPlus.m3u8",
+    "https://world-proxifier.xyz/zuzz/playlist"
 ]
 
 UDPTV_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
