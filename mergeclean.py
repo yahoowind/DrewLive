@@ -1,6 +1,7 @@
 import requests
 from collections import defaultdict
 import re
+import time
 from datetime import datetime
 
 playlist_urls = [
@@ -32,15 +33,23 @@ EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedCleanPlaylist.m3u8"
 REMOVED_FILE = "Removed_NSFW.m3u8"
 
-def fetch_playlist(url):
+def fetch_playlist(url, retries=3, delay=5):
+    """Fetch playlist with retry for non-raw URLs."""
     print(f"Fetching: {url}")
-    try:
-        res = requests.get(url, timeout=15)
-        res.raise_for_status()
-        return res.content.decode('utf-8', errors='ignore').strip().splitlines()
-    except Exception as e:
-        print(f"❌ Error fetching {url}: {e}")
-        return []
+    for attempt in range(1, retries + 1):
+        try:
+            res = requests.get(url, timeout=15)
+            res.raise_for_status()
+            return res.content.decode('utf-8', errors='ignore').strip().splitlines()
+        except Exception as e:
+            print(f"❌ Attempt {attempt} failed for {url}: {e}")
+            if "raw.githubusercontent.com" not in url and attempt < retries:
+                print(f"⏳ Retrying in {delay} seconds...")
+                time.sleep(delay)
+            else:
+                break
+    print(f"❌ Failed to fetch {url} after {retries} attempts.")
+    return []
 
 def extract_timestamp_from_udptv(lines):
     for line in lines:
@@ -141,7 +150,7 @@ def write_removed_channels(nsfw_channels):
 if __name__ == "__main__":
     print(f"🚀 Starting merge: {datetime.now()}\n")
 
-    all_channels = []  # ✅ Use list to preserve everything
+    all_channels = []
     timestamp_line = None
 
     # Process UDPTV first
