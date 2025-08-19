@@ -31,6 +31,7 @@ UDPTV_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/m
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedPlaylist.m3u8"
 
+
 def fetch_playlist(url, retries=3, delay=5):
     """Fetch playlist with retries for non-GitHub raw URLs."""
     print(f"📡 Fetching playlist: {url}")
@@ -38,7 +39,11 @@ def fetch_playlist(url, retries=3, delay=5):
         try:
             response = requests.get(url, timeout=15)
             response.raise_for_status()
-            return response.content.decode("utf-8", errors="ignore").splitlines()
+            content = response.content.decode("utf-8", errors="ignore")
+            if "#EXTM3U" not in content:  # ensure it's a valid playlist
+                print(f"⚠️ Skipping invalid playlist (no #EXTM3U) from {url}")
+                return []
+            return content.splitlines()
         except Exception as e:
             print(f"❌ Attempt {attempt} failed for {url}: {e}")
             if "raw.githubusercontent.com" not in url and attempt < retries:
@@ -49,6 +54,7 @@ def fetch_playlist(url, retries=3, delay=5):
     print(f"❌ Failed to fetch {url}")
     return []
 
+
 def extract_udptv_timestamp(lines):
     for line in lines:
         if line.strip().startswith("# Last forced update:"):
@@ -56,6 +62,7 @@ def extract_udptv_timestamp(lines):
             return line.strip()
     print("⚠️ UDPTV timestamp not found.")
     return None
+
 
 def parse_playlist(lines, source="Unknown"):
     parsed = []
@@ -72,18 +79,25 @@ def parse_playlist(lines, source="Unknown"):
                 metadata.append(lines[i].strip())
                 i += 1
 
-            # Expect a URL
-            if i < len(lines) and lines[i].strip() and not lines[i].strip().startswith("#"):
+            # Expect a valid stream URL
+            if (
+                i < len(lines)
+                and lines[i].strip()
+                and not lines[i].strip().startswith("#")
+                and re.match(r'^(https?|rtmp|rtsp|udp)://', lines[i].strip())
+            ):
                 url = lines[i].strip()
                 parsed.append((extinf, tuple(metadata), url))
                 i += 1
             else:
-                print(f"⚠️ Skipping orphaned EXTINF in {source}: {extinf}")
+                print(f"⚠️ Skipping invalid or orphaned EXTINF in {source}: {extinf}")
+                i += 1
         else:
             i += 1
 
     print(f"✅ Parsed {len(parsed)} channels from {source}")
     return parsed
+
 
 def write_merged_playlist(channels, udptv_timestamp):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"']
@@ -91,9 +105,14 @@ def write_merged_playlist(channels, udptv_timestamp):
         lines.append(udptv_timestamp)
     lines.append("")
 
-    def get_group_title(extinf):
+    def get_group_title(extinf, metadata):
         m = re.search(r'group-title="([^"]+)"', extinf)
-        return m.group(1) if m else "Other"
+        if m:
+            return m.group(1)
+        for meta in metadata:
+            if meta.startswith("#EXTGRP:"):
+                return meta.split(":", 1)[1].strip()
+        return "Ungrouped"
 
     def get_channel_name(extinf):
         m = re.search(r',([^,]+)$', extinf)
@@ -101,12 +120,12 @@ def write_merged_playlist(channels, udptv_timestamp):
 
     sorted_channels = sorted(
         channels,
-        key=lambda c: (get_group_title(c[0]).lower(), get_channel_name(c[0]).lower())
+        key=lambda c: (get_group_title(c[0], c[1]).lower(), get_channel_name(c[0]).lower())
     )
 
     current_group = None
     for extinf, metadata, url in sorted_channels:
-        group = get_group_title(extinf)
+        group = get_group_title(extinf, metadata)
         if group != current_group:
             if current_group is not None:
                 lines.append("")
@@ -126,6 +145,7 @@ def write_merged_playlist(channels, udptv_timestamp):
     print(f"\n✅ Merged playlist saved to {OUTPUT_FILE}")
     print(f"📺 Total channels: {len(channels)}")
     print(f"🕒 Saved at: {datetime.now()}")
+
 
 if __name__ == "__main__":
     print(f"🚀 Starting merge at {datetime.now()}\n")
