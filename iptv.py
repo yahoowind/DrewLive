@@ -1,5 +1,6 @@
 import requests
 import re
+import time
 from datetime import datetime
 
 playlist_urls = [
@@ -30,16 +31,24 @@ UDPTV_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/m
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedPlaylist.m3u8"
 
-def fetch_playlist(url):
+def fetch_playlist(url, retries=3, delay=5):
+    """Fetch playlist with retry for non-raw URLs."""
     print(f"Fetching playlist: {url}")
-    try:
-        response = requests.get(url, timeout=15)
-        response.raise_for_status()
-        content = response.content.decode("utf-8", errors="ignore")
-        return content.strip().splitlines()
-    except Exception as e:
-        print(f"❌ Failed to fetch {url}: {e}")
-        return []
+    for attempt in range(1, retries + 1):
+        try:
+            response = requests.get(url, timeout=15)
+            response.raise_for_status()
+            content = response.content.decode("utf-8", errors="ignore")
+            return content.strip().splitlines()
+        except Exception as e:
+            print(f"❌ Attempt {attempt} failed for {url}: {e}")
+            if "raw.githubusercontent.com" not in url and attempt < retries:
+                print(f"⏳ Retrying in {delay} seconds...")
+                time.sleep(delay)
+            else:
+                break
+    print(f"❌ Failed to fetch {url} after {retries} attempts.")
+    return []
 
 def extract_udptv_timestamp(lines):
     for line in lines:
@@ -93,7 +102,6 @@ def write_merged_playlist(channels, udptv_timestamp):
         m = re.search(r',([^,]+)$', extinf)
         return m.group(1).strip() if m else ""
 
-    # Sort by group and then channel name
     sorted_channels = sorted(
         channels,
         key=lambda c: (get_group_title(c[0]).lower(), get_channel_name(c[0]).lower())
@@ -125,7 +133,7 @@ def write_merged_playlist(channels, udptv_timestamp):
 if __name__ == "__main__":
     print(f"Starting merge at {datetime.now()}\n")
 
-    all_channels = []  # Use a list to preserve every channel
+    all_channels = []
 
     # Fetch UDPTV first
     udptv_lines = fetch_playlist(UDPTV_URL)
@@ -139,7 +147,7 @@ if __name__ == "__main__":
             continue
         lines = fetch_playlist(url)
         parsed = parse_playlist(lines, source=url)
-        all_channels.extend(parsed)  # preserve all entries
+        all_channels.extend(parsed)
 
     # Write the merged playlist
     write_merged_playlist(all_channels, udptv_timestamp)
