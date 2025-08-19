@@ -142,14 +142,14 @@ def write_removed_channels(nsfw_channels):
 if __name__ == "__main__":
     print(f"🚀 Starting merge: {datetime.now()}\n")
 
-    all_channels = set()
+    all_channels = []  # ✅ Use list to preserve everything
     timestamp_line = None
 
     # Process UDPTV first
     print(f"--- Processing UDPTV: {UDPTV_URL} ---")
     udptv_lines = fetch_playlist(UDPTV_URL)
     timestamp_line = extract_timestamp_from_udptv(udptv_lines)
-    all_channels.update(parse_playlist(udptv_lines, UDPTV_URL))
+    all_channels.extend(parse_playlist(udptv_lines, UDPTV_URL))
 
     # Process remaining playlists
     print(f"\n--- Processing other playlists ---")
@@ -157,9 +157,9 @@ if __name__ == "__main__":
         if url == UDPTV_URL:
             continue
         lines = fetch_playlist(url)
-        all_channels.update(parse_playlist(lines, url))
+        all_channels.extend(parse_playlist(lines, url))
 
-    # Filter and separate NSFW content
+    # Filter NSFW content
     nsfw_channels = [entry for entry in all_channels if is_nsfw(*entry)]
     clean_channels = [entry for entry in all_channels if not is_nsfw(*entry)]
 
