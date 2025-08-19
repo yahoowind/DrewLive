@@ -33,14 +33,27 @@ EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedCleanPlaylist.m3u8"
 REMOVED_FILE = "Removed_NSFW.m3u8"
 
+# Only allow real streaming protocols
+VALID_URL_PATTERN = re.compile(r'^(https?|rtmp|rtsp|udp)://', re.IGNORECASE)
+
 def fetch_playlist(url, retries=3, delay=5):
-    """Fetch playlist with retry for non-raw URLs."""
-    print(f"Fetching: {url}")
+    """Fetch playlist with retry, clean junk lines like '*' and invalid content."""
+    print(f"📡 Fetching: {url}")
     for attempt in range(1, retries + 1):
         try:
             res = requests.get(url, timeout=15)
             res.raise_for_status()
-            return res.content.decode('utf-8', errors='ignore').strip().splitlines()
+            content = res.content.decode('utf-8', errors='ignore')
+            if "#EXTM3U" not in content:
+                print(f"⚠️ Skipping invalid playlist (no #EXTM3U) from {url}")
+                return []
+            # Clean junk lines: drop '*', blanks, proxy error messages
+            return [
+                line for line in content.splitlines()
+                if line.strip() 
+                and line.strip() != "*"
+                and not line.lower().startswith("proxy failed")
+            ]
         except Exception as e:
             print(f"❌ Attempt {attempt} failed for {url}: {e}")
             if "raw.githubusercontent.com" not in url and attempt < retries:
@@ -71,12 +84,16 @@ def parse_playlist(lines, source_url="Unknown"):
             while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
                 headers.append(lines[i].strip())
                 i += 1
+            # Validate stream URL
             if i < len(lines) and lines[i].strip() and not lines[i].strip().startswith("#"):
                 url = lines[i].strip()
-                parsed.append((extinf, tuple(headers), url))
+                if VALID_URL_PATTERN.match(url):
+                    parsed.append((extinf, tuple(headers), url))
+                else:
+                    print(f"⚠️ Skipped invalid URL in {source_url}: {url}")
                 i += 1
             else:
-                print(f"⚠️ Skipped invalid channel in {source_url}")
+                print(f"⚠️ Skipped orphaned EXTINF in {source_url}")
         else:
             i += 1
     print(f"✅ Parsed {len(parsed)} channels from {source_url}")
@@ -88,10 +105,8 @@ def is_nsfw(extinf, headers, url):
     headers_lower = ' '.join(headers).lower()
     url_lower = url.lower()
     group_match = re.search(r'group-title="([^"]+)"', extinf_lower)
-    if group_match:
-        group_title = group_match.group(1)
-        if any(k in group_title for k in nsfw_keywords):
-            return True
+    if group_match and any(k in group_match.group(1) for k in nsfw_keywords):
+        return True
     combined_text = f"{extinf_lower} {headers_lower} {url_lower}"
     return any(k in combined_text for k in nsfw_keywords)
 
