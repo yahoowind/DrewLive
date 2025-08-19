@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
-# Last forced update: 2025-08-19T19:56:35.534902Z
+# Last forced update: 2025-08-19T20:12:46.610998Z
 
 #EXTGRP:24/7 by Mystique
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
@@ -676,6 +676,8 @@ https://tv.nknews.org/tvdash/stream.mpd
 https://a1xs.vip/1000036
 #EXTINF:-1 tvg-id="Channel.5.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-5-uk.png" group-title="AriaPlus - United Kingdom",5
 http://81.78.159.220:7000/stream/channelid/1535545267?ticket=253FFA0EA8A84E1B760E842602DFD7899BF085A4&profile=pass
+#EXTINF:-1 tvg-id="Channel.5.+1.uk" tvg-logo="https://www.freeview.co.uk/sites/default/files/styles/255_wide/public/2025-03/5%2B1-logo.png?itok=I7ZVZAp6" group-title="AriaPlus - United Kingdom",5 +1
+http://93.96.252.173:9981/stream/channelid/566873612?ticket=A4202C757A869DCCC4150972A5D9B7EE944E6BA9&profile=pass
 #EXTINF:-1 tvg-id="5ACTION.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/5-action-uk.png" group-title="AriaPlus - United Kingdom",5ACTION
 http://31.121.110.30:4000/play/a00s/index.m3u8
 #EXTINF:-1 tvg-id="5STAR.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/5-star-uk.png" group-title="AriaPlus - United Kingdom",5STAR
@@ -698,6 +700,8 @@ https://a1xs.vip/1000050
 http://31.121.110.30:4000/play/a02t/index.m3u8
 #EXTINF:-1 tvg-id="Channel.4.hd.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-4-uk.png" group-title="AriaPlus - United Kingdom",Channel 4
 http://81.78.159.220:7000/stream/channelid/1359233332?ticket=1CCA0C60C93B95940C0414D101BE93BE85742BED&profile=pass
+#EXTINF:-1 tvg-id="Channel.4.+1.uk" tvg-logo="https://www.freeview.co.uk/sites/default/files/styles/255_wide/public/2023-05/Channel-4-%2B1-logo.png?itok=TzH4_zSc" group-title="AriaPlus - United Kingdom",Channel 4 +1
+http://93.96.252.173:9981/stream/channelid/861842813?ticket=69B565C18AF55A66CEA8AC76BC3F0DB85D6CCADA&profile=pass
 #EXTINF:-1 tvg-logo="https://i.ibb.co/NnxpHKJF/Clubland-2022-OSB.png" group-title="AriaPlus - United Kingdom",Clubland
 http://193.237.220.135:55555/Clubland%20TV
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/dazn-uk.png" group-title="AriaPlus - United Kingdom",DAZN
@@ -708,6 +712,8 @@ https://a1xs.vip/1000033
 http://31.121.110.30:4000/play/a00y/index.m3u8
 #EXTINF:-1 tvg-id="E4.hd.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/e-4-uk.png" group-title="AriaPlus - United Kingdom",E4
 http://81.78.159.220:7000/stream/channelid/265935771?ticket=FF896184BF6D9E66E480A01422D3851C06F97AD6&profile=pass
+#EXTINF:-1 tvg-id="E4.+1.uk" tvg-logo="https://www.freeview.co.uk/sites/default/files/styles/255_wide/public/2019-10/E4-%2B1-RGB-Colour-Positive-255x140.png?itok=B49Vws0Y" group-title="AriaPlus - United Kingdom",E4 +1
+http://93.96.252.173:9981/stream/channelid/125300566?ticket=E8A3A7919F8893899FC4E41CE6457D54959E985D&profile=pass
 #EXTINF:-1 tvg-id="E4.Extra.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/e-4-extra-uk.png" group-title="AriaPlus - United Kingdom",E4 Extra
 http://81.78.159.220:7000/stream/channelid/655798574?ticket=21A1979CB68EE200E9050F429C78EB80DC8AE7CD&profile=pass
 #EXTINF:-1 tvg-id="Film4.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/film-4-uk.png" group-title="AriaPlus - United Kingdom",Film4
@@ -719,15 +725,21 @@ https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-gbnewsnz-sa
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/HGTV_2010.svg/960px-HGTV_2010.svg.png" group-title="AriaPlus - United Kingdom",HGTV
 http://31.121.110.30:4000/play/a02i/index.m3u8
 #EXTINF:-1 tvg-id="ITV1.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-1-uk.png" group-title="AriaPlus - United Kingdom",ITV 1
-http://81.78.159.220:7000/stream/channelid/258981055?ticket=0B33A27E48820F6D1732E31D0DD8ED746789EBEF&profile=pass
+http://93.96.252.173:9981/stream/channelid/2083228222?ticket=002A2ACB8A8F93F9BAF1FEC733954B40D75A8707&profile=pass
+#EXTINF:-1 tvg-id="ITV1.+1.uk" tvg-logo="https://d16ia5iwuvax6y.cloudfront.net/uk-images/8a30f1fea0e06e96654d6ab9b504019d.png?k=VeeNdUjml3bSHdlZ0OXbGLy%2BmsLdYPwTV6iAxGkzq4d4s2GjEilBTb95V%2B%2B67mC7HpVZKvQ8RR1%2B6DPKlW1ipr%2FVYdvD6rziwrieG35iI8WJQYgtiqxZauMVaWOhLCgBPfRo2IY4%2F8%2FX%2Byb%2FUGqedA%3D%3D" group-title="AriaPlus - United Kingdom",ITV 1 +1
+http://93.96.252.173:9981/stream/channelid/276801829?ticket=780C940F59CC2C7A6EFED75DDF3E203D2188A69F&profile=pass
 #EXTINF:-1 tvg-id="ITV2.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-2-uk.png" group-title="AriaPlus - United Kingdom",ITV 2
-http://81.78.159.220:7000/stream/channelid/1128346749?ticket=765E158B41CCE98BFACE9D0FA97789FC36C1F28F&profile=pass
+http://93.96.252.173:9981/stream/channelid/152179818?ticket=9BDA40A86A99A1E402710AF466B2208138EDA9BE&profile=pass
+#EXTINF:-1 tvg-id="ITV2.+1.uk" tvg-logo="https://d16ia5iwuvax6y.cloudfront.net/uk-images/bc9b3a1629adee4c3a4badea1cc9d64c.png?k=VeeNdUjml3bSHdlZ0OXbGLy%2BmsLdYPwTV6iAxGkzq4dkESAHq90hV8lYkvvXijZRR0fcfkZaXixc6E3uHMZqn%2BxshsNwJEtqAdJiAPe0Mp5klL4rR0FRzila%2BBOrgMKAOX01591XTEb41jmo6lSJ5w%3D%3D" group-title="AriaPlus - United Kingdom",ITV 2 +1
+http://93.96.252.173:9981/stream/channelid/758813081?ticket=37C063C77CF581996DF7D3D1738FB54934138B0F&profile=pass
 #EXTINF:-1 tvg-id="ITV3.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-3-uk.png" group-title="AriaPlus - United Kingdom",ITV 3
-http://81.78.159.220:7000/stream/channelid/255292638?ticket=A9D0673DC1A2FCC2888F1DA68B39B972E135F2DA&profile=pass
+http://93.96.252.173:9981/stream/channelid/1834699519?ticket=6E1166758E59774863D930701CD1EA57E483B972&profile=pass
 #EXTINF:-1 tvg-id="ITV4.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-4-uk.png" group-title="AriaPlus - United Kingdom",ITV 4
-http://81.78.159.220:7000/stream/channelid/1298265077?ticket=7864B5E3D121116BB097B35ABB1F86033C9B69C9&profile=pass
+http://93.96.252.173:9981/stream/channelid/1894175488?ticket=430F0107BEC2DE557731794B32A63EC13F74AA8A&profile=pass
 #EXTINF:-1 tvg-id="ITV.Quiz.HD.uk" tvg-logo="https://i.ibb.co/TDtF2ycb/ITV-Quiz-2025.png" group-title="AriaPlus - United Kingdom",ITV Quiz
-https://theariatv.github.io/aria.mp4
+http://93.96.252.173:9981/stream/channelid/1344411517?ticket=526340F856F54BB59FD358F35B8665FFDB9ED5A8&profile=pass
+#EXTINF:-1 tvg-id="Legend.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/legend-uk.png" group-title="AriaPlus - United Kingdom",Legend
+http://93.96.252.173:9981/stream/channelid/1943326407?ticket=C91237CEF459F1C0BEC9A9994577735FA8B5927F&profile=pass
 #EXTINF:-1 tvg-id="More4.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/4-more-uk.png" group-title="AriaPlus - United Kingdom",More4
 http://81.78.159.220:7000/stream/channelid/882020808?ticket=1026E0912145DEC5DBA860459C63F6587CE9F6BD&profile=pass
 #EXTINF:-1 tvg-id="MTV.HD.uk" tvg-name="MTV FHD" tvg-logo="https://i.imgur.com/CeKvKIu.png" group-title="AriaPlus - United Kingdom",MTV
@@ -741,7 +753,15 @@ https://a1xs.vip/1000051
 #EXTINF:-1 tvg-id="Nicktoons.uk" tvg-name="Nicktoon UK" tvg-logo="https://i.imgur.com/X3eFHe6.png" group-title="AriaPlus - United Kingdom",Nicktoons
 https://a1xs.vip/100054
 #EXTINF:-1 tvg-logo="https://www.pbsamerica.co.uk/wp-content/themes/pbs-2022/img/logo.png" group-title="AriaPlus - United Kingdom",PBS America
-http://81.78.159.220:7000/stream/channelid/2038862547?ticket=8C3A3329D6896A4579A0034E1DCCA18A82A57C28&profile=pass
+http://93.96.252.173:9981/stream/channelid/257111339?ticket=F7C9A4CD7BE029ACD376C0DE874015610F5E5DAF&profile=pass
+#EXTINF:-1 tvg-id="Quest.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/quest-uk.png" group-title="AriaPlus - United Kingdom",Quest
+http://93.96.252.173:9981/stream/channelid/171047041?ticket=DC0D52B79E99A3EC4D40E32A6CF8E7D028F32F06&profile=pass
+#EXTINF:-1 tvg-id="Quest.Red.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/quest-red-uk.png" group-title="AriaPlus - United Kingdom",Quest Red
+http://93.96.252.173:9981/stream/channelid/848185034?ticket=D7213311448EDAA27C43AAB91A51AF1903DDE783&profile=pass
+#EXTINF:-1 tvg-id="Really.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/really-uk.png" group-title="AriaPlus - United Kingdom",Really
+http://93.96.252.173:9981/stream/channelid/73446556?ticket=C5F740AD175BFF96368A48C1A6C857B28DB5B86A&profile=pass
+#EXTINF:-1 tvg-id="Rewind.TV.uk" tvg-logo="https://i0.wp.com/rewindtv.uk/wp-content/uploads/2024/05/REWIND_TV_Logo_Master-01-1024x285.png?resize=1024%2C285&ssl=1" group-title="AriaPlus - United Kingdom",Rewind TV
+http://93.96.252.173:9981/stream/channelid/1237662517?ticket=66FBB5693415251E4DAC047611C775E0DDE26C54&profile=pass
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/9/9c/Sky_Arts_2020.png" group-title="AriaPlus - United Kingdom",Sky Arts
 http://31.121.110.30:4000/play/a00v/index.m3u8
 #EXTINF:-1 tvg-id="Sky.Atlantic.HD.uk" tvg-name="Sky Atlantic FHD" tvg-logo="https://pixvid.org/images/2025/02/10/sky-atlantic.png" group-title="AriaPlus - United Kingdom",Sky Atlantic
@@ -799,11 +819,11 @@ http://193.237.220.135:55555/That's%20Melody
 #EXTINF:-1 tvg-logo="https://i.ibb.co/yBP5PPHz/That-s-Summer.png" group-title="AriaPlus - United Kingdom",That's Summer
 http://193.237.220.135:55555/That's%20Summer
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/8/80/That%27s_TV_logo.png" group-title="AriaPlus - United Kingdom",That's TV 1
-http://31.121.110.30:4000/play/a019/index.m3u8
+http://93.96.252.173:9981/stream/channelid/1146531264?ticket=5EA9C57D26F00E285FD6AFD9A62BF1BFE28C2DF4&profile=pass
 #EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/a4/That%27s_TV_2.svg/revision/latest?cb=20240103151500" group-title="AriaPlus - United Kingdom",That's TV 2
-http://31.121.110.30:4000/play/a01d/index.m3u8
+http://93.96.252.173:9981/stream/channelid/399648069?ticket=D8C0969B027516C280EBBD6A71BEFF544BDD29D5&profile=pass
 #EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/bf/That%27s_TV_3.svg/revision/latest/scale-to-width-down/300?cb=20240820091117" group-title="AriaPlus - United Kingdom",That's TV 3
-http://31.121.110.30:4000/play/a02k/index.m3u8
+http://93.96.252.173:9981/stream/channelid/1181926528?ticket=8E99C615CACCA01559EE8EBE30A53CDAEB0DD9CB&profile=pass
 #EXTINF:-1 tvg-id="TNT.Sports.1.HD.uk" tvg-logo="https://i.imgur.com/1EYnddH.png" group-title="AriaPlus - United Kingdom",TNT Sports 1
 https://a1xs.vip/2000021
 #EXTINF:-1 tvg-id="TNT.Sports.2.HD.uk" tvg-logo="https://i.imgur.com/YtGYRIB.png" group-title="AriaPlus - United Kingdom",TNT Sports 2
@@ -814,13 +834,17 @@ https://a1xs.vip/2000023
 https://a1xs.vip/2000024
 #EXTINF:-1 tvg-id="TNT.Sports.Ultimate.uk" tvg-logo="https://i.ibb.co/QqGdJnM/TNTSprts-U.png" group-title="AriaPlus - United Kingdom",TNT Sports Ultimate
 https://a1xs.vip/2000031
+#EXTINF:-1 tvg-id="True.Crime.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/true-crime-uk.png" group-title="AriaPlus - United Kingdom",True Crime
+http://93.96.252.173:9981/stream/channelid/1559827875?ticket=E0793A532AD468782868212E7E5169BE69DD5224&profile=pass
 #EXTINF:-1 tvg-id="U&Dave.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/u-and-dave-uk.png" group-title="AriaPlus - United Kingdom",U&Dave
 http://81.78.159.220:7000/stream/channelid/1446017964?ticket=3FA6D2B62FDC4BA3A6DE7F84422741DD979AB7A2&profile=pass
 #EXTINF:-1 tvg-id="U&Drama.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/u-and-drama-uk.png" group-title="AriaPlus - United Kingdom",U&Drama
 http://81.78.159.220:7000/stream/channelid/965926370?ticket=2F47419ED328C273804AB26D3637D288AAB3367C&profile=pass
+#EXTINF:-1 tvg-id="U&Eden.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/u-and-eden-uk.png" group-title="AriaPlus - United Kingdom",U&Eden
+http://93.96.252.173:9981/stream/channelid/1399298804?ticket=E81227678EAC36AD96D24AAD051FBEBB8012EC23&profile=pass
 #EXTINF:-1 tvg-id="U&W.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/u-and-w-uk.png" group-title="AriaPlus - United Kingdom",U&W
 http://81.78.159.220:7000/stream/channelid/2091571848?ticket=E5EF0DE82D4CBA80372FFD591F49CA365384C6A8&profile=pass
-#EXTINF:-1 tvg-id="U&Yesterday.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/u-andyesterday-uk.png" group-title="AriaPlus - United Kingdom",U&Yesterday
+#EXTINF:-1 tvg-id="U&Yesterday.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/u-and-yesterday-uk.png" group-title="AriaPlus - United Kingdom",U&Yesterday
 http://81.78.159.220:7000/stream/channelid/848211560?ticket=C9B6BA61D2588D9F28D800F9BFB2E65AA1E8B1FB&profile=pass
 
 #EXTGRP:AriaPlus - United States
@@ -8830,237 +8854,237 @@ https://jmp2.uk/stvp-US270000298
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YjBlOGIzMjEzNzg1LTMyYzktNDA5NC00MTIyLTgxOGYyODU0/master.m3u8?md5=yRi3pYp_yWz0MOtJQTukkA&expires=1755673756&t=1755630556
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YjBlOGIzMjEzNzg1LTMyYzktNDA5NC00MTIyLTgxOGYyODU0/master.m3u8?md5=OeYc15LfZxXpR2y2yIUl8A&expires=1755677355&t=1755634155
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/996eae9789b447223932e21ea7048fbc-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",Baltimore Orioles vs. Boston Red Sox
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MTM3YjUwMzQxMDZmLTZiZDktY2E4NC1lNzZkLWNiNmNlOGUw/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MTM3YjUwMzQxMDZmLTZiZDktY2E4NC1lNzZkLWNiNmNlOGUw/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/74e6cf58a7962d5f5ef1ab0e543862aa-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",Chicago White Sox vs. Atlanta Braves
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YWMxN2M4YWMzNTVjLWY0NjgtMTIwNC00MmY5LWZjMzJhNGU4/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YWMxN2M4YWMzNTVjLWY0NjgtMTIwNC00MmY5LWZjMzJhNGU4/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/e7feb66b737309fea03a37583ad47c69-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",Cincinnati Reds vs. Los Angeles Angels
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1OWU2MzFkOTA2ZDFiLTQ4ZTktYTQyNC1lMWNiLWU5YzZhODVm/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1OWU2MzFkOTA2ZDFiLTQ4ZTktYTQyNC1lMWNiLWU5YzZhODVm/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/e7b4626a26c82c7071f3a994352eca57-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",Cleveland Guardians vs. Arizona Diamondbacks
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YWVhYWY3YmY4OGUzLWM0NmItZWUzNC1hZGE1LTU2NDk5ZGIy/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YWVhYWY3YmY4OGUzLWM0NmItZWUzNC1hZGE1LTU2NDk5ZGIy/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/9b686ef8080daf87924801ed9533a68c-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",Houston Astros vs. Detroit Tigers
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YWJmNWYzYjhjNjY2LWE1OGItZmI2NC1iNTUwLTBkNDgwNDg4/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YWJmNWYzYjhjNjY2LWE1OGItZmI2NC1iNTUwLTBkNDgwNDg4/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/ab186653ad09460a812420a08e2a75ab-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",Los Angeles Dodgers vs. Colorado Rockies
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NjkxMmNmNWU0OGZmLTZlNDgtZTk0NC05ZjE1LTcwNTc0MTI4/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NjkxMmNmNWU0OGZmLTZlNDgtZTk0NC05ZjE1LTcwNTc0MTI4/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/bd49708cc0f9b20e8dee3b15cfcf109b-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",Milwaukee Brewers vs. Chicago Cubs
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZmY3MTBkYWJlMmMyLTI4NmItMzdlNC1iNjQ2LWM1Nzc3ZTRl/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZmY3MTBkYWJlMmMyLTI4NmItMzdlNC1iNjQ2LWM1Nzc3ZTRl/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/bd49708cc0f9b20e8dee3b15cfcf109b-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",Milwaukee Brewers vs. Chicago Cubs
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZmY3MTBkYWJlMmMyLTI4NmItMzdlNC1iNjQ2LWM1Nzc3ZTRl/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZmY3MTBkYWJlMmMyLTI4NmItMzdlNC1iNjQ2LWM1Nzc3ZTRl/master.m3u8?md5=OeYc15LfZxXpR2y2yIUl8A&expires=1755677355&t=1755634155
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/311ec2fb29ffff1ef9e647dab3146289-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",New York Mets vs. Washington Nationals
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NDFhNjk4YjE5YzA3LTgyMmEtYmVjNC04N2RlLTIyYWI2MDlm/master.m3u8?md5=yRi3pYp_yWz0MOtJQTukkA&expires=1755673756&t=1755630556
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NDFhNjk4YjE5YzA3LTgyMmEtYmVjNC04N2RlLTIyYWI2MDlm/master.m3u8?md5=OeYc15LfZxXpR2y2yIUl8A&expires=1755677355&t=1755634155
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/4ae3853d2fa12955be51bf0ffbcb378a-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",New York Yankees vs. Tampa Bay Rays
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZjQ1MmEzYzNhMzIwLThiN2ItMGYyNC1mODEyLTEzNzI4YmQz/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZjQ1MmEzYzNhMzIwLThiN2ItMGYyNC1mODEyLTEzNzI4YmQz/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/d58251416fb2530307263c32b8f86e37-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",San Francisco Giants vs. San Diego Padres
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1OGRiM2QyY2Q3MzU5LWUyNWEtYjY3NC1hYWIwLWEzMDM1NDU5/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1OGRiM2QyY2Q3MzU5LWUyNWEtYjY3NC1hYWIwLWEzMDM1NDU5/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/b3a095f00824f28395152d42e05e69cf-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",Seattle Mariners vs. Philadelphia Phillies
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NzAyZDA2OTVjOTc2LTgwNTktN2U1NC04Njg3LTY2YjkzYWIw/master.m3u8?md5=yRi3pYp_yWz0MOtJQTukkA&expires=1755673756&t=1755630556
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NzAyZDA2OTVjOTc2LTgwNTktN2U1NC04Njg3LTY2YjkzYWIw/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/0e465e7d3124e105d4d7a58ee251a945-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",St. Louis Cardinals vs. Miami Marlins
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YjVmMDI3YjEwMzljLWQzNjgtZGI5NC1hZjZmLTBiOGNmODQ0/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YjVmMDI3YjEwMzljLWQzNjgtZGI5NC1hZjZmLTBiOGNmODQ0/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/f0c712e6345a1a95a1e0b0f67f4dd3a8-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",Texas Rangers vs. Kansas City Royals
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MGY0YTI5ZjVkMGRiLTkyNTktODgyNC03OTQ3LTBiOWIzYzRm/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MGY0YTI5ZjVkMGRiLTkyNTktODgyNC03OTQ3LTBiOWIzYzRm/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/fe4f0dc9792fd7cc2229a1892d1a0287-thumbnail.jpg" tvg-id="MLB.Baseball.Dummy.us" group-title="PPVLand - Baseball Action HD",Toronto Blue Jays vs. Pittsburgh Pirates
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1OGE0ODRhOWFhNTdhLTllYjktNTA4NC0zZTNiLTgyZGI3MGQ3/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1OGE0ODRhOWFhNTdhLTllYjktNTA4NC0zZTNiLTgyZGI3MGQ3/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 
 #EXTGRP:PPVLand - Basketball Hub
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/52e8008fc83eba71ac47bf3c3baf1994-thumbnail.jpg" tvg-id="Basketball.Dummy.us" group-title="PPVLand - Basketball Hub",Dream at Aces
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MTI1NjViMTBlZDU3LTYzMmItZWIxNC1hYTRmLTA3MmE4Nzhh/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MTI1NjViMTBlZDU3LTYzMmItZWIxNC1hYTRmLTA3MmE4Nzhh/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/978d61dfa0fd9e1c3814291da44a62ed-thumbnail.jpg" tvg-id="Basketball.Dummy.us" group-title="PPVLand - Basketball Hub",Lynx at Liberty
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MGFhODhkOTAwM2Q3LTIwYWEtNmE2NC01ZWU0LWRmMDMxMjgw/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MGFhODhkOTAwM2Q3LTIwYWEtNmE2NC01ZWU0LWRmMDMxMjgw/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/b153a0c40cd78da7a48a3ba6125c6bcf-thumbnail.jpg" tvg-id="Basketball.Dummy.us" group-title="PPVLand - Basketball Hub",Mercury at Valkyries
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YzVkMGEyYmZiODBkLWQwYmItZGE1NC1kNjhmLTMxZDkyNjkz/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YzVkMGEyYmZiODBkLWQwYmItZGE1NC1kNjhmLTMxZDkyNjkz/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/962b6b1436cb4ac689dd830ac08529f6-thumbnail.jpg" tvg-id="Basketball.Dummy.us" group-title="PPVLand - Basketball Hub",Storm at Sky
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MDEzNjFmNjFkYjBiLTA5NmItNWJkNC0wMDczLTJlNTZjOWQ5/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MDEzNjFmNjFkYjBiLTA5NmItNWJkNC0wMDczLTJlNTZjOWQ5/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/80fb76846d935a49f9adb92b847e8055-thumbnail.jpg" tvg-id="Basketball.Dummy.us" group-title="PPVLand - Basketball Hub",Sun at Mystics
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ODJmYjIwOWQ2OWI1LTgzYWItODk2NC0zZmNjLTExYTdjOWM3/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ODJmYjIwOWQ2OWI1LTgzYWItODk2NC0zZmNjLTExYTdjOWM3/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 
 #EXTGRP:PPVLand - Global Football Streams
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/109f714cfcfebc0e73e4d88a12654cc9-thumbnail.jpg" tvg-id="Soccer.Dummy.us" group-title="PPVLand - Global Football Streams",Arsenal vs. Leeds United
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MzdlZGQ4ODRkMzg0LTQ3YTgtNjkwNC02YzU5LWEwMjRkMzc0/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MzdlZGQ4ODRkMzg0LTQ3YTgtNjkwNC02YzU5LWEwMjRkMzc0/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/6dc1289c799cc5f30344ac9919c3e3f3-thumbnail.jpg" tvg-id="Soccer.Dummy.us" group-title="PPVLand - Global Football Streams",Bournemouth vs. Wolverhampton Wanderers
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MGQ3NTBiNjE0NGY0LTI3NDgtMTQzNC0yNzc4LTk1OGNlMmNi/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MGQ3NTBiNjE0NGY0LTI3NDgtMTQzNC0yNzc4LTk1OGNlMmNi/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/37eb55c046c59f4d1dd1980088380b9e-thumbnail.jpg" tvg-id="Soccer.Dummy.us" group-title="PPVLand - Global Football Streams",Brentford vs. Aston Villa
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NGFlMjhjNWJiNTM5LWFhNWEtZmM5NC1jNGYxLTY1YmM0ZDA2/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NGFlMjhjNWJiNTM5LWFhNWEtZmM5NC1jNGYxLTY1YmM0ZDA2/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/ddb6c75c0c186eced1c9f9f04dbb9bcc-thumbnail.jpg" tvg-id="Soccer.Dummy.us" group-title="PPVLand - Global Football Streams",Burnley vs. Sunderland
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZWVkZmY2Zjc1MTNkLTQ1Y2ItNTY0NC05Mzg0LTA5ZGJjYTZh/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZWVkZmY2Zjc1MTNkLTQ1Y2ItNTY0NC05Mzg0LTA5ZGJjYTZh/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/7cd9c5e70f5927123536086873e87ad2-thumbnail.jpg" tvg-id="Soccer.Dummy.us" group-title="PPVLand - Global Football Streams",Crystal Palace vs. Nottingham Forest
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NGIxYjhmOTcyMThmLTE3YjktNjc4NC1mZGE5LTU5MDc5MjRk/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NGIxYjhmOTcyMThmLTE3YjktNjc4NC1mZGE5LTU5MDc5MjRk/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/0a39ece0e7156dd7b10c86a9ed3e2fc9-thumbnail.jpg" tvg-id="Soccer.Dummy.us" group-title="PPVLand - Global Football Streams",Everton vs. Brighton and Hove Albion
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NDE0ZDczMThiMzRkLTRjMmEtZGRhNC1mZTViLWNhYzAxYzg4/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NDE0ZDczMThiMzRkLTRjMmEtZGRhNC1mZTViLWNhYzAxYzg4/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/f26e85ddb6050f437647a4261639cfba-thumbnail.jpg" tvg-id="Soccer.Dummy.us" group-title="PPVLand - Global Football Streams",Fulham vs. Manchester United
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NTY3OTE2OThjMGY4LWM5MmItYjE1NC04YmU5LTk3NTRmNjQ3/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NTY3OTE2OThjMGY4LWM5MmItYjE1NC04YmU5LTk3NTRmNjQ3/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/06fd3aa894bcdc7ac13e39bdf6906c76-thumbnail.jpg" tvg-id="Soccer.Dummy.us" group-title="PPVLand - Global Football Streams",Manchester City vs. Tottenham Hotspur
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ODc2YWJiNjdjOTAxLTg1NjgtNzUzNC1mZmFjLTY4ZTNkNjlj/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ODc2YWJiNjdjOTAxLTg1NjgtNzUzNC1mZmFjLTY4ZTNkNjlj/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/38265c76fd4126cac14e903357af2db1-thumbnail.jpg" tvg-id="Soccer.Dummy.us" group-title="PPVLand - Global Football Streams",Newcastle United vs. Liverpool
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZWU1MTAwNzRkYjM0LWJlM2EtYWRiNC1kZmUxLWEzODBhYTM0/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZWU1MTAwNzRkYjM0LWJlM2EtYWRiNC1kZmUxLWEzODBhYTM0/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/e9ed93f8aac8ff2cb860af94a4920b47-thumbnail.jpg" tvg-id="Soccer.Dummy.us" group-title="PPVLand - Global Football Streams",Real Madrid vs Osasuna
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MmMzMzUyZjI4YzJiLWRmNWEtM2Y4NC05M2FhLThmNmNjMjJm/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MmMzMzUyZjI4YzJiLWRmNWEtM2Y4NC05M2FhLThmNmNjMjJm/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/3aed386e03eaa50a41a3d8b100a67d1c-thumbnail.jpg" tvg-id="Soccer.Dummy.us" group-title="PPVLand - Global Football Streams",West Ham United vs. Chelsea
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZTU3ODA2MWFjMzRiLWY4Y2EtYzYxNC05Y2I5LWViODY3NzFi/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZTU3ODA2MWFjMzRiLWY4Y2EtYzYxNC05Y2I5LWViODY3NzFi/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 
 #EXTGRP:PPVLand - Live Channels 24/7
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/7b1146f3a2bd19175749404e676d5127-thumbnail.jpg" tvg-id="24.7.Dummy.us" group-title="PPVLand - Live Channels 24/7",(North) Korean Central Television
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MTM1MGFmMDIzODI3LTk3Y2EtMDZhNC0yNTA3LWY0M2Q4NmE0/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MTM1MGFmMDIzODI3LTk3Y2EtMDZhNC0yNTA3LWY0M2Q4NmE0/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/213d77252211e1926309f43b38263a4f-thumbnail.jpg" tvg-id="24.7.Dummy.us" group-title="PPVLand - Live Channels 24/7",24/7 COWS
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YzlmNWM5ZGQ1ODJmLTcxOTgtNzBkNC1hYzM5LWQyOWM3MjAz/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YzlmNWM5ZGQ1ODJmLTcxOTgtNzBkNC1hYzM5LWQyOWM3MjAz/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://thumbs.poocloud.in/familyguy/preview.jpg" tvg-id="24.7.Dummy.us" group-title="PPVLand - Live Channels 24/7",24/7 Family​​‌‌‌‌​​‌‌‌‌‌​​‌‌​‌‌​​‌‌​‌‌‌‌​‌​ Guy
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YTA5ZTU3MjFhNTI0LWRkZTktZTRlNC1mMzU4LTQwMWI0YjJk/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YTA5ZTU3MjFhNTI0LWRkZTktZTRlNC1mMzU4LTQwMWI0YjJk/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://thumbs.poocloud.in/southpark/preview.jpg" tvg-id="24.7.Dummy.us" group-title="PPVLand - Live Channels 24/7",24/7 South Park
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZGEyNDNkZWMyNzFjLWU2OWItNzFlNC00NWU5LTUyODY0MWIz/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZGEyNDNkZWMyNzFjLWU2OWItNzFlNC00NWU5LTUyODY0MWIz/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://thumbs.poocloud.in/thesimpsons/preview.jpg" tvg-id="24.7.Dummy.us" group-title="PPVLand - Live Channels 24/7",24/7 The Simpsons
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MGQzNzI5MTE0YjQwLTVmYmEtYmE3NC1kOThlLWY2MmU4NGI4/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MGQzNzI5MTE0YjQwLTVmYmEtYmE3NC1kOThlLWY2MmU4NGI4/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/8762257a0848675867f3588dbd8cf58b-thumbnail.jpg" tvg-id="24.7.Dummy.us" group-title="PPVLand - Live Channels 24/7",Comedy Central
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZjQzZmQzMDdhYTMwLWRiZjktNjU3NC1kMmY4LWE0NjVmZjRh/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZjQzZmQzMDdhYTMwLWRiZjktNjU3NC1kMmY4LWE0NjVmZjRh/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 
 #EXTGRP:PPVLand - MMA & Fight Nights
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/738dc34c074c6b89deec435936d24d8c-thumbnail.jpg" tvg-id="PPV.EVENTS.Dummy.us" group-title="PPVLand - MMA & Fight Nights",Dana White's Contender Series
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZmRhNGZkMDk1YmVkLWU3NTgtZDBmNC00MzkwLTc4NDk3OGJl/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZmRhNGZkMDk1YmVkLWU3NTgtZDBmNC00MzkwLTc4NDk3OGJl/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/02f834a6bfd1ca91505b741954865592-thumbnail.jpg" tvg-id="PPV.EVENTS.Dummy.us" group-title="PPVLand - MMA & Fight Nights",GLORY 103
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZGZjMjUxZWZkZTUxLWUzOGEtMTcyNC05N2E1LTg0NmQzNmMz/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZGZjMjUxZWZkZTUxLWUzOGEtMTcyNC05N2E1LTg0NmQzNmMz/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 
 #EXTGRP:PPVLand - Wrestling Events
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/6e29b1bb679dd5133c85bbaadc2c4b13-thumbnail.jpg" tvg-id="PPV.EVENTS.Dummy.us" group-title="PPVLand - Wrestling Events",AEW: Saturday Night Collision
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/b406ff9100d91b9210600260350246ff-thumbnail.jpg" tvg-id="PPV.EVENTS.Dummy.us" group-title="PPVLand - Wrestling Events",AEW: Wednesday Night Dynamite
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/78f581ee61589a76f6bcdeb095f95c12-thumbnail.jpg" tvg-id="PPV.EVENTS.Dummy.us" group-title="PPVLand - Wrestling Events",TNA: Impact
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/ec7810b68fc39115ce3510bcf9687a63-thumbnail.jpg" tvg-id="PPV.EVENTS.Dummy.us" group-title="PPVLand - Wrestling Events",WWE: Friday Night Smackdown
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 #EXTINF:-1 tvg-logo="https://ppv.to/assets/thumb/ef5595e08561ede45c52b36a0b62af76-thumbnail.jpg" tvg-id="PPV.EVENTS.Dummy.us" group-title="PPVLand - Wrestling Events",WWE: NXT
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=F1WnATpE1KK2DZVdKqs4EA&expires=1755673757&t=1755630557
+https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1Y2MyYTFhM2RmNmJjLTk1MGItZjdiNC03YTQ1LTA3ZTdkMmYy/master.m3u8?md5=2n9cPtnW6g39g5t6MBa_ww&expires=1755677356&t=1755634156
 
 #EXTGRP:RokuTV
 #EXTINF:-1  tvg-name="ABC7 Sarasota" tvg-id="50b18dea9c5c51568c1343fcd3d88ec9" tvg-logo="https://images.sr.roku.com/idType/roku/context/trc/id/50b18dea9c5c51568c1343fcd3d88ec9/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1746557592232_WWSB_EPG_Hud_LogoWWSB_HUD_logo_260x147_Centered.png" tvg-chno="4162" group-title="RokuTV",ABC7 Sarasota
@@ -11541,82 +11565,92 @@ https://jmp2.uk/stvp-USBC2400019EF
 https://jmp2.uk/stvp-US270000298
 
 #EXTGRP:StreamEast - Baseball
+#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",Baltimore Orioles vs. Boston Red Sox Live Stream
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+#EXTVLCOPT:http-origin=https://streamscenter.online
+#EXTVLCOPT:http-referrer=https://streamscenter.online/
+https://edgestreams.pro/hls/jkzahzadach20.m3u8?st=nwiawq8MKdYeNVGjlIeX0QXtPNUNOihbMpWOEvekZdY&e=1755645937
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",Chicago White Sox vs. Atlanta Braves Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://qyo1.dbcast.live/318lBNCV-TDCeLrTCQHxiQ/1755659855/3137322e3231322e3136352e3730/ff406/playlist.m3u8
+https://qyo2.dbcast.live/WKjObBwXEsRiQxLZPsPMEA/1755663808/34302e36352e35382e313336/ff406/playlist.m3u8
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",Cincinnati Reds vs. Los Angeles Angels Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://qyo2.dbcast.live/vSUZiZ8qSPV0m0xjqVOWCA/1755659801/3137322e3231322e3136352e3730/ff423/playlist.m3u8
+https://qyo1.dbcast.live/2fDQKzzMOFlOIJvxyvsGdg/1755663820/34302e36352e35382e313336/ff423/playlist.m3u8
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",Cleveland Guardians vs. Arizona Diamondbacks Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://qyo2.dbcast.live/iAk1yE4isijMjgWTEgwsRw/1755659868/3137322e3231322e3136352e3730/ff426/playlist.m3u8
+https://qyo1.dbcast.live/fXSzs_xn55CQgrLXqfO5lQ/1755663926/34302e36352e35382e313336/ff426/playlist.m3u8
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",Houston Astros vs. Detroit Tigers Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/iueyzbvezch16.m3u8?st=d4mr8UgL7sA8lR9cfKBWwxC66qL1DpAeR59eRqo3rFQ&e=1755641824
+https://mainstreams.pro/hls/iueyzbvezch16.m3u8?st=cjmyttZq7KfMMJrBg9QK1yX7dJVqPUjhGSLOu2ud9zM&e=1755645841
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",Los Angeles Dodgers vs. Colorado Rockies Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/fskjanach24.m3u8?st=lHZ9cVBwtqTyS7IydUZCD1m3SHwQJBOeLeku51mW2lY&e=1755641925
+https://mainstreams.pro/hls/fskjanach24.m3u8?st=zhGwbi9P00bGKXvAwXJU4sF7pMNNMs6qFhyFLoklaNg&e=1755645850
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",Milwaukee Brewers vs. Chicago Cubs Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/jnzkdzjfanch23.m3u8?st=Fi4I--fLDvO8RPicsDIDUDLBdCWN-pzsc_qyx-TFmwk&e=1755641848
+https://edgestreams.pro/hls/jnzkdzjfanch23.m3u8?st=g9O0REmlfAOhCsaGI4eJMS7xGOpfolTe-k6OAAk-0Jk&e=1755645824
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",Milwaukee Brewers vs. Chicago Cubs Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/jnzkdzjfanch23.m3u8?st=OtodH8oYj3oJkCL-C8bjvYbDkkpnJm98CF-Sl_EMgts&e=1755641837
+https://edgestreams.pro/hls/jnzkdzjfanch23.m3u8?st=nNBAH2c-6RS0EpNyWk_j6zqF4lYb5XzoqtmUTfXRFao&e=1755645921
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",San Francisco Giants vs. San Diego Padres Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/dzjhkfazbka26.m3u8?st=5EYdzEXqO29UVQi5wtKzJYxD3vZ3VU7GnpwXvcRniRo&e=1755641932
+https://mainstreams.pro/hls/dzjhkfazbka26.m3u8?st=pxYcGkmX1BdQj0v1axlj0aiYs-1fdUDUhvv9iEIajXg&e=1755645878
+#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",Seattle Mariners vs. Philadelphia Phillies Live Stream
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+#EXTVLCOPT:http-origin=https://streamscenter.online
+#EXTVLCOPT:http-referrer=https://streamscenter.online/
+https://mainstreams.pro/hls/bzagLHzach19.m3u8?st=fIS7qfQBOaBVw_HSstLLSjv5JXJkixeo27UbZkRTzuc&e=1755645862
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",St. Louis Cardinals vs. Miami Marlins Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/Czajafjihafch18.m3u8?st=PgVSCA1ykQAbsHhQWQJl9J6hDn81bOsogKC9cSerIqo&e=1755641816
+https://edgestreams.pro/hls/Czajafjihafch18.m3u8?st=_ff_q0Os6Zk0Of_9tbFetSYtpj2_e1JI23J2i9GWn8w&e=1755645909
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",Texas Rangers vs. Kansas City Royals Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/ijfnakfidch22.m3u8?st=PTjNCu04QaaEnX2D9DSjyYuY9s3oUsnN4Vfp9GKWCYs&e=1755641920
+https://mainstreams.pro/hls/ijfnakfidch22.m3u8?st=ManJCOTixFP5xVTV91Cipqk9nGpFz56WyMtmxoSl22k&e=1755645830
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png" group-title="StreamEast - Baseball",Toronto Blue Jays vs. Pittsburgh Pirates Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/ihfazugfyjcazich17.m3u8?st=DDJQkFJCw9bOereGR2vYwHbitIcidlk8MYEp6BHiWos&e=1755641859
+https://edgestreams.pro/hls/ihfazugfyjcazich17.m3u8?st=SgvcP0NqfCOnSuBrhaCI9lLi2DcJJ22zKblPN5Jy1bc&e=1755645915
 
 #EXTGRP:StreamEast - F1
 #EXTINF:-1 tvg-id="Racing.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/F1.png" group-title="StreamEast - F1",F1 Dutch GP Free Practice 1 Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/zeuryuegn48.m3u8?st=3L5aDQ3qC_UVUQkYDxKwz-AmxE7QpYsoVNm22q_D2So&e=1755641909
+https://mainstreams.pro/hls/zeuryuegn48.m3u8?st=C2LTouW6lDHMJSJ4fhuSGwJ5qs_9a943enojMUQJXRc&e=1755645813
 
 #EXTGRP:StreamEast - MMA
 #EXTINF:-1 tvg-id="UFC.Fight.Pass.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/MMA.png" group-title="StreamEast - MMA",UFC Fight Night: Walker vs. Zhang Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://nextcast.click/hls/HDGQ1/index.m3u8?st=fMsKnmuqTNr66TX7Xo4C9Q&e=1755641889
+https://nextcast.click/hls/HDGQ1/index.m3u8?st=X78WIbEpp2CZ96Two8Wysg&e=1755645858
 
 #EXTGRP:StreamEast - Soccer
 #EXTINF:-1 tvg-id="Soccer.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Football2.png" group-title="StreamEast - Soccer",Real Madrid vs. Osasuna Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://mainstreams.pro/hls/24SDAZFcsqnj24.m3u8?st=Yz8nIFPrRIggZCtk0gml2kcXHhE8sJ2Bj4TZEV5p0J4&e=1755641844
+https://mainstreams.pro/hls/24SDAZFcsqnj24.m3u8?st=9saEGd8hRa1boOwc66F8MZAxTYT7sGh6m7dBg7rdwSU&e=1755645886
 
 #EXTGRP:TheTVApp
 #EXTINF:-1  tvg-name="A&E HD" tvg-id="ae-us-eastern-feed" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/a-and-e-us.png?raw=true" group-title="TheTVApp",A&E HD
