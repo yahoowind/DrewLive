@@ -15,7 +15,7 @@ CATEGORY_LOGOS = {
     "StreamEast - WWE": "http://drewlive24.duckdns.org:9000/Logos/WWE.png",
     "StreamEast - Golf": "http://drewlive24.duckdns.org:9000/Logos/Golf.png",
     "StreamEast - Am. Football": "http://drewlive24.duckdns.org:9000/Logos/NFL4.png",
-    "StreamEast - College Football": "http://drewlive24.duckdns.org:9000/Logos/CFB.png",
+    "StreamEast - College Football": "http://drewlive24.duckdns.org:9000/Logos/CFB3.png",
     "StreamEast - Baseball": "http://drewlive24.duckdns.org:9000/Logos/MLB.png",
     "StreamEast - Basketball Hub": "http://drewlive24.duckdns.org:9000/Logos/Basketball5.png",
     "StreamEast - Hockey": "http://drewlive24.duckdns.org:9000/Logos/Hockey.png",
