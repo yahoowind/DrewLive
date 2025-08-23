@@ -15,6 +15,7 @@ CATEGORY_LOGOS = {
     "StreamEast - WWE": "http://drewlive24.duckdns.org:9000/Logos/WWE.png",
     "StreamEast - Golf": "http://drewlive24.duckdns.org:9000/Logos/Golf.png",
     "StreamEast - Am. Football": "http://drewlive24.duckdns.org:9000/Logos/NFL4.png",
+    "StreamEast - College Football": "http://drewlive24.duckdns.org:9000/Logos/CFB.png",
     "StreamEast - Baseball": "http://drewlive24.duckdns.org:9000/Logos/MLB.png",
     "StreamEast - Basketball Hub": "http://drewlive24.duckdns.org:9000/Logos/Basketball5.png",
     "StreamEast - Hockey": "http://drewlive24.duckdns.org:9000/Logos/Hockey.png",
@@ -30,6 +31,7 @@ CATEGORY_TVG_IDS = {
     "StreamEast - WWE": "PPV.EVENTS.Dummy.us",
     "StreamEast - Golf": "Golf.Dummy.us",
     "StreamEast - Am. Football": "NFL.Dummy.us",
+    "StreamEast - College Football": "NCAA.Football.Dummy.us",
     "StreamEast - Baseball": "MLB.Baseball.Dummy.us",
     "StreamEast - Basketball Hub": "Basketball.Dummy.us",
     "StreamEast - Hockey": "NHL.Hockey.Dummy.us",
@@ -41,7 +43,8 @@ def categorize_stream(url, title=""):
     lowered = (url + " " + title).lower()
     if "wnba" in lowered: return "StreamEast - WNBA"
     if "nba" in lowered or "basketball" in lowered: return "StreamEast - Basketball Hub"
-    if "nfl" in lowered or "football" in lowered: return "StreamEast - Am. Football"
+    if "nfl" in lowered or "pro football" in lowered: return "StreamEast - Am. Football"
+    if "cfb" in lowered or "college" in lowered or "ncaa" in lowered: return "StreamEast - College Football"
     if "mlb" in lowered or "baseball" in lowered: return "StreamEast - Baseball"
     if "ufc" in lowered or "mma" in lowered: return "StreamEast - MMA"
     if "wwe" in lowered or "wrestling" in lowered: return "StreamEast - WWE"
@@ -76,7 +79,8 @@ async def get_event_links(page):
         .map(a => a.href)
         .filter(h => h.includes('/nba') || h.includes('/mlb') || h.includes('/ufc') ||
                      h.includes('/f1') || h.includes('/soccer') || h.includes('/wnba') ||
-                     h.includes('/boxing') || h.includes('/wwe') || h.includes('/nfl'))""")
+                     h.includes('/boxing') || h.includes('/wwe') || h.includes('/nfl') ||
+                     h.includes('/cfb') || h.includes('/college') || h.includes('/ncaa'))""")
     return list(set(links))
 
 
