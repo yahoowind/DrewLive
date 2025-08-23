@@ -150,7 +150,7 @@ def replace_urls_in_tv_section(lines, tv_urls):
     return result
 
 def append_new_streams(lines, new_urls_with_groups):
-    # Delete existing MLB, PPV, and NFL entries first
+    # Delete existing MLB, PPV, NFL, and NCAAF entries first
     cleaned_lines = []
     skip_next = False
     for line in lines:
@@ -160,7 +160,8 @@ def append_new_streams(lines, new_urls_with_groups):
         if line.startswith("#EXTINF:-1") and (
             "group-title=\"MLB\"" in line or
             "group-title=\"PPV\"" in line or
-            "group-title=\"NFL\"" in line
+            "group-title=\"NFL\"" in line or
+            "group-title=\"NCAAF\"" in line
         ):
             skip_next = True
             continue
@@ -203,6 +204,8 @@ def append_new_streams(lines, new_urls_with_groups):
             ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
         elif group == "NFL":
             ext = f'#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL.png" group-title="NFL",{title}'
+        elif group == "NCAAF":
+            ext = f'#EXTINF:-1 tvg-id="NCAA.Football.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/CFB.png" group-title="NCAAF",{title}'
         else:
             ext = f'#EXTINF:-1 group-title="{group}",{title}'
 
@@ -232,7 +235,7 @@ async def main():
 
     updated_lines = replace_urls_in_tv_section(lines, tv_new_urls)
 
-    print("\n📦 Scraping all other sections (NBA, NFL, Events, MLB, PPV, etc)...")
+    print("\n📦 Scraping all other sections (NBA, NFL, NCAAF, Events, MLB, PPV, etc)...")
     append_new_urls = await scrape_all_append_sections()
     if append_new_urls:
         updated_lines = append_new_streams(updated_lines, append_new_urls)
@@ -240,7 +243,7 @@ async def main():
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} updated: Clean top, no duplicates, proper MLB, NFL, and PPV logos.")
+    print(f"\n✅ {M3U8_FILE} updated: Clean top, no duplicates, proper MLB, NFL, NCAAF, and PPV logos.")
 
 if __name__ == "__main__":
     asyncio.run(main())
