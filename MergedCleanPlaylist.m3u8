@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
-# Last forced update: 2025-08-23T10:08:44.036043Z
+# Last forced update: 2025-08-23T10:30:13.484909Z
 
 #EXTGRP:24/7 by Mystique
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
@@ -3324,14 +3324,10 @@ https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NjE4YmE5OWMz
 https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YTBjZDMyNzNhZTdhLWVkZjktNDQ3NC1mZGU5LTZmOTI1NGIx/master.m3u8
 #EXTINF:-1 tvg-id="Racing.TV.HD.uk" tvg-logo="https://upload.wikimedia.org/wikipedia/en/2/2b/Racing_TV_logo.png" group-title="FSTV",Racing TV UK
 https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YzA3MTQyNDY5ODg0LWY1Y2EtY2M1NC0wOTc0LTA3NzU4MTk0/master.m3u8
-#EXTINF:-1 tvg-logo="https://play-lh.googleusercontent.com/yGC9brvzJBdkj8D2iyr1FmtE2FOM4myhn83rWR1DsJR4jXBwpQSHa7OkS9Q1_XVqQGl-" group-title="FSTV",Rallytv
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/variant/VE1AO1NTbu8mbv12LxEWM21ycrNWYyR3L5Y2YwQGOyIDM1MDOtETZhJWL3YmY00yMwEjYtQGMwYjZjFDO/master.m3u8
 #EXTINF:-1 tvg-id="SEC.Network.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/SEC_Network_logo.svg/1200px-SEC_Network_logo.svg.png" group-title="FSTV",SEC Network
 https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1ZTRhYTk4ODliNWFmLTFmNDgtY2U4NC1hYTUxLTA1Nzg4ZDU3/master.m3u8
 #EXTINF:-1 tvg-id="Sky.Cinema.Comedy.it" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Sky_Cinema_Comedy_-_Logo_2016.svg/2560px-Sky_Cinema_Comedy_-_Logo_2016.svg.png" group-title="FSTV",Sky Cinema Comedy UK
 https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1MmRkNjU2YTRjODE2LTBhN2EtYzk0NC05OTMzLWZhZDQyZTI5/master.m3u8
-#EXTINF:-1 tvg-id="Local.Programming.us" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLlsGahjoTNHKbzyFUQHjq-7_gFiffzXaPfA&s" group-title="FSTV",Sky Cinema Family UK
-https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1YzkzNTZiMjY3YzBhLTE4ZjgtN2M3NC1jOGYzLWQ1YzVlZjli/master.m3u8
 #EXTINF:-1 tvg-id="Sky.Sport.Top.Event.de" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Sky_Sport_Top_Event_Logo_2022.svg/2560px-Sky_Sport_Top_Event_Logo_2022.svg.png" group-title="FSTV",Sky DE Top Event
 https://5nhp186eg31fofnc.chinese-restaurant-api.site/v3/director/VE1NjgyNTVmNTE1M2M5LWM5OGItMGNjNC00YzdlLTliZWI4YWY3/master.m3u8
 #EXTINF:-1 tvg-id="Sky.Sport.Mix.de" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-mix-uk.png?raw=true" group-title="FSTV",Sky Mix DE
@@ -12176,59 +12172,54 @@ https://jmp2.uk/stvp-US270000298
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://mainstreams.pro/hls/JHDAJBDnjdna30.m3u8?st=S7agNJRcRGSr_7SlAes2nq063HqA2vbLkqrpKE4zwkM&e=1755951649
+https://mainstreams.pro/hls/JHDAJBDnjdna30.m3u8?st=Da0-O2tmUrXuM_3nbQ6uYTJzo_yJfeOD-VBnCAgiUAo&e=1755955273
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",Buffalo vs. Tampa Bay Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/JHDAJBDnjdna30.m3u8?st=yu4NlpiwKvcWpV17ozGDz1ICaOMOKcaTqK_vkYnRvP0&e=1755951667
+https://edgestreams.pro/hls/JHDAJBDnjdna30.m3u8?st=F09cA3pEjflWKUrLya0NZfKIGq0U9HHqa5hFAwXpefA&e=1755955245
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",Denver vs. New Orleans Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/JHDAJBDnjdna30.m3u8?st=87Q5UQ-P585LdVi-r53apk9IpSOOwQTwVV9uzfDPR7g&e=1755951700
+https://mainstreams.pro/hls/JHDAJBDnjdna30.m3u8?st=A4BywzB-jgKu7X_DI6Ob45TOXmiH6rQV-6vXS0UWZwY&e=1755955241
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",Houston vs. Detroit Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/JHDAJBDnjdna30.m3u8?st=D0DFDAbdH5UB0AOd7_r6OGpvgJ2J8wQI_-3yTdRwR1c&e=1755951660
-#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",Indianapolis vs. Cincinnati Live Stream
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
-#EXTVLCOPT:http-origin=https://streamscenter.online
-#EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/JHDAJBDnjdna30.m3u8?st=rnaNqMM96cgU_XcC3R-c8EJE67kL0a27LlqOFuK-51Y&e=1755951642
+https://edgestreams.pro/hls/JHDAJBDnjdna30.m3u8?st=K6K2Z00NopR2q09xI3xkxgC3gr9mQShTOo3QP8jkqxc&e=1755955278
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",Jacksonville vs. Miami Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/JHDAJBDnjdna30.m3u8?st=YosDV9QGWF8CfEDe8aTCnCCBVbyxHBKifMLxYhTdQQs&e=1755951653
+https://mainstreams.pro/hls/JHDAJBDnjdna30.m3u8?st=mZ4eBu09XXtm6CGtnfF4_4FuC2naETCPf5dHI62Tu2I&e=1755955250
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",L.A. Chargers vs. San Francisco Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/JHDAJBDnjdna30.m3u8?st=Z2blT8RlrHnxTZ-LwjpJ4kqbjbck3NzI_ALbHYL-nNU&e=1755951680
+https://edgestreams.pro/hls/JHDAJBDnjdna30.m3u8?st=ZezdFfrpGe03NiZnOT6A6VcffhZRyE2SImPo5Lc1Wtk&e=1755955235
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",L.A. Rams vs. Cleveland Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://edgestreams.pro/hls/JHDAJBDnjdna30.m3u8?st=zhaj0_bhpaNHJTGvE-kauSxSLOZsm6xY2ysrVvdeF10&e=1755951693
+https://edgestreams.pro/hls/JHDAJBDnjdna30.m3u8?st=PR_-MUJdMTZgaxIKg0oNXxj3LUfC3F7O7Z2SLc6G8MQ&e=1755955224
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",Las Vegas vs. Arizona Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://mainstreams.pro/hls/JHDAJBDnjdna30.m3u8?st=VDcQaiJr0gh1SoFwomVtp2orXyPVvvV1E10H9Nvd3o8&e=1755951637
+https://mainstreams.pro/hls/JHDAJBDnjdna30.m3u8?st=-qW3pLsZSmQBJgW8BhEgO3ir4LS0N8tkdEFgJ4Wz1LE&e=1755955266
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",Seattle vs. Green Bay Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://mainstreams.pro/hls/JHDAJBDnjdna30.m3u8?st=N0A-DAAkkHLsU4s-nXbrieSrnU09qiu4wufCcVnnSog&e=1755951706
+https://mainstreams.pro/hls/JHDAJBDnjdna30.m3u8?st=xSEuqMwiZodBvJr_FmINBRIiW0Dd8mC0vYwINAnneZ0&e=1755955283
 
 #EXTGRP:StreamEast - F1
 #EXTINF:-1 tvg-id="Racing.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/F1.png" group-title="StreamEast - F1",F1 Dutch GP Free Practice 1 Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://mainstreams.pro/hls/zeuryuegn48.m3u8?st=Z-ob9vexdg4ZNwtTtUPkY9dckG_7wW83yle3mLMiK94&e=1755951672
+https://edgestreams.pro/hls/zeuryuegn48.m3u8?st=YkFnRqwKiSIlM8k_NKack3QQK1zhaLNv8JCAb4HpOAM&e=1755955261
 
 #EXTGRP:TheTVApp
 #EXTINF:-1  tvg-name="A&E HD" tvg-id="ae-us-eastern-feed" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/a-and-e-us.png?raw=true" group-title="TheTVApp",A&E HD
@@ -16022,18 +16013,10 @@ https://world-proxifier.xyz/zuzz/channel/RUJHRUwwMjo5SQ==.m3u8
 https://world-proxifier.xyz/zuzz/channel/PzFFGw==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Arizona%20Diamondbacks.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Arizona Diamondbacks vs Cincinnati Reds [CINCINNATI REDS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGxo=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Arizona%20Diamondbacks.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Arizona Diamondbacks vs Cincinnati Reds [CINCINNATI REDS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGxo=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Arizona%20Diamondbacks.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Arizona Diamondbacks vs Cincinnati Reds [DIAMONDBACKS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGhk=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Arizona%20Diamondbacks.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Arizona Diamondbacks vs Cincinnati Reds [DIAMONDBACKS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGhk=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Atlanta%20Braves.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Atlanta Braves vs New York Mets [BRAVES FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGh4=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Atlanta%20Braves.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Atlanta Braves vs New York Mets [BRAVES FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGh4=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Atlanta%20Braves.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Atlanta Braves vs New York Mets [METS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGBg=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Atlanta%20Braves.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Atlanta Braves vs New York Mets [METS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGBg=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/GVh44c9G20kFhdXVs6NfpexqaoEYqqBFfOHxproCrfMGNkOxKt.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Bally Sports Detroit
@@ -16070,18 +16053,10 @@ https://world-proxifier.xyz/zuzz/channel/SUdHRzApMkw-MA==.m3u8
 https://world-proxifier.xyz/zuzz/channel/SUdHRzApMkA-QTpFPk9F.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Baltimore%20Orioles.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Baltimore Orioles vs Houston Astros [ASTROS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGx4=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Baltimore%20Orioles.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Baltimore Orioles vs Houston Astros [ASTROS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGx4=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Baltimore%20Orioles.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Baltimore Orioles vs Houston Astros [MASN]
-https://world-proxifier.xyz/zuzz/channel/REc-RQ==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Baltimore%20Orioles.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Baltimore Orioles vs Houston Astros [MASN]
 https://world-proxifier.xyz/zuzz/channel/REc-RQ==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Baltimore%20Orioles.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Baltimore Orioles vs Houston Astros [ORIOLES FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGh8=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Baltimore%20Orioles.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Baltimore Orioles vs Houston Astros [ORIOLES FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGh8=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Baltimore%20Orioles.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Baltimore Orioles vs Houston Astros [SPACE CITY HOME NETWORK]
-https://world-proxifier.xyz/zuzz/channel/PjRITkwpTkA_PyZDRQ==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Baltimore%20Orioles.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Baltimore Orioles vs Houston Astros [SPACE CITY HOME NETWORK]
 https://world-proxifier.xyz/zuzz/channel/PjRITkwpTkA_PyZDRQ==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/big10.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",BIG 10
@@ -16092,14 +16067,8 @@ https://world-proxifier.xyz/zuzz/channel/TkY-.m3u8
 https://world-proxifier.xyz/zuzz/channel/TkY-Jj40Ojk_KUVMPz06OUY=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20White%20Sox.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Chicago White Sox vs Minnesota Twins [CHICAGO SPORTS NETWORK]
 https://world-proxifier.xyz/zuzz/channel/RUZOJk5MQE5ITTo=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20White%20Sox.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Chicago White Sox vs Minnesota Twins [CHICAGO SPORTS NETWORK]
-https://world-proxifier.xyz/zuzz/channel/RUZOJk5MQE5ITTo=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20White%20Sox.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Chicago White Sox vs Minnesota Twins [TWINS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGBs=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20White%20Sox.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Chicago White Sox vs Minnesota Twins [TWINS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGBs=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20White%20Sox.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Chicago White Sox vs Minnesota Twins [WHITE SOX FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGyU=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Chicago%20White%20Sox.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Chicago White Sox vs Minnesota Twins [WHITE SOX FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGyU=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Cincinnati%20Bengals.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Cincinnati Bengals vs Indianapolis Colts [NFL HD2]
@@ -16116,10 +16085,6 @@ https://world-proxifier.xyz/zuzz/channel/RUJHRUwwMjo5SQ==.m3u8
 https://world-proxifier.xyz/zuzz/channel/TkpJTg==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/cowboy.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Cowboy Channel
 https://world-proxifier.xyz/zuzz/channel/TjUySTo_.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Dallas%20Cowboys.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Dallas Cowboys vs Atlanta Falcons [NFL HD2]
-https://world-proxifier.xyz/zuzz/channel/RUJHGzE=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Dallas%20Cowboys.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Dallas Cowboys vs Atlanta Falcons [NFL NETWORK]
-https://world-proxifier.xyz/zuzz/channel/RUJHRUwwMjo5SQ==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Detroit%20Lions.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Detroit Lions vs Houston Texans [NBC]
 https://world-proxifier.xyz/zuzz/channel/RUZO.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Detroit%20Lions.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Detroit Lions vs Houston Texans [NFL HD4]
@@ -16128,10 +16093,6 @@ https://world-proxifier.xyz/zuzz/channel/RUJHGTE=.m3u8
 https://world-proxifier.xyz/zuzz/channel/PzFFGw==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Detroit%20Tigers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Detroit Tigers vs Kansas City Royals [ROYALS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGx8=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Detroit%20Tigers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Detroit Tigers vs Kansas City Royals [ROYALS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGx8=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Detroit%20Tigers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Detroit Tigers vs Kansas City Royals [TIGERS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGxk=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Detroit%20Tigers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Detroit Tigers vs Kansas City Royals [TIGERS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGxk=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/0n7d6FQkfkqe7k80zzsD3tZx6vEJuuGahPbzjCGSnk2uSK7SO2.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",ESPN
@@ -16158,18 +16119,10 @@ https://world-proxifier.xyz/zuzz/channel/RUJHRUwwMjo5SQ==.m3u8
 https://world-proxifier.xyz/zuzz/channel/PzFFGw==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Johnny%20Walker.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Johnny Walker vs Mingyang Zhang [UFC CHANNEL 1]
 https://world-proxifier.xyz/zuzz/channel/PEJO.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Kansas%20City%20Chiefs.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Kansas City Chiefs vs Chicago Bears [NFL HD4]
-https://world-proxifier.xyz/zuzz/channel/RUJHGTE=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Los%20Angeles%20Angels.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Los Angeles Angels vs Chicago Cubs [ANGELS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGx0=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Los%20Angeles%20Angels.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Los Angeles Angels vs Chicago Cubs [ANGELS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGx0=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Los%20Angeles%20Angels.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Los Angeles Angels vs Chicago Cubs [CUBS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGhI=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Los%20Angeles%20Angels.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Los Angeles Angels vs Chicago Cubs [CUBS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGhI=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Los%20Angeles%20Angels.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Los Angeles Angels vs Chicago Cubs [MARQUEE SPORTS NETWORK]
-https://world-proxifier.xyz/zuzz/channel/REc5ODxDTCY-NDo5PzE=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Los%20Angeles%20Angels.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Los Angeles Angels vs Chicago Cubs [MARQUEE SPORTS NETWORK]
 https://world-proxifier.xyz/zuzz/channel/REc5ODxDTCY-NDo5PzE=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/cjV6PGDwMfgwJSw792k9JIol2oyj0S9nhZka8bzRman6jwjdVa.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Marquee Sports Network
@@ -16184,36 +16137,20 @@ https://world-proxifier.xyz/zuzz/channel/RUJHGjE=.m3u8
 https://world-proxifier.xyz/zuzz/channel/RUJHRUwwMjo5SQ==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Miami%20Marlins.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Miami Marlins vs Toronto Blue Jays [BLUE JAYS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGRg=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Miami%20Marlins.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Miami Marlins vs Toronto Blue Jays [BLUE JAYS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGRg=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Miami%20Marlins.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Miami Marlins vs Toronto Blue Jays [FANDUEL EAST]
 https://world-proxifier.xyz/zuzz/channel/SUdHRzAxOzo5MD5MSDE_MQ==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Miami%20Marlins.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Miami Marlins vs Toronto Blue Jays [FANDUEL WEST]
 https://world-proxifier.xyz/zuzz/channel/SUdHRzApMkw-MA==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Miami%20Marlins.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Miami Marlins vs Toronto Blue Jays [MARINERS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGSU=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Miami%20Marlins.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Miami Marlins vs Toronto Blue Jays [MARLINS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGCU=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Miami%20Marlins.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Miami Marlins vs Toronto Blue Jays [SN ONTARIO]
-https://world-proxifier.xyz/zuzz/channel/Pko6RT9HOUA6.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Miami%20Marlins.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Miami Marlins vs Toronto Blue Jays [SN ONTARIO]
 https://world-proxifier.xyz/zuzz/channel/Pko6RT9HOUA6.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Miami%20Marlins.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Miami Marlins vs Toronto Blue Jays [SN PACIFIC]
 https://world-proxifier.xyz/zuzz/channel/Pko7SE5PTUBO.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Miami%20Marlins.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Miami Marlins vs Toronto Blue Jays [SN PACIFIC]
-https://world-proxifier.xyz/zuzz/channel/Pko7SE5PTUBO.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Miami%20Marlins.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Miami Marlins vs Toronto Blue Jays [SN WEST]
-https://world-proxifier.xyz/zuzz/channel/PkoyTD4w.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Milwaukee%20Brewers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Milwaukee Brewers vs San Francisco Giants [BREWERS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGBo=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Milwaukee%20Brewers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Milwaukee Brewers vs San Francisco Giants [BREWERS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGBo=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Milwaukee%20Brewers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Milwaukee Brewers vs San Francisco Giants [GIANTS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGBI=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Milwaukee%20Brewers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Milwaukee Brewers vs San Francisco Giants [GIANTS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGBI=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Milwaukee%20Brewers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Milwaukee Brewers vs San Francisco Giants [NBC SPORTS BAY AREA]
-https://world-proxifier.xyz/zuzz/channel/RUZOJklHMEg5Q0g=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Milwaukee%20Brewers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Milwaukee Brewers vs San Francisco Giants [NBC SPORTS BAY AREA]
 https://world-proxifier.xyz/zuzz/channel/RUZOJklHMEg5Q0g=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/3L0eJOtGsM3dfPE3EKTyrlSOSy3eLt5gkxDWBfITnL2JXcK8D6.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",MLB Network
@@ -16240,22 +16177,12 @@ https://world-proxifier.xyz/zuzz/channel/RUZOJk5MQE5ITTo=.m3u8
 https://world-proxifier.xyz/zuzz/channel/RUM-RRoU.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/New%20Orleans%20Saints.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",New Orleans Saints vs Denver Broncos [NFL HD5]
 https://world-proxifier.xyz/zuzz/channel/RUJHHjE=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/New%20York%20Jets.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",New York Jets vs Philadelphia Eagles [NFL HD1]
-https://world-proxifier.xyz/zuzz/channel/RUJHGjE=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/New%20York%20Yankees.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",New York Yankees vs Boston Red Sox [NESN]
-https://world-proxifier.xyz/zuzz/channel/RUM-RRoU.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/New%20York%20Yankees.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",New York Yankees vs Boston Red Sox [NESN]
 https://world-proxifier.xyz/zuzz/channel/RUM-RRoU.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/New%20York%20Yankees.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",New York Yankees vs Boston Red Sox [RED SOX FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGh0=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/New%20York%20Yankees.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",New York Yankees vs Boston Red Sox [RED SOX FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGh0=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/New%20York%20Yankees.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",New York Yankees vs Boston Red Sox [SN ONE]
 https://world-proxifier.xyz/zuzz/channel/Pko6RUw=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/New%20York%20Yankees.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",New York Yankees vs Boston Red Sox [SN ONE]
-https://world-proxifier.xyz/zuzz/channel/Pko6RUw=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/New%20York%20Yankees.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",New York Yankees vs Boston Red Sox [YANKEES FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGBk=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/New%20York%20Yankees.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",New York Yankees vs Boston Red Sox [YANKEES FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGBk=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/New%20York%20Yankees.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",New York Yankees vs Boston Red Sox [YES NETWORK]
@@ -16268,26 +16195,14 @@ https://world-proxifier.xyz/zuzz/channel/OUNPMTpKTA==.m3u8
 https://world-proxifier.xyz/zuzz/channel/RUxHRUwwMjo5SQ==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Philadelphia%20Phillies.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Philadelphia Phillies vs Washington Nationals [MASN 2]
 https://world-proxifier.xyz/zuzz/channel/REc-RRs=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Philadelphia%20Phillies.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Philadelphia Phillies vs Washington Nationals [MASN 2]
-https://world-proxifier.xyz/zuzz/channel/REc-RRs=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Philadelphia%20Phillies.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Philadelphia Phillies vs Washington Nationals [NATIONALS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGRk=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Philadelphia%20Phillies.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Philadelphia Phillies vs Washington Nationals [NATIONALS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGRk=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Philadelphia%20Phillies.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Philadelphia Phillies vs Washington Nationals [PHILLIES FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGB8=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Philadelphia%20Phillies.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Philadelphia Phillies vs Washington Nationals [PHILLIES FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGB8=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Pittsburgh%20Pirates.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Pittsburgh Pirates vs Colorado Rockies [PIRATES FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGBw=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Pittsburgh%20Pirates.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Pittsburgh Pirates vs Colorado Rockies [PIRATES FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGBw=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Pittsburgh%20Pirates.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Pittsburgh Pirates vs Colorado Rockies [ROCKIES FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGxg=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Pittsburgh%20Pirates.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Pittsburgh Pirates vs Colorado Rockies [ROCKIES FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGxg=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Pittsburgh%20Pirates.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Pittsburgh Pirates vs Colorado Rockies [SPORTSNET PITTSBURGH]
-https://world-proxifier.xyz/zuzz/channel/PjQ6OT8xRUw_KTtAPzA-STw2QkM=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Pittsburgh%20Pirates.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Pittsburgh Pirates vs Colorado Rockies [SPORTSNET PITTSBURGH]
 https://world-proxifier.xyz/zuzz/channel/PjQ6OT8xRUw_KTtAPzA-STw2QkM=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Prelims.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Prelims vs UFC [UFC CHANNEL 1]
@@ -16296,14 +16211,10 @@ https://world-proxifier.xyz/zuzz/channel/PEJO.m3u8
 https://world-proxifier.xyz/zuzz/channel/OTU6Pz40Ojk_MQ==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",San Diego Padres vs Los Angeles Dodgers [DODGERS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGxw=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",San Diego Padres vs Los Angeles Dodgers [DODGERS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGxw=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",San Diego Padres vs Los Angeles Dodgers [FANDUEL WEST]
 https://world-proxifier.xyz/zuzz/channel/SUdHRzApMkw-MA==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",San Diego Padres vs Los Angeles Dodgers [FOX SPORTS 1]
 https://world-proxifier.xyz/zuzz/channel/TTEa.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",San Diego Padres vs Los Angeles Dodgers [PADRES FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGB0=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",San Diego Padres vs Los Angeles Dodgers [PADRES FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGB0=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",San Diego Padres vs Los Angeles Dodgers [SN ONE]
@@ -16314,28 +16225,16 @@ https://world-proxifier.xyz/zuzz/channel/Pko6RT9HOUA6.m3u8
 https://world-proxifier.xyz/zuzz/channel/Pko7SE5PTUBO.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",San Diego Padres vs Los Angeles Dodgers [SPECTRUM SPORTSNET LA]
 https://world-proxifier.xyz/zuzz/channel/PjRMTj82PEQmSEg=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Diego%20Padres.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",San Diego Padres vs Los Angeles Dodgers [SPECTRUM SPORTSNET LA]
-https://world-proxifier.xyz/zuzz/channel/PjRMTj82PEQmSEg=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/San%20Francisco%2049ers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",San Francisco 49ers vs Los Angeles Chargers [NFL HD3]
 https://world-proxifier.xyz/zuzz/channel/RUJHGDE=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Seattle Mariners vs Athletics [ATHLETICS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGB4=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Seattle Mariners vs Athletics [ATHLETICS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGB4=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Seattle Mariners vs Athletics [MARINERS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGSU=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Seattle Mariners vs Athletics [MARINERS FEED]
 https://world-proxifier.xyz/zuzz/channel/REhJGSU=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Seattle Mariners vs Athletics [NBC SPORTS CALIFORNIA]
 https://world-proxifier.xyz/zuzz/channel/RUZOJk5HR0BNNTlFQEc=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Seattle Mariners vs Athletics [NBC SPORTS CALIFORNIA]
-https://world-proxifier.xyz/zuzz/channel/RUZOJk5HR0BNNTlFQEc=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Seattle Mariners vs Athletics [ROOT SPORTS PLUS]
 https://world-proxifier.xyz/zuzz/channel/OTU6PyYxOzo5MD4mO0g8Pg==.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Seattle Mariners vs Athletics [ROOT SPORTS PLUS]
-https://world-proxifier.xyz/zuzz/channel/OTU6PyYxOzo5MD4mO0g8Pg==.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Seattle Mariners vs Athletics [ROOTSPORTS]
-https://world-proxifier.xyz/zuzz/channel/OTU6Pz40Ojk_MQ==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Seattle%20Mariners.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Seattle Mariners vs Athletics [ROOTSPORTS]
 https://world-proxifier.xyz/zuzz/channel/OTU6Pz40Ojk_MQ==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/sec.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",SEC Network
@@ -16364,22 +16263,10 @@ https://world-proxifier.xyz/zuzz/channel/PjQ6OT8xRUw_KTtAPzA-STw2QkM=.m3u8
 https://world-proxifier.xyz/zuzz/channel/TTUz.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Tampa%20Bay%20Buccaneers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Tampa Bay Buccaneers vs Buffalo Bills [NFL HD2]
 https://world-proxifier.xyz/zuzz/channel/RUJHGzE=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Tampa%20Bay%20Rays.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Tampa Bay Rays vs St. Louis Cardinals [BAY RAYS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGhg=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Tampa%20Bay%20Rays.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Tampa Bay Rays vs St. Louis Cardinals [CARDINALS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGxI=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/8xATOcQY2eBC8e4MoBuYkunNjerUuTIf8kIQck1kxz7nqFAZXC.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",TBS
 https://world-proxifier.xyz/zuzz/channel/P0Y-.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Tennessee%20Titans.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Tennessee Titans vs Minnesota Vikings [NFL HD3]
-https://world-proxifier.xyz/zuzz/channel/RUJHGDE=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Tennessee%20Titans.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Tennessee Titans vs Minnesota Vikings [TSN 2]
-https://world-proxifier.xyz/zuzz/channel/PzFFGw==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/ayMeJQav62KfinMx6oJF7dJrfVM4m1PZqC6rYK9mvdpTr27lqc.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Tennis Channel
 https://world-proxifier.xyz/zuzz/channel/P0NFRUAxTkM=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Texas%20Rangers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Texas Rangers vs Cleveland Guardians [GUARDIANS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGxs=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv//logos/teams/Texas%20Rangers.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",Texas Rangers vs Cleveland Guardians [RANGERS FEED]
-https://world-proxifier.xyz/zuzz/channel/REhJGRs=.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/oJBjZDXoV5MyJ2GduEASuGGvqvyP00o0YsgsSSwhzR4Dl3wndB.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",TNT
 https://world-proxifier.xyz/zuzz/channel/P0o_.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://img.zuzz.tv/assets/channels/tQS7GnEAURnhchSfRoICM80sNF3w6cz1Oy1kERQINgnbPF5a6o.png" tvg-id="24.7.Dummy.us" group-title="Zuzz Streams",TSN 1
