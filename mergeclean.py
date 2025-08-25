@@ -1,6 +1,5 @@
 import requests
 import re
-import time
 from datetime import datetime
 
 playlist_urls = [
@@ -11,55 +10,41 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PlutoTV.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TubiTV.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DrewLiveVOD.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TVPass.m3u",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Radio.m3u8",
-    "http://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLiveEvents.m3u8",
-    "http://drewlive24.duckdns.org:8081/PPVLand.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/StreamEast.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/FSTV24.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TheTVApp.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Roku.m3u8",
-    "http://drewlive24.duckdns.org:8081/Tims247.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/LGTV.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/AriaPlus.m3u8",
-    "http://drewlive24.duckdns.org:8081/Zuzz.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/SamsungTVPlus.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Xumo.m3u8"
 ]
 
-UDPTV_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedCleanPlaylist.m3u8"
 REMOVED_FILE = "Removed_NSFW.m3u8"
 
-def fetch_playlist(url, retries=3, delay=5):
-    """Fetch playlist with retry for non-raw URLs."""
-    print(f"Fetching: {url}")
-    for attempt in range(1, retries + 1):
-        try:
-            res = requests.get(url, timeout=15)
-            res.raise_for_status()
-            return res.content.decode('utf-8', errors='ignore').strip().splitlines()
-        except Exception as e:
-            print(f"❌ Attempt {attempt} failed for {url}: {e}")
-            if "raw.githubusercontent.com" not in url and attempt < retries:
-                print(f"⏳ Retrying in {delay} seconds...")
-                time.sleep(delay)
-            else:
-                break
-    print(f"❌ Failed to fetch {url} after {retries} attempts.")
-    return []
 
-def extract_timestamp_from_udptv(lines):
-    for line in lines:
-        if line.strip().startswith("# Last forced update:"):
-            print(f"✅ Found UDPTV timestamp: {line.strip()}")
-            return line.strip()
-    print("⚠️ No update timestamp found in UDPTV.")
-    return None
+def fetch_playlist(url):
+    """Fetch playlist content from URL."""
+    print(f"📡 Fetching: {url}")
+    try:
+        res = requests.get(url, timeout=15)
+        res.raise_for_status()
+        content = res.content.decode('utf-8', errors='ignore').strip().splitlines()
+        if "#EXTM3U" not in content:
+            print(f"⚠️ Invalid playlist at {url}, skipping.")
+            return []
+        return content
+    except Exception as e:
+        print(f"❌ Failed to fetch {url}: {e}")
+        return []
+
 
 def parse_playlist(lines, source_url="Unknown"):
+    """Parse EXTINF channels from a playlist."""
     parsed = []
     i = 0
     while i < len(lines):
@@ -73,7 +58,6 @@ def parse_playlist(lines, source_url="Unknown"):
                 i += 1
             if i < len(lines) and lines[i].strip() and not lines[i].strip().startswith("#"):
                 url = lines[i].strip()
-                # Only include if group-title exists
                 if re.search(r'group-title="([^"]+)"', extinf):
                     parsed.append((extinf, tuple(headers), url))
                 else:
@@ -86,7 +70,9 @@ def parse_playlist(lines, source_url="Unknown"):
     print(f"✅ Parsed {len(parsed)} channels from {source_url}")
     return parsed
 
+
 def is_nsfw(extinf, headers, url):
+    """Check if channel is NSFW."""
     nsfw_keywords = ['nsfw', 'xxx', 'porn']
     extinf_lower = extinf.lower()
     headers_lower = ' '.join(headers).lower()
@@ -99,16 +85,15 @@ def is_nsfw(extinf, headers, url):
     combined_text = f"{extinf_lower} {headers_lower} {url_lower}"
     return any(k in combined_text for k in nsfw_keywords)
 
-def write_merged_playlist(all_channels, timestamp_line):
-    lines = [f'#EXTM3U url-tvg="{EPG_URL}"']
-    if timestamp_line:
-        lines.append(timestamp_line)
-    lines.append("")
 
+def write_merged_playlist(all_channels):
+    """Write merged playlist sorted by group and title."""
+    lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
     sortable = []
+
     for extinf, headers, url in all_channels:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
-        if not group_match:  # Skip channels with no group
+        if not group_match:
             continue
         group = group_match.group(1).strip()
         title_match = re.search(r',([^,]+)$', extinf)
@@ -116,7 +101,6 @@ def write_merged_playlist(all_channels, timestamp_line):
         sortable.append((group.lower(), title.lower(), group, extinf, headers, url))
 
     sorted_channels = sorted(sortable)
-
     current_group = None
     count = 0
 
@@ -131,15 +115,12 @@ def write_merged_playlist(all_channels, timestamp_line):
         lines.append(url)
         count += 1
 
-    if lines and lines[-1] == "":
-        lines.pop()
-
     final_output = '\n'.join(lines) + '\n'
-
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(final_output)
 
-    print(f"\n✅ Wrote {count} clean channels to {OUTPUT_FILE} ({len(final_output.splitlines())} lines).")
+    print(f"\n✅ Wrote {count} clean channels to {OUTPUT_FILE}")
+
 
 def write_removed_channels(nsfw_channels):
     if not nsfw_channels:
@@ -151,33 +132,22 @@ def write_removed_channels(nsfw_channels):
             for h in headers:
                 f.write(h + "\n")
             f.write(url + "\n\n")
-    print(f"🗑️ Logged {len(nsfw_channels)} removed NSFW/XXX/Porn entries to {REMOVED_FILE}")
+    print(f"🗑️ Logged {len(nsfw_channels)} removed NSFW entries to {REMOVED_FILE}")
+
 
 if __name__ == "__main__":
     print(f"🚀 Starting merge: {datetime.now()}\n")
 
     all_channels = []
-    timestamp_line = None
 
-    # Process UDPTV first
-    print(f"--- Processing UDPTV: {UDPTV_URL} ---")
-    udptv_lines = fetch_playlist(UDPTV_URL)
-    timestamp_line = extract_timestamp_from_udptv(udptv_lines)
-    all_channels.extend(parse_playlist(udptv_lines, UDPTV_URL))
-
-    # Process remaining playlists
-    print(f"\n--- Processing other playlists ---")
     for url in playlist_urls:
-        if url == UDPTV_URL:
-            continue
         lines = fetch_playlist(url)
         all_channels.extend(parse_playlist(lines, url))
 
-    # Filter NSFW content
     nsfw_channels = [entry for entry in all_channels if is_nsfw(*entry)]
     clean_channels = [entry for entry in all_channels if not is_nsfw(*entry)]
 
     write_removed_channels(nsfw_channels)
-    write_merged_playlist(clean_channels, timestamp_line)
+    write_merged_playlist(clean_channels)
 
     print(f"\n✅ Merge complete: {datetime.now()}")
