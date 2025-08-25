@@ -29,8 +29,11 @@ playlist_urls = [
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedPlaylist_Clean.m3u8"
 
-# Filter keywords (case-insensitive)
-NSFW_KEYWORDS = ['nsfw', 'xxx', 'porn', 'adult', 'sex', 'erotic']
+# 🚫 Only block true NSFW words — Adult Swim, Sexy Beast, etc. will not match
+NSFW_KEYWORDS = ['nsfw', 'xxx', 'porn']
+
+# Regex with word boundaries prevents false matches
+pattern = re.compile(r'\b(' + '|'.join(re.escape(k) for k in NSFW_KEYWORDS) + r')\b', re.IGNORECASE)
 
 def fetch_playlist(url):
     """Fetch playlist content."""
@@ -58,28 +61,25 @@ def parse_playlist(lines, source="Unknown"):
             metadata = []
             i += 1
 
-            # Collect metadata lines
+            # collect metadata lines
             while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
                 metadata.append(lines[i].strip())
                 i += 1
 
-            # Expect a valid stream URL
+            # must have valid url
             if i < len(lines) and lines[i].strip() and not lines[i].strip().startswith("#"):
                 url = lines[i].strip()
-                # Skip NSFW channels
-                combined_text = f"{extinf} {' '.join(metadata)} {url}".lower()
-                if not any(k in combined_text for k in NSFW_KEYWORDS):
-                    parsed.append((extinf, tuple(metadata), url))
-                else:
+                combined = f"{extinf} {' '.join(metadata)} {url}"
+                if pattern.search(combined):
                     print(f"🛑 Removed NSFW channel in {source}: {extinf}")
+                else:
+                    parsed.append((extinf, tuple(metadata), url))
                 i += 1
             else:
-                print(f"⚠️ Skipping orphaned EXTINF in {source}: {extinf}")
-                i += 1
+                print(f"⚠️ Orphaned EXTINF (no URL) in {source}: {extinf}")
         else:
             i += 1
-
-    print(f"✅ Parsed {len(parsed)} channels from {source} (NSFW removed)")
+    print(f"✅ Parsed {len(parsed)} channels from {source}")
     return parsed
 
 def write_merged_playlist(channels):
