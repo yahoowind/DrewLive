@@ -29,7 +29,8 @@ playlist_urls = [
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedPlaylist_Clean.m3u8"
 
-NSFW_KEYWORDS = ['nsfw', 'xxx', 'porn']
+# Filter keywords (case-insensitive)
+NSFW_KEYWORDS = ['nsfw', 'xxx', 'porn', 'adult', 'sex', 'erotic']
 
 def fetch_playlist(url):
     """Fetch playlist content."""
