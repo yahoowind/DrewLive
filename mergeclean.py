@@ -26,114 +26,114 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Xumo.m3u8"
 ]
 
-EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
-OUTPUT_FILE = "MergedPlaylist_Clean.m3u8"
-
-# 🚫 Only block true NSFW words — Adult Swim, Sexy Beast, etc. will not match
-NSFW_KEYWORDS = ['nsfw', 'xxx', 'porn']
-
-# Regex with word boundaries prevents false matches
-pattern = re.compile(r'\b(' + '|'.join(re.escape(k) for k in NSFW_KEYWORDS) + r')\b', re.IGNORECASE)
+EPG_URL = "https://tinyurl.com/DrewLive002-epg"
+OUTPUT_FILE = "MergedCleanPlaylist.m3u8"
+REMOVED_FILE = "Removed_NSFW.m3u8"
 
 def fetch_playlist(url):
-    """Fetch playlist content."""
-    print(f"📡 Fetching playlist: {url}")
+    print(f"Fetching: {url}")
     try:
-        response = requests.get(url, timeout=15)
-        response.raise_for_status()
-        content = response.content.decode("utf-8", errors="ignore")
-        if "#EXTM3U" not in content:
-            print(f"⚠️ Skipping invalid playlist from {url}")
-            return []
-        return content.splitlines()
+        res = requests.get(url, timeout=15)
+        res.raise_for_status()
+        return res.content.decode('utf-8', errors='ignore').strip().splitlines()
     except Exception as e:
-        print(f"❌ Failed to fetch {url}: {e}")
+        print(f"❌ Error fetching {url}: {e}")
         return []
 
-def parse_playlist(lines, source="Unknown"):
-    """Parse EXTINF channels from a playlist."""
+def parse_playlist(lines, source_url="Unknown"):
     parsed = []
     i = 0
     while i < len(lines):
         line = lines[i].strip()
         if line.startswith("#EXTINF:"):
             extinf = line
-            metadata = []
+            headers = []
             i += 1
-
-            # collect metadata lines
             while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
-                metadata.append(lines[i].strip())
+                headers.append(lines[i].strip())
                 i += 1
-
-            # must have valid url
             if i < len(lines) and lines[i].strip() and not lines[i].strip().startswith("#"):
                 url = lines[i].strip()
-                combined = f"{extinf} {' '.join(metadata)} {url}"
-                if pattern.search(combined):
-                    print(f"🛑 Removed NSFW channel in {source}: {extinf}")
-                else:
-                    parsed.append((extinf, tuple(metadata), url))
+                parsed.append((extinf, tuple(headers), url))
                 i += 1
             else:
-                print(f"⚠️ Orphaned EXTINF (no URL) in {source}: {extinf}")
+                print(f"⚠️ Skipped invalid channel in {source_url}")
         else:
             i += 1
-    print(f"✅ Parsed {len(parsed)} channels from {source}")
+    print(f"✅ Parsed {len(parsed)} channels from {source_url}")
     return parsed
 
-def write_merged_playlist(channels):
-    """Write merged playlist to file, sorted by group and name."""
+def is_nsfw(extinf, headers, url):
+    nsfw_keywords = ['nsfw', 'xxx', 'porn']
+    combined_text = f"{extinf.lower()} {' '.join(headers).lower()} {url.lower()}"
+    group_match = re.search(r'group-title="([^"]+)"', extinf.lower())
+    if group_match and any(k in group_match.group(1) for k in nsfw_keywords):
+        return True
+    return any(k in combined_text for k in nsfw_keywords)
+
+def write_merged_playlist(all_channels):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
 
-    def get_group_title(extinf, metadata):
-        m = re.search(r'group-title="([^"]+)"', extinf)
-        if m:
-            return m.group(1)
-        for meta in metadata:
-            if meta.startswith("#EXTGRP:"):
-                return meta.split(":", 1)[1].strip()
-        return "Ungrouped"
+    sortable = []
+    for extinf, headers, url in all_channels:
+        group_match = re.search(r'group-title="([^"]+)"', extinf)
+        group = group_match.group(1) if group_match else "Other"
+        title_match = re.search(r',([^,]+)$', extinf)
+        title = title_match.group(1).strip() if title_match else ""
+        sortable.append((group.lower(), title.lower(), group, extinf, headers, url))
 
-    def get_channel_name(extinf):
-        m = re.search(r',([^,]+)$', extinf)
-        return m.group(1).strip() if m else ""
-
-    sorted_channels = sorted(
-        channels,
-        key=lambda c: (get_group_title(c[0], c[1]).lower(), get_channel_name(c[0]).lower())
-    )
+    sorted_channels = sorted(sortable)
 
     current_group = None
-    for extinf, metadata, url in sorted_channels:
-        group = get_group_title(extinf, metadata)
-        if group != current_group:
+    count = 0
+
+    for _, _, group_name, extinf, headers, url in sorted_channels:
+        if group_name != current_group:
             if current_group is not None:
                 lines.append("")
-            lines.append(f"#EXTGRP:{group}")
-            current_group = group
-
+            lines.append(f"#EXTGRP:{group_name}")
+            current_group = group_name
         lines.append(extinf)
-        lines.extend(metadata)
+        lines.extend(headers)
         lines.append(url)
+        count += 1
 
-    if lines and lines[-1] != "":
-        lines.append("")
+    if lines and lines[-1] == "":
+        lines.pop()
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines))
+    final_output = '\n'.join(lines) + '\n'
 
-    print(f"\n✅ Merged playlist saved to {OUTPUT_FILE}")
-    print(f"📺 Total channels: {len(channels)}")
-    print(f"🕒 Saved at: {datetime.now()}")
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        f.write(final_output)
+
+    print(f"\n✅ Wrote {count} clean channels to {OUTPUT_FILE} ({len(final_output.splitlines())} lines).")
+
+def write_removed_channels(nsfw_channels):
+    if not nsfw_channels:
+        return
+    with open(REMOVED_FILE, 'w', encoding='utf-8') as f:
+        f.write("#EXTM3U\n")
+        for extinf, headers, url in nsfw_channels:
+            f.write(extinf + "\n")
+            for h in headers:
+                f.write(h + "\n")
+            f.write(url + "\n\n")
+    print(f"🗑️ Logged {len(nsfw_channels)} removed NSFW/XXX/Porn entries to {REMOVED_FILE}")
 
 if __name__ == "__main__":
-    print(f"🚀 Starting merge at {datetime.now()}\n")
+    print(f"🚀 Starting merge: {datetime.now()}\n")
+
     all_channels = []
 
     for url in playlist_urls:
         lines = fetch_playlist(url)
-        all_channels.extend(parse_playlist(lines, source=url))
+        all_channels.extend(parse_playlist(lines, url))
 
-    write_merged_playlist(all_channels)
-    print(f"\n✅ Merge complete at {datetime.now()}")
+    # Filter NSFW
+    nsfw_channels = [entry for entry in all_channels if is_nsfw(*entry)]
+    clean_channels = [entry for entry in all_channels if not is_nsfw(*entry)]
+
+    write_removed_channels(nsfw_channels)
+    write_merged_playlist(clean_channels)
+
+    print(f"\n✅ Merge complete: {datetime.now()}")
