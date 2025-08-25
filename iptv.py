@@ -1,6 +1,5 @@
 import requests
 import re
-import time
 from datetime import datetime
 
 playlist_urls = [
@@ -11,10 +10,8 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PlutoTV.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TubiTV.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DrewLiveVOD.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TVPass.m3u",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Radio.m3u8",
-    "http://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLiveEvents.m3u8",
     "http://drewlive24.duckdns.org:8081/PPVLand.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/StreamEast.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/FSTV24.m3u8",
@@ -28,44 +25,28 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Xumo.m3u8"
 ]
 
-UDPTV_URL = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/UDPTV.m3u"
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedPlaylist.m3u8"
 
 
-def fetch_playlist(url, retries=3, delay=5):
-    """Fetch playlist with retries for non-GitHub raw URLs."""
+def fetch_playlist(url):
+    """Fetch playlist content."""
     print(f"📡 Fetching playlist: {url}")
-    for attempt in range(1, retries + 1):
-        try:
-            response = requests.get(url, timeout=15)
-            response.raise_for_status()
-            content = response.content.decode("utf-8", errors="ignore")
-            if "#EXTM3U" not in content:  # ensure it's a valid playlist
-                print(f"⚠️ Skipping invalid playlist (no #EXTM3U) from {url}")
-                return []
-            return content.splitlines()
-        except Exception as e:
-            print(f"❌ Attempt {attempt} failed for {url}: {e}")
-            if "raw.githubusercontent.com" not in url and attempt < retries:
-                print(f"⏳ Retrying in {delay} seconds...")
-                time.sleep(delay)
-            else:
-                break
-    print(f"❌ Failed to fetch {url}")
-    return []
-
-
-def extract_udptv_timestamp(lines):
-    for line in lines:
-        if line.strip().startswith("# Last forced update:"):
-            print(f"✅ UDPTV timestamp found: {line.strip()}")
-            return line.strip()
-    print("⚠️ UDPTV timestamp not found.")
-    return None
+    try:
+        response = requests.get(url, timeout=15)
+        response.raise_for_status()
+        content = response.content.decode("utf-8", errors="ignore")
+        if "#EXTM3U" not in content:
+            print(f"⚠️ Skipping invalid playlist from {url}")
+            return []
+        return content.splitlines()
+    except Exception as e:
+        print(f"❌ Failed to fetch {url}: {e}")
+        return []
 
 
 def parse_playlist(lines, source="Unknown"):
+    """Parse EXTINF channels from a playlist."""
     parsed = []
     i = 0
     while i < len(lines):
@@ -81,17 +62,12 @@ def parse_playlist(lines, source="Unknown"):
                 i += 1
 
             # Expect a valid stream URL
-            if (
-                i < len(lines)
-                and lines[i].strip()
-                and not lines[i].strip().startswith("#")
-                and re.match(r'^(https?|rtmp|rtsp|udp)://', lines[i].strip())
-            ):
+            if i < len(lines) and lines[i].strip() and not lines[i].strip().startswith("#"):
                 url = lines[i].strip()
                 parsed.append((extinf, tuple(metadata), url))
                 i += 1
             else:
-                print(f"⚠️ Skipping invalid or orphaned EXTINF in {source}: {extinf}")
+                print(f"⚠️ Skipping orphaned EXTINF in {source}: {extinf}")
                 i += 1
         else:
             i += 1
@@ -100,11 +76,9 @@ def parse_playlist(lines, source="Unknown"):
     return parsed
 
 
-def write_merged_playlist(channels, udptv_timestamp):
-    lines = [f'#EXTM3U url-tvg="{EPG_URL}"']
-    if udptv_timestamp:
-        lines.append(udptv_timestamp)
-    lines.append("")
+def write_merged_playlist(channels):
+    """Write merged playlist to file, sorted by group and name."""
+    lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
 
     def get_group_title(extinf, metadata):
         m = re.search(r'group-title="([^"]+)"', extinf)
@@ -150,21 +124,11 @@ def write_merged_playlist(channels, udptv_timestamp):
 
 if __name__ == "__main__":
     print(f"🚀 Starting merge at {datetime.now()}\n")
-
     all_channels = []
 
-    # UDPTV first
-    udptv_lines = fetch_playlist(UDPTV_URL)
-    udptv_timestamp = extract_udptv_timestamp(udptv_lines)
-    all_channels.extend(parse_playlist(udptv_lines, source="UDPTV"))
-
-    # Others
     for url in playlist_urls:
-        if url == UDPTV_URL:
-            continue
         lines = fetch_playlist(url)
         all_channels.extend(parse_playlist(lines, source=url))
 
-    write_merged_playlist(all_channels, udptv_timestamp)
-
+    write_merged_playlist(all_channels)
     print(f"\n✅ Merge complete at {datetime.now()}")
