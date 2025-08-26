@@ -26,110 +26,87 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Xumo.m3u8"
 ]
 
-EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
+EPG_URL = "https://tinyurl.com/DrewLive002-epg"
 OUTPUT_FILE = "MergedPlaylist.m3u8"
 
-
 def fetch_playlist(url):
-    """Fetch playlist content."""
-    print(f"📡 Fetching playlist: {url}")
+    print(f"Attempting to fetch: {url}")
     try:
-        response = requests.get(url, timeout=15)
-        response.raise_for_status()
-        content = response.content.decode("utf-8", errors="ignore")
-        if "#EXTM3U" not in content:
-            print(f"⚠️ Skipping invalid playlist from {url}")
-            return []
-        return content.splitlines()
+        res = requests.get(url, timeout=15)
+        res.raise_for_status()
+        return res.content.decode('utf-8', errors='ignore').strip().splitlines()
     except Exception as e:
         print(f"❌ Failed to fetch {url}: {e}")
         return []
 
-
-def parse_playlist(lines, source="Unknown"):
-    """Parse EXTINF channels from a playlist."""
-    parsed = []
+def parse_playlist(lines, source_url="Unknown"):
+    parsed_channels = []
     i = 0
     while i < len(lines):
         line = lines[i].strip()
         if line.startswith("#EXTINF:"):
-            extinf = line
-            metadata = []
+            extinf_line = line
+            channel_headers = []
             i += 1
-
-            # Collect metadata lines
             while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
-                metadata.append(lines[i].strip())
+                channel_headers.append(lines[i].strip())
                 i += 1
-
-            # Expect a valid stream URL
-            if i < len(lines) and lines[i].strip() and not lines[i].strip().startswith("#"):
-                url = lines[i].strip()
-                parsed.append((extinf, tuple(metadata), url))
+            if i < len(lines) and not lines[i].strip().startswith("#") and lines[i].strip():
+                url_line = lines[i].strip()
+                parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
                 i += 1
             else:
-                print(f"⚠️ Skipping orphaned EXTINF in {source}: {extinf}")
-                i += 1
+                print(f"⚠️ Warning ({source_url}): #EXTINF at line {i} ('{extinf_line}') not followed by a valid stream URL. Skipping.")
         else:
             i += 1
+    print(f"✅ Parsed {len(parsed_channels)} channels from {source_url}.")
+    return parsed_channels
 
-    print(f"✅ Parsed {len(parsed)} channels from {source}")
-    return parsed
-
-
-def write_merged_playlist(channels):
-    """Write merged playlist to file, sorted by group and name."""
+def write_merged_playlist(all_unique_channels):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
+    sortable_channels = []
 
-    def get_group_title(extinf, metadata):
-        m = re.search(r'group-title="([^"]+)"', extinf)
-        if m:
-            return m.group(1)
-        for meta in metadata:
-            if meta.startswith("#EXTGRP:"):
-                return meta.split(":", 1)[1].strip()
-        return "Ungrouped"
+    for extinf, headers, url in all_unique_channels:
+        group_match = re.search(r'group-title="([^"]+)"', extinf)
+        group = group_match.group(1) if group_match else "Other"
+        title_match = re.search(r',([^,]+)$', extinf)
+        title = title_match.group(1).strip() if title_match else ""
+        sortable_channels.append((group.lower(), title.lower(), extinf, headers, url))
 
-    def get_channel_name(extinf):
-        m = re.search(r',([^,]+)$', extinf)
-        return m.group(1).strip() if m else ""
-
-    sorted_channels = sorted(
-        channels,
-        key=lambda c: (get_group_title(c[0], c[1]).lower(), get_channel_name(c[0]).lower())
-    )
-
+    sorted_channels = sorted(sortable_channels)
     current_group = None
-    for extinf, metadata, url in sorted_channels:
-        group = get_group_title(extinf, metadata)
-        if group != current_group:
+    total_channels_written = 0
+
+    for _, _, extinf, headers, url in sorted_channels:
+        group_match = re.search(r'group-title="([^"]+)"', extinf)
+        actual_group_name = group_match.group(1) if group_match else "Other"
+        if actual_group_name != current_group:
             if current_group is not None:
                 lines.append("")
-            lines.append(f"#EXTGRP:{group}")
-            current_group = group
-
+            lines.append(f'#EXTGRP:{actual_group_name}')
+            current_group = actual_group_name
         lines.append(extinf)
-        lines.extend(metadata)
+        lines.extend(headers)
         lines.append(url)
+        total_channels_written += 1
 
-    if lines and lines[-1] != "":
-        lines.append("")
+    if lines and lines[-1] == "":
+        lines.pop()
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines))
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines) + '\n')
 
-    print(f"\n✅ Merged playlist saved to {OUTPUT_FILE}")
-    print(f"📺 Total channels: {len(channels)}")
-    print(f"🕒 Saved at: {datetime.now()}")
-
+    print(f"\n✅ Merged playlist written to {OUTPUT_FILE}.")
+    print(f"📊 Total unique channels merged: {total_channels_written}.")
 
 if __name__ == "__main__":
-    print(f"🚀 Starting merge at {datetime.now()}\n")
-    all_channels = []
+    print(f"Starting playlist merge at {datetime.now()}...")
 
+    all_unique_channels_set = set()
     for url in playlist_urls:
         lines = fetch_playlist(url)
-        all_channels.extend(parse_playlist(lines, source=url))
+        parsed_channels = parse_playlist(lines, source_url=url)
+        all_unique_channels_set.update(parsed_channels)
 
-    write_merged_playlist(all_channels)
-    print(f"\n✅ Merge complete at {datetime.now()}")
+    write_merged_playlist(list(all_unique_channels_set))
+    print(f"Merging complete at {datetime.now()}.")
