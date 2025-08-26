@@ -27,7 +27,7 @@ playlist_urls = [
 ]
 
 EPG_URL = "https://tinyurl.com/DrewLive002-epg"
-OUTPUT_FILE = "MergedPlaylist_Clean.m3u8"
+OUTPUT_FILE = "MergedPlaylist.m3u8"
 
 def fetch_playlist(url):
     print(f"Attempting to fetch: {url}")
@@ -51,12 +51,16 @@ def parse_playlist(lines, source_url="Unknown"):
             while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
                 channel_headers.append(lines[i].strip())
                 i += 1
-            if i < len(lines) and not lines[i].strip().startswith("#") and lines[i].strip() and lines[i].strip() != "*":
+            if i < len(lines):
                 url_line = lines[i].strip()
-                parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
                 i += 1
+                # ✅ Remove dead/invalid channels
+                if not url_line or url_line == "*" or url_line.lower() in ["none", "null"]:
+                    print(f"⚠️ Removed dead channel from {source_url}: {extinf_line}")
+                    continue
+                parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
             else:
-                print(f"⚠️ Removed dead or invalid channel in {source_url} (#EXTINF '{extinf_line}')")
+                print(f"⚠️ Warning ({source_url}): #EXTINF at line {i} not followed by a valid stream URL. Skipping.")
         else:
             i += 1
     print(f"✅ Parsed {len(parsed_channels)} valid channels from {source_url}.")
@@ -97,7 +101,7 @@ def write_merged_playlist(all_unique_channels):
         f.write('\n'.join(lines) + '\n')
 
     print(f"\n✅ Merged playlist written to {OUTPUT_FILE}.")
-    print(f"📊 Total valid channels merged: {total_channels_written}.")
+    print(f"📊 Total unique channels merged: {total_channels_written}.")
 
 if __name__ == "__main__":
     print(f"Starting playlist merge at {datetime.now()}...")
