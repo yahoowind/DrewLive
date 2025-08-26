@@ -630,10 +630,6 @@ http://38.143.48.212:9981/stream/channelid/1265777165?profile=pass
 #EXTINF:-1 group-title="AriaPlus - Canada",Weather Network
 http://38.143.48.212:9981/stream/channelid/524858336?profile=pass
 
-#EXTGRP:AriaPlus - Japan
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/boomerang-us.png" group-title="AriaPlus - Japan",Boomerang (Jpuffle5)
-https://cdn.webvision.fun/memfs/3cc2fa80-1aa6-4e09-b4cf-27c80f112fa9_output_0.m3u8?session=eYreWjjeY4PaubKtCNs9zg
-
 #EXTGRP:AriaPlus - New Zealand
 #EXTINF:-1 tvg-logo="https://tv.wyatts-server.com/imagecache/6815" tvg-id="f52cf6d5294321bb94a2adcb30ca2d0e" group-title="AriaPlus - New Zealand",Bravo
 https://tv.wyatts-server.com/stream/channelid/1442196725?profile=pass
