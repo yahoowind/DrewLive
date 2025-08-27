@@ -59,24 +59,15 @@ def parse_playlist(lines, source_url="Unknown"):
 
             if i < len(lines):
                 url_line = lines[i].strip()
-                if url_line and url_line != "*":
+                if url_line != "*":  # ignore '*' entries
                     parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
-                    i += 1
                 else:
-                    print(f"⚠️ Skipping invalid or placeholder channel at line {i} in {source_url}.")
-            else:
-                print(f"⚠️ #EXTINF at line {i} in {source_url} not followed by URL. Skipping.")
+                    print(f"⚠️ Skipping placeholder '*' entry at line {i} in {source_url}.")
+                i += 1
         else:
             i += 1
     print(f"✅ Parsed {len(parsed_channels)} valid channels from {source_url}.")
     return parsed_channels
-
-def is_url_alive(url):
-    try:
-        r = requests.head(url, timeout=5)
-        return r.status_code == 200
-    except:
-        return False
 
 def write_merged_playlist(all_unique_channels):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
@@ -129,15 +120,7 @@ if __name__ == "__main__":
     for url in playlist_urls:
         lines = fetch_playlist(url)
         parsed_channels = parse_playlist(lines, source_url=url)
-
-        # Filter out dead/unreachable channels
-        valid_channels = []
-        for extinf, headers, url_line in parsed_channels:
-            if is_url_alive(url_line):
-                valid_channels.append((extinf, headers, url_line))
-            else:
-                print(f"⚠️ Skipping unreachable/dead channel: {url_line}")
-        all_unique_channels_set.update(valid_channels)
+        all_unique_channels_set.update(parsed_channels)
 
     write_merged_playlist(list(all_unique_channels_set))
     print(f"Merging complete at {datetime.now()}.")
