@@ -28,14 +28,24 @@ playlist_urls = [
 
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedPlaylist.m3u8"
+LOG_FILE = "merge_log.txt"
+
+def log(msg):
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    full_msg = f"[{timestamp}] {msg}"
+    print(full_msg)
+    with open(LOG_FILE, 'a', encoding='utf-8') as f:
+        f.write(full_msg + "\n")
 
 def fetch_playlist(url):
     try:
+        log(f"Fetching playlist: {url}")
         res = requests.get(url, timeout=15)
         res.raise_for_status()
+        log(f"✅ Successfully fetched: {url} ({len(res.content)} bytes)")
         return res.content.decode('utf-8', errors='ignore').splitlines()
     except Exception as e:
-        print(f"❌ Failed to fetch {url}: {e}")
+        log(f"❌ Failed to fetch {url}: {e}")
         return []
 
 def parse_playlist(lines):
@@ -47,53 +57,53 @@ def parse_playlist(lines):
             extinf_line = line
             headers = []
             i += 1
-            while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
+            while i < len(lines) and lines[i].strip().startswith("#"):
                 headers.append(lines[i].strip())
                 i += 1
             if i < len(lines):
                 url_line = lines[i].strip()
                 i += 1
-                if not url_line or url_line.lower() in ["*", "none", "null"]:
+                if not url_line:
+                    log(f"⚠ Skipped empty URL for EXTINF: {extinf_line}")
                     continue
                 parsed_channels.append((extinf_line, tuple(headers), url_line))
+                log(f"Parsed channel: {url_line}")
         else:
             i += 1
     return parsed_channels
 
 def write_merged_playlist(channels):
-    lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
-
-    # Organize channels by group
+    lines = ["#EXTM3U", ""]
     groups = {}
     for extinf, headers, url in channels:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group_name = group_match.group(1) if group_match else "Other"
-        groups.setdefault(group_name, []).append((extinf, headers, url))
+        extinf_with_epg = re.sub(r'(tvg-logo="[^"]*")', f'\\1 tvg-url="{EPG_URL}"', extinf)
+        groups.setdefault(group_name, []).append((extinf_with_epg, headers, url))
 
-    # Fully sort groups and channels alphabetically
     for group_name in sorted(groups.keys()):
         lines.append(f'#EXTGRP:{group_name}')
-        for extinf, headers, url in sorted(groups[group_name], key=lambda x: re.search(r',([^,]+)$', x[0]).group(1).lower()):
+        for extinf, headers, url in sorted(groups[group_name], key=lambda x: re.search(r',(.+)$', x[0]).group(1).lower() if re.search(r',(.+)$', x[0]) else x[0]):
             lines.append(extinf)
             lines.extend(headers)
             lines.append(url)
-        lines.append("")  # Blank line after each group
+        lines.append("")
 
     if lines and lines[-1] == "":
-        lines.pop()  # Remove last extra blank
+        lines.pop()
 
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write("\n".join(lines) + "\n")
 
     total_channels = sum(len(ch) for ch in groups.values())
-    print(f"\n✅ Merged playlist written to {OUTPUT_FILE}. Total channels: {total_channels}")
+    log(f"✅ Merged playlist written to {OUTPUT_FILE}. Total channels: {total_channels}")
 
 if __name__ == "__main__":
-    print(f"Starting merge at {datetime.now()}...")
+    log("Starting merge process...")
     all_channels = []
     for url in playlist_urls:
         lines = fetch_playlist(url)
         parsed = parse_playlist(lines)
         all_channels.extend(parsed)
     write_merged_playlist(all_channels)
-    print(f"Merge complete at {datetime.now()}")
+    log("Merge process complete!")
