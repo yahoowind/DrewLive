@@ -26,7 +26,6 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Xumo.m3u8"
 ]
 
-EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedPlaylist.m3u8"
 
 def fetch_playlist(url):
@@ -59,13 +58,6 @@ def parse_playlist(lines):
             i += 1
     return parsed_channels
 
-def add_tvg_url(extinf):
-    # Only add tvg-url if not already present
-    if 'tvg-url=' not in extinf:
-        parts = extinf.split(',', 1)
-        extinf = parts[0] + f' tvg-url="{EPG_URL}",' + (parts[1] if len(parts) > 1 else '')
-    return extinf
-
 def write_merged_playlist(channels):
     lines = ["#EXTM3U", ""]
     groups = {}
@@ -74,8 +66,7 @@ def write_merged_playlist(channels):
     for extinf, headers, url in channels:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group_name = group_match.group(1) if group_match else "Other"
-        extinf_with_epg = add_tvg_url(extinf)
-        groups.setdefault(group_name, []).append((extinf_with_epg, headers, url))
+        groups.setdefault(group_name, []).append((extinf, headers, url))
 
     # Sort groups alphabetically
     for group_name in sorted(groups.keys()):
