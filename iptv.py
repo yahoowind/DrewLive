@@ -59,6 +59,13 @@ def parse_playlist(lines):
             i += 1
     return parsed_channels
 
+def add_tvg_url(extinf):
+    # Only add tvg-url if not already present
+    if 'tvg-url=' not in extinf:
+        parts = extinf.split(',', 1)
+        extinf = parts[0] + f' tvg-url="{EPG_URL}",' + (parts[1] if len(parts) > 1 else '')
+    return extinf
+
 def write_merged_playlist(channels):
     lines = ["#EXTM3U", ""]
     groups = {}
@@ -67,13 +74,13 @@ def write_merged_playlist(channels):
     for extinf, headers, url in channels:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group_name = group_match.group(1) if group_match else "Other"
-        extinf_with_epg = re.sub(r'(tvg-logo="[^"]*")', f'\\1 tvg-url="{EPG_URL}"', extinf)
+        extinf_with_epg = add_tvg_url(extinf)
         groups.setdefault(group_name, []).append((extinf_with_epg, headers, url))
 
     # Sort groups alphabetically
     for group_name in sorted(groups.keys()):
         lines.append(f'#EXTGRP:{group_name}')
-        # Sort channels alphabetically by name after the last comma in EXTINF
+        # Sort channels alphabetically by name after last comma
         sorted_channels = sorted(
             groups[group_name],
             key=lambda x: re.search(r',(.+)$', x[0]).group(1).lower() if re.search(r',(.+)$', x[0]) else x[0]
@@ -82,7 +89,7 @@ def write_merged_playlist(channels):
             lines.append(extinf)
             lines.extend(headers)
             lines.append(url)
-        lines.append("")  # blank line between groups
+        lines.append("")
 
     if lines and lines[-1] == "":
         lines.pop()
@@ -99,12 +106,14 @@ if __name__ == "__main__":
         all_channels.extend(parsed)
         print(f"   ➡ {url} → {len(parsed)} channels parsed")
     write_merged_playlist(all_channels)
-    # Count channels per group for a lightweight summary
+
+    # Lightweight summary
     groups = {}
     for extinf, _, _ in all_channels:
         match = re.search(r'group-title="([^"]+)"', extinf)
         group = match.group(1) if match else "Other"
         groups[group] = groups.get(group, 0) + 1
+
     print(f"✅ Merge complete! Total channels: {len(all_channels)}")
     print("   Group summary:")
     for group_name in sorted(groups.keys()):
