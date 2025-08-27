@@ -1,6 +1,7 @@
 import requests
 import re
 import time
+import random
 
 UPSTREAM_URL = "https://pigscanflyyy-scraper.vercel.app/ppv"
 OUTPUT_FILE = "PPVLand.m3u8"
@@ -31,25 +32,6 @@ GROUP_RENAME_MAP = {
     "American Football": "PPVLand - American Football Action NFL/NCAAF"
 }
 
-def fetch_url_until_ready(url, delay=5, timeout=60):
-    session = requests.Session()
-    attempt = 1
-    while True:
-        try:
-            print(f"Attempt {attempt}: Fetching {url} ...")
-            r = session.get(url, timeout=timeout)
-            r.raise_for_status()
-            text = r.text.strip()
-            if "#EXTINF" in text:
-                print("✅ Playlist loaded successfully.")
-                return text
-            else:
-                print(f"Attempt {attempt}: Not a valid playlist, retrying in {delay}s...")
-        except Exception as e:
-            print(f"Attempt {attempt}: Error fetching {url}: {e}")
-        attempt += 1
-        time.sleep(delay)
-
 def safe_tvg_id(name: str) -> str:
     if not name:
         return "Uncategorized.Dummy.us"
@@ -61,8 +43,6 @@ def normalize_group_name(name):
 
 def modify_playlist(playlist_text):
     seen_categories = set()
-
-    # Normalized maps for matching
     normalized_map = {normalize_group_name(k): v for k, v in GROUP_RENAME_MAP.items()}
     normalized_ids = {normalize_group_name(k): v for k, v in CATEGORY_TVG_IDS.items()}
 
@@ -80,7 +60,7 @@ def modify_playlist(playlist_text):
 
         seen_categories.add((upstream_group, new_group, tvg_id))
 
-        # Remove old tvg-id/group-title but keep logos and other attrs
+        # Remove old tvg-id/group-title but keep other attributes
         attrs = re.sub(r'tvg-id="[^"]*"', '', attrs)
         attrs = re.sub(r'group-title="[^"]*"', '', attrs)
         attrs = attrs.strip()
@@ -99,9 +79,38 @@ def modify_playlist(playlist_text):
 
     return modified
 
+def fetch_url_until_ready(url, max_attempts=10, base_delay=5):
+    session = requests.Session()
+    attempt = 1
+    while attempt <= max_attempts:
+        try:
+            print(f"Attempt {attempt}: Fetching {url} ...")
+            r = session.get(url, timeout=60)
+            r.raise_for_status()
+            text = r.text.strip()
+            if "#EXTINF" in text:
+                print("✅ Playlist loaded successfully.")
+                return text
+            print(f"Attempt {attempt}: Not a valid playlist, retrying...")
+        except requests.exceptions.HTTPError as e:
+            if r.status_code == 429:
+                print(f"⚠️ 429 Too Many Requests, backing off...")
+            else:
+                print(f"❌ HTTP error: {e}")
+        except Exception as e:
+            print(f"❌ Error fetching {url}: {e}")
+
+        # Exponential backoff with jitter
+        delay = base_delay * (2 ** (attempt - 1)) + random.uniform(0, 3)
+        print(f"Sleeping {delay:.1f}s before retry...")
+        time.sleep(delay)
+        attempt += 1
+
+    raise Exception("❌ Failed to fetch a valid playlist after multiple attempts.")
+
 def main():
     print("Fetching upstream playlist...")
-    playlist = fetch_url_until_ready(UPSTREAM_URL, delay=5, timeout=60)
+    playlist = fetch_url_until_ready(UPSTREAM_URL)
 
     print("Modifying playlist with upstream-following remap...")
     modified_playlist = modify_playlist(playlist)
