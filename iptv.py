@@ -33,7 +33,8 @@ def fetch_playlist(url):
         res = requests.get(url, timeout=15)
         res.raise_for_status()
         return res.content.decode('utf-8', errors='ignore').splitlines()
-    except:
+    except Exception as e:
+        print(f"❌ Failed to fetch {url}: {e}")
         return []
 
 def parse_playlist(lines):
@@ -42,8 +43,7 @@ def parse_playlist(lines):
     while i < len(lines):
         line = lines[i].strip()
         if line.startswith("#EXTINF:"):
-            # Remove any tvg-id
-            extinf_line = re.sub(r'\s+tvg-id="[^"]*"', '', line)
+            extinf_line = line  # keep as-is
             headers = []
             i += 1
             while i < len(lines) and lines[i].strip().startswith("#EXTVLCOPT"):
@@ -63,16 +63,15 @@ def write_merged_playlist(channels):
     lines = ["#EXTM3U", ""]
     groups = {}
 
-    # Group channels
+    # Group by exact group-title
     for extinf, headers, url in channels:
         match = re.search(r'group-title="([^"]+)"', extinf)
-        group_name = match.group(1) if match else "Other"
+        group_name = match.group(1).strip() if match else "Other"
         groups.setdefault(group_name, []).append((extinf, headers, url))
 
     # Sort groups alphabetically
     for group_name in sorted(groups.keys()):
-        # Optional: skip #EXTGRP entirely since group-title is enough
-        # lines.append(f'#EXTGRP:{group_name}')
+        # Sort channels alphabetically by display name after comma
         sorted_channels = sorted(
             groups[group_name],
             key=lambda x: re.search(r',(.+)$', x[0]).group(1).lower() if re.search(r',(.+)$', x[0]) else x[0]
@@ -81,7 +80,7 @@ def write_merged_playlist(channels):
             lines.append(extinf)
             lines.extend(headers)
             lines.append(url)
-        lines.append("")
+        lines.append("")  # blank line after each group
 
     if lines and lines[-1] == "":
         lines.pop()
@@ -97,13 +96,14 @@ if __name__ == "__main__":
         parsed = parse_playlist(lines)
         all_channels.extend(parsed)
         print(f"   ➡ {url} → {len(parsed)} channels parsed")
+
     write_merged_playlist(all_channels)
 
-    # Lightweight summary
+    # Summary
     groups = {}
     for extinf, _, _ in all_channels:
         match = re.search(r'group-title="([^"]+)"', extinf)
-        group = match.group(1) if match else "Other"
+        group = match.group(1).strip() if match else "Other"
         groups[group] = groups.get(group, 0) + 1
 
     print(f"✅ Merge complete! Total channels: {len(all_channels)}")
