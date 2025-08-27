@@ -26,7 +26,7 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Xumo.m3u8"
 ]
 
-EPG_URL = "https://tinyurl.com/DrewLive002-epg"
+EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedPlaylist.m3u8"
 
 def fetch_playlist(url):
