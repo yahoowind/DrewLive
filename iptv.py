@@ -42,10 +42,11 @@ def parse_playlist(lines):
     while i < len(lines):
         line = lines[i].strip()
         if line.startswith("#EXTINF:"):
-            extinf_line = line
+            # Remove any tvg-id
+            extinf_line = re.sub(r'\s+tvg-id="[^"]*"', '', line)
             headers = []
             i += 1
-            while i < len(lines) and lines[i].strip().startswith("#"):
+            while i < len(lines) and lines[i].strip().startswith("#EXTVLCOPT"):
                 headers.append(lines[i].strip())
                 i += 1
             if i < len(lines):
@@ -64,14 +65,14 @@ def write_merged_playlist(channels):
 
     # Group channels
     for extinf, headers, url in channels:
-        group_match = re.search(r'group-title="([^"]+)"', extinf)
-        group_name = group_match.group(1) if group_match else "Other"
+        match = re.search(r'group-title="([^"]+)"', extinf)
+        group_name = match.group(1) if match else "Other"
         groups.setdefault(group_name, []).append((extinf, headers, url))
 
     # Sort groups alphabetically
     for group_name in sorted(groups.keys()):
-        lines.append(f'#EXTGRP:{group_name}')
-        # Sort channels alphabetically by name after last comma
+        # Optional: skip #EXTGRP entirely since group-title is enough
+        # lines.append(f'#EXTGRP:{group_name}')
         sorted_channels = sorted(
             groups[group_name],
             key=lambda x: re.search(r',(.+)$', x[0]).group(1).lower() if re.search(r',(.+)$', x[0]) else x[0]
@@ -85,7 +86,7 @@ def write_merged_playlist(channels):
     if lines and lines[-1] == "":
         lines.pop()
 
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+    with open(OUTPUT_FILE, 'w', encoding='utf-8', newline='\n') as f:
         f.write("\n".join(lines) + "\n")
 
 if __name__ == "__main__":
