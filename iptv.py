@@ -59,10 +59,11 @@ def parse_playlist(lines, source_url="Unknown"):
 
             if i < len(lines):
                 url_line = lines[i].strip()
-                if url_line != "*":  # ignore '*' entries
+                # Skip empty lines, comment-only lines, and placeholder '*'
+                if url_line and not url_line.startswith("#") and url_line != "*":
                     parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
                 else:
-                    print(f"⚠️ Skipping placeholder '*' entry at line {i} in {source_url}.")
+                    print(f"⚠️ Skipping invalid or placeholder entry at line {i} in {source_url}.")
                 i += 1
         else:
             i += 1
