@@ -1,5 +1,6 @@
 import requests
 import re
+import time
 from datetime import datetime
 
 playlist_urls = [
@@ -31,15 +32,19 @@ EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedCleanPlaylist.m3u8"
 REMOVED_FILE = "Removed_NSFW.m3u8"
 
-def fetch_playlist(url):
-    print(f"Fetching: {url}")
-    try:
-        res = requests.get(url, timeout=15)
-        res.raise_for_status()
-        return res.content.decode('utf-8', errors='ignore').strip().splitlines()
-    except Exception as e:
-        print(f"❌ Error fetching {url}: {e}")
-        return []
+def fetch_playlist(url, retries=3, timeout=30):
+    headers = {"User-Agent": "Mozilla/5.0"}
+    for attempt in range(1, retries + 1):
+        try:
+            print(f"Fetching {url} (Attempt {attempt})...")
+            res = requests.get(url, timeout=timeout, headers=headers)
+            res.raise_for_status()
+            return res.text.strip().splitlines()
+        except Exception as e:
+            print(f"❌ Attempt {attempt} failed for {url}: {e}")
+            time.sleep(2)
+    print(f"⚠️ Skipping {url} after {retries} failed attempts.")
+    return []
 
 def parse_playlist(lines, source_url="Unknown"):
     parsed = []
@@ -74,7 +79,6 @@ def is_nsfw(extinf, headers, url):
 
 def write_merged_playlist(all_channels):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
-
     sortable = []
     for extinf, headers, url in all_channels:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
@@ -82,12 +86,9 @@ def write_merged_playlist(all_channels):
         title_match = re.search(r',([^,]+)$', extinf)
         title = title_match.group(1).strip() if title_match else ""
         sortable.append((group.lower(), title.lower(), group, extinf, headers, url))
-
     sorted_channels = sorted(sortable)
-
     current_group = None
     count = 0
-
     for _, _, group_name, extinf, headers, url in sorted_channels:
         if group_name != current_group:
             if current_group is not None:
@@ -98,15 +99,11 @@ def write_merged_playlist(all_channels):
         lines.extend(headers)
         lines.append(url)
         count += 1
-
     if lines and lines[-1] == "":
         lines.pop()
-
     final_output = '\n'.join(lines) + '\n'
-
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(final_output)
-
     print(f"\n✅ Wrote {count} clean channels to {OUTPUT_FILE} ({len(final_output.splitlines())} lines).")
 
 def write_removed_channels(nsfw_channels):
@@ -125,7 +122,6 @@ if __name__ == "__main__":
     print(f"🚀 Starting merge: {datetime.now()}\n")
 
     all_channels = []
-
     for url in playlist_urls:
         lines = fetch_playlist(url)
         all_channels.extend(parse_playlist(lines, url))
