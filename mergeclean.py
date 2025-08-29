@@ -3,28 +3,28 @@ import re
 from datetime import datetime
 
 playlist_urls = [
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLive.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLiveEvents.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DrewAll.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/JapanTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PlexTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PlutoTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TubiTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DrewLiveVOD.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TVPass.m3u",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Radio.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/StreamEast.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/FSTV24.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Roku.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TheTVApp.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/LGTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/AriaPlus.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DaddyLive.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DaddyLiveEvents.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DrewAll.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/JapanTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/PlexTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/PlutoTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/TubiTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DrewLiveVOD.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/TVPass.m3u",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/Radio.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/StreamEast.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/FSTV24.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/Roku.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/TheTVApp.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/LGTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/AriaPlus.m3u8",
     "http://drewlive24.duckdns.org:8081/Zuzz.m3u8",
-    "http://drewlive24.duckdns.org:8081/TazzTV.m3u8",
-    "http://drewlive24.duckdns.org:8081/StreamedSU.m3u8",
+    "http://drewlive24.duckdns.org:8081/TazzTV.m3u",
+    "http://drewlive24.duckdns.org:8081/StreamedSU.m3u",
     "http://drewlive24.duckdns.org:8081/RBTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/SamsungTVPlus.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Xumo.m3u8"
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/SamsungTVPlus.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/Xumo.m3u8"
 ]
 
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
