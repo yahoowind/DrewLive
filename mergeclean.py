@@ -24,6 +24,7 @@ playlist_urls = [
     "http://drewlive24.duckdns.org:8081/TazzTV.m3u",
     "http://drewlive24.duckdns.org:8081/StreamedSU.m3u",
     "http://drewlive24.duckdns.org:8081/RBTV.m3u8",
+    "http://drewlive24.duckdns.org:8081/DaddyLive.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/SamsungTVPlus.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/Xumo.m3u8"
 ]
