@@ -1,49 +1,49 @@
 import requests
 import re
+import time
 from datetime import datetime
 
 playlist_urls = [
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLive.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DaddyLiveEvents.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DrewAll.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/JapanTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PlexTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PlutoTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TubiTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/DrewLiveVOD.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TVPass.m3u",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Radio.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/StreamEast.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/FSTV24.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Roku.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TheTVApp.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/LGTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/AriaPlus.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DaddyLive.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DaddyLiveEvents.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DrewAll.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/JapanTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/PlexTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/PlutoTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/TubiTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DrewLiveVOD.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/TVPass.m3u",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/Radio.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/StreamEast.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/FSTV24.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/Roku.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/TheTVApp.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/LGTV.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/AriaPlus.m3u8",
     "http://drewlive24.duckdns.org:8081/Zuzz.m3u8",
     "http://drewlive24.duckdns.org:8081/TazzTV.m3u8",
     "http://drewlive24.duckdns.org:8081/StreamedSU.m3u8",
     "http://drewlive24.duckdns.org:8081/RBTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/SamsungTVPlus.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Xumo.m3u8"
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/SamsungTVPlus.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/Xumo.m3u8"
 ]
 
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedPlaylist.m3u8"
 
-def fetch_playlist(url):
-    print(f"Attempting to fetch: {url}")
-    try:
-        res = requests.get(url, timeout=15)
-        res.raise_for_status()
-        return res.content.decode('utf-8', errors='ignore').strip().splitlines()
-    except requests.exceptions.Timeout:
-        print(f"❌ Failed to fetch {url}: Request timed out after 15 seconds.")
-    except requests.exceptions.ConnectionError:
-        print(f"❌ Failed to fetch {url}: Connection error.")
-    except requests.exceptions.HTTPError as err:
-        print(f"❌ Failed to fetch {url}: HTTP Error {err.response.status_code}")
-    except Exception as e:
-        print(f"❌ Unexpected error while fetching {url}: {e}")
+def fetch_playlist(url, retries=3, timeout=30):
+    headers = {"User-Agent": "Mozilla/5.0"}
+    for attempt in range(1, retries + 1):
+        try:
+            print(f"Attempting to fetch {url} (try {attempt})...")
+            res = requests.get(url, timeout=timeout, headers=headers)
+            res.raise_for_status()
+            print(f"✅ Successfully fetched {url}")
+            return res.text.strip().splitlines()
+        except Exception as e:
+            print(f"❌ Attempt {attempt} failed for {url}: {e}")
+            time.sleep(2)
+    print(f"⚠️ Skipping {url} after {retries} failed attempts.")
     return []
 
 def parse_playlist(lines, source_url="Unknown"):
@@ -62,7 +62,6 @@ def parse_playlist(lines, source_url="Unknown"):
 
             if i < len(lines):
                 url_line = lines[i].strip()
-                # Skip empty lines, comment-only lines, and placeholder '*'
                 if url_line and not url_line.startswith("#") and url_line != "*":
                     parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
                 else:
@@ -123,8 +122,9 @@ if __name__ == "__main__":
 
     for url in playlist_urls:
         lines = fetch_playlist(url)
-        parsed_channels = parse_playlist(lines, source_url=url)
-        all_unique_channels_set.update(parsed_channels)
+        if lines:
+            parsed_channels = parse_playlist(lines, source_url=url)
+            all_unique_channels_set.update(parsed_channels)
 
     write_merged_playlist(list(all_unique_channels_set))
     print(f"Merging complete at {datetime.now()}.")
