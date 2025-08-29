@@ -52,22 +52,26 @@ def parse_playlist(lines, source_url="Unknown"):
     i = 0
     while i < len(lines):
         line = lines[i].strip()
+        # Only process valid EXTINF entries
         if line.startswith("#EXTINF:"):
             extinf = line
             headers = []
             i += 1
+            # Capture optional headers (skip comment-only lines)
             while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
                 headers.append(lines[i].strip())
                 i += 1
-            if i < len(lines) and lines[i].strip() and not lines[i].strip().startswith("#"):
+            # Get URL and skip invalid entries
+            if i < len(lines):
                 url = lines[i].strip()
-                parsed.append((extinf, tuple(headers), url))
+                if url and not url.startswith("#") and url != "*":
+                    parsed.append((extinf, tuple(headers), url))
+                else:
+                    print(f"⚠️ Skipped invalid or placeholder channel in {source_url}")
                 i += 1
-            else:
-                print(f"⚠️ Skipped invalid channel in {source_url}")
         else:
             i += 1
-    print(f"✅ Parsed {len(parsed)} channels from {source_url}")
+    print(f"✅ Parsed {len(parsed)} valid channels from {source_url}")
     return parsed
 
 def is_nsfw(extinf, headers, url):
