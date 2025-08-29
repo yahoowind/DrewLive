@@ -52,6 +52,7 @@ def parse_playlist(lines, source_url="Unknown"):
     i = 0
     while i < len(lines):
         line = lines[i].strip()
+        # Only process lines starting with #EXTINF
         if line.startswith("#EXTINF:"):
             extinf_line = line
             channel_headers = []
@@ -63,10 +64,11 @@ def parse_playlist(lines, source_url="Unknown"):
 
             if i < len(lines):
                 url_line = lines[i].strip()
+                # Skip empty lines, lines starting with #, or '*' placeholders
                 if url_line and not url_line.startswith("#") and url_line != "*":
                     parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
                 else:
-                    print(f"⚠️ Skipping invalid or placeholder entry at line {i} in {source_url}.")
+                    print(f"⚠️ Skipped invalid or placeholder entry at line {i} in {source_url}.")
                 i += 1
         else:
             i += 1
@@ -76,6 +78,7 @@ def parse_playlist(lines, source_url="Unknown"):
 def write_merged_playlist(all_unique_channels):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
     sortable_channels = []
+
     for extinf, headers, url in all_unique_channels:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group = group_match.group(1) if group_match else "Other"
@@ -106,9 +109,7 @@ def write_merged_playlist(all_unique_channels):
     if lines and lines[-1] == "":
         lines.pop()
 
-    final_output_string = '\n'.join(lines)
-    if not final_output_string.endswith('\n'):
-        final_output_string += '\n'
+    final_output_string = '\n'.join(lines) + '\n'
 
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(final_output_string)
