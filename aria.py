@@ -7,7 +7,8 @@ OUTPUT_FILE = "AriaPlus.m3u8"
 # Only these groups are allowed
 ALLOWED_GROUPS = [
     "Australia", "Canada", "Japan", "New Zealand",
-    "North Korea", "United Kingdom", "United States", "Aria Web Channels"
+    "North Korea", "United Kingdom", "United States", "Aria Web Channels",
+    "South Korea"
 ]
 
 def fetch_playlist(url):
