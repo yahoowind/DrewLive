@@ -12,7 +12,7 @@ OUTPUT_FILE = "AriaPlus.m3u8"
 ALLOWED_GROUPS = [
     "Australia", "Canada", "Japan", "New Zealand",
     "North Korea", "United Kingdom", "United States", "Aria Web Channels",
-    "South Korea"
+    "South Korea", "Aria+ Exclusive", "Leaving On Aria+"
 ]
 
 def fetch_playlist(url):
