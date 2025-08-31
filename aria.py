@@ -1,7 +1,11 @@
 import requests
 import re
 
-PLAYLIST_URL = "https://aria.bnkd.xyz/aria.m3u"
+PLAYLIST_URLS = [
+    "https://aria.bnkd.xyz/aria.m3u",
+    "https://aria.bnkd.xyz/aria+.m3u"
+]
+
 OUTPUT_FILE = "AriaPlus.m3u8"
 
 # Only these groups are allowed
@@ -34,7 +38,7 @@ def remap_group_title(line):
     return line
 
 def process_playlist(lines):
-    output_lines = ["#EXTM3U"]
+    output_lines = []
     keep_channel = False
     for line in lines:
         line = line.strip()
@@ -48,11 +52,16 @@ def process_playlist(lines):
         elif line.startswith("http") and keep_channel:
             output_lines.append(line)
         # ignore other lines
-    return "\n".join(output_lines)
+    return output_lines
 
 if __name__ == "__main__":
-    lines = fetch_playlist(PLAYLIST_URL)
-    filtered_playlist = process_playlist(lines)
+    final_output = ["#EXTM3U"]
+
+    for url in PLAYLIST_URLS:
+        lines = fetch_playlist(url)
+        final_output.extend(process_playlist(lines))
+
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(filtered_playlist)
-    print(f"✅ AriaPlus playlist filtered and saved to {OUTPUT_FILE}")
+        f.write("\n".join(final_output))
+
+    print(f"✅ Combined Aria playlists filtered and saved to {OUTPUT_FILE}")
