@@ -138,7 +138,7 @@ NORMALIZED_MAPPINGS = {
 }
 
 MIRRORS = [
-    "https://fstv.us/live-tv.html?timezone=America%2FDenver",
+    "https://fstv.zip/live-tv.html?timezone=America%2FDenver&timezone=America%2FDenver",
     "https://fstv.online/live-tv.html?timezone=America%2FDenver",
     "https://fstv.space/live-tv.html?timezone=America%2FDenver",
 ]
