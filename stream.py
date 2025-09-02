@@ -1,10 +1,27 @@
 import asyncio
-import json
 from datetime import datetime
 from playwright.async_api import async_playwright, Request
 
 BASE_URL = "https://www.streameast.xyz"
 M3U8_FILE = "StreamEast.m3u8"
+
+STREAM_DOMAINS = [
+    "streameast.sk",
+    "streameast.ch",
+    "streameast.ec",
+    "streameast.fi",
+    "streameast.ms",
+    "streameast.ps",
+    "streameast.ph",
+    "streameast.sg",
+    "thestreameast.ru",
+    "thestreameast.st",
+    "thestreameast.su"
+]
+
+def is_stream_domain(url):
+    url_lower = url.lower()
+    return any(d in url_lower for d in STREAM_DOMAINS)
 
 CATEGORY_LOGOS = {
     "StreamEast - PPV Events": "http://drewlive24.duckdns.org:9000/Logos/PPV.png",
@@ -38,7 +55,6 @@ CATEGORY_TVG_IDS = {
     "StreamEast - WNBA": "WNBA.dummy.us",
 }
 
-
 def categorize_stream(url, title=""):
     lowered = (url + " " + title).lower()
     if "wnba" in lowered: return "StreamEast - WNBA"
@@ -55,8 +71,7 @@ def categorize_stream(url, title=""):
     if "f1" in lowered or "nascar" in lowered or "motorsport" in lowered: return "StreamEast - F1"
     return "StreamEast - PPV Events"
 
-
-async def safe_goto(page, url, tries=2, timeout=20000):
+async def safe_goto(page, url, tries=3, timeout=20000):
     for attempt in range(tries):
         try:
             await page.goto(url, timeout=timeout, wait_until="domcontentloaded")
@@ -70,60 +85,64 @@ async def safe_goto(page, url, tries=2, timeout=20000):
             await asyncio.sleep(2)
     return False
 
-
 async def get_event_links(page):
-    print("🌐 Gathering links...")
+    print("🌐 Gathering links from main domain...")
     if not await safe_goto(page, BASE_URL):
         return []
+
     links = await page.evaluate("""() => Array.from(document.querySelectorAll('a'))
         .map(a => a.href)
-        .filter(h => h.includes('/nba') || h.includes('/mlb') || h.includes('/ufc') ||
-                     h.includes('/f1') || h.includes('/soccer') || h.includes('/wnba') ||
-                     h.includes('/boxing') || h.includes('/wwe') || h.includes('/nfl') ||
-                     h.includes('/cfb') || h.includes('/college') || h.includes('/ncaa'))""")
+        .filter(h => h.includes('/cfb') || h.includes('/nba') || h.includes('/mlb') ||
+                     h.includes('/ufc') || h.includes('/f1') || h.includes('/soccer') ||
+                     h.includes('/wnba') || h.includes('/boxing') || h.includes('/wwe') || h.includes('/nfl'))""")
     return list(set(links))
 
-
 async def scrape_stream_url(context, url):
-    m3u8_links = set()
+    m3u8_links = []
     event_name = "Unknown Event"
     page = await context.new_page()
 
     def capture_request(request: Request):
-        if ".m3u8" in request.url.lower() and not m3u8_links:
-            print(f"🎯 Found stream: {request.url}")
-            m3u8_links.add(request.url)
-
+        if ".m3u8" in request.url.lower():
+            if request.url not in m3u8_links:
+                m3u8_links.append(request.url)
+                print(f"🎯 Found stream: {request.url}")
+    
     page.on("request", capture_request)
 
     try:
-        if not await safe_goto(page, url): return event_name, []
-        await asyncio.sleep(1)
+        if not await safe_goto(page, url):
+            return event_name, []
 
+        await asyncio.sleep(1)
         event_name = await page.evaluate("""
             () => {
-                const selectors = ['h1', '.event-title', '.title', '.stream-title'];
-                for (let sel of selectors) {
-                    const el = document.querySelector(sel);
+                const sel = ['h1', '.event-title', '.title', '.stream-title'];
+                for (const s of sel) {
+                    const el = document.querySelector(s);
                     if (el) return el.textContent.trim();
                 }
                 return document.title.trim();
             }
         """)
 
-        await page.mouse.click(500, 500)
-        for _ in range(10):
-            if m3u8_links:
-                break
+        for _ in range(3):
+            try: await page.mouse.click(500, 500)
+            except: pass
             await asyncio.sleep(0.5)
+
+        for i in range(0, 1500, 300):
+            await page.evaluate(f"window.scrollTo(0, {i})")
+            await asyncio.sleep(0.3)
+
+        await asyncio.sleep(2)
 
     except Exception as e:
         print(f"⚠️ Error scraping {url}: {e}")
     finally:
         await page.close()
 
-    return event_name, list(m3u8_links)
-
+    return event_name, m3u8_links[:3]
 
 async def main():
     async with async_playwright() as p:
@@ -145,7 +164,8 @@ async def main():
                 logo = CATEGORY_LOGOS.get(category, "")
                 tvg_id = CATEGORY_TVG_IDS.get(category, "")
 
-                for s_url in streams:
+                if streams:
+                    s_url = streams[0]
                     f.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{category}",{name}\n')
                     f.write('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0\n')
                     f.write('#EXTVLCOPT:http-origin=https://streamscenter.online\n')
