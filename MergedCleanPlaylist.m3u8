@@ -14137,21 +14137,11 @@ https://jmp2.uk/stvp-USBC2400019EF
 https://jmp2.uk/stvp-US270000298
 
 #EXTGRP:StreamEast - Am. Football
-#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",Kansas City Chiefs vs. Los Angeles Chargers Live Stream
+#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",Minnesota vs. Chicago Live Stream
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
 #EXTVLCOPT:http-origin=https://streamscenter.online
 #EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://fl1.moveonjoy.com/NFL_NETWORK/tracks-v1a1/mono.m3u8?verify=1756780968-xlSAFQWTizmSXihyunRCN6UXW7UIkBMrLUIRbJ045E8%3D
-#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",San Francisco vs. Seattle Live Stream
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
-#EXTVLCOPT:http-origin=https://streamscenter.online
-#EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://fl1.moveonjoy.com/NFL_NETWORK/tracks-v1a1/mono.m3u8?verify=1756780920-Osjxjlzau2%2BZ4%2FXYJQPzxFKjzMan7il29IwIT3QO1i8%3D
-#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL4.png" group-title="StreamEast - Am. Football",Tennessee vs. Denver Live Stream
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
-#EXTVLCOPT:http-origin=https://streamscenter.online
-#EXTVLCOPT:http-referrer=https://streamscenter.online/
-https://fl1.moveonjoy.com/NFL_NETWORK/tracks-v1a1/mono.m3u8?verify=1756780971-Y6wbm3D2UCuAwucl6LI%2F%2BsC7Vlcf3Qgo%2FXNk1icwqw0%3D
+https://fl1.moveonjoy.com/NFL_NETWORK/tracks-v1a1/mono.m3u8?verify=1756782578-mFvhlTmwepnDJYPK%2FURn5%2FyqHCrHLIEthtYfDWkONdY%3D
 
 #EXTGRP:TazzTV - 24/7 CHANNELS
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazz.tv/uploads/eptemplates/icons/GNsdxcIcY8tRPUBp7Tpz8ypKIlv1r1LJU1AhuB8CXbG3W5VmqY.png" group-title="TazzTV - 24/7 CHANNELS" tvg-id="24.7.Dummy.us",ABC
@@ -14333,16 +14323,18 @@ https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaKzIlSEVCJDI6N10rIVQ
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazz.tv/uploads/eptemplates/icons/2rhkhf1gRuQQ2vweTWrt5YVqATnlJnWjbitXgHZHrNR3wuUPmQ.png" group-title="TazzTV - 24/7 CHANNELS" tvg-id="24.7.Dummy.us",YES NETWORK
 https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaKz5XPiZLVz8yNCJGKy9BK0VGX0wrHUErUABFWgcARFIEVxsrNA==.m3u8
 
-#EXTGRP:TazzTV - MLB
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io//league/11205.png" group-title="TazzTV - MLB" tvg-id="24.7.Dummy.us",Arizona Diamondbacks - Texas Rangers [DIAMONDBACKS]
+#EXTGRP:TazzTV - BASEBALL
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io//league/11205.png" group-title="TazzTV - BASEBALL" tvg-id="24.7.Dummy.us",Arizona Diamondbacks - Texas Rangers [DIAMONDBACKS]
 https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaK0pcSSZGIkAxNF5IKy9BK0VGX0wrHUErCjdbMTpLU1oJTlNEOktUSUhAXT5aKEFfTD1TPlpXU0VCQiI-Kzo=.m3u8
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io//league/11205.png" group-title="TazzTV - BASEBALL" tvg-id="24.7.Dummy.us",Arizona Diamondbacks - Texas Rangers [MLB-EVENT-3]
+https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaKwgaCyYARg4HUT0YKy9BK0VGX0wrHUErCjdbMTpLU1oJTlNEOktUSUhAXT5aKEFfTD1TPlpXU0VCQiI-Kzo=.m3u8
 
-#EXTGRP:TazzTV - NCAA FOOTBALL
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/3T4hFax9CX1p2YzpbOXhoUNP4vspvu9LyUEET5jHMk7Mel7j5s.png" group-title="TazzTV - NCAA FOOTBALL" tvg-id="24.7.Dummy.us",North Carolina Tar Heels - TCU Horned Frogs [ESPN U]
+#EXTGRP:TazzTV - FOOTBALL
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/3T4hFax9CX1p2YzpbOXhoUNP4vspvu9LyUEET5jHMk7Mel7j5s.png" group-title="TazzTV - FOOTBALL" tvg-id="24.7.Dummy.us",North Carolina Tar Heels - TCU Horned Frogs [ESPN U]
 https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaK0IlO0UyMCFaJV5IREIwE1olHDo5MVhaCEYiOkdOXkhaUVM5WgNXTEcwQSZaURNcWgMhOUVCVFoPNyFCPiUv.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/3T4hFax9CX1p2YzpbOXhoUNP4vspvu9LyUEET5jHMk7Mel7j5s.png" group-title="TazzTV - NCAA FOOTBALL" tvg-id="24.7.Dummy.us",North Carolina Tar Heels - TCU Horned Frogs [ESPN]
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/3T4hFax9CX1p2YzpbOXhoUNP4vspvu9LyUEET5jHMk7Mel7j5s.png" group-title="TazzTV - FOOTBALL" tvg-id="24.7.Dummy.us",North Carolina Tar Heels - TCU Horned Frogs [ESPN]
 https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaK0IlO0UlOlorS1NETCUIWisJITk_TUEISDchR0BLU1pfRiJaDUJXRz5UPVpfBkdaDTQiRUxBQQ85NFk-Kzo=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/3T4hFax9CX1p2YzpbOXhoUNP4vspvu9LyUEET5jHMk7Mel7j5s.png" group-title="TazzTV - NCAA FOOTBALL" tvg-id="24.7.Dummy.us",North Carolina Tar Heels - TCU Horned Frogs [TSN 2]
+#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/3T4hFax9CX1p2YzpbOXhoUNP4vspvu9LyUEET5jHMk7Mel7j5s.png" group-title="TazzTV - FOOTBALL" tvg-id="24.7.Dummy.us",North Carolina Tar Heels - TCU Horned Frogs [TSN 2]
 https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaKzElRRslOlorS1NETCUIWisJITk_TUEISDchR0BLU1pfRiJaDUJXRz5UPVpfBkdaDTQiRUxBQQ85NFk-Kzo=.m3u8
 
 #EXTGRP:TazzTV - TENNIS
@@ -14374,12 +14366,6 @@ https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaKzBdMD9CXkVAMCdGKy9
 https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaKzElRRglOlorS1NETCUIWisDU09PRlRaBkZbSFoFPFomVBFFQDBbRDozU1oKKTA0.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/VcrDtcQacTWhrUfROKpYk8lMFIgi0T288Wp2YKsbjbnZdJEmRB.png" group-title="TazzTV - TENNIS" tvg-id="24.7.Dummy.us",Haddad Maia B. - Anisimova A. [TSN 5]
 https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaKzElRR4lOlorS1NETCUIWisDU09PRlRaBkZbSFoFPFomVBFFQDBbRDozU1oKKTA0.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/AFIqbuSsoBXMwSn2rFFTJlL0KuNpOtBmjQeLaiH9qDXekTjcaF.png" group-title="TazzTV - TENNIS" tvg-id="24.7.Dummy.us",Kostyuk M / Ruse E - Kudermetova V / Mertens E [ESPN-EVENT-13]
-https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaKwBFWwcoFV0OCUQmGhYwIVolXkhEQjATWiUbOj4xKzxGVB1aJFRCPD5CQQ5aKEEAPEFXOURCJDo9RkFdWipBBkw3JExFMEEOKzo=.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/AFIqbuSsoBXMwSn2rFFTJlL0KuNpOtBmjQeLaiH9qDXekTjcaF.png" group-title="TazzTV - TENNIS" tvg-id="24.7.Dummy.us",Kostyuk M / Ruse E - Kudermetova V / Mertens E [TENNIS 13]
-https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaKzFXRUVOJRoYJTpaK0tTREwlCForDiE-Pz4nRloIQSRaVyc-TFQVWiZUGzxPQiJETDEhPUhURlokVB1MOTFXRT5UFSs0.m3u8
-#EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/AFIqbuSsoBXMwSn2rFFTJlL0KuNpOtBmjQeLaiH9qDXekTjcaF.png" group-title="TazzTV - TENNIS" tvg-id="24.7.Dummy.us",Osorio J / Yuan Y - Siniakova K / Townsend T [ESPN-EVENT-16]
-https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaKwBFWwcoFV0OCUQmGhEwIVolXkhEQjATWiUfPjo3WzpaDUEkWl4nSEVUS1omVEVARU5TRjozU1oAVD9aXzQpRT5CXk9aUTA0.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/FoxdbsEHj8QdMcCgwu2rlMaolwykIDlNGQWWGQy7e6fkG1jB0G.png" group-title="TazzTV - TENNIS" tvg-id="24.7.Dummy.us",TV Coverage - US Open 2025 [ESPN 2]
 https://world-proxifier.xyz/tazz/channel/ODBOQ0ZeRUxJUUBPJQhaK0IlO0UVMCFaJV5IREIwE1olRF1aBiE9TDdTQkxUPVpcUEEEO0JeWhsrAB4rOg==.m3u8
 #EXTINF:-1 tvg-logo="https://corsproxy.io/?url=https://assets.tazztv.io/leagues/logos/FoxdbsEHj8QdMcCgwu2rlMaolwykIDlNGQWWGQy7e6fkG1jB0G.png" group-title="TazzTV - TENNIS" tvg-id="24.7.Dummy.us",TV Coverage - US Open 2025 [ESPN DEPORTES]
