@@ -102,18 +102,17 @@ def extract_group(extinf_line):
         return extinf_line.split('group-title="')[1].split('"')[0].strip()
     return ""
 
-def lock_metadata(meta_line, title, group_name):
-    original_group = extract_group(meta_line)
-    group_key = original_group.lower()
+def lock_metadata(meta_line, title):
     title_cased = title.title()
-    if group_key in LOCKED_GROUPS:
-        locked = LOCKED_GROUPS[group_key]
-        display_group = f"TVPass - {group_key.upper()}"
-        return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title_cased}" tvg-logo="{locked["tvg-logo"]}" group-title="{display_group}",{title_cased}'
-    elif group_name == "tv":
-        return f'#EXTINF:-1 group-title="TVPass",{title_cased}'
-    else:
-        return f'#EXTINF:-1 group-title="TVPass - {group_name}",{title_cased}'
+    original_group = extract_group(meta_line).lower()
+
+    # Only special locked groups get TVPass - GROUP
+    if original_group in LOCKED_GROUPS:
+        locked = LOCKED_GROUPS[original_group]
+        return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title_cased}" tvg-logo="{locked["tvg-logo"]}" group-title="TVPass - {original_group.upper()}",{title_cased}'
+
+    # Everything else (including /tv section) stays as-is
+    return meta_line
 
 def update_playlist(local_pairs, upstream_pairs):
     updated = []
@@ -124,16 +123,16 @@ def update_playlist(local_pairs, upstream_pairs):
         title = extract_title(meta)
         if title in upstream_map:
             new_url = upstream_map[title]
-            new_meta = lock_metadata(meta, title, extract_group(meta).lower())
+            new_meta = lock_metadata(meta, title)
             updated.append((new_meta, new_url))
             used_titles.add(title)
         else:
-            updated.append((lock_metadata(meta, title, extract_group(meta).lower()), url))
+            updated.append((lock_metadata(meta, title), url))
 
     for meta, url in upstream_pairs:
         title = extract_title(meta)
         if title not in used_titles:
-            updated.append((lock_metadata(meta, title, extract_group(meta).lower()), url))
+            updated.append((lock_metadata(meta, title), url))
 
     return updated
 
