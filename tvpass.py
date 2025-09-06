@@ -1,6 +1,6 @@
 import requests
 import re
-from datetime import datetime, timedelta
+from datetime import datetime
 
 UPSTREAM_URL = "http://tvpass.org/playlist/m3u"
 LOCAL_FILE = "TVPass.m3u"
@@ -28,23 +28,20 @@ LOCKED_GROUPS = {
     }
 }
 
-# Try to find a date in the title, e.g., July 14, 2025 or 07/14 or 2025-07-14
 def extract_event_date(title):
     patterns = [
-        r"(\d{4}-\d{2}-\d{2})",       # 2025-07-14
-        r"(\d{1,2}/\d{1,2})",         # 7/14 or 07/14
-        r"([A-Za-z]+ \d{1,2})",       # July 14
+        r"(\d{4}-\d{2}-\d{2})",
+        r"(\d{1,2}/\d{1,2})",
+        r"([A-Za-z]+ \d{1,2})",
     ]
     for pattern in patterns:
         match = re.search(pattern, title)
         if match:
             try:
                 text = match.group(1)
-                # Try parsing in various formats
                 for fmt in ("%Y-%m-%d", "%m/%d", "%B %d", "%b %d"):
                     try:
                         parsed = datetime.strptime(text, fmt)
-                        # If no year, assume current year
                         if "%Y" not in fmt:
                             parsed = parsed.replace(year=datetime.now().year)
                         return parsed.date()
@@ -59,7 +56,7 @@ def is_event_outdated(title):
     if event_date:
         today = datetime.now().date()
         return event_date < today
-    return False  # Keep if no date found
+    return False
 
 def fetch_upstream_pairs():
     res = requests.get(UPSTREAM_URL, timeout=15)
@@ -111,7 +108,7 @@ def lock_metadata(meta_line, title):
     group_key = original_group.lower()
     if group_key in LOCKED_GROUPS:
         locked = LOCKED_GROUPS[group_key]
-        display_group = group_key.upper()
+        display_group = f"TVPass - {group_key.upper()}"  # Prefix added
         title_cased = title.title()
         return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title_cased}" tvg-logo="{locked["tvg-logo"]}" group-title="{display_group}",{title_cased}'
     return meta_line
