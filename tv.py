@@ -166,9 +166,20 @@ def append_new_streams(lines, new_urls_with_groups):
         cleaned_lines.append(line)
     lines = cleaned_lines
 
-    # Append new sports streams
+    # Append new sports streams with custom logos, tvg-ids, and SD/HD
     for url, group, title in new_urls_with_groups:
-        ext_line = f'#EXTINF:-1 group-title="TheTVApp - {group}",{title}'
+        # Inject your custom logos and tvg-ids per group
+        if group == "MLB":
+            ext_line = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="TheTVApp - MLB",{title}'
+        elif group == "PPV":
+            ext_line = f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="TheTVApp - PPV",{title}'
+        elif group == "NFL":
+            ext_line = f'#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL.png" group-title="TheTVApp - NFL",{title}'
+        elif group == "NCAAF":
+            ext_line = f'#EXTINF:-1 tvg-id="NCAA.Football.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/CFB.png" group-title="TheTVApp - NCAAF",{title}'
+        else:
+            ext_line = f'#EXTINF:-1 group-title="TheTVApp - {group}",{title}'
+
         lines.append(ext_line)
         lines.append(url)
 
@@ -201,7 +212,7 @@ async def main():
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} updated: /tv untouched, sports section cleaned, SD/HD appended, group-titles set.")
+    print(f"\n✅ {M3U8_FILE} updated: /tv untouched, sports section cleaned, SD/HD appended, group-titles and custom logos set.")
 
 if __name__ == "__main__":
     asyncio.run(main())
