@@ -1,6 +1,6 @@
 import requests
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 
 UPSTREAM_URL = "http://tvpass.org/playlist/m3u"
 LOCAL_FILE = "TVPass.m3u"
@@ -17,35 +17,33 @@ LOCKED_GROUPS = {
     "wnba": {
         "tvg-id": "WNBA.dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/WNBA.png"
-    },
-    "nfl": {
-        "tvg-id": "NFL.Dummy.us",
-        "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/NFL2.png"
-    },
-    "ncaaf": {
-        "tvg-id": "NCAA.Football.Dummy.us",
-        "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/CFB2.png"
     }
 }
 
+# Try to find a date in the title, e.g., July 14, 2025 or 07/14 or 2025-07-14
 def extract_event_date(title):
     patterns = [
-        r"(\d{4}-\d{2}-\d{2})",
-        r"(\d{1,2}/\d{1,2})",
-        r"([A-Za-z]+ \d{1,2})",
+        r"(\d{4}-\d{2}-\d{2})",       # 2025-07-14
+        r"(\d{1,2}/\d{1,2})",         # 7/14 or 07/14
+        r"([A-Za-z]+ \d{1,2})",       # July 14
     ]
     for pattern in patterns:
         match = re.search(pattern, title)
         if match:
-            text = match.group(1)
-            for fmt in ("%Y-%m-%d", "%m/%d", "%B %d", "%b %d"):
-                try:
-                    parsed = datetime.strptime(text, fmt)
-                    if "%Y" not in fmt:
-                        parsed = parsed.replace(year=datetime.now().year)
-                    return parsed.date()
-                except ValueError:
-                    continue
+            try:
+                text = match.group(1)
+                # Try parsing in various formats
+                for fmt in ("%Y-%m-%d", "%m/%d", "%B %d", "%b %d"):
+                    try:
+                        parsed = datetime.strptime(text, fmt)
+                        # If no year, assume current year
+                        if "%Y" not in fmt:
+                            parsed = parsed.replace(year=datetime.now().year)
+                        return parsed.date()
+                    except ValueError:
+                        continue
+            except Exception:
+                continue
     return None
 
 def is_event_outdated(title):
@@ -53,7 +51,7 @@ def is_event_outdated(title):
     if event_date:
         today = datetime.now().date()
         return event_date < today
-    return False
+    return False  # Keep if no date found
 
 def fetch_upstream_pairs():
     res = requests.get(UPSTREAM_URL, timeout=15)
@@ -76,6 +74,7 @@ def fetch_upstream_pairs():
 def parse_local_playlist():
     with open(LOCAL_FILE, "r", encoding="utf-8") as f:
         lines = f.read().splitlines()
+
     header = lines[0] if lines and lines[0].startswith("#EXTM3U") else "#EXTM3U"
     pairs = []
     i = 1
@@ -104,8 +103,9 @@ def lock_metadata(meta_line, title):
     group_key = original_group.lower()
     if group_key in LOCKED_GROUPS:
         locked = LOCKED_GROUPS[group_key]
+        display_group = group_key.upper()
         title_cased = title.title()
-        return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title_cased}" tvg-logo="{locked["tvg-logo"]}" group-title="TVPass -",{title_cased}'
+        return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title_cased}" tvg-logo="{locked["tvg-logo"]}" group-title="{display_group}",{title_cased}'
     return meta_line
 
 def update_playlist(local_pairs, upstream_pairs):
