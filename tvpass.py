@@ -105,12 +105,18 @@ def extract_group(extinf_line):
 def lock_metadata(meta_line, title):
     original_group = extract_group(meta_line)
     group_key = original_group.lower()
+    title_cased = title.title()
     if group_key in LOCKED_GROUPS:
         locked = LOCKED_GROUPS[group_key]
-        display_group = group_key.upper()
-        title_cased = title.title()
+        display_group = f"TVPass - {group_key.upper()}"
         return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title_cased}" tvg-logo="{locked["tvg-logo"]}" group-title="{display_group}",{title_cased}'
-    return meta_line
+    else:
+        # Prepend TVPass - for other groups
+        if original_group:
+            display_group = f"TVPass - {original_group}"
+            return f'#EXTINF:-1 group-title="{display_group}",{title_cased}'
+        else:
+            return f'#EXTINF:-1 group-title="TVPass - Misc",{title_cased}'
 
 def update_playlist(local_pairs, upstream_pairs):
     updated = []
