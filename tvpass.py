@@ -17,6 +17,14 @@ LOCKED_GROUPS = {
     "wnba": {
         "tvg-id": "WNBA.dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/WNBA.png"
+    },
+    "nfl": {
+        "tvg-id": "NFL.Dummy.us",
+        "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/NFL2.png"
+    },
+    "ncaaf": {
+        "tvg-id": "NCAA.Football.Dummy.us",
+        "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/CFB2.png"
     }
 }
 
