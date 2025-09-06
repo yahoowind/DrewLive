@@ -19,6 +19,8 @@ SECTIONS_TO_APPEND = {
     "/events": "Events"
 }
 
+SPORTS_GROUPS = {"MLB", "NFL", "NCAAF", "PPV", "NBA", "WNBA", "NCAAB", "Soccer"}
+
 def extract_real_m3u8(url: str):
     if "ping.gif" in url and "mu=" in url:
         parsed = urllib.parse.urlparse(url)
@@ -118,8 +120,9 @@ async def scrape_section_urls(context, section_path, group_name):
             await new_page.close()
 
             if stream_url:
+                # Keep SD/HD in the title for sports section
+                urls.append((stream_url, group_name, f"{title} {quality}"))
                 print(f"✅ {quality}: {stream_url}")
-                urls.append((stream_url, group_name, f"{title} {quality}"))  # Append SD/HD to title
             else:
                 print(f"❌ {quality} not found")
 
@@ -150,28 +153,24 @@ def replace_urls_in_tv_section(lines, tv_urls):
     return result
 
 def append_new_streams(lines, new_urls_with_groups):
-    # Only change group-title for sports, keep everything else intact
+    # Remove old sports entries first
+    cleaned_lines = []
+    skip_next = False
+    for line in lines:
+        if skip_next:
+            skip_next = False
+            continue
+        if line.startswith("#EXTINF:-1") and any(f'TheTVApp - {sport}' in line for sport in SPORTS_GROUPS):
+            skip_next = True
+            continue
+        cleaned_lines.append(line)
+    lines = cleaned_lines
+
+    # Append new sports streams
     for url, group, title in new_urls_with_groups:
-        # Find existing line matching title (ignores SD/HD suffix)
-        ext_line = None
-        for line in lines:
-            if title.replace(" SD", "").replace(" HD", "") in line:
-                ext_line = line
-                break
-        if ext_line:
-            # Update group-title only, leave logo and tvg-id intact
-            if 'group-title="' in ext_line:
-                start = ext_line.find('group-title="') + len('group-title="')
-                end = ext_line.find('"', start)
-                ext_line = ext_line[:start] + f"TheTVApp - {group}" + ext_line[end:]
-            else:
-                ext_line = f'#EXTINF:-1 group-title="TheTVApp - {group}",{title}'
-            lines.append(ext_line)
-            lines.append(url)
-        else:
-            # Fallback if title not found
-            lines.append(f'#EXTINF:-1 group-title="TheTVApp - {group}",{title}')
-            lines.append(url)
+        ext_line = f'#EXTINF:-1 group-title="TheTVApp - {group}",{title}'
+        lines.append(ext_line)
+        lines.append(url)
 
     if not lines or lines[0].strip() != "#EXTM3U":
         lines.insert(0, "#EXTM3U")
@@ -202,7 +201,7 @@ async def main():
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} updated: /tv untouched, sports group-titles set, SD/HD appended, logos preserved.")
+    print(f"\n✅ {M3U8_FILE} updated: /tv untouched, sports section cleaned, SD/HD appended, group-titles set.")
 
 if __name__ == "__main__":
     asyncio.run(main())
