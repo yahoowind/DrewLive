@@ -37,18 +37,15 @@ def extract_event_date(title):
     for pattern in patterns:
         match = re.search(pattern, title)
         if match:
-            try:
-                text = match.group(1)
-                for fmt in ("%Y-%m-%d", "%m/%d", "%B %d", "%b %d"):
-                    try:
-                        parsed = datetime.strptime(text, fmt)
-                        if "%Y" not in fmt:
-                            parsed = parsed.replace(year=datetime.now().year)
-                        return parsed.date()
-                    except ValueError:
-                        continue
-            except Exception:
-                continue
+            text = match.group(1)
+            for fmt in ("%Y-%m-%d", "%m/%d", "%B %d", "%b %d"):
+                try:
+                    parsed = datetime.strptime(text, fmt)
+                    if "%Y" not in fmt:
+                        parsed = parsed.replace(year=datetime.now().year)
+                    return parsed.date()
+                except ValueError:
+                    continue
     return None
 
 def is_event_outdated(title):
@@ -103,15 +100,12 @@ def extract_group(extinf_line):
     return ""
 
 def lock_metadata(meta_line, title):
-    title_cased = title.title()
-    original_group = extract_group(meta_line).lower()
-
-    # Only special locked groups get TVPass - GROUP
-    if original_group in LOCKED_GROUPS:
-        locked = LOCKED_GROUPS[original_group]
-        return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title_cased}" tvg-logo="{locked["tvg-logo"]}" group-title="TVPass - {original_group.upper()}",{title_cased}'
-
-    # Everything else (including /tv section) stays as-is
+    original_group = extract_group(meta_line)
+    group_key = original_group.lower()
+    if group_key in LOCKED_GROUPS:
+        locked = LOCKED_GROUPS[group_key]
+        title_cased = title.title()
+        return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title_cased}" tvg-logo="{locked["tvg-logo"]}" group-title="TVPass -",{title_cased}'
     return meta_line
 
 def update_playlist(local_pairs, upstream_pairs):
