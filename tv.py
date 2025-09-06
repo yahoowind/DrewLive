@@ -119,7 +119,7 @@ async def scrape_section_urls(context, section_path, group_name):
 
             if stream_url:
                 print(f"✅ {quality}: {stream_url}")
-                urls.append((stream_url, group_name, title))
+                urls.append((stream_url, group_name, f"{title} {quality}"))  # Append SD/HD to title
             else:
                 print(f"❌ {quality} not found")
 
@@ -150,70 +150,29 @@ def replace_urls_in_tv_section(lines, tv_urls):
     return result
 
 def append_new_streams(lines, new_urls_with_groups):
-    # Delete existing MLB, PPV, NFL, and NCAAF entries first
-    cleaned_lines = []
-    skip_next = False
-    for line in lines:
-        if skip_next:
-            skip_next = False
-            continue
-        if line.startswith("#EXTINF:-1") and (
-            "group-title=\"MLB\"" in line or
-            "group-title=\"PPV\"" in line or
-            "group-title=\"NFL\"" in line or
-            "group-title=\"NCAAF\"" in line
-        ):
-            skip_next = True
-            continue
-        cleaned_lines.append(line)
-
-    lines = cleaned_lines
-
-    existing_entries = {}
-    i = 0
-    while i < len(lines) - 1:
-        if lines[i].startswith("#EXTINF:-1"):
-            line = lines[i]
-            group = None
-            title = line.split(",")[-1].strip()
-            if 'group-title="' in line:
-                group = line.split('group-title="')[1].split('"')[0]
-            if group:
-                url = lines[i + 1]
-                if (group, title) not in existing_entries:
-                    existing_entries[(group, title)] = set()
-                existing_entries[(group, title)].add(url)
-        i += 1
-
-    new_entries_added = {}
-
+    # Only change group-title for sports, keep everything else intact
     for url, group, title in new_urls_with_groups:
-        key = (group, title)
-        if key not in new_entries_added:
-            new_entries_added[key] = set()
-
-        if (key in existing_entries and url in existing_entries[key]) or (url in new_entries_added[key]):
-            continue
-
-        if len(new_entries_added[key]) >= 2:
-            continue
-
-        if group == "MLB":
-            ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="MLB",{title}'
-        elif group == "PPV":
-            ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="PPV",{title}'
-        elif group == "NFL":
-            ext = f'#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL.png" group-title="NFL",{title}'
-        elif group == "NCAAF":
-            ext = f'#EXTINF:-1 tvg-id="NCAA.Football.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/CFB.png" group-title="NCAAF",{title}'
+        # Find existing line matching title (ignores SD/HD suffix)
+        ext_line = None
+        for line in lines:
+            if title.replace(" SD", "").replace(" HD", "") in line:
+                ext_line = line
+                break
+        if ext_line:
+            # Update group-title only, leave logo and tvg-id intact
+            if 'group-title="' in ext_line:
+                start = ext_line.find('group-title="') + len('group-title="')
+                end = ext_line.find('"', start)
+                ext_line = ext_line[:start] + f"TheTVApp - {group}" + ext_line[end:]
+            else:
+                ext_line = f'#EXTINF:-1 group-title="TheTVApp - {group}",{title}'
+            lines.append(ext_line)
+            lines.append(url)
         else:
-            ext = f'#EXTINF:-1 group-title="{group}",{title}'
+            # Fallback if title not found
+            lines.append(f'#EXTINF:-1 group-title="TheTVApp - {group}",{title}')
+            lines.append(url)
 
-        lines.append(ext)
-        lines.append(url)
-        new_entries_added[key].add(url)
-
-    lines = [line for line in lines if line.strip()]
     if not lines or lines[0].strip() != "#EXTM3U":
         lines.insert(0, "#EXTM3U")
 
@@ -235,7 +194,7 @@ async def main():
 
     updated_lines = replace_urls_in_tv_section(lines, tv_new_urls)
 
-    print("\n📦 Scraping all other sections (NBA, NFL, NCAAF, Events, MLB, PPV, etc)...")
+    print("\n📦 Scraping all sports sections (NBA, NFL, NCAAF, MLB, PPV, etc)...")
     append_new_urls = await scrape_all_append_sections()
     if append_new_urls:
         updated_lines = append_new_streams(updated_lines, append_new_urls)
@@ -243,7 +202,7 @@ async def main():
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} updated: Clean top, no duplicates, proper MLB, NFL, NCAAF, and PPV logos.")
+    print(f"\n✅ {M3U8_FILE} updated: /tv untouched, sports group-titles set, SD/HD appended, logos preserved.")
 
 if __name__ == "__main__":
     asyncio.run(main())
