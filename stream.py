@@ -6,17 +6,10 @@ BASE_URL = "https://www.streameast.xyz"
 M3U8_FILE = "StreamEast.m3u8"
 
 STREAM_DOMAINS = [
-    "streameast.sk",
-    "streameast.ch",
-    "streameast.ec",
-    "streameast.fi",
-    "streameast.ms",
-    "streameast.ps",
-    "streameast.ph",
-    "streameast.sg",
-    "thestreameast.ru",
-    "thestreameast.st",
-    "thestreameast.su"
+    "streameast.sk", "streameast.ch", "streameast.ec",
+    "streameast.fi", "streameast.ms", "streameast.ps",
+    "streameast.ph", "streameast.sg", "thestreameast.ru",
+    "thestreameast.st", "thestreameast.su"
 ]
 
 def is_stream_domain(url):
@@ -107,14 +100,18 @@ async def scrape_stream_url(context, url):
             if request.url not in m3u8_links:
                 m3u8_links.append(request.url)
                 print(f"🎯 Found stream: {request.url}")
-    
+
     page.on("request", capture_request)
 
     try:
         if not await safe_goto(page, url):
             return event_name, []
 
-        await asyncio.sleep(1)
+        try:
+            await page.wait_for_selector("video, iframe", timeout=15000)
+        except:
+            pass
+
         event_name = await page.evaluate("""
             () => {
                 const sel = ['h1', '.event-title', '.title', '.stream-title'];
@@ -126,16 +123,17 @@ async def scrape_stream_url(context, url):
             }
         """)
 
-        for _ in range(3):
-            try: await page.mouse.click(500, 500)
-            except: pass
+        await page.mouse.move(200, 200)
+        await page.mouse.click(200, 200)
+        await page.keyboard.press("Space")
+        await asyncio.sleep(1)
+        await page.mouse.click(300, 300, click_count=2)
+
+        for i in range(0, 1800, 400):
+            await page.evaluate(f"window.scrollTo(0, {i})")
             await asyncio.sleep(0.5)
 
-        for i in range(0, 1500, 300):
-            await page.evaluate(f"window.scrollTo(0, {i})")
-            await asyncio.sleep(0.3)
-
-        await asyncio.sleep(2)
+        await asyncio.sleep(8)
 
     except Exception as e:
         print(f"⚠️ Error scraping {url}: {e}")
@@ -146,8 +144,17 @@ async def scrape_stream_url(context, url):
 
 async def main():
     async with async_playwright() as p:
-        browser = await p.firefox.launch(headless=True)
-        context = await browser.new_context(user_agent="Mozilla/5.0 Firefox/139.0")
+        # 👇 Use installed Chrome with codecs
+        browser = await p.chromium.launch(channel="chrome", headless=True)
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                       "(KHTML, like Gecko) Chrome/116.0 Safari/537.36",
+            viewport={"width": 1366, "height": 768},
+            java_script_enabled=True,
+            ignore_https_errors=True
+        )
+
+        await context.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
         main_page = await context.new_page()
         links = await get_event_links(main_page)
@@ -167,7 +174,7 @@ async def main():
                 if streams:
                     s_url = streams[0]
                     f.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{category}",{name}\n')
-                    f.write('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0\n')
+                    f.write('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0 Safari/537.36\n')
                     f.write('#EXTVLCOPT:http-origin=https://streamscenter.online\n')
                     f.write('#EXTVLCOPT:http-referrer=https://streamscenter.online/\n')
                     f.write(f'{s_url}\n\n')
