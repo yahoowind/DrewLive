@@ -123,6 +123,7 @@ async def scrape_stream_url(context, url):
             }
         """)
 
+        # Interact to trigger streams
         await page.mouse.move(200, 200)
         await page.mouse.click(200, 200)
         await page.keyboard.press("Space")
@@ -144,6 +145,7 @@ async def scrape_stream_url(context, url):
 
 async def main():
     async with async_playwright() as p:
+        # 👇 Use installed Chrome with codecs
         browser = await p.chromium.launch(channel="chrome", headless=True)
         context = await browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -172,26 +174,14 @@ async def main():
 
                 if streams:
                     s_url = streams[0]
-
-                    # Correct headers for zd.strmd.top or Streameast domains
-                    if "zd.strmd.top" in s_url.lower() or is_stream_domain(s_url):
-                        user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
-                        origin = "https://embedsports.top"
-                        referrer = "https://embedsports.top/"
-                    else:
-                        user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0 Safari/537.36"
-                        origin = "https://streamscenter.online"
-                        referrer = "https://streamscenter.online/"
-
                     f.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{category}",{name}\n')
-                    f.write(f'#EXTVLCOPT:http-user-agent={user_agent}\n')
-                    f.write(f'#EXTVLCOPT:http-origin={origin}\n')
-                    f.write(f'#EXTVLCOPT:http-referrer={referrer}\n')
+                    f.write('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\n')
+                    f.write('#EXTVLCOPT:http-origin=https://embedsports.top\n')
+                    f.write('#EXTVLCOPT:http-referrer=https://embedsports.top/\n')
                     f.write(f'{s_url}\n\n')
-
                 await asyncio.sleep(0.5)
 
-        print(f"✅ {M3U8_FILE} saved.")
+        print("✅ StreamEast.m3u8 saved.")
         await browser.close()
 
 if __name__ == "__main__":
