@@ -75,10 +75,8 @@ async def safe_goto(page, url, tries=3, timeout=20000):
     return False
 
 async def get_event_links(page):
-    print("🌐 Gathering links from main domain...")
     if not await safe_goto(page, BASE_URL):
         return []
-
     links = await page.evaluate("""() => Array.from(document.querySelectorAll('a'))
         .map(a => a.href)
         .filter(h => h.includes('/cfb') || h.includes('/nba') || h.includes('/mlb') ||
@@ -95,19 +93,16 @@ async def scrape_stream_url(context, url):
         if ".m3u8" in request.url.lower() and any(d in request.url.lower() for d in STREAM_DOMAINS):
             if request.url not in m3u8_links:
                 m3u8_links.append(request.url)
-                print(f"🎯 Found stream: {request.url}")
 
     page.on("request", capture_request)
 
     try:
         if not await safe_goto(page, url):
             return event_name, []
-
         try:
             await page.wait_for_selector("video, iframe", timeout=15000)
         except:
             pass
-
         event_name = await page.evaluate("""() => {
             const sel = ['h1', '.event-title', '.title', '.stream-title'];
             for (const s of sel) {
@@ -116,21 +111,7 @@ async def scrape_stream_url(context, url):
             }
             return document.title.trim();
         }""")
-
-        # Interact to trigger streams
-        await page.mouse.click(200, 200)
-        await page.keyboard.press("Space")
-        await asyncio.sleep(1)
-        await page.mouse.click(300, 300, click_count=2)
-
-        for i in range(0, 1800, 400):
-            await page.evaluate(f"window.scrollTo(0, {i})")
-            await asyncio.sleep(0.5)
-
-        await asyncio.sleep(6)  # allow streams to populate
-
-    except Exception as e:
-        print(f"⚠️ Error scraping {url}: {e}")
+        await asyncio.sleep(6)  # wait for streams
     finally:
         await page.close()
 
@@ -138,11 +119,10 @@ async def scrape_stream_url(context, url):
 
 async def main():
     async with async_playwright() as p:
-        browser = await p.chromium.launch(channel="chrome", headless=True)
+        browser = await p.chromium.launch(headless=True)
         context = await browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:142.0) Gecko/20100101 Firefox/142.0",
             viewport={"width": 1366, "height": 768},
-            java_script_enabled=True,
             ignore_https_errors=True
         )
         await context.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
@@ -152,11 +132,10 @@ async def main():
         await main_page.close()
 
         with open(M3U8_FILE, "w", encoding="utf-8") as f:
-            f.write(f"# Updated at {datetime.utcnow().isoformat()}Z\n")
             f.write("#EXTM3U\n")
+            f.write(f"# Updated at {datetime.utcnow().isoformat()}Z\n")
 
             for idx, link in enumerate(links, 1):
-                print(f"\n➡️ [{idx}/{len(links)}] {link}")
                 name, streams = await scrape_stream_url(context, link)
                 category = categorize_stream(link, name)
                 logo = CATEGORY_LOGOS.get(category, "")
@@ -167,10 +146,10 @@ async def main():
                     f.write('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:142.0) Gecko/20100101 Firefox/142.0\n')
                     f.write('#EXTVLCOPT:http-origin=https://embedsports.top\n')
                     f.write('#EXTVLCOPT:http-referrer=https://embedsports.top/\n')
-                    f.write(f'{s_url}\n\n')
+                    f.write(f'{s_url}\n')
 
-        print("✅ StreamEast.m3u8 saved.")
         await browser.close()
+        print("✅ StreamEast.m3u8 saved.")
 
 if __name__ == "__main__":
     asyncio.run(main())
