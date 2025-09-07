@@ -21,6 +21,7 @@ SECTIONS_TO_APPEND = {
 }
 
 def extract_real_m3u8(url: str):
+    """Extracts the real .m3u8 URL from ping.gif or direct links."""
     if "ping.gif" in url and "mu=" in url:
         parsed = urllib.parse.urlparse(url)
         qs = urllib.parse.parse_qs(parsed.query)
@@ -31,24 +32,19 @@ def extract_real_m3u8(url: str):
         return url
     return None
 
-def add_timestamp(url: str):
-    ts = int(datetime.utcnow().timestamp())
-    if "?" in url:
-        return f"{url}&t={ts}"
-    else:
-        return f"{url}?t={ts}"
-
 async def scrape_tv_urls():
+    """Scrape main TV section."""
     urls = []
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
 
-        print(f"🔄 Loading /tv channel list...")
+        print("🔄 Loading /tv channel list...")
         await page.goto(CHANNEL_LIST_URL)
         links = await page.locator("ol.list-group a").all()
-        hrefs_and_titles = [(await link.get_attribute("href"), await link.text_content()) for link in links if await link.get_attribute("href")]
+        hrefs_and_titles = [(await link.get_attribute("href"), await link.text_content())
+                            for link in links if await link.get_attribute("href")]
         await page.close()
 
         for href, title_raw in hrefs_and_titles:
@@ -78,7 +74,6 @@ async def scrape_tv_urls():
                 await new_page.close()
 
                 if stream_url:
-                    stream_url = add_timestamp(stream_url)
                     urls.append((stream_url, "TV", f"{title} {quality}"))
                     print(f"✅ {quality}: {stream_url}")
                 else:
@@ -88,6 +83,7 @@ async def scrape_tv_urls():
     return urls
 
 async def scrape_section_urls(context, section_path, group_name):
+    """Scrape other sports/PPV sections."""
     urls = []
     page = await context.new_page()
     section_url = BASE_URL + section_path
@@ -130,7 +126,6 @@ async def scrape_section_urls(context, section_path, group_name):
             await new_page.close()
 
             if stream_url:
-                stream_url = add_timestamp(stream_url)
                 urls.append((stream_url, group_name, f"{title} {quality}"))
                 print(f"✅ {quality}: {stream_url}")
             else:
@@ -139,6 +134,7 @@ async def scrape_section_urls(context, section_path, group_name):
     return urls
 
 async def scrape_all_append_sections():
+    """Scrape all additional sections."""
     all_urls = []
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
@@ -151,14 +147,15 @@ async def scrape_all_append_sections():
         await browser.close()
     return all_urls
 
-def clean_m3u_header_with_epg(lines):
+def clean_m3u_header(lines):
+    """Ensure correct M3U header."""
     lines = [line for line in lines if not line.strip().startswith("#EXTM3U")]
     timestamp = int(datetime.utcnow().timestamp())
     lines.insert(0, f'#EXTM3U url-tvg="http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz" # Updated: {timestamp}')
     return lines
 
 def replace_tv_urls(lines, tv_urls):
-    """Replace existing TV URLs in place while preserving #EXTINF metadata"""
+    """Replace existing TV URLs in place while preserving #EXTINF metadata."""
     updated = []
     tv_idx = 0
     i = 0
@@ -169,7 +166,6 @@ def replace_tv_urls(lines, tv_urls):
             # Preserve EXTINF line before URL
             if i > 0 and lines[i - 1].startswith("#EXTINF"):
                 extinf = lines[i - 1]
-                # Update title to match SD/HD label
                 if "," in extinf:
                     parts = extinf.split(",")
                     parts[-1] = title
@@ -183,7 +179,7 @@ def replace_tv_urls(lines, tv_urls):
     return updated
 
 def append_new_streams(lines, new_urls_with_groups):
-    """Append new streams but avoid duplicates"""
+    """Append new streams while avoiding duplicates."""
     existing = set()
     for line in lines:
         if line.startswith("#EXTINF"):
@@ -218,7 +214,7 @@ async def main():
     with open(M3U8_FILE, "r", encoding="utf-8") as f:
         lines = f.read().splitlines()
 
-    lines = clean_m3u_header_with_epg(lines)
+    lines = clean_m3u_header(lines)
 
     print("🔧 Replacing /tv stream URLs...")
     tv_new_urls = await scrape_tv_urls()
@@ -235,7 +231,7 @@ async def main():
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
-    print(f"\n✅ {M3U8_FILE} fully refreshed without broken URLs or duplicates.")
+    print(f"\n✅ {M3U8_FILE} fully refreshed and working.")
 
 if __name__ == "__main__":
     asyncio.run(main())
