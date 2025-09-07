@@ -12,10 +12,6 @@ STREAM_DOMAINS = [
     "thestreameast.st", "thestreameast.su", "zd.strmd.top"
 ]
 
-def is_stream_domain(url):
-    url_lower = url.lower()
-    return any(d in url_lower for d in STREAM_DOMAINS)
-
 CATEGORY_LOGOS = {
     "StreamEast - PPV Events": "http://drewlive24.duckdns.org:9000/Logos/PPV.png",
     "StreamEast - Soccer": "http://drewlive24.duckdns.org:9000/Logos/Football2.png",
@@ -96,7 +92,7 @@ async def scrape_stream_url(context, url):
     page = await context.new_page()
 
     def capture_request(request: Request):
-        if ".m3u8" in request.url.lower():
+        if ".m3u8" in request.url.lower() and any(d in request.url.lower() for d in STREAM_DOMAINS):
             if request.url not in m3u8_links:
                 m3u8_links.append(request.url)
                 print(f"🎯 Found stream: {request.url}")
@@ -112,19 +108,16 @@ async def scrape_stream_url(context, url):
         except:
             pass
 
-        event_name = await page.evaluate("""
-            () => {
-                const sel = ['h1', '.event-title', '.title', '.stream-title'];
-                for (const s of sel) {
-                    const el = document.querySelector(s);
-                    if (el) return el.textContent.trim();
-                }
-                return document.title.trim();
+        event_name = await page.evaluate("""() => {
+            const sel = ['h1', '.event-title', '.title', '.stream-title'];
+            for (const s of sel) {
+                const el = document.querySelector(s);
+                if (el) return el.textContent.trim();
             }
-        """)
+            return document.title.trim();
+        }""")
 
         # Interact to trigger streams
-        await page.mouse.move(200, 200)
         await page.mouse.click(200, 200)
         await page.keyboard.press("Space")
         await asyncio.sleep(1)
@@ -134,7 +127,7 @@ async def scrape_stream_url(context, url):
             await page.evaluate(f"window.scrollTo(0, {i})")
             await asyncio.sleep(0.5)
 
-        await asyncio.sleep(8)
+        await asyncio.sleep(6)  # allow streams to populate
 
     except Exception as e:
         print(f"⚠️ Error scraping {url}: {e}")
@@ -145,16 +138,13 @@ async def scrape_stream_url(context, url):
 
 async def main():
     async with async_playwright() as p:
-        # 👇 Use installed Chrome with codecs
         browser = await p.chromium.launch(channel="chrome", headless=True)
         context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                       "(KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:142.0) Gecko/20100101 Firefox/142.0",
             viewport={"width": 1366, "height": 768},
             java_script_enabled=True,
             ignore_https_errors=True
         )
-
         await context.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
         main_page = await context.new_page()
@@ -172,14 +162,12 @@ async def main():
                 logo = CATEGORY_LOGOS.get(category, "")
                 tvg_id = CATEGORY_TVG_IDS.get(category, "")
 
-                if streams:
-                    s_url = streams[0]
+                for s_url in streams:
                     f.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{category}",{name}\n')
-                    f.write('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\n')
+                    f.write('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:142.0) Gecko/20100101 Firefox/142.0\n')
                     f.write('#EXTVLCOPT:http-origin=https://embedsports.top\n')
                     f.write('#EXTVLCOPT:http-referrer=https://embedsports.top/\n')
                     f.write(f'{s_url}\n\n')
-                await asyncio.sleep(0.5)
 
         print("✅ StreamEast.m3u8 saved.")
         await browser.close()
