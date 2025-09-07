@@ -4,13 +4,6 @@ from playwright.async_api import async_playwright, Request
 BASE_URL = "https://www.streameast.xyz"
 M3U8_FILE = "StreamEast.m3u8"
 
-STREAM_DOMAINS = [
-    "streameast.sk", "streameast.ch", "streameast.ec",
-    "streameast.fi", "streameast.ms", "streameast.ps",
-    "streameast.ph", "streameast.sg", "thestreameast.ru",
-    "thestreameast.st", "thestreameast.su"
-]
-
 CATEGORY_LOGOS = {
     "StreamEast - PPV Events": "http://drewlive24.duckdns.org:9000/Logos/PPV.png",
     "StreamEast - Soccer": "http://drewlive24.duckdns.org:9000/Logos/Football2.png",
@@ -66,7 +59,7 @@ def categorize_stream(url, title=""):
     return "StreamEast - PPV Events"
 
 async def safe_goto(page, url, tries=3, timeout=20000):
-    for attempt in range(tries):
+    for _ in range(tries):
         try:
             await page.goto(url, timeout=timeout, wait_until="domcontentloaded")
             html = await page.content()
@@ -74,21 +67,18 @@ async def safe_goto(page, url, tries=3, timeout=20000):
                 await asyncio.sleep(2)
                 continue
             return True
-        except Exception as e:
-            print(f"⚠️ Error loading {url}: {e}")
+        except:
             await asyncio.sleep(2)
     return False
 
 async def get_event_links(page):
-    print("🌐 Gathering links from main domain...")
+    print("🌐 Gathering event links...")
     if not await safe_goto(page, BASE_URL):
         return []
 
     links = await page.evaluate("""() => Array.from(document.querySelectorAll('a'))
         .map(a => a.href)
-        .filter(h => h.includes('/cfb') || h.includes('/nba') || h.includes('/mlb') ||
-                     h.includes('/ufc') || h.includes('/f1') || h.includes('/soccer') ||
-                     h.includes('/wnba') || h.includes('/boxing') || h.includes('/wwe') || h.includes('/nfl'))""")
+        .filter(h => ['/cfb','/nba','/mlb','/ufc','/f1','/soccer','/wnba','/boxing','/wwe','/nfl'].some(x => h.includes(x)))""")
     return list(set(links))
 
 async def scrape_stream_url(context, url):
@@ -121,23 +111,17 @@ async def scrape_stream_url(context, url):
             return document.title.trim();
         }""")
 
-        # Scroll & click to trigger m3u8 requests
-        await page.mouse.move(200, 200)
         await page.mouse.click(200, 200)
-        await page.keyboard.press("Space")
         await asyncio.sleep(1)
-        await page.mouse.click(300, 300, click_count=2)
         for i in range(0, 1800, 400):
             await page.evaluate(f"window.scrollTo(0, {i})")
             await asyncio.sleep(0.5)
         await asyncio.sleep(5)
 
-    except Exception as e:
-        print(f"⚠️ Error scraping {url}: {e}")
     finally:
         await page.close()
 
-    return event_name, m3u8_links[:3]
+    return event_name, m3u8_links[:1]  # only first link
 
 async def main():
     async with async_playwright() as p:
@@ -156,32 +140,28 @@ async def main():
         await main_page.close()
 
         with open(M3U8_FILE, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")
-
+            f.write("#EXTM3U\n\n")
             for idx, link in enumerate(links, 1):
                 print(f"\n➡️ [{idx}/{len(links)}] {link}")
                 name, streams = await scrape_stream_url(context, link)
+                if not streams:
+                    continue
+
+                s_url = streams[0]
                 category = categorize_stream(link, name)
                 logo = CATEGORY_LOGOS.get(category, "")
                 tvg_id = CATEGORY_TVG_IDS.get(category, "")
+                safe_name = name.replace(",", " -")
 
-                if streams:
-                    s_url = streams[0]
-                    safe_name = name.replace(",", " -")  # sanitize title
+                extinf = f'#EXTINF:-1'
+                if tvg_id: extinf += f' tvg-id="{tvg_id}"'
+                if logo: extinf += f' tvg-logo="{logo}"'
+                extinf += f' group-title="{category}",{safe_name}'
 
-                    extinf = f'#EXTINF:-1'
-                    if tvg_id:
-                        extinf += f' tvg-id="{tvg_id}"'
-                    if logo:
-                        extinf += f' tvg-logo="{logo}"'
-                    extinf += f' group-title="{category}",{safe_name}'
-
-                    f.write(f"{extinf}\n")
-                    for header in HEADERS_FOR_VLC:
-                        f.write(f"{header}\n")
-                    f.write(f"{s_url}\n")  # single newline only
-
-                await asyncio.sleep(0.5)
+                f.write(f"{extinf}\n")
+                for header in HEADERS_FOR_VLC:
+                    f.write(f"{header}\n")
+                f.write(f"{s_url}\n\n")  # double newline between entries
 
         print(f"✅ {M3U8_FILE} saved.")
         await browser.close()
