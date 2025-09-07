@@ -72,6 +72,7 @@ async def scrape_tv_urls():
                     stream_url = f"{stream_url}?t={int(datetime.utcnow().timestamp())}"
                     print(f"✅ {quality}: {stream_url}")
                     urls.append(stream_url)
+                    break
                 else:
                     print(f"❌ {quality} not found")
 
@@ -124,7 +125,8 @@ async def scrape_section_urls(context, section_path, group_name):
             if stream_url:
                 stream_url = f"{stream_url}?t={int(datetime.utcnow().timestamp())}"
                 print(f"✅ {quality}: {stream_url}")
-                urls.append((stream_url, group_name, f"{title} {quality}"))
+                urls.append((stream_url, group_name, title))
+                break
             else:
                 print(f"❌ {quality} not found")
 
@@ -179,7 +181,7 @@ def remove_old_section_entries(lines, section_groups):
     return cleaned
 
 def append_new_streams(lines, new_urls_with_groups):
-   for url, group, title in new_urls_with_groups:
+    for url, group, title in new_urls_with_groups:
         tvg_name = title
         if group == "MLB":
             ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{tvg_name}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="TheTVApp - MLB",{tvg_name}'
@@ -229,7 +231,7 @@ async def main():
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} fully refreshed with TV + sports stream URLs (SD + HD).")
+    print(f"\n✅ {M3U8_FILE} fully refreshed with TV + sports stream URLs.")
 
 if __name__ == "__main__":
     asyncio.run(main())
