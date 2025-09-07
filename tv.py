@@ -194,7 +194,9 @@ def refresh_sports_sections(lines, new_sports_urls):
         meta = SPORTS_METADATA.get(group, {})
         tvg_id = meta.get("tvg-id", "")
         logo = meta.get("logo", "")
-        ext = f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{title}" tvg-logo="{logo}" group-title="TheTVApp - {group}",{title}' if tvg_id or logo else f'#EXTINF:-1 tvg-name="{title}" group-title="TheTVApp - {group}",{title}'
+        # Replace commas in display title with dash
+        display_title = title.replace(",", " -")
+        ext = f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{title}" tvg-logo="{logo}" group-title="TheTVApp - {group}",{display_title}' if tvg_id or logo else f'#EXTINF:-1 tvg-name="{title}" group-title="TheTVApp - {group}",{display_title}'
         cleaned_lines.append(ext)
         cleaned_lines.append(url)
 
