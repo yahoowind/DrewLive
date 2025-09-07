@@ -31,6 +31,13 @@ def extract_real_m3u8(url: str):
         return url
     return None
 
+def add_timestamp(url: str):
+    ts = int(datetime.utcnow().timestamp())
+    if "?" in url:
+        return f"{url}&t={ts}"
+    else:
+        return f"{url}?t={ts}"
+
 async def scrape_tv_urls():
     urls = []
     async with async_playwright() as p:
@@ -48,7 +55,6 @@ async def scrape_tv_urls():
             full_url = BASE_URL + href
             title = " - ".join(line.strip() for line in title_raw.splitlines() if line.strip())
             print(f"🎯 Scraping TV page: {full_url}")
-            channel_streams = {}
 
             for quality in ["SD", "HD"]:
                 stream_url = None
@@ -57,7 +63,7 @@ async def scrape_tv_urls():
                 async def handle_response(response):
                     nonlocal stream_url
                     real = extract_real_m3u8(response.url)
-                    if real:
+                    if real and not stream_url:
                         stream_url = real
 
                 new_page.on("response", handle_response)
@@ -72,14 +78,11 @@ async def scrape_tv_urls():
                 await new_page.close()
 
                 if stream_url:
-                    stream_url = f"{stream_url}?t={int(datetime.utcnow().timestamp())}"
+                    stream_url = add_timestamp(stream_url)
+                    urls.append((stream_url, "TV", f"{title} {quality}"))
                     print(f"✅ {quality}: {stream_url}")
-                    channel_streams[quality] = stream_url
                 else:
                     print(f"❌ {quality} not found")
-
-            for q, url in channel_streams.items():
-                urls.append(url)
 
         await browser.close()
     return urls
@@ -104,7 +107,6 @@ async def scrape_section_urls(context, section_path, group_name):
     for href, title in hrefs_and_titles:
         full_url = BASE_URL + href
         print(f"🎯 Scraping {group_name}: {title}")
-        channel_streams = {}
 
         for quality in ["SD", "HD"]:
             stream_url = None
@@ -113,7 +115,7 @@ async def scrape_section_urls(context, section_path, group_name):
             async def handle_response(response):
                 nonlocal stream_url
                 real = extract_real_m3u8(response.url)
-                if real:
+                if real and not stream_url:
                     stream_url = real
 
             new_page.on("response", handle_response)
@@ -128,14 +130,11 @@ async def scrape_section_urls(context, section_path, group_name):
             await new_page.close()
 
             if stream_url:
-                stream_url = f"{stream_url}?t={int(datetime.utcnow().timestamp())}"
+                stream_url = add_timestamp(stream_url)
+                urls.append((stream_url, group_name, f"{title} {quality}"))
                 print(f"✅ {quality}: {stream_url}")
-                channel_streams[quality] = stream_url
             else:
                 print(f"❌ {quality} not found")
-
-        for q, url in channel_streams.items():
-            urls.append((url, group_name, f"{title} {q}"))
 
     return urls
 
@@ -158,52 +157,57 @@ def clean_m3u_header_with_epg(lines):
     lines.insert(0, f'#EXTM3U url-tvg="http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz" # Updated: {timestamp}')
     return lines
 
-def replace_urls_in_tv_section(lines, new_urls):
-    result = []
-    url_idx = 0
-    for line in lines:
-        if line.strip().startswith("http"):
-            if url_idx < len(new_urls):
-                result.append(new_urls[url_idx])
-                url_idx += 1
-            else:
-                continue
+def replace_tv_urls(lines, tv_urls):
+    """Replace existing TV URLs in place while preserving #EXTINF metadata"""
+    updated = []
+    tv_idx = 0
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if line.strip().startswith("http") and tv_idx < len(tv_urls):
+            group, title = tv_urls[tv_idx][1], tv_urls[tv_idx][2]
+            # Preserve EXTINF line before URL
+            if i > 0 and lines[i - 1].startswith("#EXTINF"):
+                extinf = lines[i - 1]
+                # Update title to match SD/HD label
+                if "," in extinf:
+                    parts = extinf.split(",")
+                    parts[-1] = title
+                    extinf = ",".join(parts)
+                updated[-1] = extinf
+            updated.append(tv_urls[tv_idx][0])
+            tv_idx += 1
         else:
-            result.append(line)
-    if url_idx < len(new_urls):
-        result.extend(new_urls[url_idx:])
-    return result
-
-def remove_old_section_entries(lines, section_groups):
-    cleaned = []
-    skip_next = False
-    for line in lines:
-        if skip_next:
-            skip_next = False
-            continue
-        if line.startswith("#EXTINF") and any(f'group-title="{group}"' in line for group in section_groups):
-            skip_next = True
-            continue
-        cleaned.append(line)
-    return cleaned
+            updated.append(line)
+        i += 1
+    return updated
 
 def append_new_streams(lines, new_urls_with_groups):
+    """Append new streams but avoid duplicates"""
+    existing = set()
+    for line in lines:
+        if line.startswith("#EXTINF"):
+            title = line.split(",")[-1].strip()
+            group = line.split('group-title="')[1].split('"')[0] if 'group-title="' in line else ""
+            existing.add((group, title))
+
     for url, group, title in new_urls_with_groups:
-        tvg_name = title
+        key = (group, title)
+        if key in existing:
+            continue
+        # Build EXTINF
         if group == "MLB":
-            ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{tvg_name}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="TheTVApp - MLB",{tvg_name}'
+            ext = f'#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball-2.png" group-title="TheTVApp - MLB",{title}'
         elif group == "PPV":
-            ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{tvg_name}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="TheTVApp - PPV",{tvg_name}'
+            ext = f'#EXTINF:-1 tvg-id="PPV.EVENTS.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="TheTVApp - PPV",{title}'
         elif group == "NFL":
-            ext = f'#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="{tvg_name}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL.png" group-title="TheTVApp - NFL",{tvg_name}'
+            ext = f'#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL.png" group-title="TheTVApp - NFL",{title}'
         elif group == "NCAAF":
-            ext = f'#EXTINF:-1 tvg-id="NCAA.Football.Dummy.us" tvg-name="{tvg_name}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/CFB.png" group-title="TheTVApp - NCAAF",{tvg_name}'
+            ext = f'#EXTINF:-1 tvg-id="NCAA.Football.Dummy.us" tvg-name="{title}" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/CFB.png" group-title="TheTVApp - NCAAF",{title}'
         else:
-            ext = f'#EXTINF:-1 tvg-name="{tvg_name}" group-title="TheTVApp - {group}",{tvg_name}'
+            ext = f'#EXTINF:-1 tvg-name="{title}" group-title="TheTVApp - {group}",{title}'
         lines.append(ext)
         lines.append(url)
-    if not lines or lines[0].strip() != "#EXTM3U":
-        lines.insert(0, "#EXTM3U")
     return lines
 
 async def main():
@@ -221,24 +225,17 @@ async def main():
     if not tv_new_urls:
         print("❌ No TV URLs scraped.")
         return
+    lines = replace_tv_urls(lines, tv_new_urls)
 
-    updated_lines = replace_urls_in_tv_section(lines, tv_new_urls)
-
-    print("\n📦 Scraping all other sections (NBA, NFL, Events, etc)...")
+    print("\n📦 Scraping all other sections...")
     append_new_urls = await scrape_all_append_sections()
-
-    section_groups = list(SECTIONS_TO_APPEND.values())
-    updated_lines = remove_old_section_entries(updated_lines, section_groups)
-
     if append_new_urls:
-        updated_lines = append_new_streams(updated_lines, append_new_urls)
-
-    updated_lines = clean_m3u_header_with_epg(updated_lines)
+        lines = append_new_streams(lines, append_new_urls)
 
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(updated_lines))
+        f.write("\n".join(lines))
 
-    print(f"\n✅ {M3U8_FILE} fully refreshed with TV + sports stream URLs.")
+    print(f"\n✅ {M3U8_FILE} fully refreshed without broken URLs or duplicates.")
 
 if __name__ == "__main__":
     asyncio.run(main())
