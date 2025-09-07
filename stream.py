@@ -11,10 +11,6 @@ STREAM_DOMAINS = [
     "thestreameast.st", "thestreameast.su"
 ]
 
-def is_stream_domain(url):
-    url_lower = url.lower()
-    return any(d in url_lower for d in STREAM_DOMAINS)
-
 CATEGORY_LOGOS = {
     "StreamEast - PPV Events": "http://drewlive24.duckdns.org:9000/Logos/PPV.png",
     "StreamEast - Soccer": "http://drewlive24.duckdns.org:9000/Logos/Football2.png",
@@ -101,10 +97,9 @@ async def scrape_stream_url(context, url):
     page = await context.new_page()
 
     def capture_request(request: Request):
-        if ".m3u8" in request.url.lower():
-            if request.url not in m3u8_links:
-                m3u8_links.append(request.url)
-                print(f"🎯 Found stream: {request.url}")
+        if ".m3u8" in request.url.lower() and request.url not in m3u8_links:
+            m3u8_links.append(request.url)
+            print(f"🎯 Found stream: {request.url}")
 
     page.on("request", capture_request)
 
@@ -126,17 +121,16 @@ async def scrape_stream_url(context, url):
             return document.title.trim();
         }""")
 
+        # Scroll & click to trigger m3u8 requests
         await page.mouse.move(200, 200)
         await page.mouse.click(200, 200)
         await page.keyboard.press("Space")
         await asyncio.sleep(1)
         await page.mouse.click(300, 300, click_count=2)
-
         for i in range(0, 1800, 400):
             await page.evaluate(f"window.scrollTo(0, {i})")
             await asyncio.sleep(0.5)
-
-        await asyncio.sleep(8)
+        await asyncio.sleep(5)
 
     except Exception as e:
         print(f"⚠️ Error scraping {url}: {e}")
@@ -162,7 +156,7 @@ async def main():
         await main_page.close()
 
         with open(M3U8_FILE, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")  # <-- timestamp removed
+            f.write("#EXTM3U\n")
 
             for idx, link in enumerate(links, 1):
                 print(f"\n➡️ [{idx}/{len(links)}] {link}")
@@ -173,10 +167,20 @@ async def main():
 
                 if streams:
                     s_url = streams[0]
-                    f.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{category}",{name}\n')
+                    safe_name = name.replace(",", " -")  # sanitize title
+
+                    extinf = f'#EXTINF:-1'
+                    if tvg_id:
+                        extinf += f' tvg-id="{tvg_id}"'
+                    if logo:
+                        extinf += f' tvg-logo="{logo}"'
+                    extinf += f' group-title="{category}",{safe_name}'
+
+                    f.write(f"{extinf}\n")
                     for header in HEADERS_FOR_VLC:
                         f.write(f"{header}\n")
-                    f.write(f"{s_url}\n\n")
+                    f.write(f"{s_url}\n")  # single newline only
+
                 await asyncio.sleep(0.5)
 
         print(f"✅ {M3U8_FILE} saved.")
