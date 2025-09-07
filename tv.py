@@ -177,7 +177,6 @@ def replace_tv_urls(lines, tv_urls):
     return updated
 
 def refresh_sports_sections(lines, new_sports_urls):
-    """Fully replace sports sections with SD/HD streams and custom metadata."""
     cleaned_lines = []
     i = 0
     sports_groups = set(SECTIONS_TO_APPEND.values())
