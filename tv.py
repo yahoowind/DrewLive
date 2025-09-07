@@ -155,7 +155,7 @@ async def scrape_all_append_sections():
 def clean_m3u_header_with_epg(lines):
     lines = [line for line in lines if not line.strip().startswith("#EXTM3U")]
     timestamp = int(datetime.utcnow().timestamp())
-    lines.insert(0, f'#EXTM3U url-tvg="https://tinyurl.com/DrewLive002-epg" # Updated: {timestamp}')
+    lines.insert(0, f'#EXTM3U url-tvg="http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz" # Updated: {timestamp}')
     return lines
 
 def replace_urls_in_tv_section(lines, new_urls):
