@@ -41,12 +41,15 @@ async def scrape_tv_urls():
         print(f"🔄 Loading /tv channel list...")
         await page.goto(CHANNEL_LIST_URL)
         links = await page.locator("ol.list-group a").all()
-        hrefs = [await link.get_attribute("href") for link in links if await link.get_attribute("href")]
+        hrefs_and_titles = [(await link.get_attribute("href"), await link.text_content()) for link in links if await link.get_attribute("href")]
         await page.close()
 
-        for href in hrefs:
+        for href, title_raw in hrefs_and_titles:
             full_url = BASE_URL + href
+            title = " - ".join(line.strip() for line in title_raw.splitlines() if line.strip())
             print(f"🎯 Scraping TV page: {full_url}")
+            channel_streams = {}
+
             for quality in ["SD", "HD"]:
                 stream_url = None
                 new_page = await context.new_page()
@@ -54,7 +57,7 @@ async def scrape_tv_urls():
                 async def handle_response(response):
                     nonlocal stream_url
                     real = extract_real_m3u8(response.url)
-                    if real and not stream_url:
+                    if real:
                         stream_url = real
 
                 new_page.on("response", handle_response)
@@ -71,10 +74,12 @@ async def scrape_tv_urls():
                 if stream_url:
                     stream_url = f"{stream_url}?t={int(datetime.utcnow().timestamp())}"
                     print(f"✅ {quality}: {stream_url}")
-                    urls.append(stream_url)
-                    break
+                    channel_streams[quality] = stream_url
                 else:
                     print(f"❌ {quality} not found")
+
+            for q, url in channel_streams.items():
+                urls.append(url)
 
         await browser.close()
     return urls
@@ -94,12 +99,12 @@ async def scrape_section_urls(context, section_path, group_name):
         if href and title_raw:
             title = " - ".join(line.strip() for line in title_raw.splitlines() if line.strip())
             hrefs_and_titles.append((href, title))
-
     await page.close()
 
     for href, title in hrefs_and_titles:
         full_url = BASE_URL + href
         print(f"🎯 Scraping {group_name}: {title}")
+        channel_streams = {}
 
         for quality in ["SD", "HD"]:
             stream_url = None
@@ -108,7 +113,7 @@ async def scrape_section_urls(context, section_path, group_name):
             async def handle_response(response):
                 nonlocal stream_url
                 real = extract_real_m3u8(response.url)
-                if real and not stream_url:
+                if real:
                     stream_url = real
 
             new_page.on("response", handle_response)
@@ -125,10 +130,12 @@ async def scrape_section_urls(context, section_path, group_name):
             if stream_url:
                 stream_url = f"{stream_url}?t={int(datetime.utcnow().timestamp())}"
                 print(f"✅ {quality}: {stream_url}")
-                urls.append((stream_url, group_name, title))
-                break
+                channel_streams[quality] = stream_url
             else:
                 print(f"❌ {quality} not found")
+
+        for q, url in channel_streams.items():
+            urls.append((url, group_name, f"{title} {q}"))
 
     return urls
 
