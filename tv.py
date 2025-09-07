@@ -72,7 +72,6 @@ async def scrape_tv_urls():
                     stream_url = f"{stream_url}?t={int(datetime.utcnow().timestamp())}"
                     print(f"✅ {quality}: {stream_url}")
                     urls.append(stream_url)
-                    break
                 else:
                     print(f"❌ {quality} not found")
 
@@ -125,8 +124,7 @@ async def scrape_section_urls(context, section_path, group_name):
             if stream_url:
                 stream_url = f"{stream_url}?t={int(datetime.utcnow().timestamp())}"
                 print(f"✅ {quality}: {stream_url}")
-                urls.append((stream_url, group_name, title))
-                break
+                urls.append((stream_url, group_name, f"{title} {quality}"))
             else:
                 print(f"❌ {quality} not found")
 
@@ -231,7 +229,7 @@ async def main():
     with open(M3U8_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_lines))
 
-    print(f"\n✅ {M3U8_FILE} fully refreshed with TV + sports stream URLs.")
+    print(f"\n✅ {M3U8_FILE} fully refreshed with TV + sports stream URLs (SD + HD).")
 
 if __name__ == "__main__":
     asyncio.run(main())
