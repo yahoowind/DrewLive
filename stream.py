@@ -5,7 +5,7 @@ from playwright.async_api import async_playwright, Request
 # Main domain
 BASE_URL = "https://www.streameast.xyz"
 
-# Mirrors (kept intact)
+# Mirrors
 MIRROR_DOMAINS = [
     "https://streameast.ga",
     "https://streameast.tw",
@@ -26,6 +26,7 @@ MIRROR_DOMAINS = [
 
 M3U8_FILE = "StreamEast.m3u8"
 
+# Logos
 CATEGORY_LOGOS = {
     "StreamEast - PPV Events": "http://drewlive24.duckdns.org:9000/Logos/PPV.png",
     "StreamEast - Soccer": "http://drewlive24.duckdns.org:9000/Logos/Football2.png",
@@ -42,6 +43,7 @@ CATEGORY_LOGOS = {
     "StreamEast - WNBA": "http://drewlive24.duckdns.org:9000/Logos/WNBA.png",
 }
 
+# TVG IDs
 CATEGORY_TVG_IDS = {
     "StreamEast - PPV Events": "PPV.EVENTS.Dummy.us",
     "StreamEast - Soccer": "Soccer.Dummy.us",
@@ -58,10 +60,11 @@ CATEGORY_TVG_IDS = {
     "StreamEast - WNBA": "WNBA.dummy.us",
 }
 
+# VLC headers
 HEADERS_FOR_VLC = [
-    '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:142.0) Gecko/20100101 Firefox/142.0',
+    '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36',
     '#EXTVLCOPT:http-origin=https://embedsports.top',
-    '#EXTVLCOPT:http-referrer=https://embedsports.top/'
+    '#EXTVLCOPT:http-referrer=https://embedsports.top'
 ]
 
 def categorize_stream(url, title=""):
@@ -149,7 +152,7 @@ async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(channel="chrome", headless=True)
         context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) Gecko/20100101 Firefox/142.0",
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
             viewport={"width": 1366, "height": 768},
             java_script_enabled=True,
             ignore_https_errors=True
@@ -161,23 +164,23 @@ async def main():
         links = await get_event_links(main_page)
         await main_page.close()
 
-        with open(M3U8_FILE, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n\n")
-            for idx, link in enumerate(links, 1):
-                print(f"\n➡️ [{idx}/{len(links)}] {link}")
-                name, streams = await scrape_stream_url(context, link)
-                if not streams:
-                    continue
+        async with aiohttp.ClientSession() as session:
+            with open(M3U8_FILE, "w", encoding="utf-8") as f:
+                f.write("#EXTM3U\n\n")
+                for idx, link in enumerate(links, 1):
+                    print(f"\n➡️ [{idx}/{len(links)}] {link}")
+                    name, streams = await scrape_stream_url(context, link)
+                    if not streams:
+                        continue
 
-                s_url = streams[0]
+                    s_url = streams[0]
 
-                # ✅ Check if the stream is live before writing
-                async with aiohttp.ClientSession() as session:
+                    # Check if stream is live using Chrome headers
                     try:
                         async with session.head(s_url, headers={
-                            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:142.0) Gecko/20100101 Firefox/142.0",
+                            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
                             "Origin": "https://embedsports.top",
-                            "Referer": "https://embedsports.top/"
+                            "Referer": "https://embedsports.top"
                         }, timeout=5) as resp:
                             if resp.status != 200:
                                 print(f"⚠️ Skipping dead stream: {s_url}")
@@ -186,20 +189,20 @@ async def main():
                         print(f"⚠️ Error checking stream: {s_url}")
                         continue
 
-                category = categorize_stream(link, name)
-                logo = CATEGORY_LOGOS.get(category, "")
-                tvg_id = CATEGORY_TVG_IDS.get(category, "")
-                safe_name = name.replace(",", " -")
+                    category = categorize_stream(link, name)
+                    logo = CATEGORY_LOGOS.get(category, "")
+                    tvg_id = CATEGORY_TVG_IDS.get(category, "")
+                    safe_name = name.replace(",", " -")
 
-                extinf = f'#EXTINF:-1'
-                if tvg_id: extinf += f' tvg-id="{tvg_id}"'
-                if logo: extinf += f' tvg-logo="{logo}"'
-                extinf += f' group-title="{category}",{safe_name}'
+                    extinf = f'#EXTINF:-1'
+                    if tvg_id: extinf += f' tvg-id="{tvg_id}"'
+                    if logo: extinf += f' tvg-logo="{logo}"'
+                    extinf += f' group-title="{category}",{safe_name}'
 
-                f.write(f"{extinf}\n")
-                for header in HEADERS_FOR_VLC:
-                    f.write(f"{header}\n")
-                f.write(f"{s_url}\n\n")
+                    f.write(f"{extinf}\n")
+                    for header in HEADERS_FOR_VLC:
+                        f.write(f"{header}\n")
+                    f.write(f"{s_url}\n\n")
 
         print(f"✅ {M3U8_FILE} saved.")
         await browser.close()
