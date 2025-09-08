@@ -14,7 +14,6 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DrewLiveVOD.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/TVPass.m3u",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/Radio.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/StreamEast.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/Roku.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/TheTVApp.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/LGTV.m3u8",
