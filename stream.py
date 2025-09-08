@@ -1,10 +1,11 @@
 import asyncio
+import aiohttp
 from playwright.async_api import async_playwright, Request
 
 # Main domain
 BASE_URL = "https://www.streameast.xyz"
 
-# Mirrors (for reference, not used automatically)
+# Mirrors (kept intact)
 MIRROR_DOMAINS = [
     "https://streameast.ga",
     "https://streameast.tw",
@@ -169,6 +170,22 @@ async def main():
                     continue
 
                 s_url = streams[0]
+
+                # ✅ Check if the stream is live before writing
+                async with aiohttp.ClientSession() as session:
+                    try:
+                        async with session.head(s_url, headers={
+                            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:142.0) Gecko/20100101 Firefox/142.0",
+                            "Origin": "https://embedsports.top",
+                            "Referer": "https://embedsports.top/"
+                        }, timeout=5) as resp:
+                            if resp.status != 200:
+                                print(f"⚠️ Skipping dead stream: {s_url}")
+                                continue
+                    except:
+                        print(f"⚠️ Error checking stream: {s_url}")
+                        continue
+
                 category = categorize_stream(link, name)
                 logo = CATEGORY_LOGOS.get(category, "")
                 tvg_id = CATEGORY_TVG_IDS.get(category, "")
