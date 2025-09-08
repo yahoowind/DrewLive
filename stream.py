@@ -1,7 +1,28 @@
 import asyncio
 from playwright.async_api import async_playwright, Request
 
+# Main domain
 BASE_URL = "https://www.streameast.xyz"
+
+# Mirrors (for reference, not used automatically)
+MIRROR_DOMAINS = [
+    "https://streameast.ga",
+    "https://streameast.tw",
+    "https://streameast.ph",
+    "https://streameast.sg",
+    "https://streameast.ch",
+    "https://streameast.ec",
+    "https://streameast.fi",
+    "https://streameast.ms",
+    "https://streameast.ps",
+    "https://streameast.cf",
+    "https://streameast.sk",
+    "https://thestreameast.co",
+    "https://thestreameast.fun",
+    "https://thestreameast.ru",
+    "https://thestreameast.su"
+]
+
 M3U8_FILE = "StreamEast.m3u8"
 
 CATEGORY_LOGOS = {
@@ -121,7 +142,7 @@ async def scrape_stream_url(context, url):
     finally:
         await page.close()
 
-    return event_name, m3u8_links[:1]  # only first link
+    return event_name, m3u8_links[:1]
 
 async def main():
     async with async_playwright() as p:
@@ -161,7 +182,7 @@ async def main():
                 f.write(f"{extinf}\n")
                 for header in HEADERS_FOR_VLC:
                     f.write(f"{header}\n")
-                f.write(f"{s_url}\n\n")  # double newline between entries
+                f.write(f"{s_url}\n\n")
 
         print(f"✅ {M3U8_FILE} saved.")
         await browser.close()
