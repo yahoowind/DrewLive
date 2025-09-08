@@ -1,32 +1,9 @@
 import asyncio
-import aiohttp
 from playwright.async_api import async_playwright, Request
 
-# Main domain
 BASE_URL = "https://www.streameast.xyz"
-
-# Mirrors
-MIRROR_DOMAINS = [
-    "https://streameast.ga",
-    "https://streameast.tw",
-    "https://streameast.ph",
-    "https://streameast.sg",
-    "https://streameast.ch",
-    "https://streameast.ec",
-    "https://streameast.fi",
-    "https://streameast.ms",
-    "https://streameast.ps",
-    "https://streameast.cf",
-    "https://streameast.sk",
-    "https://thestreameast.co",
-    "https://thestreameast.fun",
-    "https://thestreameast.ru",
-    "https://thestreameast.su"
-]
-
 M3U8_FILE = "StreamEast.m3u8"
 
-# Logos
 CATEGORY_LOGOS = {
     "StreamEast - PPV Events": "http://drewlive24.duckdns.org:9000/Logos/PPV.png",
     "StreamEast - Soccer": "http://drewlive24.duckdns.org:9000/Logos/Football2.png",
@@ -43,7 +20,6 @@ CATEGORY_LOGOS = {
     "StreamEast - WNBA": "http://drewlive24.duckdns.org:9000/Logos/WNBA.png",
 }
 
-# TVG IDs
 CATEGORY_TVG_IDS = {
     "StreamEast - PPV Events": "PPV.EVENTS.Dummy.us",
     "StreamEast - Soccer": "Soccer.Dummy.us",
@@ -59,13 +35,6 @@ CATEGORY_TVG_IDS = {
     "StreamEast - Hockey": "NHL.Hockey.Dummy.us",
     "StreamEast - WNBA": "WNBA.dummy.us",
 }
-
-# VLC headers
-HEADERS_FOR_VLC = [
-    '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36',
-    '#EXTVLCOPT:http-origin=https://embedsports.top',
-    '#EXTVLCOPT:http-referrer=https://embedsports.top'
-]
 
 def categorize_stream(url, title=""):
     lowered = (url + " " + title).lower()
@@ -164,45 +133,27 @@ async def main():
         links = await get_event_links(main_page)
         await main_page.close()
 
-        async with aiohttp.ClientSession() as session:
-            with open(M3U8_FILE, "w", encoding="utf-8") as f:
-                f.write("#EXTM3U\n\n")
-                for idx, link in enumerate(links, 1):
-                    print(f"\n➡️ [{idx}/{len(links)}] {link}")
-                    name, streams = await scrape_stream_url(context, link)
-                    if not streams:
-                        continue
+        with open(M3U8_FILE, "w", encoding="utf-8") as f:
+            f.write("#EXTM3U\n\n")
+            for idx, link in enumerate(links, 1):
+                print(f"\n➡️ [{idx}/{len(links)}] {link}")
+                name, streams = await scrape_stream_url(context, link)
+                if not streams:
+                    continue
 
-                    s_url = streams[0]
+                s_url = streams[0]
+                category = categorize_stream(link, name)
+                logo = CATEGORY_LOGOS.get(category, "")
+                tvg_id = CATEGORY_TVG_IDS.get(category, "")
+                safe_name = name.replace(",", " -")
 
-                    # Check if stream is live using Chrome headers
-                    try:
-                        async with session.head(s_url, headers={
-                            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
-                            "Origin": "https://embedsports.top",
-                            "Referer": "https://embedsports.top"
-                        }, timeout=5) as resp:
-                            if resp.status != 200:
-                                print(f"⚠️ Skipping dead stream: {s_url}")
-                                continue
-                    except:
-                        print(f"⚠️ Error checking stream: {s_url}")
-                        continue
+                extinf = f'#EXTINF:-1'
+                if tvg_id: extinf += f' tvg-id="{tvg_id}"'
+                if logo: extinf += f' tvg-logo="{logo}"'
+                extinf += f' group-title="{category}",{safe_name}'
 
-                    category = categorize_stream(link, name)
-                    logo = CATEGORY_LOGOS.get(category, "")
-                    tvg_id = CATEGORY_TVG_IDS.get(category, "")
-                    safe_name = name.replace(",", " -")
-
-                    extinf = f'#EXTINF:-1'
-                    if tvg_id: extinf += f' tvg-id="{tvg_id}"'
-                    if logo: extinf += f' tvg-logo="{logo}"'
-                    extinf += f' group-title="{category}",{safe_name}'
-
-                    f.write(f"{extinf}\n")
-                    for header in HEADERS_FOR_VLC:
-                        f.write(f"{header}\n")
-                    f.write(f"{s_url}\n\n")
+                f.write(f"{extinf}\n")
+                f.write(f"{s_url}\n\n")
 
         print(f"✅ {M3U8_FILE} saved.")
         await browser.close()
