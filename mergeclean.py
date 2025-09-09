@@ -19,7 +19,7 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/LGTV.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/AriaPlus.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/LocalNowTV.m3u8",
-    "http://drewlive24.duckdns.org:8081/PPVLand.m3u8",
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PPVLand.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/SamsungTVPlus.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/Xumo.m3u8"
 ]
