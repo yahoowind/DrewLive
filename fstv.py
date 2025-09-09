@@ -16,16 +16,16 @@ except Exception as e:
     print(f"Failed to fetch playlist: {e}")
     exit(1)
 
-# Ensure tvg-id exists, leave everything else untouched
+# Insert tvg-id if missing, keep -1 and other attributes intact
 def fix_tvg_id(content, placeholder):
     def repl(match):
-        attrs, name = match.group(1), match.group(2)
+        prefix, attrs, name = match.group(1), match.group(2), match.group(3)
         if 'tvg-id=' not in attrs:
-            # Insert placeholder tvg-id at start of attributes
-            attrs = f'tvg-id="{placeholder}" ' + attrs.strip()
-        return f"#EXTINF:{attrs},{name}"
+            attrs = f'tvg-id="{placeholder}" {attrs.strip()}'
+        return f"#EXTINF:{prefix} {attrs},{name}"
     
-    return re.sub(r'#EXTINF:([^\n,]+),(.*)', repl, content)
+    # Matches #EXTINF:-1 <attrs>,Channel Name
+    return re.sub(r'#EXTINF:(-?\d+)\s*([^\n,]*),(.*)', repl, content)
 
 modified_content = fix_tvg_id(playlist_content, PLACEHOLDER_TVG_ID)
 
@@ -34,4 +34,4 @@ os.makedirs(os.path.dirname(os.path.abspath(OUTPUT_FILE)), exist_ok=True)
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     f.write(modified_content)
 
-print(f"✅ Playlist saved as {os.path.abspath(OUTPUT_FILE)} with tvg-id placeholder applied correctly")
+print(f"✅ Playlist saved as {os.path.abspath(OUTPUT_FILE)} with tvg-id placeholder correctly applied")
