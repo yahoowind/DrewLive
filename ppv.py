@@ -30,7 +30,7 @@ CATEGORY_TVG_IDS = {
     "Wrestling": "PPV.EVENTS.Dummy.us",
     "Football": "Soccer.Dummy.us",
     "Basketball": "Basketball.Dummy.us",
-    "Baseball": "Baseball.Dummy.us",
+    "Baseball": "MLB.Baseball.Dummy.us",
     "American Football": "NFL.Dummy.us"
 }
 
@@ -39,8 +39,8 @@ GROUP_RENAME_MAP = {
     "Wrestling": "PPVLand - Wrestling Events",
     "Football": "PPVLand - Global Football Streams",
     "Basketball": "PPVLand - Basketball Hub",
-    "Baseball": "PPVLand - Baseball Action HD",
-    "American Football": "PPVLand - NFL Action"
+    "Baseball": "PPVLand - MLB",
+    "American Football": "PPVLand - NFL & College Football Action"
 }
 
 async def check_m3u8_url(url):
