@@ -1,37 +1,260 @@
-import requests
+import asyncio
+from playwright.async_api import async_playwright
 import re
-import os
+import sys
+import json
 
-# Config
-UPSTREAM_URL = "https://bit.ly/4nnJx6S"
-OUTPUT_FILE = "FSTV24.m3u8"
-PLACEHOLDER_TVG_ID = "24.7.Dummy.us"
+CHANNEL_MAPPING = {
+    "ori2usaunanetwork": {"name": "USA Network", "tv_id": "USA.Network.-.East.Feed.us"},
+    "ori2usacbslosangeles": {"name": "CBS Los Angeles", "tv_id": "CBS.(KCBS).Los.Angeles,.CA.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/CBS.png"},
+    "ori2usacbsgolazocdnsv2": {"name": "CBS Sports Golazo!", "tv_id": "plex.tv.CBS.Sports.Golazo.Network.plex"},
+    "ori2cdnusnfl": {"name": "NFL Network", "tv_id": "The.NFL.Network.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nfl-network-hz-us.png?raw=true"},
+    "ori2cdnusredzone": {"name": "NFL RedZone", "tv_id": "NFL.RedZone.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nfl-red-zone-hz-us.png?raw=true"},
+    "ori2usespn": {"name": "ESPN", "tv_id": "ESPN.us"},
+    "ori2usespn2": {"name": "ESPN2", "tv_id": "ESPN2.us"},
+    "ori2cdnusuespn": {"name": "ESPNU", "tv_id": "ESPN.U.us"},
+    "ori2usespnnews": {"name": "ESPNews", "tv_id": "ESPN.News.us"},
+    "ori2usaespnsecnetwork": {"name": "SEC Network", "tv_id": "SEC.Network.us"},
+    "ori2usespndeportes": {"name": "ESPN Deportes", "tv_id": "ESPN.Deportes.us"},
+    "ori2usafs1": {"name": "FS1", "tv_id": "Fox.Sports.1.us"},
+    "ori2usafs2": {"name": "FS2", "tv_id": "Fox.Sports.2.us"},
+    "ori2usanbcnewyork": {"name": "ABCNY", "tv_id": "ABC.(WABC).New.York,.NY.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/abc-logo-2013-default-us.png?raw=true"},
+    "ori2usagolf": {"name": "Golf Channel", "tv_id": "Golf.Channel.USA.us"},
+    "ori2cdnustennistv": {"name": "Tennis Channel", "tv_id": "The.Tennis.Channel.us"},
+    "ori2cdnustennistv2": {"name": "Tennis Channel 2", "tv_id": "The.Tennis.Channel.us"},
+    "ori2usaunirso": {"name": "NBC Universo", "tv_id": "NBC.Universo.-.Eastern.feed.us"},
+    "ori2usnbc": {"name": "NBC", "tv_id": "NBC.(WNBC).New.York,.NY.us"},
+    "ori2usmsnbc": {"name": "MSNBC", "tv_id": "MSNBC.USA.us"},
+    "ori2usacnbc": {"name": "CNBC", "tv_id": "CNBC.USA.us"},
+    "ori22uktnfsport1": {"name": "TNT Sports 1", "tv_id": "TNT.Sports.1.HD.uk"},
+    "ori22uktnfsport2": {"name": "TNT Sports 2", "tv_id": "TNT.Sports.2.HD.uk"},
+    "ori22uktnfsport3": {"name": "TNT Sports 3", "tv_id": "TNT.Sports.3.HD.uk"},
+    "ori22uktnfsport5": {"name": "TNT Sports 5", "tv_id": "TNT.Sports.Ultimate.uk"},
+    "ori22uktnfsport4": {"name": "TNT Sports 4", "tv_id": "TNT.Sports.4.HD.uk"},
+    "ori23cdnukeurosport1": {"name": "Eurosport 1 UK", "tv_id": "Eurosport.es"},
+    "ori23cdnukeurosport2": {"name": "Eurosport 2 UK", "tv_id": "Eurosport.2.es"},
+    "ori21ukskysportgolf": {"name": "Sky Sport Golf UK", "tv_id": "SkySp.Golf.HD.uk"},
+    "ori21ukskysporttennis": {"name": "Sky Sport Tennis UK", "tv_id": "SkySp.Tennis.HD.uk"},
+    "ori2cdnukmutv": {"name": "MUTV UK", "tv_id": "MUTV.HD.uk"},
+    "ori2sv3uklaliga": {"name": "La Liga UK", "tv_id": "LA.LIGA.za"},
+    "ori2uksv2skysportplus": {"name": "Sky Sport Plus UK", "tv_id": "SkySp.PL.HD.uk"},
+    "ori21cdnsv3ukfootball": {"name": "Sky Sport Football", "tv_id": "SkySp.Fball.HD.uk"},
+    "ori21ukskysportpremierleague": {"name": "Sky Sport Premier League UK", "tv_id": "SkyPremiereHD.uk"},
+    "ori2skysportmix": {"name": "Sky Sport Mix UK", "tv_id": "SkySp.Mix.HD.uk"},
+    "ori21cdnsv3ukmainent": {"name": "Sky Sport Main", "tv_id": "SkySpMainEvHD.uk"},
+    "ori21cdnukskysportracing": {"name": "Sky Sport Racing UK", "tv_id": "SkySp.Racing.HD.uk"},
+    "ori23ukpremiersport1": {"name": "Premier Sport 1 UK", "tv_id": "Premier.Sports.1.HD.uk"},
+    "ori23ukpremiersport2": {"name": "Premier Sport 2 UK", "tv_id": "Premier.Sports.2.HD.uk", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/premier-sports-2-uk.png?raw=true"},
+    "ori2ukracingtv": {"name": "Racing TV UK", "tv_id": "Racing.TV.HD.uk"},
+    "ori2ukskysportf1": {"name": "Sky Sport F1 UK", "tv_id": "SkySp.F1.HD.uk"},
+    "ori2skysportarena": {"name": "Sky Sport Arena UK", "tv_id": "Sky.Sports+.Dummy.us"},
+    "ori21cdnukskysportaction": {"name": "Sky Sports Action UK", "tv_id": "SkySp.ActionHD.uk", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-sports-action-hz-uk.png?raw=true"},
+    "ori2ukskysportcricket": {"name": "Sky Sport Cricket UK", "tv_id": "SkySpCricket.HD.uk"},
+    "ori21ukskysportnews": {"name": "Sky Sport News UK", "tv_id": "SkySp.News.HD.uk"},
+    "ukskysportdarts": {"name": "Sky Sport Darts UK", "tv_id": "Sky.Sports+.Dummy.us"},
+    "ori2usabeinsportd": {"name": "BeIN Sports USA", "tv_id": "beIN.Sport.USA.us"},
+    "ori2usabeinsportxtra": {"name": "BeIN Sports Xtra USA", "tv_id": "beIN.Sports.Xtra.(KSKJ-CD).Los.Angeles,.CA.us"},
+    "ori2usabeinsportespanol": {"name": "BeIN Sports Español", "tv_id": "613759"},
+    "ori2usabeinespanolxtra": {"name": "BeIN Sports Español Xtra", "tv_id": "613759"},
+    "ori23ukitv1": {"name": "ITV 1 UK", "tv_id": "ITV1.HD.uk"},
+    "ori23ukitv2": {"name": "ITV 2 UK", "tv_id": "ITV2.HD.uk"},
+    "ori23ukitv3": {"name": "ITV 3 UK", "tv_id": "ITV3.HD.uk"},
+    "ori23ukitv4": {"name": "ITV 4 UK", "tv_id": "ITV4.HD.uk"},
+    "ori2cdnuklfctv": {"name": "LFC TV UK", "tv_id": "LFCTV.HD.uk"},
+    "ori2usafubosport": {"name": "Fubo Sports USA", "tv_id": "Fubo.Sports.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fubo-sports-network-us.png?raw=true"},
+    "ori2ukdazn": {"name": "DAZN 1 UK", "tv_id": "DAZN.Dummy.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/germany/dazn1-de.png?raw=true"},
+    "ori2ionusa": {"name": "ION USA", "tv_id": "ION..-.Eastern.Feed.us"},
+    "ori2usafoxsoccerplus": {"name": "Fox Soccer Plus", "tv_id": "FOX.Soccer.Plus.us"},
+    "ori2usatycsport": {"name": "TyC Sports", "tv_id": "TyC.Sports.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/argentina/tyc-sports-ar.png?raw=true"},
+    "ori2usamarqueesportnetwork": {"name": "Marquee Sports Network", "tv_id": "Marquee.Sports.Network.us"},
+    "ori2yesusa": {"name": "YES Network USA", "tv_id": "YES.Network.us"},
+    "ori2usaabc": {"name": "ABC", "tv_id": "ABC.(KABC).Los.Angeles,.CA.us"},
+    "ori2usatudn": {"name": "TUDN", "tv_id": "TUDN.us"},
+    "ori2usafoxchannel": {"name": "Fox Los Angeles", "tv_id": "FOX.(KTTV).Los.Angeles,.CA.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/FOX.png"},
+    "ori2usatelemundo": {"name": "Telemundo", "tv_id": "Telemundo.(KVEA).Los.Angeles,.CA.us"},
+    "ori2usaunimas": {"name": "UniMás", "tv_id": "UniMas.(KFTH).Houston,.TX.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/unimas-us.png?raw=true"},
+    "ori2cdnusnhlnetwork": {"name": "NHL Network", "tv_id": "NHL.Network.USA.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nhl-network-us.png?raw=true"},
+    "ori2uswillowhd": {"name": "Willow Cricket HD", "tv_id": "Willow.Cricket.HDTV.(WILLOWHD).us"},
+    "ori2uswillowxtra": {"name": "Willow Xtra", "tv_id": "Willow.Xtra.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/willow-xtra-us.png?raw=true"},
+    "ori2cdnusnbatv": {"name": "NBA TV", "tv_id": "NBA.TV.USA.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/NBATV.png"},
+    "ori2usmlbnetwork": {"name": "MLB Network", "tv_id": "MLB.Network.us"},
+    "ori2uscnn": {"name": "CNN", "tv_id": "CNN.us"},
+    "ori2cdnuswnetwork": {"name": "W Network", "tv_id": "W.Network.Canada.East.(WTN).ca", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/canada/w-network-ca.png?raw=true"},
+    "ori2cdnusaccnetwork": {"name": "UniMás", "tv_id": "UniMas.(KFTH).Houston,.TX.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/unimas-us.png?raw=true"},
+    "ori2usafoxnews": {"name": "Fox News", "tv_id": "Fox.News.us"},
+    "ori2cdnuswfn": {"name": "World Fishing Network", "tv_id": "World.Fishing.Network.(US).(WFN).us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/world-fishing-network-us.png?raw=true"},
+    "ori2usfightnetwork": {"name": "The Fight Network", "tv_id": "The.Fight.Network.(United.States).(TFN).us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fight-network-us.png?raw=true"},
+    "ori2tntusa": {"name": "TNT", "tv_id": "TNT.-.Eastern.Feed.us"},
+    "ori2trutv": {"name": "truTV", "tv_id": "truTV.USA.-.Eastern.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/tru-tv-us.png?raw=true"},
+    "oriaxstv": {"name": "AXS TV", "tv_id": "AXS.TV.USA.HD.us"},
+    "ori2ukbbcone": {"name": "BBC One UK", "tv_id": "BBC.One.EastHD.uk"},
+    "ori2ukbbctwo": {"name": "BBC Two UK", "tv_id": "BBC.Two.HD.uk"},
+    "ori2ukbbcnews": {"name": "BBC News UK", "tv_id": "BBC.NEWS.HD.uk"},
+    "ori2foxdeportes": {"name": "Fox Deportes", "tv_id": "Fox.Deportes.us"},
+    "ori2paramountnetwork": {"name": "Paramount Network", "tv_id": "Paramount.Network.USA.-.Eastern.Feed.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/paramount-network-hz-us.png?raw=true"},
+    "ori2caonesoccer": {"name": "OneSoccer Canada", "tv_id": "One.Soccer.ca", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/canada/one-soccer-ca.png?raw=true"},
+    "ori2dedazn1": {"name": "DAZN 1 Germany", "tv_id": "DAZN.1.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/germany/dazn1-de.png?raw=true"},
+    "ori2deskydeevent": {"name": "Sky DE Top Event", "tv_id": "Sky.Sport.Top.Event.de"},
+    "eplskydepre": {"name": "Sky Sport Premier League DE", "tv_id": "Sky.Sport.Premier.League.de"},
+    "ori2dedazn2": {"name": "DAZN 2 Germany", "tv_id": "DAZN.2.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/germany/dazn2-de.png?raw=true"},
+    "ori2desportdigital": {"name": "SportDigital Germany", "tv_id": "sportdigital.Fussball.de"},
+    "ori2deskydenews": {"name": "Sky Sport News DE", "tv_id": "Sky.Sport.News.de"},
+    "ori2deskydeMix": {"name": "Sky Mix DE", "tv_id": "Sky.Sport.Mix.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-mix-uk.png?raw=true"},
+    "ori2debundesliga1": {"name": "Bundesliga 1 Germany", "tv_id": "Sky.Sport.Bundesliga.de"},
+    "ori2fox502": {"name": "Fox Sports 502 AU", "tv_id": "FoxCricket.au"},
+    "ori2zentdiscory": {"name": "Discovery Channel", "tv_id": "Discovery.Channel.(US).-.Eastern.Feed.us"},
+    "ori2zentcinemax": {"name": "Cinemax", "tv_id": "Cinemax.-.Eastern.Feed.us"},
+    "ori2usahbo": {"name": "HBO", "tv_id": "HBO.-.Eastern.Feed.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-us.png?raw=true"},
+    "ori2tbs": {"name": "TBS", "tv_id": "TBS.-.East.us"},
+    "ori2goltv": {"name": "GOL TV", "tv_id": "Gol.TV.USA.us"},
+    "ori2tsn1": {"name": "TSN 1", "tv_id": "TSN1.ca"},
+    "ori2tsn2": {"name": "TSN 2", "tv_id": "TSN2.ca"},
+    "ori2tsn3": {"name": "TSN 3", "tv_id": "TSN3.ca"},
+    "ori2tsn4": {"name": "TSN 4", "tv_id": "TSN4.ca"},
+    "ori2tsn5": {"name": "TSN 5", "tv_id": "TSN5.ca"},
+    "ori2ptbenfica": {"name": "Benfica TV", "tv_id": "Benfica.TV.fr", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Logo_Benfica_TV.png/1200px-Logo_Benfica_TV.png"},
+    "ori2ptsporttv1": {"name": "Sport TV1 Portugal", "tv_id": "SPORT.TV1.HD.pt", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/portugal/sport-tv-1-pt.png?raw=true"},
+}
 
-# Fetch upstream playlist
-try:
-    response = requests.get(UPSTREAM_URL, timeout=15)
-    response.raise_for_status()
-    playlist_content = response.text
-except Exception as e:
-    print(f"Failed to fetch playlist: {e}")
-    exit(1)
+def normalize_channel_name(name: str) -> str:
+    """Normalizes a raw channel name to be used as a key for mapping."""
+    cleaned_name = re.sub(r'[^a-zA-Z0-9]', '', name)
+    return cleaned_name.strip().lower()
 
-# Insert tvg-id if missing, keep -1 and other attributes intact
-def fix_tvg_id(content, placeholder):
-    def repl(match):
-        prefix, attrs, name = match.group(1), match.group(2), match.group(3)
-        if 'tvg-id=' not in attrs:
-            attrs = f'tvg-id="{placeholder}" {attrs.strip()}'
-        return f"#EXTINF:{prefix} {attrs},{name}"
-    
-    # Matches #EXTINF:-1 <attrs>,Channel Name
-    return re.sub(r'#EXTINF:(-?\d+)\s*([^\n,]*),(.*)', repl, content)
+def prettify_name(raw: str) -> str:
+    """Prettifies a raw channel name for display."""
+    raw = re.sub(r'VE[-\s]*', '', raw, flags=re.IGNORECASE)
+    raw = re.sub(r'\([^)]*\)', '', raw)
+    raw = re.sub(r'[^a-zA-Z0-9\s]', '', raw)
+    return re.sub(r'\s+', ' ', raw.strip()).title()
 
-modified_content = fix_tvg_id(playlist_content, PLACEHOLDER_TVG_ID)
+MIRRORS = [
+    "https://fstv.zip/live-tv.html?timezone=America%2FDenver",
+    "https://fstv.online/live-tv.html?timezone=America%2FDenver",
+    "https://fstv.space/live-tv.html?timezone=America%2FDenver",
+]
 
-# Save playlist
-os.makedirs(os.path.dirname(os.path.abspath(OUTPUT_FILE)), exist_ok=True)
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    f.write(modified_content)
+async def fetch_fstv_channels_with_urls():
+    """Fetches channels and their URLs from the FSTV mirrors."""
+    async with async_playwright() as p:
+        browser = await p.firefox.launch(headless=True)
+        context = await browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36")
+        page = await context.new_page()
 
-print(f"✅ Playlist saved as {os.path.abspath(OUTPUT_FILE)} with tvg-id placeholder correctly applied")
+        channels_data = []
+        visited_urls = set()
+
+        for url in MIRRORS:
+            try:
+                print(f"🌐 Trying {url}...", flush=True)
+                await page.goto(url, timeout=90000, wait_until="domcontentloaded")
+                await page.wait_for_selector(".item-channel", timeout=15000)
+                print(f"✅ Success loading {url}", flush=True)
+
+                channel_elements = await page.query_selector_all(".item-channel")
+                if not channel_elements:
+                    print(f"⚠️ No channels found on {url}, trying next mirror.", flush=True)
+                    continue
+
+                for i, channel_element in enumerate(channel_elements):
+                    raw_name = await channel_element.get_attribute("title")
+                    if not raw_name:
+                        continue
+
+                    normalized_name = normalize_channel_name(raw_name)
+                    mapped_info = CHANNEL_MAPPING.get(normalized_name, {})
+
+                    new_name = mapped_info.get('name', prettify_name(raw_name))
+                    tv_id = mapped_info.get('tv_id', "")
+                    group_title = mapped_info.get('group', "FSTV")
+                    logo = mapped_info.get('logo', await channel_element.get_attribute("data-logo"))
+
+                    m3u8_url = None
+                    request_captured = asyncio.Event()
+
+                    async def handle_request(request):
+                        nonlocal m3u8_url
+                        if request.method == "GET" and ".m3u8" in request.url and "auth_key" in request.url and "/player?link=" not in request.url:
+                            m3u8_url = request.url
+                            if not request_captured.is_set():
+                                request_captured.set()
+                            print(f"🌐 Captured Direct M3U8 URL for {new_name}: {m3u8_url}", flush=True)
+
+                    page.on("request", handle_request)
+                    print(f"👆 Clicking on {new_name}...", flush=True)
+                    await channel_element.click()
+
+                    try:
+                        await asyncio.wait_for(request_captured.wait(), timeout=15.0)
+                    except asyncio.TimeoutError:
+                        print(f"⚠️ Timeout: no valid .m3u8 URL found for {new_name}", flush=True)
+
+                    page.remove_listener("request", handle_request)
+
+                    if m3u8_url and m3u8_url not in visited_urls:
+                        channels_data.append({
+                            "url": m3u8_url,
+                            "logo": logo,
+                            "name": new_name,
+                            "tv_id": tv_id,
+                            "group": group_title
+                        })
+                        visited_urls.add(m3u8_url)
+                        print(f"✅ Added {new_name} to playlist: {m3u8_url}", flush=True)
+                    else:
+                        print(f"❌ Skipping {new_name}: No URL found or already processed", flush=True)
+
+                    try:
+                        await page.go_back(wait_until="domcontentloaded")
+                        await page.wait_for_selector(".item-channel", timeout=15000)
+                    except Exception as go_back_error:
+                        print(f"⚠️ Error navigating back after {new_name}: {go_back_error}", flush=True)
+                        print("🔄 Re-fetching the main page...", flush=True)
+                        try:
+                            await page.goto(url, timeout=90000, wait_until="domcontentloaded")
+                            await page.wait_for_selector(".item-channel", timeout=15000)
+                        except Exception as goto_error:
+                            print(f"❌ Failed to return to main page {url}. Aborting this mirror.", flush=True)
+                            break
+                print(f"🎉 Successfully processed channels from {url}", flush=True)
+                await browser.close()
+                return channels_data
+
+            except Exception as e:
+                print(f"❌ Failed on {url}: {e}", flush=True)
+                continue
+
+        await browser.close()
+        raise Exception("❌ All mirrors failed to load and process channels")
+
+def build_playlist_from_data(channels_data):
+    """Generates an M3U8 playlist from the channel data."""
+    playlist_lines = ['#EXTM3U\n']
+    for ch in channels_data:
+        tvg_id_attr = f' tvg-id="{ch["tv_id"]}"' if ch["tv_id"] else ""
+        logo_attr = f' tvg-logo="{ch["logo"]}"' if ch["logo"] else ""
+        group_title_attr = f' group-title="{ch["group"]}"' if ch["group"] else ""
+        playlist_lines.append(f'#EXTINF:-1{tvg_id_attr}{logo_attr}{group_title_attr},{ch["name"]}\n')
+        playlist_lines.append(
+            '#EXTVLCOPT:http-origin=https://fstv.space/\n'
+            '#EXTVLCOPT:http-referrer=https://fstv.space/\n'
+            '#EXTVLCOPT:http-user-agent=Mozilla/50 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0\n'
+        )
+        playlist_lines.append(ch["url"] + "\n")
+    return playlist_lines
+
+async def main():
+    """Main function to orchestrate the channel scraping and playlist generation."""
+    try:
+        print("🚀 Starting FSTV scraping...", flush=True)
+        channels_data = await fetch_fstv_channels_with_urls()
+        playlist_lines = build_playlist_from_data(channels_data)
+        with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
+            f.writelines(playlist_lines)
+        print("🎯 Playlist 'FSTV24.m3u8' created successfully!", flush=True)
+    except Exception as e:
+        print(f"❌ An error occurred: {e}", flush=True)
+        sys.exit(1)
+
+if __name__ == "__main__":
+    asyncio.run(main())
