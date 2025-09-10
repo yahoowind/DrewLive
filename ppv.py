@@ -13,7 +13,7 @@ CUSTOM_HEADERS = [
 
 ALLOWED_CATEGORIES = {
     "24/7 Streams", "Wrestling", "Football", "Basketball", "Baseball",
-    "Combat Sports", "Motorsports", "American Football"
+    "Combat Sports", "American Football"
 }
 
 CATEGORY_LOGOS = {
@@ -22,7 +22,8 @@ CATEGORY_LOGOS = {
     "Football": "http://drewlive24.duckdns.org:9000/Logos/Football.png",
     "Basketball": "http://drewlive24.duckdns.org:9000/Logos/Basketball.png",
     "Baseball": "http://drewlive24.duckdns.org:9000/Logos/Baseball.png",
-    "American Football": "http://drewlive24.duckdns.org:9000/Logos/NFL3.png"
+    "American Football": "http://drewlive24.duckdns.org:9000/Logos/NFL3.png",
+    "Combat Sports": "http://drewlive24.duckdns.org:9000/Logos/CombatSports2.png"
 }
 
 CATEGORY_TVG_IDS = {
@@ -31,7 +32,8 @@ CATEGORY_TVG_IDS = {
     "Football": "Soccer.Dummy.us",
     "Basketball": "Basketball.Dummy.us",
     "Baseball": "MLB.Baseball.Dummy.us",
-    "American Football": "NFL.Dummy.us"
+    "American Football": "NFL.Dummy.us",
+    "Combat Sports": "PPV.EVENTS.Dummy.us"
 }
 
 GROUP_RENAME_MAP = {
@@ -40,7 +42,8 @@ GROUP_RENAME_MAP = {
     "Football": "PPVLand - Global Football Streams",
     "Basketball": "PPVLand - Basketball Hub",
     "Baseball": "PPVLand - MLB",
-    "American Football": "PPVLand - NFL & College Football Action"
+    "American Football": "PPVLand - NFL & College Football Action",
+    "Combat Sports": "PPVLand - Combat Sports"
 }
 
 async def check_m3u8_url(url):
