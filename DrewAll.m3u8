@@ -528,7 +528,7 @@ http://fl1.moveonjoy.com/CNN_INTERNATIONAL/index.m3u8
 #EXTINF:-1  tvg-name="COMEDY CENTRAL" tvg-id="Comedy.Central.(US).-.Eastern.Feed.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s10149_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",COMEDY CENTRAL
 https://fl3.moveonjoy.com/Comedy_Central/index.m3u8
 #EXTINF:-1  tvg-name="COMET" tvg-id="Comet.TV.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/comet-us.png" group-title="MoveOnJoy" radio="false",COMET
-http://fl3.moveonjoy.com/COMET/index.m3u8
+https://fast-channels.sinclairstoryline.com/COMET/index.m3u8
 #EXTINF:-1  tvg-name="COOKING" tvg-id="The.Cooking.Channel.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s30156_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",COOKING
 http://fl3.moveonjoy.com/COOKING_CHANNEL/index.m3u8
 #EXTINF:-1  tvg-name="COURT TV" tvg-id="Court.TV.US.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/court-tv-us.png?raw=true" group-title="MoveOnJoy" radio="false",COURT TV
@@ -574,7 +574,7 @@ https://fl3.moveonjoy.com/E_ENTERTAINMENT_TELEVISION/index.m3u8
 #EXTINF:-1  tvg-name="ESPN 2" tvg-id="ESPN2.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s12444_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",ESPN 2
 http://fl1.moveonjoy.com/ESPN_2/index.m3u8
 #EXTINF:-1  tvg-name="ESPN NEWS" tvg-id="ESPN.News.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s16485_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",ESPN NEWS
-https://fl3.moveonjoy.com/ESPN_NEWS/index.m3u8
+https://fl1.moveonjoy.com/ESPN_NEWS/index.m3u8
 #EXTINF:-1  tvg-name="ESPN U" tvg-id="ESPNU.On.Demand.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s45654_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",ESPN U
 https://fl3.moveonjoy.com/ESPN_U/index.m3u8
 #EXTINF:-1  tvg-name="FOOD NETWORK" tvg-id="Food.Network.USA.-.Eastern.Feed.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s12574_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",FOOD NETWORK
@@ -861,3 +861,7 @@ http://1tv41.icu:8080/5ZCJFs/416986/66077
 https://a1xs.vip/1000017
 #EXTINF:-1  tvg-id="Sky.News.HD.uk" tvg-name="Sky News" tvg-logo="https://i.imgur.com/OrPaXvv.png" group-title="A1xmedia UK Channels",Sky News FHD
 https://a1xs.vip/1000018
+#EXTINF:-1  tvg-name="NBC" tvg-id="NBC.(WVGN).Charlotte.Amalie,.VI.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbc-logo-2013-us.png?raw=true" group-title="MoveOnJoy" radio="false",NBC
+https://fl1.moveonjoy.com/Virgin_Islands_NBC/index.m3u8
+#EXTINF:-1  tvg-name="CW" tvg-id="CW.(WKCF).Orlando,.FL.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cw-us.png?raw=true" group-title="MoveOnJoy" radio="false",CW 
+https://fl1.moveonjoy.com/CW_ORLANDO/index.m3u8
