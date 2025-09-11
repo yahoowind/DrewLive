@@ -44,7 +44,7 @@ GROUP_RENAME_MAP = {
     "Football": "PPVLand - Global Football Streams",
     "Basketball": "PPVLand - Basketball Hub",
     "Baseball": "PPVLand - MLB",
-    "American Football": "PPVLand - NFL & College Football Action",
+    "American Football": "PPVLand - NFL Action",
     "Combat Sports": "PPVLand - Combat Sports",
     "Uncategorized": "PPVLand - Live Events"
 }
