@@ -253,13 +253,18 @@ async def main():
         context = await browser.new_context()
         page = await context.new_page()
         url_map = {}
-        for s in streams:
+
+        total_streams = len(streams)
+        for idx, s in enumerate(streams, start=1):
             key = f"{s['name']}::{s['category']}::{s['iframe']}"
-            print(f"\n🔍 Scraping: {s['name']} ({s['category']})")
+            print(f"\n🔎 Scraping stream {idx}/{total_streams}: {s['name']} ({s['category']})")
             urls = await grab_m3u8_from_iframe(page, s["iframe"])
             if urls:
-                print(f"✅ Got {len(urls)} stream(s) for {s['name']}")
+                print(f"✅ Got {len(urls)} stream(s) for {s['name']} ({idx}/{total_streams})")
+            else:
+                print(f"⚠️ No valid streams for {s['name']} ({idx}/{total_streams})")
             url_map[key] = urls
+
         await browser.close()
 
     print("\n💾 Writing final playlist to PPVLand.m3u8 ...")
