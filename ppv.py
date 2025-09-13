@@ -13,7 +13,7 @@ CUSTOM_HEADERS = [
 
 ALLOWED_CATEGORIES = {
     "24/7 Streams", "Wrestling", "Football", "Basketball", "Baseball",
-    "Combat Sports", "American Football"
+    "Combat Sports", "American Football", "Darts"
 }
 
 CATEGORY_LOGOS = {
@@ -24,7 +24,7 @@ CATEGORY_LOGOS = {
     "Baseball": "http://drewlive24.duckdns.org:9000/Logos/Baseball.png",
     "American Football": "http://drewlive24.duckdns.org:9000/Logos/NFL3.png",
     "Combat Sports": "http://drewlive24.duckdns.org:9000/Logos/CombatSports2.png",
-    "Uncategorized": "http://drewlive24.duckdns.org:9000/Logos/247.png"
+    "Darts": "http://drewlive24.duckdns.org:9000/Logos/Darts.png"
 }
 
 CATEGORY_TVG_IDS = {
@@ -35,7 +35,7 @@ CATEGORY_TVG_IDS = {
     "Baseball": "MLB.Baseball.Dummy.us",
     "American Football": "NFL.Dummy.us",
     "Combat Sports": "PPV.EVENTS.Dummy.us",
-    "Uncategorized": "PPV.EVENTS.Dummy.us"
+    "Darts": "Darts.Dummy.us"
 }
 
 GROUP_RENAME_MAP = {
@@ -46,7 +46,7 @@ GROUP_RENAME_MAP = {
     "Baseball": "PPVLand - MLB",
     "American Football": "PPVLand - NFL Action",
     "Combat Sports": "PPVLand - Combat Sports",
-    "Uncategorized": "PPVLand - Live Events"
+    "Darts": "PPVLand - Darts"
 }
 
 # --- Functions (unchanged) ---
@@ -54,8 +54,8 @@ async def check_m3u8_url(url):
     try:
         headers = {
             "User-Agent": "Mozilla/5.0",
-            "Referer": "https://veplay.top",
-            "Origin": "https://veplay.top"
+            "Referer": "https://ppvs.su",
+            "Origin": "https://ppvs.su"
         }
         timeout = aiohttp.ClientTimeout(total=15)
         async with aiohttp.ClientSession(timeout=timeout) as session:
@@ -69,7 +69,7 @@ async def get_streams():
     try:
         timeout = aiohttp.ClientTimeout(total=30)
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:142.0) Gecko/20100101 Firefox/142.0'
         }
         async with aiohttp.ClientSession(timeout=timeout, headers=headers) as session:
             print(f"🌐 Fetching streams from {API_URL}")
