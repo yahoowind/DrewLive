@@ -49,7 +49,7 @@ GROUP_RENAME_MAP = {
     "Darts": "PPVLand - Darts"
 }
 
-# --- Functions (unchanged) ---
+# --- Functions ---
 async def check_m3u8_url(url):
     try:
         headers = {
@@ -86,9 +86,11 @@ async def get_streams():
 
 async def grab_m3u8_from_iframe(page, iframe_url):
     found_streams = set()
+
     def handle_response(response):
         if ".m3u8" in response.url:
             found_streams.add(response.url)
+
     page.on("response", handle_response)
     print(f"🌐 Navigating to iframe: {iframe_url}")
     try:
@@ -97,6 +99,7 @@ async def grab_m3u8_from_iframe(page, iframe_url):
         print(f"❌ Failed to load iframe: {e}")
         page.remove_listener("response", handle_response)
         return set()
+
     await asyncio.sleep(2)
     try:
         box = page.viewport_size or {"width": 1280, "height": 720}
@@ -112,9 +115,11 @@ async def grab_m3u8_from_iframe(page, iframe_url):
             await asyncio.sleep(0.3)
     except Exception as e:
         print(f"❌ Mouse click error: {e}")
+
     print("⏳ Waiting 5s for final stream load...")
     await asyncio.sleep(5)
     page.remove_listener("response", handle_response)
+
     valid_urls = set()
     for url in found_streams:
         if await check_m3u8_url(url):
@@ -131,16 +136,18 @@ def build_m3u(streams, url_map):
         if name_lower in seen_names:
             continue
         seen_names.add(name_lower)
+
         unique_key = f"{s['name']}::{s['category']}::{s['iframe']}"
         urls = url_map.get(unique_key, [])
         if not urls:
             print(f"⚠️ No working URLs for {s['name']}")
             continue
-        # Use uncategorized as fallback
-        orig_category = s.get("category") or "Uncategorized"
+
+        orig_category = s.get("category") or "Misc"
         final_group = GROUP_RENAME_MAP.get(orig_category, f"PPVLand - {orig_category}")
-        logo = s.get("poster") or CATEGORY_LOGOS.get(orig_category, CATEGORY_LOGOS["Uncategorized"])
-        tvg_id = CATEGORY_TVG_IDS.get(orig_category, CATEGORY_TVG_IDS["Uncategorized"])
+        logo = s.get("poster") or CATEGORY_LOGOS.get(orig_category, "http://drewlive24.duckdns.org:9000/Logos/Default.png")
+        tvg_id = CATEGORY_TVG_IDS.get(orig_category, "Misc.Dummy.us")
+
         url = next(iter(urls))
         lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{final_group}",{s["name"]}')
         lines.extend(CUSTOM_HEADERS)
@@ -155,12 +162,13 @@ async def main():
         if data:
             print(f"API Response: {data}")
         return
+
     print(f"✅ Found {len(data['streams'])} categories")
     streams = []
     for category in data.get("streams", []):
-        cat = category.get("category", "").strip() or "Uncategorized"
+        cat = category.get("category", "").strip() or "Misc"
         if cat not in ALLOWED_CATEGORIES:
-            ALLOWED_CATEGORIES.add(cat)  # Automatically include new categories
+            ALLOWED_CATEGORIES.add(cat)  # Auto-include new categories
         for stream in category.get("streams", []):
             iframe = stream.get("iframe") 
             name = stream.get("name", "Unnamed Event")
@@ -172,6 +180,7 @@ async def main():
                     "category": cat,
                     "poster": poster
                 })
+
     # Deduplicate streams by name
     seen_names = set()
     deduped_streams = []
@@ -181,12 +190,15 @@ async def main():
             seen_names.add(name_key)
             deduped_streams.append(s)
     streams = deduped_streams
+
     if not streams:
         print("🚫 No valid streams found in the API response.")
         if 'streams' in data:
             print(f"Raw categories found: {[cat.get('category', 'Unknown') for cat in data['streams']]}")
         return
+
     print(f"🔍 Found {len(streams)} unique streams to process from {len({s['category'] for s in streams})} categories")
+
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
@@ -200,6 +212,7 @@ async def main():
                 print(f"✅ Got {len(urls)} stream(s) for {s['name']}")
             url_map[key] = urls
         await browser.close()
+
     print("\n💾 Writing final playlist to PPVLand.m3u8 ...")
     playlist = build_m3u(streams, url_map)
     with open("PPVLand.m3u8", "w", encoding="utf-8") as f:
