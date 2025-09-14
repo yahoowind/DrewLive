@@ -120,7 +120,6 @@ async def get_streams():
 
 async def grab_m3u8_from_iframe(page, iframe_url):
     found_streams = set()
-
     def handle_response(response):
         if ".m3u8" in response.url:
             found_streams.add(response.url)
@@ -230,6 +229,21 @@ async def main():
                     "category": cat,
                     "poster": poster
                 })
+
+    # --- Add manual hidden events like Canelo vs Crawford ---
+    hidden_events = [
+        {
+            "name": "Canelo vs Crawford",
+            "iframe": "https://ppv.to/live/canelo-vs-crawford",
+            "category": "Combat Sports",
+            "poster": None
+        }
+    ]
+    for event in hidden_events:
+        name_key = event["name"].strip().lower()
+        if name_key not in {s["name"].strip().lower() for s in streams}:
+            streams.append(event)
+            print(f"💡 Added hidden stream: {event['name']}")
 
     seen_names = set()
     deduped_streams = []
