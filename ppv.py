@@ -25,7 +25,8 @@ CATEGORY_LOGOS = {
     "American Football": "http://drewlive24.duckdns.org:9000/Logos/NFL3.png",
     "Combat Sports": "http://drewlive24.duckdns.org:9000/Logos/CombatSports2.png",
     "Darts": "http://drewlive24.duckdns.org:9000/Logos/Darts.png",
-    "Motorsports": "http://drewlive24.duckdns.org:9000/Logos/Motorsports2.png"
+    "Motorsports": "http://drewlive24.duckdns.org:9000/Logos/Motorsports2.png",
+    "Live Now": "http://drewlive24.duckdns.org:9000/Logos/DrewLiveSports.png"
 }
 
 CATEGORY_TVG_IDS = {
@@ -37,7 +38,8 @@ CATEGORY_TVG_IDS = {
     "American Football": "NFL.Dummy.us",
     "Combat Sports": "PPV.EVENTS.Dummy.us",
     "Darts": "Darts.Dummy.us",
-    "Motorsports": "Racing.Dummy.us"
+    "Motorsports": "Racing.Dummy.us",
+    "Live Now": "24.7.Dummy.us"
 }
 
 GROUP_RENAME_MAP = {
@@ -49,7 +51,8 @@ GROUP_RENAME_MAP = {
     "American Football": "PPVLand - NFL & CFB Action",
     "Combat Sports": "PPVLand - Combat Sports",
     "Darts": "PPVLand - Darts",
-    "Motorsports": "PPVLand - Racing Action"
+    "Motorsports": "PPVLand - Racing Action",
+    "Live Now": "PPVLand - Live Now"
 }
 
 NFL_TEAMS = {
@@ -161,6 +164,35 @@ async def grab_m3u8_from_iframe(page, iframe_url):
             print(f"❌ Invalid or unreachable URL: {url}")
     return valid_urls
 
+async def grab_live_now_from_html(page, base_url="https://ppv.to/"):
+    print("🌐 Scraping 'Live Now' streams from HTML...")
+    live_now_streams = []
+    try:
+        await page.goto(base_url, timeout=20000)
+        await asyncio.sleep(3)
+
+        live_cards = await page.query_selector_all("#livecards a.item-card")
+        for card in live_cards:
+            href = await card.get_attribute("href")
+            name_el = await card.query_selector(".card-title")
+            poster_el = await card.query_selector("img.card-img-top")
+            name = await name_el.inner_text() if name_el else "Unnamed Live"
+            poster = await poster_el.get_attribute("src") if poster_el else None
+
+            if href:
+                iframe_url = f"{base_url.rstrip('/')}{href}"
+                live_now_streams.append({
+                    "name": name.strip(),
+                    "iframe": iframe_url,
+                    "category": "Live Now",
+                    "poster": poster
+                })
+    except Exception as e:
+        print(f"❌ Failed scraping 'Live Now': {e}")
+
+    print(f"✅ Found {len(live_now_streams)} 'Live Now' streams")
+    return live_now_streams
+
 def build_m3u(streams, url_map):
     lines = ['#EXTM3U url-tvg="https://epgshare01.online/epgshare01/epg_ripper_DUMMY_CHANNELS.xml.gz"']
     seen_names = set()
@@ -230,21 +262,7 @@ async def main():
                     "poster": poster
                 })
 
-    # --- Add manual hidden events like Canelo vs Crawford ---
-    hidden_events = [
-        {
-            "name": "Canelo vs Crawford",
-            "iframe": "https://ppv.to/live/canelo-vs-crawford",
-            "category": "Combat Sports",
-            "poster": None
-        }
-    ]
-    for event in hidden_events:
-        name_key = event["name"].strip().lower()
-        if name_key not in {s["name"].strip().lower() for s in streams}:
-            streams.append(event)
-            print(f"💡 Added hidden stream: {event['name']}")
-
+    # Deduplicate
     seen_names = set()
     deduped_streams = []
     for s in streams:
@@ -254,20 +272,13 @@ async def main():
             deduped_streams.append(s)
     streams = deduped_streams
 
-    if not streams:
-        print("🚫 No valid streams found in the API response.")
-        if 'streams' in data:
-            print(f"Raw categories found: {[cat.get('category', 'Unknown') for cat in data['streams']]}")
-        return
-
-    print(f"🔍 Found {len(streams)} unique streams to process from {len({s['category'] for s in streams})} categories")
-
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
         url_map = {}
 
+        # Process API streams
         total_streams = len(streams)
         for idx, s in enumerate(streams, start=1):
             key = f"{s['name']}::{s['category']}::{s['iframe']}"
@@ -278,6 +289,18 @@ async def main():
             else:
                 print(f"⚠️ No valid streams for {s['name']} ({idx}/{total_streams})")
             url_map[key] = urls
+
+        # Process Live Now
+        live_now_streams = await grab_live_now_from_html(page)
+        for s in live_now_streams:
+            key = f"{s['name']}::{s['category']}::{s['iframe']}"
+            urls = await grab_m3u8_from_iframe(page, s["iframe"])
+            if urls:
+                print(f"✅ Got {len(urls)} 'Live Now' stream(s) for {s['name']}")
+            else:
+                print(f"⚠️ No valid 'Live Now' streams for {s['name']}")
+            url_map[key] = urls
+        streams.extend(live_now_streams)
 
         await browser.close()
 
