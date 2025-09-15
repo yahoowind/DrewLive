@@ -22,7 +22,8 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/PPVLand.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/SamsungTVPlus.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/Xumo.m3u8",
-    "http://drewlive24.duckdns.org:8081/FSTV24.m3u8"
+    "http://drewlive24.duckdns.org:8081/FSTV24.m3u8",
+    "http://drewlive24.duckdns.org:8081/StreamedSU.m3u8"
 ]
 
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
