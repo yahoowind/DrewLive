@@ -27,7 +27,8 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install playwright
-          playwright install --with-deps firefox # 🌐 Installs Playwright browser and its dependencies
+          playwright install firefox # 🌐 Installs the Playwright Firefox browser binary
+          playwright install-deps # 🔧 This is the crucial step to install all necessary system dependencies
 
       - name: Run scraping script
         run: python fstv.py # 🎯 Executes your script
