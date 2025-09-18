@@ -30,21 +30,39 @@ jobs:
           playwright install firefox # 🌐 Installs the Playwright Firefox browser binary
           playwright install-deps # 🔧 This is the crucial step to install all necessary system dependencies
 
-      - name: Run scraping script
-        run: python fstv.py # 🎯 Executes your script
+      - name: 🎯 Run scraping script
+        run: python fstv.py
 
-      - name: Commit and push changes
+      - name: 💾 Commit & Safely Push if Playlist Changed
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add FSTV24.m3u8 # Stages the generated file
-          
-          if ! git diff --cached --quiet; then
-            git commit -m "🔁 Update FSTV playlist"
-            git push origin main
-          else
-            echo "✅ No changes detected, skipping commit."
+          # Stage the output
+          git add FSTV24.m3u8
+
+          # Check if file actually changed
+          if git diff --cached --quiet; then
+            echo "✅ No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "🔁 Update playlist $(date -u +'%a %b %d %T UTC %Y')"
+
+          # Small random delay to reduce collisions
+          sleep $((RANDOM % 10 + 5))
+
+          # Safe push, fallback merge if rejected
+          if ! git push origin main; then
+            echo "⚠️ Push rejected. Trying safe fetch + merge..."
+            git pull origin main --rebase || {
+              echo "❌ Rebase failed. Exiting to avoid corruption."
+              exit 1
+            }
+            git push origin main || {
+              echo "❌ Second push failed. Remote changed again."
+              exit 1
+            }
           fi
