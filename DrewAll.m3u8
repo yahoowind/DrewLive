@@ -1,4 +1,4 @@
-#EXTM3U url-tvg="http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
+﻿#EXTM3U url-tvg="http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 #EXTINF:-1  tvg-name="Amphibia 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://1000logos.net/wp-content/uploads/2023/10/Amphibia-Logo-2048x1152.png" group-title="24/7 by Mystique" radio="false",Amphibia 24/7
 http://user.scalecdn.co:8080/live/26725074/92867131/511232.ts
 #EXTINF:-1  tvg-name="BBC Top Gear 24/7" tvg-id="24.7.Dummy.us" tvg-logo="https://logos-world.net/wp-content/uploads/2023/04/Top-Gear-Logo-2002.png" group-title="24/7 by Mystique" radio="false",BBC Top Gear 24/7
@@ -479,8 +479,6 @@ https://fl7.moveonjoy.com/AMC_NETWORK/index.m3u8
 https://fl7.moveonjoy.com/American_Heroes_Channel/index.m3u8
 #EXTINF:-1  tvg-name="Animal Planet" tvg-id="Animal.Planet.US.-.East.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/animal-planet-us.png" group-title="MoveOnJoy" radio="false",Animal Planet
 https://fl7.moveonjoy.com/Animal_Planet/index.m3u8
-#EXTINF:-1  tvg-name="Antenna" tvg-id="Antenna.TV.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/antenna-us.png" group-title="MoveOnJoy" radio="false",Antenna
-https://fl7.moveonjoy.com/Antenna/index.m3u8
 #EXTINF:-1  tvg-name="Aspire" tvg-id="ASPiRE.TV.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/aspire-tv-us.png" group-title="MoveOnJoy" radio="false",Aspire
 https://fl7.moveonjoy.com/Aspire/index.m3u8
 #EXTINF:-1  tvg-name="BBC AMERICA" tvg-id="BBC.America.-.East.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s18332_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",BBC AMERICA
@@ -617,6 +615,8 @@ https://fl7.moveonjoy.com/FYI/index.m3u8
 https://fl7.moveonjoy.com/GAME_SHOW_NETWORK/index.m3u8
 #EXTINF:-1  tvg-name="getTV" tvg-id="CW.(KGET-TV2).+.Bakersfield,.CA.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/get-tv-us.png?raw=true" group-title="MoveOnJoy" radio="false",getTV
 https://fl7.moveonjoy.com/GET_TV/index.m3u8
+#EXTINF:-1  tvg-name="GOLTV" tvg-id="GOL.TV.us2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/a/ad/GOLTV.png" group-title="MoveOnJoy" radio="false",GOLTV
+http://23.237.104.106:8080/USA_GOLTV/index.m3u8
 #EXTINF:-1  tvg-name="GRIT TV" tvg-id="Grit.TV.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/grit-us.png?raw=true" group-title="MoveOnJoy" radio="false",GRIT TV
 https://fl7.moveonjoy.com/GRIT_TV/index.m3u8
 #EXTINF:-1  tvg-name="Hallmark Channel" tvg-id="Hallmark.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/hallmark-channel-us.png" group-title="MoveOnJoy" radio="false",Hallmark Channel
@@ -915,8 +915,6 @@ https://fl7.moveonjoy.com/WGN/index.m3u8
 https://fl7.moveonjoy.com/WORLD_FISHING_NETWORK/index.m3u8
 #EXTINF:-1  tvg-name="YES Network" tvg-id="YES.Network.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/yes-network-us.png?raw=true" group-title="MoveOnJoy" radio="false",YES Network
 https://fl7.moveonjoy.com/YES_NETWORK/index.m3u8
-#EXTINF:-1  tvg-name="GOLTV" tvg-id="GOL.TV.us2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/a/ad/GOLTV.png" group-title="MoveOnJoy" radio="false",GOLTV
-http://23.237.104.106:8080/USA_GOLTV/index.m3u8
 #EXTINF:-1  tvg-name="CVM" tvg-id="Local.Programming.Dummy.us" tvg-logo="https://cvssja.org/wp-content/uploads/2020/06/CVM-Logo-2016.png" group-title="Mystique Caribbean" radio="false",CVM (Jamaica)
 http://1tv41.icu:8080/5ZCJFs/416986/66371
 #EXTINF:-1  tvg-name="JNN" tvg-id="Local.Programming.Dummy.us" tvg-logo="https://grassrootsjusticenetwork.org/wp-content/uploads/2018/08/jn_plus_logo_website.png" group-title="Mystique Caribbean" radio="false",JNN (Jamaica)
