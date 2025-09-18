@@ -2,7 +2,7 @@ name: Generate FSTV Playlist 🎯
 
 on:
   schedule:
-    - cron: '0 * * * *' # ⏰ Runs every hour on the hour
+    - cron: '*/30 * * * *' # ⏰ Runs every 30 minutes
   workflow_dispatch: # 🟢 Allows manual runs from the GitHub UI
 
 permissions:
