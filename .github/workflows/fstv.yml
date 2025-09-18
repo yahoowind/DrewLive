@@ -1,0 +1,49 @@
+name: Generate FSTV Playlist 🎯
+
+on:
+  schedule:
+    - cron: '0 * * * *' # ⏰ Runs every hour on the hour
+  workflow_dispatch: # 🟢 Allows manual runs from the GitHub UI
+
+permissions:
+  contents: write # ✍️ Grants permission to write to the repository
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest # 🐧 Uses a clean Ubuntu environment
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetches full history for proper git checks
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11' # 🐍 Specifies a recent Python version
+
+      - name: Install dependencies & Playwright
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          playwright install --with-deps firefox # 🌐 Installs Playwright browser and its dependencies
+
+      - name: Run scraping script
+        run: python fstv.py # 🎯 Executes your script
+
+      - name: Commit and push changes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add FSTV24.m3u8 # Stages the generated file
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "🔁 Update FSTV playlist"
+            git push origin main
+          else
+            echo "✅ No changes detected, skipping commit."
+          fi
