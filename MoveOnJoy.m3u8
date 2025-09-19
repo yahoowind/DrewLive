@@ -415,3 +415,9 @@ https://fl7.moveonjoy.com/WILLOW_CRICKET/index.m3u8
 https://fl7.moveonjoy.com/WORLD_FISHING_NETWORK/index.m3u8
 #EXTINF:-1  tvg-name="YES Network" tvg-id="YES.Network.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/yes-network-us.png?raw=true" group-title="MoveOnJoy" radio="false",YES Network
 https://fl7.moveonjoy.com/YES_NETWORK/index.m3u8
+#EXTINF:-1 tvg-id="CNBCWorld.us",CNBC World
+https://fl7.moveonjoy.com/CNBC_World/index.m3u8
+#EXTINF:-1 tvg-id="ComedyTV.us",Comedy TV
+https://fl7.moveonjoy.com/Comedy_TV/index.m3u8
+#EXTINF:-1 tvg-id="AntennaTV.us",Antenna TV
+https://fl7.moveonjoy.com/Antenna_TV/index.m3u8
