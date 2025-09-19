@@ -7780,6 +7780,8 @@ https://fl7.moveonjoy.com/FXX/index.m3u8
 https://fl7.moveonjoy.com/FYI/index.m3u8
 #EXTINF:-1  tvg-name="getTV" tvg-id="CW.(KGET-TV2).+.Bakersfield,.CA.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/get-tv-us.png?raw=true" group-title="MoveOnJoy" radio="false",getTV
 https://fl7.moveonjoy.com/GET_TV/index.m3u8
+#EXTINF:-1  tvg-name="Global" tvg-id="Global.BC.ca" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/canada/global-ca.png?raw=true" group-title="MoveOnJoy" radio="false",Global
+https://fl7.moveonjoy.com/CA_GLOBAL/index.m3u8
 #EXTINF:-1  tvg-name="Golf Channel" tvg-id="Golf.Channel.USA.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbc-golf-3d-us.png?raw=true" group-title="MoveOnJoy" radio="false",Golf Channel
 https://fl7.moveonjoy.com/GOLF/index.m3u8
 #EXTINF:-1  tvg-name="GOLTV" tvg-id="GOL.TV.us2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/a/ad/GOLTV.png" group-title="MoveOnJoy" radio="false",GOLTV
