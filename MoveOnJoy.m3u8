@@ -283,11 +283,9 @@ https://fl7.moveonjoy.com/OXYGEN/index.m3u8
 https://fl7.moveonjoy.com/PARAMOUNT_NETWORK/index.m3u8
 #EXTINF:-1  tvg-name="Pop TV" tvg-id="POP.-.East.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pop-us.png?raw=true" group-title="MoveOnJoy" radio="false",Pop TV
 https://fl7.moveonjoy.com/Pop_TV/index.m3u8
-#EXTINF:-1  tvg-name="PPV1" tvg-id="PPV.EVENTS.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/PPV.png" group-title="MoveOnJoy" radio="false",PPV1
-https://fl7.moveonjoy.com/PPV_1/index.m3u8
 #EXTINF:-1  tvg-name="Pursuit Channel" tvg-id="Pursuit.Channel.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/pursuit-us.png?raw=true" group-title="MoveOnJoy" radio="false",Pursuit Channel
 https://fl7.moveonjoy.com/Pursuit_Channel/index.m3u8
-#EXTINF:-1  tvg-name="QVC (720p)" tvg-id="QVC.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/qvc-us.png?raw=true" group-title="MoveOnJoy" radio="false",QVC (720p)
+#EXTINF:-1  tvg-name="QVC" tvg-id="QVC.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/qvc-us.png?raw=true" group-title="MoveOnJoy" radio="false",QVC
 https://fl7.moveonjoy.com/QVC/index.m3u8
 #EXTINF:-1  tvg-name="ReelzChannel" tvg-id="ReelzChannel.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s52199_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",ReelzChannel
 https://fl7.moveonjoy.com/REELZ/index.m3u8
