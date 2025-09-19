@@ -69,10 +69,8 @@ https://fl7.moveonjoy.com/CINEMAX_WEST/index.m3u8
 https://fl7.moveonjoy.com/Cleo_TV/index.m3u8
 #EXTINF:-1  tvg-name="CMT" tvg-id="CMT.US.-.Eastern.Feed.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s10138_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",CMT
 https://fl7.moveonjoy.com/CMT/index.m3u8
-#EXTINF:-1  tvg-name="CNBC FHD" tvg-id="CNBC.USA.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s10139_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",CNBC FHD
+#EXTINF:-1  tvg-name="CNBC" tvg-id="CNBC.USA.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s10139_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",CNBC
 https://fl7.moveonjoy.com/CNBC/index.m3u8
-#EXTINF:-1  tvg-name="CNBC World" tvg-id="CNBC.World.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnbc-world-flat-us.png?raw=true" group-title="MoveOnJoy" radio="false",CNBC World
-https://fl7.moveonjoy.com/CNBC_World/index.m3u8
 #EXTINF:-1  tvg-name="CNN" tvg-id="CNN.us" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s58646_dark_360w_270h.png" group-title="MoveOnJoy" radio="false",CNN
 https://turnerlive.warnermediacdn.com/hls/live/586495/cnngo/cnn_slate/VIDEO_3_1464000.m3u8
 #EXTINF:-1  tvg-name="CNN INTERNATIONAL" tvg-id="Cable.News.Network.International.(CNNI).us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnn-us.png?raw=true" group-title="MoveOnJoy" radio="false",CNN INTERNATIONAL
@@ -199,7 +197,7 @@ https://fl7.moveonjoy.com/INVESTIGATION_DISCOVERY/index.m3u8
 https://fl7.moveonjoy.com/INSP/index.m3u8
 #EXTINF:-1  tvg-name="ION" tvg-id="ION..-.Eastern.Feed.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-television-us.png?raw=true" group-title="MoveOnJoy" radio="false",ION
 https://fl7.moveonjoy.com/ION_TV/index.m3u8
-#EXTINF:-1  tvg-name="ION Plus East (720p)" tvg-id="ION.Plus.TV.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-plus-us.png?raw=true" group-title="MoveOnJoy" radio="false",ION Plus East (720p)
+#EXTINF:-1  tvg-name="ION Plus" tvg-id="ION.Plus.TV.us" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/ion-plus-us.png?raw=true" group-title="MoveOnJoy" radio="false",ION Plus
 https://fl7.moveonjoy.com/ION_Plus/index.m3u8
 #EXTINF:-1  tvg-name="Lifetime" tvg-id="Lifetime.Network.US.-.Eastern.Feed.us" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/lifetime-us.png" group-title="MoveOnJoy" radio="false",Lifetime
 https://fl7.moveonjoy.com/LIFETIME/index.m3u8
