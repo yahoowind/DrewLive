@@ -116,19 +116,13 @@ def write_merged_playlist(all_unique_channels):
 
 if __name__ == "__main__":
     print(f"Starting playlist merge at {datetime.now()}...")
-    # Use a dictionary to store channels with the URL as the key for deduplication
-    all_unique_channels_dict = {}
+    all_unique_channels_set = set()
 
     for url in playlist_urls:
         lines = fetch_playlist(url)
         if lines:
             parsed_channels = parse_playlist(lines, source_url=url)
-            for extinf, headers, channel_url in parsed_channels:
-                # Add the channel to the dictionary if its URL is not already a key
-                if channel_url not in all_unique_channels_dict:
-                    all_unique_channels_dict[channel_url] = (extinf, headers, channel_url)
-    
-    # Convert the dictionary values back to a list to pass to the writing function
-    all_unique_channels_list = list(all_unique_channels_dict.values())
-    write_merged_playlist(all_unique_channels_list)
+            all_unique_channels_set.update(parsed_channels)
+
+    write_merged_playlist(list(all_unique_channels_set))
     print(f"Merging complete at {datetime.now()}.")
