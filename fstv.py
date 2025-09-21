@@ -1,5 +1,5 @@
 import asyncio
-from playwright.async_api import async_playwright
+from playwright.async_api import async_playwright, TimeoutError
 import re
 import sys
 import json
@@ -47,7 +47,7 @@ CHANNEL_MAPPING = {
     "beinsportsesxtra": {"name": "BeIN Sports Español Xtra", "tv_id": "613759", "group": "USA Sports", "keywords": ["beinespanolxtra"]},
     "bignetwork": {"name": "Big Ten Network", "tv_id": "Big.Ten.Network.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/big-ten-network-us.png?raw=true", "group": "USA Sports", "keywords": ["usabignetwork"]},
     "fubosports": {"name": "Fubo Sports USA", "tv_id": "Fubo.Sports.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fubo-sports-network-us.png?raw=true", "group": "USA Sports", "keywords": ["usafubosport"]},
-    "foxsoccerplus": {"name": "Fox Soccer Plus", "tv_id": "FOX.Soccer.Plus.us", "group": "USA Sports", "keywords": ["usafoxsoccerplus"]},
+    "foxsoccerplus": {"name": "Fox Soccer Plus", "tv_id": "Fox.Soccer.Plus.us", "group": "USA Sports", "keywords": ["usafoxsoccerplus"]},
     "tycsports": {"name": "TyC Sports", "tv_id": "TyC.Sports.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/argentina/tyc-sports-ar.png?raw=true", "group": "USA Sports", "keywords": ["usatycsport"]},
     "marqueesports": {"name": "Marquee Sports Network", "tv_id": "Marquee.Sports.Network.us", "group": "USA Sports", "keywords": ["usamarqueesportnetwork"]},
     "yesnetwork": {"name": "YES Network USA", "tv_id": "YES.Network.us", "group": "USA Sports", "keywords": ["yesusa"]},
@@ -92,7 +92,7 @@ CHANNEL_MAPPING = {
     "racingtv": {"name": "Racing TV UK", "tv_id": "Racing.TV.HD.uk", "group": "UK Sports", "keywords": ["ukracingtv"]},
     "skysportsf1": {"name": "Sky Sport F1 UK", "tv_id": "SkySp.F1.HD.uk", "group": "UK Sports", "keywords": ["ukskysportf1"]},
     "skysportsarena": {"name": "Sky Sport Arena UK", "tv_id": "Sky.Sports+.Dummy.us", "group": "UK Sports", "keywords": ["skysportarena"]},
-    "skysportsaction": {"name": "Sky Sports Action UK", "tv_id": "SkySp.ActionHD.uk", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-sports-action-hz-uk.png?raw=true", "group": "UK Sports", "keywords": ["ukskysportaction"]},
+    "skysportsaction": {"name": "Sky Sports Action UK", "tv_id": "SkySp.ActionHD.uk", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/sky-sports-action-hz-uk.png?raw=true", "group": "UK Sports", "keywords": ["ukskysportaction"]},
     "skysportscricket": {"name": "Sky Sport Cricket UK", "tv_id": "SkySpCricket.HD.uk", "group": "UK Sports", "keywords": ["ukskysportcricket"]},
     "skysportsnews": {"name": "Sky Sport News UK", "tv_id": "SkySp.News.HD.uk", "group": "UK Sports", "keywords": ["ukskysportnews"]},
     "skysportsdarts": {"name": "Sky Sport Darts UK", "tv_id": "Sky.Sports+.Dummy.us", "group": "UK Sports", "keywords": ["ukskysportdarts"]},
@@ -146,8 +146,8 @@ async def fetch_fstv_channels():
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0"
         )
         page = await context.new_page()
-
-        # Place the popup handler here to close any new page that appears.
+        
+        # Auto-close any new browser windows (pop-ups).
         context.on("page", lambda popup: asyncio.create_task(popup.close()))
         
         channels_data = []
@@ -191,31 +191,35 @@ async def fetch_fstv_channels():
                     new_name = mapped_info.get("name", prettify_name(raw_name))
                     tv_id = mapped_info.get("tv_id", "")
                     logo = mapped_info.get("logo", await channel_element.get_attribute("data-logo"))
-                    group_title = "FSTV"
+                    group_title = mapped_info.get("group", "FSTV")
                     
                     m3u8_url = None
-                    request_captured = asyncio.Event()
+                    max_retries = 3
+                    
+                    for attempt in range(max_retries):
+                        request_captured = asyncio.Event()
+                        
+                        async def handle_request(request):
+                            nonlocal m3u8_url
+                            if ".m3u8" in request.url and "auth_key" in request.url:
+                                m3u8_url = request.url
+                                if not request_captured.is_set():
+                                    request_captured.set()
 
-                    async def handle_request(request):
-                        nonlocal m3u8_url
-                        if ".m3u8" in request.url and "auth_key" in request.url:
-                            m3u8_url = request.url
-                            if not request_captured.is_set():
-                                request_captured.set()
-
-                    page.on("request", handle_request)
-                    print(f"👆 Clicking on {new_name} ({i+1}/{num_channels})...", flush=True)
-                    await channel_element.click(force=True, timeout=10000)
-
-                    await asyncio.sleep(2)
-
-                    try:
-                        await asyncio.wait_for(request_captured.wait(), timeout=15.0)
-                    except asyncio.TimeoutError:
-                        print(f"⚠️ Timeout: no valid .m3u8 URL found for {new_name}", flush=True)
-
-                    page.remove_listener("request", handle_request)
-
+                        page.on("request", handle_request)
+                        print(f"👆 Clicking on {new_name} ({i+1}/{num_channels}) - Attempt {attempt + 1}/{max_retries}...", flush=True)
+                        try:
+                            await channel_element.click(force=True, timeout=10000)
+                            await asyncio.sleep(1)  # Adjusted to 1 second pause
+                            await asyncio.wait_for(request_captured.wait(), timeout=15.0)
+                        except (TimeoutError, Exception) as e:
+                            print(f"⚠️ Attempt {attempt + 1} failed for {new_name}: {e}", flush=True)
+                        finally:
+                            page.remove_listener("request", handle_request)
+                        
+                        if m3u8_url:
+                            break
+                    
                     if m3u8_url and m3u8_url not in visited_urls:
                         channels_data.append({
                             "url": m3u8_url, "logo": logo, "name": new_name,
@@ -224,9 +228,9 @@ async def fetch_fstv_channels():
                         visited_urls.add(m3u8_url)
                         print(f"✅ Added {new_name}", flush=True)
                     else:
-                        print(f"❌ Skipping {new_name}: No URL or already processed", flush=True)
+                        print(f"❌ Skipping {new_name}: No URL found after {max_retries} attempts or already processed", flush=True)
 
-                    if i < num_channels - 1:
+                    if i < num_channels - 1 and url not in visited_urls:
                         await page.goto(url, wait_until="domcontentloaded")
                         await page.wait_for_selector(".item-channel", timeout=15000)
 
