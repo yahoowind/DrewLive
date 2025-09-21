@@ -162,6 +162,12 @@ async def fetch_fstv_channels():
                     continue
 
                 for i in range(num_channels):
+                    # === FIX #1: Reset state variables INSIDE the loop ===
+                    # This guarantees each channel starts with a clean slate.
+                    m3u8_url = None
+                    request_captured = asyncio.Event()
+                    # =======================================================
+                    
                     all_elements_on_page = await page.query_selector_all(".item-channel")
                     if i >= len(all_elements_on_page):
                         print("Fewer elements than expected after reload, breaking loop.")
@@ -175,7 +181,6 @@ async def fetch_fstv_channels():
 
                     normalized_name = normalize_channel_name(raw_name)
 
-                    # Search for a matching channel by iterating through your keywords.
                     mapped_info = {}
                     match_found = False
                     for channel_data in CHANNEL_MAPPING.values():
@@ -183,19 +188,14 @@ async def fetch_fstv_channels():
                             if keyword in normalized_name:
                                 mapped_info = channel_data
                                 match_found = True
-                                break  # Exit inner loop
+                                break
                         if match_found:
-                            break  # Exit outer loop
+                            break
 
                     new_name = mapped_info.get("name", prettify_name(raw_name))
                     tv_id = mapped_info.get("tv_id", "")
                     logo = mapped_info.get("logo", await channel_element.get_attribute("data-logo"))
-                    
-                    # === PER YOUR REQUEST: Group name is now hardcoded to "FSTV" for all channels ===
                     group_title = "FSTV"
-
-                    m3u8_url = None
-                    request_captured = asyncio.Event()
 
                     async def handle_request(request):
                         nonlocal m3u8_url
@@ -205,10 +205,16 @@ async def fetch_fstv_channels():
                                 request_captured.set()
 
                     page.on("request", handle_request)
+                    
                     print(f"👆 Clicking on {new_name} ({i+1}/{num_channels})...", flush=True)
+                    
+                    # === FIX #2: Add an explicit wait before clicking ===
+                    # This ensures the element is visible and interactive.
+                    await channel_element.wait_for(state='visible', timeout=5000)
+                    # ====================================================
                     await channel_element.click(force=True, timeout=10000)
 
-                    await asyncio.sleep(2)
+                    await asyncio.sleep(2) # Keep this static delay
 
                     try:
                         await asyncio.wait_for(request_captured.wait(), timeout=15.0)
@@ -228,7 +234,10 @@ async def fetch_fstv_channels():
                         print(f"❌ Skipping {new_name}: No URL or already processed", flush=True)
 
                     if i < num_channels - 1:
-                        await page.goto(url, wait_until="domcontentloaded")
+                        # === FIX #3: Make the page reload more robust ===
+                        # 'networkidle' is more reliable than 'domcontentloaded' on servers.
+                        await page.goto(url, wait_until="networkidle")
+                        # ===============================================
                         await page.wait_for_selector(".item-channel", timeout=15000)
 
                 print(f"🎉 Successfully processed all channels from {url}", flush=True)
