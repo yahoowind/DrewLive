@@ -3,10 +3,10 @@ from playwright.async_api import async_playwright
 import re
 import sys
 import json
+from urllib.parse import urljoin
 
-# Your full channel list in the new keyword-based format, with all your custom logos restored.
+# Your preferred keyword-based mapping.
 CHANNEL_MAPPING = {
-    # USA General
     "usanetwork": {"name": "USA Network", "tv_id": "USA.Network.-.East.Feed.us", "group": "USA", "keywords": ["usanetwork"]},
     "cbsla": {"name": "CBS Los Angeles", "tv_id": "CBS.(KCBS).Los.Angeles,.CA.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/CBS.png", "group": "USA", "keywords": ["cbslosangeles"]},
     "nbc": {"name": "NBC", "tv_id": "NBC.(WNBC).New.York,.NY.us", "group": "USA", "keywords": ["usnbc"]},
@@ -19,15 +19,13 @@ CHANNEL_MAPPING = {
     "paramount": {"name": "Paramount Network", "tv_id": "Paramount.Network.USA.-.Eastern.Feed.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/paramount-network-hz-us.png?raw=true", "group": "USA", "keywords": ["paramountnetwork"]},
     "axstv": {"name": "AXS TV", "tv_id": "AXS.TV.USA.HD.us", "group": "USA", "keywords": ["axstv"]},
     "trutv": {"name": "truTV", "tv_id": "truTV.USA.-.Eastern.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/tru-tv-us.png?raw=true", "group": "USA", "keywords": ["trutv"]},
-
-    # USA News
+    "tbs": {"name": "TBS", "tv_id": "TBS.-.East.us", "group": "USA", "keywords": ["tbs"]},
+    "discovery": {"name": "Discovery Channel", "tv_id": "Discovery.Channel.(US).-.Eastern.Feed.us", "group": "USA", "keywords": ["zentdiscovery"]},
     "nbcnews": {"name": "NBC News", "tv_id": "plex.tv.NBC.News.NOW.plex", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/nbc-news-flat-us.png?raw=true", "group": "USA News", "keywords": ["nbcnewyork"]},
     "msnbc": {"name": "MSNBC", "tv_id": "MSNBC.USA.us", "group": "USA News", "keywords": ["usmsnbc"]},
     "cnbc": {"name": "CNBC", "tv_id": "CNBC.USA.us", "group": "USA News", "keywords": ["usacnbc"]},
     "cnn": {"name": "CNN", "tv_id": "CNN.us", "group": "USA News", "keywords": ["uscnn"]},
     "foxnews": {"name": "FoxNews", "tv_id": "Fox.News.us", "group": "USA News", "keywords": ["usafoxnews", "usfoxnews"]},
-
-    # USA Sports (Specific channels first to ensure correct matching)
     "espn2": {"name": "ESPN2", "tv_id": "ESPN2.us", "group": "USA Sports", "keywords": ["usespn2"]},
     "espnu": {"name": "ESPNU", "tv_id": "ESPN.U.us", "group": "USA Sports", "keywords": ["usuespn"]},
     "espnnews": {"name": "ESPNews", "tv_id": "ESPN.News.us", "group": "USA Sports", "keywords": ["usespnnews"]},
@@ -66,8 +64,6 @@ CHANNEL_MAPPING = {
     "foxdeportes": {"name": "Fox Deportes", "tv_id": "Fox.Deportes.us", "group": "USA Sports", "keywords": ["foxdeportes"]},
     "goltv": {"name": "GOL TV", "tv_id": "Gol.TV.USA.us", "group": "USA Sports", "keywords": ["goltv"]},
     "fandueltv": {"name": "FanDuel TV", "tv_id": "FanDuel.TV.us", "group": "USA Sports", "keywords": ["fandueltv"]},
-    
-    # UK General
     "itv1": {"name": "ITV 1 UK", "tv_id": "ITV1.HD.uk", "group": "UK", "keywords": ["ukitv1"]},
     "itv2": {"name": "ITV 2 UK", "tv_id": "ITV2.HD.uk", "group": "UK", "keywords": ["ukitv2"]},
     "itv3": {"name": "ITV 3 UK", "tv_id": "ITV3.HD.uk", "group": "UK", "keywords": ["ukitv3"]},
@@ -75,8 +71,6 @@ CHANNEL_MAPPING = {
     "bbcone": {"name": "BBC One UK", "tv_id": "BBC.One.EastHD.uk", "group": "UK", "keywords": ["ukbbcone"]},
     "bbctwo": {"name": "BBC Two UK", "tv_id": "BBC.Two.HD.uk", "group": "UK", "keywords": ["ukbbctwo"]},
     "bbcnews": {"name": "BBC News UK", "tv_id": "BBC.NEWS.HD.uk", "group": "UK", "keywords": ["ukbbcnews"]},
-
-    # UK Sports
     "tntsports1": {"name": "TNT Sports 1", "tv_id": "TNT.Sports.1.HD.uk", "group": "UK Sports", "keywords": ["tntsport1"]},
     "tntsports2": {"name": "TNT Sports 2", "tv_id": "TNT.Sports.2.HD.uk", "group": "UK Sports", "keywords": ["tntsport2"]},
     "tntsports3": {"name": "TNT Sports 3", "tv_id": "TNT.Sports.3.HD.uk", "group": "UK Sports", "keywords": ["tntsport3"]},
@@ -105,8 +99,6 @@ CHANNEL_MAPPING = {
     "skysportsdarts": {"name": "Sky Sport Darts UK", "tv_id": "Sky.Sports+.Dummy.us", "group": "UK Sports", "keywords": ["ukskysportdarts"]},
     "lfctv": {"name": "LFC TV UK", "tv_id": "LFCTV.HD.uk", "group": "UK Sports", "keywords": ["uklfctv"]},
     "daznuk": {"name": "DAZN 1 UK", "tv_id": "DAZN.Dummy.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/germany/dazn1-de.png?raw=true", "group": "UK Sports", "keywords": ["ukdazn"]},
-
-    # Canada
     "wnetwork": {"name": "W Network", "tv_id": "W.Network.Canada.East.(WTN).ca", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/canada/w-network-ca.png?raw=true", "group": "Canada", "keywords": ["uswnetwork"]},
     "onesoccer": {"name": "OneSoccer Canada", "tv_id": "One.Soccer.ca", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/canada/one-soccer-ca.png?raw=true", "group": "Canada Sports", "keywords": ["caonesoccer"]},
     "tsn1": {"name": "TSN 1", "tv_id": "TSN1.ca", "group": "Canada Sports", "keywords": ["tsn1"]},
@@ -114,8 +106,6 @@ CHANNEL_MAPPING = {
     "tsn3": {"name": "TSN 3", "tv_id": "TSN3.ca", "group": "Canada Sports", "keywords": ["tsn3"]},
     "tsn4": {"name": "TSN 4", "tv_id": "TSN4.ca", "group": "Canada Sports", "keywords": ["tsn4"]},
     "tsn5": {"name": "TSN 5", "tv_id": "TSN5.ca", "group": "Canada Sports", "keywords": ["tsn5"]},
-
-    # Germany
     "dazn1de": {"name": "DAZN 1 Germany", "tv_id": "DAZN.1.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/germany/dazn1-de.png?raw=true", "group": "Germany", "keywords": ["dedazn1"]},
     "dazn2de": {"name": "DAZN 2 Germany", "tv_id": "DAZN.2.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/germany/dazn2-de.png?raw=true", "group": "Germany", "keywords": ["dedazn2"]},
     "skytopde": {"name": "Sky DE Top Event", "tv_id": "Sky.Sport.Top.Event.de", "group": "Germany Sports", "keywords": ["deskydeevent"]},
@@ -124,19 +114,9 @@ CHANNEL_MAPPING = {
     "skynewsde": {"name": "Sky Sport News DE", "tv_id": "Sky.Sport.News.de", "group": "Germany Sports", "keywords": ["deskydenews"]},
     "skymixde": {"name": "Sky Mix DE", "tv_id": "Sky.Sport.Mix.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-mix-uk.png?raw=true", "group": "Germany Sports", "keywords": ["deskydemix"]},
     "bundesliga1": {"name": "Bundesliga 1 Germany", "tv_id": "Sky.Sport.Bundesliga.de", "group": "Germany Sports", "keywords": ["debundesliga1"]},
-    
-    # Australia
     "fox502": {"name": "Fox Sports 502 AU", "tv_id": "FoxCricket.au", "group": "Australia Sports", "keywords": ["fox502"]},
-    
-    # Portugal
     "benficatv": {"name": "Benfica TV", "tv_id": "Benfica.TV.fr", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Logo_Benfica_TV.png/1200px-Logo_Benfica_TV.png", "group": "Portugal Sports", "keywords": ["ptbenfica"]},
     "sporttv1": {"name": "Sport TV1 Portugal", "tv_id": "SPORT.TV1.HD.pt", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/portugal/sport-tv-1-pt.png?raw=true", "group": "Portugal Sports", "keywords": ["ptsporttv1"]},
-
-    # USA General / Entertainment
-    "tbs": {"name": "TBS", "tv_id": "TBS.-.East.us", "group": "USA", "keywords": ["tbs"]},
-    "discovery": {"name": "Discovery Channel", "tv_id": "Discovery.Channel.(US).-.Eastern.Feed.us", "group": "USA", "keywords": ["zentdiscovery"]},
-    
-    # Movies
     "cinemax": {"name": "Cinemax", "tv_id": "Cinemax.-.Eastern.Feed.us", "group": "Movies", "keywords": ["zentcinemax"]},
     "hbo2": {"name": "HBO 2", "tv_id": "HBO.2.us", "group": "Movies", "keywords": ["usahbo2"]},
     "hbo": {"name": "HBO", "tv_id": "HBO.-.Eastern.Feed.us", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/hbo-us.png?raw=true", "group": "Movies", "keywords": ["usahbo"]},
@@ -206,7 +186,7 @@ async def fetch_fstv_channels():
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0"
         )
         page = await context.new_page()
-        context.on("page", lambda popup: asyncio.create_task(popup.close()))
+        
         channels_data = []
         visited_urls = set()
 
@@ -236,7 +216,6 @@ async def fetch_fstv_channels():
                     if mapped_info:
                         new_name = mapped_info.get("name")
                         tv_id = mapped_info.get("tv_id", "")
-                        # Use the original logo from the mapping if it exists
                         logo = mapped_info.get("logo", await channel_element.get_attribute("data-logo"))
                     else:
                         new_name = prettify_name(raw_name_from_site)
@@ -244,28 +223,26 @@ async def fetch_fstv_channels():
                         logo = await channel_element.get_attribute("data-logo")
                     
                     m3u8_url = None
-                    request_captured = asyncio.Event()
+                    last_seen_m3u8 = None
 
                     async def handle_request(request):
-                        nonlocal m3u8_url
+                        nonlocal last_seen_m3u8
                         if ".m3u8" in request.url and "auth_key" in request.url:
-                            m3u8_url = request.url
-                            if not request_captured.is_set():
-                                request_captured.set()
+                           last_seen_m3u8 = request.url
 
                     page.on("request", handle_request)
                     print(f"👆 Clicking on {new_name} ({i+1}/{num_channels})...", flush=True)
                     await channel_element.click(force=True, timeout=10000)
-                    await asyncio.sleep(1)
-
-                    try:
-                        await asyncio.wait_for(request_captured.wait(), timeout=15.0)
-                    except asyncio.TimeoutError:
-                        print(f"⚠️ Timeout for {new_name}", flush=True)
-
+                    
+                    # --- THE FIXED PAUSE ---
+                    await asyncio.sleep(3) # Give the page 3 seconds to load the correct stream
+                    
+                    m3u8_url = last_seen_m3u8
                     page.remove_listener("request", handle_request)
 
                     if m3u8_url and m3u8_url not in visited_urls:
+                        print(f"    -> ✅ Captured auth URL for '{new_name}'", flush=True)
+                        print(f"       -> URL: {m3u8_url}", flush=True)
                         channels_data.append({
                             "url": m3u8_url, "logo": logo, "name": new_name,
                             "tv_id": tv_id, "group": group_title
@@ -295,16 +272,15 @@ async def main():
         print("🚀 Starting FSTV scraping...", flush=True)
         channels_data = await fetch_fstv_channels()
         if channels_data:
-            # Sort by name since all channels are in the same group
             channels_data.sort(key=lambda x: x.get('name', ''))
             playlist = build_playlist(channels_data)
-            with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
+            with open("FSTV.m3u8", "w", encoding="utf-8") as f:
                 f.writelines(playlist)
-            print("🎯 Playlist created: FSTV24.m3u8", flush=True)
+            print(f"🎯 Playlist created: FSTV.m3u8 ({len(channels_data)} channels)", flush=True)
         else:
             print("🚫 No channels were scraped.", flush=True)
     except Exception as e:
-        print(f"❌ Error: {e}", flush=True)
+        print(f"❌ A critical error occurred: {e}", flush=True)
         sys.exit(1)
 
 if __name__ == "__main__":
