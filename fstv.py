@@ -152,14 +152,22 @@ async def fetch_fstv_channels():
                 await page.goto(url, timeout=90000, wait_until="domcontentloaded")
                 await page.wait_for_selector(".item-channel", timeout=15000)
                 
-                # Get all channel elements once at the start
-                channel_elements = await page.query_selector_all(".item-channel")
-
-                if not channel_elements:
+                # Get the total number of channels to loop through
+                num_channels = len(await page.query_selector_all(".item-channel"))
+                if num_channels == 0:
                     print(f"⚠️ No channels found on {url}, trying next mirror.", flush=True)
                     continue
 
-                for channel_element in channel_elements:
+                # ✅ KEY FIX: Loop by index (number) instead of by element
+                for i in range(num_channels):
+                    # Re-find all elements on the current page to avoid stale references
+                    all_elements_on_page = await page.query_selector_all(".item-channel")
+                    if i >= len(all_elements_on_page):
+                        print("Fewer elements than expected after reload, breaking loop.")
+                        break
+                    
+                    channel_element = all_elements_on_page[i]
+
                     raw_name = await channel_element.get_attribute("title")
                     if not raw_name:
                         continue
@@ -182,9 +190,7 @@ async def fetch_fstv_channels():
                                 request_captured.set()
 
                     page.on("request", handle_request)
-                    print(f"👆 Clicking on {new_name}...", flush=True)
-
-                    # ✅ FIX 1: The force=True parameter is restored here.
+                    print(f"👆 Clicking on {new_name} ({i+1}/{num_channels})...", flush=True)
                     await channel_element.click(force=True, timeout=10000)
 
                     try:
@@ -204,9 +210,11 @@ async def fetch_fstv_channels():
                     else:
                         print(f"❌ Skipping {new_name}: No URL or already processed", flush=True)
 
-                    # ✅ FIX 2: Reload the page instead of going back. This is more stable.
-                    await page.goto(url, wait_until="domcontentloaded")
-                    await page.wait_for_selector(".item-channel", timeout=15000)
+                    # Reload the page to reset for the next channel
+                    # This check prevents a final, unnecessary navigation
+                    if i < num_channels - 1:
+                        await page.goto(url, wait_until="domcontentloaded")
+                        await page.wait_for_selector(".item-channel", timeout=15000)
 
                 print(f"🎉 Successfully processed all channels from {url}", flush=True)
                 await browser.close()
@@ -220,6 +228,7 @@ async def fetch_fstv_channels():
         raise Exception("❌ All mirrors failed")
 
 def build_playlist(channels_data):
+    # This function is unchanged
     lines = ["#EXTM3U\n"]
     for ch in channels_data:
         tvg_id = f' tvg-id="{ch["tv_id"]}"' if ch["tv_id"] else ""
@@ -235,6 +244,7 @@ def build_playlist(channels_data):
     return lines
 
 async def main():
+    # This function is unchanged
     try:
         print("🚀 Starting FSTV scraping...", flush=True)
         channels_data = await fetch_fstv_channels()
