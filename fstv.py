@@ -92,7 +92,7 @@ CHANNEL_MAPPING = {
     "racingtv": {"name": "Racing TV UK", "tv_id": "Racing.TV.HD.uk", "group": "UK Sports", "keywords": ["ukracingtv"]},
     "skysportsf1": {"name": "Sky Sport F1 UK", "tv_id": "SkySp.F1.HD.uk", "group": "UK Sports", "keywords": ["ukskysportf1"]},
     "skysportsarena": {"name": "Sky Sport Arena UK", "tv_id": "Sky.Sports+.Dummy.us", "group": "UK Sports", "keywords": ["skysportarena"]},
-    "skysportsaction": {"name": "Sky Sports Action UK", "tv_id": "SkySp.ActionHD.uk", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-sports-action-hz-uk.png?raw=true", "group": "UK Sports", "keywords": ["ukskysportaction"]},
+    "skysportsaction": {"name": "Sky Sports Action UK", "tv_id": "SkySp.ActionHD.uk", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/sky-sports-action-hz-uk.png?raw=true", "group": "UK Sports", "keywords": ["ukskysportaction"]},
     "skysportscricket": {"name": "Sky Sport Cricket UK", "tv_id": "SkySpCricket.HD.uk", "group": "UK Sports", "keywords": ["ukskysportcricket"]},
     "skysportsnews": {"name": "Sky Sport News UK", "tv_id": "SkySp.News.HD.uk", "group": "UK Sports", "keywords": ["ukskysportnews"]},
     "skysportsdarts": {"name": "Sky Sport Darts UK", "tv_id": "Sky.Sports+.Dummy.us", "group": "UK Sports", "keywords": ["ukskysportdarts"]},
@@ -122,137 +122,137 @@ CHANNEL_MAPPING = {
 }
 
 def normalize_channel_name(name: str) -> str:
-    """Normalize channel name to use as mapping key"""
-    cleaned_name = re.sub(r'[^a-zA-Z0-9]', '', name)
-    return cleaned_name.strip().lower()
+    """Normalize channel name to use as mapping key"""
+    cleaned_name = re.sub(r'[^a-zA-Z0-9]', '', name)
+    return cleaned_name.strip().lower()
 
 def prettify_name(raw: str) -> str:
-    """Prettify raw channel name for display"""
-    raw = re.sub(r'VE[-\s]*', '', raw, flags=re.IGNORECASE)
-    raw = re.sub(r'\([^)]*\)', '', raw)
-    raw = re.sub(r'[^a-zA-Z0-9\s]', '', raw)
-    return re.sub(r'\s+', ' ', raw.strip()).title()
+    """Prettify raw channel name for display"""
+    raw = re.sub(r'VE[-\s]*', '', raw, flags=re.IGNORECASE)
+    raw = re.sub(r'\([^)]*\)', '', raw)
+    raw = re.sub(r'[^a-zA-Z0-9\s]', '', raw)
+    return re.sub(r'\s+', ' ', raw.strip()).title()
 
 MIRRORS = [
-    "https://fstv.zip/live-tv.html?timezone=America%2FDenver",
-    "https://fstv.online/live-tv.html?timezone=America%2FDenver",
-    "https://fstv.space/live-tv.html?timezone=America%2FDenver",
+    "https://fstv.zip/live-tv.html?timezone=America%2FDenver",
+    "https://fstv.online/live-tv.html?timezone=America%2FDenver",
+    "https://fstv.space/live-tv.html?timezone=America%2FDenver",
 ]
 
 async def fetch_fstv_channels():
-    async with async_playwright() as p:
-        browser = await p.firefox.launch(headless=True)
-        context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0"
-        )
-        page = await context.new_page()
-        context.on("page", lambda popup: asyncio.create_task(popup.close()))
-        
-        channels_data = []
-        visited_urls = set()
+    async with async_playwright() as p:
+        browser = await p.firefox.launch(headless=True)
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0"
+        )
+        page = await context.new_page()
+        context.on("page", lambda popup: asyncio.create_task(popup.close()))
+        
+        channels_data = []
+        visited_urls = set()
 
-        for url in MIRRORS:
-            try:
-                print(f"🌐 Trying {url}...", flush=True)
-                await page.goto(url, timeout=90000, wait_until="domcontentloaded")
-                await page.wait_for_selector(".item-channel", timeout=15000)
-                
-                channel_elements = await page.query_selector_all(".item-channel")
-                
-                if not channel_elements:
-                    print(f"⚠️ No channels found on {url}, trying next mirror.", flush=True)
-                    continue
+        for url in MIRRORS:
+            try:
+                print(f"🌐 Trying {url}...", flush=True)
+                await page.goto(url, timeout=90000, wait_until="domcontentloaded")
+                await page.wait_for_selector(".item-channel", timeout=15000)
+                
+                channel_elements = await page.query_selector_all(".item-channel")
+                
+                if not channel_elements:
+                    print(f"⚠️ No channels found on {url}, trying next mirror.", flush=True)
+                    continue
 
-                for i, channel_element in enumerate(channel_elements):
-                    raw_name = await channel_element.get_attribute("title")
-                    if not raw_name:
-                        continue
-                        
-                    normalized_name = normalize_channel_name(raw_name)
+                for i, channel_element in enumerate(channel_elements):
+                    raw_name = await channel_element.get_attribute("title")
+                    if not raw_name:
+                        continue
+                        
+                    normalized_name = normalize_channel_name(raw_name)
 
-                    mapped_info = {}
-                    match_found = False
-                    for channel_data in CHANNEL_MAPPING.values():
-                        for keyword in channel_data.get("keywords", []):
-                            if keyword in normalized_name:
-                                mapped_info = channel_data
-                                match_found = True
-                                break
-                        if match_found:
-                            break
+                    mapped_info = {}
+                    match_found = False
+                    for channel_data in CHANNEL_MAPPING.values():
+                        for keyword in channel_data.get("keywords", []):
+                            if keyword in normalized_name:
+                                mapped_info = channel_data
+                                match_found = True
+                                break
+                        if match_found:
+                            break
 
-                    new_name = mapped_info.get("name", prettify_name(raw_name))
-                    tv_id = mapped_info.get("tv_id", "")
-                    logo = mapped_info.get("logo", await channel_element.get_attribute("data-logo"))
-                    group_title = "FSTV"
-                    
-                    m3u8_url = None
-                    
-                    try:
-                        async with page.expect_request(re.compile(r".*\.m3u8.*auth_key.*")) as request_info:
-                            print(f"👆 Clicking on {new_name} ({i+1}/{len(channel_elements)})...", flush=True)
-                            await channel_element.click(force=True, timeout=10000)
-                        
-                        request = await request_info.value
-                        m3u8_url = request.url
-                        
-                    except Exception as e:
-                        print(f"⚠️ Timeout: No valid .m3u8 URL found for {new_name} after click.", flush=True)
-                        continue
+                    new_name = mapped_info.get("name", prettify_name(raw_name))
+                    tv_id = mapped_info.get("tv_id", "")
+                    logo = mapped_info.get("logo", await channel_element.get_attribute("data-logo"))
+                    group_title = "FSTV"
+                    
+                    m3u8_url = None
+                    
+                    try:
+                        async with page.expect_request(re.compile(r".*\.m3u8.*auth_key.*")) as request_info:
+                            print(f"👆 Clicking on {new_name} ({i+1}/{len(channel_elements)})...", flush=True)
+                            await channel_element.click(force=True, timeout=10000)
+                        
+                        request = await request_info.value
+                        m3u8_url = request.url
+                        
+                    except Exception as e:
+                        print(f"⚠️ Timeout: No valid .m3u8 URL found for {new_name} after click.", flush=True)
+                        continue
 
-                    if m3u8_url and m3u8_url not in visited_urls:
-                        channels_data.append({
-                            "url": m3u8_url, "logo": logo, "name": new_name,
-                            "tv_id": tv_id, "group": group_title
-                        })
-                        visited_urls.add(m3u8_url)
-                        print(f"✅ Added {new_name}", flush=True)
-                    else:
-                        print(f"❌ Skipping {new_name}: No URL or already processed", flush=True)
-                    
-                    # 🚀 Add a delay here to slow down the process
-                    await asyncio.sleep(1) # Adjust the value as needed (e.g., 1, 3, or 5 seconds)
+                    if m3u8_url and m3u8_url not in visited_urls:
+                        channels_data.append({
+                            "url": m3u8_url, "logo": logo, "name": new_name,
+                            "tv_id": tv_id, "group": group_title
+                        })
+                        visited_urls.add(m3u8_url)
+                        print(f"✅ Added {new_name}", flush=True)
+                    else:
+                        print(f"❌ Skipping {new_name}: No URL or already processed", flush=True)
+                    
+                    # 🚀 Add a delay here to slow down the process
+                    await asyncio.sleep(1) # Adjust the value as needed (e.g., 1, 3, or 5 seconds)
 
-                print(f"🎉 Successfully processed all channels from {url}", flush=True)
-                await browser.close()
-                return channels_data
+                print(f"🎉 Successfully processed all channels from {url}", flush=True)
+                await browser.close()
+                return channels_data
 
-            except Exception as e:
-                print(f"❌ Failed on {url}: {e}", flush=True)
-                continue
+            except Exception as e:
+                print(f"❌ Failed on {url}: {e}", flush=True)
+                continue
 
-        await browser.close()
-        raise Exception("❌ All mirrors failed")
+        await browser.close()
+        raise Exception("❌ All mirrors failed")
 
 def build_playlist(channels_data):
-    lines = ["#EXTM3U\n"]
-    for ch in channels_data:
-        tvg_id = f' tvg-id="{ch["tv_id"]}"' if ch["tv_id"] else ""
-        logo = f' tvg-logo="{ch["logo"]}"' if ch["logo"] else ""
-        group = f' group-title="{ch["group"]}"'
-        lines.append(f'#EXTINF:-1{tvg_id}{logo}{group},{ch["name"]}\n')
-        lines.append(
-            '#EXTVLCOPT:http-origin=https://fstv.space/\n'
-            '#EXTVLCOPT:http-referrer=https://fstv.space/\n'
-            '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0\n'
-        )
-        lines.append(ch["url"] + "\n")
-    return lines
+    lines = ["#EXTM3U\n"]
+    for ch in channels_data:
+        tvg_id = f' tvg-id="{ch["tv_id"]}"' if ch["tv_id"] else ""
+        logo = f' tvg-logo="{ch["logo"]}"' if ch["logo"] else ""
+        group = f' group-title="{ch["group"]}"'
+        lines.append(f'#EXTINF:-1{tvg_id}{logo}{group},{ch["name"]}\n')
+        lines.append(
+            '#EXTVLCOPT:http-origin=https://fstv.space/\n'
+            '#EXTVLCOPT:http-referrer=https://fstv.space/\n'
+            '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0\n'
+        )
+        lines.append(ch["url"] + "\n")
+    return lines
 
 async def main():
-    try:
-        print("🚀 Starting FSTV scraping...", flush=True)
-        channels_data = await fetch_fstv_channels()
-        if channels_data:
-            playlist = build_playlist(channels_data)
-            with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
-                f.writelines(playlist)
-            print("🎯 Playlist created: FSTV24.m3u8", flush=True)
-        else:
-            print("🚫 No channels were scraped. Playlist not generated.", flush=True)
-    except Exception as e:
-        print(f"❌ Error: {e}", flush=True)
-        sys.exit(1)
+    try:
+        print("🚀 Starting FSTV scraping...", flush=True)
+        channels_data = await fetch_fstv_channels()
+        if channels_data:
+            playlist = build_playlist(channels_data)
+            with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
+                f.writelines(playlist)
+            print("🎯 Playlist created: FSTV24.m3u8", flush=True)
+        else:
+            print("🚫 No channels were scraped. Playlist not generated.", flush=True)
+    except Exception as e:
+        print(f"❌ Error: {e}", flush=True)
+        sys.exit(1)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(main())
