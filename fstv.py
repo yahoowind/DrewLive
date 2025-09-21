@@ -38,7 +38,7 @@ CHANNEL_MAPPING = {
     "ori21ukskysporttennis": {"name": "Sky Sport Tennis UK", "tv_id": "SkySp.Tennis.HD.uk", "group": "UK Sports"},
     "ori2cdnukmutv": {"name": "MUTV UK", "tv_id": "MUTV.HD.uk", "group": "UK Sports"},
     "ori2sv3uklaliga": {"name": "La Liga UK", "tv_id": "LA.LIGA.za", "group": "UK Sports"},
-    "ori2uksv2sky Sport Plus": {"name": "Sky Sport Plus UK", "tv_id": "SkySp.PL.HD.uk", "group": "UK Sports"},
+    "ori2uksv2skysportplus": {"name": "Sky Sport Plus UK", "tv_id": "SkySp.PL.HD.uk", "group": "UK Sports"}, # Key fixed
     "ori21cdnsv3ukfootball": {"name": "Sky Sport Football", "tv_id": "SkySp.Fball.HD.uk", "group": "UK Sports"},
     "ori21ukskysportpremierleague": {"name": "Sky Sport Premier League UK", "tv_id": "SkyPremiereHD.uk", "group": "UK Sports"},
     "ori2skysportmix": {"name": "Sky Sport Mix UK", "tv_id": "SkySp.Mix.HD.uk", "group": "UK Sports"},
@@ -97,7 +97,7 @@ CHANNEL_MAPPING = {
     "ori2dedazn1": {"name": "DAZN 1 Germany", "tv_id": "DAZN.1.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/germany/dazn1-de.png?raw=true", "group": "Germany"},
     "ori2deskydeevent": {"name": "Sky DE Top Event", "tv_id": "Sky.Sport.Top.Event.de", "group": "Germany Sports"},
     "eplskydepre": {"name": "Sky Sport Premier League DE", "tv_id": "Sky.Sport.Premier.League.de", "group": "Germany Sports"},
-    "ori2dedazn2": {"name": "DAZN 2 Germany", "tv_id": "DAZN.2.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/germany/dazn2-de.png?raw=true", "group": "Germany Sports"},
+    "ori2dedazn2": {"name": "DAZN 2 Germany", "tv_id": "DAZN.2.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/germany/dazn2-de.png?raw=true", "group": "Germany"},
     "ori2desportdigital": {"name": "SportDigital Germany", "tv_id": "sportdigital.Fussball.de", "group": "Germany Sports"},
     "ori2deskydenews": {"name": "Sky Sport News DE", "tv_id": "Sky.Sport.News.de", "group": "Germany Sports"},
     "ori2deskydeMix": {"name": "Sky Mix DE", "tv_id": "Sky.Sport.Mix.de", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-mix-uk.png?raw=true", "group": "Germany Sports"},
@@ -151,6 +151,8 @@ async def fetch_fstv_channels():
                 print(f"🌐 Trying {url}...", flush=True)
                 await page.goto(url, timeout=90000, wait_until="domcontentloaded")
                 await page.wait_for_selector(".item-channel", timeout=15000)
+                
+                # Get all channel elements once at the start
                 channel_elements = await page.query_selector_all(".item-channel")
 
                 if not channel_elements:
@@ -174,17 +176,16 @@ async def fetch_fstv_channels():
 
                     async def handle_request(request):
                         nonlocal m3u8_url
-                        if request.method == "GET" and ".m3u8" in request.url and "auth_key" in request.url and "/player?link=" not in request.url:
+                        if ".m3u8" in request.url and "auth_key" in request.url:
                             m3u8_url = request.url
                             if not request_captured.is_set():
                                 request_captured.set()
 
                     page.on("request", handle_request)
-                    locator = channel_element.locator('visible=true')
                     print(f"👆 Clicking on {new_name}...", flush=True)
-                    
-                    # ✅ KEY FIX: Use force=True to click through overlays
-                    await locator.click(timeout=10000, force=True)
+
+                    # ✅ FIX 1: The force=True parameter is restored here.
+                    await channel_element.click(force=True, timeout=10000)
 
                     try:
                         await asyncio.wait_for(request_captured.wait(), timeout=15.0)
@@ -202,11 +203,12 @@ async def fetch_fstv_channels():
                         print(f"✅ Added {new_name}", flush=True)
                     else:
                         print(f"❌ Skipping {new_name}: No URL or already processed", flush=True)
-                    
-                    await page.goto(url, wait_until="domcontentloaded")
-                    await page.wait_for_selector(".item-channel", timeout=10000)
 
-                print(f"🎉 Processed channels from {url}", flush=True)
+                    # ✅ FIX 2: Reload the page instead of going back. This is more stable.
+                    await page.goto(url, wait_until="domcontentloaded")
+                    await page.wait_for_selector(".item-channel", timeout=15000)
+
+                print(f"🎉 Successfully processed all channels from {url}", flush=True)
                 await browser.close()
                 return channels_data
 
