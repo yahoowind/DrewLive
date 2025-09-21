@@ -200,7 +200,7 @@ async def fetch_fstv_channels():
                         print(f"⚠️ Timeout: No valid .m3u8 URL found for {new_name} after click.", flush=True)
                         continue
 
-                    if m3a8_url and m3u8_url not in visited_urls:
+                    if m3u8_url and m3u8_url not in visited_urls:
                         channels_data.append({
                             "url": m3u8_url, "logo": logo, "name": new_name,
                             "tv_id": tv_id, "group": group_title
