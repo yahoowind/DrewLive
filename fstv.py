@@ -175,9 +175,7 @@ async def fetch_fstv_channels():
 
                     normalized_name = normalize_channel_name(raw_name)
 
-                    # === FIX START ===
                     # Search for a matching channel by iterating through your keywords.
-                    # This is more flexible than the old direct lookup.
                     mapped_info = {}
                     match_found = False
                     for channel_data in CHANNEL_MAPPING.values():
@@ -188,12 +186,13 @@ async def fetch_fstv_channels():
                                 break  # Exit inner loop
                         if match_found:
                             break  # Exit outer loop
-                    # === FIX END ===
 
                     new_name = mapped_info.get("name", prettify_name(raw_name))
                     tv_id = mapped_info.get("tv_id", "")
                     logo = mapped_info.get("logo", await channel_element.get_attribute("data-logo"))
-                    group_title = mapped_info.get("group", "FSTV") # Use group from mapping, fallback to "FSTV"
+                    
+                    # === PER YOUR REQUEST: Group name is now hardcoded to "FSTV" for all channels ===
+                    group_title = "FSTV"
 
                     m3u8_url = None
                     request_captured = asyncio.Event()
