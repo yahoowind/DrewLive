@@ -143,6 +143,9 @@ async def fetch_fstv_channels():
         )
         page = await context.new_page()
 
+        # 🚨 KEY FIX: Auto-close popup tabs (ads)
+        context.on("page", lambda popup: asyncio.create_task(popup.close()))
+
         channels_data = []
         visited_urls = set()
 
@@ -239,7 +242,7 @@ def build_playlist(channels_data):
         lines.append(
             '#EXTVLCOPT:http-origin=https://fstv.space/\n'
             '#EXTVLCOPT:http-referrer=https://fstv.space/\n'
-            '#EXTVLCOPT:http-user-agent=Mozilla/50 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0\n'
+            '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0\n'
         )
         lines.append(ch["url"] + "\n")
     return lines
