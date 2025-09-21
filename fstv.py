@@ -92,7 +92,7 @@ CHANNEL_MAPPING = {
     "racingtv": {"name": "Racing TV UK", "tv_id": "Racing.TV.HD.uk", "group": "UK Sports", "keywords": ["ukracingtv"]},
     "skysportsf1": {"name": "Sky Sport F1 UK", "tv_id": "SkySp.F1.HD.uk", "group": "UK Sports", "keywords": ["ukskysportf1"]},
     "skysportsarena": {"name": "Sky Sport Arena UK", "tv_id": "Sky.Sports+.Dummy.us", "group": "UK Sports", "keywords": ["skysportarena"]},
-    "skysportsaction": {"name": "Sky Sports Action UK", "tv_id": "SkySp.ActionHD.uk", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/sky-sports-action-hz-uk.png?raw=true", "group": "UK Sports", "keywords": ["ukskysportaction"]},
+    "skysportsaction": {"name": "Sky Sports Action UK", "tv_id": "SkySp.ActionHD.uk", "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-sports-action-hz-uk.png?raw=true", "group": "UK Sports", "keywords": ["ukskysportaction"]},
     "skysportscricket": {"name": "Sky Sport Cricket UK", "tv_id": "SkySpCricket.HD.uk", "group": "UK Sports", "keywords": ["ukskysportcricket"]},
     "skysportsnews": {"name": "Sky Sport News UK", "tv_id": "SkySp.News.HD.uk", "group": "UK Sports", "keywords": ["ukskysportnews"]},
     "skysportsdarts": {"name": "Sky Sport Darts UK", "tv_id": "Sky.Sports+.Dummy.us", "group": "UK Sports", "keywords": ["ukskysportdarts"]},
@@ -146,6 +146,8 @@ async def fetch_fstv_channels():
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0"
         )
         page = await context.new_page()
+
+        # Place the popup handler here to close any new page that appears.
         context.on("page", lambda popup: asyncio.create_task(popup.close()))
         
         channels_data = []
@@ -157,13 +159,18 @@ async def fetch_fstv_channels():
                 await page.goto(url, timeout=90000, wait_until="domcontentloaded")
                 await page.wait_for_selector(".item-channel", timeout=15000)
                 
-                channel_elements = await page.query_selector_all(".item-channel")
-                
-                if not channel_elements:
+                num_channels = len(await page.query_selector_all(".item-channel"))
+                if num_channels == 0:
                     print(f"⚠️ No channels found on {url}, trying next mirror.", flush=True)
                     continue
 
-                for i, channel_element in enumerate(channel_elements):
+                for i in range(num_channels):
+                    all_elements_on_page = await page.query_selector_all(".item-channel")
+                    if i >= len(all_elements_on_page):
+                        print("Fewer elements than expected after reload, breaking loop.")
+                        break
+                    
+                    channel_element = all_elements_on_page[i]
                     raw_name = await channel_element.get_attribute("title")
                     if not raw_name:
                         continue
@@ -187,18 +194,27 @@ async def fetch_fstv_channels():
                     group_title = "FSTV"
                     
                     m3u8_url = None
-                    
+                    request_captured = asyncio.Event()
+
+                    async def handle_request(request):
+                        nonlocal m3u8_url
+                        if ".m3u8" in request.url and "auth_key" in request.url:
+                            m3u8_url = request.url
+                            if not request_captured.is_set():
+                                request_captured.set()
+
+                    page.on("request", handle_request)
+                    print(f"👆 Clicking on {new_name} ({i+1}/{num_channels})...", flush=True)
+                    await channel_element.click(force=True, timeout=10000)
+
+                    await asyncio.sleep(2)
+
                     try:
-                        async with page.expect_request(re.compile(r".*\.m3u8.*auth_key.*")) as request_info:
-                            print(f"👆 Clicking on {new_name} ({i+1}/{len(channel_elements)})...", flush=True)
-                            await channel_element.click(force=True, timeout=10000)
-                        
-                        request = await request_info.value
-                        m3u8_url = request.url
-                        
-                    except Exception as e:
-                        print(f"⚠️ Timeout: No valid .m3u8 URL found for {new_name} after click.", flush=True)
-                        continue
+                        await asyncio.wait_for(request_captured.wait(), timeout=15.0)
+                    except asyncio.TimeoutError:
+                        print(f"⚠️ Timeout: no valid .m3u8 URL found for {new_name}", flush=True)
+
+                    page.remove_listener("request", handle_request)
 
                     if m3u8_url and m3u8_url not in visited_urls:
                         channels_data.append({
@@ -209,9 +225,10 @@ async def fetch_fstv_channels():
                         print(f"✅ Added {new_name}", flush=True)
                     else:
                         print(f"❌ Skipping {new_name}: No URL or already processed", flush=True)
-                    
-                    # 🚀 Add a delay here to slow down the process
-                    await asyncio.sleep(1) # Adjust the value as needed (e.g., 1, 3, or 5 seconds)
+
+                    if i < num_channels - 1:
+                        await page.goto(url, wait_until="domcontentloaded")
+                        await page.wait_for_selector(".item-channel", timeout=15000)
 
                 print(f"🎉 Successfully processed all channels from {url}", flush=True)
                 await browser.close()
