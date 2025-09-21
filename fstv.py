@@ -157,7 +157,6 @@ async def fetch_fstv_channels():
                 await page.goto(url, timeout=90000, wait_until="domcontentloaded")
                 await page.wait_for_selector(".item-channel", timeout=15000)
                 
-                # Get the list of channels once to avoid stale element issues
                 channel_elements = await page.query_selector_all(".item-channel")
                 
                 if not channel_elements:
@@ -171,7 +170,6 @@ async def fetch_fstv_channels():
                         
                     normalized_name = normalize_channel_name(raw_name)
 
-                    # Search for a matching channel using keywords
                     mapped_info = {}
                     match_found = False
                     for channel_data in CHANNEL_MAPPING.values():
@@ -191,7 +189,6 @@ async def fetch_fstv_channels():
                     m3u8_url = None
                     
                     try:
-                        # Use expect_request to wait for the m3u8 URL after clicking
                         async with page.expect_request(re.compile(r".*\.m3u8.*auth_key.*")) as request_info:
                             print(f"👆 Clicking on {new_name} ({i+1}/{len(channel_elements)})...", flush=True)
                             await channel_element.click(force=True, timeout=10000)
@@ -203,7 +200,7 @@ async def fetch_fstv_channels():
                         print(f"⚠️ Timeout: No valid .m3u8 URL found for {new_name} after click.", flush=True)
                         continue
 
-                    if m3u8_url and m3u8_url not in visited_urls:
+                    if m3a8_url and m3u8_url not in visited_urls:
                         channels_data.append({
                             "url": m3u8_url, "logo": logo, "name": new_name,
                             "tv_id": tv_id, "group": group_title
@@ -212,6 +209,9 @@ async def fetch_fstv_channels():
                         print(f"✅ Added {new_name}", flush=True)
                     else:
                         print(f"❌ Skipping {new_name}: No URL or already processed", flush=True)
+                    
+                    # 🚀 Add a delay here to slow down the process
+                    await asyncio.sleep(2) # Adjust the value as needed (e.g., 1, 3, or 5 seconds)
 
                 print(f"🎉 Successfully processed all channels from {url}", flush=True)
                 await browser.close()
