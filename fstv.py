@@ -1,8 +1,7 @@
 import asyncio
-from playwright.async_api import async_playwright, TimeoutError
+from playwright.async_api import async_playwright
 import re
 import sys
-import json
 
 # Your preferred keyword-based mapping.
 CHANNEL_MAPPING = {
@@ -122,12 +121,10 @@ CHANNEL_MAPPING = {
 }
 
 def normalize_channel_name(name: str) -> str:
-    """Normalize channel name to use as mapping key"""
     cleaned_name = re.sub(r'[^a-zA-Z0-9]', '', name)
     return cleaned_name.strip().lower()
 
 def prettify_name(raw: str) -> str:
-    """Prettify raw channel name for display"""
     raw = re.sub(r'VE[-\s]*', '', raw, flags=re.IGNORECASE)
     raw = re.sub(r'\([^)]*\)', '', raw)
     raw = re.sub(r'[^a-zA-Z0-9\s]', '', raw)
@@ -146,10 +143,7 @@ async def fetch_fstv_channels():
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0"
         )
         page = await context.new_page()
-        
-        # Auto-close any new browser windows (pop-ups).
         context.on("page", lambda popup: asyncio.create_task(popup.close()))
-        
         channels_data = []
         visited_urls = set()
 
@@ -158,7 +152,7 @@ async def fetch_fstv_channels():
                 print(f"🌐 Trying {url}...", flush=True)
                 await page.goto(url, timeout=90000, wait_until="domcontentloaded")
                 await page.wait_for_selector(".item-channel", timeout=15000)
-                
+
                 num_channels = len(await page.query_selector_all(".item-channel"))
                 if num_channels == 0:
                     print(f"⚠️ No channels found on {url}, trying next mirror.", flush=True)
@@ -169,12 +163,13 @@ async def fetch_fstv_channels():
                     if i >= len(all_elements_on_page):
                         print("Fewer elements than expected after reload, breaking loop.")
                         break
-                    
+
                     channel_element = all_elements_on_page[i]
+
                     raw_name = await channel_element.get_attribute("title")
                     if not raw_name:
                         continue
-                        
+
                     normalized_name = normalize_channel_name(raw_name)
 
                     mapped_info = {}
@@ -191,46 +186,48 @@ async def fetch_fstv_channels():
                     new_name = mapped_info.get("name", prettify_name(raw_name))
                     tv_id = mapped_info.get("tv_id", "")
                     logo = mapped_info.get("logo", await channel_element.get_attribute("data-logo"))
-                    group_title = mapped_info.get("group", "FSTV")
-                    
-                    m3u8_url = None
-                    max_retries = 3
-                    
-                    for attempt in range(max_retries):
-                        request_captured = asyncio.Event()
-                        
-                        async def handle_request(request):
-                            nonlocal m3u8_url
-                            if ".m3u8" in request.url and "auth_key" in request.url:
-                                m3u8_url = request.url
-                                if not request_captured.is_set():
-                                    request_captured.set()
+                    group_title = "FSTV"
 
-                        page.on("request", handle_request)
-                        print(f"👆 Clicking on {new_name} ({i+1}/{num_channels}) - Attempt {attempt + 1}/{max_retries}...", flush=True)
-                        try:
-                            await channel_element.click(force=True, timeout=10000)
-                            await asyncio.sleep(1)  # Adjusted to 1 second pause
-                            await asyncio.wait_for(request_captured.wait(), timeout=15.0)
-                        except (TimeoutError, Exception) as e:
-                            print(f"⚠️ Attempt {attempt + 1} failed for {new_name}: {e}", flush=True)
-                        finally:
-                            page.remove_listener("request", handle_request)
-                        
-                        if m3u8_url:
-                            break
-                    
+                    m3u8_url = None
+                    request_captured = asyncio.Event()
+
+                    async def handle_request(request):
+                        nonlocal m3u8_url
+                        url = request.url
+                        if ".m3u8" in url and "auth_key" in url:
+                            print(f"🔗 URL detected: {url}", flush=True)  # log every captured URL
+                            try:
+                                response = await request.response()
+                                if response and response.status == 200:
+                                    m3u8_url = url
+                                    if not request_captured.is_set():
+                                        request_captured.set()
+                            except:
+                                pass
+
+                    page.on("request", handle_request)
+                    print(f"👆 Clicking on {new_name} ({i+1}/{num_channels})...", flush=True)
+                    await channel_element.click(force=True, timeout=10000)
+                    await asyncio.sleep(2)
+
+                    try:
+                        await asyncio.wait_for(request_captured.wait(), timeout=20.0)
+                    except asyncio.TimeoutError:
+                        print(f"⚠️ Timeout: no valid 200 .m3u8 URL found for {new_name}", flush=True)
+
+                    page.remove_listener("request", handle_request)
+
                     if m3u8_url and m3u8_url not in visited_urls:
                         channels_data.append({
                             "url": m3u8_url, "logo": logo, "name": new_name,
                             "tv_id": tv_id, "group": group_title
                         })
                         visited_urls.add(m3u8_url)
-                        print(f"✅ Added {new_name}", flush=True)
+                        print(f"✅ Added {new_name} → {m3u8_url}", flush=True)
                     else:
-                        print(f"❌ Skipping {new_name}: No URL found after {max_retries} attempts or already processed", flush=True)
+                        print(f"❌ Skipping {new_name}: No valid URL or already processed", flush=True)
 
-                    if i < num_channels - 1 and url not in visited_urls:
+                    if i < num_channels - 1:
                         await page.goto(url, wait_until="domcontentloaded")
                         await page.wait_for_selector(".item-channel", timeout=15000)
 
