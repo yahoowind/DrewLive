@@ -190,8 +190,8 @@ async def fetch_fstv_channels():
                     print(f"👆 Clicking on {new_name} ({i+1}/{num_channels})...", flush=True)
                     await channel_element.click(force=True, timeout=10000)
 
-                    # ✅ KEY FIX: Pause for 2 seconds to give the stream request time to start.
-                    await asyncio.sleep(2)
+                    # ✅ KEY CHANGE: Reduced pause from 2 seconds to 1 second.
+                    await asyncio.sleep(1)
 
                     try:
                         await asyncio.wait_for(request_captured.wait(), timeout=15.0)
