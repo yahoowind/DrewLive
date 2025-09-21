@@ -142,10 +142,7 @@ async def fetch_fstv_channels():
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0"
         )
         page = await context.new_page()
-
-        # 🚨 KEY FIX: Auto-close popup tabs (ads)
         context.on("page", lambda popup: asyncio.create_task(popup.close()))
-
         channels_data = []
         visited_urls = set()
 
@@ -167,13 +164,9 @@ async def fetch_fstv_channels():
 
                     normalized_name = normalize_channel_name(raw_name)
                     mapped_info = CHANNEL_MAPPING.get(normalized_name, {})
-
-                    # Use mapping values if they exist
                     new_name = mapped_info.get("name", prettify_name(raw_name))
                     tv_id = mapped_info.get("tv_id", "")
                     logo = mapped_info.get("logo", await channel_element.get_attribute("data-logo"))
-
-                    # FORCE all channels to group "FSTV"
                     group_title = "FSTV"
 
                     m3u8_url = None
@@ -185,11 +178,13 @@ async def fetch_fstv_channels():
                             m3u8_url = request.url
                             if not request_captured.is_set():
                                 request_captured.set()
-                            print(f"🌐 Captured M3U8 URL for {new_name}: {m3u8_url}", flush=True)
 
                     page.on("request", handle_request)
+                    locator = channel_element.locator('visible=true')
                     print(f"👆 Clicking on {new_name}...", flush=True)
-                    await channel_element.click()
+                    
+                    # ✅ KEY FIX: Use force=True to click through overlays
+                    await locator.click(timeout=10000, force=True)
 
                     try:
                         await asyncio.wait_for(request_captured.wait(), timeout=15.0)
@@ -200,26 +195,16 @@ async def fetch_fstv_channels():
 
                     if m3u8_url and m3u8_url not in visited_urls:
                         channels_data.append({
-                            "url": m3u8_url,
-                            "logo": logo,
-                            "name": new_name,
-                            "tv_id": tv_id,
-                            "group": group_title
+                            "url": m3u8_url, "logo": logo, "name": new_name,
+                            "tv_id": tv_id, "group": group_title
                         })
                         visited_urls.add(m3u8_url)
                         print(f"✅ Added {new_name}", flush=True)
                     else:
                         print(f"❌ Skipping {new_name}: No URL or already processed", flush=True)
-
-                    # Go back to main page
-                    try:
-                        await page.go_back(wait_until="domcontentloaded")
-                        await page.wait_for_selector(".item-channel", timeout=15000)
-                        await asyncio.sleep(1)
-                    except Exception as go_back_error:
-                        print(f"⚠️ Error navigating back: {go_back_error}, reloading page...", flush=True)
-                        await page.goto(url, timeout=90000, wait_until="domcontentloaded")
-                        await page.wait_for_selector(".item-channel", timeout=15000)
+                    
+                    await page.goto(url, wait_until="domcontentloaded")
+                    await page.wait_for_selector(".item-channel", timeout=10000)
 
                 print(f"🎉 Processed channels from {url}", flush=True)
                 await browser.close()
@@ -251,10 +236,13 @@ async def main():
     try:
         print("🚀 Starting FSTV scraping...", flush=True)
         channels_data = await fetch_fstv_channels()
-        playlist = build_playlist(channels_data)
-        with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
-            f.writelines(playlist)
-        print("🎯 Playlist created: FSTV24.m3u8", flush=True)
+        if channels_data:
+            playlist = build_playlist(channels_data)
+            with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
+                f.writelines(playlist)
+            print("🎯 Playlist created: FSTV24.m3u8", flush=True)
+        else:
+            print("🚫 No channels were scraped. Playlist not generated.", flush=True)
     except Exception as e:
         print(f"❌ Error: {e}", flush=True)
         sys.exit(1)
