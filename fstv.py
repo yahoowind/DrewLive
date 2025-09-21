@@ -162,11 +162,10 @@ async def fetch_fstv_channels():
                     continue
 
                 for i in range(num_channels):
-                    # === FIX #1: Reset state variables INSIDE the loop ===
-                    # This guarantees each channel starts with a clean slate.
+                    # This is the crucial fix to prevent repeating URLs.
+                    # It ensures each channel search starts fresh.
                     m3u8_url = None
                     request_captured = asyncio.Event()
-                    # =======================================================
                     
                     all_elements_on_page = await page.query_selector_all(".item-channel")
                     if i >= len(all_elements_on_page):
@@ -207,14 +206,9 @@ async def fetch_fstv_channels():
                     page.on("request", handle_request)
                     
                     print(f"👆 Clicking on {new_name} ({i+1}/{num_channels})...", flush=True)
-                    
-                    # === FIX #2: Add an explicit wait before clicking ===
-                    # This ensures the element is visible and interactive.
-                    await channel_element.wait_for(state='visible', timeout=5000)
-                    # ====================================================
                     await channel_element.click(force=True, timeout=10000)
 
-                    await asyncio.sleep(2) # Keep this static delay
+                    await asyncio.sleep(2)
 
                     try:
                         await asyncio.wait_for(request_captured.wait(), timeout=15.0)
@@ -234,10 +228,9 @@ async def fetch_fstv_channels():
                         print(f"❌ Skipping {new_name}: No URL or already processed", flush=True)
 
                     if i < num_channels - 1:
-                        # === FIX #3: Make the page reload more robust ===
-                        # 'networkidle' is more reliable than 'domcontentloaded' on servers.
-                        await page.goto(url, wait_until="networkidle")
-                        # ===============================================
+                        await page.goto(url, wait_until="domcontentloaded")
+                        # This pause helps prevent race conditions on the server
+                        await page.wait_for_timeout(1000) 
                         await page.wait_for_selector(".item-channel", timeout=15000)
 
                 print(f"🎉 Successfully processed all channels from {url}", flush=True)
