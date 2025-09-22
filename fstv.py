@@ -126,6 +126,8 @@ MIRRORS = [
     "https://fstv.space/live-tv.html?timezone=America%2FDenver",
 ]
 
+MAX_RETRIES = 2  # number of attempts per channel
+
 def normalize_channel_name(name: str) -> str:
     cleaned_name = re.sub(r'[^a-zA-Z0-9]', '', name)
     return cleaned_name.strip().lower()
@@ -171,7 +173,7 @@ async def fetch_fstv_channels():
 
                     normalized_name = normalize_channel_name(raw_name)
 
-                    # === Apply special CHANNEL_MAPPING ===
+                    # Apply special CHANNEL_MAPPING
                     mapped_info = {}
                     for channel_data in CHANNEL_MAPPING.values():
                         if any(keyword in normalized_name for keyword in channel_data.get("keywords", [])):
@@ -184,32 +186,37 @@ async def fetch_fstv_channels():
                     group_title = "FSTV"
 
                     last_m3u8_url = None
-                    request_captured = asyncio.Event()
 
-                    async def handle_request(request):
-                        nonlocal last_m3u8_url
-                        if ".m3u8" in request.url and "auth_key" in request.url:
-                            try:
-                                resp = await request.response()
-                                if resp and resp.status == 200:
-                                    last_m3u8_url = request.url
-                                    if not request_captured.is_set():
-                                        request_captured.set()
-                            except:
-                                pass
+                    # Retry logic per channel
+                    for attempt in range(1, MAX_RETRIES + 1):
+                        request_captured = asyncio.Event()
 
-                    page.on("request", handle_request)
+                        async def handle_request(request):
+                            nonlocal last_m3u8_url
+                            if ".m3u8" in request.url and "auth_key" in request.url:
+                                try:
+                                    resp = await request.response()
+                                    if resp and resp.status == 200:
+                                        last_m3u8_url = request.url
+                                        if not request_captured.is_set():
+                                            request_captured.set()
+                                except:
+                                    pass
 
-                    print(f"👆 Clicking on {new_name} ({i}/{len(all_elements)})...", flush=True)
-                    await element.click(force=True, timeout=10000)
-                    await asyncio.sleep(random.uniform(2, 4))
+                        page.on("request", handle_request)
 
-                    try:
-                        await asyncio.wait_for(request_captured.wait(), timeout=20.0)
-                    except asyncio.TimeoutError:
-                        print(f"⚠️ Timeout: no valid .m3u8 URL found for {new_name}", flush=True)
+                        print(f"👆 Clicking on {new_name} ({i}/{len(all_elements)}) [Attempt {attempt}]...", flush=True)
+                        await element.click(force=True, timeout=10000)
+                        await asyncio.sleep(random.uniform(2, 4))
 
-                    page.remove_listener("request", handle_request)
+                        try:
+                            await asyncio.wait_for(request_captured.wait(), timeout=20.0)
+                            break  # success
+                        except asyncio.TimeoutError:
+                            print(f"⚠️ Attempt {attempt} failed for {new_name}", flush=True)
+                            await asyncio.sleep(random.uniform(1, 2))  # small delay before retry
+                        finally:
+                            page.remove_listener("request", handle_request)
 
                     if last_m3u8_url and last_m3u8_url not in visited_urls:
                         channels_data.append({
@@ -222,7 +229,7 @@ async def fetch_fstv_channels():
                         visited_urls.add(last_m3u8_url)
                         print(f"✅ Added {new_name} → {last_m3u8_url}", flush=True)
                     else:
-                        print(f"❌ Skipping {new_name}: No URL or already processed", flush=True)
+                        print(f"❌ Skipping {new_name}: No URL after {MAX_RETRIES} attempts", flush=True)
 
                 print(f"🎉 Successfully processed all channels from {url}", flush=True)
                 await browser.close()
