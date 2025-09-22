@@ -160,7 +160,8 @@ async def fetch_fstv_channels():
                 if not channels:
                     print("No channels found on this mirror.")
                     continue
-
+                
+                # Use Promise.all to handle both the click and the network response wait concurrently
                 for i, ch in enumerate(channels):
                     name_raw = await ch.get_attribute("title")
                     if not name_raw:
@@ -180,50 +181,33 @@ async def fetch_fstv_channels():
                     tv_id = mapped_info.get("tv_id", "")
                     logo = mapped_info.get("logo", await ch.get_attribute("data-logo"))
                     group_title = "FSTV"
-
+                    
                     print(f"👆 Clicking on {new_name} ({i+1}/{len(channels)})")
-                    
-                    # Click on the channel to open the player page
-                    await ch.click(force=True, timeout=10000)
-                    
-                    # Wait for the player to load and the network requests to start
+
                     try:
-                        await page.wait_for_selector('video', timeout=10000)
-                    except:
-                        print(f"Skipped {new_name}: player did not load")
-                        continue
+                        # Start waiting for the network response before clicking
+                        async with page.expect_response(lambda response: response.status == 200 and ".m3u8" in response.url and "auth_key" in response.url) as response_info:
+                            # Click the channel item
+                            await ch.click(force=True, timeout=10000)
                         
-                    m3u8_url = None
-                    # Use a new listener for the raw stream URL
-                    async def handle_request(request):
-                        nonlocal m3u8_url
-                        if ".m3u8" in request.url and "auth_key" in request.url:
-                            # We found the real URL, store it and abort further requests
-                            if not m3u8_url:
-                                m3u8_url = request.url
-                                print(f"🔗 Intercepted URL: {m3u8_url}")
-                                await request.abort()
+                        response = await response_info.value
+                        m3u8_url = response.url
+                        
+                        if m3u8_url and m3u8_url not in visited_urls:
+                            channels_data.append({
+                                "url": m3u8_url,
+                                "logo": logo,
+                                "name": new_name,
+                                "tv_id": tv_id,
+                                "group": group_title
+                            })
+                            visited_urls.add(m3u8_url)
+                            print(f"✅ Added {new_name} → {m3u8_url}")
+                        else:
+                            print(f"Skipped {new_name}: no new URL or duplicate")
 
-                    page.on('request', handle_request)
-                    
-                    # Wait for a brief moment for the request to be intercepted
-                    await asyncio.sleep(random.uniform(2, 4))
-                    
-                    # Clean up listener
-                    page.remove_listener('request', handle_request)
-
-                    if m3u8_url and m3u8_url not in visited_urls:
-                        channels_data.append({
-                            "url": m3u8_url,
-                            "logo": logo,
-                            "name": new_name,
-                            "tv_id": tv_id,
-                            "group": group_title
-                        })
-                        visited_urls.add(m3u8_url)
-                        print(f"✅ Added {new_name} → {m3u8_url}")
-                    else:
-                        print(f"Skipped {new_name}: no new URL or duplicate")
+                    except Exception as e:
+                        print(f"Could not get URL for {new_name}: {e}")
                     
                     # Navigate back to the main page to continue the loop
                     await page.go_back()
