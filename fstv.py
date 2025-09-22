@@ -151,18 +151,8 @@ async def fetch_fstv_channels():
         visited_urls = set()
 
         for url in MIRRORS:
-            m3u8_url = None
-
-            def handle_request(request):
-                nonlocal m3u8_url
-                if ".m3u8" in request.url and "auth_key" in request.url:
-                    print(f"🔗 Intercepted URL: {request.url}")
-                    m3u8_url = request.url
-
             try:
                 print(f"🌐 Trying {url}")
-                # Await route setup
-                await page.route("**/*.m3u8**", lambda route, request: handle_request(request))
                 await page.goto(url, wait_until="domcontentloaded", timeout=120000)
                 await page.wait_for_selector(".item-channel", timeout=30000)
 
@@ -177,7 +167,6 @@ async def fetch_fstv_channels():
                         continue
                     normalized_name = normalize_channel_name(name_raw)
 
-                    # Map channel info
                     mapped_info = {}
                     for data in CHANNEL_MAPPING.values():
                         for kw in data.get("keywords", []):
@@ -192,16 +181,37 @@ async def fetch_fstv_channels():
                     logo = mapped_info.get("logo", await ch.get_attribute("data-logo"))
                     group_title = "FSTV"
 
-                    # Reset URL before click
-                    m3u8_url = None
-
                     print(f"👆 Clicking on {new_name} ({i+1}/{len(channels)})")
-                    # Await route setup
-                    await page.route("**/*.m3u8**", lambda route, request: handle_request(request))
+                    
+                    # Click on the channel to open the player page
                     await ch.click(force=True, timeout=10000)
+                    
+                    # Wait for the player to load and the network requests to start
+                    try:
+                        await page.wait_for_selector('video', timeout=10000)
+                    except:
+                        print(f"Skipped {new_name}: player did not load")
+                        continue
+                        
+                    m3u8_url = None
+                    # Use a new listener for the raw stream URL
+                    async def handle_request(request):
+                        nonlocal m3u8_url
+                        if ".m3u8" in request.url and "auth_key" in request.url:
+                            # We found the real URL, store it and abort further requests
+                            if not m3u8_url:
+                                m3u8_url = request.url
+                                print(f"🔗 Intercepted URL: {m3u8_url}")
+                                await request.abort()
+
+                    page.on('request', handle_request)
+                    
+                    # Wait for a brief moment for the request to be intercepted
                     await asyncio.sleep(random.uniform(2, 4))
-                    await page.unroute("**/*.m3u8**")
-                    # Check if URL was captured
+                    
+                    # Clean up listener
+                    page.remove_listener('request', handle_request)
+
                     if m3u8_url and m3u8_url not in visited_urls:
                         channels_data.append({
                             "url": m3u8_url,
@@ -214,14 +224,16 @@ async def fetch_fstv_channels():
                         print(f"✅ Added {new_name} → {m3u8_url}")
                     else:
                         print(f"Skipped {new_name}: no new URL or duplicate")
+                    
+                    # Navigate back to the main page to continue the loop
+                    await page.go_back()
+                    await page.wait_for_selector(".item-channel", timeout=30000)
+
                 print(f"🎉 Finished {url}")
             except Exception as e:
                 print(f"Error on {url}: {e}")
             finally:
-                try:
-                    await page.unroute("**/*.m3u8**")
-                except:
-                    pass
+                pass
 
         await browser.close()
         return channels_data
