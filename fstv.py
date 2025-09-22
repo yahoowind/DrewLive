@@ -151,33 +151,24 @@ async def fetch_fstv_channels():
         visited_urls = set()
 
         for url in MIRRORS:
+            m3u8_url = None
+
+            def handle_request(request):
+                nonlocal m3u8_url
+                if ".m3u8" in request.url and "auth_key" in request.url:
+                    print(f"🔗 Intercepted URL: {request.url}")
+                    m3u8_url = request.url
+
             try:
                 print(f"🌐 Trying {url}")
-                # Setup route BEFORE navigation
-                request_event = asyncio.Event()
-
-                async def handle_request(request):
-                    nonlocal m3u8_url
-                    req_url = request.url
-                    # Filter for URLs ending with a 32-hex string after auth_key
-                    if re.search(r'auth_key=[^=]+-[a-f0-9]{32}$', req_url):
-                        try:
-                            resp = await request.response()
-                            if resp and resp.status == 200:
-                                print(f"🔗 Valid URL intercepted: {req_url}")
-                                m3u8_url = req_url
-                                request_event.set()
-                        except:
-                            pass
-
-                await page.route("**/*", handle_request)
+                # Await route setup
+                await page.route("**/*.m3u8**", lambda route, request: handle_request(request))
                 await page.goto(url, wait_until="domcontentloaded", timeout=120000)
                 await page.wait_for_selector(".item-channel", timeout=30000)
 
                 channels = await page.query_selector_all(".item-channel")
                 if not channels:
-                    print("⚠️ No channels found on this mirror.")
-                    await page.unroute("**/*")
+                    print("No channels found on this mirror.")
                     continue
 
                 for i, ch in enumerate(channels):
@@ -186,6 +177,7 @@ async def fetch_fstv_channels():
                         continue
                     normalized_name = normalize_channel_name(name_raw)
 
+                    # Map channel info
                     mapped_info = {}
                     for data in CHANNEL_MAPPING.values():
                         for kw in data.get("keywords", []):
@@ -200,22 +192,16 @@ async def fetch_fstv_channels():
                     logo = mapped_info.get("logo", await ch.get_attribute("data-logo"))
                     group_title = "FSTV"
 
-                    # Reset URL variable
+                    # Reset URL before click
                     m3u8_url = None
 
                     print(f"👆 Clicking on {new_name} ({i+1}/{len(channels)})")
-                    # Set route before clicking
-                    await page.route("**/*", handle_request)
+                    # Await route setup
+                    await page.route("**/*.m3u8**", lambda route, request: handle_request(request))
                     await ch.click(force=True, timeout=10000)
                     await asyncio.sleep(random.uniform(2, 4))
-                    await page.unroute("**/*")  # remove route after click
-
-                    # Wait for URL capture or timeout
-                    try:
-                        await asyncio.wait_for(request_event.wait(), timeout=10)
-                    except asyncio.TimeoutError:
-                        print(f"⚠️ Timeout: no valid URL for {new_name}")
-
+                    await page.unroute("**/*.m3u8**")
+                    # Check if URL was captured
                     if m3u8_url and m3u8_url not in visited_urls:
                         channels_data.append({
                             "url": m3u8_url,
@@ -227,10 +213,15 @@ async def fetch_fstv_channels():
                         visited_urls.add(m3u8_url)
                         print(f"✅ Added {new_name} → {m3u8_url}")
                     else:
-                        print(f"❌ Skipped {new_name}: no URL or duplicate")
+                        print(f"Skipped {new_name}: no new URL or duplicate")
                 print(f"🎉 Finished {url}")
             except Exception as e:
                 print(f"Error on {url}: {e}")
+            finally:
+                try:
+                    await page.unroute("**/*.m3u8**")
+                except:
+                    pass
 
         await browser.close()
         return channels_data
