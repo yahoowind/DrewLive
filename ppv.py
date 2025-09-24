@@ -13,7 +13,7 @@ CUSTOM_HEADERS = [
 
 ALLOWED_CATEGORIES = {
     "24/7 Streams", "Wrestling", "Football", "Basketball", "Baseball",
-    "Combat Sports", "American Football", "Darts", "Motorsports"
+    "Combat Sports", "American Football", "Darts", "Motorsports", "Ice Hockey"
 }
 
 CATEGORY_LOGOS = {
@@ -26,7 +26,8 @@ CATEGORY_LOGOS = {
     "Combat Sports": "http://drewlive24.duckdns.org:9000/Logos/CombatSports2.png",
     "Darts": "http://drewlive24.duckdns.org:9000/Logos/Darts.png",
     "Motorsports": "http://drewlive24.duckdns.org:9000/Logos/Motorsports2.png",
-    "Live Now": "http://drewlive24.duckdns.org:9000/Logos/DrewLiveSports.png"
+    "Live Now": "http://drewlive24.duckdns.org:9000/Logos/DrewLiveSports.png",
+    "Ice Hockey": "http://drewlive24.duckdns.org:9000/Logos/Hockey.png"
 }
 
 CATEGORY_TVG_IDS = {
@@ -39,7 +40,8 @@ CATEGORY_TVG_IDS = {
     "Combat Sports": "PPV.EVENTS.Dummy.us",
     "Darts": "Darts.Dummy.us",
     "Motorsports": "Racing.Dummy.us",
-    "Live Now": "24.7.Dummy.us"
+    "Live Now": "24.7.Dummy.us",
+    "Ice Hockey": "NHL.Hockey.Dummy.us"
 }
 
 GROUP_RENAME_MAP = {
@@ -52,7 +54,8 @@ GROUP_RENAME_MAP = {
     "Combat Sports": "PPVLand - Combat Sports",
     "Darts": "PPVLand - Darts",
     "Motorsports": "PPVLand - Racing Action",
-    "Live Now": "PPVLand - Live Now"
+    "Live Now": "PPVLand - Live Now",
+    "Ice Hockey": "PPVLand - NHL Action"
 }
 
 NFL_TEAMS = {
