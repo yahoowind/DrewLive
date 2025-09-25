@@ -29,7 +29,6 @@ playlist_urls = [
 
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
 OUTPUT_FILE = "MergedCleanPlaylist.m3u8"
-REMOVED_FILE = "Removed_NSFW.m3u8"
 
 def fetch_playlist(url, retries=3, timeout=30):
     headers = {"User-Agent": "Mozilla/5.0"}
@@ -50,16 +49,13 @@ def parse_playlist(lines, source_url="Unknown"):
     i = 0
     while i < len(lines):
         line = lines[i].strip()
-        # Only process valid EXTINF entries
         if line.startswith("#EXTINF:"):
             extinf = line
             headers = []
             i += 1
-            # Capture optional headers (skip comment-only lines)
             while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
                 headers.append(lines[i].strip())
                 i += 1
-            # Get URL and skip invalid entries
             if i < len(lines):
                 url = lines[i].strip()
                 if url and not url.startswith("#") and url != "*":
@@ -89,9 +85,11 @@ def write_merged_playlist(all_channels):
         title_match = re.search(r',([^,]+)$', extinf)
         title = title_match.group(1).strip() if title_match else ""
         sortable.append((group.lower(), title.lower(), group, extinf, headers, url))
+    
     sorted_channels = sorted(sortable)
     current_group = None
     count = 0
+
     for _, _, group_name, extinf, headers, url in sorted_channels:
         if group_name != current_group:
             if current_group is not None:
@@ -102,24 +100,15 @@ def write_merged_playlist(all_channels):
         lines.extend(headers)
         lines.append(url)
         count += 1
+    
     if lines and lines[-1] == "":
         lines.pop()
+
     final_output = '\n'.join(lines) + '\n'
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(final_output)
+    
     print(f"\n✅ Wrote {count} clean channels to {OUTPUT_FILE} ({len(final_output.splitlines())} lines).")
-
-def write_removed_channels(nsfw_channels):
-    if not nsfw_channels:
-        return
-    with open(REMOVED_FILE, 'w', encoding='utf-8') as f:
-        f.write("#EXTM3U\n")
-        for extinf, headers, url in nsfw_channels:
-            f.write(extinf + "\n")
-            for h in headers:
-                f.write(h + "\n")
-            f.write(url + "\n\n")
-    print(f"🗑️ Logged {len(nsfw_channels)} removed NSFW/XXX/Porn entries to {REMOVED_FILE}")
 
 if __name__ == "__main__":
     print(f"🚀 Starting merge: {datetime.now()}\n")
@@ -127,13 +116,15 @@ if __name__ == "__main__":
     all_channels = []
     for url in playlist_urls:
         lines = fetch_playlist(url)
-        all_channels.extend(parse_playlist(lines, url))
+        if lines:
+            all_channels.extend(parse_playlist(lines, url))
 
-    # Filter NSFW
-    nsfw_channels = [entry for entry in all_channels if is_nsfw(*entry)]
     clean_channels = [entry for entry in all_channels if not is_nsfw(*entry)]
 
-    write_removed_channels(nsfw_channels)
+    removed_count = len(all_channels) - len(clean_channels)
+    if removed_count > 0:
+        print(f"\n🗑️ Filtered out {removed_count} NSFW channels.")
+    
     write_merged_playlist(clean_channels)
 
     print(f"\n✅ Merge complete: {datetime.now()}")
