@@ -3,24 +3,26 @@ import sys
 import re
 import concurrent.futures
 
+# --- Constants: your fallback logos only ---
 FALLBACK_LOGOS = {
     "football": "https://i.imgur.com/RvN0XSF.png",
     "fight":    "https://i.imgur.com/QlBOQft.png"
 }
 
+# --- Custom headers for embed requests & VLC ---
 CUSTOM_HEADERS = {
     "Origin": "https://embedsports.top",
     "Referer": "https://embedsports.top/",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0"
 }
 
+# --- TV ID mapping per StreamedSU category ---
 TV_IDS = {
     "Baseball": "MLB.Baseball.Dummy.us",
     "Fight": "PPV.EVENTS.Dummy.us",
     "American Football": "NFL.Dummy.us",
     "Afl": "AUS.Rules.Football.Dummy.us",
-    "Football": "Soccer.Dummy.us",
-    "Hockey": "NHL.Hockey.Dummy.us"
+    "Football": "Soccer.Dummy.us"
 }
 
 def get_all_matches():
@@ -133,7 +135,7 @@ def generate_m3u8():
     vlc_header_lines = [
         f'#EXTVLCOPT:http-origin={CUSTOM_HEADERS["Origin"]}',
         f'#EXTVLCOPT:http-referrer={CUSTOM_HEADERS["Referer"]}',
-        f'#EXTVLCOPT:http-user-agent={CUSTOM_HEADERS["User-Agent"]}'
+        f'#EXTVLCOPT:user-agent={CUSTOM_HEADERS["User-Agent"]}'
     ]
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
