@@ -61,6 +61,8 @@ http://plyr.streamlinecsn.online/memfs/15e8bdd0-bd6d-417b-8fde-77d65780f245.m3u8
 http://plyr.streamlinecsn.online/memfs/a7f9acc7-9d77-4427-aea5-e199eb4ea0cd.m3u8
 #EXTINF:-1 tvg-id="cnx.uk" tvg-name="ClassiCNX" tvg-logo="https://static.wikia.nocookie.net/csn/images/3/3f/CNX_Logo.png" group-title="AriaPlus - Aria Web Channels",ClassiCNX
 http://plyr.streamlinecsn.online/memfs/7094d23d-3702-4c2f-bc06-de25aac1d065.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="AriaPlus - Aria Web Channels",4GTV
+https://4gtv.ngrok.app/hls/stream.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/abc-au.png" group-title="AriaPlus - Australia",ABC TV
 https://c.mjh.nz/abc-nsw.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/australia/abc-entertains-au.png" group-title="AriaPlus - Australia",ABC Entertains
@@ -143,8 +145,10 @@ http://38.143.48.212:9981/stream/channelid/1520310405?profile=pass
 http://38.143.48.212:9981/stream/channelid/677345170?profile=pass
 #EXTINF:-1 tvg-id="CBC.News.Network.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/cbc-news-network-ca.png" group-title="AriaPlus - Canada",CBC News Network
 http://38.143.48.212:9981/stream/channelid/1944859004?profile=pass
-#EXTINF:-1 tvg-id="CHCH.Hamilton.ON.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/chch-ca.png" group-title="AriaPlus - Canada",CHCH
+#EXTINF:-1 tvg-id="CHCH.Hamilton.ON.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/chch-ca.png" group-title="AriaPlus - Canada",CHCH (CHCH-DT)
 http://38.143.48.212:9981/stream/channelid/834583504?profile=pass
+#EXTINF:-1 tvg-id="CHCH.Hamilton.ON.ca" tvg-logo="https://harbourcats.com/wp-content/uploads/2017/06/CHEK_logo_2022.svg_.png" group-title="AriaPlus - Canada",CHEK (CHEK-DT)
+https://livecdn.use1-0004.jwplive.com/live/sites/HGOnqYhO/media/i9sjcGbc/live.isml/.mpd
 #EXTINF:-1 tvg-id="CITY.Toronto.ON.ca" tvg-logo="https://media.starlite.best/city.montreal.qc.ca.png" group-title="AriaPlus - Canada",CityTV
 http://38.143.48.212:9981/stream/channelid/2009202451?profile=pass
 #EXTINF:-1 tvg-id="cpac.francais.ca" tvg-logo="https://media.starlite.best/cpac.francais.ca.png" group-title="AriaPlus - Canada",CPAC
@@ -185,6 +189,8 @@ http://38.143.48.212:9981/stream/channelid/41831820?profile=pass
 http://38.143.48.212:9981/stream/channelid/399303638?profile=pass
 #EXTINF:-1 tvg-id="HGTV.CA.ca" tvg-logo="https://i.ibb.co/WNVR55Q2/HGTV-2010-svg.png" group-title="AriaPlus - Canada",HGTV
 http://38.143.48.212:9981/stream/channelid/340929362?profile=pass
+#EXTINF:-1 tvg-id="CHCH.Hamilton.ON.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/knowledge-network-ca.png" group-title="AriaPlus - Canada",Knowledge Network
+https://d1wal6k3d7ssin.cloudfront.net/out/v1/ea91db0906c847a4931b46a9ec36e77b/index.m3u8
 #EXTINF:-1 tvg-id="Lifetime.TV.-.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/lifetime-us.png" group-title="AriaPlus - Canada",Lifetime TV
 http://38.143.48.212:9981/stream/channelid/1090723913?profile=pass
 #EXTINF:-1 tvg-id="MovieTime.ca" tvg-logo="https://media.starlite.best/movietime.ca.png" group-title="AriaPlus - Canada",Movie Time
@@ -193,6 +199,14 @@ http://38.143.48.212:9981/stream/channelid/1403847081?profile=pass
 http://38.143.48.212:9981/stream/channelid/1454901099?profile=pass
 #EXTINF:-1 tvg-id="National.Geographic.Canada.ca" tvg-logo="https://media.starlite.best/national.geographic.canada.ca.png" group-title="AriaPlus - Canada",National Geographic
 http://38.143.48.212:9981/stream/channelid/1422297878?profile=pass
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Omni_TV_2018.svg/1200px-Omni_TV_2018.svg.png" group-title="AriaPlus - Canada",Omni East
+https://debate-elections-2019.akamaized.net/797771366e8c441ba9feb981da8cf83b/us-west-2/89871584001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Omni_TV_2018.svg/1200px-Omni_TV_2018.svg.png" group-title="AriaPlus - Canada",Omni Québec
+https://debate-elections-2019.akamaized.net/2dba917cc589465ead367550ab2af416/us-west-2/89871584001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Omni_TV_2018.svg/1200px-Omni_TV_2018.svg.png" group-title="AriaPlus - Canada",Omni Prairies
+https://debate-elections-2019.akamaized.net/17bf2014ad1149f7a01b31ccb65c28ab/us-west-2/89871584001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Omni_TV_2018.svg/1200px-Omni_TV_2018.svg.png" group-title="AriaPlus - Canada",Omni BC
+https://debate-elections-2019.akamaized.net/1159b64905eb49bbb9c7b7e0d5c88624/us-west-2/89871584001/playlist.m3u8
 #EXTINF:-1 tvg-id="slice.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/slice-ca.png" group-title="AriaPlus - Canada",Slice
 http://38.143.48.212:9981/stream/channelid/1542245415?profile=pass
 #EXTINF:-1 tvg-id="Smithsonian.Channel.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/smithsonian-channel-ca.png" group-title="AriaPlus - Canada",Smithsonian Channel
@@ -292,20 +306,20 @@ http://210.126.10.17:5004/auto/v5027
 #EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/8e/JTBC2.jpg/revision/latest?cb=20190616070617" group-title="AriaPlus - South Korea",JTBC 2
 http://210.126.10.17:5004/auto/v5045
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/95/Mnet.png" group-title="AriaPlus - South Korea",Mnet
-http://210.126.10.17:5004/auto/v5042
+https://everylive.space/live/mnet/livestream.m3u8
 #EXTINF:-1 tvg-id="BBC.One.Lon.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-one-uk.png" group-title="AriaPlus - United Kingdom",BBC One
-http://81.78.159.220:7000/stream/channelid/1770799995?ticket=3364C2CFA85C6C7C993218102184D61C0313A863&profile=pass
+http://86.180.115.121:1990/stream/channelid/2113595444?profile=pass
 #EXTINF:-1 tvg-id="BBC.Two.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-two-uk.png" group-title="AriaPlus - United Kingdom",BBC Two
 https://viamotionhsi.netplus.ch/live/eds/bbc2/browser-dash/bbc2.mpd
 #EXTINF:-1 tvg-id="ITV1.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-1-uk.png" group-title="AriaPlus - United Kingdom",ITV 1
-http://93.96.252.173:9981/stream/channelid/2083228222?ticket=002A2ACB8A8F93F9BAF1FEC733954B40D75A8707&profile=pass
+http://86.180.115.121:1990/stream/channelid/743478963?profile=pass
 #EXTINF:-1 tvg-id="Channel.4.hd.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-4-uk.png" group-title="AriaPlus - United Kingdom",Channel 4
 https://viamotionhsi.netplus.ch/live/eds/channel4/browser-dash/channel4.mpd
 #EXTINF:-1 tvg-id="Channel.5.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-5-uk.png" group-title="AriaPlus - United Kingdom",5
 https://viamotionhsi.netplus.ch/live/eds/channel5/browser-dash/channel5.mpd
-#EXTINF:-1 tvg-id="BBC.Three.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-three-uk.png" group-title="AriaPlus - United Kingdom",BBC Three/CBBC
+#EXTINF:-1 tvg-id="BBC.Three.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-three-uk.png" group-title="AriaPlus - United Kingdom",BBC Three
 https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd
-#EXTINF:-1 tvg-id="BBC.Four.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-four-uk.png" group-title="AriaPlus - United Kingdom",BBC Four/CBeebies
+#EXTINF:-1 tvg-id="BBC.Four.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-four-uk.png" group-title="AriaPlus - United Kingdom",BBC Four
 https://viamotionhsi.netplus.ch/live/eds/bbc4cbeebies/browser-dash/bbc4cbeebies.mpd
 #EXTINF:-1 tvg-id="ITV2.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-2-uk.png" group-title="AriaPlus - United Kingdom",ITV 2
 https://viamotionhsi.netplus.ch/live/eds/itv2/browser-dash/itv2.mpd
@@ -313,122 +327,74 @@ https://viamotionhsi.netplus.ch/live/eds/itv2/browser-dash/itv2.mpd
 https://viamotionhsi.netplus.ch/live/eds/itv3/browser-dash/itv3.mpd
 #EXTINF:-1 tvg-id="ITV4.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-4-uk.png" group-title="AriaPlus - United Kingdom",ITV 4
 https://viamotionhsi.netplus.ch/live/eds/itv4/browser-dash/itv4.mpd
-#EXTINF:-1 tvg-id="ITV.Quiz.HD.uk" tvg-logo="https://i.ibb.co/TDtF2ycb/ITV-Quiz-2025.png" group-title="AriaPlus - United Kingdom",ITV Quiz
-http://93.96.252.173:9981/stream/channelid/1344411517?ticket=526340F856F54BB59FD358F35B8665FFDB9ED5A8&profile=pass
+#EXTINF:-1 tvg-id="ITV.Quiz.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/itv-quiz-uk.png" group-title="AriaPlus - United Kingdom",ITV Quiz
+http://86.180.115.121:1990/stream/channelid/682175816?profile=pass
 #EXTINF:-1 tvg-id="E4.hd.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/e-4-uk.png" group-title="AriaPlus - United Kingdom",E4
-http://81.78.159.220:7000/stream/channelid/265935771?ticket=FF896184BF6D9E66E480A01422D3851C06F97AD6&profile=pass
+http://86.180.115.121:1990/stream/channelid/991225730?profile=pass
 #EXTINF:-1 tvg-id="E4.Extra.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/e-4-extra-uk.png" group-title="AriaPlus - United Kingdom",E4 Extra
-http://81.78.159.220:7000/stream/channelid/655798574?ticket=21A1979CB68EE200E9050F429C78EB80DC8AE7CD&profile=pass
+http://86.180.115.121:1990/stream/channelid/1300932663?profile=pass
 #EXTINF:-1 tvg-id="Film4.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/film-4-uk.png" group-title="AriaPlus - United Kingdom",Film4
 https://viamotionhsi.netplus.ch/live/eds/film4/browser-dash/film4.mpd
 #EXTINF:-1 tvg-id="4seven.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/4-seven-uk.png" group-title="AriaPlus - United Kingdom",4seven
-https://a1xs.vip/1000036
+http://86.180.115.121:1990/stream/channelid/1564569275?profile=pass
 #EXTINF:-1 tvg-id="More4.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/4-more-uk.png" group-title="AriaPlus - United Kingdom",More4
 https://viamotionhsi.netplus.ch/live/eds/more4/browser-dash/more4.mpd
-#EXTINF:-1 tvg-id="Challange.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/challange-uk.png" group-title="AriaPlus - United Kingdom",Challange
-http://31.121.110.30:4000/play/a02t/index.m3u8
+#EXTINF:-1 tvg-id="Challange.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/challenge-uk.png" group-title="AriaPlus - United Kingdom",Challange
+http://86.180.115.121:1990/stream/channelid/242741757?profile=pass
 #EXTINF:-1 tvg-id="5ACTION.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/5-action-uk.png" group-title="AriaPlus - United Kingdom",5ACTION
-http://31.121.110.30:4000/play/a00s/index.m3u8
+http://86.180.115.121:1990/stream/channelid/1345604442?profile=pass
 #EXTINF:-1 tvg-id="5.USA.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/5-usa-uk.png" group-title="AriaPlus - United Kingdom",5USA
 http://31.127.61.186:9981/stream/channelid/318669546?profile=pass
-#EXTINF:-1 tvg-id="Sky.News.HD.uk" "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-news-uk.png" group-title="AriaPlus - United Kingdom",Sky News
-https://linear417-gb-hls1-prd-ak.cdn.skycdp.com/100e/Content/HLS_001_1080_30/Live/channel(skynews)/index_1080-30.m3u8
-#EXTINF:-1 tvg-id="BBC.NEWS.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-news-uk.png" group-title="AriaPlus - United Kingdom",BBC News
-https://a1xs.vip/1000015
-#EXTINF:-1 tvg-id="GB.News.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/gb-news-uk.png" group-title="AriaPlus - United Kingdom",GB News
-https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-gbnewsnz-samsungnz/playlist.m3u8
-#EXTINF:-1 tvg-id="TalkTV.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/talk-tv-uk.png" group-title="AriaPlus - United Kingdom",Talk TV
-https://live-talktv-ssai.simplestreamcdn.com/v1/master/774d979dd66704abea7c5b62cb34c6815fda0d35/talktv-live/index.m3u8
 #EXTINF:-1 tvg-id="5STAR.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/5-star-uk.png" group-title="AriaPlus - United Kingdom",5STAR
-http://81.78.159.220:7000/stream/channelid/166770570?ticket=5159889055C22A08C15EFFCAD38368BBA6D02E46&profile=pass
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/HGTV_2010.svg/960px-HGTV_2010.svg.png" group-title="AriaPlus - United Kingdom",HGTV
-http://31.121.110.30:4000/play/a02i/index.m3u8
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Food_Network_logo.svg/800px-Food_Network_logo.svg.png" group-title="AriaPlus - United Kingdom",Food Network
-https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/DMAX_-_Logo_2016.svg/1200px-DMAX_-_Logo_2016.svg.png" group-title="AriaPlus - United Kingdom",DMAX
-http://31.121.110.30:4000/play/a00y/index.m3u8
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/8/80/That%27s_TV_logo.png" group-title="AriaPlus - United Kingdom",That's TV 1
-http://93.96.252.173:9981/stream/channelid/1146531264?ticket=5EA9C57D26F00E285FD6AFD9A62BF1BFE28C2DF4&profile=pass
+http://86.180.115.121:1990/stream/channelid/1244781175?profile=pass
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/8/80/That%27s_TV_logo.png" group-title="AriaPlus - United Kingdom",That's TV
+http://86.180.115.121:1990/stream/channelid/1980028771?profile=pass
 #EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/a4/That%27s_TV_2.svg/revision/latest?cb=20240103151500" group-title="AriaPlus - United Kingdom",That's TV 2
-http://93.96.252.173:9981/stream/channelid/399648069?ticket=D8C0969B027516C280EBBD6A71BEFF544BDD29D5&profile=pass
-#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/bf/That%27s_TV_3.svg/revision/latest/scale-to-width-down/300?cb=20240820091117" group-title="AriaPlus - United Kingdom",That's TV 3
-http://93.96.252.173:9981/stream/channelid/1181926528?ticket=8E99C615CACCA01559EE8EBE30A53CDAEB0DD9CB&profile=pass
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/9/9c/Sky_Arts_2020.png" group-title="AriaPlus - United Kingdom",Sky Arts
-http://31.121.110.30:4000/play/a00v/index.m3u8
-#EXTINF:-1 tvg-id="Sky.Mix.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-mix-uk.png" group-title="AriaPlus - United Kingdom",Sky Mix
-http://81.78.159.220:7000/stream/channelid/1449116447?ticket=6E6E720E443DCEC40A02BC28D301A1A7FC752F48&profile=pass
-#EXTINF:-1 tvg-logo="https://www.pbsamerica.co.uk/wp-content/themes/pbs-2022/img/logo.png" group-title="AriaPlus - United Kingdom",PBS America
-http://93.96.252.173:9981/stream/channelid/257111339?ticket=F7C9A4CD7BE029ACD376C0DE874015610F5E5DAF&profile=pass
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/dazn-uk.png" group-title="AriaPlus - United Kingdom",DAZN
-https://d17lsiabqrlwa2.cloudfront.net/pl_138/207480-6534548-1/chuncklist.m3u8
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/mutv-uk.png" group-title="AriaPlus - United Kingdom",MUTV
-https://bcovlive-a.akamaihd.net/r2d2c4ca5bf57456fb1d16255c1a535c8/eu-west-1/6058004203001/playlist.m3u8
-#EXTINF:-1 tvg-id="Rewind.TV.uk" tvg-logo="https://i0.wp.com/rewindtv.uk/wp-content/uploads/2024/05/REWIND_TV_Logo_Master-01-1024x285.png?resize=1024%2C285&ssl=1" group-title="AriaPlus - United Kingdom",Rewind TV
-http://93.96.252.173:9981/stream/channelid/1237662517?ticket=66FBB5693415251E4DAC047611C775E0DDE26C54&profile=pass
-#EXTINF:-1 tvg-id="MTV.HD.uk" tvg-name="MTV FHD" tvg-logo="https://i.imgur.com/CeKvKIu.png" group-title="AriaPlus - United Kingdom",MTV
-https://a1xs.vip/1000037
-#EXTINF:-1 tvg-id="Discovery.HD.uk" tvg-name="Discovery Channel FHD" tvg-logo="https://i.imgur.com/1eM0KX8.png" group-title="AriaPlus - United Kingdom",Discovery Channel
-https://a1xs.vip/1000033
-#EXTINF:-1 tvg-id="Sky.Atlantic.HD.uk" tvg-name="Sky Atlantic FHD" tvg-logo="https://pixvid.org/images/2025/02/10/sky-atlantic.png" group-title="AriaPlus - United Kingdom",Sky Atlantic
-https://a1xs.vip/210001
-#EXTINF:-1 tvg-id="Sky.Cinema.Hits.HD.uk" tvg-name="Sky Cinema Hits FHD" tvg-logo="https://pixvid.org/images/2025/02/10/sky-cinema-hits.png" group-title="AriaPlus - United Kingdom",Sky Cinema Hits
-https://a1xs.vip/210002
-#EXTINF:-1 tvg-id="Sky.Premiere.uk" tvg-name="Sky Cinema Premiere FHD" tvg-logo="https://pixvid.org/images/2025/02/10/sky-cinema-premiere.png" group-title="AriaPlus - United Kingdom",Sky Cinema Premiere
-https://a1xs.vip/210003
-#EXTINF:-1 tvg-id="Sky.Cinema.Select.uk" tvg-name="Sky Cinema Select FHD" tvg-logo="https://pixvid.org/images/2025/02/10/sky-cinema-select.png" group-title="AriaPlus - United Kingdom",Sky Cinema Select
-https://a1xs.vip/210004
-#EXTINF:-1 tvg-id="Sky.Action.uk" tvg-name="Sky Cinema Action FHD" tvg-logo="https://pixvid.org/images/2025/02/10/sky-cinema-action.png" group-title="AriaPlus - United Kingdom",Sky Cinema Action
-https://a1xs.vip/210006
-#EXTINF:-1 tvg-id="Sky.Family.HD.uk" tvg-name="Sky Cinema Family FHD" tvg-logo="https://pixvid.org/images/2025/02/11/sky-family.png" group-title="AriaPlus - United Kingdom",Sky Cinema Family
-https://a1xs.vip/210007
-#EXTINF:-1 tvg-id="Sky.Comedy.Cinema.uk" tvg-name="Sky Cinema Comedy FHD" tvg-logo="https://pixvid.org/images/2025/02/10/sky-cinema-comedy.png" group-title="AriaPlus - United Kingdom",Sky Cinema Comedy
-https://a1xs.vip/210005
-#EXTINF:-1 tvg-id="Cartoon.Netwrk.uk" tvg-name="Cartoon Network UK FHD" tvg-logo="https://pixvid.org/images/2025/02/27/cartoon-network.png" group-title="AriaPlus - United Kingdom",Cartoon Network
-https://a1xs.vip/1000050
-#EXTINF:-1 tvg-id="NickelodeonHD.uk" tvg-name="Nickelodeon UK FHD" tvg-logo="https://pixvid.org/images/2025/02/27/Nickelodeon.png"" group-title="AriaPlus - United Kingdom",Nickelodeon
-https://a1xs.vip/1000051
-#EXTINF:-1 tvg-id="Nick.Jr..HD.uk" tvg-name="Nick Jr. UK FHD" tvg-logo="https://pixvid.org/images/2025/02/27/Nick_Jr.png" group-title="AriaPlus - United Kingdom",Nick Jr.
-https://a1xs.vip/1000052
-#EXTINF:-1 tvg-id="Nicktoons.uk" tvg-name="Nicktoon UK" tvg-logo="https://i.imgur.com/X3eFHe6.png" group-title="AriaPlus - United Kingdom",Nicktoons
-https://a1xs.vip/100054
-#EXTINF:-1 tvg-id="U&W.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/u-and-w-uk.png" group-title="AriaPlus - United Kingdom",U&W
-http://81.78.159.220:7000/stream/channelid/2091571848?ticket=E5EF0DE82D4CBA80372FFD591F49CA365384C6A8&profile=pass
-#EXTINF:-1 tvg-id="U&Dave.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/u-and-dave-uk.png" group-title="AriaPlus - United Kingdom",U&Dave
-http://81.78.159.220:7000/stream/channelid/1446017964?ticket=3FA6D2B62FDC4BA3A6DE7F84422741DD979AB7A2&profile=pass
-#EXTINF:-1 tvg-id="U&Drama.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/u-and-drama-uk.png" group-title="AriaPlus - United Kingdom",U&Drama
-http://81.78.159.220:7000/stream/channelid/965926370?ticket=2F47419ED328C273804AB26D3637D288AAB3367C&profile=pass
-#EXTINF:-1 tvg-id="U&Yesterday.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/u-and-yesterday-uk.png" group-title="AriaPlus - United Kingdom",U&Yesterday
-http://81.78.159.220:7000/stream/channelid/848211560?ticket=C9B6BA61D2588D9F28D800F9BFB2E65AA1E8B1FB&profile=pass
-#EXTINF:-1 tvg-id="U&Eden.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/u-and-eden-uk.png" group-title="AriaPlus - United Kingdom",U&Eden
-http://93.96.252.173:9981/stream/channelid/1399298804?ticket=E81227678EAC36AD96D24AAD051FBEBB8012EC23&profile=pass
-#EXTINF:-1 tvg-id="Quest.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/quest-uk.png" group-title="AriaPlus - United Kingdom",Quest
-http://93.96.252.173:9981/stream/channelid/171047041?ticket=DC0D52B79E99A3EC4D40E32A6CF8E7D028F32F06&profile=pass
-#EXTINF:-1 tvg-id="Quest.Red.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/quest-red-uk.png" group-title="AriaPlus - United Kingdom",Quest Red
-http://93.96.252.173:9981/stream/channelid/848185034?ticket=D7213311448EDAA27C43AAB91A51AF1903DDE783&profile=pass
-#EXTINF:-1 tvg-id="Really.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/really-uk.png" group-title="AriaPlus - United Kingdom",Really
-http://93.96.252.173:9981/stream/channelid/73446556?ticket=C5F740AD175BFF96368A48C1A6C857B28DB5B86A&profile=pass
-#EXTINF:-1 tvg-id="Legend.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/legend-uk.png" group-title="AriaPlus - United Kingdom",Legend
-http://93.96.252.173:9981/stream/channelid/1943326407?ticket=C91237CEF459F1C0BEC9A9994577735FA8B5927F&profile=pass
-#EXTINF:-1 tvg-id="True.Crime.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/true-crime-uk.png" group-title="AriaPlus - United Kingdom",True Crime
-http://93.96.252.173:9981/stream/channelid/1559827875?ticket=E0793A532AD468782868212E7E5169BE69DD5224&profile=pass
-#EXTINF:-1 tvg-logo="https://i.ibb.co/S420PQ2f/That-s-Dance.png" group-title="AriaPlus - United Kingdom",That's Dance
+http://86.180.115.121:1990/stream/channelid/556880536?profile=pass
+#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b9/That%27s_Oldies.png/revision/latest?cb=20250207172934" group-title="AriaPlus - United Kingdom",That's Oldies
 http://193.237.220.135:55555/That's%20Dance
 #EXTINF:-1 tvg-logo="https://i.ibb.co/pBR8mCHv/That-s-Melody.png" group-title="AriaPlus - United Kingdom",That's Melody
 http://193.237.220.135:55555/That's%20Melody
-#EXTINF:-1 tvg-logo="https://i.ibb.co/yBP5PPHz/That-s-Summer.png" group-title="AriaPlus - United Kingdom",That's Summer
+#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/1c/That%27s_Rock_2025.svg/revision/latest?cb=20250820172319" group-title="AriaPlus - United Kingdom",That's Rock
 http://193.237.220.135:55555/That's%20Summer
-#EXTINF:-1 tvg-logo="https://i.ibb.co/NnxpHKJF/Clubland-2022-OSB.png" group-title="AriaPlus - United Kingdom",Clubland
+#EXTINF:-1 tvg-logo="https://i.ibb.co/NnxpHKJF/Clubland-2022-OSB.png" group-title="AriaPlus - United Kingdom",Clubland TV
 http://193.237.220.135:55555/Clubland%20TV
+#EXTINF:-1 tvg-id="Great.TV.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/great-tv-uk.png" group-title="AriaPlus - United Kingdom",Great! TV
+http://86.180.115.121:1990/stream/channelid/707188153?profile=pass
+#EXTINF:-1 tvg-id="Great.Action.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/great-action-uk.png" group-title="AriaPlus - United Kingdom",Great! Action
+http://86.180.115.121:1990/stream/channelid/1397877790?profile=pass
+#EXTINF:-1 tvg-id="Great.Movies.uk" tvg-logo="" group-title="AriaPlus - United Kingdom",Great! Mystery
+http://86.180.115.121:1990/stream/channelid/903016744?profile=pass
+#EXTINF:-1 tvg-id="Great.Romance.uk" tvg-logo="" group-title="AriaPlus - United Kingdom",Great! Christmas
+http://86.180.115.121:1990/stream/channelid/706020549?profile=pass
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/9/9c/Sky_Arts_2020.png" group-title="AriaPlus - United Kingdom",Sky Arts
+http://86.180.115.121:1990/stream/channelid/99503184?profile=pass
+#EXTINF:-1 tvg-id="Sky.Mix.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-mix-uk.png" group-title="AriaPlus - United Kingdom",Sky Mix
+http://86.180.115.121:1990/stream/channelid/914757818?profile=pass
+#EXTINF:-1 tvg-logo="https://www.pbsamerica.co.uk/wp-content/themes/pbs-2022/img/logo.png" group-title="AriaPlus - United Kingdom",PBS America
+http://86.180.115.121:1990/stream/channelid/2146487133?profile=pass
+#EXTINF:-1 tvg-id="Sky.News.HD.uk" "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-news-uk.png" group-title="AriaPlus - United Kingdom",Sky News
+http://86.180.115.121:1990/stream/channelid/47242596?profile=pass
+#EXTINF:-1 tvg-id="BBC.NEWS.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-news-uk.png" group-title="AriaPlus - United Kingdom",BBC News
+http://86.180.115.121:1990/stream/channelid/396948315?profile=pass
+#EXTINF:-1 tvg-id="GB.News.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/gb-news-uk.png" group-title="AriaPlus - United Kingdom",GB News
+http://86.180.115.121:1990/stream/channelid/1566175602?profile=pass
+#EXTINF:-1 tvg-id="TalkTV.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/talk-tv-uk.png" group-title="AriaPlus - United Kingdom",Talk TV
+https://live-talktv-ssai.simplestreamcdn.com/v1/master/774d979dd66704abea7c5b62cb34c6815fda0d35/talktv-live/index.m3u8
+#EXTINF:-1 tvg-id="CBBC.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-cbbc-uk.png" group-title="AriaPlus - United Kingdom",CBBC
+https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd
+#EXTINF:-1 tvg-id="CBeebies.HD.uk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-cbeebies-uk.png" group-title="AriaPlus - United Kingdom",CBeebies
+https://viamotionhsi.netplus.ch/live/eds/bbc4cbeebies/browser-dash/bbc4cbeebies.mpd
 #EXTINF:-1 tvg-id="ITV1.+1.uk" tvg-logo="https://d16ia5iwuvax6y.cloudfront.net/uk-images/8a30f1fea0e06e96654d6ab9b504019d.png?k=VeeNdUjml3bSHdlZ0OXbGLy%2BmsLdYPwTV6iAxGkzq4d4s2GjEilBTb95V%2B%2B67mC7HpVZKvQ8RR1%2B6DPKlW1ipr%2FVYdvD6rziwrieG35iI8WJQYgtiqxZauMVaWOhLCgBPfRo2IY4%2F8%2FX%2Byb%2FUGqedA%3D%3D" group-title="AriaPlus - United Kingdom",ITV 1 +1
-http://93.96.252.173:9981/stream/channelid/276801829?ticket=780C940F59CC2C7A6EFED75DDF3E203D2188A69F&profile=pass
+http://86.180.115.121:1990/stream/channelid/1230363969?profile=pass
 #EXTINF:-1 tvg-id="ITV2.+1.uk" tvg-logo="https://d16ia5iwuvax6y.cloudfront.net/uk-images/bc9b3a1629adee4c3a4badea1cc9d64c.png?k=VeeNdUjml3bSHdlZ0OXbGLy%2BmsLdYPwTV6iAxGkzq4dkESAHq90hV8lYkvvXijZRR0fcfkZaXixc6E3uHMZqn%2BxshsNwJEtqAdJiAPe0Mp5klL4rR0FRzila%2BBOrgMKAOX01591XTEb41jmo6lSJ5w%3D%3D" group-title="AriaPlus - United Kingdom",ITV 2 +1
-http://93.96.252.173:9981/stream/channelid/758813081?ticket=37C063C77CF581996DF7D3D1738FB54934138B0F&profile=pass
+http://86.180.115.121:1990/stream/channelid/214743974?profile=pass
 #EXTINF:-1 tvg-id="Channel.4.+1.uk" tvg-logo="https://www.freeview.co.uk/sites/default/files/styles/255_wide/public/2023-05/Channel-4-%2B1-logo.png?itok=TzH4_zSc" group-title="AriaPlus - United Kingdom",Channel 4 +1
-http://93.96.252.173:9981/stream/channelid/861842813?ticket=69B565C18AF55A66CEA8AC76BC3F0DB85D6CCADA&profile=pass
+http://86.180.115.121:1990/stream/channelid/549388043?profile=pass
 #EXTINF:-1 tvg-id="Channel.5.+1.uk" tvg-logo="https://www.freeview.co.uk/sites/default/files/styles/255_wide/public/2025-03/5%2B1-logo.png?itok=I7ZVZAp6" group-title="AriaPlus - United Kingdom",5 +1
-http://93.96.252.173:9981/stream/channelid/566873612?ticket=A4202C757A869DCCC4150972A5D9B7EE944E6BA9&profile=pass
+http://86.180.115.121:1990/stream/channelid/986844643?profile=pass
 #EXTINF:-1 tvg-id="E4.+1.uk" tvg-logo="https://www.freeview.co.uk/sites/default/files/styles/255_wide/public/2019-10/E4-%2B1-RGB-Colour-Positive-255x140.png?itok=B49Vws0Y" group-title="AriaPlus - United Kingdom",E4 +1
-http://93.96.252.173:9981/stream/channelid/125300566?ticket=E8A3A7919F8893899FC4E41CE6457D54959E985D&profile=pass
+http://86.180.115.121:1990/stream/channelid/1993018842?profile=pass
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/7a/CBS_Logo.png" group-title="AriaPlus - United States",CBS (WCBS)
 http://108.14.66.42:5004/auto/v2.1
 #EXTINF:-1 tvg-logo="https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/nbc_logo_2022_verticalsvg.png" group-title="AriaPlus - United States",NBC (WNBC)
@@ -497,7 +463,7 @@ https://tvpass.org/live/SyfyEast/hd
 https://tvpass.org/live/tv-land-eastern/hd
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/TCM_2021.svg/1200px-TCM_2021.svg.png" group-title="AriaPlus - United States",TCM
 https://turnerlive.warnermediacdn.com/hls/live/2023186/tcmeast/noslate/VIDEO_1_5128000.m3u8
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/TCM_2021.svg/1200px-TCM_2021.svg.png" group-title="AriaPlus - United States",TCM
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/TCM_2021.svg/1200px-TCM_2021.svg.png" group-title="AriaPlus - United States",TCM West
 https://turnerlive.warnermediacdn.com/hls/live/2023187/tcmwest/noslate/VIDEO_1_5128000.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cartoon-network-us.png" group-title="AriaPlus - United States",Cartoon Network / Adult Swim
 https://tvpass.org/live/CartoonNetworkEast/hd
@@ -513,7 +479,7 @@ http://128.230.54.128:5004/auto/v64.1
 https://tvpass.org/live/NickJrEast/hd
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/disney-xd-us.png" group-title="AriaPlus - United States",Disney XD
 https://tvpass.org/live/DisneyXDEast/hd
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/game-show-network-us.png" group-title="AriaPlus - United States",Game Shows Network
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/game-show-network-us.png" group-title="AriaPlus - United States",Game Show Network
 https://tvpass.org/live/game-show-network-east/hd
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/buzzer-us.png" group-title="AriaPlus - United States",Buzzer
 http://108.14.66.42:5004/auto/v9.3
@@ -571,6 +537,16 @@ https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn1us/master.m3u8
 https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn1uswest/master.m3u8
 #EXTINF:-1 tvg-id="HSN2.us" tvg-name="HSN 2" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/11/HSN2_2018.svg/revision/latest?cb=20221114163129" group-title="AriaPlus - United States",HSN 2
 https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn2us/master.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/hbo-us.png" group-title="AriaPlus - United States",HBO
+http://23.237.104.106:8080/USA_HBO/index.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/hbo-comedy-us.png" group-title="AriaPlus - United States",HBO Comedy
+http://23.237.104.106:8080/USA_HBO_COMEDY/index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="AriaPlus - United States",HBO Hits
+http://23.237.104.106:8080/USA_HBO2/index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="AriaPlus - United States",HBO Drama
+http://23.237.104.106:8080/USA_HBO_SIGNATURE/index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="AriaPlus - United States",HBO Movies
+http://23.237.104.106:8080/USA_HBO_ZONE/index.m3u8
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Ion_logo.svg/1200px-Ion_logo.svg.png" group-title="AriaPlus - United States",Ion
 http://108.14.66.42:5004/auto/v31.1
 #EXTINF:-1 tvg-logo="https://cms.scrippsnetworks.com/wp-content/uploads/2022/02/IONPLusRebrand_WhiteLogo_800x318.png" group-title="AriaPlus - United States",Ion Plus
@@ -708,6 +684,8 @@ http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40758.ts
 http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40760.ts
 #EXTINF:-1 tvg-id="CHCH.Hamilton.ON.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/chch-ca.png" group-title="AriaPlus - Canada",CHCH (CHCH-DT)
 http://38.143.48.212:9981/stream/channelid/834583504?profile=pass
+#EXTINF:-1 tvg-id="CHCH.Hamilton.ON.ca" tvg-logo="https://harbourcats.com/wp-content/uploads/2017/06/CHEK_logo_2022.svg_.png" group-title="AriaPlus - Canada",CHEK (CHEK-DT)
+https://livecdn.use1-0004.jwplive.com/live/sites/HGOnqYhO/media/i9sjcGbc/live.isml/.mpd
 #EXTINF:-1 tvg-id="CITY.Toronto.ON.ca" tvg-logo="https://media.starlite.best/city.toronto.on.ca.png" group-title="AriaPlus - Canada",CityTV Toronto
 http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40752.ts
 #EXTINF:-1 tvg-id="CMT.Canada.ca" tvg-logo="https://media.starlite.best/cmt.canada.ca.png" group-title="AriaPlus - Canada",CMT
@@ -731,7 +709,7 @@ http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40735.ts
 #EXTINF:-1 tvg-id="CTV.Comedy.-.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-comedy-channel-ca.png" group-title="AriaPlus - Canada",CTV Comedy
 http://38.143.48.212:9981/stream/channelid/874242496?profile=pass
 #EXTINF:-1 tvg-id="ctv.drama.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-drama-channel-ca.png" group-title="AriaPlus - Canada",CTV Drama
-http://38.143.48.212:9981/stream/channelid/133843306?profile=pass
+https://m3ufilter.media4u.top/live/media4u/media4u/18083.ts
 #EXTINF:-1 tvg-id="CTV.Life.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-life-channel-ca.png" group-title="AriaPlus - Canada",CTV Life
 http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/5216.ts
 #EXTINF:-1 tvg-id="CTV.Nature.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-nature-channel-ca.png" group-title="AriaPlus - Canada",CTV Nature
@@ -766,12 +744,6 @@ http://user.scalecdn.co:8080/live/26725074/92867131/505941.ts
 http://user.scalecdn.co:8080/live/26725074/92867131/505940.ts
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="AriaPlus - Canada",FAITH TV
 http://user.scalecdn.co:8080/live/26725074/92867131/93121.ts
-#EXTINF:-1 tvg-id="Family.Channel.Canada.-.East.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/family-ca.png" group-title="AriaPlus - Canada",Family Channel
-http://96.45.207.18:8881/channel/110dd756/index.m3u8?q=1735600584362
-#EXTINF:-1 tvg-id="Family.Channel.Canada.-.West.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/family-ca.png" group-title="AriaPlus - Canada",Family Channel West
-http://user.scalecdn.co:8080/live/26725074/92867131/647744.ts
-#EXTINF:-1 tvg-id="Family.Jr..ca" tvg-logo="https://media.starlite.best/family.jr.ca.png" group-title="AriaPlus - Canada",Family Jr
-http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/112766.ts
 #EXTINF:-1 tvg-id="Fight.Network.ca" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Fight_network_logo.svg/1200px-Fight_network_logo.svg.png" group-title="AriaPlus - Canada",Fight Network
 http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40711.ts
 #EXTINF:-1 tvg-id="Flavour.Network.Canada.ca" tvg-logo="https://i.ibb.co/Fb8t9Gh9/Flavour-Network-logo-svg.png" group-title="AriaPlus - Canada",Flavour Network
@@ -817,7 +789,7 @@ http://zorrohunter.com:80/live/WeaponX/Dawkins22/40689.ts
 #EXTINF:-1 tvg-id="" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Joytvlogo.svg/1200px-Joytvlogo.svg.png" group-title="AriaPlus - Canada",JoyTV
 http://user.scalecdn.co:8080/live/26725074/92867131/93124.ts
 #EXTINF:-1 tvg-id="Knowledge.Network.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/knowledge-network-ca.png" group-title="AriaPlus - Canada",Knowledge Network
-http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40687.ts
+https://d1wal6k3d7ssin.cloudfront.net/out/v1/ea91db0906c847a4931b46a9ec36e77b/index.m3u8
 #EXTINF:-1 tvg-id="Lifetime.TV.-.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-states/lifetime-us.png" group-title="AriaPlus - Canada",Lifetime
 http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40684.ts
 #EXTINF:-1 tvg-id="love.nature.ca" tvg-logo="https://media.starlite.best/love.nature.ca.png" group-title="AriaPlus - Canada",Love Nature
@@ -842,14 +814,18 @@ http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40674.ts
 http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/48380.ts
 #EXTINF:-1 tvg-id="NBA.TV.Canada.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/nba-tv-ca.png" group-title="AriaPlus - Canada",NBA TV Canada
 http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/107514.ts
-#EXTINF:-1 tvg-id="OMNI.1.Television.ca" tvg-logo="https://media.starlite.best/omni.1.ca.png" group-title="AriaPlus - Canada",OMNI
-http://206.212.244.26/live/vasconeves/1742766045/40641.ts
-#EXTINF:-1 tvg-id="OMNI.2.ca" tvg-logo="https://media.starlite.best/omni.2.ca.png" group-title="AriaPlus - Canada",OMNI 2
-http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40640.ts
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Omni_TV_2018.svg/1200px-Omni_TV_2018.svg.png" group-title="AriaPlus - Canada",Omni East
+https://debate-elections-2019.akamaized.net/797771366e8c441ba9feb981da8cf83b/us-west-2/89871584001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Omni_TV_2018.svg/1200px-Omni_TV_2018.svg.png" group-title="AriaPlus - Canada",Omni Québec
+https://debate-elections-2019.akamaized.net/2dba917cc589465ead367550ab2af416/us-west-2/89871584001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Omni_TV_2018.svg/1200px-Omni_TV_2018.svg.png" group-title="AriaPlus - Canada",Omni Prairies
+https://debate-elections-2019.akamaized.net/17bf2014ad1149f7a01b31ccb65c28ab/us-west-2/89871584001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Omni_TV_2018.svg/1200px-Omni_TV_2018.svg.png" group-title="AriaPlus - Canada",Omni BC
+https://debate-elections-2019.akamaized.net/1159b64905eb49bbb9c7b7e0d5c88624/us-west-2/89871584001/playlist.m3u8
 #EXTINF:-1 tvg-id="One.Soccer.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/one-soccer-ca.png" group-title="AriaPlus - Canada",One Soccer
 http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/123909.ts
 #EXTINF:-1 tvg-id="ONE.TV.ca" tvg-logo="https://cdn.tvpassport.com/image/station/240x135/v2/s26777_h15_ac.png" group-title="AriaPlus - Canada",One TV
-https://theariatv.github.io/channeldead.mp4
+https://m3ufilter.media4u.top/live/media4u/media4u/3000.ts
 #EXTINF:-1 tvg-id="outtv.ca" tvg-logo="https://play-lh.googleusercontent.com/jsVXFQfgTUMbNvWmk3Ccy4eVFSysQMI0vTEiTzgbLddzIGnPfsFLJ6OK29BRwGYhaPw" group-title="AriaPlus - Canada",OUTtv
 http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/112813.ts
 #EXTINF:-1 tvg-id="Oxygen.True.Crime.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/oxygen-ca.png" group-title="AriaPlus - Canada",Oxygen True Crimes
@@ -896,6 +872,8 @@ http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/112833.ts
 http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/112847.ts
 #EXTINF:-1 tvg-id="Telebimbi.ca" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/39/TeleBimbi.png" group-title="AriaPlus - Canada",TeleBimbi
 http://tr.redatvgold.com/play/live.php?mac=00:1A:79:76:27:B6&stream=1423377&extension=ts
+#EXTINF:-1 tvg-id="Teleninos.ca" tvg-logo="" group-title="AriaPlus - Canada",TeleNiños
+https://m3ufilter.media4u.top/live/media4u/media4u/2957.ts
 #EXTINF:-1 tvg-id="TLN.ca" tvg-logo="https://i.ibb.co/cKnhRZX6/TLN-2015.png" group-title="AriaPlus - Canada",TLN
 https://tvnow.best/api/stream/burns/burns/livetv.epg/tln.west.ca.m3u8
 #EXTINF:-1 tvg-id="treehouse.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/treehouse-ca.png" group-title="AriaPlus - Canada",Treehouse
@@ -926,8 +904,6 @@ http://38.143.48.212:9981/stream/channelid/1265777165?profile=pass
 http://user.scalecdn.co:8080/live/26725074/92867131/3050.ts
 #EXTINF:-1 tvg-logo="https://www.cclmportal.ca/sites/default/files/images/2023-07/the_weather_network_the_weather_network_s_summer_2020_forecast.jpg" group-title="AriaPlus - Canada",Weather Network
 http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40658.ts
-#EXTINF:-1 tvg-id="WildBrain.TV.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/wildbrain-tv-ca.png" group-title="AriaPlus - Canada",WildBrain TV
-http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/112867.ts
 #EXTINF:-1 tvg-id="wild.tv.ca" tvg-logo="https://media.starlite.best/wild.tv.ca.png" group-title="AriaPlus - Canada",Wild TV
 http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40667.ts
 #EXTINF:-1 tvg-id="Yes.TV.(CITS).Burlington.ON.ca" tvg-logo="https://media.starlite.best/yes.tv.ckcs.calgary.ab.ca.png" group-title="AriaPlus - Canada",Yes TV
@@ -958,6 +934,8 @@ http://stream.ultimate-tvservice.com:8080/live/Jalen/Jalen16/265481.ts
 http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40694.ts
 #EXTINF:-1 tvg-id="artv.ca" tvg-logo=""https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/ici-artv-ca.png" group-title="AriaPlus - Canada",ICI Artv
 http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/113000.ts
+#EXTINF:-1 tvg-id="explora.ca" tvg-logo=""https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/ici-explora-ca.png" group-title="AriaPlus - Canada",ICI Explora
+https://m3ufilter.media4u.top/live/media4u/media4u/3297.ts
 #EXTINF:-1 tvg-id="rdi.news.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/ici-rdi-ca.png" group-title="AriaPlus - Canada",ICI RDI
 http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/112816.ts
 #EXTINF:-1 tvg-id="ici.tele.ca" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/canada/ici-tele-ca.png" group-title="AriaPlus - Canada",ICI Tele
@@ -990,8 +968,6 @@ http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40609.ts
 http://stream.ultimate-tvservice.com:8080/live/Jalen/Jalen16/265170.ts
 #EXTINF:-1 tvg-id="tele.quebec.civq.quebec.ca" tvg-logo="https://media.starlite.best/tele.quebec.civq.quebec.ca.png" group-title="AriaPlus - Canada",Tele Québec
 http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40606.ts
-#EXTINF:-1 tvg-id="Télémagino.ca" tvg-logo="https://d60d34ithxz8n.cloudfront.net/ca-logos/19aae87681fb7545a7f8b12b094f5eda.png?k=YuF2DwEskK9RDtJWAxeJbpo7YUB7VdYQ4hnktyMqup9hklnV5sxy2V%2F5EGY3kuoD31WBFsj8IoPs%2BhFGP4SORJH9F4TJDNdNjQ53nuuYqHfLDOfzOOUfR1APiazFifTa" group-title="AriaPlus - Canada",Telemagino
-http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/114196.ts
 #EXTINF:-1 tvg-id="tltoon.franais.ca" tvg-logo="https://media.starlite.best/tltoon.franais.ca.png" group-title="AriaPlus - Canada",Télétoon
 http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40604.ts
 #EXTINF:-1 tvg-id="TFO.-.Chaine.Francaise.ca" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/TFO_2020_Logo.svg/1200px-TFO_2020_Logo.svg.png" group-title="AriaPlus - Canada",TFO
@@ -1016,51 +992,67 @@ http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40673.ts
 http://jabawalkies.club:8080/live/K1uWWBmaxJ/Xa1TFucw91/112912.ts
 #EXTINF:-1 tvg-id="zeste.ca" tvg-logo="https://media.starlite.best/zeste.ca.png" group-title="AriaPlus - Canada",Zeste
 http://portal5458.com:8080/live/Y18QnUSTwM/52775199980/40660.ts
-#EXTINF:-1 tvg-id="SkySpMainEvHD.uk" tvg-logo="https://i.ibb.co/CwMZcpP/sky-main-event.png" group-title="AriaPlus - United Kingdom",Sky Sports Main Event UHD
-http://groundhogday.in:80/live/Jok123/Jok123/1042160.ts
-#EXTINF:-1 tvg-id="SkySpMainEvHD.uk" tvg-logo="https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png" group-title="AriaPlus - United Kingdom",Sky Sports Main Event
-http://groundhogday.in:80/live/Jok123/Jok123/606.ts
+#EXTINF:-1 tvg-id="MTV.HD.uk" tvg-logo="https://i.imgur.com/CeKvKIu.png" group-title="AriaPlus - United Kingdom",MTV
+https://a1xs.vip/1000037
+#EXTINF:-1 tvg-id="Discovery.HD.uk" tvg-logo="https://i.imgur.com/1eM0KX8.png" group-title="AriaPlus - United Kingdom",Discovery
+https://a1xs.vip/1000033
+#EXTINF:-1 tvg-id="Sky.Atlantic.HD.uk" tvg-logo="https://pixvid.org/images/2025/02/10/sky-atlantic.png" group-title="AriaPlus - United Kingdom",Sky Atlantic
+https://a1xs.vip/210001
+#EXTINF:-1 tvg-id="SkySpMainEvHD.uk"tvg-logo="https://i.ibb.co/CwMZcpP/sky-main-event.png" group-title="AriaPlus - United Kingdom",Sky Sports Main Event
+https://a1xs.vip/2000001
+#EXTINF:-1 tvg-id="SkySpMainEvHD.uk" tvg-logo="https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png" group-title="AriaPlus - United Kingdom",Sky Sports Main Event UHD
+https://a1xs.vip/2000015
 #EXTINF:-1 tvg-id="SkySp.PL.HD.uk" tvg-logo="https://i.ibb.co/rcSRMh9/sky-sports-pl.png" group-title="AriaPlus - United Kingdom",Sky Sports Premier League
-http://groundhogday.in:80/live/Jok123/Jok123/609.ts
+https://a1xs.vip/2000002
 #EXTINF:-1 tvg-id="SkySp.Fball.HD.uk" tvg-logo="https://i.ibb.co/WcCrBqx/sky-football.png" group-title="AriaPlus - United Kingdom",Sky Sports Football
-http://groundhogday.in:80/live/Jok123/Jok123/612.ts
+https://a1xs.vip/2000003
 #EXTINF:-1 tvg-id="SkySp.News.HD.uk" tvg-logo="https://i.ibb.co/7WMDvDP/sky-news.png" group-title="AriaPlus - United Kingdom",Sky Sports News
-http://groundhogday.in:80/live/Jok123/Jok123/621.ts
-#EXTINF:-1 tvg-id="SkySp.F1.HD.uk" tvg-logo="https://i.ibb.co/h26bK2Q/sky-f1.png" group-title="AriaPlus - United Kingdom",Sky Sports F1 UHD
-http://groundhogday.in:80/live/Jok123/Jok123/1042159.ts
-#EXTINF:-1 tvg-id="SkySp.F1.HD.uk" tvg-logo="https://i.imgur.com/aetKPNi.png" group-title="AriaPlus - United Kingdom",Sky Sports F1
-http://groundhogday.in:80/live/Jok123/Jok123/619.ts
+https://a1xs.vip/2000004
+#EXTINF:-1 tvg-id="SkySp.F1.HD.uk" tvg-logo="https://i.ibb.co/h26bK2Q/sky-f1.png" group-title="AriaPlus - United Kingdom",Sky Sports F1
+https://a1xs.vip/2000005
+#EXTINF:-1 tvg-id="SkySp.F1.uk" tvg-logo="https://i.imgur.com/aetKPNi.png" group-title="AriaPlus - United Kingdom",Sky Sports F1 UHD
+https://a1xs.vip/2000016
 #EXTINF:-1 tvg-id="SkySpCricket.HD.uk" tvg-logo="https://i.ibb.co/JyPnwvB/sky-cricket.png" group-title="AriaPlus - United Kingdom",Sky Sports Cricket
-http://groundhogday.in:80/live/Jok123/Jok123/616.ts
+https://a1xs.vip/2000006
 #EXTINF:-1 tvg-id="SkySp.Mix.HD.uk" tvg-logo="https://i.ibb.co/7kYj5gc/sky-mix.png" group-title="AriaPlus - United Kingdom",Sky Sports Mix
-http://groundhogday.in:80/live/Jok123/Jok123/622.ts
+https://a1xs.vip/2000008
 #EXTINF:-1 tvg-id="SkySp.Golf.HD.uk" tvg-logo="https://i.ibb.co/QvhY4tX/sky-golf.png" group-title="AriaPlus - United Kingdom",Sky Sports Golf
-http://groundhogday.in:80/live/Jok123/Jok123/617.ts
-#EXTINF:-1 tvg-id="SkySp.ActionHD.uk" tvg-logo="https://i.ibb.co/VqtQrDq/sky-action.png" group-title="AriaPlus - United Kingdom",Sky Sports Action
-http://groundhogday.in:80/live/Jok123/Jok123/618.ts
+https://a1xs.vip/2000009
+#EXTINF:-1 tvg-id="SkySp.Racing.HD.uk" tvg-logo="https://i.ibb.co/Hnp1hBz/sky-racing.png" group-title="AriaPlus - United Kingdom",Sky Sports Racing
+https://a1xs.vip/2000010
+#EXTINF:-1 tvg-id="SkySp.ActionHD.uk" tvg-logo="https://i.ibb.co/VqtQrDq/sky-action.png" group-title="AriaPlus - United Kingdom",Sky Sports Action/Sky Sports NFL
+https://a1xs.vip/2000011
 #EXTINF:-1 tvg-id="SkySp+HD.uk" tvg-logo="https://i.ibb.co/ccNV9ppd/Sky-Sportsplus.png" group-title="AriaPlus - United Kingdom",Sky Sports+
-http://groundhogday.in:80/live/Jok123/Jok123/615.ts
+https://a1xs.vip/2000012
 #EXTINF:-1 tvg-id="SkySp.Tennis.HD.uk" tvg-logo="https://i.imgur.com/ZNUDU1r.png" group-title="AriaPlus - United Kingdom",Sky Sports Tennis
-http://groundhogday.in:80/live/Jok123/Jok123/5335019.ts
-#EXTINF:-1 tvg-id="TNT.Sports.Ultimate.uk" tvg-logo="https://i.ibb.co/QqGdJnM/TNTSprts-U.png" group-title="AriaPlus - United Kingdom",TNT Sports Ultimate
-http://groundhogday.in:80/live/Jok123/Jok123/1042157.ts
+https://a1xs.vip/2000013
 #EXTINF:-1 tvg-id="TNT.Sports.1.HD.uk" tvg-logo="https://i.imgur.com/1EYnddH.png" group-title="AriaPlus - United Kingdom",TNT Sports 1
-http://groundhogday.in:80/live/Jok123/Jok123/659.ts
+https://a1xs.vip/2000021
 #EXTINF:-1 tvg-id="TNT.Sports.2.HD.uk" tvg-logo="https://i.imgur.com/YtGYRIB.png" group-title="AriaPlus - United Kingdom",TNT Sports 2
-http://groundhogday.in:80/live/Jok123/Jok123/662.ts
+https://a1xs.vip/2000022
 #EXTINF:-1 tvg-id="TNT.Sports.3.HD.uk" tvg-logo="https://i.imgur.com/z1d9M65.png" group-title="AriaPlus - United Kingdom",TNT Sports 3
-http://groundhogday.in:80/live/Jok123/Jok123/665.ts
+https://a1xs.vip/2000023
 #EXTINF:-1 tvg-id="TNT.Sports.4.HD.uk" tvg-logo="https://i.imgur.com/K92UuvG.png" group-title="AriaPlus - United Kingdom",TNT Sports 4
-http://groundhogday.in:80/live/Jok123/Jok123/668.ts
-#EXTINF:-1 tvg-id="TNT.Sports.5.HD.uk" tvg-name="TNT Sports 5" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/tnt-sports-5-uk.png" group-title="AriaPlus - United Kingdom",TNT Sports 5
-http://groundhogday.in:80/live/Jok123/Jok123/1366.ts
-#EXTINF:-1 tvg-id="TNT.Sports.6.HD.uk" tvg-name="TNT Sports 6" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/tnt-sports-6-uk.png" group-title="AriaPlus - United Kingdom",TNT Sports 6
-http://groundhogday.in:80/live/Jok123/Jok123/1367.ts
-#EXTINF:-1 tvg-id="TNT.Sports.7.HD.uk" tvg-name="TNT Sports 7" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/tnt-sports-7-uk.png" group-title="AriaPlus - United Kingdom",TNT Sports 7
-http://groundhogday.in:80/live/Jok123/Jok123/1368.ts
-#EXTINF:-1 tvg-id="TNT.Sports.8.HD.uk" tvg-name="TNT Sports 8" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/tnt-sports-8-uk.png" group-title="AriaPlus - United Kingdom",TNT Sports 8
-http://groundhogday.in:80/live/Jok123/Jok123/1369.ts
-#EXTINF:-1 tvg-id="TNT.Sports.9.HD.uk" tvg-name="TNT Sports 9" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/tnt-sports-9-uk.png" group-title="AriaPlus - United Kingdom",TNT Sports 9
-http://groundhogday.in:80/live/Jok123/Jok123/1370.ts
-#EXTINF:-1 tvg-id="TNT.Sports.10.HD.uk" tvg-name="TNT Sports 10" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/tnt-sports-10-uk.png" group-title="AriaPlus - United Kingdom",TNT Sports 10
-http://groundhogday.in:80/live/Jok123/Jok123/1371.ts
+https://a1xs.vip/2000024
+#EXTINF:-1 tvg-id="TNT.Sports.Ultimate.uk" tvg-logo="https://i.ibb.co/QqGdJnM/TNTSprts-U.png" group-title="AriaPlus - United Kingdom",TNT Sports Ultimate
+https://a1xs.vip/2000031
+#EXTINF:-1 tvg-id="Sky.Cinema.Hits.HD.uk" tvg-logo="https://pixvid.org/images/2025/02/10/sky-cinema-hits.png" group-title="AriaPlus - United Kingdom",Sky Cinema Hits
+https://a1xs.vip/210002
+#EXTINF:-1 tvg-id="Sky.Premiere.uk" tvg-logo="https://pixvid.org/images/2025/02/10/sky-cinema-premiere.png" group-title="AriaPlus - United Kingdom",Sky Cinema Premiere
+https://a1xs.vip/210003
+#EXTINF:-1 tvg-id="Sky.Cinema.Select.uk" tvg-logo="https://pixvid.org/images/2025/02/10/sky-cinema-select.png" group-title="AriaPlus - United Kingdom",Sky Cinema Select
+https://a1xs.vip/210004
+#EXTINF:-1 tvg-id="Sky.Action.uk" tvg-logo="https://pixvid.org/images/2025/02/10/sky-cinema-action.png" group-title="AriaPlus - United Kingdom",Sky Cinema Action
+https://a1xs.vip/210006
+#EXTINF:-1 tvg-id="Sky.Family.HD.uk" tvg-logo="https://pixvid.org/images/2025/02/11/sky-family.png" group-title="AriaPlus - United Kingdom",Sky Cinema Family
+https://a1xs.vip/210007
+#EXTINF:-1 tvg-id="Sky.Comedy.Cinema.uk" tvg-logo="https://pixvid.org/images/2025/02/10/sky-cinema-comedy.png" group-title="AriaPlus - United Kingdom",Sky Cinema Comedy
+https://a1xs.vip/210005
+#EXTINF:-1 tvg-id="Cartoon.Net.HD.uk" tvg-logo="https://pixvid.org/images/2025/02/27/cartoon-network.png" group-title="AriaPlus - United Kingdom",Cartoon Network
+https://a1xs.vip/1000050
+#EXTINF:-1 tvg-id="NickelodeonHD.uk" tvg-logo="https://pixvid.org/images/2025/02/27/Nickelodeon.png" group-title="AriaPlus - United Kingdom",Nickelodeon
+https://a1xs.vip/1000051
+#EXTINF:-1 tvg-id="Nick.Jr..HD.uk" tvg-logo="https://pixvid.org/images/2025/02/27/Nick_Jr.png" group-title="AriaPlus - United Kingdom",Nick Jr.
+https://a1xs.vip/1000052
+#EXTINF:-1 tvg-id="Nicktoons.uk" tvg-logo="https://i.imgur.com/X3eFHe6.png" group-title="AriaPlus - United Kingdom",Nicktoons
+https://a1xs.vip/100054
