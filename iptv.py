@@ -50,19 +50,15 @@ def parse_playlist(lines, source_url="Unknown"):
     i = 0
     while i < len(lines):
         line = lines[i].strip()
-        # Only process lines starting with #EXTINF
         if line.startswith("#EXTINF:"):
             extinf_line = line
             channel_headers = []
-
             i += 1
             while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
                 channel_headers.append(lines[i].strip())
                 i += 1
-
             if i < len(lines):
                 url_line = lines[i].strip()
-                # Skip empty lines, lines starting with #, or '*' placeholders
                 if url_line and not url_line.startswith("#") and url_line != "*":
                     parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
                 else:
@@ -73,11 +69,11 @@ def parse_playlist(lines, source_url="Unknown"):
     print(f"✅ Parsed {len(parsed_channels)} valid channels from {source_url}.")
     return parsed_channels
 
-def write_merged_playlist(all_unique_channels):
+def write_merged_playlist(all_channels):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
     sortable_channels = []
 
-    for extinf, headers, url in all_unique_channels:
+    for extinf, headers, url in all_channels:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group = group_match.group(1) if group_match else "Other"
         title_match = re.search(r',([^,]+)$', extinf)
@@ -113,18 +109,18 @@ def write_merged_playlist(all_unique_channels):
         f.write(final_output_string)
 
     print(f"\n✅ Merged playlist written to {OUTPUT_FILE}.")
-    print(f"📊 Total unique channels merged: {total_channels_written}.")
+    print(f"📊 Total channels merged (including duplicates): {total_channels_written}.")
     print(f"📝 Total lines in output file: {len(final_output_string.splitlines())}.")
 
 if __name__ == "__main__":
     print(f"Starting playlist merge at {datetime.now()}...")
-    all_unique_channels_set = set()
+    all_channels_list = []
 
     for url in playlist_urls:
         lines = fetch_playlist(url)
         if lines:
             parsed_channels = parse_playlist(lines, source_url=url)
-            all_unique_channels_set.update(parsed_channels)
+            all_channels_list.extend(parsed_channels)
 
-    write_merged_playlist(list(all_unique_channels_set))
+    write_merged_playlist(all_channels_list)
     print(f"Merging complete at {datetime.now()}.")
