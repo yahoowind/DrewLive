@@ -2,8 +2,8 @@ import requests
 import re
 
 PLAYLIST_URLS = [
-    "https://aria.bnkd.xyz/aria.m3u",
-    "https://aria.bnkd.xyz/aria+.m3u"
+    "https://raw.githubusercontent.com/theariatv/theariatv.github.io/refs/heads/main/aria.m3u",
+    "https://raw.githubusercontent.com/theariatv/theariatv.github.io/refs/heads/main/aria%2B.m3u"
 ]
 
 OUTPUT_FILE = "AriaPlus.m3u8"
