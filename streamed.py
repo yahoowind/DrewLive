@@ -5,10 +5,22 @@ import concurrent.futures
 
 FALLBACK_LOGOS = {
     "football": "https://i.imgur.com/RvN0XSF.png",
-    "soccer":   "https://i.imgur.com/RvN0XSF.png",
-    "fight":    "https://i.imgur.com/QlBOQft.png",
-    "mma":      "https://i.imgur.com/QlBOQft.png",
-    "boxing":   "https://i.imgur.com/QlBOQft.png"
+    "fight":    "https://i.imgur.com/QlBOQft.png"
+}
+
+CUSTOM_HEADERS = {
+    "Origin": "https://embedsports.top",
+    "Referer": "https://embedsports.top/",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0"
+}
+
+TV_IDS = {
+    "Baseball": "MLB.Baseball.Dummy.us",
+    "Fight": "PPV.EVENTS.Dummy.us",
+    "American Football": "NFL.Dummy.us",
+    "Afl": "AUS.Rules.Football.Dummy.us",
+    "Football": "Soccer.Dummy.us",
+    "Hockey": "NHL.Hockey.Dummy.us"
 }
 
 def get_all_matches():
@@ -57,18 +69,13 @@ def extract_m3u8_from_embed(embed_url):
     if not embed_url:
         return None
     try:
-        headers = {
-            'User-Agent': 'Mozilla/5.0',
-            'Referer': 'https://streamed.pk/'
-        }
-        response = requests.get(embed_url, headers=headers, timeout=15)
+        response = requests.get(embed_url, headers=CUSTOM_HEADERS, timeout=15)
         response.raise_for_status()
         return find_m3u8_in_content(response.text)
     except:
         return None
 
 def validate_logo(url, fallback):
-    """Replace broken URLs with fallback"""
     if not url:
         return fallback
     try:
@@ -80,11 +87,9 @@ def validate_logo(url, fallback):
     return fallback
 
 def build_logo_url(match):
-    """Returns a safe logo URL and normalized category"""
-    api_category = (match.get('category') or '').lower()
+    api_category = match.get('category') or ''
     logo_url = None
 
-    # Try badge first
     teams = match.get('teams', {})
     for team_key in ['away','home']:
         team = teams.get(team_key, {})
@@ -93,18 +98,15 @@ def build_logo_url(match):
             logo_url = f"https://streamed.pk/api/images/badge/{badge}.webp"
             break
 
-    # Try poster if no badge
     if not logo_url and match.get('poster'):
         poster = match['poster']
         logo_url = f"https://streamed.pk/api/images/proxy/{poster}.webp"
 
-    # Apply your fallback logic only if category matches
     for key in FALLBACK_LOGOS:
-        if key in api_category:
+        if key.lower() in api_category.lower():
             logo_url = validate_logo(logo_url, FALLBACK_LOGOS[key])
             break
 
-    # If category doesn’t match any fallback, keep original badge/poster (even if broken)
     return logo_url, api_category
 
 def process_match(match):
@@ -127,6 +129,13 @@ def generate_m3u8():
     content = ["#EXTM3U"]
     success = 0
 
+    # Headers for VLC per entry
+    vlc_header_lines = [
+        f'#EXTVLCOPT:http-origin={CUSTOM_HEADERS["Origin"]}',
+        f'#EXTVLCOPT:http-referrer={CUSTOM_HEADERS["Referer"]}',
+        f'#EXTVLCOPT:http-user-agent={CUSTOM_HEADERS["User-Agent"]}'
+    ]
+
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         futures = {executor.submit(process_match, m): m for m in matches}
         for future in concurrent.futures.as_completed(futures):
@@ -135,10 +144,13 @@ def generate_m3u8():
             if url:
                 logo, cat = build_logo_url(match)
                 display_cat = cat.replace('-', ' ').title() if cat else "General"
-                content.append(f'#EXTINF:-1 tvg-name="{title}" tvg-logo="{logo}" group-title="StreamedSU - {display_cat}",{title}')
+                tv_id = TV_IDS.get(display_cat, "General.Dummy.us")
+
+                content.append(f'#EXTINF:-1 tvg-id="{tv_id}" tvg-name="{title}" tvg-logo="{logo}" group-title="StreamedSU - {display_cat}",{title}')
+                content.extend(vlc_header_lines)  # inject VLC headers per entry
                 content.append(url)
                 success += 1
-                print(f"  ✅ {title} ({logo})")
+                print(f"  ✅ {title} ({logo}) TV-ID: {tv_id}")
 
     print(f"🎉 Found {success} streams.")
     return "\n".join(content)
