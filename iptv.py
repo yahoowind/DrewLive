@@ -56,29 +56,22 @@ def parse_playlist(lines, source_url="Unknown"):
             extinf_line = line
             channel_headers = []
             i += 1
-            
-            # Collect any extra # metadata lines
             while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
                 channel_headers.append(lines[i].strip())
                 i += 1
-            
-            # FIXED: This new loop skips any blank lines between the metadata and the URL
             while i < len(lines) and not lines[i].strip():
-                i += 1 
-
+                i += 1
             if i < len(lines):
                 url_line = lines[i].strip()
-                # Check for valid, non-placeholder URLs
                 if url_line and not url_line.startswith("#") and url_line != "*":
                     parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
                 else:
                     print(f"⚠️ Skipped entry in {source_url}. Reason: Invalid or placeholder URL '{url_line}'. Channel Info: {extinf_line}")
                 i += 1
             else:
-                 i += 1
+                i += 1
         else:
             i += 1
-            
     print(f"✅ Parsed {len(parsed_channels)} valid channels from {source_url}.")
     return parsed_channels
 
@@ -89,13 +82,10 @@ def write_merged_playlist(all_channels):
     for extinf, headers, url in all_channels:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group = group_match.group(1) if group_match else "Other"
-        
-        # FIXED: Replaced fragile regex with a more robust method to get the channel title
         try:
             title = extinf.rsplit(',', 1)[1].strip()
         except IndexError:
-            title = "" # Failsafe in case there's no comma
-            
+            title = ""
         sortable_channels.append((group.lower(), title.lower(), extinf, headers, url))
 
     sorted_channels = sorted(sortable_channels)
