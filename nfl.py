@@ -17,9 +17,8 @@ USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64; "
 POST_LOAD_WAIT_MS = 8000
 STREAM_PATTERN = re.compile(r"\.m3u8($|\?)", re.I)
 
-# --- NEW: Helper function for customization ---
+# --- Helper function ---
 def normalize_name(original_name: str) -> str:
-    """Cleans up the raw names found by the scraper."""
     name_map = {
         "Nflnetwork": "NFL Network",
         "Nflredzone": "NFL RedZone",
@@ -37,21 +36,18 @@ def normalize_name(original_name: str) -> str:
 
     return original_name
 
-# --- Your original scraping logic (unchanged) ---
+# --- Scraping logic ---
 async def find_stream_in_page(page: Page, url: str) -> tuple[str | None, str | None]:
-    """
-    Navigates to a page and tries to capture the final M3U8 URL from network requests.
-    """
     final_url = None
 
     def handle_request(request):
         nonlocal final_url
         if STREAM_PATTERN.search(request.url):
             print(f"    ✅ Captured potential stream URL: {request.url}")
-            final_url = request.url # Capture the last M3U8 URL found
+            final_url = request.url
 
     page.on("request", handle_request)
-    
+
     try:
         await page.goto(url, wait_until="load", timeout=60000)
         await page.wait_for_timeout(POST_LOAD_WAIT_MS)
@@ -59,7 +55,7 @@ async def find_stream_in_page(page: Page, url: str) -> tuple[str | None, str | N
         print(f"    ❌ Error loading page {url}: {e}")
     finally:
         page.remove_listener("request", handle_request)
-    
+
     return final_url, url
 
 # --- Main ---
@@ -67,7 +63,6 @@ async def main():
     print("🚀 Starting NFL Webcast Scraper (Advanced)...")
     all_found_streams = {}
 
-    # --- NEW: Customization data ---
     CUSTOM_INFO = {
         "Nflnetwork": {
             "id": "NFL.Network.HD.us2",
@@ -82,17 +77,16 @@ async def main():
             "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/espn-us.png?raw=true"
         }
     }
-    
+
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         context = await browser.new_context(user_agent=USER_AGENT)
         page = await context.new_page()
 
-        # --- Your original scraping logic (unchanged) ---
         print(f"\n🔎 Searching for game links on: {BASE_URL}")
         try:
             await page.goto(BASE_URL, wait_until="domcontentloaded", timeout=60000)
-            
+
             game_links_info = []
             event_cards = await page.query_selector_all("a:has-text('@')")
             for card in event_cards:
@@ -102,7 +96,7 @@ async def main():
                     clean_name = ' '.join(name.split()).replace(' @ ', '@')
                     full_url = urljoin(BASE_URL, href)
                     game_links_info.append({"name": clean_name, "url": full_url})
-            
+
             print(f"  Found {len(game_links_info)} potential game links.")
 
             for game in game_links_info:
@@ -126,7 +120,7 @@ async def main():
 
         await browser.close()
 
-    # --- Part 3: Write the M3U8 File (UPDATED with customization logic) ---
+    # --- Write the M3U8 File with group-title ---
     if not all_found_streams:
         print("\n⏹️ No streams were found. Playlist file will not be created.")
         return
@@ -135,9 +129,11 @@ async def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for name, stream_url in sorted(all_found_streams.items()):
-            
+            # Determine group
+            group_title = "NFLWebcast - Live Games" if name in [g['name'] for g in game_links_info] else "NFLWebcast - 24/7 Streams"
+
             pretty_name = normalize_name(name)
-            
+
             if name in CUSTOM_INFO:
                 channel_data = CUSTOM_INFO[name]
                 tvg_id = channel_data.get("id", name)
@@ -146,9 +142,11 @@ async def main():
                 tvg_id = "NFL.Dummy.us"
                 tvg_logo = "http://drewlive24.duckdns.org:9000/Logos/Maxx.png"
 
-            extinf_line = f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{pretty_name}" tvg-logo="{tvg_logo}",{pretty_name}\n'
+            extinf_line = (
+                f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{pretty_name}" '
+                f'tvg-logo="{tvg_logo}" group-title="{group_title}",{pretty_name}\n'
+            )
             f.write(extinf_line)
-            
             f.write(f'#EXTVLCOPT:http-referrer=https://nflwebcast.com/\n')
             f.write(f'#EXTVLCOPT:http-user-agent={USER_AGENT}\n')
             f.write(f'#EXTVLCOPT:http-origin=https://nflwebcast.com\n')
