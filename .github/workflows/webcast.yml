@@ -1,8 +1,8 @@
-name: 🏈🏒🏀 Update Webcast Playlists 📺
+name: 🏈🏒 Update Webcast Playlists 📺
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 * * * *'  # ⏰ Run every hour
   workflow_dispatch:
 
 permissions:
@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -23,38 +23,46 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 📦 Install Python and Playwright dependencies
+      - name: 📦 Install Python dependencies & Playwright
         run: |
           python -m pip install --upgrade pip
-          pip install requests playwright
-          playwright install --with-deps
+          pip install playwright urllib3 aiohttp
+          playwright install firefox
+          playwright install-deps
 
       - name: 🎯 Run scraping script
         run: python webcast.py
 
-      - name: 💾 Commit & Push if Playlists Changed
+      - name: 💾 Commit & Safely Push if Playlists Changed
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
+
+          # Stage both output files
           git add NFLWebcast.m3u8 NHLWebcast.m3u8
-          
-          # stash any local unstaged changes to prevent merge conflicts
-          git stash --include-untracked
-          
-          # fetch and rebase remote changes
-          git pull --rebase origin main
-          
-          # apply stashed changes back
-          git stash pop || true
-          
-          # commit if there are any changes
+
+          # Check if files actually changed
           if git diff --cached --quiet; then
             echo "✅ No changes to commit"
             exit 0
           fi
-          
+
           git commit -m "🔁 Update playlists $(date -u +'%a %b %d %T UTC %Y')"
-          git push origin main
+
+          # Small random delay to reduce collisions
+          sleep $((RANDOM % 10 + 5))
+
+          # Safe push, fallback merge if rejected
+          if ! git push origin main; then
+            echo "⚠️ Push rejected. Trying safe fetch + merge..."
+            git pull origin main --rebase || {
+              echo "❌ Rebase failed. Exiting to avoid corruption."
+              exit 1
+            }
+            git push origin main || {
+              echo "❌ Second push failed. Remote changed again."
+              exit 1
+            }
+          fi
