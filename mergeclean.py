@@ -47,45 +47,52 @@ def fetch_playlist(url, retries=3, timeout=30):
     return []
 
 def parse_playlist(lines, source_url="Unknown"):
-    parsed = []
+    parsed_channels = []
     i = 0
     while i < len(lines):
         line = lines[i].strip()
         if line.startswith("#EXTINF:"):
-            extinf = line
-            headers = []
+            extinf_line = line
+            channel_headers = []
             i += 1
             while i < len(lines) and lines[i].strip().startswith("#") and not lines[i].strip().startswith("#EXTINF:"):
-                headers.append(lines[i].strip())
+                channel_headers.append(lines[i].strip())
+                i += 1
+            while i < len(lines) and not lines[i].strip():
                 i += 1
             if i < len(lines):
-                url = lines[i].strip()
-                if url and not url.startswith("#") and url != "*":
-                    parsed.append((extinf, tuple(headers), url))
+                url_line = lines[i].strip()
+                if url_line and not url_line.startswith("#") and url_line != "*":
+                    parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
                 else:
-                    print(f"⚠️ Skipped invalid or placeholder channel in {source_url}")
+                    print(f"⚠️ Skipped invalid entry in {source_url}. Reason: URL was '{url_line}'. Channel Info: {extinf_line}")
+                i += 1
+            else:
                 i += 1
         else:
             i += 1
-    print(f"✅ Parsed {len(parsed)} valid channels from {source_url}")
-    return parsed
+    print(f"✅ Parsed {len(parsed_channels)} valid channels from {source_url}")
+    return parsed_channels
 
 def is_nsfw(extinf, headers, url):
-    nsfw_keywords = ['nsfw', 'xxx', 'porn']
+    """Checks if a channel entry contains NSFW keywords."""
+    nsfw_keywords = ['nsfw', 'xxx', 'porn', 'adult']
     combined_text = f"{extinf.lower()} {' '.join(headers).lower()} {url.lower()}"
     group_match = re.search(r'group-title="([^"]+)"', extinf.lower())
     if group_match and any(k in group_match.group(1) for k in nsfw_keywords):
         return True
     return any(k in combined_text for k in nsfw_keywords)
 
-def write_merged_playlist(all_channels):
+def write_merged_playlist(channels_to_write):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
     sortable = []
-    for extinf, headers, url in all_channels:
+    for extinf, headers, url in channels_to_write:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group = group_match.group(1) if group_match else "Other"
-        title_match = re.search(r',([^,]+)$', extinf)
-        title = title_match.group(1).strip() if title_match else ""
+        try:
+            title = extinf.rsplit(',', 1)[1].strip()
+        except IndexError:
+            title = ""
         sortable.append((group.lower(), title.lower(), group, extinf, headers, url))
     
     sorted_channels = sorted(sortable)
@@ -113,7 +120,7 @@ def write_merged_playlist(all_channels):
     print(f"\n✅ Wrote {count} clean channels to {OUTPUT_FILE} ({len(final_output.splitlines())} lines).")
 
 if __name__ == "__main__":
-    print(f"🚀 Starting merge: {datetime.now()}\n")
+    print(f"🚀 Starting merge process at {datetime.now()}\n")
 
     all_channels = []
     for url in playlist_urls:
@@ -129,4 +136,4 @@ if __name__ == "__main__":
     
     write_merged_playlist(clean_channels)
 
-    print(f"\n✅ Merge complete: {datetime.now()}")
+    print(f"\n✅ Merge complete at {datetime.now()}")
