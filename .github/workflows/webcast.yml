@@ -1,4 +1,4 @@
-name: 🏈 Update NFLWebcast Playlist 📺
+name: 🏈 Update Webcast Playlist 📺
 
 on:
   schedule:
@@ -30,7 +30,7 @@ jobs:
           playwright install --with-deps # Installs browser dependencies
 
       - name: 🎯 Run scraping script
-        run: python nfl.py
+        run: python webcast.py
 
       - name: 💾 Commit & Push if Playlist Changed
         env:
