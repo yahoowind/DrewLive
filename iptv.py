@@ -30,16 +30,15 @@ playlist_urls = [
 ]
 
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
-OUTPUT_FILE = "MergedPlaylist.m3u8"
+OUTPUT_FILE = "MergedCleanPlaylist.m3u8"
 
 def fetch_playlist(url, retries=3, timeout=30):
     headers = {"User-Agent": "Mozilla/5.0"}
     for attempt in range(1, retries + 1):
         try:
-            print(f"Attempting to fetch {url} (try {attempt})...")
+            print(f"Fetching {url} (Attempt {attempt})...")
             res = requests.get(url, timeout=timeout, headers=headers)
             res.raise_for_status()
-            print(f"✅ Successfully fetched {url}")
             return res.text.strip().splitlines()
         except Exception as e:
             print(f"❌ Attempt {attempt} failed for {url}: {e}")
@@ -66,69 +65,93 @@ def parse_playlist(lines, source_url="Unknown"):
                 if url_line and not url_line.startswith("#") and url_line != "*":
                     parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
                 else:
-                    print(f"⚠️ Skipped entry in {source_url}. Reason: Invalid or placeholder URL '{url_line}'. Channel Info: {extinf_line}")
+                    print(f"⚠️ Skipped invalid entry in {source_url}. Reason: URL was '{url_line}'. Channel Info: {extinf_line}")
                 i += 1
             else:
                 i += 1
         else:
             i += 1
-    print(f"✅ Parsed {len(parsed_channels)} valid channels from {source_url}.")
+    print(f"✅ Parsed {len(parsed_channels)} valid channels from {source_url}")
     return parsed_channels
 
-def write_merged_playlist(all_channels):
-    lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
-    sortable_channels = []
+def is_nsfw(extinf, headers, url):
+    """Checks if a channel entry contains NSFW keywords."""
+    nsfw_keywords = ['nsfw', 'xxx', 'porn', 'adult']
+    combined_text = f"{extinf.lower()} {' '.join(headers).lower()} {url.lower()}"
+    group_match = re.search(r'group-title="([^"]+)"', extinf.lower())
+    if group_match and any(k in group_match.group(1) for k in nsfw_keywords):
+        return True
+    return any(k in combined_text for k in nsfw_keywords)
 
-    for extinf, headers, url in all_channels:
+def write_merged_playlist(channels_to_write):
+    lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
+    sortable = []
+    
+    for extinf, headers, url in channels_to_write:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group = group_match.group(1) if group_match else "Other"
         try:
             title = extinf.rsplit(',', 1)[1].strip()
         except IndexError:
             title = ""
-        sortable_channels.append((group.lower(), title.lower(), extinf, headers, url))
+        
+        tvg_id_match = re.search(r'tvg-id="([^"]+)"', extinf)
+        if tvg_id_match and tvg_id_match.group(1):
+            unique_id = tvg_id_match.group(1).strip()
+        else:
+            unique_id = title.lower()
+            
+        sortable.append((group.lower(), title.lower(), group, extinf, headers, url, unique_id))
+    
+    sorted_channels = sorted(sortable)
+    
+    deduplicated_channels = []
+    seen_ids = set()
+    for group_lower, title_lower, group_name, extinf, headers, url, unique_id in sorted_channels:
+        if unique_id and unique_id not in seen_ids:
+            deduplicated_channels.append((group_name, extinf, headers, url))
+            seen_ids.add(unique_id)
+        elif not unique_id and title_lower not in seen_ids:
+             deduplicated_channels.append((group_name, extinf, headers, url))
+             seen_ids.add(title_lower)
 
-    sorted_channels = sorted(sortable_channels)
     current_group = None
-    total_channels_written = 0
+    count = 0
 
-    for group_lower, title_lower, extinf, headers, url in sorted_channels:
-        group_match = re.search(r'group-title="([^"]+)"', extinf)
-        actual_group_name = group_match.group(1) if group_match else "Other"
-
-        if actual_group_name != current_group:
+    for group_name, extinf, headers, url in deduplicated_channels:
+        if group_name != current_group:
             if current_group is not None:
                 lines.append("")
-            lines.append(f'#EXTGRP:{actual_group_name}')
-            current_group = actual_group_name
-
+            lines.append(f"#EXTGRP:{group_name}")
+            current_group = group_name
         lines.append(extinf)
-        for hdr_line in headers:
-            lines.append(hdr_line)
+        lines.extend(headers)
         lines.append(url)
-        total_channels_written += 1
-
+        count += 1
+    
     if lines and lines[-1] == "":
         lines.pop()
 
-    final_output_string = '\n'.join(lines) + '\n'
-
+    final_output = '\n'.join(lines) + '\n'
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        f.write(final_output_string)
-
-    print(f"\n✅ Merged playlist written to {OUTPUT_FILE}.")
-    print(f"📊 Total channels merged (including duplicates): {total_channels_written}.")
-    print(f"📝 Total lines in output file: {len(final_output_string.splitlines())}.")
+        f.write(final_output)
+    
+    print(f"\n✅ Wrote {count} clean, de-duplicated channels to {OUTPUT_FILE} ({len(final_output.splitlines())} lines).")
 
 if __name__ == "__main__":
-    print(f"Starting playlist merge at {datetime.now()}...")
-    all_channels_list = []
+    print(f"🚀 Starting merge process at {datetime.now()}\n")
 
+    all_channels = []
     for url in playlist_urls:
         lines = fetch_playlist(url)
         if lines:
-            parsed_channels = parse_playlist(lines, source_url=url)
-            all_channels_list.extend(parsed_channels)
+            all_channels.extend(parse_playlist(lines, url))
 
-    write_merged_playlist(all_channels_list)
-    print(f"Merging complete at {datetime.now()}.")
+    clean_channels = [entry for entry in all_channels if not is_nsfw(*entry)]
+    removed_count = len(all_channels) - len(clean_channels)
+    if removed_count > 0:
+        print(f"\n🗑️ Filtered out {removed_count} NSFW channels.")
+    
+    write_merged_playlist(clean_channels)
+
+    print(f"\n✅ Merge complete at {datetime.now()}")
