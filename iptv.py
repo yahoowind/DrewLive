@@ -30,15 +30,16 @@ playlist_urls = [
 ]
 
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
-OUTPUT_FILE = "MergedCleanPlaylist.m3u8"
+OUTPUT_FILE = "MergedPlaylist.m3u8"
 
 def fetch_playlist(url, retries=3, timeout=30):
     headers = {"User-Agent": "Mozilla/5.0"}
     for attempt in range(1, retries + 1):
         try:
-            print(f"Fetching {url} (Attempt {attempt})...")
+            print(f"Attempting to fetch {url} (try {attempt})...")
             res = requests.get(url, timeout=timeout, headers=headers)
             res.raise_for_status()
+            print(f"✅ Successfully fetched {url}")
             return res.text.strip().splitlines()
         except Exception as e:
             print(f"❌ Attempt {attempt} failed for {url}: {e}")
@@ -65,29 +66,20 @@ def parse_playlist(lines, source_url="Unknown"):
                 if url_line and not url_line.startswith("#") and url_line != "*":
                     parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
                 else:
-                    print(f"⚠️ Skipped invalid entry in {source_url}. Reason: URL was '{url_line}'. Channel Info: {extinf_line}")
+                    print(f"⚠️ Skipped entry in {source_url}. Reason: Invalid or placeholder URL '{url_line}'. Channel Info: {extinf_line}")
                 i += 1
             else:
                 i += 1
         else:
             i += 1
-    print(f"✅ Parsed {len(parsed_channels)} valid channels from {source_url}")
+    print(f"✅ Parsed {len(parsed_channels)} valid channels from {source_url}.")
     return parsed_channels
 
-def is_nsfw(extinf, headers, url):
-    """Checks if a channel entry contains NSFW keywords."""
-    nsfw_keywords = ['nsfw', 'xxx', 'porn', 'adult']
-    combined_text = f"{extinf.lower()} {' '.join(headers).lower()} {url.lower()}"
-    group_match = re.search(r'group-title="([^"]+)"', extinf.lower())
-    if group_match and any(k in group_match.group(1) for k in nsfw_keywords):
-        return True
-    return any(k in combined_text for k in nsfw_keywords)
-
-def write_merged_playlist(channels_to_write):
+def write_merged_playlist(all_channels):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
     sortable = []
     
-    for extinf, headers, url in channels_to_write:
+    for extinf, headers, url in all_channels:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group = group_match.group(1) if group_match else "Other"
         try:
@@ -136,22 +128,17 @@ def write_merged_playlist(channels_to_write):
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(final_output)
     
-    print(f"\n✅ Wrote {count} clean, de-duplicated channels to {OUTPUT_FILE} ({len(final_output.splitlines())} lines).")
+    print(f"\n✅ Wrote {count} de-duplicated channels to {OUTPUT_FILE} ({len(final_output.splitlines())} lines).")
 
 if __name__ == "__main__":
-    print(f"🚀 Starting merge process at {datetime.now()}\n")
+    print(f"Starting playlist merge at {datetime.now()}...")
+    all_channels_list = []
 
-    all_channels = []
     for url in playlist_urls:
         lines = fetch_playlist(url)
         if lines:
-            all_channels.extend(parse_playlist(lines, url))
+            parsed_channels = parse_playlist(lines, source_url=url)
+            all_channels_list.extend(parsed_channels)
 
-    clean_channels = [entry for entry in all_channels if not is_nsfw(*entry)]
-    removed_count = len(all_channels) - len(clean_channels)
-    if removed_count > 0:
-        print(f"\n🗑️ Filtered out {removed_count} NSFW channels.")
-    
-    write_merged_playlist(clean_channels)
-
-    print(f"\n✅ Merge complete at {datetime.now()}")
+    write_merged_playlist(all_channels_list)
+    print(f"Merging complete at {datetime.now()}.")
