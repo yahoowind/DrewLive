@@ -11,7 +11,7 @@ START_URLS = [
     "https://nflwebcast.com/nflredzone/",
     "https://nflwebcast.com/espnusa/",
 ]
-OUTPUT_FILE = "nflwebcast.m3u8"
+OUTPUT_FILE = "NFLWebcast.m3u8"
 USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64; "
               "rv:143.0) Gecko/20100101 Firefox/143.0")
 POST_LOAD_WAIT_MS = 8000
