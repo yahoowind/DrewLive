@@ -3,7 +3,6 @@ import re
 from urllib.parse import urljoin
 from playwright.async_api import async_playwright, Page
 
-# --- Configuration ---
 BASE_URL = "https://nflwebcast.com/"
 START_URLS = [
     BASE_URL,
@@ -17,7 +16,6 @@ USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64; "
 POST_LOAD_WAIT_MS = 8000
 STREAM_PATTERN = re.compile(r"\.m3u8($|\?)", re.I)
 
-# --- Helper function ---
 def normalize_name(original_name: str) -> str:
     name_map = {
         "Nflnetwork": "NFL Network",
@@ -36,7 +34,6 @@ def normalize_name(original_name: str) -> str:
 
     return original_name
 
-# --- Scraping logic ---
 async def find_stream_in_page(page: Page, url: str) -> tuple[str | None, str | None]:
     final_url = None
 
@@ -58,7 +55,6 @@ async def find_stream_in_page(page: Page, url: str) -> tuple[str | None, str | N
 
     return final_url, url
 
-# --- Main ---
 async def main():
     print("🚀 Starting NFL Webcast Scraper (Advanced)...")
     all_found_streams = {}
@@ -120,7 +116,6 @@ async def main():
 
         await browser.close()
 
-    # --- Write the M3U8 File with group-title ---
     if not all_found_streams:
         print("\n⏹️ No streams were found. Playlist file will not be created.")
         return
@@ -129,9 +124,7 @@ async def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for name, stream_url in sorted(all_found_streams.items()):
-            # Determine group
             group_title = "NFLWebcast - Live Games" if name in [g['name'] for g in game_links_info] else "NFLWebcast - 24/7 Streams"
-
             pretty_name = normalize_name(name)
 
             if name in CUSTOM_INFO:
@@ -142,10 +135,7 @@ async def main():
                 tvg_id = "NFL.Dummy.us"
                 tvg_logo = "http://drewlive24.duckdns.org:9000/Logos/Maxx.png"
 
-            extinf_line = (
-                f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{pretty_name}" '
-                f'tvg-logo="{tvg_logo}" group-title="{group_title}",{pretty_name}\n'
-            )
+            extinf_line = f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{pretty_name}" tvg-logo="{tvg_logo}" group-title="{group_title}",{pretty_name}\n'
             f.write(extinf_line)
             f.write(f'#EXTVLCOPT:http-referrer=https://nflwebcast.com/\n')
             f.write(f'#EXTVLCOPT:http-user-agent={USER_AGENT}\n')
