@@ -76,9 +76,13 @@ async def scrape_nfl():
         page = await context.new_page()
         try:
             await page.goto(NFL_BASE_URL, wait_until="domcontentloaded", timeout=60000)
+            await page.wait_for_timeout(POST_LOAD_WAIT_MS)
+
             game_links_info = []
-            event_cards = await page.query_selector_all("a:has-text('@')")
-            for card in event_cards:
+            event_cards = page.locator("a:has-text('@')")
+            count = await event_cards.count()
+            for i in range(count):
+                card = event_cards.nth(i)
                 name = await card.inner_text()
                 href = await card.get_attribute("href")
                 if name and href:
@@ -86,6 +90,7 @@ async def scrape_nfl():
                     full_url = urljoin(NFL_BASE_URL, href)
                     game_links_info.append({"name": clean_name, "url": full_url})
             print(f"  Found {len(game_links_info)} potential game links.")
+
             for game in game_links_info:
                 print(f"  ➡️ Processing Event: {game['name']}")
                 game_page = await context.new_page()
@@ -93,8 +98,8 @@ async def scrape_nfl():
                 if stream_url:
                     all_found_streams[game['name']] = stream_url
                 await game_page.close()
-            channel_urls = [u for u in NFL_START_URLS if u != NFL_BASE_URL]
-            for url in channel_urls:
+
+            for url in [u for u in NFL_START_URLS if u != NFL_BASE_URL]:
                 page_name = url.strip('/').split('/')[-1].replace('-', ' ').title()
                 print(f"  ➡️ Processing Channel: {page_name}")
                 stream_url, _ = await find_stream_in_page(page, url)
@@ -103,9 +108,11 @@ async def scrape_nfl():
         except Exception as e:
             print(f"  ❌ Failed to process NFL pages: {e}")
         await browser.close()
+
     if not all_found_streams:
         print("⏹️ No NFL streams found.")
         return
+
     with open(NFL_OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for name, stream_url in sorted(all_found_streams.items()):
@@ -134,9 +141,13 @@ async def scrape_nhl():
         page = await context.new_page()
         try:
             await page.goto(NHL_BASE_URL, wait_until="domcontentloaded", timeout=60000)
+            await page.wait_for_timeout(POST_LOAD_WAIT_MS)
+
             game_links_info = []
-            event_cards = await page.query_selector_all("a:has-text('@')")
-            for card in event_cards:
+            event_cards = page.locator("a:has-text('@')")
+            count = await event_cards.count()
+            for i in range(count):
+                card = event_cards.nth(i)
                 name = await card.inner_text()
                 href = await card.get_attribute("href")
                 if name and href:
@@ -144,6 +155,7 @@ async def scrape_nhl():
                     full_url = urljoin(NHL_BASE_URL, href)
                     game_links_info.append({"name": clean_name, "url": full_url})
             print(f"  Found {len(game_links_info)} potential game links.")
+
             for game in game_links_info:
                 print(f"  ➡️ Processing Event: {game['name']}")
                 game_page = await context.new_page()
@@ -154,9 +166,11 @@ async def scrape_nhl():
         except Exception as e:
             print(f"  ❌ Failed to process NHL pages: {e}")
         await browser.close()
+
     if not all_found_streams:
         print("⏹️ No NHL streams found.")
         return
+
     with open(NHL_OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for name, stream_url in sorted(all_found_streams.items()):
