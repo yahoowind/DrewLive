@@ -3,26 +3,25 @@ import sys
 import re
 import concurrent.futures
 
-# --- Constants: your fallback logos only ---
 FALLBACK_LOGOS = {
     "football": "https://i.imgur.com/RvN0XSF.png",
-    "fight":    "https://i.imgur.com/QlBOQft.png"
+    "fight":    "https://i.imgur.com/QlBOQft.png",
+    "basketball": "http://drewlive24.duckdns.org:9000/Logos/NBA.png"
 }
 
-# --- Custom headers for embed requests & VLC ---
 CUSTOM_HEADERS = {
     "Origin": "https://embedsports.top",
     "Referer": "https://embedsports.top/",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0"
 }
 
-# --- TV ID mapping per StreamedSU category ---
 TV_IDS = {
     "Baseball": "MLB.Baseball.Dummy.us",
     "Fight": "PPV.EVENTS.Dummy.us",
     "American Football": "NFL.Dummy.us",
     "Afl": "AUS.Rules.Football.Dummy.us",
-    "Football": "Soccer.Dummy.us"
+    "Football": "Soccer.Dummy.us",
+    "Basketball": "Basketball.Dummy.us"
 }
 
 def get_all_matches():
@@ -131,7 +130,6 @@ def generate_m3u8():
     content = ["#EXTM3U"]
     success = 0
 
-    # Headers for VLC per entry
     vlc_header_lines = [
         f'#EXTVLCOPT:http-origin={CUSTOM_HEADERS["Origin"]}',
         f'#EXTVLCOPT:http-referrer={CUSTOM_HEADERS["Referer"]}',
@@ -149,7 +147,7 @@ def generate_m3u8():
                 tv_id = TV_IDS.get(display_cat, "General.Dummy.us")
 
                 content.append(f'#EXTINF:-1 tvg-id="{tv_id}" tvg-name="{title}" tvg-logo="{logo}" group-title="StreamedSU - {display_cat}",{title}')
-                content.extend(vlc_header_lines)  # inject VLC headers per entry
+                content.extend(vlc_header_lines)
                 content.append(url)
                 success += 1
                 print(f"  ✅ {title} ({logo}) TV-ID: {tv_id}")
