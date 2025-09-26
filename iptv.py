@@ -77,8 +77,8 @@ def parse_playlist(lines, source_url="Unknown"):
 
 def write_merged_playlist(all_channels):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
-    sortable = []
-    
+    sortable_channels = []
+
     for extinf, headers, url in all_channels:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group = group_match.group(1) if group_match else "Other"
@@ -86,49 +86,39 @@ def write_merged_playlist(all_channels):
             title = extinf.rsplit(',', 1)[1].strip()
         except IndexError:
             title = ""
-        
-        tvg_id_match = re.search(r'tvg-id="([^"]+)"', extinf)
-        if tvg_id_match and tvg_id_match.group(1):
-            unique_id = tvg_id_match.group(1).strip()
-        else:
-            unique_id = title.lower()
-            
-        sortable.append((group.lower(), title.lower(), group, extinf, headers, url, unique_id))
-    
-    sorted_channels = sorted(sortable)
-    
-    deduplicated_channels = []
-    seen_ids = set()
-    for group_lower, title_lower, group_name, extinf, headers, url, unique_id in sorted_channels:
-        if unique_id and unique_id not in seen_ids:
-            deduplicated_channels.append((group_name, extinf, headers, url))
-            seen_ids.add(unique_id)
-        elif not unique_id and title_lower not in seen_ids:
-             deduplicated_channels.append((group_name, extinf, headers, url))
-             seen_ids.add(title_lower)
+        sortable_channels.append((group.lower(), title.lower(), extinf, headers, url))
 
+    sorted_channels = sorted(sortable_channels)
     current_group = None
-    count = 0
+    total_channels_written = 0
 
-    for group_name, extinf, headers, url in deduplicated_channels:
-        if group_name != current_group:
+    for group_lower, title_lower, extinf, headers, url in sorted_channels:
+        group_match = re.search(r'group-title="([^"]+)"', extinf)
+        actual_group_name = group_match.group(1) if group_match else "Other"
+
+        if actual_group_name != current_group:
             if current_group is not None:
                 lines.append("")
-            lines.append(f"#EXTGRP:{group_name}")
-            current_group = group_name
+            lines.append(f'#EXTGRP:{actual_group_name}')
+            current_group = actual_group_name
+
         lines.append(extinf)
-        lines.extend(headers)
+        for hdr_line in headers:
+            lines.append(hdr_line)
         lines.append(url)
-        count += 1
-    
+        total_channels_written += 1
+
     if lines and lines[-1] == "":
         lines.pop()
 
-    final_output = '\n'.join(lines) + '\n'
+    final_output_string = '\n'.join(lines) + '\n'
+
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        f.write(final_output)
-    
-    print(f"\n✅ Wrote {count} de-duplicated channels to {OUTPUT_FILE} ({len(final_output.splitlines())} lines).")
+        f.write(final_output_string)
+
+    print(f"\n✅ Merged playlist written to {OUTPUT_FILE}.")
+    print(f"📊 Total channels merged (including duplicates): {total_channels_written}.")
+    print(f"📝 Total lines in output file: {len(final_output_string.splitlines())}.")
 
 if __name__ == "__main__":
     print(f"Starting playlist merge at {datetime.now()}...")
