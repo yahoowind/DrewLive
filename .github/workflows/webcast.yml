@@ -1,4 +1,4 @@
-name: 🏈🏒 Update Webcast Playlists 📺
+name: 🏈🏒⚾ Update SportsWebcast Playlist 📺
 
 on:
   schedule:
@@ -41,7 +41,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Stage both output files
-          git add NFLWebcast.m3u8 NHLWebcast.m3u8
+          git add SportsWebcast.m3u8
 
           # Check if files actually changed
           if git diff --cached --quiet; then
