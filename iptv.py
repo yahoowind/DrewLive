@@ -26,8 +26,7 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/MoveOnJoy.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/A1x.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/StreamedSU.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/NFLWebcast.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/NHLWebcast.m3u8"
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/SportsWebcast.m3u8"
 ]
 
 EPG_URL = "http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz"
