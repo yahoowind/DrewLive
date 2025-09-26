@@ -86,6 +86,7 @@ def is_nsfw(extinf, headers, url):
 def write_merged_playlist(channels_to_write):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
     sortable = []
+    
     for extinf, headers, url in channels_to_write:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group = group_match.group(1) if group_match else "Other"
@@ -93,13 +94,31 @@ def write_merged_playlist(channels_to_write):
             title = extinf.rsplit(',', 1)[1].strip()
         except IndexError:
             title = ""
-        sortable.append((group.lower(), title.lower(), group, extinf, headers, url))
+        
+        tvg_id_match = re.search(r'tvg-id="([^"]+)"', extinf)
+        if tvg_id_match and tvg_id_match.group(1):
+            unique_id = tvg_id_match.group(1).strip()
+        else:
+            unique_id = title.lower()
+            
+        sortable.append((group.lower(), title.lower(), group, extinf, headers, url, unique_id))
     
     sorted_channels = sorted(sortable)
+    
+    deduplicated_channels = []
+    seen_ids = set()
+    for group_lower, title_lower, group_name, extinf, headers, url, unique_id in sorted_channels:
+        if unique_id and unique_id not in seen_ids:
+            deduplicated_channels.append((group_name, extinf, headers, url))
+            seen_ids.add(unique_id)
+        elif not unique_id and title_lower not in seen_ids:
+             deduplicated_channels.append((group_name, extinf, headers, url))
+             seen_ids.add(title_lower)
+
     current_group = None
     count = 0
 
-    for _, _, group_name, extinf, headers, url in sorted_channels:
+    for group_name, extinf, headers, url in deduplicated_channels:
         if group_name != current_group:
             if current_group is not None:
                 lines.append("")
@@ -117,7 +136,7 @@ def write_merged_playlist(channels_to_write):
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(final_output)
     
-    print(f"\n✅ Wrote {count} clean channels to {OUTPUT_FILE} ({len(final_output.splitlines())} lines).")
+    print(f"\n✅ Wrote {count} clean, de-duplicated channels to {OUTPUT_FILE} ({len(final_output.splitlines())} lines).")
 
 if __name__ == "__main__":
     print(f"🚀 Starting merge process at {datetime.now()}\n")
@@ -129,7 +148,6 @@ if __name__ == "__main__":
             all_channels.extend(parse_playlist(lines, url))
 
     clean_channels = [entry for entry in all_channels if not is_nsfw(*entry)]
-
     removed_count = len(all_channels) - len(clean_channels)
     if removed_count > 0:
         print(f"\n🗑️ Filtered out {removed_count} NSFW channels.")
