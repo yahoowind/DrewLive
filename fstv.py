@@ -126,7 +126,7 @@ MIRRORS = [
     "https://fstv.space/live-tv.html?timezone=America%2FDenver",
 ]
 
-MAX_RETRIES = 2  # number of attempts per channel
+MAX_RETRIES = 2
 
 def normalize_channel_name(name: str) -> str:
     cleaned_name = re.sub(r'[^a-zA-Z0-9]', '', name)
@@ -173,7 +173,6 @@ async def fetch_fstv_channels():
 
                     normalized_name = normalize_channel_name(raw_name)
 
-                    # Apply special CHANNEL_MAPPING
                     mapped_info = {}
                     for channel_data in CHANNEL_MAPPING.values():
                         if any(keyword in normalized_name for keyword in channel_data.get("keywords", [])):
@@ -187,7 +186,6 @@ async def fetch_fstv_channels():
 
                     last_m3u8_url = None
 
-                    # Retry logic per channel
                     for attempt in range(1, MAX_RETRIES + 1):
                         request_captured = asyncio.Event()
 
@@ -211,7 +209,7 @@ async def fetch_fstv_channels():
 
                         try:
                             await asyncio.wait_for(request_captured.wait(), timeout=20.0)
-                            break  # success
+                            break 
                         except asyncio.TimeoutError:
                             print(f"⚠️ Attempt {attempt} failed for {new_name}", flush=True)
                             await asyncio.sleep(random.uniform(1, 2))  # small delay before retry
