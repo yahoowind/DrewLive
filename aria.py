@@ -8,11 +8,10 @@ PLAYLIST_URLS = [
 
 OUTPUT_FILE = "AriaPlus.m3u8"
 
-# Only these groups are allowed
 ALLOWED_GROUPS = [
     "Australia", "Canada", "Japan", "New Zealand",
-    "North Korea", "United Kingdom", "United States", "Aria Web Channels",
-    "South Korea", "Aria+ Exclusive", "Leaving On Aria+"
+    "North Korea", "United Kingdom", "United States",
+    "South Korea", "Leaving On Aria+"
 ]
 
 def fetch_playlist(url):
@@ -26,10 +25,8 @@ def remap_group_title(line):
         match = re.search(r'group-title="([^"]*)"', line)
         original_group = match.group(1) if match else "Unknown"
         if original_group not in ALLOWED_GROUPS:
-            return None  # discard if not in allowed groups
-        # Remove old group-title
+            return None
         line = re.sub(r'\s*group-title="[^"]*"', '', line)
-        # Add new group-title
         parts = line.split(",", 1)
         header = parts[0].strip()
         title = parts[1] if len(parts) > 1 else ""
@@ -51,7 +48,6 @@ def process_playlist(lines):
                 keep_channel = False
         elif line.startswith("http") and keep_channel:
             output_lines.append(line)
-        # ignore other lines
     return output_lines
 
 if __name__ == "__main__":
