@@ -15,6 +15,7 @@ NFL_BASE_URL = "https://nflwebcast.com/"
 NHL_BASE_URL = "https://nhlwebcast.com/200"
 MLB_BASE_URL = "https://mlbwebcast.com/"
 MLS_BASE_URL = "https://mlswebcast.com/"
+NBA_BASE_URL = "https://nbawebcast.com/"
 
 NFL_CHANNEL_URLS = [
     "http://nflwebcast.com/nflnetwork/",
@@ -27,6 +28,7 @@ MLB_CHANNEL_URLS = [
 ]
 NHL_CHANNEL_URLS = []
 MLS_CHANNEL_URLS = []
+NBA_CHANNEL_URLS = []
 
 CHANNEL_METADATA = {
     "nflnetwork": {
@@ -55,6 +57,7 @@ CHANNEL_METADATA = {
         "logo": "https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/fox-sports-1-us.png?raw=true",
     },
 }
+
 
 def normalize_game_name(original_name: str) -> str:
     if "@" in original_name:
@@ -141,7 +144,7 @@ async def scrape_league(
                     clean_name = " ".join(name.split()).replace(" @ ", "@")
                     full_url = urljoin(base_url, href)
                     game_links_info.append({"name": clean_name, "url": full_url})
-            
+
             print(f"  Found {len(game_links_info)} potential live game links.")
 
             for game in game_links_info:
@@ -227,7 +230,15 @@ async def main():
         default_logo="http://drewlive24.duckdns.org:9000/Logos/Football2.png",
     )
 
-    all_streams = nfl_streams + nhl_streams + mlb_streams + mls_streams
+    nba_streams = await scrape_league(
+        base_url=NBA_BASE_URL,
+        channel_urls=NBA_CHANNEL_URLS,
+        group_prefix="NBAWebcast 🏀",
+        default_id="NBA.Basketball.Dummy.us",
+        default_logo="http://drewlive24.duckdns.org:9000/Logos/Basketball5.png",
+    )
+
+    all_streams = nfl_streams + nhl_streams + mlb_streams + mls_streams + nba_streams
     write_playlist(all_streams, OUTPUT_FILE)
 
 
