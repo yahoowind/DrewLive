@@ -14,6 +14,7 @@ OUTPUT_FILE = "SportsWebcast.m3u8"
 NFL_BASE_URL = "https://nflwebcast.com/"
 NHL_BASE_URL = "https://nhlwebcast.com/200"
 MLB_BASE_URL = "https://mlbwebcast.com/"
+MLS_BASE_URL = "https://mlswebcast.com/"
 
 NFL_CHANNEL_URLS = [
     "http://nflwebcast.com/nflnetwork/",
@@ -25,6 +26,7 @@ MLB_CHANNEL_URLS = [
     "https://mlbwebcast.com/fox-sports-live/",
 ]
 NHL_CHANNEL_URLS = []
+MLS_CHANNEL_URLS = []
 
 CHANNEL_METADATA = {
     "nflnetwork": {
@@ -217,7 +219,15 @@ async def main():
         default_logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png",
     )
 
-    all_streams = nfl_streams + nhl_streams + mlb_streams
+    mls_streams = await scrape_league(
+        base_url=MLS_BASE_URL,
+        channel_urls=MLS_CHANNEL_URLS,
+        group_prefix="MLSWebcast ⚽",
+        default_id="MLS.Soccer.Dummy.us",
+        default_logo="http://drewlive24.duckdns.org:9000/Logos/Football2.png",
+    )
+
+    all_streams = nfl_streams + nhl_streams + mlb_streams + mls_streams
     write_playlist(all_streams, OUTPUT_FILE)
 
 
