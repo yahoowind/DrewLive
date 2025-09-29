@@ -6794,11 +6794,16 @@ https://live.webcastserver.online/hdstream/embed/3.m3u8
 https://live.webcastserver.online/hdstream/embed/55.m3u8
 
 #EXTGRP:NFLWebcast 🏈 - Live Games
-#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Packers @ Cowboys" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Maxx.png" group-title="NFLWebcast 🏈 - Live Games",Packers @ Cowboys
+#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Bengals @ Broncos" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Maxx.png" group-title="NFLWebcast 🏈 - Live Games",Bengals @ Broncos
 #EXTVLCOPT:http-referrer=https://nflwebcast.com/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0
 #EXTVLCOPT:http-origin=https://nflwebcast.com/
-https://live.webcastserver.online/hdstream/embed/99.m3u8
+https://live.webcastserver.online/hdstream/embed/92.m3u8
+#EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Jets @ Dolphins" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Maxx.png" group-title="NFLWebcast 🏈 - Live Games",Jets @ Dolphins
+#EXTVLCOPT:http-referrer=https://nflwebcast.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0
+#EXTVLCOPT:http-origin=https://nflwebcast.com/
+https://live.webcastserver.online/hdstream/embed/100.m3u8
 
 #EXTGRP:NHLWebcast 🏒 - Live Games
 #EXTINF:-1 tvg-id="NHL.Hockey.Dummy.us" tvg-name="Blackhawks @ Wild" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Hockey.png" group-title="NHLWebcast 🏒 - Live Games",Blackhawks @ Wild
@@ -10326,7 +10331,7 @@ https://gg.poocloud.in/seriea_parma/index.m3u8
 https://gg.poocloud.in/laliga_valencia-cf/index.m3u8
 
 #EXTGRP:PPVLand - Live Channels 24/7
-#EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="https://thumbs.poocloud.in/familyguy/preview.jpg" group-title="PPVLand - Live Channels 24/7",24/7 Family​‌​​​​​​‌‌‌​‌‌​​‌‌​​‌​​‌​​‌​​‌‌​ Guy
+#EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="https://thumbs.poocloud.in/familyguy/preview.jpg" group-title="PPVLand - Live Channels 24/7",24/7 Family​‌​​​‌​​‌‌​‌‌‌​​​​‌‌‌​‌​​​​​​​‌​ Guy
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
@@ -10335,12 +10340,12 @@ https://gg.poocloud.in/familyguy/tracks-v1a1/mono.ts.m3u8
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://gg.poocloud.in/southpark/tracks-v1a1/mono.ts.m3u8
+https://gg.poocloud.in/southpark/index.m3u8
 #EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-logo="https://thumbs.poocloud.in/thesimpsons/preview.jpg" group-title="PPVLand - Live Channels 24/7",24/7 The Simpsons
 #EXTVLCOPT:http-origin=https://ppv.to
 #EXTVLCOPT:http-referrer=https://ppv.to/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://gg.poocloud.in/thesimpsons/index.m3u8
+https://gg.poocloud.in/thesimpsons/tracks-v1a1/mono.ts.m3u8
 
 #EXTGRP:RokuTV
 #EXTINF:-1  tvg-name="ABC7 Sarasota" tvg-id="50b18dea9c5c51568c1343fcd3d88ec9" tvg-logo="https://images.sr.roku.com/idType/roku/context/trc/id/50b18dea9c5c51568c1343fcd3d88ec9/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1746557592232_WWSB_EPG_Hud_LogoWWSB_HUD_logo_260x147_Centered.png" tvg-chno="4162" group-title="RokuTV",ABC7 Sarasota
