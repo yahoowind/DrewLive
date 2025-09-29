@@ -87,14 +87,24 @@ def is_nsfw(extinf, headers, url):
 def write_merged_playlist(all_channels):
     lines = [f'#EXTM3U url-tvg="{EPG_URL}"', ""]
     sortable_channels = []
+    seen = set()  # track unique channels
+    duplicates_skipped = 0
 
     for extinf, headers, url in all_channels:
         group_match = re.search(r'group-title="([^"]+)"', extinf)
         group = group_match.group(1) if group_match else "Other"
+
         try:
             title = extinf.rsplit(',', 1)[1].strip()
         except IndexError:
             title = ""
+
+        fingerprint = (group.lower(), url)
+        if fingerprint in seen:
+            duplicates_skipped += 1
+            continue
+        seen.add(fingerprint)
+
         sortable_channels.append((group.lower(), title.lower(), extinf, headers, url))
 
     sorted_channels = sorted(sortable_channels)
@@ -126,7 +136,8 @@ def write_merged_playlist(all_channels):
         f.write(final_output_string)
 
     print(f"\n✅ Merged playlist written to {OUTPUT_FILE}.")
-    print(f"📊 Total clean channels merged (including duplicates): {total_channels_written}.")
+    print(f"📊 Total unique channels merged: {total_channels_written}.")
+    print(f"🗑️ Duplicates skipped: {duplicates_skipped}.")
     print(f"📝 Total lines in output file: {len(final_output_string.splitlines())}.")
 
 if __name__ == "__main__":
