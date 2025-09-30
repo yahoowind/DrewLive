@@ -49,16 +49,16 @@ Stay synced with live guide data for your players. Pick the one that fits your n
 🔗 Merged EPG (Full Source)  
 ✔️ Full EPG data from all sources  
 ⚠️ Missing some world/regional info  
-• [http://drewlive24.duckdns.org:8081/merged_epg.xml.gz](http://drewlive24.duckdns.org:8081/merged_epg.xml.gz)  
+• [http://drewlive24.duckdns.org:8081/merged_epg.xml.gz](http://drewlive24.duckdns.org:8081/DrewLive.xml.gz)  
 
 🔗 Merged EPG (No IPTV Crashes)  
 ✔️ Smooth on most players  
 ⚠️ May lack some local USA EPG  
-• [http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz](http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz)  
+• [http://drewlive24.duckdns.org:8081/merged2_epg.xml.gz](http://drewlive24.duckdns.org:8081/DrewLive2.xml.gz)  
 
 🔗 All Source EPG  
 ✔️ Most comprehensive option available  
-• [http://drewlive24.duckdns.org:8081/merged3_epg.xml.gz](http://drewlive24.duckdns.org:8081/merged3_epg.xml.gz)
+• [http://drewlive24.duckdns.org:8081/merged3_epg.xml.gz](http://drewlive24.duckdns.org:8081/DrewLive3.xml.gz)
 
 ━━━━━━━━━━━━━━━━━━
 
