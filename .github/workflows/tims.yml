@@ -1,7 +1,7 @@
-name: 🎯 Update Tims247 Playlist
+name: 🎯 Update Tims Playlist
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: 
   schedule:             
     - cron: "0 * * * *"   
 
@@ -27,7 +27,8 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          # Adds the specific output file from your script (playlist.m3u8)
+          # Sync with remote changes before pushing
+          git pull
           git add Tims247.m3u8
           git commit -m "🔄 Update Tims247.m3u8" || echo "ℹ️ No changes to commit"
           git push
