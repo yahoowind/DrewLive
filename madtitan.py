@@ -5,8 +5,7 @@ import re
 json_urls = [
     "https://magnetic.website/MAD_TITAN_SPORTS/TOOLS/METAL/luc-247.json",
     "https://magnetic.website/MAD_TITAN_SPORTS/TOOLS/METAL/ky-247.json",
-    "https://magnetic.website/MAD_TITAN_SPORTS/TOOLS/METAL/sps-247.json",
-    "https://magnetic.website/MAD_TITAN_SPORTS/LIVETV/playlist.json"
+    "https://magnetic.website/MAD_TITAN_SPORTS/TOOLS/METAL/sps-247.json"
 ]
 
 special_json_url = "https://magnetic.website/MAD_TITAN_SPORTS/LIVETV/playlist.json"
