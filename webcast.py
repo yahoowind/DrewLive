@@ -12,7 +12,7 @@ STREAM_PATTERN = re.compile(r"\.m3u8($|\?)", re.IGNORECASE)
 OUTPUT_FILE = "SportsWebcast.m3u8"
 
 NFL_BASE_URL = "https://nflwebcast.com/"
-NHL_BASE_URL = "https://nhlwebcast.com/200"
+NHL_BASE_URL = "https://nhlwebcast.com/"
 MLB_BASE_URL = "https://mlbwebcast.com/"
 MLS_BASE_URL = "https://mlswebcast.com/"
 NBA_BASE_URL = "https://nbawebcast.com/"
