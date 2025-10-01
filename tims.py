@@ -10,7 +10,7 @@ FETCH_URL = "https://cr6rabe9r4sterowutru5o9o5hepiva2r.ruseneslt0xadlcrahithot2d
 SECRET_KEY = "SwlD#yekl1rexoswaprO7UTUsTlML4emifutR8s3o"
 
 # Mirror sites for fallback and referer checking
-MIRRORS = ["https://timstreams.xyz/", "https://timstreams.cfd/"]
+MIRRORS = ["https://timstreams.cfd/", "https://timstreams.xyz/"]
 BASE_URL = MIRRORS[0] # Use the first mirror for general API calls
 
 # Headers to mimic a browser
