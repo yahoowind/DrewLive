@@ -44,7 +44,7 @@ Updated automatically to keep your playlist fresh and safe.
 ━━━━━━━━━━━━━━━━━━
 
 📂 MAD TITAN KODI ADD-ON (CONVERTED TO M3U8)
-Packed with plenty of 24/7 streams — cartoons, anime, movies, and more. Originally a Kodi add-on, now fully converted into an M3U8 playlist for seamless playback on any IPTV or media player.
+Packed with plenty of 24/7 streams cartoons, anime, movies, and more. Originally a Kodi add-on, now fully converted into an M3U8 playlist for seamless playback on any IPTV or media player.
 
 • [https://tinyurl.com/MadTitan24](https://tinyurl.com/MadTitan24)
 
