@@ -2,27 +2,21 @@ import requests
 import json
 import base64
 from urllib.parse import urljoin
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
 
-# --- Configuration ---
-# API endpoints and keys from the site's code
 API_URL = "https://timgfdscfghnjmhbgfrfcredcedeerrffrrfrf.jdx3.org/main"
 FETCH_URL = "https://cr6rabe9r4sterowutru5o9o5hepiva2r.ruseneslt0xadlcrahithot2dlcum4j3f.jdx3.org/fetch"
 SECRET_KEY = "SwlD#yekl1rexoswaprO7UTUsTlML4emifutR8s3o"
 
-# Mirror sites for fallback and referer checking
 MIRRORS = ["https://timstreams.cfd/", "https://timstreams.xyz/"]
-BASE_URL = MIRRORS[0] # Use the first mirror for general API calls
+BASE_URL = MIRRORS[0]
 
-# Headers to mimic a browser
 HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0'
 }
 
 OUTPUT_FILENAME = "Tims247.m3u8"
-
-# Import decryption libraries
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import unpad
 
 def verify_link(session, url):
     """
@@ -31,25 +25,26 @@ def verify_link(session, url):
     """
     for mirror in MIRRORS:
         try:
-            # Temporarily set headers for this specific check
             check_headers = session.headers.copy()
             check_headers['Referer'] = mirror
             check_headers['Origin'] = mirror.strip('/')
             
             with session.head(url, headers=check_headers, timeout=5, allow_redirects=True) as response:
                 if response.status_code == 200:
-                    return mirror # Return the mirror that worked
+                    return mirror
         except requests.RequestException:
-            continue # If an error occurs, just try the next mirror
+            continue
     return None
 
 def get_final_m3u8(session, stream_url):
     """
-    Takes a stream source URL, decrypts it, and verifies it's online using the mirror list.
+    Takes a stream source URL, decrypts it, and verifies it's online.
     Returns a tuple of (final_url, working_mirror) if successful.
     """
     final_url = None
-    if 'kleanpro.cfd/embed/' in stream_url:
+
+    if 'thegraveplayer.win/embed/' in stream_url or 'kleanpro.cfd/embed/' in stream_url:
+        print(f"    [*] Found encrypted embed, attempting to decrypt...")
         try:
             stream_id = stream_url.split('/')[-1].strip()
             if not stream_id: return None, None
@@ -66,17 +61,19 @@ def get_final_m3u8(session, stream_url):
             final_url = unpad(decrypted_padded, AES.block_size).decode('utf-8').strip()
 
         except Exception as e:
-            print(f"   ❌ Decryption failed for {stream_url}: {e}")
+            print(f"    ❌ Decryption failed for {stream_url}: {e}")
             return None, None
     else:
         final_url = stream_url
 
-    # Verify the link and get the working mirror
+    if not final_url:
+        return None, None
+        
     working_mirror = verify_link(session, final_url)
     if working_mirror:
         return final_url, working_mirror
     else:
-        print(f"   ❌ Verification failed (dead link): {final_url}")
+        print(f"    ❌ Verification failed (dead link): {final_url}")
         return None, None
 
 def generate_m3u():
@@ -85,7 +82,6 @@ def generate_m3u():
     
     with requests.Session() as session:
         session.headers.update(HEADERS)
-        # Set a default Referer/Origin for the main API calls
         session.headers['Referer'] = BASE_URL
         session.headers['Origin'] = BASE_URL.strip('/')
         
@@ -122,16 +118,11 @@ def generate_m3u():
                     if final_m3u8 and working_mirror:
                         found_stream = True
                         
-                        # Adjust stream name based on number of sources
-                        if len(stream_sources) > 1:
-                            stream_name = f"{event_name} - Source {i + 1}"
-                        else:
-                            stream_name = event_name
+                        stream_name = f"{event_name} - Source {i + 1}" if len(stream_sources) > 1 else event_name
                         
-                        print(f"   ✅ Success: Got stream for '{stream_name}'")
-                        print(f"      -> {final_m3u8}")
+                        print(f"    ✅ Success: Got stream for '{stream_name}'")
+                        print(f"        -> {final_m3u8}")
                         
-                        # --- MODIFICATION: Set group-title and revert tvg-id ---
                         group_title_formatted = f"Tims247 - {category_name}"
                         
                         extinf_line = f'#EXTINF:-1 tvg-id="24.7.Dummy.us" tvg-name="{stream_name}" tvg-logo="{logo_url}" group-title="{group_title_formatted}",{stream_name}'
@@ -143,7 +134,7 @@ def generate_m3u():
                         m3u_content.append(final_m3u8)
 
                 if not found_stream:
-                    print(f"   ❌ Failed to get any valid streams for '{event_name}'")
+                    print(f"    ❌ Failed to get any valid streams for '{event_name}'")
 
     try:
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
