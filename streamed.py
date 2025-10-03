@@ -21,7 +21,8 @@ TV_IDS = {
     "American Football": "NFL.Dummy.us",
     "Afl": "AUS.Rules.Football.Dummy.us",
     "Football": "Soccer.Dummy.us",
-    "Basketball": "Basketball.Dummy.us"
+    "Basketball": "Basketball.Dummy.us",
+    "Hockey": "NHL.Hockey.Dummy.us"
 }
 
 def get_all_matches():
