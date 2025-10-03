@@ -6,6 +6,7 @@ from xml.etree import ElementTree as ET
 from io import BytesIO
 from urllib.parse import urlparse
 
+# === CONFIG ===
 epg_sources = [
     "https://raw.githubusercontent.com/matthuisman/i.mjh.nz/refs/heads/master/Plex/all.xml",
     "https://raw.githubusercontent.com/matthuisman/i.mjh.nz/refs/heads/master/PlutoTV/all.xml",
@@ -22,6 +23,7 @@ epg_sources = [
 playlist_url = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/MergedPlaylist.m3u8"
 output_filename = "DrewLive.xml.gz"
 
+# === HEADERS ===
 BASE_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -51,9 +53,10 @@ session.headers.update(BASE_HEADERS)
 session.max_redirects = 5
 
 
+# === FETCH TVG IDs ===
 def fetch_tvg_ids_from_playlist(url):
     try:
-        r = session.get(url, timeout=30)
+        r = session.get(url.strip(), timeout=30)
         r.raise_for_status()
         ids = set(re.findall(r'tvg-id="([^"]+)"', r.text))
         print(f"✅ Loaded {len(ids)} tvg-ids from playlist")
@@ -63,11 +66,12 @@ def fetch_tvg_ids_from_playlist(url):
         return set()
 
 
+# === FETCH URL WITH RETRIES ===
 def fetch_with_retry(url, retries=5, initial_delay=3, timeout=30):
-    """Fetch URL with retries and exponential backoff. For freejptv, send extra headers."""
+    """Fetch URL with retries and exponential backoff. Uses FreeJPTV headers if needed."""
+    url = url.strip().rstrip(":")  # remove whitespace & trailing colon
     parsed = urlparse(url)
     headers = BASE_HEADERS.copy()
-
     if parsed.hostname and "freejptv.com" in parsed.hostname:
         headers = FREEJP_HEADERS
 
@@ -83,13 +87,12 @@ def fetch_with_retry(url, retries=5, initial_delay=3, timeout=30):
             print(f"⚠️ Attempt {attempt} failed for {url}: {he} (status={status})")
         except Exception as e:
             print(f"⚠️ Attempt {attempt} failed for {url}: {e}")
-        sleep_time = initial_delay * (2 ** (attempt - 1))
-        if sleep_time > 60:
-            sleep_time = 60
+        sleep_time = min(initial_delay * (2 ** (attempt - 1)), 60)
         time.sleep(sleep_time)
     return None
 
 
+# === PARSE EPG XML STREAM ===
 def stream_parse_epg(file_obj, valid_tvg_ids, root):
     kept_channels = 0
     total_items = 0
@@ -98,7 +101,7 @@ def stream_parse_epg(file_obj, valid_tvg_ids, root):
         for child in tree.getroot():
             tag = child.tag
             if "}" in tag:
-                tag = tag.split("}", 1)[1]
+                tag = tag.split("}", 1)[1]  # strip namespace
             if tag in ("channel", "programme", "program"):
                 total_items += 1
                 tvg_id = child.get("id") or child.get("channel")
@@ -110,15 +113,17 @@ def stream_parse_epg(file_obj, valid_tvg_ids, root):
     return total_items, kept_channels
 
 
+# === MERGE & FILTER ===
 def merge_and_filter_epg(epg_sources, playlist_url, output_file):
     valid_tvg_ids = fetch_tvg_ids_from_playlist(playlist_url)
     if not valid_tvg_ids:
-        print("⚠️ No tvg-ids loaded; proceeding but result will be empty.")
+        print("⚠️ No tvg-ids loaded; result will be empty.")
     root = ET.Element("tv")
     cumulative_kept = 0
     cumulative_total = 0
 
     for url in epg_sources:
+        url = url.strip().rstrip(":")  # sanitize URL
         print(f"\n🌐 Processing: {url}")
         resp = fetch_with_retry(url, retries=5, initial_delay=3, timeout=60)
         if not resp:
