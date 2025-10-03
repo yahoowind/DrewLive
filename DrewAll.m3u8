@@ -73,6 +73,8 @@ http://1tv41.icu:8080/5ZCJFs/416986/66077
 https://watch.chiptune.fm/hls/0/stream.m3u8?cachebust=a0a999
 #EXTINF:-1  tvg-name="Cannabis Grow" tvg-id="24.7.Dummy.us" tvg-logo="https://grow.dwot.io/logo" group-title="DrewLive Fan Made TV" radio="false",Cannabis Grow
 https://grow.dwot.io/hls/1/stream.m3u8?cachebust=7ad5acb5
+#EXTINF:-1  tvg-name="Classic Cube" tvg-id="24.7.Dummy.us" tvg-logo="https://owncast.funcube.space/logo" group-title="DrewLive Fan Made TV" radio="false",Classic Cube
+https://sfo3.digitaloceanspaces.com/s3cube/hls/2/stream.m3u8?cachebust=b4854a
 #EXTINF:-1  tvg-name="Drew Live" tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Trunks.png" group-title="DrewLive Fan Made TV" radio="false",Drew Live
 http://drewlive24.duckdns.org:8080/hls/stream.m3u8
 #EXTINF:-1  tvg-name="EEL TV" tvg-id="24.7.Dummy.us" tvg-logo="https://www.webchnl.live/assets/img/channelicons/eel_ch.png" group-title="DrewLive Fan Made TV" radio="false",EEL TV
