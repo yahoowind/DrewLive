@@ -26,7 +26,7 @@ LOCKED_GROUPS = {
         "tvg-id": "NCAA.Football.Dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/CFB2.png"
     },
-    "nba": { 
+    "nba": {  # Added NBA
         "tvg-id": "NBA.Basketball.Dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png"
     }
