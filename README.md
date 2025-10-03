@@ -30,13 +30,9 @@ It’s perfect for people who want neat, playlists with clickable streams and ni
 
 ✨ CLEAN IPTV PLAYLIST  
 This is the clean version of the merged IPTV playlist created by the merge script.
-
 All channels tagged or containing keywords like NSFW, XXX, or Porn have been filtered out.
-
 Suitable for kids and family-friendly viewing.
-
 Organized by channel groups for easy navigation.
-
 Updated automatically to keep your playlist fresh and safe.
 
 • [https://tinyurl.com/MergedClean24](https://tinyurl.com/MergedClean24)  
@@ -53,18 +49,8 @@ Packed with plenty of 24/7 streams cartoons, anime, movies, and more. Originally
 Stay synced with live guide data for your players. Pick the one that fits your needs:  
 
 🔗 Merged EPG (Full Source)  
-✔️ Full EPG data from all sources  
-⚠️ Missing some world/regional info  
+✔️ Full EPG data from all sources    
 • [http://drewlive24.duckdns.org:8081/DrewLive.xml.gz](http://drewlive24.duckdns.org:8081/DrewLive.xml.gz)  
-
-🔗 Merged EPG (No IPTV Crashes)  
-✔️ Smooth on most players  
-⚠️ May lack some local USA EPG  
-• [http://drewlive24.duckdns.org:8081/DrewLive2.xml.gz](http://drewlive24.duckdns.org:8081/DrewLive2.xml.gz)  
-
-🔗 All Source EPG  
-✔️ Most comprehensive option available  
-• [http://drewlive24.duckdns.org:8081/DrewLive3.xml.gz](http://drewlive24.duckdns.org:8081/DrewLive3.xml.gz)
 
 ━━━━━━━━━━━━━━━━━━
 
