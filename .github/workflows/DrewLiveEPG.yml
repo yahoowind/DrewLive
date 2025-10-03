@@ -1,8 +1,8 @@
 name: 🎯 Update DrewLive EPG
 
 on:
-  workflow_dispatch: 
-  schedule:    
+  workflow_dispatch:  
+  schedule:           
     - cron: "0 */6 * * *"
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
       - name: 📥 Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 
 
       - name: 🐍 Set up Python
         uses: actions/setup-python@v5
@@ -36,7 +36,7 @@ jobs:
           git push origin main
 
       - name: 📦 Upload EPG artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: DrewLive-EPG
           path: DrewLive.xml.gz
