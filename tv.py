@@ -25,6 +25,7 @@ SPORTS_METADATA = {
     "PPV": {"tvg-id": "PPV.EVENTS.Dummy.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/PPV.png"},
     "NFL": {"tvg-id": "NFL.Dummy.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/NFL.png"},
     "NCAAF": {"tvg-id": "NCAA.Football.Dummy.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/CFB.png"},
+    "NBA": {"tvg-id": "NBA.Basketball.Dummy.us", "logo": "http://drewlive24.duckdns.org:9000/Logos/NBA.png"}
 }
 
 def extract_real_m3u8(url: str):
