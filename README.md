@@ -45,7 +45,8 @@ Packed with plenty of 24/7 streams cartoons, anime, movies, and more. Originally
 • [https://tinyurl.com/MadTitan24](https://tinyurl.com/MadTitan24)
 
 ━━━━━━━━━━━━━━━━━━
-🗓️ EPG LINKS  
+
+🗓️ EPG Info  
 Stay synced with live guide data for your players. Pick the one that fits your needs:  
 
 🔗 Merged EPG (Full Source)  
@@ -54,11 +55,11 @@ Stay synced with live guide data for your players. Pick the one that fits your n
 
 ━━━━━━━━━━━━━━━━━━
 
-📡 HOW TO USE EPG LINKS  
+📡 HOW TO USE EPG LINK  
 1. Go into your IPTV player's guide settings  
-2. Paste in one of the EPG URLs above  
+2. Paste in one of the EPG URL above  
 3. Save and refresh guide data  
-4. Done — full channel listings ready to go  
+4. Done full channel listings ready to go  
 
 ⚠️ Pro tip: Some apps need a restart for EPG to fully load  
 
