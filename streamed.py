@@ -25,17 +25,17 @@ TV_IDS = {
     "Hockey": "NHL.Hockey.Dummy.us"
 }
 
-def get_all_matches():
-    url = "https://streamed.pk/api/matches/all"
+def get_matches(endpoint="all"):
+    url = f"https://streamed.pk/api/matches/{endpoint}"
     try:
-        print("📡 Fetching all matches from the API...")
+        print(f"📡 Fetching {endpoint} matches from the API...")
         response = requests.get(url, timeout=20)
         response.raise_for_status()
-        print("✅ Successfully fetched match list.")
+        print(f"✅ Successfully fetched {endpoint} matches.")
         return response.json()
     except requests.exceptions.RequestException as e:
-        print(f"❌ Error fetching matches: {e}", file=sys.stderr)
-        return None
+        print(f"❌ Error fetching {endpoint} matches: {e}", file=sys.stderr)
+        return []
 
 def get_stream_embed_url(source):
     try:
@@ -124,7 +124,10 @@ def process_match(match):
     return match, None
 
 def generate_m3u8():
-    matches = get_all_matches()
+    all_matches = get_matches("all")
+    live_matches = get_matches("live")
+    matches = all_matches + live_matches  # merge both
+
     if not matches:
         return "#EXTM3U\n#EXTINF:-1,No Matches Found\n"
 
