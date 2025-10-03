@@ -47,7 +47,7 @@ Packed with plenty of 24/7 streams cartoons, anime, movies, and more. Originally
 ━━━━━━━━━━━━━━━━━━
 
 🗓️ EPG Info  
-Stay synced with live guide data for your players. Pick the one that fits your needs:  
+Stay synced with live guide data for your players. 
 
 🔗 Merged EPG (Full Source)  
 ✔️ Full EPG data from all sources    
