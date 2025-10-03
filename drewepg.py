@@ -12,7 +12,7 @@ epg_sources = [
     "https://raw.githubusercontent.com/BuddyChewChew/localnow-playlist-generator/refs/heads/main/epg.xml",
     "https://tvpass.org/epg.xml",
     "https://animenosekai.github.io/japanterebi-xmltv/guide.xml",
-    "https://epg.freejptv.com/jp.xml",
+    "https://raw.githubusercontent.com/luongz/iptv-jp/refs/heads/main/.xmltv_id",
     "https://raw.githubusercontent.com/matthuisman/i.mjh.nz/refs/heads/master/Roku/all.xml",
     "https://raw.githubusercontent.com/BuddyChewChew/xumo-playlist-generator/main/playlists/xumo_epg.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
