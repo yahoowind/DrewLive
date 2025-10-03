@@ -1,4 +1,3 @@
-import os
 import gzip
 import re
 import requests
@@ -16,16 +15,19 @@ epg_sources = [
     "https://epg.freejptv.com/jp.xml",
     "https://raw.githubusercontent.com/matthuisman/i.mjh.nz/refs/heads/master/Roku/all.xml",
     "https://raw.githubusercontent.com/BuddyChewChew/xumo-playlist-generator/main/playlists/xumo_epg.xml.gz",
-    "https://epgshare01.online/epgshare01/epg_ripper_IT1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
 ]
 
 playlist_url = "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/MergedPlaylist.m3u8"
-output_filename = r"C:\Users\andre\www\DrewLive.xml.gz"
+
+output_filename = "DrewLive.xml.gz"
 
 def fetch_tvg_ids_from_playlist(url):
     try:
-        r = requests.get(url, timeout=30)
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                                 "AppleWebKit/537.36 (KHTML, like Gecko) "
+                                 "Chrome/140.0.0.0 Safari/537.36"}
+        r = requests.get(url, headers=headers, timeout=30)
         r.raise_for_status()
         ids = set(re.findall(r'tvg-id="([^"]+)"', r.text))
         print(f"✅ Loaded {len(ids)} tvg-ids from playlist")
@@ -35,9 +37,12 @@ def fetch_tvg_ids_from_playlist(url):
         return set()
 
 def fetch_with_retry(url, retries=3, delay=10, timeout=30):
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                             "AppleWebKit/537.36 (KHTML, like Gecko) "
+                             "Chrome/140.0.0.0 Safari/537.36"}
     for attempt in range(1, retries + 1):
         try:
-            r = requests.get(url, timeout=timeout)
+            r = requests.get(url, headers=headers, timeout=timeout)
             r.raise_for_status()
             return r
         except Exception as e:
@@ -52,7 +57,7 @@ def stream_parse_epg(file_obj, valid_tvg_ids, root):
     try:
         tree = ET.parse(file_obj)
         for child in tree.getroot():
-            if child.tag == 'channel' or child.tag == 'programme':
+            if child.tag in ('channel', 'programme'):
                 total_items += 1
                 tvg_id = child.get('id') or child.get('channel')
                 if tvg_id in valid_tvg_ids:
@@ -74,9 +79,15 @@ def merge_and_filter_epg(epg_sources, playlist_url, output_file):
         if not resp:
             print(f"❌ Failed to fetch {url}")
             continue
+
         content = resp.content
-        if url.endswith(".gz"):
-            content = gzip.decompress(content)
+        if url.endswith(".gz") or content[:2] == b'\x1f\x8b':
+            try:
+                content = gzip.decompress(content)
+            except Exception as e:
+                print(f"⚠️ Failed to decompress {url}: {e}")
+                continue
+
         total, kept = stream_parse_epg(BytesIO(content), valid_tvg_ids, root)
         cumulative_total += total
         cumulative_kept += kept
