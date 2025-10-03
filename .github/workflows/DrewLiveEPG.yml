@@ -1,8 +1,8 @@
 name: 🎯 Update DrewLive EPG
 
 on:
-  workflow_dispatch:   # Manual trigger
-  schedule:           # Scheduled trigger — every 6 hours
+  workflow_dispatch:
+  schedule:           
     - cron: "0 */6 * * *"
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
       - name: 📦 Install dependencies
         run: pip install requests
 
-      - name: 🛠 Run merge_epg.py Script
+      - name: 🛠 Run drewepg.py Script
         run: python drewepg.py
 
       - name: 💾 Commit & Push changes
