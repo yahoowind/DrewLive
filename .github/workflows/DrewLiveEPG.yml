@@ -1,0 +1,33 @@
+name: 🎯 Update DrewLive EPG
+
+on:
+  workflow_dispatch:   # Manual trigger
+  schedule:           # Scheduled trigger — every 6 hours
+    - cron: "0 */6 * * *"
+
+jobs:
+  update_epg:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: 📦 Install dependencies
+        run: pip install requests
+
+      - name: 🛠 Run merge_epg.py Script
+        run: python drewepg.py
+
+      - name: 💾 Commit & Push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add DrewLive.xml.gz
+          git commit -m "🔄 Update DrewLive EPG" || echo "ℹ️ No changes to commit"
+          git push
