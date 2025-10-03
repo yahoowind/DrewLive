@@ -20,13 +20,19 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: 📦 Install dependencies
-        run: pip install requests
+      - name: 📦 Install dependencies & Playwright
+        run: |
+          pip install --upgrade pip
+          pip install requests playwright
+          playwright install firefox
+          playwright install-deps
 
       - name: 🛠 Run drewepg.py Script
         run: python drewepg.py
 
       - name: 💾 Commit & Push changes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
