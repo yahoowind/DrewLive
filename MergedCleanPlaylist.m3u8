@@ -2757,6 +2757,8 @@ http://api.toonamiaftermath.com:3000/est/playlist.m3u8
 http://api.toonamiaftermath.com:3000/movies/playlist.m3u8
 #EXTINF:-1  tvg-name="Toonami Aftermath West" tvg-id="24.7.Dummy.us" tvg-logo="https://raw.githubusercontent.com/kbmystery7/TAM3U8/main/ta%20wall%20thumb%20west.jpg" group-title="DrewLive Fan Made TV" radio="false",Toonami Aftermath West
 http://api.toonamiaftermath.com:3000/pst/playlist.m3u8
+#EXTINF:-1  tvg-name="Unusual Art" tvg-id="24.7.Dummy.us" tvg-logo="https://stream.unusualart.net/logo" group-title="DrewLive Fan Made TV" radio="false",Unusual Art
+https://stream.unusualart.net/hls/0/stream.m3u8?cachebust=a4240d
 #EXTINF:-1  tvg-name="WeedTUX" tvg-id="24.7.Dummy.us" tvg-logo="https://stream.tuxnet.me/logo" group-title="DrewLive Fan Made TV" radio="false",WeedTUX
 https://sfo3.digitaloceanspaces.com/wiitux-s3/hls/0/stream.m3u8?cachebust=bed568
 #EXTINF:-1  tvg-name="Whiplash" tvg-id="24.7.Dummy.us" tvg-logo="https://www.webchnl.live/assets/img/channelicons/whiplash.png" group-title="DrewLive Fan Made TV" radio="false",Whiplash
