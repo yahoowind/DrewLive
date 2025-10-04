@@ -15,7 +15,7 @@ NFL_BASE_URL = "https://nflwebcast.com/"
 NHL_BASE_URL = "https://nhlwebcast.com/"
 MLB_BASE_URL = "https://mlbwebcast.com/"
 MLS_BASE_URL = "https://mlswebcast.com/"
-NBA_BASE_URL = "https://nbawebcast.com/"
+NBA_BASE_URL = "https://nbawebcast.top/"
 
 NFL_CHANNEL_URLS = [
     "http://nflwebcast.com/nflnetwork/",
