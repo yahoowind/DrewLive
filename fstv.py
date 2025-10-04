@@ -209,14 +209,14 @@ async def fetch_fstv_channels():
 
                         try:
                             await asyncio.wait_for(request_captured.wait(), timeout=20.0)
-                            break 
+                            break
                         except asyncio.TimeoutError:
                             print(f"⚠️ Attempt {attempt} failed for {new_name}", flush=True)
-                            await asyncio.sleep(random.uniform(1, 2))  # small delay before retry
+                            await asyncio.sleep(random.uniform(1, 2))
                         finally:
                             page.remove_listener("request", handle_request)
 
-                    if last_m3u8_url and last_m3u8_url not in visited_urls:
+                    if last_m3u8_url and last_m3u8_url not in visited_urls and "false" not in last_m3u8_url.lower():
                         channels_data.append({
                             "url": last_m3u8_url,
                             "logo": logo,
@@ -227,7 +227,7 @@ async def fetch_fstv_channels():
                         visited_urls.add(last_m3u8_url)
                         print(f"✅ Added {new_name} → {last_m3u8_url}", flush=True)
                     else:
-                        print(f"❌ Skipping {new_name}: No URL after {MAX_RETRIES} attempts", flush=True)
+                        print(f"❌ Skipping {new_name}: No valid URL after {MAX_RETRIES} attempts", flush=True)
 
                 print(f"🎉 Successfully processed all channels from {url}", flush=True)
                 await browser.close()
@@ -259,7 +259,10 @@ async def main():
     try:
         print("🚀 Starting FSTV scraping...", flush=True)
         channels_data = await fetch_fstv_channels()
+
         if channels_data:
+            channels_data = [ch for ch in channels_data if ch.get("url") and "false" not in ch["url"].lower()]
+
             playlist = build_playlist(channels_data)
             with open("FSTV24.m3u8", "w", encoding="utf-8") as f:
                 f.writelines(playlist)
