@@ -47,7 +47,7 @@ async def scrape_tv_urls():
         page = await context.new_page()
 
         print("🔄 Loading /tv channel list...")
-        await page.goto(CHANNEL_LIST_URL)
+        await page.goto(CHANNEL_LIST_URL, wait_until="networkidle", timeout=60000)
         links = await page.locator("ol.list-group a").all()
         hrefs_and_titles = [(await link.get_attribute("href"), await link.text_content())
                             for link in links if await link.get_attribute("href")]
@@ -69,7 +69,7 @@ async def scrape_tv_urls():
                         stream_url = real
 
                 new_page.on("response", handle_response)
-                await new_page.goto(full_url)
+                await new_page.goto(full_url, wait_until="networkidle", timeout=60000)
 
                 try:
                     await new_page.get_by_text(f"Load {quality} Stream", exact=True).click(timeout=5000)
@@ -93,7 +93,7 @@ async def scrape_section_urls(context, section_path, group_name):
     page = await context.new_page()
     section_url = BASE_URL + section_path
     print(f"\n📁 Loading section: {section_url}")
-    await page.goto(section_url)
+    await page.goto(section_url, wait_until="networkidle", timeout=60000)
     links = await page.locator("ol.list-group a").all()
     hrefs_and_titles = []
 
@@ -120,7 +120,7 @@ async def scrape_section_urls(context, section_path, group_name):
                     stream_url = real
 
             new_page.on("response", handle_response)
-            await new_page.goto(full_url)
+            await new_page.goto(full_url, wait_until="networkidle", timeout=60000)
 
             try:
                 await new_page.get_by_text(f"Load {quality} Stream", exact=True).click(timeout=5000)
