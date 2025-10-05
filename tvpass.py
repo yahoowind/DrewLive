@@ -29,10 +29,6 @@ LOCKED_GROUPS = {
     "nba": {  
         "tvg-id": "NBA.Basketball.Dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png"
-    },
-    "wnba": {  
-        "tvg-id": "WNBA.dummy.us",
-        "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/WNBA.png"
     }
 }
 
@@ -66,6 +62,24 @@ def is_event_outdated(title):
         return event_date < today
     return False
 
+def extract_title(extinf_line):
+    return extinf_line.split(",")[-1].strip().lower()
+
+def extract_group(extinf_line):
+    if 'group-title="' in extinf_line:
+        return extinf_line.split('group-title="')[1].split('"')[0].strip()
+    return ""
+
+def lock_metadata(meta_line, title):
+    original_group = extract_group(meta_line)
+    group_key = original_group.lower()
+    if group_key in LOCKED_GROUPS:
+        locked = LOCKED_GROUPS[group_key]
+        display_group = f"TVPass - {group_key.upper()}"
+        title_cased = title.title()
+        return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title_cased}" tvg-logo="{locked["tvg-logo"]}" group-title="{display_group}",{title_cased}'
+    return meta_line
+
 def fetch_upstream_pairs():
     res = requests.get(UPSTREAM_URL, timeout=15)
     res.raise_for_status()
@@ -75,11 +89,13 @@ def fetch_upstream_pairs():
     while i < len(lines):
         if lines[i].startswith("#EXTINF"):
             meta = lines[i].strip()
+            group = extract_group(meta).lower()
             i += 1
             if i < len(lines):
                 url = lines[i].strip()
                 title = extract_title(meta)
-                if not is_event_outdated(title):
+                # Skip Live group
+                if group != "live" and not is_event_outdated(title):
                     pairs.append((meta, url))
         i += 1
     return pairs
@@ -94,32 +110,16 @@ def parse_local_playlist():
     while i < len(lines):
         if lines[i].startswith("#EXTINF"):
             meta = lines[i].strip()
+            group = extract_group(meta).lower()
             i += 1
             if i < len(lines):
                 url = lines[i].strip()
                 title = extract_title(meta)
-                if not is_event_outdated(title):
+                # Skip Live group
+                if group != "live" and not is_event_outdated(title):
                     pairs.append((meta, url))
         i += 1
     return header, pairs
-
-def extract_title(extinf_line):
-    return extinf_line.split(",")[-1].strip().lower()
-
-def extract_group(extinf_line):
-    if 'group-title="' in extinf_line:
-        return extinf_line.split('group-title="')[1].split('"')[0].strip()
-    return ""
-
-def lock_metadata(meta_line, title):
-    original_group = extract_group(meta_line)
-    group_key = original_group.lower()
-    if group_key in LOCKED_GROUPS:
-        locked = LOCKED_GROUPS[group_key]
-        display_group = f"TVPass - {group_key.upper()}"  # Prefix added
-        title_cased = title.title()
-        return f'#EXTINF:-1 tvg-id="{locked["tvg-id"]}" tvg-name="{title_cased}" tvg-logo="{locked["tvg-logo"]}" group-title="{display_group}",{title_cased}'
-    return meta_line
 
 def update_playlist(local_pairs, upstream_pairs):
     updated = []
