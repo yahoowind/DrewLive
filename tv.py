@@ -3,7 +3,6 @@ import urllib.parse
 from pathlib import Path
 from datetime import datetime
 from playwright.async_api import async_playwright
-from playwright._impl._errors import TimeoutError 
 
 M3U8_FILE = "TheTVApp.m3u8"
 BASE_URL = "https://thetvapp.to"
@@ -48,9 +47,7 @@ async def scrape_tv_urls():
         page = await context.new_page()
 
         print("🔄 Loading /tv channel list...")
-        await page.goto(CHANNEL_LIST_URL, timeout=60000)
-        await page.wait_for_selector("ol.list-group a", timeout=60000)
-
+        await page.goto(CHANNEL_LIST_URL)
         links = await page.locator("ol.list-group a").all()
         hrefs_and_titles = [(await link.get_attribute("href"), await link.text_content())
                             for link in links if await link.get_attribute("href")]
@@ -72,14 +69,14 @@ async def scrape_tv_urls():
                         stream_url = real
 
                 new_page.on("response", handle_response)
-                await new_page.goto(full_url, timeout=60000)
-                await new_page.wait_for_selector(f'text="Load {quality} Stream"', timeout=10000)
+                await new_page.goto(full_url)
 
                 try:
                     await new_page.get_by_text(f"Load {quality} Stream", exact=True).click(timeout=5000)
-                    await asyncio.sleep(4)
                 except:
                     pass
+
+                await asyncio.sleep(4)
                 await new_page.close()
 
                 if stream_url:
@@ -93,28 +90,35 @@ async def scrape_tv_urls():
 
 async def scrape_section_urls(context, section_path, group_name):
     urls = []
-    page = await context.new_page()
     section_url = BASE_URL + section_path
     print(f"\n📁 Loading section: {section_url}")
-    await page.goto(section_url, timeout=60000)
-    
+
     try:
-        await page.wait_for_selector("ol.list-group a", timeout=5000)
-    except TimeoutError:
-        print(f"⚠️ No active events found for {group_name}. Proceeding...")
+        page = await context.new_page()
+        await page.goto(section_url)
+        links = await page.locator("ol.list-group a").all()
+    except:
+        return urls
+
+    if not links:
         await page.close()
-        return [] 
+        return urls
 
-    links = await page.locator("ol.list-group a").all()
     hrefs_and_titles = []
-
     for link in links:
-        href = await link.get_attribute("href")
-        title_raw = await link.text_content()
-        if href and title_raw:
-            title = " - ".join(line.strip() for line in title_raw.splitlines() if line.strip())
-            hrefs_and_titles.append((href, title))
+        try:
+            href = await link.get_attribute("href")
+            title_raw = await link.text_content()
+            if href and title_raw:
+                title = " - ".join(line.strip() for line in title_raw.splitlines() if line.strip())
+                hrefs_and_titles.append((href, title))
+        except:
+            continue
+
     await page.close()
+
+    if not hrefs_and_titles:
+        return urls
 
     for href, title in hrefs_and_titles:
         full_url = BASE_URL + href
@@ -122,7 +126,10 @@ async def scrape_section_urls(context, section_path, group_name):
 
         for quality in ["SD", "HD"]:
             stream_url = None
-            new_page = await context.new_page()
+            try:
+                new_page = await context.new_page()
+            except:
+                continue
 
             async def handle_response(response):
                 nonlocal stream_url
@@ -131,10 +138,8 @@ async def scrape_section_urls(context, section_path, group_name):
                     stream_url = real
 
             new_page.on("response", handle_response)
-            await new_page.goto(full_url, timeout=60000)
-            await new_page.wait_for_selector(f'text="Load {quality} Stream"', timeout=10000)
-
             try:
+                await new_page.goto(full_url)
                 await new_page.get_by_text(f"Load {quality} Stream", exact=True).click(timeout=5000)
                 await asyncio.sleep(4)
             except:
@@ -155,8 +160,12 @@ async def scrape_all_sports_sections():
         context = await browser.new_context()
 
         for section_path, group_name in SECTIONS_TO_APPEND.items():
-            urls = await scrape_section_urls(context, section_path, group_name)
-            all_urls.extend(urls)
+            try:
+                section_urls = await scrape_section_urls(context, section_path, group_name)
+                if section_urls:
+                    all_urls.extend(section_urls)
+            except:
+                continue
 
         await browser.close()
     return all_urls
@@ -198,7 +207,7 @@ def refresh_sports_sections(lines, new_sports_urls):
         if line.startswith("#EXTINF"):
             group = line.split('group-title="')[1].split('"')[0] if 'group-title="' in line else ""
             if group.replace("TheTVApp - ", "") in sports_groups:
-                i += 2 
+                i += 2
                 continue
         cleaned_lines.append(line)
         i += 1
@@ -208,10 +217,14 @@ def refresh_sports_sections(lines, new_sports_urls):
         tvg_id = meta.get("tvg-id", "")
         logo = meta.get("logo", "")
         display_title = title.replace(",", " -")
-        ext = f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{title}" tvg-logo="{logo}" group-title="TheTVApp - {group}",{display_title}' if tvg_id or logo else f'#EXTINF:-1 tvg-name="{title}" group-title="TheTVApp - {group}",{display_title}'
+        ext = (
+            f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{title}" tvg-logo="{logo}" '
+            f'group-title="TheTVApp - {group}",{display_title}'
+            if tvg_id or logo else
+            f'#EXTINF:-1 tvg-name="{title}" group-title="TheTVApp - {group}",{display_title}'
+        )
         cleaned_lines.append(ext)
         cleaned_lines.append(url)
-
     return cleaned_lines
 
 async def main():
