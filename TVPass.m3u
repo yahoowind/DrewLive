@@ -712,7 +712,7 @@ https://tvpass.org/live/AEEast/sd
 #EXTINF:-1 tvg-id="abc-kabc-los-angeles-ca" tvg-name="ABC (KABC) Los Angeles" group-title="Live",ABC (KABC) Los Angeles
 https://tvpass.org/live/abc-kabc-los-angeles-ca/sd
 #EXTINF:-1 tvg-id="abc-wabc-new-york-ny" tvg-name="ABC (WABC) New York, NY" group-title="Live",ABC (WABC) New York, NY
-https://tvpass.org/live/WABCDT1/sd
+https://tvpass.org/live/WNET/sd
 #EXTINF:-1 tvg-id="acc-network" tvg-name="ACC Network" group-title="Live",ACC Network
 https://tvpass.org/live/ACCNetwork/sd
 #EXTINF:-1 tvg-id="altitude-sports-denver" tvg-name="Altitude Sports Denver" group-title="Live",Altitude Sports Denver
@@ -748,7 +748,7 @@ https://tvpass.org/live/CartoonNetworkEast/sd
 #EXTINF:-1 tvg-id="cbs-kcbs-los-angeles-ca" tvg-name="CBS (KCBS) Los Angeles" group-title="Live",CBS (KCBS) Los Angeles
 https://tvpass.org/live/cbs-kcbs-los-angeles-ca/sd
 #EXTINF:-1 tvg-id="cbs-wcbs-new-york-ny" tvg-name="CBS (WCBS) New York, NY" group-title="Live",CBS (WCBS) New York, NY
-https://tvpass.org/live/WCBSDT1/sd
+https://tvpass.org/live/WNET/sd
 #EXTINF:-1 tvg-id="cbs-sports-network-usa" tvg-name="CBS Sports Network USA" group-title="Live",CBS Sports Network USA
 https://tvpass.org/live/CBSSportsNetworkUSA/sd
 #EXTINF:-1 tvg-id="chicago-sports-network" tvg-name="Chicago Sports Network" group-title="Live",Chicago Sports Network
@@ -838,7 +838,7 @@ https://tvpass.org/live/FoodNetworkEast/sd
 #EXTINF:-1 tvg-id="fox-kttv-los-angeles-ca" tvg-name="FOX (KTTV) Los Angeles" group-title="Live",FOX (KTTV) Los Angeles
 https://tvpass.org/live/fox-kttv-los-angeles-ca/sd
 #EXTINF:-1 tvg-id="fox-wnyw-new-york-ny" tvg-name="FOX (WNYW) New York, NY" group-title="Live",FOX (WNYW) New York, NY
-https://tvpass.org/live/WNYWDT1/sd
+https://tvpass.org/live/WNET/sd
 #EXTINF:-1 tvg-id="fox-business" tvg-name="Fox Business" group-title="Live",Fox Business
 https://tvpass.org/live/FoxBusiness/sd
 #EXTINF:-1 tvg-id="fox-news" tvg-name="Fox News" group-title="Live",Fox News
@@ -936,7 +936,7 @@ https://tvpass.org/live/NBATV/sd
 #EXTINF:-1 tvg-id="nbc-knbc-los-angeles-ca" tvg-name="NBC (KNBC) Los Angeles" group-title="Live",NBC (KNBC) Los Angeles
 https://tvpass.org/live/nbc-knbc-los-angeles-ca/sd
 #EXTINF:-1 tvg-id="nbc-wnbc-new-york-ny" tvg-name="NBC (WNBC) New York, NY" group-title="Live",NBC (WNBC) New York, NY
-https://tvpass.org/live/WNBCDT1/sd
+https://tvpass.org/live/WNET/sd
 #EXTINF:-1 tvg-id="nbc-sports-bay-area" tvg-name="NBC Sports Bay Area" group-title="Live",NBC Sports Bay Area
 https://tvpass.org/live/nbc-sports-bay-area/sd
 #EXTINF:-1 tvg-id="nbc-sports-boston" tvg-name="NBC Sports Boston" group-title="Live",NBC Sports Boston
@@ -1062,36 +1062,36 @@ https://tvpass.org/live/WPIX/sd
 #EXTINF:-1 tvg-id="yes-network" tvg-name="Yes Network" group-title="Live",Yes Network
 https://tvpass.org/live/yes-network/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Minnesota Vikings @ Cleveland Browns (10/05 9:31 Am Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",Minnesota Vikings @ Cleveland Browns (10/05 9:31 Am Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFLNetwork/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="New York Giants @ New Orleans Saints (10/05 1:01 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",New York Giants @ New Orleans Saints (10/05 1:01 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFL20/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Las Vegas Raiders @ Indianapolis Colts (10/05 1:01 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",Las Vegas Raiders @ Indianapolis Colts (10/05 1:01 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFL18/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Denver Broncos @ Philadelphia Eagles (10/05 1:01 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",Denver Broncos @ Philadelphia Eagles (10/05 1:01 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFL22/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Houston Texans @ Baltimore Ravens (10/05 1:01 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",Houston Texans @ Baltimore Ravens (10/05 1:01 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFL14/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Miami Dolphins @ Carolina Panthers (10/05 1:01 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",Miami Dolphins @ Carolina Panthers (10/05 1:01 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFL31/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Dallas Cowboys @ New York Jets (10/05 1:01 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",Dallas Cowboys @ New York Jets (10/05 1:01 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFL19/sd
 #EXTINF:-1 tvg-id="WNBA.dummy.us" tvg-name="Phoenix Mercury @ Las Vegas Aces (10/05 3:00 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/WNBA.png" group-title="TVPass - WNBA",Phoenix Mercury @ Las Vegas Aces (10/05 3:00 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/WABCDT1/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Tennessee Titans @ Arizona Cardinals (10/05 4:06 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",Tennessee Titans @ Arizona Cardinals (10/05 4:06 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFL27/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Tampa Bay Buccaneers @ Seattle Seahawks (10/05 4:06 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",Tampa Bay Buccaneers @ Seattle Seahawks (10/05 4:06 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFL07/sd
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="New York Yankees @ Toronto Blue Jays (10/05 4:09 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball3.png" group-title="TVPass - MLB",New York Yankees @ Toronto Blue Jays (10/05 4:09 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/FoxSports1/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Detroit Lions @ Cincinnati Bengals (10/05 4:26 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",Detroit Lions @ Cincinnati Bengals (10/05 4:26 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFL16/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="Washington Commanders @ Los Angeles Chargers (10/05 4:26 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",Washington Commanders @ Los Angeles Chargers (10/05 4:26 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFL24/sd
 #EXTINF:-1 tvg-id="NBA.Basketball.Dummy.us" tvg-name="Oklahoma City Thunder @ Charlotte Hornets (10/05 5:10 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png" group-title="TVPass - NBA",Oklahoma City Thunder @ Charlotte Hornets (10/05 5:10 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NBA01/sd
 #EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="Detroit Tigers @ Seattle Mariners (10/05 8:04 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball3.png" group-title="TVPass - MLB",Detroit Tigers @ Seattle Mariners (10/05 8:04 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/FoxSports1/sd
 #EXTINF:-1 tvg-id="NFL.Dummy.us" tvg-name="New England Patriots @ Buffalo Bills (10/05 8:21 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/NFL2.png" group-title="TVPass - NFL",New England Patriots @ Buffalo Bills (10/05 8:21 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/NFL02/sd
 #EXTINF:-1 tvg-id="NBA.Basketball.Dummy.us" tvg-name="Los Angeles Lakers @ Golden State Warriors (10/05 8:40 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png" group-title="TVPass - NBA",Los Angeles Lakers @ Golden State Warriors (10/05 8:40 Pm Et)
-https://tvpass.org/live//sd
+https://tvpass.org/live/ESPN/sd
