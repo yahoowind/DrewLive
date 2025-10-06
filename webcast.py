@@ -227,28 +227,28 @@ async def main():
     nfl_streams = await scrape_league(
         base_url=NFL_BASE_URL,
         channel_urls=NFL_CHANNEL_URLS,
-        group_prefix="NFLWebcast -",
+        group_prefix="NFLWebcast",
         default_id="NFL.Dummy.us",
         default_logo="http://drewlive24.duckdns.org:9000/Logos/Maxx.png",
     )
     nhl_streams = await scrape_league(
         base_url=NHL_BASE_URL,
         channel_urls=NHL_CHANNEL_URLS,
-        group_prefix="NHLWebcast -",
+        group_prefix="NHLWebcast",
         default_id="NHL.Hockey.Dummy.us",
         default_logo="http://drewlive24.duckdns.org:9000/Logos/Hockey.png",
     )
     mlb_streams = await scrape_league(
         base_url=MLB_BASE_URL,
         channel_urls=MLB_CHANNEL_URLS,
-        group_prefix="MLBWebcast -",
+        group_prefix="MLBWebcast",
         default_id="MLB.Baseball.Dummy.us",
         default_logo="http://drewlive24.duckdns.org:9000/Logos/MLB.png",
     )
     mls_streams = await scrape_league(
         base_url=MLS_BASE_URL,
         channel_urls=MLS_CHANNEL_URLS,
-        group_prefix="MLSWebcast -",
+        group_prefix="MLSWebcast",
         default_id="MLS.Soccer.Dummy.us",
         default_logo="http://drewlive24.duckdns.org:9000/Logos/Football2.png",
     )
