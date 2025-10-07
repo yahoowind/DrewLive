@@ -2009,7 +2009,7 @@ http://drewlive24.duckdns.org/daddylive/stream.php?id=647
 http://drewlive24.duckdns.org/daddylive/stream.php?id=309
 #EXTINF:-1  tvg-id="CNN.HD.us2" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/cnn-us.png?raw=true" group-title="DaddyLive USA",CNN USA
 http://drewlive24.duckdns.org/daddylive/stream.php?id=345
-#EXTINF:-1  tvg-id="Catchy.Comedy.us2" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comedy-central-us.png?raw=true" group-title="DaddyLive USA",Comedy Central
+#EXTINF:-1  tvg-id="Comedy.Central.HD.us2" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comedy-central-us.png?raw=true" group-title="DaddyLive USA",Comedy Central
 http://drewlive24.duckdns.org/daddylive/stream.php?id=310
 #EXTINF:-1  tvg-id="Comet.us2" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/comet-us.png?raw=true" group-title="DaddyLive USA",Comet USA
 http://drewlive24.duckdns.org/daddylive/stream.php?id=696
@@ -8568,6 +8568,14 @@ https://fl7.moveonjoy.com/PPV_6/index.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0
 #EXTVLCOPT:http-origin=https://nflwebcast.com/
 https://gate.pixelpanel.online/hdstream/embed/547.m3u8
+
+#EXTGRP:NHL
+#EXTINF:-1 tvg-id="" tvg-name="Chicago Blackhawks @ Florida Panthers (10/07 5:00 PM ET)" group-title="NHL",Chicago Blackhawks @ Florida Panthers (10/07 5:00 PM ET)
+https://tvpass.org/live/sportsnet-one/sd
+#EXTINF:-1 tvg-id="" tvg-name="Colorado Avalanche @ Los Angeles Kings (10/07 10:40 PM ET)" group-title="NHL",Colorado Avalanche @ Los Angeles Kings (10/07 10:40 PM ET)
+https://tvpass.org/live/ESPN/sd
+#EXTINF:-1 tvg-id="" tvg-name="Pittsburgh Penguins @ New York Rangers (10/07 8:10 PM ET)" group-title="NHL",Pittsburgh Penguins @ New York Rangers (10/07 8:10 PM ET)
+https://tvpass.org/live/ESPN/sd
 
 #EXTGRP:PlexTV
 #EXTINF:-1  tvg-id="5e20b730f2f8d5003d739db7-63eecb32ac23d1ee072087cb" tvg-logo="https://provider-static.plex.tv/epg/cms/production/59623ed1-b641-4001-b634-b25e307c3c49/123GO_-_Jonathan_Shrank1500x1000.png" group-title="PlexTV",123GO!
@@ -16644,6 +16652,18 @@ https://tvpass.org/live/WPIX/sd
 https://tvpass.org/live/yes-network/hd
 #EXTINF:-1  tvg-name="Yes Network SD" tvg-id="yes-network" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-states/yes-network-us.png?raw=true" group-title="TVPass",Yes Network SD
 https://tvpass.org/live/yes-network/sd
+
+#EXTGRP:TVPass - MLB
+#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="Seattle Mariners @ Detroit Tigers (10/07 4:08 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball3.png" group-title="TVPass - MLB",Seattle Mariners @ Detroit Tigers (10/07 4:08 Pm Et)
+https://tvpass.org/live/FoxSports1/sd
+#EXTINF:-1 tvg-id="MLB.Baseball.Dummy.us" tvg-name="Toronto Blue Jays @ New York Yankees (10/07 8:08 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Baseball3.png" group-title="TVPass - MLB",Toronto Blue Jays @ New York Yankees (10/07 8:08 Pm Et)
+https://tvpass.org/live/FoxSports1/sd
+
+#EXTGRP:TVPass - NBA
+#EXTINF:-1 tvg-id="NBA.Basketball.Dummy.us" tvg-name="Chicago Bulls @ Cleveland Cavaliers (10/07 7:10 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png" group-title="TVPass - NBA",Chicago Bulls @ Cleveland Cavaliers (10/07 7:10 Pm Et)
+https://tvpass.org/live/NBA01/sd
+#EXTINF:-1 tvg-id="NBA.Basketball.Dummy.us" tvg-name="Indiana Pacers @ Minnesota Timberwolves (10/07 8:10 Pm Et)" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png" group-title="TVPass - NBA",Indiana Pacers @ Minnesota Timberwolves (10/07 8:10 Pm Et)
+https://tvpass.org/live/NBA02/sd
 
 #EXTGRP:Xumo Streams
 #EXTINF:-1  tvg-name="25 Words or Less" tvg-id="99991659" tvg-logo="https://image.xumo.com/v1/channels/channel/99991659/168x168.png?type=color_onBlack" group-title="Xumo Streams",25 Words or Less
