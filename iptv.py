@@ -4,8 +4,6 @@ import time
 from datetime import datetime
 
 playlist_urls = [
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DaddyLive.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DaddyLiveEvents.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/DrewAll.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/JapanTV.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/main/PlexTV.m3u8",
@@ -26,7 +24,8 @@ playlist_urls = [
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/StreamedSU.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/SportsWebcast.m3u8",
     "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/TubiTV.m3u8",
-    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Roku.m3u8"
+    "https://raw.githubusercontent.com/Drewski2423/DrewLive/refs/heads/main/Roku.m3u8",
+    "http://drewlive24.duckdns.org/daddylive/stream.php"
 ]
 
 EPG_URL = "http://drewlive24.duckdns.org:8081/DrewLive.xml.gz"
