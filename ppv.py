@@ -265,7 +265,6 @@ async def main():
                     "poster": poster
                 })
 
-    # Deduplicate
     seen_names = set()
     deduped_streams = []
     for s in streams:
@@ -281,7 +280,6 @@ async def main():
         page = await context.new_page()
         url_map = {}
 
-        # Process API streams
         total_streams = len(streams)
         for idx, s in enumerate(streams, start=1):
             key = f"{s['name']}::{s['category']}::{s['iframe']}"
