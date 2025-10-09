@@ -36,7 +36,7 @@ async def get_m3u8_from_page(context, url):
 
 async def main():
     api_url = "https://topembed.pw/api.php?format=json"
-    playlist_filename = "topembed_playlist.m3u8"
+    playlist_filename = "TopEmbed.m3u8"
     
     print(f"📡 Fetching channel list from API: {api_url}")
     try:
