@@ -2,7 +2,7 @@ name: ⚽🏀🏈 Update TopEmbed Playlist 📺
 
 on:
   schedule:
-    - cron: '0 * * * *' # Runs every hour
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -31,7 +31,7 @@ jobs:
           playwright install
 
       - name: 🎯 Run TopEmbed Scraper
-        run: python topembed.py
+        run: python top.py
 
       - name: 💾 Commit & Push if Playlist Changed
         env:
@@ -41,7 +41,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Stage generated playlist
-          git add topembed_playlist.m3u8
+          git add TopEmbed.m3u8
 
           # Check for changes
           if git diff --cached --quiet; then
