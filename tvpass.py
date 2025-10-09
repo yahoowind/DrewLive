@@ -29,6 +29,10 @@ LOCKED_GROUPS = {
     "nba": {  
         "tvg-id": "NBA.Basketball.Dummy.us",
         "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/Basketball-2.png"
+    },
+    "nhl": {
+        "tvg-id": "NHL.Hockey.Dummy.us",
+        "tvg-logo": "http://drewlive24.duckdns.org:9000/Logos/Hockey.png"
     }
 }
 
@@ -94,7 +98,6 @@ def fetch_upstream_pairs():
             if i < len(lines):
                 url = lines[i].strip()
                 title = extract_title(meta)
-                # Skip Live group
                 if group != "live" and not is_event_outdated(title):
                     pairs.append((meta, url))
         i += 1
@@ -115,7 +118,6 @@ def parse_local_playlist():
             if i < len(lines):
                 url = lines[i].strip()
                 title = extract_title(meta)
-                # Skip Live group
                 if group != "live" and not is_event_outdated(title):
                     pairs.append((meta, url))
         i += 1
