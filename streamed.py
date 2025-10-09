@@ -4,9 +4,10 @@ import re
 import concurrent.futures
 
 FALLBACK_LOGOS = {
-    "football": "https://i.imgur.com/RvN0XSF.png",
-    "fight":    "https://i.imgur.com/QlBOQft.png",
-    "basketball": "http://drewlive24.duckdns.org:9000/Logos/NBA.png"
+    "american football": "http://drewlive24.duckdns.org:9000/Logos/NFL3.png",
+    "football":          "https://i.imgur.com/RvN0XSF.png", # Soccer
+    "fight":             "http://drewlive24.duckdns.org:9000/Logos/Combat-Sports.png",
+    "basketball":        "http://drewlive24.duckdns.org:9000/Logos/Basketball5.png"
 }
 
 CUSTOM_HEADERS = {
@@ -127,7 +128,7 @@ def process_match(match):
 def generate_m3u8():
     all_matches = get_matches("all")
     live_matches = get_matches("live")
-    matches = all_matches + live_matches  # merge both
+    matches = all_matches + live_matches
 
     if not matches:
         return "#EXTM3U\n#EXTINF:-1,No Matches Found\n"
