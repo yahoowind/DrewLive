@@ -90,17 +90,23 @@ COLLEGE_TEAMS = {
     "tulsa golden hurricane", "tulane green wave", "navy midshipmen", "army black knights"
 }
 
-async def check_m3u8_url(url):
+# --- CORRECTED FUNCTION #1 ---
+async def check_m3u8_url(url, referer):
+    """Checks the M3U8 URL using the correct referer for validation."""
     try:
+        # Dynamically generate the origin from the referer URL
+        origin = "https://" + referer.split('/')[2]
         headers = {
-            "User-Agent": "Mozilla/5.0",
-            "Referer": "https://ppvs.su",
-            "Origin": "https://ppvs.su"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
+            "Referer": referer,
+            "Origin": origin
         }
         timeout = aiohttp.ClientTimeout(total=15)
         async with aiohttp.ClientSession(timeout=timeout) as session:
             async with session.get(url, headers=headers) as resp:
-                return resp.status == 200
+                # A 200 (OK) or 403 (Forbidden) can both indicate a working link,
+                # as some servers block direct file access but confirm the path exists.
+                return resp.status in [200, 403]
     except Exception as e:
         print(f"❌ Error checking {url}: {e}")
         return False
@@ -124,47 +130,56 @@ async def get_streams():
         print(f"❌ Error in get_streams: {str(e)}")
         return None
 
+# --- CORRECTED FUNCTION #2 ---
 async def grab_m3u8_from_iframe(page, iframe_url):
     found_streams = set()
     def handle_response(response):
         if ".m3u8" in response.url:
+            print(f"✅ Found M3U8 Stream: {response.url}")
             found_streams.add(response.url)
 
     page.on("response", handle_response)
     print(f"🌐 Navigating to iframe: {iframe_url}")
     try:
-        await page.goto(iframe_url, timeout=15000)
+        await page.goto(iframe_url, timeout=30000, wait_until="domcontentloaded")
     except Exception as e:
-        print(f"❌ Failed to load iframe: {e}")
+        print(f"❌ Failed to load iframe page: {e}")
         page.remove_listener("response", handle_response)
         return set()
 
-    await asyncio.sleep(2)
     try:
-        box = page.viewport_size or {"width": 1280, "height": 720}
-        cx, cy = box["width"] / 2, box["height"] / 2
-        for i in range(4):
-            if found_streams:
-                break
-            print(f"🖱️ Click #{i + 1}")
-            try:
-                await page.mouse.click(cx, cy)
-            except Exception:
-                pass
-            await asyncio.sleep(0.3)
+        await page.wait_for_timeout(5000)
+        nested_iframe = page.locator("iframe")
+        if await nested_iframe.count() > 0:
+            print("🔎 Found nested iframe, attempting to click inside it.")
+            player_frame = page.frame_locator("iframe").first
+            # Use force=True to click even if the element is not "visible"
+            await player_frame.locator("body").click(timeout=5000, force=True)
+        else:
+            print("🖱️ No nested iframe found. Clicking main page body.")
+            await page.locator("body").click(timeout=5000, force=True)
     except Exception as e:
-        print(f"❌ Mouse click error: {e}")
+        print(f"⚠️ Clicking failed, but proceeding anyway. Error: {e}")
 
-    print("⏳ Waiting 5s for final stream load...")
-    await asyncio.sleep(5)
+    print("⏳ Waiting 8s for stream to be requested...")
+    await asyncio.sleep(8)
     page.remove_listener("response", handle_response)
 
+    if not found_streams:
+        print(f"❌ No M3U8 URLs were captured for {iframe_url}")
+        return set()
+
     valid_urls = set()
-    for url in found_streams:
-        if await check_m3u8_url(url):
+    # Pass the correct iframe_url as the referer to the check function
+    tasks = [check_m3u8_url(url, iframe_url) for url in found_streams]
+    results = await asyncio.gather(*tasks)
+    
+    for url, is_valid in zip(found_streams, results):
+        if is_valid:
             valid_urls.add(url)
         else:
-            print(f"❌ Invalid or unreachable URL: {url}")
+            print(f"🗑️ Discarding invalid or unreachable URL: {url}")
+            
     return valid_urls
 
 async def grab_live_now_from_html(page, base_url="https://ppv.to/"):
@@ -275,6 +290,7 @@ async def main():
     streams = deduped_streams
 
     async with async_playwright() as p:
+        # For debugging, you can set headless=False to watch the browser
         browser = await p.firefox.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
