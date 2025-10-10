@@ -94,7 +94,7 @@ def build_logo_url(match):
     api_category = match.get('category') or ''
     logo_url = None
 
-    teams = match.get('teams', {})
+    teams = match.get('teams') or {}
     for team_key in ['away','home']:
         team = teams.get(team_key, {})
         badge = team.get('badge') or team.get('id')
