@@ -24,7 +24,8 @@ TV_IDS = {
     "Football": "Soccer.Dummy.us",
     "Basketball": "Basketball.Dummy.us",
     "Hockey": "NHL.Hockey.Dummy.us",
-    "Tennis": "Tennis.Dummy.us"
+    "Tennis": "Tennis.Dummy.us",
+    "Darts": "Darts.Dummy.us"
 }
 
 def get_matches(endpoint="all"):
