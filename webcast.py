@@ -48,7 +48,8 @@ def normalize_game_name(original_name: str) -> str:
         if len(parts) == 2:
             team1 = parts[0].strip().title()
             team2 = parts[1].strip().title()
-            team2 = team2.split("October")[0].strip()
+            # Clean up potential date artifacts
+            team2 = team2.split("October")[0].strip() 
             return f"{team1} @ {team2}"
     return " ".join(cleaned_name.strip().split()).title()
 
@@ -68,33 +69,31 @@ async def verify_stream_url(session: aiohttp.ClientSession, url: str) -> bool:
         print(f"    ❌ URL Client Error ({type(e).__name__}): {url}")
         return False
 
-async def find_stream_in_page(page: Page, url: str, session: aiohttp.ClientSession) -> Optional[str]:
+async def find_stream_from_servers_on_page(context: BrowserContext, page_url: str, base_url: str, session: aiohttp.ClientSession) -> Optional[str]:
+    """
+    Navigates to a page, attaches a network listener, clicks through server 
+    links to load content into an iframe, and captures the first valid .m3u8 URL.
+    """
+    page = await context.new_page()
     candidate_urls: List[str] = []
+
     def handle_request(request):
         if STREAM_PATTERN.search(request.url) and request.url not in candidate_urls:
             print(f"    ✅ Captured potential stream: {request.url}")
             candidate_urls.append(request.url)
 
     page.on("request", handle_request)
-    try:
-        await page.goto(url, wait_until="load", timeout=30000)
-        await page.wait_for_timeout(POST_LOAD_WAIT_MS)
-    except Exception as e:
-        print(f"    ❌ Error loading or processing page {url}: {e}")
-    finally:
-        page.remove_listener("request", handle_request)
 
-    for stream_url in reversed(candidate_urls):
-        if await verify_stream_url(session, stream_url):
-            return stream_url
-    return None
-
-async def find_stream_from_servers_on_page(context: BrowserContext, page_url: str, base_url: str, session: aiohttp.ClientSession) -> Optional[str]:
-    page = await context.new_page()
-    server_urls = []
     try:
-        print(f"   L_ Navigating to content page: {page_url}")
+        print(f"    ↳ Navigating to content page: {page_url}")
         await page.goto(page_url, wait_until="domcontentloaded", timeout=60000)
+        await page.wait_for_timeout(POST_LOAD_WAIT_MS)
+
+        for stream_url in reversed(candidate_urls):
+            if await verify_stream_url(session, stream_url):
+                print("      ✔️ Found valid stream on initial page load.")
+                return stream_url
+
         server_links = page.locator("#multistmb a")
         count = await server_links.count()
 
@@ -102,28 +101,37 @@ async def find_stream_from_servers_on_page(context: BrowserContext, page_url: st
             print("    Fallback: '#multistmb a' not found. Trying generic selector.")
             server_links = page.locator("a:has-text('Server'), a:has-text('HD'), a:has-text('Home'), a:has-text('Away')")
             count = await server_links.count()
+        
+        print(f"    Found {count} server links to test by clicking.")
 
-        print(f"    Found {count} potential server links.")
         for i in range(count):
-            href = await server_links.nth(i).get_attribute("href")
-            if href:
-                full_url = urljoin(base_url, href)
-                if full_url not in server_urls:
-                    server_urls.append(full_url)
-    except Exception as e:
-        print(f"    ❌ Could not load page or find server links: {e}")
-        return None
-    finally:
-        await page.close()
+            link = server_links.nth(i)
+            link_text = (await link.inner_text() or "Unknown Link").strip()
+            print(f"    ➡️ Trying Server Link #{i+1}: '{link_text}'")
+            
+            urls_before_click = set(candidate_urls)
+            
+            await link.click()
+            await page.wait_for_timeout(POST_LOAD_WAIT_MS)
 
-    for server_url in server_urls:
-        print(f"    ➡️ Trying Server: {server_url}")
-        server_page = await context.new_page()
-        stream_url = await find_stream_in_page(server_page, server_url, session)
-        await server_page.close()
-        if stream_url:
-            return stream_url
-    print("    ❌ All servers tried, but no valid stream was found.")
+            urls_after_click = set(candidate_urls)
+            new_urls = list(urls_after_click - urls_before_click)
+
+            for stream_url in reversed(new_urls):
+                if await verify_stream_url(session, stream_url):
+                    print(f"      ✔️ Found valid stream after clicking '{link_text}'.")
+                    return stream_url
+            
+            print(f"      ❌ No new valid streams found for '{link_text}'.")
+
+    except Exception as e:
+        print(f"    ❌ An error occurred while processing {page_url}: {e}")
+    finally:
+        if not page.is_closed():
+            page.remove_listener("request", handle_request)
+            await page.close()
+
+    print(f"  ❌ All servers tried for {page_url}, but no valid stream was found.")
     return None
 
 async def scrape_league(base_url: str, channel_urls: List[str], group_prefix: str, default_id: str, default_logo: str) -> List[Dict]:
@@ -145,7 +153,6 @@ async def scrape_league(base_url: str, channel_urls: List[str], group_prefix: st
             
             for i in range(count):
                 row = event_rows.nth(i)
-                
                 link_locator = row.locator("td.teamvs a")
                 name = await link_locator.inner_text()
                 href = await link_locator.get_attribute("href")
