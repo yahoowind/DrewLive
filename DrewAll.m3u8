@@ -1,22 +1,4 @@
 #EXTM3U url-tvg="http://drewlive24.duckdns.org:8081/DrewLive.xml.gz"
-#EXTINF:-1  tvg-name="Family Guy" tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/FamilyGuy2.png" group-title="24/7 by DrewLive" radio="false",Family Guy
-http://cord-cutter.net:8080/hq3y4G/234247/66317
-#EXTINF:-1  tvg-name="Friends" tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Friends.png" group-title="24/7 by DrewLive" radio="false",Friends
-http://cord-cutter.net:8080/hq3y4G/234247/66407
-#EXTINF:-1  tvg-name="Looney Tunes" tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Looney.png" group-title="24/7 by DrewLive" radio="false",Looney Tunes
-http://cord-cutter.net:8080/hq3y4G/234247/125638
-#EXTINF:-1  tvg-name="Rick & Morty" tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Rick%26Morty.png" group-title="24/7 by DrewLive" radio="false",Rick & Morty
-http://cord-cutter.net:8080/hq3y4G/234247/66302
-#EXTINF:-1  tvg-name="Ridiculousness" tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Ridiculousness.png" group-title="24/7 by DrewLive" radio="false",Ridiculousness
-http://cord-cutter.net:8080/hq3y4G/234247/66397
-#EXTINF:-1  tvg-name="Seinfeld" tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Seinfeld.png" group-title="24/7 by DrewLive" radio="false",Seinfeld
-http://cord-cutter.net:8080/hq3y4G/234247/66303
-#EXTINF:-1  tvg-name="South Park" tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/SouthPark.png" group-title="24/7 by DrewLive" radio="false",South Park
-http://cord-cutter.net:8080/hq3y4G/234247/66401
-#EXTINF:-1  tvg-name="The Golden Girls" tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/TheGoldenGirls.png" group-title="24/7 by DrewLive" radio="false",The Golden Girls
-http://cord-cutter.net:8080/hq3y4G/234247/120948
-#EXTINF:-1  tvg-name="The King Of Queens" tvg-id="24.7.Dummy.us" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/dc/King_of_Queens_logo.png" group-title="24/7 by DrewLive" radio="false",The King Of Queens
-http://cord-cutter.net:8080/hq3y4G/234247/79567
 #EXTINF:-1  tvg-name="Adult Swim Daily Animated" tvg-id="24.7.Dummy.us" tvg-logo="https://i.ytimg.com/vi/8OXOnoO_AwY/maxresdefault.jpg" group-title="DrewLive Adult Swim 24/7" radio="false",Adult Swim Daily Animated
 https://adultswim-vodlive.cdn.turner.com/live/daily_animated_1/stream.m3u8
 #EXTINF:-1  tvg-name="Adult Swim Infomercials" tvg-id="24.7.Dummy.us" tvg-logo="https://i.ytimg.com/vi/8OXOnoO_AwY/maxresdefault.jpg" group-title="DrewLive Adult Swim 24/7" radio="false",Adult Swim Infomercials
@@ -80,9 +62,7 @@ https://rhine.webchnl.live/memfs/8a788628-af64-4fae-8dac-2fcb9d1c4eae.m3u8
 #EXTINF:-1  tvg-name="Drew Live" tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Trunks.png" group-title="DrewLive Fan Made TV" radio="false",Drew Live
 http://drewlive24.duckdns.org:8080/hls/stream.m3u8
 #EXTINF:-1  tvg-name="EEL TV" tvg-id="24.7.Dummy.us" tvg-logo="https://www.webchnl.live/assets/img/channelicons/eel_ch.png" group-title="DrewLive Fan Made TV" radio="false",EEL TV
-#EXTVLCOPT:http-referrer=https://rumble.com/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://1a-1791.com/live/t5qc33px/live-hls/bvoy-ccia/chunklist_i1_DVR.m3u8
+https://rhine.webchnl.live/memfs/ee44b078-5b16-4484-b054-76079dc2d45c.m3u8
 #EXTINF:-1  tvg-name="Festivals and Studio Sessions 🎧🎶" tvg-id="24.7.Dummy.us" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Music.png" group-title="DrewLive Fan Made TV" radio="false",Festivals and Studio Sessions 🎧🎶
 #EXTVLCOPT:http-referrer=https://rumble.com/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
