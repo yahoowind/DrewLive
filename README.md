@@ -86,6 +86,14 @@ Use one of these for the cleanest DrewLive experience:
 
 ━━━━━━━━━━━━━━━━━━
 
+💖 **Support DrewLive on Ko-fi**  
+
+If you enjoy DrewLive and want to help keep the playlists, VOD bundles, and live streams running, consider buying me a coffee! Every contribution helps maintain servers, updates, and EPG links for the community.  
+
+☕ [Donate on Ko-fi](https://ko-fi.com/drewlive24)
+
+━━━━━━━━━━━━━━━━━━
+
 🌐 UNLICENSED LICENSE  
 
 This project is released under The Unlicense.  
