@@ -126,11 +126,13 @@ MIRRORS = [
     "https://fstv.space/live-tv.html?timezone=America%2FDenver",
 ]
 
-MAX_RETRIES = 2
+MAX_RETRIES = 3
+
 
 def normalize_channel_name(name: str) -> str:
     cleaned_name = re.sub(r'[^a-zA-Z0-9]', '', name)
     return cleaned_name.strip().lower()
+
 
 def prettify_name(raw: str) -> str:
     raw = re.sub(r'VE[-\s]*', '', raw, flags=re.IGNORECASE)
@@ -138,16 +140,18 @@ def prettify_name(raw: str) -> str:
     raw = re.sub(r'[^a-zA-Z0-9\s]', '', raw)
     return re.sub(r'\s+', ' ', raw.strip()).title()
 
+
 async def fetch_fstv_channels():
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
+
         context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0"
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0",
+            extra_http_headers={
+                "Origin": "https://fstv.space",
+                "Referer": "https://fstv.space/",
+            },
         )
-        await context.set_extra_http_headers({
-            "origin": "https://fstv.space",
-            "referer": "https://fstv.space"
-        })
 
         page = await context.new_page()
         context.on("page", lambda popup: asyncio.create_task(popup.close()))
@@ -198,7 +202,7 @@ async def fetch_fstv_channels():
                                         last_m3u8_url = request.url
                                         if not request_captured.is_set():
                                             request_captured.set()
-                                except:
+                                except Exception:
                                     pass
 
                         page.on("request", handle_request)
@@ -240,20 +244,24 @@ async def fetch_fstv_channels():
         await browser.close()
         raise Exception("❌ All mirrors failed")
 
+
 def build_playlist(channels_data):
     lines = ["#EXTM3U\n"]
     for ch in channels_data:
         tvg_id = f' tvg-id="{ch["tv_id"]}"' if ch["tv_id"] else ""
         logo = f' tvg-logo="{ch["logo"]}"' if ch["logo"] else ""
         group = f' group-title="{ch["group"]}"'
+
         lines.append(f'#EXTINF:-1{tvg_id}{logo}{group},{ch["name"]}\n')
         lines.append(
-            '#EXTVLCOPT:http-origin=https://fstv.space/\n'
-            '#EXTVLCOPT:http-referrer=https://fstv.space/\n'
-            '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0\n'
+            "#EXTVLCOPT:http-origin=https://fstv.space\n"
+            "#EXTVLCOPT:http-referrer=https://fstv.space/\n"
+            "#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0\n"
         )
         lines.append(ch["url"] + "\n")
+
     return lines
+
 
 async def main():
     try:
@@ -272,6 +280,7 @@ async def main():
     except Exception as e:
         print(f"❌ Error: {e}", flush=True)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     asyncio.run(main())
