@@ -146,7 +146,7 @@ async def fetch_fstv_channels():
         browser = await p.firefox.launch(headless=True)
 
         context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0",
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0",
             extra_http_headers={
                 "Origin": "https://fstv.space",
                 "Referer": "https://fstv.space/",
