@@ -2,14 +2,14 @@
 
 Welcome to DrewLive — your 24/7 hub for cartoons, anime, action, and nostalgic vibes. Below is everything you need to plug in, stay up to date, and never miss a beat.
 
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━
 
 **📺 DREWLIVE LIVE STREAM (OWNCAST)**
 
 Your main portal for nonstop streaming — DrewLive runs day and night with curated shows and blocks.
 * [Toonami/Adult Swim Owncast Stream](http://drewlive24.duckdns.org:8080/)
 
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━
 
 **📂 ALL PLAYLISTS IN ONE LINK**
 
@@ -17,7 +17,7 @@ Simplify your setup with every playlist in one place.
 🔗 **All Playlists - DrewLive URL:**
 * [DrewLive All Playlists](https://tinyurl.com/drewall8)
 
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━
 
 **📂 DREWLIVE VOD STRM BUNDLE**
 
@@ -30,7 +30,7 @@ It’s perfect for people who want neat, playlists with clickable streams and ni
 📥 **DrewLive VOD Folder:**
 * [DrewLive VOD Folder](https://tinyurl.com/drewlive-vod2423)
 
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━
 
 **✨ CLEAN IPTV PLAYLIST**
 
@@ -42,7 +42,7 @@ This is the clean version of the merged IPTV playlist created by the merge scrip
 
 * [Merged Clean Playlist](https://tinyurl.com/MergedClean24)
 
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━
 
 **📂 MAD TITAN KODI ADD-ON (CONVERTED TO M3U8)**
 
@@ -50,7 +50,7 @@ Packed with plenty of 24/7 streams cartoons, anime, movies, and more. Originally
 
 * [Mad Titan M3U8 Playlist](https://tinyurl.com/MadTitan24)
 
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━
 
 **🗓️ EPG Info**
 
@@ -60,7 +60,7 @@ Stay synced with live guide data for your players.
 ✔️ Full EPG data from all sources
 * [DrewLive EPG](http://drewlive24.duckdns.org:8081/DrewLive.xml.gz)
 
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━
 
 **📡 HOW TO USE EPG LINK**
 
@@ -71,7 +71,7 @@ Stay synced with live guide data for your players.
 
 > ⚠️ **Pro tip:** Some apps need a restart for EPG to fully load.
 
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━
 
 [![Join DrewLive Discord](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)
 
@@ -81,7 +81,7 @@ Get updates, ask questions, share setups, or just chill.
 Click the badge above or use this invite:
 * [DrewLive Discord Server](https://discord.gg/GScZh8D3rB)
 
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━
 
 **🎮 RECOMMENDED IPTV PLAYERS**
 
@@ -94,7 +94,7 @@ Use one of these for the cleanest DrewLive experience:
 * [UHF](https://www.uhfapp.com/) – Clean mobile player with native EPG
 * [Jellyfin](https://jellyfin.org/) – Great for library setups with built-in IPTV and VOD handling
 
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━
 
 [![Support DrewLive on PayPal](https://cdn.freebiesupply.com/logos/large/2x/paypal-logo-png-transparent.png)](https://www.paypal.com/paypalme/drewrocha2423)
 
@@ -102,7 +102,7 @@ If you enjoy DrewLive and want to help keep the playlists, VOD bundles, and live
 
 [Donate on PayPal](https://www.paypal.com/paypalme/drewrocha2423) 💙
 
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━
 
 **🌐 UNLICENSED LICENSE**
 
