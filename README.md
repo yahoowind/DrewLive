@@ -65,7 +65,7 @@ Stay synced with live guide data for your players.
 **📡 HOW TO USE EPG LINK**
 
 1.  Go into your IPTV player's guide settings
-2.  Paste in one of the EPG URLs above
+2.  Paste in the EPG URL above
 3.  Save and refresh guide data
 4.  Done! Full channel listings ready to go.
 
