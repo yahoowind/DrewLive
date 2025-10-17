@@ -1,88 +1,98 @@
-🌟 DREWLIVE PLAYLIST & EPG LINKS 🌟  
+**🌟 DREWLIVE PLAYLIST & EPG LINKS 🌟**
+
 Welcome to DrewLive — your 24/7 hub for cartoons, anime, action, and nostalgic vibes. Below is everything you need to plug in, stay up to date, and never miss a beat.
 
 ━━━━━━━━━━━━━━━━━━
 
-📺 DREWLIVE LIVE STREAM (OWNCAST)  
-Your main portal for nonstop streaming — DrewLive runs day and night with curated shows and blocks.  
-• [http://drewlive24.duckdns.org:8080/](http://drewlive24.duckdns.org:8080/)
+**📺 DREWLIVE LIVE STREAM (OWNCAST)**
+
+Your main portal for nonstop streaming — DrewLive runs day and night with curated shows and blocks.
+* [http://drewlive24.duckdns.org:8080/](http://drewlive24.duckdns.org:8080/)
 
 ━━━━━━━━━━━━━━━━━━
 
-📂 ALL PLAYLISTS IN ONE LINK  
-Simplify your setup with every playlist in one place.  
-🔗 All Playlists - DrewLive URL:  
-• [https://tinyurl.com/drewall8](https://tinyurl.com/drewall8)  
+**📂 ALL PLAYLISTS IN ONE LINK**
+
+Simplify your setup with every playlist in one place.
+🔗 **All Playlists - DrewLive URL:**
+* [DrewLive All Playlists](https://tinyurl.com/drewall8)
 
 ━━━━━━━━━━━━━━━━━━
 
-📂 DREWLIVE VOD STRM BUNDLE  
-Want to take DrewLive with you? Grab our `.strm` files!  
+**📂 DREWLIVE VOD STRM BUNDLE**
 
-These are simple text files with streaming URLs, named clearly like `Movie Title (Year).strm`. Just download the whole folder, then point your media app (Kodi, Jellyfin, or others) to it. Your player will list all your movies and shows by name, ready to stream instantly — no complicated setup needed.  
+Want to take DrewLive with you? Grab our `.strm` files!
 
-It’s perfect for people who want neat, playlists with clickable streams and nice titles, without messing with complicated playlists or apps.  
+These are simple text files with streaming URLs, named clearly like `Movie Title (Year).strm`. Just download the whole folder, then point your media app (Kodi, Jellyfin, or others) to it. Your player will list all your movies and shows by name, ready to stream instantly — no complicated setup needed.
 
-📥 DrewLive VOD Folder:  
-• [https://tinyurl.com/drewlive-vod2423](https://tinyurl.com/drewlive-vod2423)  
+It’s perfect for people who want neat, playlists with clickable streams and nice titles, without messing with complicated playlists or apps.
+
+📥 **DrewLive VOD Folder:**
+* [DrewLive VOD Folder](https://tinyurl.com/drewlive-vod2423)
 
 ━━━━━━━━━━━━━━━━━━
 
-✨ CLEAN IPTV PLAYLIST  
+**✨ CLEAN IPTV PLAYLIST**
+
 This is the clean version of the merged IPTV playlist created by the merge script.
-All channels tagged or containing keywords like NSFW, XXX, or Porn have been filtered out.
-Suitable for kids and family-friendly viewing.
-Organized by channel groups for easy navigation.
-Updated automatically to keep your playlist fresh and safe.
+* All channels tagged or containing keywords like NSFW, XXX, or Porn have been filtered out.
+* Suitable for kids and family-friendly viewing.
+* Organized by channel groups for easy navigation.
+* Updated automatically to keep your playlist fresh and safe.
 
-• [https://tinyurl.com/MergedClean24](https://tinyurl.com/MergedClean24)  
+* [Merged Clean Playlist](https://tinyurl.com/MergedClean24)
 
 ━━━━━━━━━━━━━━━━━━
 
-📂 MAD TITAN KODI ADD-ON (CONVERTED TO M3U8)
+**📂 MAD TITAN KODI ADD-ON (CONVERTED TO M3U8)**
+
 Packed with plenty of 24/7 streams cartoons, anime, movies, and more. Originally a Kodi add-on, now fully converted into an M3U8 playlist for seamless playback on any IPTV or media player.
 
-• [https://tinyurl.com/MadTitan24](https://tinyurl.com/MadTitan24)
+* [Mad Titan M3U8 Playlist](https://tinyurl.com/MadTitan24)
 
 ━━━━━━━━━━━━━━━━━━
 
-🗓️ EPG Info  
-Stay synced with live guide data for your players. 
+**🗓️ EPG Info**
 
-🔗 Merged EPG (Full Source)  
-✔️ Full EPG data from all sources    
-• [http://drewlive24.duckdns.org:8081/DrewLive.xml.gz](http://drewlive24.duckdns.org:8081/DrewLive.xml.gz)  
+Stay synced with live guide data for your players.
 
-━━━━━━━━━━━━━━━━━━
-
-📡 HOW TO USE EPG LINK  
-1. Go into your IPTV player's guide settings  
-2. Paste in one of the EPG URL above  
-3. Save and refresh guide data  
-4. Done full channel listings ready to go  
-
-⚠️ Pro tip: Some apps need a restart for EPG to fully load  
+🔗 **Merged EPG (Full Source)**
+✔️ Full EPG data from all sources
+* [DrewLive EPG](http://drewlive24.duckdns.org:8081/DrewLive.xml.gz)
 
 ━━━━━━━━━━━━━━━━━━
 
-[![Join DrewLive Discord](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)  
+**📡 HOW TO USE EPG LINK**
 
-👥 Join the DrewLive Discord!  
-Get updates, ask questions, share setups, or just chill.  
-Click the badge above or use this invite:  
-• [https://discord.gg/GScZh8D3rB](https://discord.gg/GScZh8D3rB)  
+1.  Go into your IPTV player's guide settings
+2.  Paste in one of the EPG URLs above
+3.  Save and refresh guide data
+4.  Done! Full channel listings ready to go.
+
+> ⚠️ **Pro tip:** Some apps need a restart for EPG to fully load.
 
 ━━━━━━━━━━━━━━━━━━
 
-🎮 RECOMMENDED IPTV PLAYERS  
-Use one of these for the cleanest DrewLive experience:  
+[![Join DrewLive Discord](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)
 
-• [Televizo](https://televizo.net/) – Lightweight and fast with advanced support  
-• [Kodi](https://kodi.tv/) – Full-featured with deep customization and STRM support  
-• [TiviMate](https://tivimate.com/) – Easy UI, strong playlist & EPG support  
-• [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Open-source and modern  
-• [UHF](https://www.uhfapp.com/) – Clean mobile player with native EPG  
-• [Jellyfin](https://jellyfin.org/) – Great for library setups with built-in IPTV and VOD handling  
+**👥 Join the DrewLive Discord!**
+
+Get updates, ask questions, share setups, or just chill.
+Click the badge above or use this invite:
+* [https://discord.gg/GScZh8D3rB](https://discord.gg/GScZh8D3rB)
+
+━━━━━━━━━━━━━━━━━━
+
+**🎮 RECOMMENDED IPTV PLAYERS**
+
+Use one of these for the cleanest DrewLive experience:
+
+* [Televizo](https://televizo.net/) – Lightweight and fast with advanced support
+* [Kodi](https://kodi.tv/) – Full-featured with deep customization and STRM support
+* [TiviMate](https://tivimate.com/) – Easy UI, strong playlist & EPG support
+* [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Open-source and modern
+* [UHF](https://www.uhfapp.com/) – Clean mobile player with native EPG
+* [Jellyfin](https://jellyfin.org/) – Great for library setups with built-in IPTV and VOD handling
 
 ━━━━━━━━━━━━━━━━━━
 
@@ -90,28 +100,23 @@ Use one of these for the cleanest DrewLive experience:
 
 If you enjoy DrewLive and want to help keep the playlists, VOD bundles, and live streams running, consider buying me a coffee! Every contribution helps maintain servers, updates, and EPG links for the community.
 
-[Donate on PayPal](https://www.paypal.com/paypalme/drewrocha2423)💙
+[Donate on PayPal](https://www.paypal.com/paypalme/drewrocha2423) 💙
 
 ━━━━━━━━━━━━━━━━━━
 
-🌐 UNLICENSED LICENSE  
+**🌐 UNLICENSED LICENSE**
 
-This project is released under The Unlicense.  
+This project is released under The Unlicense.
 Copy it, modify it, remix it, share it, sell it, whatever. No strings attached.
 
-Legal TL;DR:  
-• No copyright  
-• No restrictions  
-• No conditions  
-• No warranties  
+**Legal TL;DR:**
+* No copyright
+* No restrictions
+* No conditions
+* No warranties
 
-Disclaimer:  
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,  
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF  
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  
-IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR  
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,  
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR  
-OTHER DEALINGS IN THE SOFTWARE.  
+**Disclaimer:**
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 
 Learn more at: [https://unlicense.org](https://unlicense.org)
