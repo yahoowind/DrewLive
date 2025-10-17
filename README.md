@@ -79,7 +79,7 @@ Stay synced with live guide data for your players.
 
 Get updates, ask questions, share setups, or just chill.
 Click the badge above or use this invite:
-* [https://discord.gg/GScZh8D3rB](https://discord.gg/GScZh8D3rB)
+* [DrewLive Discord Server](https://discord.gg/GScZh8D3rB)
 
 ━━━━━━━━━━━━━━━━━━
 
