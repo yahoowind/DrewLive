@@ -1,4 +1,4 @@
-**🌟🚀 DREWLIVE📺 🚀🌟**
+**🌟 DREWLIVE📺 🌟**
 
 Welcome to DrewLive — your 24/7 hub for cartoons, anime, action, and nostalgic vibes. Below is everything you need to plug in, stay up to date, and never miss a beat.
 
