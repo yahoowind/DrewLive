@@ -86,7 +86,7 @@ Use one of these for the cleanest DrewLive experience:
 
 ━━━━━━━━━━━━━━━━━━
 
-![Support DrewLive on PayPal](https://cdn.freebiesupply.com/logos/large/2x/paypal-logo-png-transparent.png)
+[![Support DrewLive on PayPal](https://cdn.freebiesupply.com/logos/large/2x/paypal-logo-png-transparent.png)](https://www.paypal.com/paypalme/drewrocha2423)
 
 If you enjoy DrewLive and want to help keep the playlists, VOD bundles, and live streams running, consider buying me a coffee! Every contribution helps maintain servers, updates, and EPG links for the community.
 
