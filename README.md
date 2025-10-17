@@ -86,11 +86,11 @@ Use one of these for the cleanest DrewLive experience:
 
 ━━━━━━━━━━━━━━━━━━
 
-![Support DrewLive on Ko-fi](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWNlczFkMWkxYXVkYW1rYW1rZTVraDNod2F2NmM4c2c3c3A3bDM4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/EskSzzk9dMFY1UooxD/giphy.webp)
+![Support DrewLive on PayPal](https://cdn.freebiesupply.com/logos/large/2x/paypal-logo-png-transparent.png)
 
 If you enjoy DrewLive and want to help keep the playlists, VOD bundles, and live streams running, consider buying me a coffee! Every contribution helps maintain servers, updates, and EPG links for the community.  
 
-☕ [Donate on Ko-fi](https://ko-fi.com/drewlive24)
+[Donate on PayPal]([https://www.paypal.com/paypalme/drewrocha2423](https://www.paypal.com/paypalme/drewrocha2423)
 
 ━━━━━━━━━━━━━━━━━━
 
