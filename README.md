@@ -88,9 +88,9 @@ Use one of these for the cleanest DrewLive experience:
 
 ![Support DrewLive on PayPal](https://cdn.freebiesupply.com/logos/large/2x/paypal-logo-png-transparent.png)
 
-If you enjoy DrewLive and want to help keep the playlists, VOD bundles, and live streams running, consider buying me a coffee! Every contribution helps maintain servers, updates, and EPG links for the community.  
+If you enjoy DrewLive and want to help keep the playlists, VOD bundles, and live streams running, consider buying me a coffee! Every contribution helps maintain servers, updates, and EPG links for the community.
 
-[Donate on PayPal]([https://www.paypal.com/paypalme/drewrocha2423](https://www.paypal.com/paypalme/drewrocha2423)
+[Donate on PayPal](https://www.paypal.com/paypalme/drewrocha2423)
 
 ━━━━━━━━━━━━━━━━━━
 
