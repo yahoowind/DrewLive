@@ -7,7 +7,7 @@ Welcome to DrewLive — your 24/7 hub for cartoons, anime, action, and nostalgic
 **📺 DREWLIVE LIVE STREAM (OWNCAST)**
 
 Your main portal for nonstop streaming — DrewLive runs day and night with curated shows and blocks.
-* [http://drewlive24.duckdns.org:8080/](http://drewlive24.duckdns.org:8080/)
+* [Toonami/Adult Swim Owncast Stream](http://drewlive24.duckdns.org:8080/)
 
 ━━━━━━━━━━━━━━━━━━
 
