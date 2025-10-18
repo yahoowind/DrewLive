@@ -115,7 +115,7 @@ https://mt01.utako.moe/green/index.m3u8
 https://ca01.utako.moe/Animax/index.m3u8
 #EXTINF:-1 group-title="JapanTV" tvg-id="nihon_eiga" tvg-logo="https://www.lyngsat.com/logo/tv/nn/nihon_eiga_senmon.png",Nihon Eiga Senmon
 https://ca01.utako.moe/nihoneiga/index.m3u8
-#EXTINF:-1 group-title="JapanTV" tvg-id="sky_a" tvg-logo="https://www.lyngsat.com/logo/tv/ss/sky-a-jp.svg",Sky A
+#EXTINF:-1 group-title="JapanTV" tvg-id="sky_a" tvg-logo="https://static.wikia.nocookie.net/dreamlogos/images/8/80/SKY_1993.png/revision/latest?cb=20190811185716",Sky A
 https://ca01.utako.moe/skya/index.m3u8
 #EXTINF:-1 group-title="JapanTV" tvg-id="nhk_bs" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6c/NHK_BS.png",NHK BS (Primehome)
 https://proxyv2.utako.moe/ph.php?&isp=1&id=bs11
@@ -157,7 +157,7 @@ https://proxyv2.utako.moe/ph.php?&isp=1&id=bs23
 https://proxyv2.utako.moe/ph.php?&isp=1&id=cs01
 #EXTINF:-1 group-title="JapanTV" tvg-id="fishing_vision" tvg-logo="https://www.lyngsat.com/logo/tv/tt/tsuri_vision.png", Fishing Vision (Primehome)
 https://proxyv2.utako.moe/ph.php?&isp=1&id=bs25
-#EXTINF:-1 group-title="JapanTV" tvg-id="disney_channel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/f/f6/Disney%2B_Japan_2024.svg", Disney Channel (Primehome)
+#EXTINF:-1 group-title="JapanTV" tvg-id="disney_channel" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Disney-JP.jpg", Disney Channel (Primehome)
 https://proxyv2.utako.moe/ph.php?&isp=1&id=bs24 
 #EXTINF:-1 group-title="JapanTV" tvg-id="jcom_bs" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/90/JCOM_BS_2.png/revision/latest/scale-to-width-down/1000?cb=20250825145119", JCOM BS (Primehome)
 https://proxyv2.utako.moe/ph.php?&isp=2&id=bs31
@@ -171,9 +171,9 @@ https://ca01.utako.moe/spaceshower/index.m3u8
 https://ca01.utako.moe/mtv/index.m3u8
 #EXTINF:-1 group-title="JapanTV" tvg-id="mnet" tvg-logo="https://www.lyngsat.com/logo/tv/mm/m_net_jp.png",Mnet
 https://ca01.utako.moe/mnet/index.m3u8
-#EXTINF:-1 group-title="JapanTV" tvg-id="kayo_pops" tvg-logo="https://images.seeklogo.com/logo-png/45/1/kayo-logo-png_seeklogo-453430.png",Kayo Pops
+#EXTINF:-1 group-title="JapanTV" tvg-id="kayo_pops" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Kayo.png",Kayo Pops
 https://ca01.utako.moe/kayopops/index.m3u8
-#EXTINF:-1 group-title="JapanTV" tvg-id="disney_channel" tvg-logo="https://www.lyngsat.com/logo/tv/dd/disney-channel-us.svg",Disney Channel
+#EXTINF:-1 group-title="JapanTV" tvg-id="disney_channel" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Disney-JP.jpg",Disney Channel
 https://ca01.utako.moe/disneychan/index.m3u8
 #EXTINF:-1 group-title="JapanTV" tvg-id="cartoon_network" tvg-logo="http://drewlive24.duckdns.org:9000/Logos/Cartoon-Network.jpg",Cartoon Network Japan
 https://ca01.utako.moe/cartoon_network/index.m3u8
