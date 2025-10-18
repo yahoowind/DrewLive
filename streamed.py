@@ -85,20 +85,20 @@ def extract_m3u8_from_embed(embed_url):
 
 def validate_logo(url, category):
     """Check logo URL; fallback strictly based on category."""
-    category_key = next((key for key in FALLBACK_LOGOS if key.lower() in category.lower()), None)
-    fallback = FALLBACK_LOGOS.get(category_key) if category_key else None
+    cat = (category or "").lower().replace('-', ' ').strip()
+    category_key = next((key for key in FALLBACK_LOGOS if key.lower() == cat), None)
+    fallback = FALLBACK_LOGOS.get(category_key)
 
-    if not url:
-        return fallback
+    if url:
+        try:
+            resp = requests.head(url, timeout=5, allow_redirects=True)
+            if resp.status_code in (200, 302):
+                return url
+            else:
+                print(f"⚠️ Logo {resp.status_code}: {url} → using fallback for {category}")
+        except requests.RequestException:
+            print(f"⚠️ Logo failed: {url} → using fallback for {category}")
 
-    try:
-        resp = requests.head(url, timeout=5, allow_redirects=True)
-        if resp.status_code in (200, 302):
-            return url
-        else:
-            print(f"⚠️ Logo {resp.status_code}: {url} → using fallback for {category}")
-    except requests.RequestException:
-        print(f"⚠️ Logo failed: {url} → using fallback for {category}")
     return fallback
 
 def build_logo_url(match):
