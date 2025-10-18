@@ -31,8 +31,6 @@ TV_IDS = {
     "Motor Sports": "Racing.Dummy.us"
 }
 
-DEFAULT_LOGO = "http://drewlive24.duckdns.org:9000/Logos/Default.png"
-
 def get_matches(endpoint="all"):
     url = f"https://streamed.pk/api/matches/{endpoint}"
     try:
@@ -85,18 +83,22 @@ def extract_m3u8_from_embed(embed_url):
     except:
         return None
 
-def validate_logo(url, fallback):
-    """Validate the logo URL and fall back if it's dead, empty, or non-200."""
+def validate_logo(url, category):
+    """Check logo URL; fallback strictly based on category."""
+    category_key = next((key for key in FALLBACK_LOGOS if key.lower() in category.lower()), None)
+    fallback = FALLBACK_LOGOS.get(category_key) if category_key else None
+
     if not url:
         return fallback
+
     try:
         resp = requests.head(url, timeout=5, allow_redirects=True)
         if resp.status_code in (200, 302):
             return url
         else:
-            print(f"⚠️ Logo invalid ({resp.status_code}): {url} → using fallback {fallback}")
+            print(f"⚠️ Logo {resp.status_code}: {url} → using fallback for {category}")
     except requests.RequestException:
-        print(f"⚠️ Logo check failed: {url} → using fallback {fallback}")
+        print(f"⚠️ Logo failed: {url} → using fallback for {category}")
     return fallback
 
 def build_logo_url(match):
@@ -119,16 +121,7 @@ def build_logo_url(match):
         logo_url = re.sub(r'(https://streamed\.pk/api/images/proxy/)+', 'https://streamed.pk/api/images/proxy/', logo_url)
         logo_url = re.sub(r'\.webp\.webp$', '.webp', logo_url)
 
-    matched = False
-    for key, fallback_logo in FALLBACK_LOGOS.items():
-        if key.lower() in api_category.lower():
-            logo_url = validate_logo(logo_url, fallback_logo)
-            matched = True
-            break
-
-    if not matched:
-        logo_url = validate_logo(logo_url, DEFAULT_LOGO)
-
+    logo_url = validate_logo(logo_url, api_category)
     return logo_url, api_category
 
 def process_match(match):
@@ -146,7 +139,7 @@ def process_match(match):
 def generate_m3u8():
     all_matches = get_matches("all")
     live_matches = get_matches("live")
-    matches = all_matches + live_matches 
+    matches = all_matches + live_matches
 
     if not matches:
         return "#EXTM3U\n#EXTINF:-1,No Matches Found\n"
@@ -176,7 +169,7 @@ def generate_m3u8():
                 success += 1
                 print(f"  ✅ {title} ({logo}) TV-ID: {tv_id}")
 
-    print(f"🎉 Found {success} streams.")
+    print(f"🎉 Found {success} working streams.")
     return "\n".join(content)
 
 if __name__ == "__main__":
