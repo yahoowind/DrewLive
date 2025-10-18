@@ -7,7 +7,9 @@ FALLBACK_LOGOS = {
     "american-football": "http://drewlive24.duckdns.org:9000/Logos/Am-Football2.png",
     "football":          "https://i.imgur.com/RvN0XSF.png",
     "fight":             "http://drewlive24.duckdns.org:9000/Logos/Combat-Sports.png",
-    "basketball":        "http://drewlive24.duckdns.org:9000/Logos/Basketball5.png"
+    "basketball":        "http://drewlive24.duckdns.org:9000/Logos/Basketball5.png",
+    "motor sports":      "http://drewlive24.duckdns.org:9000/Logos/Motorsports3.png",
+    "darts":             "http://drewlive24.duckdns.org:9000/Logos/Darts.png"
 }
 
 CUSTOM_HEADERS = {
@@ -25,7 +27,8 @@ TV_IDS = {
     "Basketball": "Basketball.Dummy.us",
     "Hockey": "NHL.Hockey.Dummy.us",
     "Tennis": "Tennis.Dummy.us",
-    "Darts": "Darts.Dummy.us"
+    "Darts": "Darts.Dummy.us",
+    "Motor Sports": "Racing.Dummy.us"
 }
 
 def get_matches(endpoint="all"):
