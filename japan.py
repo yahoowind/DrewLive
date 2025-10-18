@@ -17,17 +17,17 @@ def clean_and_force_group(m3u_content):
             continue
 
         if line.startswith("#EXTINF"):
-            # Skip if it's an Information group
             if 'group-title="Information"' in line:
                 skip_next = True
                 continue
 
-            # Force group-title to JapanTV
             if 'group-title="' in line:
                 line = re.sub(r'group-title=".*?"', f'group-title="{FORCED_GROUP_NAME}"', line)
             else:
                 line = line.replace('#EXTINF:', f'#EXTINF group-title="{FORCED_GROUP_NAME}":')
+
             output_lines.append(line)
+
             if i + 1 < len(lines):
                 output_lines.append(lines[i + 1])
                 skip_next = True
@@ -35,13 +35,11 @@ def clean_and_force_group(m3u_content):
     return "\n".join(output_lines)
 
 def main():
-    print("📥 Downloading upstream playlist...")
     response = requests.get(UPSTREAM_URL)
     if response.status_code != 200:
         print(f"❌ Failed to download: HTTP {response.status_code}")
         return
 
-    print("🧹 Cleaning and rewriting playlist...")
     modified_content = clean_and_force_group(response.text)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
