@@ -31,6 +31,8 @@ TV_IDS = {
     "Motor Sports": "Racing.Dummy.us"
 }
 
+DEFAULT_LOGO = "http://drewlive24.duckdns.org:9000/Logos/Default.png"
+
 def get_matches(endpoint="all"):
     url = f"https://streamed.pk/api/matches/{endpoint}"
     try:
@@ -84,23 +86,26 @@ def extract_m3u8_from_embed(embed_url):
         return None
 
 def validate_logo(url, fallback):
+    """Validate the logo URL and fall back if it's dead, empty, or non-200."""
     if not url:
         return fallback
     try:
-        resp = requests.head(url, timeout=5)
-        if resp.status_code == 200:
+        resp = requests.head(url, timeout=5, allow_redirects=True)
+        if resp.status_code in (200, 302):
             return url
-    except:
-        pass
+        else:
+            print(f"⚠️ Logo invalid ({resp.status_code}): {url} → using fallback {fallback}")
+    except requests.RequestException:
+        print(f"⚠️ Logo check failed: {url} → using fallback {fallback}")
     return fallback
 
 def build_logo_url(match):
-    api_category = match.get('category') or ''
+    api_category = (match.get('category') or '').strip()
     logo_url = None
 
     teams = match.get('teams') or {}
-    for team_key in ['away','home']:
-        team = teams.get(team_key, {})
+    for side in ['away', 'home']:
+        team = teams.get(side, {})
         badge = team.get('badge') or team.get('id')
         if badge:
             logo_url = f"https://streamed.pk/api/images/badge/{badge}.webp"
@@ -110,15 +115,24 @@ def build_logo_url(match):
         poster = match['poster']
         logo_url = f"https://streamed.pk/api/images/proxy/{poster}.webp"
 
-    for key in FALLBACK_LOGOS:
+    if logo_url:
+        logo_url = re.sub(r'(https://streamed\.pk/api/images/proxy/)+', 'https://streamed.pk/api/images/proxy/', logo_url)
+        logo_url = re.sub(r'\.webp\.webp$', '.webp', logo_url)
+
+    matched = False
+    for key, fallback_logo in FALLBACK_LOGOS.items():
         if key.lower() in api_category.lower():
-            logo_url = validate_logo(logo_url, FALLBACK_LOGOS[key])
+            logo_url = validate_logo(logo_url, fallback_logo)
+            matched = True
             break
+
+    if not matched:
+        logo_url = validate_logo(logo_url, DEFAULT_LOGO)
 
     return logo_url, api_category
 
 def process_match(match):
-    title = match.get('title','Untitled Match')
+    title = match.get('title', 'Untitled Match')
     sources = match.get('sources', [])
     for source in sources:
         embed_url = get_stream_embed_url(source)
@@ -150,7 +164,7 @@ def generate_m3u8():
         futures = {executor.submit(process_match, m): m for m in matches}
         for future in concurrent.futures.as_completed(futures):
             match, url = future.result()
-            title = match.get('title','Untitled Match')
+            title = match.get('title', 'Untitled Match')
             if url:
                 logo, cat = build_logo_url(match)
                 display_cat = cat.replace('-', ' ').title() if cat else "General"
@@ -168,9 +182,9 @@ def generate_m3u8():
 if __name__ == "__main__":
     playlist = generate_m3u8()
     try:
-        with open("StreamedSU.m3u8","w",encoding="utf-8") as f:
+        with open("StreamedSU.m3u8", "w", encoding="utf-8") as f:
             f.write(playlist)
-        print("💾 Playlist saved.")
+        print("💾 Playlist saved successfully.")
     except IOError as e:
         print(f"⚠️ Error saving file: {e}")
         print(playlist)
