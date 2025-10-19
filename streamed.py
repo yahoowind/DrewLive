@@ -5,7 +5,7 @@ import concurrent.futures
 
 FALLBACK_LOGOS = {
     "american-football": "http://drewlive24.duckdns.org:9000/Logos/Am-Football2.png",
-    "football":          "https://i.imgur.com/RvN0XSF.png",
+    "football":          "https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/RvN0XSF.png",
     "fight":             "http://drewlive24.duckdns.org:9000/Logos/Combat-Sports.png",
     "basketball":        "http://drewlive24.duckdns.org:9000/Logos/Basketball5.png",
     "motor sports":      "http://drewlive24.duckdns.org:9000/Logos/Motorsports3.png",
