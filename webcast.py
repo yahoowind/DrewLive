@@ -9,7 +9,11 @@ from playwright.async_api import BrowserContext, Page, async_playwright
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0"
 )
-POST_LOAD_WAIT_MS = 8000
+
+# Use dynamic waits instead of fixed ones. These are the timeouts for those waits.
+DYNAMIC_WAIT_TIMEOUT = 15000  # 15 seconds
+GAME_TABLE_WAIT_TIMEOUT = 30000 # 30 seconds for the main game list to appear
+
 STREAM_PATTERN = re.compile(r"\.m3u8($|\?)", re.IGNORECASE)
 OUTPUT_FILE = "SportsWebcast.m3u8"
 
@@ -42,25 +46,32 @@ NBA_CUSTOM_HEADERS = {
 }
 
 def normalize_game_name(original_name: str) -> str:
+    """Cleans up game names scraped from the site."""
     cleaned_name = " ".join(original_name.splitlines()).strip()
     if "@" in cleaned_name:
         parts = cleaned_name.split("@")
         if len(parts) == 2:
             team1 = parts[0].strip().title()
             team2 = parts[1].strip().title()
-            # Clean up potential date artifacts
-            team2 = team2.split("October")[0].strip() 
+            # FIX: Use a regex to remove any month name and following text.
+            team2 = re.split(r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\b', team2, 1)[0].strip()
             return f"{team1} @ {team2}"
     return " ".join(cleaned_name.strip().split()).title()
 
-async def verify_stream_url(session: aiohttp.ClientSession, url: str) -> bool:
+async def verify_stream_url(session: aiohttp.ClientSession, url: str, headers: Optional[Dict[str, str]] = None) -> bool:
+    """Verifies a stream URL, passing custom headers for origin and referer checks."""
+    request_headers = headers if headers else {}
+    if "User-Agent" not in request_headers:
+        request_headers["User-Agent"] = session.headers.get("User-Agent", USER_AGENT)
+        
     try:
-        async with session.head(url, timeout=10, allow_redirects=True) as response:
+        # FIX: Use GET instead of HEAD as some servers block HEAD requests.
+        async with session.get(url, timeout=10, allow_redirects=True, headers=request_headers) as response:
             if response.status == 200:
                 print(f"    ✔️  URL Verified (200 OK): {url}")
                 return True
             else:
-                print(f"    ❌ URL Failed ({response.status}): {url}")
+                print(f"    ❌ URL Failed ({response.status}) with headers: {url}")
                 return False
     except asyncio.TimeoutError:
         print(f"    ❌ URL Timed Out: {url}")
@@ -71,9 +82,14 @@ async def verify_stream_url(session: aiohttp.ClientSession, url: str) -> bool:
 
 async def find_stream_from_servers_on_page(context: BrowserContext, page_url: str, base_url: str, session: aiohttp.ClientSession) -> Optional[str]:
     """
-    Navigates to a page, attaches a network listener, clicks through server 
-    links to load content into an iframe, and captures the first valid .m3u8 URL.
+    Navigates to a page, finds the player iframe, clicks through server links 
+    *inside* that iframe, and captures the first valid .m3u8 URL.
     """
+    # FIX: Define verification headers to bypass server checks.
+    verification_headers = {
+        "Origin": base_url.rstrip('/'),
+        "Referer": base_url
+    }
     page = await context.new_page()
     candidate_urls: List[str] = []
 
@@ -87,19 +103,32 @@ async def find_stream_from_servers_on_page(context: BrowserContext, page_url: st
     try:
         print(f"    ↳ Navigating to content page: {page_url}")
         await page.goto(page_url, wait_until="domcontentloaded", timeout=60000)
-        await page.wait_for_timeout(POST_LOAD_WAIT_MS)
+        
+        # FIX: Use a dynamic wait for network activity to settle.
+        print("    Waiting for page network to idle...")
+        await page.wait_for_load_state('networkidle', timeout=DYNAMIC_WAIT_TIMEOUT)
 
+        # FIX: Pass verification headers when checking URLs.
         for stream_url in reversed(candidate_urls):
-            if await verify_stream_url(session, stream_url):
+            if await verify_stream_url(session, stream_url, headers=verification_headers):
                 print("      ✔️ Found valid stream on initial page load.")
                 return stream_url
 
-        server_links = page.locator("#multistmb a")
-        count = await server_links.count()
+        # FIX: Locate the iframe where the player and links are loaded.
+        iframe_locator = page.locator("div#player iframe, div.vplayer iframe, iframe.responsive-iframe").first
+        if not await iframe_locator.count():
+            print("    ❌ Could not find the main video iframe on the page.")
+            return None
 
+        print("    Found player iframe. Looking for links *inside* it.")
+        frame_content = iframe_locator.content_frame
+
+        # Look for links *within the iframe's content*.
+        server_links = frame_content.locator("#multistmb a")
+        count = await server_links.count()
         if count == 0:
-            print("    Fallback: '#multistmb a' not found. Trying generic selector.")
-            server_links = page.locator("a:has-text('Server'), a:has-text('HD'), a:has-text('Home'), a:has-text('Away')")
+            print("    Fallback: '#multistmb a' not found *inside frame*. Trying generic selector.")
+            server_links = frame_content.locator("a:has-text('Server'), a:has-text('HD'), a:has-text('Home'), a:has-text('Away')")
             count = await server_links.count()
         
         print(f"    Found {count} server links to test by clicking.")
@@ -110,15 +139,18 @@ async def find_stream_from_servers_on_page(context: BrowserContext, page_url: st
             print(f"    ➡️ Trying Server Link #{i+1}: '{link_text}'")
             
             urls_before_click = set(candidate_urls)
-            
             await link.click()
-            await page.wait_for_timeout(POST_LOAD_WAIT_MS)
+            
+            # FIX: Use dynamic network idle wait after clicking.
+            print(f"    Waiting for click network to idle...")
+            await page.wait_for_load_state('networkidle', timeout=DYNAMIC_WAIT_TIMEOUT)
 
             urls_after_click = set(candidate_urls)
             new_urls = list(urls_after_click - urls_before_click)
 
+            # FIX: Pass verification headers when checking newly found URLs.
             for stream_url in reversed(new_urls):
-                if await verify_stream_url(session, stream_url):
+                if await verify_stream_url(session, stream_url, headers=verification_headers):
                     print(f"      ✔️ Found valid stream after clicking '{link_text}'.")
                     return stream_url
             
@@ -130,7 +162,7 @@ async def find_stream_from_servers_on_page(context: BrowserContext, page_url: st
         if not page.is_closed():
             page.remove_listener("request", handle_request)
             await page.close()
-
+            
     print(f"  ❌ All servers tried for {page_url}, but no valid stream was found.")
     return None
 
@@ -145,10 +177,22 @@ async def scrape_league(base_url: str, channel_urls: List[str], group_prefix: st
         try:
             page = await context.new_page()
             await page.goto(base_url, wait_until="domcontentloaded", timeout=60000)
-            await page.wait_for_timeout(POST_LOAD_WAIT_MS)
+            
+            game_row_selector = "#mtable tr.singele_match_date:not(.mdatetitle)"
+            
+            # FIX: Use a dynamic wait to ensure the game table is loaded.
+            print(f"  Waiting for game table '{game_row_selector}' to load...")
+            try:
+                await page.wait_for_selector(game_row_selector, timeout=GAME_TABLE_WAIT_TIMEOUT)
+                print("  ✅ Game table found.")
+            except Exception as e:
+                print(f"  ❌ Timed out waiting for game table on {base_url}. No games will be scraped. {e}")
+                await page.close()
+                await browser.close()
+                return []
 
             game_links_info = []
-            event_rows = page.locator("#mtable tr.singele_match_date:not(.mdatetitle)")
+            event_rows = page.locator(game_row_selector)
             count = await event_rows.count()
             
             for i in range(count):
@@ -156,23 +200,24 @@ async def scrape_league(base_url: str, channel_urls: List[str], group_prefix: st
                 link_locator = row.locator("td.teamvs a")
                 name = await link_locator.inner_text()
                 href = await link_locator.get_attribute("href")
-
                 logo_url = None
                 logo_locators = row.locator("td.teamlogo img")
+                
                 if await logo_locators.count() > 1:
                     logo_url = await logo_locators.nth(1).get_attribute("src")
                 elif await logo_locators.count() > 0:
                     logo_url = await logo_locators.nth(0).get_attribute("src")
-
+                    
                 if name and href:
                     unique_name_key = " ".join(name.splitlines()).strip()
                     full_url = urljoin(base_url, href)
                     final_logo_url = logo_url if logo_url else default_logo
                     game_links_info.append({"name": unique_name_key, "url": full_url, "logo": final_logo_url})
-
+                    
             await page.close()
+            
             print(f"  Found {len(game_links_info)} potential live game links.")
-
+            
             for game in game_links_info:
                 print(f"  ➡️ Processing Game: {normalize_game_name(game['name'])}")
                 stream_url = await find_stream_from_servers_on_page(context, game["url"], base_url, session)
@@ -185,6 +230,7 @@ async def scrape_league(base_url: str, channel_urls: List[str], group_prefix: st
                 stream_url = await find_stream_from_servers_on_page(context, url, base_url, session)
                 if stream_url:
                     found_streams[slug] = (stream_url, "24/7 Channels", None)
+                    
         except Exception as e:
             print(f"  ❌ A critical error occurred while scraping {group_prefix}: {e}")
         finally:
@@ -199,6 +245,7 @@ async def scrape_league(base_url: str, channel_urls: List[str], group_prefix: st
         tvg_logo = info.get("logo") or scraped_logo or default_logo
         
         results.append({"name": pretty_name, "url": stream_url, "tvg_id": tvg_id, "tvg_logo": tvg_logo, "group": f"{group_prefix} - {category}", "ref": base_url})
+        
     return results
 
 async def scrape_nba_league(default_logo: str) -> List[Dict]:
@@ -213,16 +260,17 @@ async def scrape_nba_league(default_logo: str) -> List[Dict]:
         except aiohttp.ClientError as e:
             print(f"  ❌ Error fetching NBA page: {e}")
             return []
-
+            
         soup = BeautifulSoup(html_content, 'lxml')
         schedule_table = soup.find('table', class_='NBA_schedule_container')
+        
         if not schedule_table:
-            print("  ❌ Could not find NBA schedule table.")
+            print("  ❌ Could not find NBA schedule table (it may be loaded by JavaScript).")
             return []
-
+            
         game_rows = schedule_table.find('tbody').find_all('tr')
         print(f"  Found {len(game_rows)} potential NBA games.")
-
+        
         for row in game_rows:
             try:
                 teams = [span.text for span in row.find_all('td', class_='teamvs')]
@@ -237,7 +285,8 @@ async def scrape_nba_league(default_logo: str) -> List[Dict]:
                     stream_url = NBA_STREAM_URL_PATTERN.format(team_name=team_key)
                     match_title = f"{away_team} vs {home_team}"
                     
-                    if await verify_stream_url(session, stream_url):
+                    # Pass the correct headers for NBA verification
+                    if await verify_stream_url(session, stream_url, headers=NBA_CUSTOM_HEADERS):
                         results.append({
                             "name": match_title,
                             "url": stream_url,
@@ -256,7 +305,7 @@ def write_playlist(streams: List[Dict], filename: str):
     if not streams:
         print("⏹️ No streams found to write to the playlist.")
         return
-
+        
     with open(filename, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for entry in streams:
@@ -279,14 +328,13 @@ def write_playlist(streams: List[Dict], filename: str):
                 f.write(f"#EXTVLCOPT:http-user-agent={USER_AGENT}\n")
                 
             f.write(entry["url"] + "\n")
-
+            
     print(f"✅ Playlist with {len(streams)} streams saved successfully to {filename}!")
 
 async def main():
     print("🚀 Starting Sports Webcast Scraper...")
-
     NBA_DEFAULT_LOGO = "http://drewlive24.duckdns.org:9000/Logos/Basketball.png"
-
+    
     tasks = [
         scrape_league(
             base_url=NFL_BASE_URL, channel_urls=NFL_CHANNEL_URLS, group_prefix="NFLWebcast",
