@@ -73,7 +73,7 @@ Stay synced with live guide data for your players.
 
 ━━━━━━━━━━━━━━━━━━━━
 
-[![Join DrewLive Discord](https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)
+[![Join DrewLive Discord](https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/UPsQU4m.png)](https://discord.gg/GScZh8D3rB)
 
 **👥 Join the DrewLive Discord!**
 
