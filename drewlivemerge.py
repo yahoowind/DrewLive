@@ -26,7 +26,7 @@ playlist_urls = [
 ]
 
 EPG_URL = "http://drewlive24.duckdns.org:8081/DrewLive.xml.gz"
-OUTPUT_FILE = "MergedPlaylist.m3u8"
+OUTPUT_FILE = "DrewLiveMergedPlaylist.m3u8"
 
 def fetch_playlist(url, retries=3, timeout=30):
     headers = {"User-Agent": "Mozilla/5.0"}
@@ -62,7 +62,7 @@ def parse_playlist(lines, source_url="Unknown"):
                 if url_line and not url_line.startswith("#") and url_line != "*":
                     parsed_channels.append((extinf_line, tuple(channel_headers), url_line))
                 else:
-                    print(f"⚠️ Skipped entry in {source_url}. Reason: Invalid or placeholder URL '{url_line}'. Channel Info: {extinf_line}")
+                    print(f"⚠️ Skipped entry in {source_url}. Invalid URL '{url_line}'.")
                 i += 1
             else:
                 i += 1
@@ -125,5 +125,6 @@ if __name__ == "__main__":
         if lines:
             parsed_channels = parse_playlist(lines, source_url=url)
             all_channels_list.extend(parsed_channels)
+
     write_merged_playlist(all_channels_list)
     print(f"Merging complete at {datetime.now()}.")
