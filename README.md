@@ -12,7 +12,7 @@ Simplify your setup with every playlist in one place.
 
 ━━━━━━━━━━━━━━━━━━━━
 
-**🔥 DREWLIVE XTREAM PLAYLIST DROP 🔥**
+**🔥 DREWLIVE XTREAM PLAYLIST 🔥**
 
 A brand new **Xtream playlist** packed with content!  
 Enjoy **general live TV**, occasional **live sports**, and an enormous library of **12,000+ movies** and **5,700+ series**.  
