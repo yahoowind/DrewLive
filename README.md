@@ -4,10 +4,11 @@ Welcome to DrewLive — your 24/7 hub for cartoons, anime, action, and nostalgic
 
 ━━━━━━━━━━━━━━━━━━━━
 
-**📺 DREWLIVE LIVE STREAM (OWNCAST)**
+**📂 ALL PLAYLISTS IN ONE LINK**
 
-Your main portal for nonstop streaming — DrewLive runs day and night with curated shows and blocks.
-* [Toonami/Adult Swim Owncast Stream](http://drewlive24.duckdns.org:8080/)
+Simplify your setup with every playlist in one place.
+🔗 **All Playlists - DrewLive URL:**
+* [DrewLive All Playlists](https://tinyurl.com/drewall8)
 
 ━━━━━━━━━━━━━━━━━━━━
 
@@ -34,11 +35,10 @@ Enjoy **general live TV**, occasional **live sports**, and an enormous library o
 
 ━━━━━━━━━━━━━━━━━━━━
 
-**📂 ALL PLAYLISTS IN ONE LINK**
+**📺 DREWLIVE LIVE STREAM (OWNCAST)**
 
-Simplify your setup with every playlist in one place.
-🔗 **All Playlists - DrewLive URL:**
-* [DrewLive All Playlists](https://tinyurl.com/drewall8)
+Your main portal for nonstop streaming — DrewLive runs day and night with curated shows and blocks.
+* [Toonami/Adult Swim Owncast Stream](http://drewlive24.duckdns.org:8080/)
 
 ━━━━━━━━━━━━━━━━━━━━
 
@@ -58,11 +58,6 @@ It’s perfect for people who want neat, playlists with clickable streams and ni
 **✨ CLEAN IPTV PLAYLIST**
 
 This is the clean version of the merged IPTV playlist created by the merge script.
-* All channels tagged or containing keywords like NSFW, XXX, or Porn have been filtered out.
-* Suitable for kids and family-friendly viewing.
-* Organized by channel groups for easy navigation.
-* Updated automatically to keep your playlist fresh and safe.
-
 * [Merged Clean Playlist](https://tinyurl.com/MergedClean24)
 
 ━━━━━━━━━━━━━━━━━━━━
@@ -87,9 +82,9 @@ Stay synced with live guide data for your players.
 
 **📡 HOW TO USE EPG LINK**
 
-1.  Go into your IPTV player's guide settings
-2.  Paste in the EPG URL above
-3.  Save and refresh guide data
+1.  Go into your IPTV player's guide settings  
+2.  Paste in the EPG URL above  
+3.  Save and refresh guide data  
 4.  Done! Full channel listings ready to go.
 
 > ⚠️ **Pro tip:** Some apps need a restart for EPG to fully load.
@@ -110,11 +105,11 @@ Click the badge above or use this invite:
 
 Use one of these for the cleanest DrewLive experience:
 
-* [Televizo](https://televizo.net/) – Lightweight and fast with advanced support
-* [Kodi](https://kodi.tv/) – Full-featured with deep customization and STRM support
-* [TiviMate](https://tivimate.com/) – Easy UI, strong playlist & EPG support
-* [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Open-source and modern
-* [UHF](https://www.uhfapp.com/) – Clean mobile player with native EPG
+* [Televizo](https://televizo.net/) – Lightweight and fast with advanced support  
+* [Kodi](https://kodi.tv/) – Full-featured with deep customization and STRM support  
+* [TiviMate](https://tivimate.com/) – Easy UI, strong playlist & EPG support  
+* [IPTVNator](https://github.com/4gray/iptvnator/releases/tag/v0.16.0) – Open-source and modern  
+* [UHF](https://www.uhfapp.com/) – Clean mobile player with native EPG  
 * [Jellyfin](https://jellyfin.org/) – Great for library setups with built-in IPTV and VOD handling
 
 ━━━━━━━━━━━━━━━━━━━━
@@ -129,17 +124,16 @@ If you enjoy DrewLive and want to help keep the playlists, VOD bundles, and live
 
 **🌐 UNLICENSED LICENSE**
 
-This project is released under The Unlicense.
+This project is released under The Unlicense.  
 Copy it, modify it, remix it, share it, sell it, whatever. No strings attached.
 
-**Legal TL;DR:**
-* No copyright
-* No restrictions
-* No conditions
+**Legal TL;DR:**  
+* No copyright  
+* No restrictions  
+* No conditions  
 * No warranties
 
-**Disclaimer:**
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
+**Disclaimer:**  
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Learn more at: [https://unlicense.org](https://unlicense.org)
