@@ -11,6 +11,29 @@ Your main portal for nonstop streaming — DrewLive runs day and night with cura
 
 ━━━━━━━━━━━━━━━━━━━━
 
+**🔥 DREWLIVE XTREAM PLAYLIST DROP 🔥**
+
+A brand new **Xtream playlist** packed with content!  
+Enjoy **general live TV**, occasional **live sports**, and an enormous library of **12,000+ movies** and **5,700+ series**.  
+
+**Included Content:**  
+* 🖥️ General Live TV  
+* ⚽ Occasional Live Sports Events  
+* 🎞️ 12K+ Movies  
+* 📺 5.7K+ Series  
+
+**Access Info:**  
+* **Username:** `DrewLive24`  
+* **Password:** *DM me personally to get it*  
+
+> ⚠️ Please **don’t share** your password — access is private.  
+> 💬 Need help setting it up? DM me and I got you.
+
+**Xtream Playlist Link:**  
+* [DrewLive24 Playlist](https://drewlive-24.andrewrocha06.workers.dev/)
+
+━━━━━━━━━━━━━━━━━━━━
+
 **📂 ALL PLAYLISTS IN ONE LINK**
 
 Simplify your setup with every playlist in one place.
